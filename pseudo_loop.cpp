@@ -311,7 +311,7 @@ void pseudo_loop::compute_WI(int i, int j , h_str_features *fres){
 	// Luke 6/27/2023: ambiguity here
 	int t;
 	for (t = i; t< j; t++){
-		int wi_1 = get_WI(i,t-1)
+		int wi_1 = get_WI(i,t-1);
 		//new case 1, check if V possible and add to WI(i, t-1)
 		if ((fres[t].pair == j && fres[j].pair == t)
 		||(fres[t].pair < FRES_RESTRICTED_MIN && fres[j].pair < FRES_RESTRICTED_MIN)){
@@ -1013,7 +1013,7 @@ void pseudo_loop::compute_WIP(int i, int j, h_str_features *fres){
 //		printf("WIP(6,15) is calling WMB \n");
 //	}
 
-	WIP[ij] = MIN(MIN(m1,MIN(m2,m3)));
+	WIP[ij] = MIN(m1,MIN(m2,m3));
 
 //	if (debug){
 //		printf("WIP(%d,%d): m1 = %d, m2 = %d, m3 = %d, m4 = %d, m5 = %d ==> min = %d \n",i,j,m1,m2,m3,m4,m5,WIP[ij]);

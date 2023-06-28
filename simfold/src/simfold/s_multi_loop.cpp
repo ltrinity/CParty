@@ -59,6 +59,7 @@ s_multi_loop::~s_multi_loop ()
 }
 
 
+// ambiguity here Luke 6/28/23
 void s_multi_loop::compute_energy_WM (int j)
 // compute de MFE of a partial multi-loop closed at (i,j)
 {
@@ -79,76 +80,77 @@ void s_multi_loop::compute_energy_WM (int j)
           {
             WM[ij] = tmp;
           }
-        tmp = V->get_energy(i+1,j) +
-                  AU_penalty (sequence[i+1], sequence[j]) +
-                  dangle_bot [sequence[j]]
-                             [sequence[i+1]]
-                             [sequence[i]] +
-                  misc.multi_helix_penalty +
-                  misc.multi_free_base_penalty;
+        // Luke removing i+1 j
+        //tmp = V->get_energy(i+1,j) +
+        //          AU_penalty (sequence[i+1], sequence[j]) +
+        //          dangle_bot [sequence[j]]
+        //                     [sequence[i+1]]
+        //                     [sequence[i]] +
+        //          misc.multi_helix_penalty +
+        //          misc.multi_free_base_penalty;
+        // add the loss ?????
+        //if (pred_pairings != NULL)
+        //{
+        //    pred_pairings[i] = -1;
+        //    tmp = tmp - loss (i,i);
+        //}
+        //if (tmp < WM[ij])
+        //{
+        //    WM[ij] = tmp;
+        //}
+        // Luke removing i j-1
+        //tmp = V->get_energy(i,j-1) +
+        //          AU_penalty (sequence[i], sequence[j-1]) +
+        //          dangle_top [sequence [j-1]]
+        //                     [sequence [i]]
+        //                     [sequence [j]] +
+        //          misc.multi_helix_penalty +
+        //          misc.multi_free_base_penalty;
         // add the loss
-        if (pred_pairings != NULL)
-        {
-            pred_pairings[i] = -1;
-            tmp = tmp - loss (i,i);
-        }
-        if (tmp < WM[ij])
-        {
-            WM[ij] = tmp;
-        }
-
-        tmp = V->get_energy(i,j-1) +
-                  AU_penalty (sequence[i], sequence[j-1]) +
-                  dangle_top [sequence [j-1]]
-                             [sequence [i]]
-                             [sequence [j]] +
-                  misc.multi_helix_penalty +
-                  misc.multi_free_base_penalty;
+        //if (pred_pairings != NULL)
+        ///{
+        //    pred_pairings[j] = -1;
+        //    tmp = tmp - loss (j,j);
+        //}
+        //if (tmp < WM[ij])
+        //{
+        //    WM[ij] = tmp;
+        //}
+        // Luke removing i+1, j-1
+        //tmp = V->get_energy(i+1,j-1) +
+        //          AU_penalty (sequence[i+1], sequence[j-1]) +
+        //          dangle_bot [sequence[j-1]]
+        //                     [sequence[i+1]]
+        //                     [sequence[i]] +
+        //          dangle_top [sequence [j-1]]
+        //                     [sequence [i+1]]
+        //                     [sequence [j]] +
+        //          misc.multi_helix_penalty +
+        //          2*misc.multi_free_base_penalty;
         // add the loss
-        if (pred_pairings != NULL)
-        {
-            pred_pairings[j] = -1;
-            tmp = tmp - loss (j,j);
-        }
-        if (tmp < WM[ij])
-        {
-            WM[ij] = tmp;
-        }
-
-        tmp = V->get_energy(i+1,j-1) +
-                  AU_penalty (sequence[i+1], sequence[j-1]) +
-                  dangle_bot [sequence[j-1]]
-                             [sequence[i+1]]
-                             [sequence[i]] +
-                  dangle_top [sequence [j-1]]
-                             [sequence [i+1]]
-                             [sequence [j]] +
-                  misc.multi_helix_penalty +
-                  2*misc.multi_free_base_penalty;
+        //if (pred_pairings != NULL)
+        //{
+        //    pred_pairings[i] = -1;
+        //    pred_pairings[j] = -1;
+        //    tmp = tmp - loss (i,i) - loss(j,j);
+        //}
+        //if (tmp < WM[ij])
+        //{
+        //        WM[ij] = tmp;
+        //}
+        // Luke removing unpaired 5'
+        //tmp = WM[iplus1j] + misc.multi_free_base_penalty;
         // add the loss
-        if (pred_pairings != NULL)
-        {
-            pred_pairings[i] = -1;
-            pred_pairings[j] = -1;
-            tmp = tmp - loss (i,i) - loss(j,j);
-        }
-        if (tmp < WM[ij])
-        {
-                WM[ij] = tmp;
-        }
-
-        tmp = WM[iplus1j] + misc.multi_free_base_penalty;
-        // add the loss
-        if (pred_pairings != NULL)
-        {
-            pred_pairings[i] = -1;
-            tmp = tmp - loss (i,i);
-        }
-        if (tmp < WM[ij])
-        {
-            WM[ij] = tmp;
-        }
-
+        //if (pred_pairings != NULL)
+        //{
+        //    pred_pairings[i] = -1;
+        //    tmp = tmp - loss (i,i);
+        //}
+        //if (tmp < WM[ij])
+        //{
+        //    WM[ij] = tmp;
+        //}
+        // Allow one unpaired
         tmp = WM[ijminus1] + misc.multi_free_base_penalty;
         // add the loss
         if (pred_pairings != NULL)
@@ -160,16 +162,32 @@ void s_multi_loop::compute_energy_WM (int j)
         {
             WM[ij] = tmp;
         }
-
+        //use the for loop for splits modified for CParty
         for (int k=i; k < j; k++)
         {
             int ik = index[i]+k-i;
             int kplus1j = index[k+1]+j-k-1;
-            tmp = WM[ik] + WM[kplus1j];
+            // v energy for split
+            int V_energy = V->get_energy(k,j) +
+                   AU_penalty (sequence[k], sequence[j]) +
+                   misc.multi_helix_penalty;
+            //unpaired
+            int unpaired_energy =  misc.multi_free_base_penalty *(k-i);
+            tmp = unpaired_energy + V_energy;
             if (tmp < WM[ij])
               {
                 WM[ij] = tmp;
               }
+            if (k > i && k < (j-1)){
+                int ikminus1 = index[i]+k-1-i;
+                tmp = WM[ikminus1] + V_energy;
+                if (tmp < WM[ij])
+                {
+                    WM[ij] = tmp;
+                }
+            }
+
+
         }
     }
 }
