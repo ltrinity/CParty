@@ -308,16 +308,24 @@ void pseudo_loop::compute_WI(int i, int j , h_str_features *fres){
 	// branch 1:
 //	if (fres[i].pair < 0 && fres[j].pair < 0)
 //	{
+	// Luke 6/27/2023: ambiguity here
 	int t;
 	for (t = i; t< j; t++){
-		int wi_1 = get_WI(i,t);
-		int wi_2 = get_WI(t+1,j);
-		int energy = wi_1 + wi_2;
-		m1 = (m1 > energy)? energy : m1;
+		int wi_1 = get_WI(i,t-1)
+		//new case 1, check if V possible and add to WI(i, t-1)
+		if ((fres[t].pair == j && fres[j].pair == t)
+		||(fres[t].pair < FRES_RESTRICTED_MIN && fres[j].pair < FRES_RESTRICTED_MIN)){
+			int v_ener = V->get_energy(t,j);
+			m1 = wi_1 + v_ener + PPS_penalty;
+		}
+		//new case 3 
+		m3 = wi_1 + get_WMB(t,j) + PSP_penalty + PPS_penalty;
 //		if (debug_WI){
 //			printf("WI branch 1: WI[%d,%d] = %d and WI[%d,%d] = %d => energy = %d and m1 = %d \n",i,t,wi_1,(t+1),j,wi_2,energy, m1);
 //		}
 	}
+	//new case 2
+	m2 = get_WI(i,j-1) +PUP_penalty;
 //	if (debug){
 //		printf("WI(%d,%d) branch 1: m1 = %d\n",i,j,m1);
 //	}
@@ -327,19 +335,19 @@ void pseudo_loop::compute_WI(int i, int j , h_str_features *fres){
 	// Ian Wark July 19 2017
 	// fres[i].pair >= 0 changed to fres[i].pair >= FRES_RESTRICTED_MIN (which equals -1 at time of writing)
 	// otherwise it will create pairs in spots where the restricted structure says there should be no pairs
-	if ((fres[i].pair == j && fres[j].pair == i)
-	||(fres[i].pair < FRES_RESTRICTED_MIN && fres[j].pair < FRES_RESTRICTED_MIN)){
+	//if ((fres[i].pair == j && fres[j].pair == i)
+	//||(fres[i].pair < FRES_RESTRICTED_MIN && fres[j].pair < FRES_RESTRICTED_MIN)){
 		// Hosna, April 16th, 2007
 		// changed back to see if it will work fine
 		// Hosna: April 19th, 2007
 		// I think we should call the restricted version
 
-		int v_ener = (i>j)? INF: V->get_energy(i,j);
-		m2 = v_ener + PPS_penalty;
+		//int v_ener = (i>j)? INF: V->get_energy(i,j);
+		//m2 = v_ener + PPS_penalty;
 //		if (debug){
 //			printf("WI(%d,%d) branch 2: m2 = %d\n",i,j,m2);
 //		}
-	}
+	//}
 	// branch 3:
 	// Hosna: April 20, 2007
 	// removed the penalty of PPS
@@ -351,7 +359,7 @@ void pseudo_loop::compute_WI(int i, int j , h_str_features *fres){
 //		printf("WI(6,15) is calling WMB \n");
 //	}
 
-	m3 = get_WMB(i,j) + PSP_penalty + PPS_penalty;
+	//m3 = get_WMB(i,j) + PSP_penalty + PPS_penalty;
 
 //	if (debug){
 //		printf("WI(%d,%d) branch 3: m3 = %d\n",i,j,m3);
