@@ -316,10 +316,12 @@ void pseudo_loop::compute_WI(int i, int j , h_str_features *fres){
 		if ((fres[t].pair == j && fres[j].pair == t)
 		||(fres[t].pair < FRES_RESTRICTED_MIN && fres[j].pair < FRES_RESTRICTED_MIN)){
 			int v_ener = V->get_energy(t,j);
-			m1 = wi_1 + v_ener + PPS_penalty;
+			int energy = wi_1 + v_ener + PPS_penalty;
+			m1 = (m1 > energy)? energy : m1;
 		}
 		//new case 3 
-		m3 = wi_1 + get_WMB(t,j) + PSP_penalty + PPS_penalty;
+		int energy2 = wi_1 + get_WMB(t,j) + PSP_penalty + PPS_penalty;
+		m3 = (m3 > energy2)? energy2 : m3;
 //		if (debug_WI){
 //			printf("WI branch 1: WI[%d,%d] = %d and WI[%d,%d] = %d => energy = %d and m1 = %d \n",i,t,wi_1,(t+1),j,wi_2,energy, m1);
 //		}
@@ -929,6 +931,7 @@ void pseudo_loop::compute_WMB(int i, int j, h_str_features *fres){
 	}
 }
 
+// Luke 6/28/2023 removing ambiguity
 void pseudo_loop::compute_WIP(int i, int j, h_str_features *fres){
 	int ij = index[i]+j-i;
 	if (WIP[ij] < INF/2){ // was calculated before
@@ -950,15 +953,15 @@ void pseudo_loop::compute_WIP(int i, int j, h_str_features *fres){
 	// fres[i].pair < 0 changed to fres[i].pair < FRES_RESTRICTED_MIN (which equals -1 at time of writing)
 	// otherwise it will create pairs in spots where the restricted structure says there should be no pairs
 
-	// branch 1:
-	if (fres[i].pair < FRES_RESTRICTED_MIN){
-		m1 = get_WIP(i+1,j) + cp_penalty;
+	// branch 1 removed :
+	//if (fres[i].pair < FRES_RESTRICTED_MIN){
+	//	m1 = get_WIP(i+1,j) + cp_penalty;
 //		if (debug && (i == 27 || i == 28) && (j == 68 || j == 67)){
 //			printf("\n ************************* \n");
 //			printf("Computing WIP(%d,%d) when  WIP(%d,%d) = %d and m1 = %d\n",i,j,i+1,j,get_WIP(i+1,j),m1);
 //		}
-	}
-	// branch 2:
+	//}
+	// new branch 2 (unchanged):
 	if (fres[j].pair < FRES_RESTRICTED_MIN){
 		m2 = get_WIP(i,j-1) + cp_penalty;
 //		if (debug && (i == 27 || i == 28) && (j == 68 || j == 67)){
@@ -966,20 +969,19 @@ void pseudo_loop::compute_WIP(int i, int j, h_str_features *fres){
 //			printf("Computing WIP(%d,%d) when  WIP(%d,%d) = %d and m2 = %d\n",i,j,i,j-1,get_WIP(i,j-1),m2);
 //		}
 	}
-	//branch 3:
+	//previous branch 3 removed:
+	// now new branches 1 and 3
 	int t;
 	for (t = i; t <j; t++){
-		int tmp = get_WIP(i,t) + get_WIP(t+1,j);
-		if (tmp < m3){
-			m3 = tmp;
+		int wip_1 = get_WIP(i,t-1);
+		if (fres[t].pair == j
+		|| (fres[t].pair < FRES_RESTRICTED_MIN && fres[j].pair < FRES_RESTRICTED_MIN && can_pair(int_sequence[t],int_sequence[j]))){
+			int v_ener = V->get_energy(i,j)	+ bp_penalty;
+			int energy = wip_1+v_ener;
+			m1 = (m1 > energy)? energy : m1;
 		}
-	}
-
-	// branch 4:
-	if (fres[i].pair == j
-	|| (fres[i].pair < FRES_RESTRICTED_MIN && fres[j].pair < FRES_RESTRICTED_MIN && can_pair(int_sequence[i],int_sequence[j]))){
-
-		m4 = V->get_energy(i,j)	+ bp_penalty;
+		int energy2 = wip_1 + get_WMB(t,j) + PSM_penalty + bp_penalty;
+		m3 = (m3 > energy2)? energy2 : m3;
 //		if (debug && i ==15 && j == 20 ){
 //			printf("*************************************\n");
 //			printf("WIP(%d,%d) branch 4: V(%d,%d) = %d => m4 = %d \n",i,j,i,j,V->get_energy(i,j),m4);
@@ -987,14 +989,31 @@ void pseudo_loop::compute_WIP(int i, int j, h_str_features *fres){
 //		}
 
 	}
+	//	if (tmp < m3){
+	//		m3 = tmp;
+	//	}
+	//}
+
+	// branch 4 (removed):
+	//if (fres[i].pair == j
+	//|| (fres[i].pair < FRES_RESTRICTED_MIN && fres[j].pair < FRES_RESTRICTED_MIN && can_pair(int_sequence[i],int_sequence[j]))){
+
+		//m4 = V->get_energy(i,j)	+ bp_penalty;
+//		if (debug && i ==15 && j == 20 ){
+//			printf("*************************************\n");
+//			printf("WIP(%d,%d) branch 4: V(%d,%d) = %d => m4 = %d \n",i,j,i,j,V->get_energy(i,j),m4);
+//			printf("*************************************\n");
+//		}
+
+	//}
 
 	// branch 5:
-	m5 = get_WMB(i,j) + PSM_penalty + bp_penalty;
+	//m5 = get_WMB(i,j) + PSM_penalty + bp_penalty;
 //	if (debug && i == 6 && j == 15){
 //		printf("WIP(6,15) is calling WMB \n");
 //	}
 
-	WIP[ij] = MIN(MIN(m1,MIN(m2,m3)),MIN(m4,m5));
+	WIP[ij] = MIN(MIN(m1,MIN(m2,m3)));
 
 //	if (debug){
 //		printf("WIP(%d,%d): m1 = %d, m2 = %d, m3 = %d, m4 = %d, m5 = %d ==> min = %d \n",i,j,m1,m2,m3,m4,m5,WIP[ij]);
