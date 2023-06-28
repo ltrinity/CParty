@@ -20,6 +20,14 @@ VM_final::VM_final(int *seq, int len)
     if (WM == NULL) giveup ("Cannot allocate memory", "VM_final");
     for (i=0; i < total_length; i++) WM[i] = INF;
 
+    WM1 = new int [total_length];
+    if (WM1 == NULL) giveup ("Cannot allocate memory", "VM_final");
+    for (i=0; i < total_length; i++) WM1[i] = INF;
+
+    WMP = new int [total_length];
+    if (WMP == NULL) giveup ("Cannot allocate memory", "VM_final");
+    for (i=0; i < total_length; i++) WMP[i] = INF;
+
     VM = new int [total_length];
     if (VM == NULL) giveup ("Cannot allocate memory", "VM_final");
     for (i=0; i < total_length; i++) VM[i] = INF;
@@ -31,6 +39,8 @@ VM_final::~VM_final()
 {
 	delete [] index;
     delete [] WM;
+    delete [] WM1;
+    delete [] WMP;
     delete [] VM;
 }
 

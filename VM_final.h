@@ -49,6 +49,8 @@ protected:
     
     int *index;    // an array with indexes, such that we don't work with a 2D array, but with a 1D array of length (n*(n+1))/2
     int *WM;      // WM - 2D array (actually n*(n-1)/2 long 1D array)
+    int *WM1;      // WM1 - 2D array (actually n*(n-1)/2 long 1D array) added by Luke (rightmost branch pseudoknot free)
+	int *WMP;      // WMP - rightmost branch pseudoknotted
     int *VM;
 };
 
