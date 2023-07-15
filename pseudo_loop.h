@@ -91,6 +91,9 @@ private:
     int **border_bps;		// keeps track of border_bp and border_Bp
     int *WIP;				// the loop corresponding to WI'
     int *VPP;				// the loop corresponding to VP'
+	//Luke
+	int *VPR;				// the loop corresponding to VPR
+	int *VPL;				// the loop corresponding to VPL
     int *BE;				// the loop corresponding to BE
 
     // Hosna, April 18th, 2007

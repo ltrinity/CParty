@@ -82,6 +82,14 @@ void pseudo_loop::allocate_space()
     VPP = new int[total_length];
     if (VPP == NULL) giveup ("Cannot allocate memory", "VPP");
     for (i=0; i < total_length; i++) VPP[i] = INF;
+	
+	VPR = new int[total_length];
+    if (VPR == NULL) giveup ("Cannot allocate memory", "VPR");
+    for (i=0; i < total_length; i++) VPR[i] = INF;
+	
+	VPL = new int[total_length];
+    if (VPL == NULL) giveup ("Cannot allocate memory", "VPL");
+    for (i=0; i < total_length; i++) VPL[i] = INF;
 
     BE = new int[total_length];
     if (BE == NULL) giveup ("Cannot allocate memory", "BE");
@@ -106,6 +114,8 @@ pseudo_loop::~pseudo_loop()
     delete [] WIP;
     delete [] VP;
     delete [] VPP;
+	delete [] VPR;
+	delete [] VPL;
     delete [] WMB;
     delete [] WMBP;
 
@@ -572,7 +582,7 @@ void pseudo_loop::compute_VP(int i, int j, h_str_features *fres){
 				}
 			}
 		}
-
+		// Luke July 2023 cases 6 and 7
 		// 6) VP(i,j) = WIP(i+1,r-1) + VPP(r,j-1)
 		int r;
 		// Hosna April 9th, 2007

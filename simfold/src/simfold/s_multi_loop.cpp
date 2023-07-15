@@ -72,14 +72,14 @@ void s_multi_loop::compute_energy_WM (int j)
         int iplus1j = index[i+1]+j-i-1;
         int ijminus1 = index[i]+j-1-i;
 
-
-        tmp = V->get_energy(i,j) +
-                   AU_penalty (sequence[i], sequence[j]) +
-                   misc.multi_helix_penalty;
-        if (tmp < WM[ij])
-          {
-            WM[ij] = tmp;
-          }
+        // previous case 1, Vij should be removed
+        //tmp = V->get_energy(i,j) +
+        //           AU_penalty (sequence[i], sequence[j]) +
+        //           misc.multi_helix_penalty;
+        //if (tmp < WM[ij])
+        //  {
+        //    WM[ij] = tmp;
+        //  }
         // Luke removing i+1 j
         //tmp = V->get_energy(i+1,j) +
         //          AU_penalty (sequence[i+1], sequence[j]) +
@@ -150,7 +150,7 @@ void s_multi_loop::compute_energy_WM (int j)
         //{
         //    WM[ij] = tmp;
         //}
-        // Allow one unpaired
+        // Allow one unpaired (new case 5)
         tmp = WM[ijminus1] + misc.multi_free_base_penalty;
         // add the loss
         if (pred_pairings != NULL)
@@ -173,11 +173,13 @@ void s_multi_loop::compute_energy_WM (int j)
                    misc.multi_helix_penalty;
             //unpaired
             int unpaired_energy =  misc.multi_free_base_penalty *(k-i);
+            // new case 1
             tmp = unpaired_energy + V_energy;
             if (tmp < WM[ij])
               {
                 WM[ij] = tmp;
               }
+            // new case 3
             if (k > i && k < (j-1)){
                 int ikminus1 = index[i]+k-1-i;
                 tmp = WM[ikminus1] + V_energy;
