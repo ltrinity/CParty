@@ -252,7 +252,7 @@ double W_final::hfold(){
     }
 
 
-	//LT Julyb 2023 need to make sure new WM is integrated (not constant time anymore)
+	//LT July 2023 need to make sure new WM is integrated (not constant time anymore)
 
 	for (j=0; j < nb_nucleotides; j++)
     {

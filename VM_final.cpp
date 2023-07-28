@@ -145,30 +145,27 @@ void VM_final::WM_compute_energy(int i, int j){
     // pseudoknot free cases min energy
 	int s_wm = s_vm->get_energy_WM(i,j);
     PARAMTYPE tmp;
-    for (i=j-TURN-1; i>=0; i--)
+    //use the for loop for splits modified for CParty
+    for (int k=i; k < j; k++)
     {
-        //use the for loop for splits modified for CParty
-        for (int k=i; k < j; k++)
-        {
-            // wmb energy for split
-            // Hosna: July 5th, 2007
-	        // add a b_penalty to this case to match the previous cases
-	        int wmb_energy = wmb->get_energy(k,j)+PSM_penalty+b_penalty;
-            //unpaired
-            int unpaired_energy =  misc.multi_free_base_penalty *(k-i);
-            // new case 2
-            tmp = unpaired_energy + wmb_energy;
+        // wmb energy for split
+        // Hosna: July 5th, 2007
+        // add a b_penalty to this case to match the previous cases
+        int wmb_energy = wmb->get_energy(k,j)+PSM_penalty+b_penalty;
+        //unpaired
+        int unpaired_energy =  misc.multi_free_base_penalty *(k-i);
+        // new case 2
+        tmp = unpaired_energy + wmb_energy;
+        if (tmp < s_wm)
+            {
+            s_wm = tmp;
+            }
+        // new case 4
+        if (k > i && k < (j-1)){
+            tmp = get_energy_WM(i, k-1) + wmb_energy;
             if (tmp < s_wm)
-              {
+            {
                 s_wm = tmp;
-              }
-            // new case 4
-            if (k > i && k < (j-1)){
-                tmp = get_energy_WM(i, k-1) + wmb_energy;
-                if (tmp < s_wm)
-                {
-                    s_wm = tmp;
-                }
             }
         }
     }
