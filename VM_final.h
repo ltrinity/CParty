@@ -34,6 +34,14 @@ public:
 	void set_WM_matrix(int *m){this->WM = m;}
 	int get_energy_WM(int i, int j);
 	//int get_energy_WM_pkonly(int i, int j);
+	//Luke adding new structure class functions
+	void WM1_compute_energy(int i, int j);
+	void set_WM1_matrix(int *m){this->WM1 = m;}
+	int get_energy_WM1(int i, int j);
+	void WMP_compute_energy(int i, int j);
+	void set_WMP_matrix(int *m){this->WMP = m;}
+	int get_energy_WMP(int i, int j);
+
 	
 protected:
 

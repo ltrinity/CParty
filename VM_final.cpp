@@ -45,6 +45,8 @@ VM_final::~VM_final()
 }
 
 void VM_final::compute_energy(int i, int j, str_features *fres){
+    // Luke July 28, 2023
+    // Need to remove the ambiguity and add the correct recursions and structure classes
 	// Hosna June 26, 2007
 	// I have to figure out how to calculate the energy here
 
@@ -69,9 +71,9 @@ void VM_final::compute_energy(int i, int j, str_features *fres){
         if (fres[i+1].pair <= -1)
         {
             tmp = WM[iplus2k] + WM[kplus1jminus1] +
-                dangle_top [sequence [i]]
-                [sequence [j]]
-                [sequence [i+1]] +
+                //dangle_top [sequence [i]]
+                //[sequence [j]]
+                //[sequence [i+1]] +
                 misc.multi_free_base_penalty;
             if (tmp < min)
                 min = tmp;
@@ -142,7 +144,6 @@ int VM_final::get_energy_pk_only(int i, int j, str_features *fres){
  *  WM 2 and 4 allowing unpaired + WMB, WM + WMB, respectively
  */
 void VM_final::WM_compute_energy(int i, int j){
-    // pseudoknot free cases min energy
 	int s_wm = s_vm->get_energy_WM(i,j);
     PARAMTYPE tmp;
     //use the for loop for splits modified for CParty
@@ -154,14 +155,21 @@ void VM_final::WM_compute_energy(int i, int j){
         int wmb_energy = wmb->get_energy(k,j)+PSM_penalty+b_penalty;
         //unpaired
         int unpaired_energy =  misc.multi_free_base_penalty *(k-i);
-        // new case 2
+        // new case 2 (leftmost branch pseudoknotted)
         tmp = unpaired_energy + wmb_energy;
         if (tmp < s_wm)
             {
             s_wm = tmp;
             }
-        // new case 4
+        // new case 4 checking both WM for now (intermediate branch pseudoknotted)
         if (k > i && k < (j-1)){
+            //4a
+            tmp = s_vm->get_energy_WM(i, k-1) + wmb_energy;
+            if (tmp < s_wm)
+            {
+                s_wm = tmp;
+            }
+            //4b
             tmp = get_energy_WM(i, k-1) + wmb_energy;
             if (tmp < s_wm)
             {

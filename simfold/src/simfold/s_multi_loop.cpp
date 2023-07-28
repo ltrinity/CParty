@@ -47,6 +47,11 @@ s_multi_loop::s_multi_loop (int *seq, int length)
     WM = new PARAMTYPE [total_length];
     if (WM == NULL) giveup ("Cannot allocate memory", "s_multi_loop");
     for (i=0; i < total_length; i++) WM[i] = INF;
+
+    // Luke adding new structure class
+    WM1 = new PARAMTYPE [total_length];
+    if (WM1 == NULL) giveup ("Cannot allocate memory", "s_multi_loop");
+    for (i=0; i < total_length; i++) WM1[i] = INF;
 }
 
 
@@ -61,7 +66,7 @@ s_multi_loop::~s_multi_loop ()
 
 // ambiguity here Luke 6/28/23
 void s_multi_loop::compute_energy_WM (int j)
-// compute de MFE of a partial multi-loop closed at (i,j)
+// compute the MFE of a partial multi-loop closed at (i,j)
 {
     int i;
     PARAMTYPE tmp;
@@ -150,7 +155,7 @@ void s_multi_loop::compute_energy_WM (int j)
         //{
         //    WM[ij] = tmp;
         //}
-        // Allow one unpaired (new case 5)
+        // Allow one unpaired (new case 5 i.e. j unpaired)
         tmp = WM[ijminus1] + misc.multi_free_base_penalty;
         // add the loss
         if (pred_pairings != NULL)
@@ -173,14 +178,15 @@ void s_multi_loop::compute_energy_WM (int j)
                    misc.multi_helix_penalty;
             //unpaired
             int unpaired_energy =  misc.multi_free_base_penalty *(k-i);
-            // new case 1
+            // new case 1 (leftmost branch)
             tmp = unpaired_energy + V_energy;
             if (tmp < WM[ij])
-              {
+            {
                 WM[ij] = tmp;
-              }
-            // new case 3
-            if (k > i && k < (j-1)){
+            }
+            // new case 3 (intermediate branch)
+            if (k > i && k < (j-1))
+            {
                 int ikminus1 = index[i]+k-1-i;
                 tmp = WM[ikminus1] + V_energy;
                 if (tmp < WM[ij])
@@ -188,8 +194,6 @@ void s_multi_loop::compute_energy_WM (int j)
                     WM[ij] = tmp;
                 }
             }
-
-
         }
     }
 }
