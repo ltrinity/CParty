@@ -273,6 +273,7 @@ PARAMTYPE s_multi_loop::compute_energy (int i, int j)
     return min;
 }
 
+// Luke August 2023 modifying WM restricted (remove dangles, cases to match CParty recurrence scheme pk free here)
 void s_multi_loop::compute_energy_WM_restricted (int j, str_features *fres)
 // compute de MFE of a partial multi-loop closed at (i,j), the restricted case
 {
@@ -285,70 +286,72 @@ void s_multi_loop::compute_energy_WM_restricted (int j, str_features *fres)
         int iplus1j = index[i+1]+j-i-1;
         int ijminus1 = index[i]+j-1-i;
 
-        tmp = V->get_energy(i,j) +
-              AU_penalty (sequence[i], sequence[j]) +
-              misc.multi_helix_penalty;
+        // previous case 1 Luke removing
+        //tmp = V->get_energy(i,j) +
+        //      AU_penalty (sequence[i], sequence[j]) +
+        //      misc.multi_helix_penalty;
+        //
+        //if (tmp < WM[ij]) {
+        //    WM[ij] = tmp;
+        //}
 
-        if (tmp < WM[ij]) {
-            WM[ij] = tmp;
-        }
+        //if (fres[i].pair <= -1)
+        //{
+        //    tmp = V->get_energy(i+1,j) +
+        //            AU_penalty (sequence[i+1], sequence[j]) +
+        //            dangle_bot [sequence[j]]
+        //                        [sequence[i+1]]
+        //                        [sequence[i]] +
+        //            misc.multi_helix_penalty +
+        //            misc.multi_free_base_penalty;
+        //    if (tmp < WM[ij])
+        //    {
+        //        WM[ij] = tmp;
+        //    }
+        //}
+        //if (fres[j].pair <= -1)
+        //{
+        //    tmp = V->get_energy(i,j-1) +
+        //            AU_penalty (sequence[i], sequence[j-1]) +
+        //            dangle_top [sequence [j-1]]
+        //                        [sequence [i]]
+        //                        [sequence [j]] +
+        //            misc.multi_helix_penalty +
+        //            misc.multi_free_base_penalty;
+        //    if (tmp < WM[ij])
+        //    {
+        //        WM[ij] = tmp;
+        //    }
+        //}
 
-        if (fres[i].pair <= -1)
-        {
-            tmp = V->get_energy(i+1,j) +
-                    AU_penalty (sequence[i+1], sequence[j]) +
-                    dangle_bot [sequence[j]]
-                                [sequence[i+1]]
-                                [sequence[i]] +
-                    misc.multi_helix_penalty +
-                    misc.multi_free_base_penalty;
-            if (tmp < WM[ij])
-            {
-                WM[ij] = tmp;
-            }
-        }
-        if (fres[j].pair <= -1)
-        {
-            tmp = V->get_energy(i,j-1) +
-                    AU_penalty (sequence[i], sequence[j-1]) +
-                    dangle_top [sequence [j-1]]
-                                [sequence [i]]
-                                [sequence [j]] +
-                    misc.multi_helix_penalty +
-                    misc.multi_free_base_penalty;
-            if (tmp < WM[ij])
-            {
-                WM[ij] = tmp;
-            }
-        }
+        //if (fres[i].pair <= -1 && fres[j].pair <= -1)
+        //{
+        //    tmp = V->get_energy(i+1,j-1) +
+        //            AU_penalty (sequence[i+1], sequence[j-1]) +
+        //            dangle_bot [sequence[j-1]]
+        //                        [sequence[i+1]]
+        //                        [sequence[i]] +
+        //            dangle_top [sequence [j-1]]
+        //                        [sequence [i+1]]
+        //                        [sequence [j]] +
+        //            misc.multi_helix_penalty +
+        //            2*misc.multi_free_base_penalty;
+        //    if (tmp < WM[ij])
+        //    {
+        //            WM[ij] = tmp;
+        //    }
+        //}
 
-        if (fres[i].pair <= -1 && fres[j].pair <= -1)
-        {
-            tmp = V->get_energy(i+1,j-1) +
-                    AU_penalty (sequence[i+1], sequence[j-1]) +
-                    dangle_bot [sequence[j-1]]
-                                [sequence[i+1]]
-                                [sequence[i]] +
-                    dangle_top [sequence [j-1]]
-                                [sequence [i+1]]
-                                [sequence [j]] +
-                    misc.multi_helix_penalty +
-                    2*misc.multi_free_base_penalty;
-            if (tmp < WM[ij])
-            {
-                    WM[ij] = tmp;
-            }
-        }
+        //if (fres[i].pair <= -1)
+        //{
+        //    tmp = WM[iplus1j] + misc.multi_free_base_penalty;
+        //    if (tmp < WM[ij])
+        //    {
+        //        WM[ij] = tmp;
+        //    }
+        //}
 
-        if (fres[i].pair <= -1)
-        {
-            tmp = WM[iplus1j] + misc.multi_free_base_penalty;
-            if (tmp < WM[ij])
-            {
-                WM[ij] = tmp;
-            }
-        }
-
+        // new case 5 (j unpaired)
         if (fres[j].pair <= -1)
         {
             tmp = WM[ijminus1] + misc.multi_free_base_penalty;
@@ -358,14 +361,35 @@ void s_multi_loop::compute_energy_WM_restricted (int j, str_features *fres)
             }
         }
 
+        //use the for loop for splits modified for CParty
         for (int k=i; k < j; k++)
-        {
-            int ik = index[i]+k-i;
-            int kplus1j = index[k+1]+j-k-1;
-            tmp = WM[ik] + WM[kplus1j];
-            if (tmp < WM[ij])
-            {
-                WM[ij] = tmp;
+        {   
+            //check for restricted case
+            if (fres[k].pair <= -1 && fres[j].pair <= -1){
+                int ik = index[i]+k-i;
+                int kplus1j = index[k+1]+j-k-1;
+                // v energy for split
+                int V_energy = V->get_energy(k,j) +
+                    AU_penalty (sequence[k], sequence[j]) +
+                    misc.multi_helix_penalty;
+                //unpaired
+                int unpaired_energy =  misc.multi_free_base_penalty *(k-i);
+                // new case 1 (leftmost branch)
+                tmp = unpaired_energy + V_energy;
+                if (tmp < WM[ij])
+                {
+                    WM[ij] = tmp;
+                }
+                // new case 3 (intermediate branch)
+                if (k > i && k < (j-1))
+                {
+                    int ikminus1 = index[i]+k-1-i;
+                    tmp = WM[ikminus1] + V_energy;
+                    if (tmp < WM[ij])
+                    {
+                        WM[ij] = tmp;
+                    }
+                }
             }
         }
     }
