@@ -47,11 +47,6 @@ s_multi_loop::s_multi_loop (int *seq, int length)
     WM = new PARAMTYPE [total_length];
     if (WM == NULL) giveup ("Cannot allocate memory", "s_multi_loop");
     for (i=0; i < total_length; i++) WM[i] = INF;
-
-    // Luke adding new structure class
-    WM1 = new PARAMTYPE [total_length];
-    if (WM1 == NULL) giveup ("Cannot allocate memory", "s_multi_loop");
-    for (i=0; i < total_length; i++) WM1[i] = INF;
 }
 
 

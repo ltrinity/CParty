@@ -72,7 +72,6 @@ class s_multi_loop
 
         int *index;    // an array with indexes, such that we don't work with a 2D array, but with a 1D array of length (n*(n+1))/2
         PARAMTYPE *WM;      // WM - 2D array (actually n*(n-1)/2 long 1D array)
-        PARAMTYPE *WM1;      // WM - 2D array (actually n*(n-1)/2 long 1D array)
 
 };
 

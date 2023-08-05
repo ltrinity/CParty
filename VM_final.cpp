@@ -163,13 +163,13 @@ void VM_final::WM_compute_energy(int i, int j){
             }
         // new case 4 checking both WM for now (intermediate branch pseudoknotted)
         if (k > i && k < (j-1)){
-            //4a
+            //4a simfold wm
             tmp = s_vm->get_energy_WM(i, k-1) + wmb_energy;
             if (tmp < s_wm)
             {
                 s_wm = tmp;
             }
-            //4b
+            //4b hfold wm
             tmp = get_energy_WM(i, k-1) + wmb_energy;
             if (tmp < s_wm)
             {
@@ -191,5 +191,67 @@ int VM_final::get_energy_WM(int i, int j){
 	int ij = index[i]+j-i;
 //	printf("hfold's WM(%d,%d) = %d \n", i,j,WM[ij]);
 	return this->WM[ij];
+
+}
+
+/**
+ *  LT Aug 2023 adding 
+ *  WM1 should min V and WM1i,j-1 
+ */
+void VM_final::WM1_compute_energy(int i, int j){
+    PARAMTYPE tmp;
+    PARAMTYPE tmp2;
+    //case 2 j unpaired
+    int unpaired_energy =  misc.multi_free_base_penalty;
+    tmp = get_energy_WM1(i, j-1) + unpaired_energy;
+    //case 1
+    tmp2 = v->get_energy(i,j) +
+                   AU_penalty (sequence[i], sequence[j]) +
+                   misc.multi_helix_penalty;
+    if (tmp2 < tmp)
+    {
+        tmp = tmp2;
+    }
+
+	int ij = index[i]+j-i;
+	this->WM1[ij] = tmp;
+}
+
+int VM_final::get_energy_WM1(int i, int j){
+	if (i >= j || wmb->is_weakly_closed(i,j) != 1 ){
+		return INF;
+	}
+	int ij = index[i]+j-i;
+	return this->WM1[ij];
+
+}
+
+/**
+ *  LT Aug 2023 adding 
+ *  WMP should min P and WMPi,j-1 
+ */
+void VM_final::WMP_compute_energy(int i, int j){
+    PARAMTYPE tmp;
+    //case 2 j unpaired
+    int unpaired_energy =  misc.multi_free_base_penalty;
+    tmp = get_energy_WMP(i, j-1) + unpaired_energy;
+    //case 1
+    int wmb_energy = this->wmb->get_energy(i,j) +
+                   +PSM_penalty+b_penalty;
+    if (wmb_energy < tmp)
+    {
+        tmp = wmb_energy;
+    }
+
+	int ij = index[i]+j-i;
+	this->WMP[ij] = tmp;
+}
+
+int VM_final::get_energy_WMP(int i, int j){
+	if (i >= j || wmb->is_weakly_closed(i,j) != 1 ){
+		return INF;
+	}
+	int ij = index[i]+j-i;
+	return this->WMP[ij];
 
 }
