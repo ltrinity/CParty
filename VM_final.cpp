@@ -56,59 +56,85 @@ void VM_final::compute_energy(int i, int j, str_features *fres){
     int kplus1jminus1;
     int iplus2k;
     int kplus1jminus2;
-    for (k = i+2; k <= j-3; k++)
+    // Luke adding new case 3 WMP (base case)
+    k=i+1;
+    int kjminus1 = index[k] + j-1-k;
+    tmp = WMP[kjminus1] + misc.multi_helix_penalty + misc.multi_offset + AU_penalty (sequence[i], sequence[j]);
+
+    //modifying for loop exit conditions sans dangles -> prev it was j-3
+    for (k = i+2; k <= j-1; k++)
     {
         iplus1k = index[i+1] + k -i-1;
         kplus1jminus1 = index[k+1] + j-1 -k-1;
         iplus2k = index[i+2] + k -i-2;
         kplus1jminus2 = index[k+1] + j-2 -k-1;
-
-
-        tmp = WM[iplus1k] + WM[kplus1jminus1];
-        if (tmp < min)
-            min = tmp;
-
-        if (fres[i+1].pair <= -1)
-        {
-            tmp = WM[iplus2k] + WM[kplus1jminus1] +
-                //dangle_top [sequence [i]]
-                //[sequence [j]]
-                //[sequence [i+1]] +
-                misc.multi_free_base_penalty;
-            if (tmp < min)
-                min = tmp;
-        }
-        if (fres[j-1].pair <= -1)
-        {
-            tmp = WM[iplus1k] + WM[kplus1jminus2] +
-                dangle_bot [sequence[i]]
-                [sequence[j]]
-                [sequence[j-1]] +
-                misc.multi_free_base_penalty;
-            if (tmp < min)
-                min = tmp;
-        }
-        if (fres[i+1].pair <= -1 && fres[j-1].pair <= -1)
-        {
-            tmp = WM[iplus2k] + WM[kplus1jminus2] +
-                dangle_top [sequence [i]]
-                [sequence [j]]
-                [sequence [i+1]] +
-                dangle_bot [sequence[i]]
-                [sequence[j]]
-                [sequence[j-1]] +
-                2 * misc.multi_free_base_penalty;
-            if (tmp < min)
+        // Luke adding new case 1 WM + WM1
+        tmp = WM[iplus1k] + WM1[kplus1jminus1] + misc.multi_helix_penalty + misc.multi_offset + AU_penalty (sequence[i], sequence[j]);;
+        if (tmp < min){
             min = tmp;
         }
+        // Luke adding new case 2 WM + WMP
+        tmp = WM[iplus1k] + WMP[kplus1jminus1] + misc.multi_helix_penalty + misc.multi_offset + AU_penalty (sequence[i], sequence[j]);
+        if (tmp < min){
+            min = tmp;
+        }
+        //Luke adding new case 3 WMP 
+        //exit early by one iter wrt cases 1 & 2
+        if(k!=j-1){
+            int kjminus1 = index[k] + j-1-k;
+            tmp = WMP[kjminus1] + ((k-i-1)*misc.multi_free_base_penalty) + misc.multi_helix_penalty + misc.multi_offset + AU_penalty (sequence[i], sequence[j]);
+        }
+        if (tmp < min){
+            min = tmp;
+        }
+        //prev case 1: WM i+1,k + WM k+1,j-1
+        //tmp = WM[iplus1k] + WM[kplus1jminus1];
+
+        //prev case extended WM i+2,k + WM k+1,j-1 i.e. i+1 unpaired
+        //if (fres[i+1].pair <= -1)
+        //{
+        //    tmp = WM[iplus2k] + WM[kplus1jminus1] +
+        //        //dangle_top [sequence [i]]
+        //        //[sequence [j]]
+        //        //[sequence [i+1]] +
+        //        misc.multi_free_base_penalty;
+        //    if (tmp < min)
+        //        min = tmp;
+        //}
+        //prev case extended WM i+1,k + WM k+1,j-2 i.e. j-1 unpaired
+        //if (fres[j-1].pair <= -1)
+        //{
+        //    tmp = WM[iplus1k] + WM[kplus1jminus2] +
+        //        dangle_bot [sequence[i]]
+        //        [sequence[j]]
+        //        [sequence[j-1]] +
+        //        misc.multi_free_base_penalty;
+        //    if (tmp < min)
+        //        min = tmp;
+        //}
+        //prev case extended WM i+2,k + WM k+1,j-2 i.e. i+1 and j-1 unpaired
+        //if (fres[i+1].pair <= -1 && fres[j-1].pair <= -1)
+        //{
+        //    tmp = WM[iplus2k] + WM[kplus1jminus2] +
+        //        dangle_top [sequence [i]]
+        //        [sequence [j]]
+        //        [sequence [i+1]] +
+        //        dangle_bot [sequence[i]]
+        //        [sequence[j]]
+        //        [sequence[j-1]] +
+        //        2 * misc.multi_free_base_penalty;
+        //    if (tmp < min)
+        //    min = tmp;
+        //}
     }
 
-    min += misc.multi_helix_penalty + misc.multi_offset +
-           AU_penalty (sequence[i], sequence[j]);
-
-	int wmb_energy = this->wmb->get_energy(i,j) + a_penalty + PSM_penalty;
+    // previous case 3
+	//min += misc.multi_helix_penalty + misc.multi_offset +
+    //       AU_penalty (sequence[i], sequence[j]);
+    //
+	//int wmb_energy = this->wmb->get_energy(i,j) + a_penalty + PSM_penalty;
 	int ij = index[i]+j-i;
-	VM[ij] = MIN(min,wmb_energy);
+	VM[ij] = MIN(min,INF);
 	//printf("VM[%d,%d] = %d \n",i,j,VM[ij]);
 
 }
@@ -199,18 +225,18 @@ int VM_final::get_energy_WM(int i, int j){
  *  WM1 should min V and WM1i,j-1 
  */
 void VM_final::WM1_compute_energy(int i, int j){
-    PARAMTYPE tmp;
-    PARAMTYPE tmp2;
+    PARAMTYPE tmp = INF;
+    PARAMTYPE v_energy;
     //case 2 j unpaired
     int unpaired_energy =  misc.multi_free_base_penalty;
     tmp = get_energy_WM1(i, j-1) + unpaired_energy;
     //case 1
-    tmp2 = v->get_energy(i,j) +
+    v_energy = v->get_energy(i,j) +
                    AU_penalty (sequence[i], sequence[j]) +
                    misc.multi_helix_penalty;
-    if (tmp2 < tmp)
+    if (v_energy < tmp)
     {
-        tmp = tmp2;
+        tmp = v_energy;
     }
 
 	int ij = index[i]+j-i;
@@ -231,7 +257,7 @@ int VM_final::get_energy_WM1(int i, int j){
  *  WMP should min P and WMPi,j-1 
  */
 void VM_final::WMP_compute_energy(int i, int j){
-    PARAMTYPE tmp;
+    PARAMTYPE tmp = INF;
     //case 2 j unpaired
     int unpaired_energy =  misc.multi_free_base_penalty;
     tmp = get_energy_WMP(i, j-1) + unpaired_energy;
