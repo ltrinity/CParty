@@ -442,7 +442,7 @@ void pseudo_loop::compute_WI_pkonly(int i, int j , h_str_features *fres){
 	WI[ij] = min;
 }
 
-
+// Luke modifying for CParty, cases 1-5 unchanged, new cases 6-9
 void pseudo_loop::compute_VP(int i, int j, h_str_features *fres){
 	int ij = index[i]+j-i;
 	if (VP[ij] != INF){//has been calculated before
@@ -468,7 +468,7 @@ void pseudo_loop::compute_VP(int i, int j, h_str_features *fres){
 		return;
 	}
 	else{
-		int m1 = INF, m2 = INF, m3 = INF, m4= INF, m5 = INF, m6 = INF, m7 = INF, m8 = INF; //different branches
+		int m1 = INF, m2 = INF, m3 = INF, m4= INF, m5 = INF, m6 = INF, m7 = INF, m8= INF, m9 = INF; //different branches
 		//branchs:
 		// 1) inArc(i) and NOT_inArc(j)
 		// WI(i+1)(B'(i,j)-1)+WI(B(i,j)+1)(j-1)
@@ -591,8 +591,8 @@ void pseudo_loop::compute_VP(int i, int j, h_str_features *fres){
 				}
 			}
 		}
-		// Luke Aug 2023 cases 6 and 7 -> to be changed along with VPR and VPL
-		// 6) VP(i,j) = WIP(i+1,r-1) + VPP(r,j-1)
+		// Luke Aug 2023 case 6
+		// 6) VP(i,j) = WIP(i+1,r-1) + VP(r,j-1)
 		int r;
 		// Hosna April 9th, 2007
 		// checking the borders as they may be negative numbers
@@ -609,7 +609,8 @@ void pseudo_loop::compute_VP(int i, int j, h_str_features *fres){
 				// Hosna: July 5th, 2007
 				// After meeting with Anne and Cristina --> ap should have 2* bp to consider the biggest and the one that crosses
 				// in a multiloop that spans a band
-				int tmp = get_WIP(i+1,r-1) + get_VPP(r,j-1) + ap_penalty + 2*bp_penalty;
+				//Luke: change here to get value from VP instead of VPP
+				int tmp = get_WIP(i+1,r-1) + get_VP(r,j-1) + ap_penalty + 2*bp_penalty;
 //				if (debug)
 //				{
 //					printf("VP(%d,%d) branch 6: WIP(%d,%d) = %d, VPP(%d,%d) = %d ==> tmp = %d and m6 = %d \n",i,j,i+1,r-1,get_WIP(i+1,r-1),r,j-1,get_VPP(r,j-1),tmp,m6);
@@ -620,8 +621,8 @@ void pseudo_loop::compute_VP(int i, int j, h_str_features *fres){
 			}
 		}
 
-
-		// 7) VP(i,j) = VPP(i+1,r) + WIP(r+1,j-1)
+		// Luke Aug 2023 Case 7
+		// 7) VP(i,j) = VP(i+1,r) + WIP(r+1,j-1)
 		// Hosna April 9th, 2007
 		// checking the borders as they may be negative numbers
 		int max_i_bp = i;
@@ -637,7 +638,8 @@ void pseudo_loop::compute_VP(int i, int j, h_str_features *fres){
 				// Hosna: July 5th, 2007
 				// After meeting with Anne and Cristina --> ap should have 2* bp to consider the biggest and the one that crosses
 				// in a multiloop that spans a band
-				int tmp = get_VPP(i+1,r) + get_WIP(r+1,j-1)+ ap_penalty + 2* bp_penalty;
+				//Luke: change here from VPP to VP
+				int tmp = get_VP(i+1,r) + get_WIP(r+1,j-1)+ ap_penalty + 2* bp_penalty;
 //				if (debug)
 //				{
 //					printf("VP(%d,%d) branch 7: VPP(%d,%d) = %d, WIP(%d,%d) = %d ==> tmp = %d and m7 = %d \n",i,j,i+1,r,get_VPP(i+1,r),r+1,j-1,get_WIP(r+1,j-1),tmp,m7);
@@ -647,6 +649,53 @@ void pseudo_loop::compute_VP(int i, int j, h_str_features *fres){
 				}
 			}
 		}
+
+		// Luke Aug 2023 case 8
+		// 8) VP(i,j) = WIP(i+1,r-1) + VPR(r,j-1)
+		for (r = i+1; r < min_Bp_j ; r++){
+            // Ian Wark July 19 2017
+            // fres[i].pair >= 0 changed to fres[i].pair >= FRES_RESTRICTED_MIN (which equals -1 at time of writing)
+            // otherwise it will create pairs in spots where the restricted structure says there should be no pairs
+
+			if (fres[r].pair < FRES_RESTRICTED_MIN){
+				// Hosna: July 5th, 2007
+				// After meeting with Anne and Cristina --> ap should have 2* bp to consider the biggest and the one that crosses
+				// in a multiloop that spans a band
+				//Luke: change here to get value from VPR instead of VP
+				int tmp = get_WIP(i+1,r-1) + get_VPR(r,j-1) + ap_penalty + 2*bp_penalty;
+//				if (debug)
+//				{
+//					printf("VP(%d,%d) branch 6: WIP(%d,%d) = %d, VPP(%d,%d) = %d ==> tmp = %d and m6 = %d \n",i,j,i+1,r-1,get_WIP(i+1,r-1),r,j-1,get_VPP(r,j-1),tmp,m6);
+//				}
+				if (tmp < m8){
+					m8 = tmp;
+				}
+			}
+		}
+
+		// Luke Aug 2023 Case 9
+		// 7) VP(i,j) = VPL(i+1,r) + WIP(r+1,j-1)
+		for (r = max_i_bp+1; r < j ; r++){
+            // Ian Wark July 19 2017
+            // fres[i].pair >= 0 changed to fres[i].pair >= FRES_RESTRICTED_MIN (which equals -1 at time of writing)
+            // otherwise it will create pairs in spots where the restricted structure says there should be no pairs
+
+			if (fres[r].pair < FRES_RESTRICTED_MIN){
+				// Hosna: July 5th, 2007
+				// After meeting with Anne and Cristina --> ap should have 2* bp to consider the biggest and the one that crosses
+				// in a multiloop that spans a band
+				//Luke: change here from VP to VPL
+				int tmp = get_VPL(i+1,r) + get_WIP(r+1,j-1)+ ap_penalty + 2* bp_penalty;
+//				if (debug)
+//				{
+//					printf("VP(%d,%d) branch 7: VPP(%d,%d) = %d, WIP(%d,%d) = %d ==> tmp = %d and m7 = %d \n",i,j,i+1,r,get_VPP(i+1,r),r+1,j-1,get_WIP(r+1,j-1),tmp,m7);
+//				}
+				if (tmp < m9){
+					m9 = tmp;
+				}
+			}
+		}
+
 
 
 // Hosna: June 29, 2007
@@ -700,6 +749,8 @@ void pseudo_loop::compute_VP(int i, int j, h_str_features *fres){
 		int min = MIN(MIN(m1,m8),MIN(m2,m3));
 		min = (min > MIN(m4,m5))? MIN(m4,m5) : min;
 		min = (min > MIN(m6,m7))? MIN(m6,m7) : min;
+		// Luke adding for additional case 9
+		min = (min > m9)? m9 : min;
 //		if (debug ){
 //			printf("VP[%d,%d]: m1 = %d, m2 = %d, m3 = %d, m4 = %d, m5 = %d, m6 = %d, m7 = %d and min = %d \n",i,j,m1,m2,m3,m4,m5,m6,m7,min);
 //		}
