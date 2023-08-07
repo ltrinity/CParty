@@ -74,6 +74,10 @@ void pseudo_loop::allocate_space()
 	if (WMBP == NULL) giveup("Cannot allocate memory","WMBP");
 	for (i=0; i < total_length; i++) WMBP[i] = INF;
 
+	PGPW = new int[total_length];
+	if (PGPW == NULL) giveup("Cannot allocate memory","PGPW");
+	for (i=0; i < total_length; i++) PGPW[i] = INF;
+
     WIP = new int[total_length];
     if (WIP == NULL) giveup ("Cannot allocate memory", "WIP");
     for (i=0; i < total_length; i++) WIP[i] = INF;
@@ -118,6 +122,7 @@ pseudo_loop::~pseudo_loop()
 	delete [] VPL;
     delete [] WMB;
     delete [] WMBP;
+	delete [] PGPW;
 
     delete [] BE;
     delete [] weakly_closed;
@@ -226,9 +231,9 @@ void pseudo_loop::compute_energies(int i, int j)
 	//	if(debug){
 	//		printf("calculating VP(%d,%d) \n",i,j);
 	//	}
-	compute_VP(i,j,fres); // Hosna, March 14, 2012, changed the positionof computing VP from after BE to befor WMBP
+	compute_VP(i,j,fres); // Hosna, March 14, 2012, changed the position of computing VP from after BE to befor WMBP
 
-
+	compute_PGPW(i,j,fres);
 //	if(debug){
 //		printf("calculating WMBP(%d,%d) \n",i,j);
 //	}::compute_WI
@@ -759,6 +764,73 @@ void pseudo_loop::compute_VP(int i, int j, h_str_features *fres){
 	}
 }
 
+// Luke: adding PG'W
+void pseudo_loop::compute_PGPW(int i, int j, h_str_features *fres){
+	int ij = index[i]+j-i;
+	if (PGPW[ij] != INF){
+		return;
+	}
+	//base case
+	if (i == j){
+		PGPW[ij] = INF;
+		return;
+	}
+	// Hosna: July 6th, 2007
+	// added impossible cases
+
+	// Ian Wark July 19 2017
+	// fres[i].pair >= 0 changed to fres[i].pair >= FRES_RESTRICTED_MIN (which equals -1 at time of writing)
+	// otherwise it will create pairs in spots where the restricted structure says there should be no pairs
+	if ((fres[i].pair >= FRES_RESTRICTED_MIN && fres[i].pair > j)
+	||  (fres[j].pair >= FRES_RESTRICTED_MIN && fres[j].pair < i)
+	||  (fres[i].pair >= FRES_RESTRICTED_MIN && fres[i].pair < i )
+	||  (fres[j].pair >= FRES_RESTRICTED_MIN && j < fres[j].pair)){
+		WMB[ij] = INF;
+		return;
+	}
+	else{
+		int m1 = INF;
+		// Luke: new case 1 for PGPW
+		// 5) WMB(i,j) = min_{i<l<j}{WMB(i,l)+WI(l+1,j)} if bp(j)<j
+		// Hosna: Feb 5, 2007
+		if(fres[j].pair < j){
+			int l,l_min =-1;
+			for(l = i+1; l<j; l++){
+				// Hosna: March 14th, 2007
+				// I think l cannot be paired
+
+				// Hosna: April 18th, 2007
+				// l and j should be in the same arc
+				if (fres[l].pair < 0 && fres[l].arc > -1 && fres[j].arc > -1 && fres[j].arc == fres[l].arc){
+					int temp = get_WMBP(i,l) + get_WI(l+1,j);
+					if (temp < m1){
+						m1 = temp;
+						l_min = l;
+					}
+
+//					if (debug_WMB){
+//						printf("***************\n");
+//						printf("WMB(%d,%d) inside branch 5: l = %d, WMB = %d, WI = %d \n",i,j,l,get_WMB(i,l),get_WI(l+1,j));
+//						printf("***************\n");
+//					}
+				}
+			}
+//			if (debug ){
+//				printf("WMB(%d,%d) branch 5:  l = %d So m5 = %d\n",i,j,l_min, m5);
+//			}
+		}
+
+		// get the min for WMB
+		PGPW[ij] = m1;
+//		if (debug && i == 1 && j == 87){
+//			printf("m1 = %d, m3 = %d, m4 = %d and m5 = %d ==> WMBP[%d,%d] = %d\n",m1,m3,m4,m5,i,j,WMBP[ij]);
+//		}
+	}
+
+
+}
+
+// Luke: modifying to follow CParty scheme
 void pseudo_loop::compute_WMBP(int i, int j, h_str_features *fres){
 	int ij = index[i]+j-i;
 	if (WMBP[ij] != INF){
@@ -850,8 +922,15 @@ void pseudo_loop::compute_WMBP(int i, int j, h_str_features *fres){
 						// as long as we have i <= arc(l)< j we are fine
 						if (i <= fres[l].arc && fres[l].arc < j && l+TURN <=j){
 							int sum = get_BE(fres[get_B(l,j)].pair,get_B(l,j),fres[get_Bp(l,j)].pair,get_Bp(l,j))+ get_WMBP(i,l-1)+ get_VP(l,j);
+							//Luke adding for PGPW case
+							int sum2 = get_BE(fres[get_B(l,j)].pair,get_B(l,j),fres[get_Bp(l,j)].pair,get_Bp(l,j))+ get_PGPW(i,l-1)+ get_VP(l,j);
 							if (temp > sum){
 								temp = sum;
+								l_min = l;
+							}
+							// Luke adding, to be removed later
+							if (temp > sum2){
+								temp = sum2;
 								l_min = l;
 							}
 	//						if (debug && fres[get_B(l,j)].pair == 6 && fres[get_Bp(l,j)].pair == 11){
@@ -880,34 +959,35 @@ void pseudo_loop::compute_WMBP(int i, int j, h_str_features *fres){
 //		if (debug){
 //			printf("WMBP(%d,%d) branch 4:  VP = %d So m4 = %d\n",i,j,get_VP(i,j), m4);
 //		}
+		// Luke: removing, now in PGPW
 		// 5) WMB(i,j) = min_{i<l<j}{WMB(i,l)+WI(l+1,j)} if bp(j)<j
 		// Hosna: Feb 5, 2007
-		if(fres[j].pair < j){
-			int l,l_min =-1;
-			for(l = i+1; l<j; l++){
-				// Hosna: March 14th, 2007
-				// I think l cannot be paired
+		// if(fres[j].pair < j){
+		// 	int l,l_min =-1;
+		// 	for(l = i+1; l<j; l++){
+		// 		// Hosna: March 14th, 2007
+		// 		// I think l cannot be paired
 
-				// Hosna: April 18th, 2007
-				// l and j should be in the same arc
-				if (fres[l].pair < 0 && fres[l].arc > -1 && fres[j].arc > -1 && fres[j].arc == fres[l].arc){
-					int temp = get_WMBP(i,l) + get_WI(l+1,j);
-					if (temp < m5){
-						m5 = temp;
-						l_min = l;
-					}
+		// 		// Hosna: April 18th, 2007
+		// 		// l and j should be in the same arc
+		// 		if (fres[l].pair < 0 && fres[l].arc > -1 && fres[j].arc > -1 && fres[j].arc == fres[l].arc){
+		// 			int temp = get_WMBP(i,l) + get_WI(l+1,j);
+		// 			if (temp < m5){
+		// 				m5 = temp;
+		// 				l_min = l;
+		// 			}
 
 //					if (debug_WMB){
 //						printf("***************\n");
 //						printf("WMB(%d,%d) inside branch 5: l = %d, WMB = %d, WI = %d \n",i,j,l,get_WMB(i,l),get_WI(l+1,j));
 //						printf("***************\n");
 //					}
-				}
-			}
+			// 	}
+			// }
 //			if (debug ){
 //				printf("WMB(%d,%d) branch 5:  l = %d So m5 = %d\n",i,j,l_min, m5);
 //			}
-		}
+		// }
 
 		// get the min for WMB
 		WMBP[ij] = MIN(MIN(m1,m3),MIN(m4,m5));
@@ -1587,6 +1667,25 @@ int pseudo_loop::get_WMB(int i, int j){
 	 */
 	//printf("get_WMB(%d,%d), after computation its value = %d!\n",i,j, WMB[ij]);
 	return WMB[ij];
+}
+
+// Luke Aug 2023
+int pseudo_loop::get_PGPW(int i, int j){
+	// i and j should be at least 3 bases apart
+	if (j-i< TURN || (fres[i].pair >= 0 && fres[i].pair > j) || (fres[j].pair >= 0 && fres[j].pair < i) || (fres[i].pair >= 0 && fres[i].pair < i ) || (fres[j].pair >= 0 && j < fres[j].pair)){
+		return INF;
+	}
+	int ij = index[i]+j-i;
+	// Hosna, May 1st , 2012
+	// these parts are not needed any more
+	/*
+	if (needs_computation == 1 && WMBP[ij] == INF){
+		//printf("get_WMBP(%d,%d), and we need to compute WMBP (i.e. it's INF)!\n",i,j);
+		compute_WMBP(i,j,fres);
+	}
+	 */
+	//printf("get_WMBP(%d,%d), after computation its value = %d!\n",i,j, WMBP[ij]);
+	return PGPW[ij];
 }
 
 // Hosna: April 18th, 2007

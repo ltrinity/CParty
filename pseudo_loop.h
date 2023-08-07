@@ -49,6 +49,8 @@ public:
 
 	// based on discussion with Anne, we changed WMB to case 2 and WMBP(containing the rest of the recurrences)
 	int get_WMBP(int i, int j);
+	// Luke adding for PGPW
+	int get_PGPW(int i, int j);
 
     int is_weakly_closed(int i, int j);
     int is_empty_region(int i, int j);
@@ -103,6 +105,8 @@ private:
     // Hosna, April 18th, 2007
 	// based on discussion with Anne, we changed WMB to case 2 and WMBP(containing the rest of the recurrences)
 	int *WMBP; 				// the main loop to calculate WMB
+	// Luke adding
+	int *PGPW;
 
     // function to allocate space for the arrays
     void allocate_space();
@@ -123,6 +127,10 @@ private:
 	// based on discussion with Anne, we changed WMB to case 2 and WMBP(containing the rest of the recurrences)
 	void compute_WMBP(int i, int j, h_str_features *fres);
 	// this is the helper recurrence to fill the WMB array
+
+	// Luke adding
+	void compute_PGPW(int i, int j, h_str_features *fres);
+	// this is the helper HELPER recurrence to fill the WMB array
 
 	void compute_BE(int i, int j, int ip, int jp, h_str_features *fres);
 	// Hosna: this function is supposed to fill the BE array
