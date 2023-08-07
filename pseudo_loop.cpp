@@ -78,11 +78,11 @@ void pseudo_loop::allocate_space()
     if (WIP == NULL) giveup ("Cannot allocate memory", "WIP");
     for (i=0; i < total_length; i++) WIP[i] = INF;
 
-
     VPP = new int[total_length];
     if (VPP == NULL) giveup ("Cannot allocate memory", "VPP");
     for (i=0; i < total_length; i++) VPP[i] = INF;
 	
+	// Luke added Aug 2023
 	VPR = new int[total_length];
     if (VPR == NULL) giveup ("Cannot allocate memory", "VPR");
     for (i=0; i < total_length; i++) VPR[i] = INF;
@@ -249,6 +249,15 @@ void pseudo_loop::compute_energies(int i, int j)
 //		printf("calculating VPP(%d,%d) \n",i,j);
 //	}
     compute_VPP(i,j,fres);
+//  Luke adding Aug 2023  
+//	if(debug){
+//		printf("calculating VPR(%d,%d) \n",i,j);
+//	}
+    compute_VPR(i,j,fres);
+//    if(debug){
+//		printf("calculating VPL(%d,%d) \n",i,j);
+//	}
+    compute_VPL(i,j,fres);
 //	if(debug){
 //		printf("calculating BE(%d,%d) \n",i,j);
 //	}
@@ -582,7 +591,7 @@ void pseudo_loop::compute_VP(int i, int j, h_str_features *fres){
 				}
 			}
 		}
-		// Luke July 2023 cases 6 and 7
+		// Luke Aug 2023 cases 6 and 7 -> to be changed along with VPR and VPL
 		// 6) VP(i,j) = WIP(i+1,r-1) + VPP(r,j-1)
 		int r;
 		// Hosna April 9th, 2007
@@ -1203,6 +1212,120 @@ void pseudo_loop::compute_VPP(int i, int j, h_str_features *fres){
 //	}
 }
 
+// Luke adding VPR, case 1 VP + WI' and case 2 VP (unpaired bases 3')
+void pseudo_loop::compute_VPR(int i, int j, h_str_features *fres){
+	int ij = index[i]+j-i;
+	if (VPR[ij] != INF){ // computed before
+//		if (debug){
+//			printf("VPR(%d,%d) was calculated before ==> VPR(%d,%d)= %d \n",i,j,i,j,get_VPR(i,j));
+//		}
+		return;
+	}
+	if (i == j  || this->is_weakly_closed(i,j)){
+		VPR[ij] = INF;
+//		if (debug){
+//			printf("VPR(%d,%d): i == j ==> VPR = %d \n",i,j,VPR[ij]);
+//		}
+		return;
+	}
+	int m1 = INF, m2 = INF;
+
+	//case 1:
+	int r=-1 ;
+	// Hosna April 9th, 2007
+	// checking the borders as they may be negative numbers
+	int max_i_bp = i;
+	if (get_bp(i,j) > 0 && get_bp(i,j) < nb_nucleotides && get_bp(i,j) > max_i_bp){
+		max_i_bp = get_bp(i,j);
+	}
+	for (r = max_i_bp+1; r < j; r++ ){
+        // Ian Wark July 19 2017
+        // fres[i].pair < 0 changed to fres[i].pair < FRES_RESTRICTED_MIN (which equals -1 at time of writing)
+        // otherwise it will create pairs in spots where the restricted structure says there should be no pairs
+		if (fres[r].pair < FRES_RESTRICTED_MIN){
+			int tmp = get_VP(i,r) + get_WIP(r+1,j);
+//			if (debug){
+//				printf("VPP(%d,%d) branch 1: VP(%d,%d) = %d, WIP(%d,%d)= %d ==> tmp = %d  and m1 = %d\n",i,j,i,r,get_VP(i,r),r+1,j,get_WIP(r+1,j),tmp, m1);
+//			}
+			if (tmp < m1){
+				m1 = tmp;
+			}
+		}
+	}
+	// case 2:
+	for (r = max_i_bp+1; r < j; r++ ){
+        // Ian Wark July 19 2017
+        // fres[i].pair < 0 changed to fres[i].pair < FRES_RESTRICTED_MIN (which equals -1 at time of writing)
+        // otherwise it will create pairs in spots where the restricted structure says there should be no pairs
+		if (fres[r].pair < FRES_RESTRICTED_MIN && this->is_empty_region(r+1,j)){
+			int tmp = get_VP(i,r) + (cp_penalty *(j-r)); // check the (j-r) part
+//			if (debug){
+//				printf("VPR(%d,%d) branch 2: VP(%d,%d) = %d, %d *(%d-%d)= %d ==> tmp = %d  and m3 = %d\n",i,j,i,r,get_VP(i,r),cp_penalty,j,r,cp_penalty *(j-r),tmp, m3);
+//			}
+			if (tmp < m2){
+				m2 = tmp;
+			}
+		}
+	}
+
+	int min_branches = m1;
+	if (m2 < min_branches){
+		min_branches = m2;
+	}
+	VPR[ij] = min_branches; //MIN(MIN(m1,m2));
+//	if (debug){
+//		printf("VPR(%d,%d): m1 = %d, m2 = %d, m3 = %d and m4 = %d ==> min = %d \n", i,j,m1,m2,m3,m4,VPP[ij]);
+//	}
+	return;
+}
+
+// Luke adding VPL, case 1 VP (unpaired bases 5')
+void pseudo_loop::compute_VPL(int i, int j, h_str_features *fres){
+		int ij = index[i]+j-i;
+	if (VPL[ij] != INF){ // computed before
+//		if (debug){
+//			printf("VPL(%d,%d) was calculated before ==> VPP(%d,%d)= %d \n",i,j,i,j,get_VPP(i,j));
+//		}
+		return;
+	}
+	if (i == j  || this->is_weakly_closed(i,j)){
+		VPL[ij] = INF;
+//		if (debug){
+//			printf("VPP(%d,%d): i == j ==> VPP = %d \n",i,j,VPP[ij]);
+//		}
+		return;
+	}
+	int m1 = INF;
+
+	//branch 1:
+	int r=-1 ;
+	// Hosna April 9th, 2007
+	// checking the borders as they may be negative numbers
+	int min_Bp_j = j;
+	if (get_Bp(i,j) > 0 && get_Bp(i,j) < nb_nucleotides && get_bp(i,j) < min_Bp_j){
+		min_Bp_j = get_Bp(i,j);
+	}
+	for (r = i+1; r < min_Bp_j; r++){
+        // Ian Wark July 19 2017
+        // fres[i].pair < 0 changed to fres[i].pair < FRES_RESTRICTED_MIN (which equals -1 at time of writing)
+        // otherwise it will create pairs in spots where the restricted structure says there should be no pairs
+		if (fres[r].pair < FRES_RESTRICTED_MIN && this->is_empty_region(i,r-1)){
+			int tmp = (cp_penalty * (r-i)) + get_VP(r,j);
+//			if (debug){
+//				printf("VPP(%d,%d) branch 4: %d *(%d-%d) = %d, VP(%d,%d)= %d ==> tmp = %d  and m4 = %d\n",i,j,cp_penalty,r,i,cp_penalty * (r-i),r,j,get_VP(r,j),tmp, m4);
+//			}
+			if (tmp < m1){
+				m1 = tmp;
+			}
+		}
+	}
+	
+	VPL[ij] = m1; //MIN(MIN(m1,m2),MIN(m3,m4));
+//	if (debug){
+//		printf("VPL(%d,%d): m1 = %d, m2 = %d, m3 = %d and m4 = %d ==> min = %d \n", i,j,m1,m2,m3,m4,VPP[ij]);
+//	}
+	return;
+}
 void pseudo_loop::compute_BE(int i, int j, int ip, int jp, h_str_features * fres){
 
 //	if (debug && i == 6 && ip == 11){
@@ -1529,6 +1652,48 @@ int pseudo_loop::get_VPP(int i, int j){
 	 */
 	//printf("get_VPP(%d,%d), after computation its value = %d!\n",i,j, VPP[ij]);
 	return VPP[ij];
+
+}
+
+int pseudo_loop::get_VPR(int i, int j){
+	// Luke Aug 2023
+	// i and j should be at least 3 bases apart
+	if (j-i < TURN || i >= j || this->is_weakly_closed(i,j) == 1){
+		return INF;
+	}
+	int ij = index[i]+j-i;
+	// Hosna, May 1st , 2012
+	// these parts are not needed any more
+	/*
+	if (needs_computation == 1 && VPR[ij] == INF)
+	{
+		//printf("get_VPR(%d,%d), and we need to compute VPR (i.e. it's INF)!\n",i,j);
+		compute_VPR(i,j,fres);
+	}
+	 */
+	//printf("get_VPR(%d,%d), after computation its value = %d!\n",i,j, VPR[ij]);
+	return VPR[ij];
+
+}
+
+int pseudo_loop::get_VPL(int i, int j){
+	// Luke Aug 2023
+	// i and j should be at least 3 bases apart
+	if (j-i < TURN || i >= j || this->is_weakly_closed(i,j) == 1){
+		return INF;
+	}
+	int ij = index[i]+j-i;
+	// Hosna, May 1st , 2012
+	// these parts are not needed any more
+	/*
+	if (needs_computation == 1 && VPL[ij] == INF)
+	{
+		//printf("get_VPL(%d,%d), and we need to compute VPL (i.e. it's INF)!\n",i,j);
+		compute_VPL(i,j,fres);
+	}
+	 */
+	//printf("get_VPL(%d,%d), after computation its value = %d!\n",i,j, VPL[ij]);
+	return VPL[ij];
 
 }
 

@@ -43,6 +43,10 @@ public:
 
 	int get_VPP(int i, int j);
 
+	//Luke Aug 2023
+	int get_VPR(int i, int j);
+	int get_VPL(int i, int j);
+
 	// based on discussion with Anne, we changed WMB to case 2 and WMBP(containing the rest of the recurrences)
 	int get_WMBP(int i, int j);
 
@@ -91,7 +95,7 @@ private:
     int **border_bps;		// keeps track of border_bp and border_Bp
     int *WIP;				// the loop corresponding to WI'
     int *VPP;				// the loop corresponding to VP'
-	//Luke
+	//Luke Aug 2023
 	int *VPR;				// the loop corresponding to VPR
 	int *VPL;				// the loop corresponding to VPL
     int *BE;				// the loop corresponding to BE
@@ -132,6 +136,12 @@ private:
 
 	void compute_VPP(int i, int j, h_str_features *fres);
 	// Hosna: this function is supposed to fill the VPP array
+
+	void compute_VPR(int i, int j, h_str_features *fres);
+	// Luke: this function is supposed to fill the VPR array
+
+	void compute_VPL(int i, int j, h_str_features *fres);
+	// Luke: this function is supposed to fill the VPL array
 
 	// Hosna Feb 8th, 2007:
 	// To get the band borders easily
