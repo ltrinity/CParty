@@ -43,7 +43,8 @@
 // #define EXTENDED 1
 
 
-
+// Luke Aug 2023 defining long double part func type
+#define pf_t long double
 
 // define the parameters type
 #ifdef DOUBLEPARAMS

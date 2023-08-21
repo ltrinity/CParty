@@ -326,9 +326,21 @@ void W_final::compute_W_restricted (int j, str_features *fres)
 {
     int m1, m2, m3;
     int must_choose_this_branch;
+	// Luke init partition function Aug 2023
+	pf_t d2_energy = 0;
     m1 = W[j-1];
+	//printf("j: %d W[j-1]%d",j,W[j-1]);
+	if(m1<0){
+		d2_energy+= m1;
+	}
     m2 = compute_W_br2_restricted (j, fres, must_choose_this_branch);
+	if(m2<0){
+		d2_energy+= m2;
+	}
     m3 = compute_W_br3_restricted (j, fres);
+	if(m3<0){
+		d2_energy+= m3;
+	}
     if (WMB->is_weakly_closed(0,j) < 0){
     	W[j] = INF;
     	return;
@@ -342,6 +354,7 @@ void W_final::compute_W_restricted (int j, str_features *fres)
     {
         W[j] = MIN(m1,MIN(m2,m3));
     }
+	//printf("Z_W(%d,%d) = %Lf \n",0,j,d2_energy);
 }
 
 void W_final::compute_W_restricted_pkonly (int j, str_features *fres)
@@ -375,6 +388,9 @@ int W_final::compute_W_br2_restricted (int j, str_features *fres, int &must_choo
     int chosen = 0;
     int best_i = 0;
 
+	// Luke init partition function Aug 2023
+	pf_t d2_energy_v = 0;
+
 	must_choose_this_branch = 0;
     for (i=0; i<=j-1; i++)    // TURN shouldn't be there
     {
@@ -386,6 +402,10 @@ int W_final::compute_W_br2_restricted (int j, str_features *fres, int &must_choo
         acc = (i-1>0) ? W[i-1]: 0;
 
         energy_ij = v->get_energy(i,j);
+		if(energy_ij < 0){
+			d2_energy_v+=energy_ij;
+		}
+		//printf("Z_V(%d,%d) = %Lf \n",i,j,d2_energy_v);
 
         if (energy_ij < INF)
         {
@@ -400,7 +420,8 @@ int W_final::compute_W_br2_restricted (int j, str_features *fres, int &must_choo
                 else                    must_choose_this_branch = 0;
             }
         }
-
+		// Luke removing dangle
+		/*
         // I have to condition on  fres[i].pair <= -1 to make sure that i can be unpaired
         if (fres[i].pair <= -1 && i+1 < j)
         {
@@ -492,7 +513,7 @@ int W_final::compute_W_br2_restricted (int j, str_features *fres, int &must_choo
                     else                        must_choose_this_branch = 0;
                 }
             }
-        }
+        }*/
     }
     //printf ("Chosen=%d, best_i=%d\n", chosen, best_i);
     return min;
@@ -641,6 +662,8 @@ int W_final::compute_W_br3_restricted(int j, str_features *fres){
     int chosen = 0;
     int best_i = 0;
 
+	pf_t d2_energy_p = 0;
+
 //	must_choose_this_branch = 0;
     for (i=0; i<=j-1; i++)    // TURN shouldn't be there
     {
@@ -659,6 +682,10 @@ int W_final::compute_W_br3_restricted(int j, str_features *fres){
 	        if (energy_ij < INF)
 	        {
 	            tmp = energy_ij + PS_penalty + acc;
+				if(tmp < 0){
+					d2_energy_p += tmp;
+				}
+				printf("Z_P(%d,%d) = %Lf \n",i,j,d2_energy_p);
 	            if (tmp < min)
 	            {
 	                min = tmp;
@@ -668,7 +695,8 @@ int W_final::compute_W_br3_restricted(int j, str_features *fres){
 	//                else                    must_choose_this_branch = 0;
 	            }
 	        }
-
+			// Luke removing dangles Aug 2023
+			/*
 	        // I have to condition on  fres[i].pair <= -1 to make sure that i can be unpaired
 	        if (fres[i].pair <= -1 && i+1 < j)
 	        {
@@ -733,11 +761,13 @@ int W_final::compute_W_br3_restricted(int j, str_features *fres){
 	                }
 	            }
 	        }
+			*/
 		}
 		if (min == -8376) {
 			int temp = 0;;
 		}
     }
+	
     //printf ("Chosen=%d, best_i=%d\n", chosen, best_i);
     return min;
 }
