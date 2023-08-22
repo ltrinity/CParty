@@ -1060,12 +1060,12 @@ void pseudo_loop::compute_WMBP(int i, int j, h_str_features *fres){
 
 void pseudo_loop::compute_WMB(int i, int j, h_str_features *fres){
 	int ij = index[i]+j-i;
-	if (WMB[ij] != INF){
+	//Luke base case changes Aug 2023
+	if (WMB[ij] != 0){
 		return;
 	}
-	//base case
 	if (i == j){
-		WMB[ij] = INF;
+		WMB[ij] = 0;
 		return;
 	}
 	// Hosna: July 6th, 2007
@@ -1078,16 +1078,20 @@ void pseudo_loop::compute_WMB(int i, int j, h_str_features *fres){
 	 || (fres[j].pair >= FRES_RESTRICTED_MIN && fres[j].pair < i)
 	 || (fres[i].pair >= FRES_RESTRICTED_MIN && fres[i].pair < i )
 	 || (fres[j].pair >= FRES_RESTRICTED_MIN && j < fres[j].pair)){
-		WMB[ij] = INF;
+		// Luke Aug 2023 base case change to 0
+		WMB[ij] = 0;
 		return;
 	}
 	else{
 		int m2 = INF, mWMBP = INF;
+		// Luke Aug 2023 init part func
+		pf_t d2_energy_p = 0;
 		// 2)
 		if (fres[j].pair >= 0 && j > fres[j].pair){
 			int l, l_min=-1;
 			int bp_j = fres[j].pair;
-			int temp = INF;
+			//Luke change to 0
+			int temp = 0;
 //			if (debug_WMB){
 //				printf("\n INSIDE WMB BRANCH 2 \n where bp_j = %d and j = %d \n\n", bp_j,j);
 //			}
@@ -1107,14 +1111,17 @@ void pseudo_loop::compute_WMB(int i, int j, h_str_features *fres){
 					// we don't need to check that l is unpaired here
 //					if (fres[l].pair < 0 && get_Bp(l,j) >= 0 && get_Bp(l,j)<nb_nucleotides){
 					if (get_Bp(l,j) >= 0 && get_Bp(l,j)<nb_nucleotides){
-						int sum = get_BE(bp_j,j,fres[get_Bp(l,j)].pair,get_Bp(l,j)) + get_WMBP(i,l) + get_WI(l+1,get_Bp(l,j)-1);
+						//Luke Aug 2023 part func
+						int sum = get_BE(bp_j,j,fres[get_Bp(l,j)].pair,get_Bp(l,j)) * get_WMBP(i,l) * get_WI(l+1,get_Bp(l,j)-1) * PB_penalty;
+						d2_energy_p += sum;
 						if (l == 600 && i == 522 && j == 615) {
 							int t = 0;
 						}
-						if (temp > sum){
-							temp = sum;
-							l_min = l;
-						}
+						//depracated
+						//if (temp > sum){
+						//	temp = sum;
+						//	l_min = l;
+						//}
 //						if (debug && bp_j == 6 && fres[get_Bp(l,j)].pair == 11){
 //							printf("***************\n");
 //							printf("WMB(%d,%d) inside branch 2: l = %d, BE(%d,%d) = %d, WMBP = %d, WI = %d ==> sum = %d while temp = %d\n",i,j,l,bp_j,j,get_BE(bp_j,j,fres[get_Bp(l,j)].pair,get_Bp(l,j)),get_WMBP(i,l),get_WI(l+1,get_Bp(l,j)-1), sum, temp);
@@ -1124,16 +1131,20 @@ void pseudo_loop::compute_WMB(int i, int j, h_str_features *fres){
 //				}
 
 			}
-			m2 = PB_penalty + temp;
+			//depracated
+			//m2 = PB_penalty + temp;
 //			if (debug){
 //				printf("WMB(%d,%d) branch 2:  l = %d So m2 = %d\n",i,j,l_min, m2);
 //			}
 		}
 		// check the WMBP value
 		mWMBP =  get_WMBP(i,j);
-
+		//Luke Aug 2023 part func
+		d2_energy_p += mWMBP;
+		WMB[ij] = d2_energy_p;
+		// depracated
 		// get the min for WMB
-		WMB[ij] = MIN(m2,mWMBP);
+		//WMB[ij] = MIN(m2,mWMBP);
 //		if (debug && i == 1 && j == 87){
 //			printf("m2 = %d, mWMBP = %d ==> WMB[%d,%d] = %d\n",m2,mWMBP,i,j,WMB[ij]);
 //		}
@@ -1143,7 +1154,7 @@ void pseudo_loop::compute_WMB(int i, int j, h_str_features *fres){
 // Luke 6/28/2023 removing ambiguity
 void pseudo_loop::compute_WIP(int i, int j, h_str_features *fres){
 	int ij = index[i]+j-i;
-	if (WIP[ij] < INF/2){ // was calculated before
+	if (WIP[ij] !=0){ // was calculated before Luke Aug 2023 change to 0 prev INF/2
 		return;
 	}
 //	if (debug){
@@ -1153,11 +1164,13 @@ void pseudo_loop::compute_WIP(int i, int j, h_str_features *fres){
 //		}
 //	}
 	if (fres[i].arc != fres[j].arc || i == j || weakly_closed[ij]== 0){
-		WIP[ij] = INF;
+		//Luke Aug 2023 base case change
+		WIP[ij] = 0;
 		return;
 	}
 	int m1 = INF, m2 = INF, m3 = INF, m4 = INF, m5 = INF;
-
+	// Luke Aug 2023 init part func
+	pf_t d2_energy_wip = 0;
     // Ian Wark July 19 2017
 	// fres[i].pair < 0 changed to fres[i].pair < FRES_RESTRICTED_MIN (which equals -1 at time of writing)
 	// otherwise it will create pairs in spots where the restricted structure says there should be no pairs
@@ -1172,7 +1185,8 @@ void pseudo_loop::compute_WIP(int i, int j, h_str_features *fres){
 	//}
 	// new branch 2 (unchanged):
 	if (fres[j].pair < FRES_RESTRICTED_MIN){
-		m2 = get_WIP(i,j-1) + cp_penalty;
+		m2 = get_WIP(i,j-1) * cp_penalty;
+		d2_energy_wip += m2;
 //		if (debug && (i == 27 || i == 28) && (j == 68 || j == 67)){
 //			printf("\n ************************* \n");
 //			printf("Computing WIP(%d,%d) when  WIP(%d,%d) = %d and m2 = %d\n",i,j,i,j-1,get_WIP(i,j-1),m2);
@@ -1185,12 +1199,16 @@ void pseudo_loop::compute_WIP(int i, int j, h_str_features *fres){
 		int wip_1 = get_WIP(i,t-1);
 		if (fres[t].pair == j
 		|| (fres[t].pair < FRES_RESTRICTED_MIN && fres[j].pair < FRES_RESTRICTED_MIN && can_pair(int_sequence[t],int_sequence[j]))){
-			int v_ener = V->get_energy(i,j)	+ bp_penalty;
-			int energy = wip_1+v_ener;
-			m1 = (m1 > energy)? energy : m1;
+			//Aug 2023 change Luke
+			int v_ener = V->get_energy(i,j)	* bp_penalty;
+			int energy = wip_1*v_ener;
+			d2_energy_wip += energy;
+			//depracated
+			//m1 = (m1 > energy)? energy : m1;
 		}
-		int energy2 = wip_1 + get_WMB(t,j) + PSM_penalty + bp_penalty;
-		m3 = (m3 > energy2)? energy2 : m3;
+		int energy2 = wip_1 * get_WMB(t,j) * PSM_penalty * bp_penalty;
+		d2_energy_wip += energy2;
+		//m3 = (m3 > energy2)? energy2 : m3;
 //		if (debug && i ==15 && j == 20 ){
 //			printf("*************************************\n");
 //			printf("WIP(%d,%d) branch 4: V(%d,%d) = %d => m4 = %d \n",i,j,i,j,V->get_energy(i,j),m4);
@@ -1221,8 +1239,8 @@ void pseudo_loop::compute_WIP(int i, int j, h_str_features *fres){
 //	if (debug && i == 6 && j == 15){
 //		printf("WIP(6,15) is calling WMB \n");
 //	}
-
-	WIP[ij] = MIN(m1,MIN(m2,m3));
+	//Luke Aug 2023 part func
+	WIP[ij] = d2_energy_wip; // depracatedMIN(m1,MIN(m2,m3));
 
 //	if (debug){
 //		printf("WIP(%d,%d): m1 = %d, m2 = %d, m3 = %d, m4 = %d, m5 = %d ==> min = %d \n",i,j,m1,m2,m3,m4,m5,WIP[ij]);
