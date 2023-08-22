@@ -268,6 +268,8 @@ double W_final::hfold(){
 
 	}
 
+	// Luke Aug 2023 updating base case for W
+	for (i=0; i < nb_nucleotides; i++) W[i] = 1;
 
 	// end of addition at March 8, 2012, Hosna
 
@@ -345,7 +347,10 @@ void W_final::compute_W_restricted (int j, str_features *fres)
     	W[j] = INF;
     	return;
     }
-
+	W[j] = d2_energy;
+	printf("Z_W(%d,%d) = %Lf \n",0,j,d2_energy);
+	//Luke Aug 2023 modification for part func
+	/*
     if (must_choose_this_branch)
     {
         W[j] = MIN(m2,m3);
@@ -354,7 +359,8 @@ void W_final::compute_W_restricted (int j, str_features *fres)
     {
         W[j] = MIN(m1,MIN(m2,m3));
     }
-	//printf("Z_W(%d,%d) = %Lf \n",0,j,d2_energy);
+	*/
+	
 }
 
 void W_final::compute_W_restricted_pkonly (int j, str_features *fres)
@@ -405,8 +411,9 @@ int W_final::compute_W_br2_restricted (int j, str_features *fres, int &must_choo
 		if(energy_ij < 0){
 			d2_energy_v+=energy_ij;
 		}
-		//printf("Z_V(%d,%d) = %Lf \n",i,j,d2_energy_v);
-
+		printf("Z_V(%d,%d) = %Lf \n",i,j,d2_energy_v);
+		// Luke removing dangles
+		/*
         if (energy_ij < INF)
         {
             tmp = energy_ij + AU_penalty (int_sequence[i],int_sequence[j]) + acc;
@@ -420,8 +427,6 @@ int W_final::compute_W_br2_restricted (int j, str_features *fres, int &must_choo
                 else                    must_choose_this_branch = 0;
             }
         }
-		// Luke removing dangle
-		/*
         // I have to condition on  fres[i].pair <= -1 to make sure that i can be unpaired
         if (fres[i].pair <= -1 && i+1 < j)
         {
@@ -515,8 +520,10 @@ int W_final::compute_W_br2_restricted (int j, str_features *fres, int &must_choo
             }
         }*/
     }
+	//Luke modification to return sum of energy Aug 2023
+	return d2_energy_v;
     //printf ("Chosen=%d, best_i=%d\n", chosen, best_i);
-    return min;
+    //return min;
 }
 
 int W_final::compute_W_br2_restricted_pkonly (int j, str_features *fres, int &must_choose_this_branch)
@@ -681,11 +688,14 @@ int W_final::compute_W_br3_restricted(int j, str_features *fres){
 	        energy_ij = WMB->get_energy(i,j);
 	        if (energy_ij < INF)
 	        {
-	            tmp = energy_ij + PS_penalty + acc;
+				//Luke modifying to multiply penalties
+	            tmp = energy_ij * PS_penalty * acc;
 				if(tmp < 0){
 					d2_energy_p += tmp;
 				}
 				printf("Z_P(%d,%d) = %Lf \n",i,j,d2_energy_p);
+				//depracated
+				/*
 	            if (tmp < min)
 	            {
 	                min = tmp;
@@ -694,6 +704,7 @@ int W_final::compute_W_br3_restricted(int j, str_features *fres){
 	//                if (fres[i].pair == j)  must_choose_this_branch = 1;
 	//                else                    must_choose_this_branch = 0;
 	            }
+				*/
 	        }
 			// Luke removing dangles Aug 2023
 			/*
@@ -767,9 +778,10 @@ int W_final::compute_W_br3_restricted(int j, str_features *fres){
 			int temp = 0;;
 		}
     }
-	
+	//Luke modification to return sum of energy Aug 2023
+	return d2_energy_p;
     //printf ("Chosen=%d, best_i=%d\n", chosen, best_i);
-    return min;
+    //return min;
 }
 
 void W_final::backtrack_restricted(seq_interval *cur_interval, str_features *fres){
