@@ -344,11 +344,12 @@ void W_final::compute_W_restricted (int j, str_features *fres)
 		d2_energy+= m3;
 	}
     if (WMB->is_weakly_closed(0,j) < 0){
-    	W[j] = INF;
+		// Luke changing to 0 for part func
+    	W[j] = 0;
     	return;
     }
 	W[j] = d2_energy;
-	printf("Z_W(%d,%d) = %Lf \n",0,j,d2_energy);
+	//printf("Z_W(%d,%d) = %Lf \n",0,j,d2_energy);
 	//Luke Aug 2023 modification for part func
 	/*
     if (must_choose_this_branch)
@@ -411,7 +412,7 @@ int W_final::compute_W_br2_restricted (int j, str_features *fres, int &must_choo
 		if(energy_ij < 0){
 			d2_energy_v+=energy_ij;
 		}
-		printf("Z_V(%d,%d) = %Lf \n",i,j,d2_energy_v);
+		//printf("Z_V(%d,%d) = %Lf \n",i,j,d2_energy_v);
 		// Luke removing dangles
 		/*
         if (energy_ij < INF)
@@ -693,7 +694,7 @@ int W_final::compute_W_br3_restricted(int j, str_features *fres){
 				if(tmp < 0){
 					d2_energy_p += tmp;
 				}
-				printf("Z_P(%d,%d) = %Lf \n",i,j,d2_energy_p);
+				//printf("Z_P(%d,%d) = %Lf \n",i,j,d2_energy_p);
 				//depracated
 				/*
 	            if (tmp < min)

@@ -282,7 +282,11 @@ void pseudo_loop::compute_energies(int i, int j)
 
 void pseudo_loop::compute_WI(int i, int j , h_str_features *fres){
 	int min = INF, m1 = INF, m2= INF, m3= INF;
+
+	// Luke init partition function Aug 2023
+	pf_t d2_energy_wi = 0;
 	int ij = index[i]+j-i;
+	int ijminus1 = index[i] + (j-1)-i;
 	if (WI[ij] != 0){ //calculated before
 //		if (debug)
 //		{
@@ -294,7 +298,8 @@ void pseudo_loop::compute_WI(int i, int j , h_str_features *fres){
 	//base cases
 	// if [i,j] is not weakly closed then WI[i,j] = INF
 	if (is_weakly_closed(i,j) == 0){
-		WI[ij] = INF;
+		//Luke changing to 0 from INF for part func Aug 2023
+		WI[ij] = 0;
 //		if (debug)
 //		{
 //			printf("[%d,%d] is not weakly closed ==> WI(%d,%d) = %d \n",i,j,i,j,get_WI(i,j));
@@ -316,8 +321,9 @@ void pseudo_loop::compute_WI(int i, int j , h_str_features *fres){
 	// Hosna: Feb 16, 2007:
 	// we don't need to check to see if i and j are inside an arc
 	// because they are not in an arc in G but they will be in an arc in G'
+	//Luke changing to 0 from INF for part func Aug 2023
 	if (fres[i].arc != fres[j].arc){
-		WI[ij] = INF;
+		WI[ij] = 0;
 //		if (debug){
 //			printf("i and j not in the same arc => WI[%d,%d]= %d \n",i,j,WI[ij]);
 //		}
@@ -340,18 +346,22 @@ void pseudo_loop::compute_WI(int i, int j , h_str_features *fres){
 		if ((fres[t].pair == j && fres[j].pair == t)
 		||(fres[t].pair < FRES_RESTRICTED_MIN && fres[j].pair < FRES_RESTRICTED_MIN)){
 			int v_ener = V->get_energy(t,j);
-			int energy = wi_1 + v_ener + PPS_penalty;
-			m1 = (m1 > energy)? energy : m1;
+			int energy = wi_1 * v_ener * PPS_penalty;
+			d2_energy_wi += energy;
+			//m1 = (m1 > energy)? energy : m1;
 		}
 		//new case 3 
-		int energy2 = wi_1 + get_WMB(t,j) + PSP_penalty + PPS_penalty;
-		m3 = (m3 > energy2)? energy2 : m3;
+		int energy2 = wi_1 * get_WMB(t,j) * PSP_penalty * PPS_penalty;
+		d2_energy_wi += energy2;
+		//m3 = (m3 > energy2)? energy2 : m3;
 //		if (debug_WI){
 //			printf("WI branch 1: WI[%d,%d] = %d and WI[%d,%d] = %d => energy = %d and m1 = %d \n",i,t,wi_1,(t+1),j,wi_2,energy, m1);
 //		}
 	}
 	//new case 2
-	m2 = get_WI(i,j-1) +PUP_penalty;
+	d2_energy_wi += (WI[ijminus1] * PUP_penalty);
+	WI[ij] = d2_energy_wi;
+	//printf("Z_WI(%d,%d) = %Lf \n",i,j,d2_energy_wi);
 //	if (debug){
 //		printf("WI(%d,%d) branch 1: m1 = %d\n",i,j,m1);
 //	}
@@ -390,9 +400,9 @@ void pseudo_loop::compute_WI(int i, int j , h_str_features *fres){
 //	if (debug){
 //		printf("WI(%d,%d) branch 3: m3 = %d\n",i,j,m3);
 //	}
-
-	min = MIN(m1,MIN(m2,m3));
-	WI[ij] = min;
+// depracated Aug 2023
+	//min = MIN(m1,MIN(m2,m3));
+	//WI[ij] = min;
 //	if (debug ){
 //		printf("WI[%d,%d]: m1 = %d, m2 = %d and m3 = %d ==> min = %d \n",i,j,m1,m2,m3,WI[ij]);
 //	}
