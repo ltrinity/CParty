@@ -46,7 +46,8 @@ s_multi_loop::s_multi_loop (int *seq, int length)
 
     WM = new PARAMTYPE [total_length];
     if (WM == NULL) giveup ("Cannot allocate memory", "s_multi_loop");
-    for (i=0; i < total_length; i++) WM[i] = INF;
+    // Luke Aug 2023 changing base case to 0
+    for (i=0; i < total_length; i++) WM[i] = 0;
 }
 
 
@@ -71,6 +72,8 @@ void s_multi_loop::compute_energy_WM (int j)
         int ij = index[i]+j-i;
         int iplus1j = index[i+1]+j-i-1;
         int ijminus1 = index[i]+j-1-i;
+        //track energy Luke Aug 2023
+        tmp = 0;
 
         // previous case 1, Vij should be removed
         //tmp = V->get_energy(i,j) +
@@ -151,16 +154,12 @@ void s_multi_loop::compute_energy_WM (int j)
         //    WM[ij] = tmp;
         //}
         // Allow one unpaired (new case 5 i.e. j unpaired)
-        tmp = WM[ijminus1] + misc.multi_free_base_penalty;
+        tmp = tmp + (WM[ijminus1] * misc.multi_free_base_penalty);
         // add the loss
         if (pred_pairings != NULL)
         {
             pred_pairings[j] = -1;
             tmp = tmp - loss(j,j);
-        }
-        if (tmp < WM[ij])
-        {
-            WM[ij] = tmp;
         }
         //use the for loop for splits modified for CParty
         for (int k=i; k < j; k++)
@@ -174,23 +173,28 @@ void s_multi_loop::compute_energy_WM (int j)
             //unpaired
             int unpaired_energy =  misc.multi_free_base_penalty *(k-i);
             // new case 1 (leftmost branch)
-            tmp = unpaired_energy + V_energy;
-            if (tmp < WM[ij])
-            {
-                WM[ij] = tmp;
-            }
+            tmp = tmp + (unpaired_energy * V_energy);
+            //depracated
+            //if (tmp < WM[ij])
+            //{
+            //   WM[ij] = tmp;
+            //}
             // new case 3 (intermediate branch)
             if (k > i && k < (j-1))
             {
                 int ikminus1 = index[i]+k-1-i;
-                tmp = WM[ikminus1] + V_energy;
-                if (tmp < WM[ij])
-                {
-                    WM[ij] = tmp;
-                }
+                tmp = tmp + (WM[ikminus1] * V_energy);
+                //depracated
+                //if (tmp < WM[ij])
+                //{
+                //    WM[ij] = tmp;
+                //}
             }
         }
+        //sum of all energies Luke Aug 2023
+        WM[ij] = tmp;
     }
+
 }
 
 
@@ -280,6 +284,8 @@ void s_multi_loop::compute_energy_WM_restricted (int j, str_features *fres)
         int ij = index[i]+j-i;
         int iplus1j = index[i+1]+j-i-1;
         int ijminus1 = index[i]+j-1-i;
+        //track energy
+        tmp = 0;
 
         // previous case 1 Luke removing
         //tmp = V->get_energy(i,j) +
@@ -349,11 +355,7 @@ void s_multi_loop::compute_energy_WM_restricted (int j, str_features *fres)
         // new case 5 (j unpaired)
         if (fres[j].pair <= -1)
         {
-            tmp = WM[ijminus1] + misc.multi_free_base_penalty;
-            if (tmp < WM[ij])
-            {
-                WM[ij] = tmp;
-            }
+            tmp = tmp + (WM[ijminus1] * misc.multi_free_base_penalty);
         }
 
         //use the for loop for splits modified for CParty
@@ -370,23 +372,17 @@ void s_multi_loop::compute_energy_WM_restricted (int j, str_features *fres)
                 //unpaired
                 int unpaired_energy =  misc.multi_free_base_penalty *(k-i);
                 // new case 1 (leftmost branch)
-                tmp = unpaired_energy + V_energy;
-                if (tmp < WM[ij])
-                {
-                    WM[ij] = tmp;
-                }
+                tmp = tmp + (unpaired_energy * V_energy);
                 // new case 3 (intermediate branch)
                 if (k > i && k < (j-1))
                 {
                     int ikminus1 = index[i]+k-1-i;
-                    tmp = WM[ikminus1] + V_energy;
-                    if (tmp < WM[ij])
-                    {
-                        WM[ij] = tmp;
-                    }
+                    tmp = tmp + (WM[ikminus1] * V_energy);
                 }
             }
         }
+        //Luke assign sum of energies
+        WM[ij] = tmp;
     }
 }
 

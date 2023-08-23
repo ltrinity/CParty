@@ -1423,20 +1423,22 @@ void pseudo_loop::compute_VPP(int i, int j, h_str_features *fres){
 // Luke adding VPR, case 1 VP + WI' and case 2 VP (unpaired bases 3')
 void pseudo_loop::compute_VPR(int i, int j, h_str_features *fres){
 	int ij = index[i]+j-i;
-	if (VPR[ij] != INF){ // computed before
+	if (VPR[ij] != 0){ // computed before
 //		if (debug){
 //			printf("VPR(%d,%d) was calculated before ==> VPR(%d,%d)= %d \n",i,j,i,j,get_VPR(i,j));
 //		}
 		return;
 	}
 	if (i == j  || this->is_weakly_closed(i,j)){
-		VPR[ij] = INF;
+		VPR[ij] = 0;
 //		if (debug){
 //			printf("VPR(%d,%d): i == j ==> VPR = %d \n",i,j,VPR[ij]);
 //		}
 		return;
 	}
 	int m1 = INF, m2 = INF;
+	// Luke Aug 2023 init part func
+	pf_t d2_energy_vpr = 0;
 
 	//case 1:
 	int r=-1 ;
@@ -1451,13 +1453,11 @@ void pseudo_loop::compute_VPR(int i, int j, h_str_features *fres){
         // fres[i].pair < 0 changed to fres[i].pair < FRES_RESTRICTED_MIN (which equals -1 at time of writing)
         // otherwise it will create pairs in spots where the restricted structure says there should be no pairs
 		if (fres[r].pair < FRES_RESTRICTED_MIN){
-			int tmp = get_VP(i,r) + get_WIP(r+1,j);
+			int tmp = get_VP(i,r) * get_WIP(r+1,j);
+			d2_energy_vpr+=tmp;
 //			if (debug){
 //				printf("VPP(%d,%d) branch 1: VP(%d,%d) = %d, WIP(%d,%d)= %d ==> tmp = %d  and m1 = %d\n",i,j,i,r,get_VP(i,r),r+1,j,get_WIP(r+1,j),tmp, m1);
 //			}
-			if (tmp < m1){
-				m1 = tmp;
-			}
 		}
 	}
 	// case 2:
@@ -1466,21 +1466,22 @@ void pseudo_loop::compute_VPR(int i, int j, h_str_features *fres){
         // fres[i].pair < 0 changed to fres[i].pair < FRES_RESTRICTED_MIN (which equals -1 at time of writing)
         // otherwise it will create pairs in spots where the restricted structure says there should be no pairs
 		if (fres[r].pair < FRES_RESTRICTED_MIN && this->is_empty_region(r+1,j)){
-			int tmp = get_VP(i,r) + (cp_penalty *(j-r)); // check the (j-r) part
+			int tmp = get_VP(i,r) * (cp_penalty *(j-r)); // check the (j-r) part
+			d2_energy_vpr+=tmp;
 //			if (debug){
 //				printf("VPR(%d,%d) branch 2: VP(%d,%d) = %d, %d *(%d-%d)= %d ==> tmp = %d  and m3 = %d\n",i,j,i,r,get_VP(i,r),cp_penalty,j,r,cp_penalty *(j-r),tmp, m3);
 //			}
-			if (tmp < m2){
-				m2 = tmp;
-			}
+			//if (tmp < m2){
+			//	m2 = tmp;
+			//}
 		}
 	}
 
-	int min_branches = m1;
-	if (m2 < min_branches){
-		min_branches = m2;
-	}
-	VPR[ij] = min_branches; //MIN(MIN(m1,m2));
+	//int min_branches = m1;
+	//if (m2 < min_branches){
+	//	min_branches = m2;
+	//}
+	VPR[ij] = d2_energy_vpr; //MIN(MIN(m1,m2));
 //	if (debug){
 //		printf("VPR(%d,%d): m1 = %d, m2 = %d, m3 = %d and m4 = %d ==> min = %d \n", i,j,m1,m2,m3,m4,VPP[ij]);
 //	}
@@ -1490,20 +1491,22 @@ void pseudo_loop::compute_VPR(int i, int j, h_str_features *fres){
 // Luke adding VPL, case 1 VP (unpaired bases 5')
 void pseudo_loop::compute_VPL(int i, int j, h_str_features *fres){
 		int ij = index[i]+j-i;
-	if (VPL[ij] != INF){ // computed before
+	if (VPL[ij] != 0){ // computed before
 //		if (debug){
 //			printf("VPL(%d,%d) was calculated before ==> VPP(%d,%d)= %d \n",i,j,i,j,get_VPP(i,j));
 //		}
 		return;
 	}
 	if (i == j  || this->is_weakly_closed(i,j)){
-		VPL[ij] = INF;
+		VPL[ij] = 0;
 //		if (debug){
 //			printf("VPP(%d,%d): i == j ==> VPP = %d \n",i,j,VPP[ij]);
 //		}
 		return;
 	}
 	int m1 = INF;
+	// Luke Aug 2023 init part func
+	pf_t d2_energy_vpl = 0;
 
 	//branch 1:
 	int r=-1 ;
@@ -1518,17 +1521,18 @@ void pseudo_loop::compute_VPL(int i, int j, h_str_features *fres){
         // fres[i].pair < 0 changed to fres[i].pair < FRES_RESTRICTED_MIN (which equals -1 at time of writing)
         // otherwise it will create pairs in spots where the restricted structure says there should be no pairs
 		if (fres[r].pair < FRES_RESTRICTED_MIN && this->is_empty_region(i,r-1)){
-			int tmp = (cp_penalty * (r-i)) + get_VP(r,j);
+			int tmp = (cp_penalty * (r-i)) * get_VP(r,j);
+			d2_energy_vpl += tmp;
 //			if (debug){
 //				printf("VPP(%d,%d) branch 4: %d *(%d-%d) = %d, VP(%d,%d)= %d ==> tmp = %d  and m4 = %d\n",i,j,cp_penalty,r,i,cp_penalty * (r-i),r,j,get_VP(r,j),tmp, m4);
 //			}
-			if (tmp < m1){
-				m1 = tmp;
-			}
+			//if (tmp < m1){
+			//	m1 = tmp;
+			//}
 		}
 	}
 	
-	VPL[ij] = m1; //MIN(MIN(m1,m2),MIN(m3,m4));
+	VPL[ij] = d2_energy_vpl; //MIN(MIN(m1,m2),MIN(m3,m4));
 //	if (debug){
 //		printf("VPL(%d,%d): m1 = %d, m2 = %d, m3 = %d and m4 = %d ==> min = %d \n", i,j,m1,m2,m3,m4,VPP[ij]);
 //	}
@@ -1561,7 +1565,8 @@ void pseudo_loop::compute_BE(int i, int j, int ip, int jp, h_str_features * fres
 //		if (debug ){
 //			printf("BE(%d,%d,%d,%d) = INF \n",i,j,ip,jp);
 //		}
-		BE[iip] = INF;
+//	Luke Aug 2023 change to 0
+		BE[iip] = 0;
 		return;
 	}
 
@@ -1575,9 +1580,12 @@ void pseudo_loop::compute_BE(int i, int j, int ip, int jp, h_str_features * fres
 	}
 
 	int m1 = INF, m2 = INF, m3 = INF, m4 = INF, m5 = INF;
+	// Luke Aug 2023 init part func
+	pf_t d2_energy_be = 0;
 	// 1) bp(i+1) == j-1
 	if (fres[i+1].pair == j-1){
-		m1 = get_e_stP(i,j) + get_BE(i+1,j-1,ip,jp);
+		m1 = get_e_stP(i,j) * get_BE(i+1,j-1,ip,jp);
+		d2_energy_be += m1;
 //		if(debug ){
 //			printf("BE(%d,%d,%d,%d) Case 1: e_stP(%d,%d) = %d and BE(%d,%d,%d,%d) = %d ==> m1 = %d \n",i,j,ip,jp,i,j,get_e_stP(i,j),i+1,j-1,ip,jp,get_BE(i+1,j-1,ip,jp),m1);
 //		}
@@ -1604,13 +1612,14 @@ void pseudo_loop::compute_BE(int i, int j, int ip, int jp, h_str_features * fres
 			// when we pass a stacked pair instead of an internal loop to e_int, it returns underflow,
 			// so I am checking explicitely that we won't have stems instead of internal loop
 			if (is_empty_region(i+1,l-1) == 1 && is_empty_region(lp+1,j-1) == 1 ){//&& !(ip == (i+1) && jp==(j-1)) && !(l == (i+1) && lp == (j-1))){
-				int temp = get_e_intP(i,l,lp,j)+ get_BE(l,lp,ip,jp);
+				int temp = get_e_intP(i,l,lp,j)* get_BE(l,lp,ip,jp);
+				d2_energy_be += temp;
 //				if (debug){
 //					printf("BE(%d,%d,%d,%d) branch 2: e_intP(%d,%d,%d,%d) = %d, BE(%d,%d,%d,%d)= %d ==> temp = %d  and m2 = %d\n",i,j,ip,jp,i,l,lp,j,get_e_intP(i,l,lp,j),l,lp,ip,jp,get_BE(l,lp,ip,jp));
 //				}
-				if (m2 > temp){
-					m2 = temp;
-				}
+				//if (m2 > temp){
+				//	m2 = temp;
+				//}
 			}
 
 			// 3)
@@ -1618,13 +1627,14 @@ void pseudo_loop::compute_BE(int i, int j, int ip, int jp, h_str_features * fres
 				// Hosna: July 5th, 2007
 				// After meeting with Anne and Cristina --> ap should have 2* bp to consider the biggest and the one that crosses
 				// in a multiloop that spans a band
-				int temp = get_WIP(i+1,l-1) + get_BE(l,lp,ip,jp) + get_WIP(lp+1,j-1)+ ap_penalty + 2* bp_penalty;
+				int temp = get_WIP(i+1,l-1) * get_BE(l,lp,ip,jp) * get_WIP(lp+1,j-1) * (ap_penalty + (2* bp_penalty));
+				d2_energy_be += temp;
 //				if (debug){
 //					printf("BE(%d,%d,%d,%d) branch 3: WIP(%d,%d) = %d, BE(%d,%d,%d,%d)= %d, WIP(%d,%d)= %d ==> temp = %d  and m3 = %d\n",i,j,ip,jp,i+1,l-1,get_WIP(i+1,l-1),l,lp,ip,jp,get_BE(l,lp,ip,jp),lp+1,j-1,get_WIP(lp+1,j-1),temp,m3);
 //				}
-				if (m3 > temp){
-					m3 = temp;
-				}
+				//if (m3 > temp){
+				//	m3 = temp;
+				//}
 			}
 
 			// 4)
@@ -1632,13 +1642,14 @@ void pseudo_loop::compute_BE(int i, int j, int ip, int jp, h_str_features * fres
 				// Hosna: July 5th, 2007
 				// After meeting with Anne and Cristina --> ap should have 2* bp to consider the biggest and the one that crosses
 				// in a multiloop that spans a band
-				int temp = get_WIP(i+1,l-1) + get_BE(l,lp,ip,jp) + cp_penalty * (j-lp+1) + ap_penalty + 2*bp_penalty;
+				int temp = get_WIP(i+1,l-1) * get_BE(l,lp,ip,jp) * ((cp_penalty * (j-lp+1)) + ap_penalty + (2*bp_penalty));
+				d2_energy_be += temp;
 //				if (debug){
 //					printf("BE(%d,%d,%d,%d) branch 4: WIP(%d,%d) = %d, BE(%d,%d,%d,%d)= %d ==> temp = %d  and m4 = %d\n",i,j,ip,jp,i+1,l-1,get_WIP(i+1,l-1),l,lp,ip,jp,get_BE(l,lp,ip,jp),temp,m4);
 //				}
-				if (m4 > temp){
-					m4 = temp;
-				}
+				//if (m4 > temp){
+				//	m4 = temp;
+				//}
 			}
 
 			// 5)
@@ -1646,19 +1657,20 @@ void pseudo_loop::compute_BE(int i, int j, int ip, int jp, h_str_features * fres
 				// Hosna: July 5th, 2007
 				// After meeting with Anne and Cristina --> ap should have 2* bp to consider the biggest and the one that crosses
 				// in a multiloop that spans a band
-				int temp = ap_penalty + 2*bp_penalty + (cp_penalty * (l-i+1)) + get_BE(l,lp,ip,jp) + get_WIP(lp+1,j-1);
+				int temp = (ap_penalty + (2*bp_penalty) + (cp_penalty * (l-i+1))) * get_BE(l,lp,ip,jp) * get_WIP(lp+1,j-1);
+				d2_energy_be += temp;
 //				if (debug && l == 9 && ip == 11){
 //					printf("BE(%d,%d,%d,%d) branch 5: BE(%d,%d,%d,%d)= %d and WIP(%d,%d) = %d ==> temp = %d \n", i,j,ip,jp,l,lp,ip,jp,get_BE(l,lp,ip,jp),lp+1,j-1,get_WIP(lp+1,j-1),temp);
 //				}
-				if (m5 > temp){
-					m5 = temp;
-				}
+				//if (m5 > temp){
+				//	m5 = temp;
+				//}
 			}
 		}
 	}
 
 	// finding the min and putting it in BE[iip]
-	BE[iip] = MIN(m1,MIN(MIN(m2,m3),MIN(m4,m5)));
+	BE[iip] = d2_energy_be; //MIN(m1,MIN(MIN(m2,m3),MIN(m4,m5)));
 //	if (debug && i == 6 && ip == 11){
 //		printf("BE[%d,%d,%d,%d]: m1 = %d, m2 = %d, m3 = %d, m4 = %d, m5 = %d ==> min = %d \n",i,j,ip,jp,m1,m2,m3,m4,m5,BE[iip]);
 //	}
