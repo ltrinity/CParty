@@ -34,7 +34,7 @@ int main (int argc, char *argv[])
     char sequence[MAXSLEN];
     char structure[MAXSLEN];
     char restricted[MAXSLEN];
-    double energy;
+    pf_t energy;
 
 /*
     if (argc != 3)
@@ -233,7 +233,7 @@ int main (int argc, char *argv[])
             (restricted[i] != structure[i]))
         {
             fprintf(stderr, "There is something wrong with the structure, doesn't match restricted\n");
-			fprintf(stderr, "  %s\n  %s\n  %s\t%.2lf\n", sequence, restricted, structure, energy);
+			fprintf(stderr, "  %s\n  %s\n  %s\t%.2Lf\n", sequence, restricted, structure, energy);
 			exit(1);
         }
     }
@@ -247,12 +247,12 @@ int main (int argc, char *argv[])
 			fprintf(fp,"Sequence: %s\n",sequence);
 			fprintf(fp,"Input_structure: %s\n",restricted);
 			fprintf(fp,"Output_structure: %s\n",structure);
-			fprintf(fp,"Energy: %.2lf\n",energy);
+			fprintf(fp,"Energy: %.Lf\n",energy);
 			fclose(fp);
 		}
 	}else{
 		printf ("Seq: %s\n", sequence);
-		printf ("Partition Function: %lf\n", energy);
+		printf ("Partition Function: %Lf\n", energy);
         //printf ("RES: %s  %.2lf\n", structure, energy);
 	}
 

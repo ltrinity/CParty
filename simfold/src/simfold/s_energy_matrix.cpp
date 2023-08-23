@@ -137,6 +137,7 @@ void s_energy_matrix::compute_energy_restricted (int i, int j, str_features *fre
     PARAMTYPE min, min_en[4];
     int k, min_rank;
     char type;
+    pf_t d2_energy_v = 0;
 
     min_rank = -1;
     min = INF/2;
@@ -164,13 +165,21 @@ void s_energy_matrix::compute_energy_restricted (int i, int j, str_features *fre
 
     for (k=0; k<4; k++)
     {
-        if (min_en[k] < min)
+        //printf ("V(%d,%d) k: %d energy %d\n", i, j, k, min_en[k]);
+        //Luke modifying for sum
+        if (min_en[k] < 0)
         {
-            min = min_en[k];
-            min_rank = k;
+            d2_energy_v += min_en[k];
+            //min = min_en[k];
+            //min_rank = k;
         }
     }
-
+    if (d2_energy_v < 0) {
+        int ij = index[i]+j-i;
+        nodes[ij].energy = d2_energy_v;
+        //nodes[ij].type = type;
+    }
+    /* Luke Aug 2023 depracated
     switch (min_rank)
     {
         case  0: type = HAIRP; break;
@@ -189,6 +198,7 @@ void s_energy_matrix::compute_energy_restricted (int i, int j, str_features *fre
         nodes[ij].energy = min;
         nodes[ij].type = type;
     }
+    */
 }
 
 // Hosna, April 18, 2012

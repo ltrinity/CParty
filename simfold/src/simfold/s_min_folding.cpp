@@ -61,9 +61,10 @@ void s_min_folding::allocate_space()
 
     f = new minimum_fold [nb_nucleotides];
     if (f == NULL) giveup ("Cannot allocate memory", "energy");
-    W = new PARAMTYPE [nb_nucleotides];
+    W = new pf_t [nb_nucleotides];
     if (W == NULL) giveup ("Cannot allocate memory", "energy");
-    for (i=0; i < nb_nucleotides; i++) W[i] = 0;
+    //Luke base case 1 Aug 2023
+    for (i=0; i < nb_nucleotides; i++) W[i] = 1;
 
     int_sequence = new int[nb_nucleotides];
     if (int_sequence == NULL) giveup ("Cannot allocate memory", "energy");

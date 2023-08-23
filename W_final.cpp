@@ -156,7 +156,7 @@ double W_final::hfold_pkonly(){
     	this->compute_W_restricted_pkonly(j,fres);
     }
 
-	energy = this->W[nb_nucleotides-1]/100.0;
+	energy = this->W[nb_nucleotides-1];///100.0;
 //    printf("energy = %f \n", energy);
 
 
@@ -192,7 +192,7 @@ double W_final::hfold_pkonly(){
 
 double W_final::hfold(){
 
-	double energy;
+	pf_t energy;
     int i, j;
 
 	h_str_features *h_fres;
@@ -269,7 +269,7 @@ double W_final::hfold(){
 	}
 
 	// Luke Aug 2023 updating base case for W
-	for (i=0; i < nb_nucleotides; i++) W[i] = 1;
+	//for (i=0; i < nb_nucleotides; i++) W[i] = 1;
 
 	// end of addition at March 8, 2012, Hosna
 
@@ -277,7 +277,7 @@ double W_final::hfold(){
     {
     	this->compute_W_restricted(j,fres);
     }
-    energy = this->W[nb_nucleotides-1]/100.0;
+    energy = this->W[nb_nucleotides-1];
 	//    printf("energy = %f \n", energy);
 
 
@@ -326,21 +326,22 @@ void W_final::return_structure(char *structure){
 void W_final::compute_W_restricted (int j, str_features *fres)
 // compute W(j)
 {
-    int m1, m2, m3;
+	printf("j = %d\n",j);
+    pf_t m1, m2, m3;
     int must_choose_this_branch;
 	// Luke init partition function Aug 2023
 	pf_t d2_energy = 0;
     m1 = W[j-1];
-	//printf("j: %d W[j-1]%d",j,W[j-1]);
-	if(m1<0){
-		d2_energy+= m1;
-	}
+	printf("W_[0,%d-1] = %Lf\n",j,W[j-1]);
+	d2_energy+= m1;
     m2 = compute_W_br2_restricted (j, fres, must_choose_this_branch);
 	if(m2<0){
+		printf("V[0,%d] = %Lf\n",j,m2);
 		d2_energy+= m2;
 	}
     m3 = compute_W_br3_restricted (j, fres);
 	if(m3<0){
+		printf("P[0,%d]%Lf\n",j,m3);
 		d2_energy+= m3;
 	}
     if (WMB->is_weakly_closed(0,j) < 0){
@@ -349,6 +350,7 @@ void W_final::compute_W_restricted (int j, str_features *fres)
     	return;
     }
 	W[j] = d2_energy;
+	printf("W[j] d2 = %Lf = %Lf\n",d2_energy, W[j]);
 	//printf("Z_W(%d,%d) = %Lf \n",0,j,d2_energy);
 	//Luke Aug 2023 modification for part func
 	/*
@@ -2129,7 +2131,7 @@ void W_final::print_result ()
     int i;
     int energy = INF, sum;
 
-    printf ("Minimum energy: %d\n", W[nb_nucleotides-1]);
+    printf ("Minimum energy: %Lf\n", W[nb_nucleotides-1]);
     sum = 0;
 
     for (i=0; i< nb_nucleotides; i++)

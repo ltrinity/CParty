@@ -68,7 +68,7 @@ class s_min_folding
         int* int_sequence;      // sequence in integer representation (faster)  
 
         minimum_fold *f;        // the minimum folding, see structs.h
-        PARAMTYPE *W;                 // the W exterior loop array
+        pf_t *W;                 // the W exterior loop array
         int nb_nucleotides;     // sequence length (number of nucleotides)
         char* sequence;
         seq_interval *stack_interval;  // used for backtracking
