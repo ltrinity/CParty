@@ -16,21 +16,23 @@ VM_final::VM_final(int *seq, int len)
     for (i=1; i < length; i++)
         index[i] = index[i-1]+length-i+1;
 
+    // Luke Aug 2023 init to 0 instead of INF for part func
+
     WM = new int [total_length];
     if (WM == NULL) giveup ("Cannot allocate memory", "VM_final");
-    for (i=0; i < total_length; i++) WM[i] = INF;
+    for (i=0; i < total_length; i++) WM[i] = 0;
 
     WM1 = new int [total_length];
     if (WM1 == NULL) giveup ("Cannot allocate memory", "VM_final");
-    for (i=0; i < total_length; i++) WM1[i] = INF;
+    for (i=0; i < total_length; i++) WM1[i] = 0;
 
     WMP = new int [total_length];
     if (WMP == NULL) giveup ("Cannot allocate memory", "VM_final");
-    for (i=0; i < total_length; i++) WMP[i] = INF;
+    for (i=0; i < total_length; i++) WMP[i] = 0;
 
     VM = new int [total_length];
     if (VM == NULL) giveup ("Cannot allocate memory", "VM_final");
-    for (i=0; i < total_length; i++) VM[i] = INF;
+    for (i=0; i < total_length; i++) VM[i] = 0;
 
 //    printf("an object of VM_final was successfully created! \n");
 }
@@ -59,7 +61,9 @@ void VM_final::compute_energy(int i, int j, str_features *fres){
     // Luke adding new case 3 WMP (base case)
     k=i+1;
     int kjminus1 = index[k] + j-1-k;
-    tmp = WMP[kjminus1] + misc.multi_helix_penalty + misc.multi_offset + AU_penalty (sequence[i], sequence[j]);
+
+    pf_t d2_energy_vm;
+    d2_energy_vm += WMP[kjminus1] * (misc.multi_helix_penalty + misc.multi_offset + AU_penalty (sequence[i], sequence[j]));
 
     //modifying for loop exit conditions sans dangles -> prev it was j-3
     for (k = i+2; k <= j-1; k++)
@@ -69,23 +73,14 @@ void VM_final::compute_energy(int i, int j, str_features *fres){
         iplus2k = index[i+2] + k -i-2;
         kplus1jminus2 = index[k+1] + j-2 -k-1;
         // Luke adding new case 1 WM + WM1
-        tmp = WM[iplus1k] + WM1[kplus1jminus1] + misc.multi_helix_penalty + misc.multi_offset + AU_penalty (sequence[i], sequence[j]);;
-        if (tmp < min){
-            min = tmp;
-        }
+        d2_energy_vm += WM[iplus1k] * WM1[kplus1jminus1] * (misc.multi_helix_penalty + misc.multi_offset + AU_penalty (sequence[i], sequence[j]));;
         // Luke adding new case 2 WM + WMP
-        tmp = WM[iplus1k] + WMP[kplus1jminus1] + misc.multi_helix_penalty + misc.multi_offset + AU_penalty (sequence[i], sequence[j]);
-        if (tmp < min){
-            min = tmp;
-        }
+        d2_energy_vm += WM[iplus1k] * WMP[kplus1jminus1] * (misc.multi_helix_penalty + misc.multi_offset + AU_penalty (sequence[i], sequence[j]));
         //Luke adding new case 3 WMP 
         //exit early by one iter wrt cases 1 & 2
         if(k!=j-1){
             int kjminus1 = index[k] + j-1-k;
-            tmp = WMP[kjminus1] + ((k-i-1)*misc.multi_free_base_penalty) + misc.multi_helix_penalty + misc.multi_offset + AU_penalty (sequence[i], sequence[j]);
-        }
-        if (tmp < min){
-            min = tmp;
+            d2_energy_vm += WMP[kjminus1] * (((k-i-1)*misc.multi_free_base_penalty) + misc.multi_helix_penalty + misc.multi_offset + AU_penalty (sequence[i], sequence[j]));
         }
         //prev case 1: WM i+1,k + WM k+1,j-1
         //tmp = WM[iplus1k] + WM[kplus1jminus1];
@@ -134,7 +129,9 @@ void VM_final::compute_energy(int i, int j, str_features *fres){
     //
 	//int wmb_energy = this->wmb->get_energy(i,j) + a_penalty + PSM_penalty;
 	int ij = index[i]+j-i;
-	VM[ij] = MIN(min,INF);
+    if(d2_energy_vm < 0){
+        VM[ij] = d2_energy_vm;
+    }
 	//printf("VM[%d,%d] = %d \n",i,j,VM[ij]);
 
 }

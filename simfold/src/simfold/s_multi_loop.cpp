@@ -278,6 +278,7 @@ void s_multi_loop::compute_energy_WM_restricted (int j, str_features *fres)
 {
     int i;
     PARAMTYPE tmp;
+    pf_t simfold_energy_wm;
 
     for (i=j-1; i>=0; i--)
     {
@@ -285,7 +286,7 @@ void s_multi_loop::compute_energy_WM_restricted (int j, str_features *fres)
         int iplus1j = index[i+1]+j-i-1;
         int ijminus1 = index[i]+j-1-i;
         //track energy
-        tmp = 0;
+        simfold_energy_wm = 0;
 
         // previous case 1 Luke removing
         //tmp = V->get_energy(i,j) +
@@ -355,7 +356,7 @@ void s_multi_loop::compute_energy_WM_restricted (int j, str_features *fres)
         // new case 5 (j unpaired)
         if (fres[j].pair <= -1)
         {
-            tmp = tmp + (WM[ijminus1] * misc.multi_free_base_penalty);
+            simfold_energy_wm += (WM[ijminus1] * misc.multi_free_base_penalty);
         }
 
         //use the for loop for splits modified for CParty
@@ -372,17 +373,17 @@ void s_multi_loop::compute_energy_WM_restricted (int j, str_features *fres)
                 //unpaired
                 int unpaired_energy =  misc.multi_free_base_penalty *(k-i);
                 // new case 1 (leftmost branch)
-                tmp = tmp + (unpaired_energy * V_energy);
+                simfold_energy_wm += (unpaired_energy * V_energy);
                 // new case 3 (intermediate branch)
                 if (k > i && k < (j-1))
                 {
                     int ikminus1 = index[i]+k-1-i;
-                    tmp = tmp + (WM[ikminus1] * V_energy);
+                    simfold_energy_wm += (WM[ikminus1] * V_energy);
                 }
             }
         }
         //Luke assign sum of energies
-        WM[ij] = tmp;
+        WM[ij] = simfold_energy_wm ;
     }
 }
 
