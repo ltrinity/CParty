@@ -252,7 +252,8 @@ int main (int argc, char *argv[])
 		}
 	}else{
 		printf ("Seq: %s\n", sequence);
-        printf ("RES: %s  %.2lf\n", structure, energy);
+		printf ("Partition Function: %lf\n", energy);
+        //printf ("RES: %s  %.2lf\n", structure, energy);
 	}
 
     free(inputPath);
