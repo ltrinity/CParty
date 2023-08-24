@@ -240,17 +240,17 @@ int W_final::compute_W_br3_restricted(int j, str_features *fres){
 
 	        // We don't need to make sure i and j don't have to pair with something else,
 	        //  because that would be INF - done in fold_sequence_restricted
-	        acc = (i-1>0) ? W[i-1]: 0;
+	        //acc = (i-1>0) ? W[i-1]: 0;
+			//printf("acc= %Lf \n",acc);
 
 	        energy_ij = WMB->get_energy(i,j);
 	        if (energy_ij < INF)
 	        {
-				printf("Z_P(%d,%d) = %Lf \n",i,j,energy_ij);
+				
 				//Luke modifying to multiply penalties
-	            tmp = energy_ij * PS_penalty * acc;
-				printf("Z_P(%d,%d) = %Lf \n",i,j,tmp);
+	            tmp = energy_ij * PS_penalty;
 				if(tmp < 0){
-
+					printf("Z_P(%d,%d) = %Lf \n",i,j,tmp);
 					d2_energy_p += tmp;
 				}
 				//printf("Z_P(%d,%d) = %Lf \n",i,j,d2_energy_p);

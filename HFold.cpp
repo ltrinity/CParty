@@ -1,6 +1,6 @@
 
 // a simple driver for the HFold
-
+#include <math.h>  
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
