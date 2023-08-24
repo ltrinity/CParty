@@ -133,14 +133,11 @@ void s_energy_matrix::compute_energy (int i, int j)
 
 void s_energy_matrix::compute_energy_restricted (int i, int j, str_features *fres)
 // compute the V(i,j) value, if the structure must be restricted
+// Luke removing extra code and simplifying for part func
 {
-    PARAMTYPE min, min_en[4];
-    int k, min_rank;
-    char type;
-    pf_t d2_energy_v = 0;
-
-    min_rank = -1;
-    min = INF/2;
+    int k;
+    pf_t min_en[4], d2_energy_v;
+    d2_energy_v = 0;
     min_en[0] = INF;
     min_en[1] = INF;
     min_en[2] = INF;
@@ -177,28 +174,7 @@ void s_energy_matrix::compute_energy_restricted (int i, int j, str_features *fre
     if (d2_energy_v < 0) {
         int ij = index[i]+j-i;
         nodes[ij].energy = d2_energy_v;
-        //nodes[ij].type = type;
     }
-    /* Luke Aug 2023 depracated
-    switch (min_rank)
-    {
-        case  0: type = HAIRP; break;
-        case  1: type = STACK; break;
-        case  2: type = INTER; break;
-        case  3: type = MULTI; break;
-        default: type = NONE;
-    }
-
-    if (min_rank > -1 && debug) {
-    	printf ("V(%d,%d) type %c energy %d\n", i, j, type, min);
-   	}
-
-    if (min < INF/2) {
-        int ij = index[i]+j-i;
-        nodes[ij].energy = min;
-        nodes[ij].type = type;
-    }
-    */
 }
 
 // Hosna, April 18, 2012

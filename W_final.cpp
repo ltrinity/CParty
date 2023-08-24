@@ -163,17 +163,17 @@ void W_final::return_structure(char *structure){
 void W_final::compute_W_restricted (int j, str_features *fres)
 // compute W(j)
 {
-	printf("j = %d\n",j);
+	//printf("j = %d\n",j);
     pf_t m1, m2, m3;
     int must_choose_this_branch;
 	// Luke init partition function Aug 2023
 	pf_t d2_energy = 0;
     m1 = W[j-1];
-	printf("W_[0,%d-1] = %Lf\n",j,W[j-1]);
+	//printf("W_[0,%d-1] = %Lf\n",j,W[j-1]);
 	d2_energy+= m1;
     m2 = compute_W_br2_restricted (j, fres, must_choose_this_branch);
 	if(m2<0){
-		printf("V[0,%d] = %Lf\n",j,m2);
+		//printf("V[0,%d] = %Lf\n",j,m2);
 		d2_energy+= m2;
 	}
     m3 = compute_W_br3_restricted (j, fres);
@@ -187,7 +187,7 @@ void W_final::compute_W_restricted (int j, str_features *fres)
     	return;
     }
 	W[j] = d2_energy;
-	printf("W[j] d2 = %Lf = %Lf\n",d2_energy, W[j]);
+	//printf("W[j] d2 = %Lf = %Lf\n",d2_energy, W[j]);
 	//printf("Z_W(%d,%d) = %Lf \n",0,j,d2_energy);
 }
 
@@ -245,9 +245,12 @@ int W_final::compute_W_br3_restricted(int j, str_features *fres){
 	        energy_ij = WMB->get_energy(i,j);
 	        if (energy_ij < INF)
 	        {
+				printf("Z_P(%d,%d) = %Lf \n",i,j,energy_ij);
 				//Luke modifying to multiply penalties
 	            tmp = energy_ij * PS_penalty * acc;
+				printf("Z_P(%d,%d) = %Lf \n",i,j,tmp);
 				if(tmp < 0){
+
 					d2_energy_p += tmp;
 				}
 				//printf("Z_P(%d,%d) = %Lf \n",i,j,d2_energy_p);
@@ -289,11 +292,11 @@ void W_final::print_result ()
 				//else if (f[i].type == P_VP){
 					energy = WMB->get_VP(i,f[i].pair);
 					break;
-				case P_VPP:
+				//case P_VPP:
 				//}else if(f[i].type == P_VPP){
-					energy = WMB->get_VPP(i,f[i].pair);
+				//	energy = WMB->get_VPP(i,f[i].pair);
 				//}
-					break;
+				//	break;
 			}
             printf ("Pair (%d,%d), type %c,\tenergy %6d\n", i, f[i].pair, f[i].type, energy);
             sum += energy;

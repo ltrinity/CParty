@@ -226,6 +226,8 @@ int main (int argc, char *argv[])
     // check if restricted is included in structure
 	// Hosna March 7, 2012
 	// for optimality we get the value once, use it many times
+	// Luke Aug 2023 depracated
+	/*
 	int seqLen = strlen (sequence);
     for (int i=0; i < seqLen; i++)
     {
@@ -237,6 +239,7 @@ int main (int argc, char *argv[])
 			exit(1);
         }
     }
+	*/
 
     //kevin 22 June 2017
 	//different ways of outputing

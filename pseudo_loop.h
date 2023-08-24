@@ -41,7 +41,6 @@ public:
 	// I don't think we need specific getter function for pkonly case
 	//int get_WIP_pkonly(int i, int j); // April 3, 2012
 
-	int get_VPP(int i, int j);
 
 	//Luke Aug 2023
 	int get_VPR(int i, int j);
@@ -96,7 +95,6 @@ private:
     int **border_bs;		// keeps track of border_b and border_B
     int **border_bps;		// keeps track of border_bp and border_Bp
     int *WIP;				// the loop corresponding to WI'
-    int *VPP;				// the loop corresponding to VP'
 	//Luke Aug 2023
 	int *VPR;				// the loop corresponding to VPR
 	int *VPL;				// the loop corresponding to VPL
@@ -142,8 +140,6 @@ private:
 	// April 3, 2012
 	// Hosna: this function is supposed to fill the WIP array with pk only base pairs
 
-	void compute_VPP(int i, int j, h_str_features *fres);
-	// Hosna: this function is supposed to fill the VPP array
 
 	void compute_VPR(int i, int j, h_str_features *fres);
 	// Luke: this function is supposed to fill the VPR array
