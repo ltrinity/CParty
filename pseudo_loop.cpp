@@ -890,7 +890,7 @@ void pseudo_loop::compute_WMBP(int i, int j, h_str_features *fres){
 		// }
 		
 		WMBP[ij] = d2_energy_wmbp;
-		printf("Z_wmbp(%d,%d) = %Lf = %Lf \n",i,j,d2_energy_wmbp, WMBP[ij]);
+		//printf("Z_wmbp(%d,%d) = %Lf = %Lf \n",i,j,d2_energy_wmbp, WMBP[ij]);
 		//depracated
 		// get the min for WMB
 		//WMBP[ij] = MIN(MIN(m1,m3),MIN(m4,m5));
@@ -985,7 +985,7 @@ void pseudo_loop::compute_WMB(int i, int j, h_str_features *fres){
 		}
 		// check the WMBP value
 		mWMBP =  get_WMBP(i,j);
-		printf("Z_PGP(%d,%d) = %Lf \n",i,j,mWMBP);
+		//printf("Z_PGP(%d,%d) = %Lf \n",i,j,mWMBP);
 		//Luke Aug 2023 part func
 		d2_energy_p += mWMBP;
 		WMB[ij] = d2_energy_p;

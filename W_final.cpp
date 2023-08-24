@@ -178,7 +178,7 @@ void W_final::compute_W_restricted (int j, str_features *fres)
 	}
     m3 = compute_W_br3_restricted (j, fres);
 	if(m3<0){
-		printf("P[0,%d] = %Lf\n",j,m3);
+		//printf("P[0,%d] = %Lf\n",j,m3);
 		d2_energy+= m3;
 	}
     if (WMB->is_weakly_closed(0,j) < 0){
