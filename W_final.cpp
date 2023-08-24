@@ -178,7 +178,7 @@ void W_final::compute_W_restricted (int j, str_features *fres)
 	}
     m3 = compute_W_br3_restricted (j, fres);
 	if(m3<0){
-		printf("P[0,%d]%Lf\n",j,m3);
+		printf("P[0,%d] = %Lf\n",j,m3);
 		d2_energy+= m3;
 	}
     if (WMB->is_weakly_closed(0,j) < 0){
@@ -191,7 +191,7 @@ void W_final::compute_W_restricted (int j, str_features *fres)
 	//printf("Z_W(%d,%d) = %Lf \n",0,j,d2_energy);
 }
 
-int W_final::compute_W_br2_restricted (int j, str_features *fres, int &must_choose_this_branch)
+pf_t W_final::compute_W_br2_restricted (int j, str_features *fres, int &must_choose_this_branch)
 {
 	pf_t energy_ij = 0, acc;
     int i;
@@ -218,7 +218,7 @@ int W_final::compute_W_br2_restricted (int j, str_features *fres, int &must_choo
 	return d2_energy_v;
 }
 
-int W_final::compute_W_br3_restricted(int j, str_features *fres){
+pf_t W_final::compute_W_br3_restricted(int j, str_features *fres){
 	// Hosna June 30, 2007
 	// The following would not take care of when
 	// we have some unpaired bases before the start of the WMB
@@ -250,7 +250,7 @@ int W_final::compute_W_br3_restricted(int j, str_features *fres){
 				//Luke modifying to multiply penalties
 	            tmp = energy_ij * PS_penalty;
 				if(tmp < 0){
-					printf("Z_P(%d,%d) = %Lf \n",i,j,tmp);
+					//printf("Z_P(%d,%d) = %Lf \n",i,j,tmp);
 					d2_energy_p += tmp;
 				}
 				//printf("Z_P(%d,%d) = %Lf \n",i,j,d2_energy_p);

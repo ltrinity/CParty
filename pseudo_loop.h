@@ -25,40 +25,35 @@ public:
 	void initialize();
     void compute_energies(int i, int j);
 
-    int get_energy(int i, int j);
+    pf_t get_energy(int i, int j);
 	// in order to be able to check the border values consistantly
 	// I am adding these get functions
-	int get_WI(int i, int j);
+	pf_t get_WI(int i, int j);
 	// Hosna, May 1st, 2012
 	// I don't think we need specific getter function for pkonly case
 	//int get_WI_pkonly(int i, int j); // April 3, 2012
 
-	int get_VP(int i, int j);
-	int get_WMB(int i, int j);
-	int get_BE(int i, int j, int ip, int jp);
-	int get_WIP(int i, int j);
+	pf_t get_VP(int i, int j);
+	pf_t get_WMB(int i, int j);
+	pf_t get_BE(int i, int j, int ip, int jp);
+	pf_t get_WIP(int i, int j);
 	// Hosna, May 1st, 2012
 	// I don't think we need specific getter function for pkonly case
 	//int get_WIP_pkonly(int i, int j); // April 3, 2012
 
 
 	//Luke Aug 2023
-	int get_VPR(int i, int j);
-	int get_VPL(int i, int j);
+	pf_t get_VPR(int i, int j);
+	pf_t get_VPL(int i, int j);
 
 	// based on discussion with Anne, we changed WMB to case 2 and WMBP(containing the rest of the recurrences)
-	int get_WMBP(int i, int j);
+	pf_t get_WMBP(int i, int j);
 	// Luke adding for PGPW
-	int get_PGPW(int i, int j);
+	pf_t get_PGPW(int i, int j);
 
     int is_weakly_closed(int i, int j);
     int is_empty_region(int i, int j);
 
-    void back_track(char *structure, minimum_fold *f, seq_interval *cur_interval);
-
-	// Hosna, May 1st, 2012
-	// We need a specific back track function for pkonly case
-	void back_track_pkonly(char *structure, minimum_fold *f, seq_interval *cur_interval);
 
     void set_stack_interval(seq_interval *stack_interval);
     seq_interval *get_stack_interval(){return stack_interval;}
@@ -86,25 +81,25 @@ private:
 	int needs_computation; // This global variable is used so that we don't compute energies in backtracking
 
 	//Hosna
-    int *WI;				// the loop inside a pseudoknot (in general it looks like a W but is inside a pseudoknot)
-    int *VP;				// the loop corresponding to the pseudoknotted region of WMB
-    int *WMB;				// the main loop for pseudoloops and bands
+    pf_t *WI;				// the loop inside a pseudoknot (in general it looks like a W but is inside a pseudoknot)
+    pf_t *VP;				// the loop corresponding to the pseudoknotted region of WMB
+    pf_t *WMB;				// the main loop for pseudoloops and bands
     int *weakly_closed;		// the array which is keeping track of which regions are weakly closed
     int *not_paired_all;	// the array which keeps track of empty regions
     int *index;				// the array to keep the index of two dimensional arrays like WI and weakly_closed
     int **border_bs;		// keeps track of border_b and border_B
     int **border_bps;		// keeps track of border_bp and border_Bp
-    int *WIP;				// the loop corresponding to WI'
+    pf_t *WIP;				// the loop corresponding to WI'
 	//Luke Aug 2023
-	int *VPR;				// the loop corresponding to VPR
-	int *VPL;				// the loop corresponding to VPL
-    int *BE;				// the loop corresponding to BE
+	pf_t *VPR;				// the loop corresponding to VPR
+	pf_t *VPL;				// the loop corresponding to VPL
+    pf_t *BE;				// the loop corresponding to BE
 
     // Hosna, April 18th, 2007
 	// based on discussion with Anne, we changed WMB to case 2 and WMBP(containing the rest of the recurrences)
-	int *WMBP; 				// the main loop to calculate WMB
+	pf_t *WMBP; 				// the main loop to calculate WMB
 	// Luke adding
-	int *PGPW;
+	pf_t *PGPW;
 
     // function to allocate space for the arrays
     void allocate_space();

@@ -50,7 +50,7 @@ void pseudo_loop::allocate_space()
     for (int i=1; i < nb_nucleotides; i++)
         index[i] = index[i-1]+nb_nucleotides-i+1;
 
-    WI = new int [total_length];
+    WI = new pf_t [total_length];
     if (WI == NULL) giveup ("Cannot allocate memory", "energy");
     for (i=0; i < total_length; i++) WI[i] = 0; // if i == j -> p_up
 
@@ -62,42 +62,42 @@ void pseudo_loop::allocate_space()
     if (not_paired_all == NULL) giveup ("Cannot allocate memory", "not_paired_all");
     for (i=0; i < total_length; i++) not_paired_all[i] = 0;
 
-    VP = new int[total_length];
+    VP = new pf_t[total_length];
     if (VP == NULL) giveup ("Cannot allocate memory", "VP");
 	//Luke Aug 2023 changing init to 0 from INF for partition function 
     for (i=0; i < total_length; i++) VP[i] = 0;
 
-    WMB = new int[total_length];
+    WMB = new pf_t[total_length];
     if (WMB == NULL) giveup ("Cannot allocate memory", "WMB");
 	//Luke Aug 2023 changing init to 0 from INF for partition function 
     for (i=0; i < total_length; i++) WMB[i] = 0;
 
-    WMBP = new int[total_length];
+    WMBP = new pf_t[total_length];
 	if (WMBP == NULL) giveup("Cannot allocate memory","WMBP");
 	//Luke Aug 2023 changing init to 0 from INF for partition function 
 	for (i=0; i < total_length; i++) WMBP[i] = 0;
 
-	PGPW = new int[total_length];
+	PGPW = new pf_t[total_length];
 	if (PGPW == NULL) giveup("Cannot allocate memory","PGPW");
 	//Luke Aug 2023 changing init to 0 from INF for partition function 
 	for (i=0; i < total_length; i++) PGPW[i] = 0;
 
-    WIP = new int[total_length];
+    WIP = new pf_t[total_length];
     if (WIP == NULL) giveup ("Cannot allocate memory", "WIP");
 	//Luke Aug 2023 changing init to 0 from INF for partition function 
     for (i=0; i < total_length; i++) WIP[i] = 0;
 
 
 	// Luke added Aug 2023
-	VPR = new int[total_length];
+	VPR = new pf_t[total_length];
     if (VPR == NULL) giveup ("Cannot allocate memory", "VPR");
     for (i=0; i < total_length; i++) VPR[i] = 0;
 	
-	VPL = new int[total_length];
+	VPL = new pf_t[total_length];
     if (VPL == NULL) giveup ("Cannot allocate memory", "VPL");
     for (i=0; i < total_length; i++) VPL[i] = 0;
 
-    BE = new int[total_length];
+    BE = new pf_t[total_length];
     if (BE == NULL) giveup ("Cannot allocate memory", "BE");
     for (i=0; i < total_length; i++) BE[i] = 0; //check
 
@@ -278,7 +278,7 @@ void pseudo_loop::compute_energies(int i, int j)
 }
 
 void pseudo_loop::compute_WI(int i, int j , h_str_features *fres){
-	int min = INF, m1 = INF, m2= INF, m3= INF;
+	pf_t min = INF, m1 = INF, m2= INF, m3= INF;
 
 	// Luke init partition function Aug 2023
 	pf_t d2_energy_wi = 0;
@@ -338,17 +338,17 @@ void pseudo_loop::compute_WI(int i, int j , h_str_features *fres){
 	// Luke 6/27/2023: ambiguity here
 	int t;
 	for (t = i; t< j; t++){
-		int wi_1 = get_WI(i,t-1);
+		pf_t wi_1 = get_WI(i,t-1);
 		//new case 1, check if V possible and add to WI(i, t-1)
 		if ((fres[t].pair == j && fres[j].pair == t)
 		||(fres[t].pair < FRES_RESTRICTED_MIN && fres[j].pair < FRES_RESTRICTED_MIN)){
-			int v_ener = V->get_energy(t,j);
-			int energy = wi_1 * v_ener * PPS_penalty;
+			pf_t v_ener = V->get_energy(t,j);
+			pf_t energy = wi_1 * v_ener * PPS_penalty;
 			d2_energy_wi += energy;
 			//m1 = (m1 > energy)? energy : m1;
 		}
 		//new case 3 
-		int energy2 = wi_1 * get_WMB(t,j) * PSP_penalty * PPS_penalty;
+		pf_t energy2 = wi_1 * get_WMB(t,j) * PSP_penalty * PPS_penalty;
 		d2_energy_wi += energy2;
 		//m3 = (m3 > energy2)? energy2 : m3;
 //		if (debug_WI){
@@ -391,7 +391,7 @@ void pseudo_loop::compute_VP(int i, int j, h_str_features *fres){
 		return;
 	}
 	else{
-		int m1 = INF, m2 = INF, m3 = INF, m4= INF, m5 = INF, m6 = INF, m7 = INF, m8= INF, m9 = INF; //different branches
+		pf_t m1 = INF, m2 = INF, m3 = INF, m4= INF, m5 = INF, m6 = INF, m7 = INF, m8= INF, m9 = INF; //different branches
 		// Luke init partition function Aug 2023
 		pf_t d2_energy_vp = 0;
 		//branchs:
@@ -403,8 +403,8 @@ void pseudo_loop::compute_VP(int i, int j, h_str_features *fres){
 		if(fres[i].arc > -1 && fres[j].arc == -1 && get_Bp(i,j) >= 0 && get_Bp(i,j)< nb_nucleotides && get_B(i,j) >= 0 && get_B(i,j) < nb_nucleotides){
 			int Bp_i = get_Bp(i,j);
 			int B_i = get_B(i,j);
-			int WI_ipus1_BPminus = get_WI(i+1,Bp_i - 1) ;
-			int WI_Bplus_jminus = get_WI(B_i + 1,j-1);
+			pf_t WI_ipus1_BPminus = get_WI(i+1,Bp_i - 1);
+			pf_t WI_Bplus_jminus = get_WI(B_i + 1,j-1);
 			// Luke Aug 2023 changing for part func.
 			m1 =   WI_ipus1_BPminus * WI_Bplus_jminus;
 			d2_energy_vp +=m1;
@@ -441,9 +441,9 @@ void pseudo_loop::compute_VP(int i, int j, h_str_features *fres){
 			int B_i = get_B(i,j);
 			int b_i = get_b(i,j);
 			int bp_i = get_bp(i,j);
-			int WI_i_plus_Bp_minus = get_WI(i+1,Bp_i - 1);
-			int WI_B_plus_b_minus = get_WI(B_i + 1,b_i - 1);
-			int WI_bp_plus_j_minus = get_WI(bp_i +1,j - 1);
+			pf_t WI_i_plus_Bp_minus = get_WI(i+1,Bp_i - 1);
+			pf_t WI_B_plus_b_minus = get_WI(B_i + 1,b_i - 1);
+			pf_t WI_bp_plus_j_minus = get_WI(bp_i +1,j - 1);
 			// Luke Aug 2023 changing for part func.
 			m3 = WI_i_plus_Bp_minus * WI_B_plus_b_minus * WI_bp_plus_j_minus;
 			d2_energy_vp +=m3;
@@ -512,7 +512,7 @@ void pseudo_loop::compute_VP(int i, int j, h_str_features *fres){
 						// i and ip and j and jp should be in the same arc
 						if (fres[j].arc == fres[jp].arc ){
 							// Luke Aug 2023 changing for part func.
-							int temp = get_e_intP(i,ip,jp,j) * get_VP(ip,jp);
+							pf_t temp = get_e_intP(i,ip,jp,j) * get_VP(ip,jp);
 							d2_energy_vp += temp;
 //							if (debug){
 //								printf("VP(%d,%d) branch 5: e_intP(%d,%d,%d,%d) = %d, VP(%d,%d) = %d, temp = %d \n",i,j,i,ip,jp,j,get_e_intP(i,ip,jp,j),ip,jp,get_VP(ip,jp),temp);
@@ -546,7 +546,7 @@ void pseudo_loop::compute_VP(int i, int j, h_str_features *fres){
 				// After meeting with Anne and Cristina --> ap should have 2* bp to consider the biggest and the one that crosses
 				// in a multiloop that spans a band
 				//Luke Aug 2023 : change here to get value from VP instead of VPP for part func.
-				int tmp = get_WIP(i+1,r-1) * get_VP(r,j-1) * (ap_penalty + (2*bp_penalty));
+				pf_t tmp = get_WIP(i+1,r-1) * get_VP(r,j-1) * (ap_penalty + (2*bp_penalty));
 				d2_energy_vp += tmp;
 //				if (debug)
 //				{
@@ -577,7 +577,7 @@ void pseudo_loop::compute_VP(int i, int j, h_str_features *fres){
 				// After meeting with Anne and Cristina --> ap should have 2* bp to consider the biggest and the one that crosses
 				// in a multiloop that spans a band
 				// Luke Aug 2023: change here from VPP to VP
-				int tmp = get_VP(i+1,r) * get_WIP(r+1,j-1) * (ap_penalty + (2* bp_penalty));
+				pf_t tmp = get_VP(i+1,r) * get_WIP(r+1,j-1) * (ap_penalty + (2* bp_penalty));
 				d2_energy_vp += tmp;
 //				if (debug)
 //				{
@@ -602,7 +602,7 @@ void pseudo_loop::compute_VP(int i, int j, h_str_features *fres){
 				// After meeting with Anne and Cristina --> ap should have 2* bp to consider the biggest and the one that crosses
 				// in a multiloop that spans a band
 				//Luke Aug 2023: change here to get value from VPR instead of VP
-				int tmp = get_WIP(i+1,r-1) * get_VPR(r,j-1) * (ap_penalty + (2*bp_penalty));
+				pf_t tmp = get_WIP(i+1,r-1) * get_VPR(r,j-1) * (ap_penalty + (2*bp_penalty));
 				d2_energy_vp += tmp;
 //				if (debug)
 //				{
@@ -627,7 +627,7 @@ void pseudo_loop::compute_VP(int i, int j, h_str_features *fres){
 				// After meeting with Anne and Cristina --> ap should have 2* bp to consider the biggest and the one that crosses
 				// in a multiloop that spans a band
 				//Luke Aug 2023: change here from VP to VPL
-				int tmp = get_VPL(i+1,r) * get_WIP(r+1,j-1) * (ap_penalty + (2* bp_penalty));
+				pf_t tmp = get_VPL(i+1,r) * get_WIP(r+1,j-1) * (ap_penalty + (2* bp_penalty));
 				d2_energy_vp += tmp;
 //				if (debug)
 //				{
@@ -674,7 +674,7 @@ void pseudo_loop::compute_PGPW(int i, int j, h_str_features *fres){
 		// Luke init partition function Aug 2023
 		pf_t d2_energy_pgpw = 0;
 		//changing to 0
-		int m1 = 0;
+		pf_t m1 = 0;
 		// Luke: new case 1 for PGPW
 		// 5) WMB(i,j) = min_{i<l<j}{WMB(i,l)+WI(l+1,j)} if bp(j)<j
 		// Hosna: Feb 5, 2007
@@ -688,7 +688,9 @@ void pseudo_loop::compute_PGPW(int i, int j, h_str_features *fres){
 				// l and j should be in the same arc
 				if (fres[l].pair < 0 && fres[l].arc > -1 && fres[j].arc > -1 && fres[j].arc == fres[l].arc){
 					//Luke Aug 2023 part func
-					int temp = get_WMBP(i,l) * get_WI(l+1,j);
+					pf_t temp = get_WMBP(i,l) * get_WI(l+1,j);
+					//printf("Z_wmbp(%d,%d) = %d \n",i,j,get_WMBP(i,l));
+					//printf("Z_wi(%d,%d) = %d \n",i,j,get_WI(l+1,j));
 					d2_energy_pgpw += temp;
 					//depracated
 					//if (temp < m1){
@@ -745,7 +747,7 @@ void pseudo_loop::compute_WMBP(int i, int j, h_str_features *fres){
 		return;
 	}
 	else{
-		int m1 = INF, m3 = INF, m4 = INF, m5 = INF;
+		pf_t m1 = INF, m3 = INF, m4 = INF, m5 = INF;
 		// Luke init partition function Aug 2023
 		pf_t d2_energy_wmbp = 0;
 		// if not paired(j) and paired(i) then
@@ -770,10 +772,10 @@ void pseudo_loop::compute_WMBP(int i, int j, h_str_features *fres){
 				// removed bp(l)<0 as VP should handle that
 				if(get_bp(i,l) >= 0 && get_bp(i,l) < nb_nucleotides && l+TURN <= j){
 					int bp_i_l = get_bp(i,l);
-					int BE_energy = get_BE(i,fres[i].pair,bp_i_l,fres[bp_i_l].pair);
-					int WI_energy = get_WI(bp_i_l +1,l-1);
-					int VP_energy = get_VP(l,j);
-					int sum = BE_energy * WI_energy * VP_energy + (2*PB_penalty);
+					pf_t BE_energy = get_BE(i,fres[i].pair,bp_i_l,fres[bp_i_l].pair);
+					pf_t WI_energy = get_WI(bp_i_l +1,l-1);
+					pf_t VP_energy = get_VP(l,j);
+					pf_t sum = BE_energy * WI_energy * VP_energy * (2*PB_penalty);
 					//Luke Aug 2023 part func
 					d2_energy_wmbp += sum;
 					//depracated
@@ -817,9 +819,9 @@ void pseudo_loop::compute_WMBP(int i, int j, h_str_features *fres){
 						// Hosna: July 5th, 2007:
 						// as long as we have i <= arc(l)< j we are fine
 						if (i <= fres[l].arc && fres[l].arc < j && l+TURN <=j){
-							int sum = get_BE(fres[get_B(l,j)].pair,get_B(l,j),fres[get_Bp(l,j)].pair,get_Bp(l,j))* get_WMBP(i,l-1)* get_VP(l,j) *(2*PB_penalty);
+							pf_t sum = get_BE(fres[get_B(l,j)].pair,get_B(l,j),fres[get_Bp(l,j)].pair,get_Bp(l,j))* get_WMBP(i,l-1)* get_VP(l,j) *(2*PB_penalty);
 							//Luke adding for PGPW case
-							int sum2 = get_BE(fres[get_B(l,j)].pair,get_B(l,j),fres[get_Bp(l,j)].pair,get_Bp(l,j))* get_PGPW(i,l-1)* get_VP(l,j)*(2*PB_penalty);
+							pf_t sum2 = get_BE(fres[get_B(l,j)].pair,get_B(l,j),fres[get_Bp(l,j)].pair,get_Bp(l,j))* get_PGPW(i,l-1)* get_VP(l,j)*(2*PB_penalty);
 
 							//Luke Aug 2023 part func
 							d2_energy_wmbp += sum;
@@ -848,7 +850,7 @@ void pseudo_loop::compute_WMBP(int i, int j, h_str_features *fres){
 		}
 		//Luke Aug 2023 part func
 		// 4) WMB(i,j) = VP(i,j) + P_b
-		int temp = get_VP(i,j) * PB_penalty;
+		pf_t temp = get_VP(i,j) * PB_penalty;
 		d2_energy_wmbp += temp;
 		//depracated
 		//if (temp < m4){
@@ -886,7 +888,9 @@ void pseudo_loop::compute_WMBP(int i, int j, h_str_features *fres){
 //				printf("WMB(%d,%d) branch 5:  l = %d So m5 = %d\n",i,j,l_min, m5);
 //			}
 		// }
+		
 		WMBP[ij] = d2_energy_wmbp;
+		printf("Z_wmbp(%d,%d) = %Lf = %Lf \n",i,j,d2_energy_wmbp, WMBP[ij]);
 		//depracated
 		// get the min for WMB
 		//WMBP[ij] = MIN(MIN(m1,m3),MIN(m4,m5));
@@ -931,7 +935,7 @@ void pseudo_loop::compute_WMB(int i, int j, h_str_features *fres){
 			int l, l_min=-1;
 			int bp_j = fres[j].pair;
 			//Luke change to 0
-			int temp = 0;
+			pf_t temp = 0;
 //			if (debug_WMB){
 //				printf("\n INSIDE WMB BRANCH 2 \n where bp_j = %d and j = %d \n\n", bp_j,j);
 //			}
@@ -952,8 +956,10 @@ void pseudo_loop::compute_WMB(int i, int j, h_str_features *fres){
 //					if (fres[l].pair < 0 && get_Bp(l,j) >= 0 && get_Bp(l,j)<nb_nucleotides){
 					if (get_Bp(l,j) >= 0 && get_Bp(l,j)<nb_nucleotides){
 						//Luke Aug 2023 part func
-						int sum = get_BE(bp_j,j,fres[get_Bp(l,j)].pair,get_Bp(l,j)) * get_WMBP(i,l) * get_WI(l+1,get_Bp(l,j)-1) * PB_penalty;
+						pf_t sum = get_BE(bp_j,j,fres[get_Bp(l,j)].pair,get_Bp(l,j)) * get_WMBP(i,l) * get_WI(l+1,get_Bp(l,j)-1) * PB_penalty;
+						//printf("Z_BE(%d,%d) = %d \n",i,j,get_BE(bp_j,j,fres[get_Bp(l,j)].pair,get_Bp(l,j)));
 						d2_energy_p += sum;
+						//printf("Z_P(%d,%d) = %Lf \n",i,j,d2_energy_p);
 						if (l == 600 && i == 522 && j == 615) {
 							int t = 0;
 						}
@@ -979,6 +985,7 @@ void pseudo_loop::compute_WMB(int i, int j, h_str_features *fres){
 		}
 		// check the WMBP value
 		mWMBP =  get_WMBP(i,j);
+		printf("Z_PGP(%d,%d) = %Lf \n",i,j,mWMBP);
 		//Luke Aug 2023 part func
 		d2_energy_p += mWMBP;
 		WMB[ij] = d2_energy_p;
@@ -1036,17 +1043,17 @@ void pseudo_loop::compute_WIP(int i, int j, h_str_features *fres){
 	// now new branches 1 and 3
 	int t;
 	for (t = i; t <j; t++){
-		int wip_1 = get_WIP(i,t-1);
+		pf_t wip_1 = get_WIP(i,t-1);
 		if (fres[t].pair == j
 		|| (fres[t].pair < FRES_RESTRICTED_MIN && fres[j].pair < FRES_RESTRICTED_MIN && can_pair(int_sequence[t],int_sequence[j]))){
 			//Aug 2023 change Luke
-			int v_ener = V->get_energy(i,j)	* bp_penalty;
-			int energy = wip_1*v_ener;
+			pf_t v_ener = V->get_energy(i,j)	* bp_penalty;
+			pf_t energy = wip_1*v_ener;
 			d2_energy_wip += energy;
 			//depracated
 			//m1 = (m1 > energy)? energy : m1;
 		}
-		int energy2 = wip_1 * get_WMB(t,j) * PSM_penalty * bp_penalty;
+		pf_t energy2 = wip_1 * get_WMB(t,j) * PSM_penalty * bp_penalty;
 		d2_energy_wip += energy2;
 		//m3 = (m3 > energy2)? energy2 : m3;
 //		if (debug && i ==15 && j == 20 ){
@@ -1103,7 +1110,7 @@ void pseudo_loop::compute_VPR(int i, int j, h_str_features *fres){
 //		}
 		return;
 	}
-	int m1 = INF, m2 = INF;
+	pf_t m1 = INF, m2 = INF;
 	// Luke Aug 2023 init part func
 	pf_t d2_energy_vpr = 0;
 
@@ -1120,7 +1127,7 @@ void pseudo_loop::compute_VPR(int i, int j, h_str_features *fres){
         // fres[i].pair < 0 changed to fres[i].pair < FRES_RESTRICTED_MIN (which equals -1 at time of writing)
         // otherwise it will create pairs in spots where the restricted structure says there should be no pairs
 		if (fres[r].pair < FRES_RESTRICTED_MIN){
-			int tmp = get_VP(i,r) * get_WIP(r+1,j);
+			pf_t tmp = get_VP(i,r) * get_WIP(r+1,j);
 			d2_energy_vpr+=tmp;
 //			if (debug){
 //				printf("VPP(%d,%d) branch 1: VP(%d,%d) = %d, WIP(%d,%d)= %d ==> tmp = %d  and m1 = %d\n",i,j,i,r,get_VP(i,r),r+1,j,get_WIP(r+1,j),tmp, m1);
@@ -1133,7 +1140,7 @@ void pseudo_loop::compute_VPR(int i, int j, h_str_features *fres){
         // fres[i].pair < 0 changed to fres[i].pair < FRES_RESTRICTED_MIN (which equals -1 at time of writing)
         // otherwise it will create pairs in spots where the restricted structure says there should be no pairs
 		if (fres[r].pair < FRES_RESTRICTED_MIN && this->is_empty_region(r+1,j)){
-			int tmp = get_VP(i,r) * (cp_penalty *(j-r)); // check the (j-r) part
+			pf_t tmp = get_VP(i,r) * (cp_penalty *(j-r)); // check the (j-r) part
 			d2_energy_vpr+=tmp;
 //			if (debug){
 //				printf("VPR(%d,%d) branch 2: VP(%d,%d) = %d, %d *(%d-%d)= %d ==> tmp = %d  and m3 = %d\n",i,j,i,r,get_VP(i,r),cp_penalty,j,r,cp_penalty *(j-r),tmp, m3);
@@ -1171,7 +1178,7 @@ void pseudo_loop::compute_VPL(int i, int j, h_str_features *fres){
 //		}
 		return;
 	}
-	int m1 = INF;
+	pf_t m1 = INF;
 	// Luke Aug 2023 init part func
 	pf_t d2_energy_vpl = 0;
 
@@ -1188,7 +1195,7 @@ void pseudo_loop::compute_VPL(int i, int j, h_str_features *fres){
         // fres[i].pair < 0 changed to fres[i].pair < FRES_RESTRICTED_MIN (which equals -1 at time of writing)
         // otherwise it will create pairs in spots where the restricted structure says there should be no pairs
 		if (fres[r].pair < FRES_RESTRICTED_MIN && this->is_empty_region(i,r-1)){
-			int tmp = (cp_penalty * (r-i)) * get_VP(r,j);
+			pf_t tmp = (cp_penalty * (r-i)) * get_VP(r,j);
 			d2_energy_vpl += tmp;
 //			if (debug){
 //				printf("VPP(%d,%d) branch 4: %d *(%d-%d) = %d, VP(%d,%d)= %d ==> tmp = %d  and m4 = %d\n",i,j,cp_penalty,r,i,cp_penalty * (r-i),r,j,get_VP(r,j),tmp, m4);
@@ -1246,7 +1253,7 @@ void pseudo_loop::compute_BE(int i, int j, int ip, int jp, h_str_features * fres
 		return;
 	}
 
-	int m1 = INF, m2 = INF, m3 = INF, m4 = INF, m5 = INF;
+	pf_t m1 = INF, m2 = INF, m3 = INF, m4 = INF, m5 = INF;
 	// Luke Aug 2023 init part func
 	pf_t d2_energy_be = 0;
 	// 1) bp(i+1) == j-1
@@ -1279,7 +1286,7 @@ void pseudo_loop::compute_BE(int i, int j, int ip, int jp, h_str_features * fres
 			// when we pass a stacked pair instead of an internal loop to e_int, it returns underflow,
 			// so I am checking explicitely that we won't have stems instead of internal loop
 			if (is_empty_region(i+1,l-1) == 1 && is_empty_region(lp+1,j-1) == 1 ){//&& !(ip == (i+1) && jp==(j-1)) && !(l == (i+1) && lp == (j-1))){
-				int temp = get_e_intP(i,l,lp,j)* get_BE(l,lp,ip,jp);
+				pf_t temp = get_e_intP(i,l,lp,j)* get_BE(l,lp,ip,jp);
 				d2_energy_be += temp;
 //				if (debug){
 //					printf("BE(%d,%d,%d,%d) branch 2: e_intP(%d,%d,%d,%d) = %d, BE(%d,%d,%d,%d)= %d ==> temp = %d  and m2 = %d\n",i,j,ip,jp,i,l,lp,j,get_e_intP(i,l,lp,j),l,lp,ip,jp,get_BE(l,lp,ip,jp));
@@ -1294,7 +1301,7 @@ void pseudo_loop::compute_BE(int i, int j, int ip, int jp, h_str_features * fres
 				// Hosna: July 5th, 2007
 				// After meeting with Anne and Cristina --> ap should have 2* bp to consider the biggest and the one that crosses
 				// in a multiloop that spans a band
-				int temp = get_WIP(i+1,l-1) * get_BE(l,lp,ip,jp) * get_WIP(lp+1,j-1) * (ap_penalty + (2* bp_penalty));
+				pf_t temp = get_WIP(i+1,l-1) * get_BE(l,lp,ip,jp) * get_WIP(lp+1,j-1) * (ap_penalty + (2* bp_penalty));
 				d2_energy_be += temp;
 //				if (debug){
 //					printf("BE(%d,%d,%d,%d) branch 3: WIP(%d,%d) = %d, BE(%d,%d,%d,%d)= %d, WIP(%d,%d)= %d ==> temp = %d  and m3 = %d\n",i,j,ip,jp,i+1,l-1,get_WIP(i+1,l-1),l,lp,ip,jp,get_BE(l,lp,ip,jp),lp+1,j-1,get_WIP(lp+1,j-1),temp,m3);
@@ -1309,7 +1316,7 @@ void pseudo_loop::compute_BE(int i, int j, int ip, int jp, h_str_features * fres
 				// Hosna: July 5th, 2007
 				// After meeting with Anne and Cristina --> ap should have 2* bp to consider the biggest and the one that crosses
 				// in a multiloop that spans a band
-				int temp = get_WIP(i+1,l-1) * get_BE(l,lp,ip,jp) * ((cp_penalty * (j-lp+1)) + ap_penalty + (2*bp_penalty));
+				pf_t temp = get_WIP(i+1,l-1) * get_BE(l,lp,ip,jp) * ((cp_penalty * (j-lp+1)) + ap_penalty + (2*bp_penalty));
 				d2_energy_be += temp;
 //				if (debug){
 //					printf("BE(%d,%d,%d,%d) branch 4: WIP(%d,%d) = %d, BE(%d,%d,%d,%d)= %d ==> temp = %d  and m4 = %d\n",i,j,ip,jp,i+1,l-1,get_WIP(i+1,l-1),l,lp,ip,jp,get_BE(l,lp,ip,jp),temp,m4);
@@ -1324,7 +1331,7 @@ void pseudo_loop::compute_BE(int i, int j, int ip, int jp, h_str_features * fres
 				// Hosna: July 5th, 2007
 				// After meeting with Anne and Cristina --> ap should have 2* bp to consider the biggest and the one that crosses
 				// in a multiloop that spans a band
-				int temp = (ap_penalty + (2*bp_penalty) + (cp_penalty * (l-i+1))) * get_BE(l,lp,ip,jp) * get_WIP(lp+1,j-1);
+				pf_t temp = (ap_penalty + (2*bp_penalty) + (cp_penalty * (l-i+1))) * get_BE(l,lp,ip,jp) * get_WIP(lp+1,j-1);
 				d2_energy_be += temp;
 //				if (debug && l == 9 && ip == 11){
 //					printf("BE(%d,%d,%d,%d) branch 5: BE(%d,%d,%d,%d)= %d and WIP(%d,%d) = %d ==> temp = %d \n", i,j,ip,jp,l,lp,ip,jp,get_BE(l,lp,ip,jp),lp+1,j-1,get_WIP(lp+1,j-1),temp);
@@ -1343,7 +1350,7 @@ void pseudo_loop::compute_BE(int i, int j, int ip, int jp, h_str_features * fres
 //	}
 }
 
-int pseudo_loop::get_WI(int i, int j){
+pf_t pseudo_loop::get_WI(int i, int j){
 	if (i>j){
 		return 0;
 	}
@@ -1384,7 +1391,7 @@ int pseudo_loop::get_WI_pkonly(int i, int j){
 }
 */
 
-int pseudo_loop::get_VP(int i, int j){
+pf_t pseudo_loop::get_VP(int i, int j){
 	// Hosna, March 16, 2012
 	// two bases should be at least 3 bases apart
 
@@ -1404,7 +1411,7 @@ int pseudo_loop::get_VP(int i, int j){
 	return VP[ij];
 
 }
-int pseudo_loop::get_WMB(int i, int j){
+pf_t pseudo_loop::get_WMB(int i, int j){
 	// Hosna: July 6th, 2007
 	// added impossible cases
 	// Hosna, March 16, 2012,
@@ -1423,10 +1430,11 @@ int pseudo_loop::get_WMB(int i, int j){
 	 */
 	//printf("get_WMB(%d,%d), after computation its value = %d!\n",i,j, WMB[ij]);
 	return WMB[ij];
+	
 }
 
 // Luke Aug 2023
-int pseudo_loop::get_PGPW(int i, int j){
+pf_t pseudo_loop::get_PGPW(int i, int j){
 	// i and j should be at least 3 bases apart
 	if (j-i< TURN || (fres[i].pair >= 0 && fres[i].pair > j) || (fres[j].pair >= 0 && fres[j].pair < i) || (fres[i].pair >= 0 && fres[i].pair < i ) || (fres[j].pair >= 0 && j < fres[j].pair)){
 		return INF;
@@ -1446,7 +1454,7 @@ int pseudo_loop::get_PGPW(int i, int j){
 
 // Hosna: April 18th, 2007
 // changed WMB to case 2 and WMBP
-int pseudo_loop::get_WMBP(int i, int j){
+pf_t pseudo_loop::get_WMBP(int i, int j){
 	// Hosna: July 6th, 2007
 	// added impossible cases
 	// Hosna, March 16, 2012,
@@ -1467,7 +1475,7 @@ int pseudo_loop::get_WMBP(int i, int j){
 	return WMBP[ij];
 }
 
-int pseudo_loop::get_BE(int i, int j, int ip, int jp){
+pf_t pseudo_loop::get_BE(int i, int j, int ip, int jp){
 	// Hosna, March 16, 2012,
 	// i and j should be at least 3 bases apart
 	if (j-i>= TURN && i >= 0 && i <= ip && ip < jp && jp <= j && j < nb_nucleotides && fres[i].pair >=0 && fres[j].pair >= 0 && fres[ip].pair >= 0 && fres[jp].pair >= 0 && fres[i].pair == j && fres[j].pair == i && fres[ip].pair == jp && fres[jp].pair == ip){
@@ -1499,7 +1507,7 @@ int pseudo_loop::get_BE(int i, int j, int ip, int jp){
 	}
 }
 
-int pseudo_loop::get_WIP(int i, int j){
+pf_t pseudo_loop::get_WIP(int i, int j){
 	// Hosna, March 16, 2012,
 	// i and j should be at least 3 bases apart
 	if (j-i < TURN || i >= j || this->is_weakly_closed(i,j) != 1){
@@ -1541,7 +1549,7 @@ int pseudo_loop::get_WIP_pkonly(int i, int j){
 */
 
 
-int pseudo_loop::get_VPR(int i, int j){
+pf_t pseudo_loop::get_VPR(int i, int j){
 	// Luke Aug 2023
 	// i and j should be at least 3 bases apart
 	if (j-i < TURN || i >= j || this->is_weakly_closed(i,j) == 1){
@@ -1562,7 +1570,7 @@ int pseudo_loop::get_VPR(int i, int j){
 
 }
 
-int pseudo_loop::get_VPL(int i, int j){
+pf_t pseudo_loop::get_VPL(int i, int j){
 	// Luke Aug 2023
 	// i and j should be at least 3 bases apart
 	if (j-i < TURN || i >= j || this->is_weakly_closed(i,j) == 1){
@@ -1663,7 +1671,7 @@ int pseudo_loop::get_e_intP(int i, int ip, int jp, int j){
 	return energy;
 }
 
-int pseudo_loop::get_energy(int i, int j){
+pf_t pseudo_loop::get_energy(int i, int j){
 	return get_WMB(i,j);
 }
 
