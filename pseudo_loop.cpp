@@ -360,99 +360,6 @@ void pseudo_loop::compute_WI(int i, int j , h_str_features *fres){
 	//partition function
 	WI[ij] = d2_energy_wi;
 	//printf("Z_WI(%d,%d) = %Lf \n",i,j,d2_energy_wi);
-//	if (debug){
-//		printf("WI(%d,%d) branch 1: m1 = %d\n",i,j,m1);
-//	}
-//	}
-	// branch 2:
-
-	// Ian Wark July 19 2017
-	// fres[i].pair >= 0 changed to fres[i].pair >= FRES_RESTRICTED_MIN (which equals -1 at time of writing)
-	// otherwise it will create pairs in spots where the restricted structure says there should be no pairs
-	//if ((fres[i].pair == j && fres[j].pair == i)
-	//||(fres[i].pair < FRES_RESTRICTED_MIN && fres[j].pair < FRES_RESTRICTED_MIN)){
-		// Hosna, April 16th, 2007
-		// changed back to see if it will work fine
-		// Hosna: April 19th, 2007
-		// I think we should call the restricted version
-
-		//int v_ener = (i>j)? INF: V->get_energy(i,j);
-		//m2 = v_ener + PPS_penalty;
-//		if (debug){
-//			printf("WI(%d,%d) branch 2: m2 = %d\n",i,j,m2);
-//		}
-	//}
-	// branch 3:
-	// Hosna: April 20, 2007
-	// removed the penalty of PPS
-
-	// Hosna: July 5th, 2007
-	// Anne said we should put PPS back
-	// change PSM to PSP
-//	if (debug && i == 6 && j == 15){
-//		printf("WI(6,15) is calling WMB \n");
-//	}
-
-	//m3 = get_WMB(i,j) + PSP_penalty + PPS_penalty;
-
-//	if (debug){
-//		printf("WI(%d,%d) branch 3: m3 = %d\n",i,j,m3);
-//	}
-// depracated Aug 2023
-	//min = MIN(m1,MIN(m2,m3));
-	//WI[ij] = min;
-//	if (debug ){
-//		printf("WI[%d,%d]: m1 = %d, m2 = %d and m3 = %d ==> min = %d \n",i,j,m1,m2,m3,WI[ij]);
-//	}
-}
-
-
-void pseudo_loop::compute_WI_pkonly(int i, int j , h_str_features *fres){
-	int min = INF, m1 = INF, m2= INF, m3= INF;
-	int ij = index[i]+j-i;
-	if (WI[ij] != 0){ //calculated before
-		return;
-	}
-
-	//base cases
-	// if [i,j] is not weakly closed then WI[i,j] = INF
-	if (is_weakly_closed(i,j) == 0){
-		WI[ij] = INF;
-		return;
-	}
-
-	// branch 4, one base
-	if (i == j){
-		WI[ij] = PUP_penalty;
-		return;
-	}
-	if (fres[i].arc != fres[j].arc){
-		WI[ij] = INF;
-		return;
-	}
-
-
-	// branch 1:
-	int t;
-	for (t = i; t< j; t++){
-		int wi_1 = get_WI(i,t);
-		int wi_2 = get_WI(t+1,j);
-		int energy = wi_1 + wi_2;
-		m1 = (m1 > energy)? energy : m1;
-	}
-	// branch 2:
-	if (fres[i].pair == j && fres[j].pair == i){
-
-		int v_ener = (i>j)? INF: V->get_energy(i,j);
-		m2 = v_ener + PPS_penalty;
-
-	}
-	// branch 3:
-	m3 = get_WMB(i,j) + PSP_penalty + PPS_penalty;
-
-
-	min = MIN(m1,MIN(m2,m3));
-	WI[ij] = min;
 }
 
 // Luke modifying for CParty, cases 1-5 unchanged, new cases 6-9
@@ -480,6 +387,7 @@ void pseudo_loop::compute_VP(int i, int j, h_str_features *fres){
 //		if (debug){
 //			printf("VP[%d,%d] = %d and can_pair(%d,%d) = %d\n", i,j, VP[ij],int_sequence[i],int_sequence[j],can_pair(int_sequence[i],int_sequence[j]));
 //		}
+
 		return;
 	}
 	else{
@@ -731,68 +639,8 @@ void pseudo_loop::compute_VP(int i, int j, h_str_features *fres){
 				//}
 			}
 		}
-
-
-
-// Hosna: June 29, 2007
-// As case 6 and 7 handle what we wanted from case 8, then I think we don't need this any more
-
-//		// Hosna: April 20, 2007
-//		// based on the discussion with Anne, we decided we need another case for VP
-//		// which is like case 5 with the difference that it can have some structure
-//		// between [i+1,ip-1] and [jp+1,j-1]
-//
-//		// 8) VP(i,j) = WI(i+1,ip-1) + VP(ip,jp) + WI(jp+1,j-1) + P_ps + ap_penalty
-//		// Hosna, April 6th, 2007
-//		// whenever we use get_borders we have to check for the correct values
-//		if (get_Bp(i,j)> 0 && get_Bp(i,j) < nb_nucleotides && get_b(i,j) >0 && get_b(i,j) < nb_nucleotides){
-//			min_borders = MIN(get_Bp(i,j),get_b(i,j));
-//		}else if (get_b(i,j) > 0 && get_b(i,j) < nb_nucleotides && (get_Bp(i,j) < 0 || get_Bp(i,j) > nb_nucleotides)){
-//			min_borders = get_b(i,j);
-//		}else if (get_Bp(i,j) > 0 && get_Bp(i,j) < nb_nucleotides && (get_b(i,j) < 0 || get_b(i,j) > nb_nucleotides)){
-//			min_borders = get_Bp(i,j);
-//		}
-//		for (ip = i+1; ip < min_borders; ip++){
-//			// Hosna: April 20, 2007
-//			// i and ip and j and jp should be in the same arc
-//			if (fres[ip].pair < 0 && (fres[i].arc == fres[ip].arc)){
-//				// Hosna, April 6th, 2007
-//				// whenever we use get_borders we have to check for the correct values
-//				int max_borders= 0;
-//				if (get_bp(i,j) > 0 && get_bp(i,j) < nb_nucleotides && get_B(i,j) > 0 && get_B(i,j) < nb_nucleotides){
-//					max_borders = MAX(get_bp(i,j),get_B(i,j));
-//				}else if (get_B(i,j) > 0 && get_B(i,j) < nb_nucleotides && (get_bp(i,j) < 0 || get_bp(i,j) > nb_nucleotides)){
-//					max_borders = get_B(i,j);
-//				}else if (get_bp(i,j) > 0 && get_bp(i,j) < nb_nucleotides && (get_B(i,j) < 0 || get_B(i,j) > nb_nucleotides)){
-//					max_borders = get_bp(i,j);
-//				}
-//				for (jp = max_borders+1; jp < j ; jp++){
-//					if (fres[jp].pair < 0 && can_pair(int_sequence[ip],int_sequence[jp])){
-//						// Hosna: April 20, 2007
-//						// i and ip and j and jp should be in the same arc
-//						if (fres[j].arc == fres[jp].arc){
-//							int temp = get_WI(i+1,ip-1) + get_VP(ip,jp) + get_WI(jp+1,j-1) + PPS_penalty + ap_penalty;
-//							if (m8 > temp){
-//								m8 = temp;
-//							}
-//						}
-//					}
-//				}
-//			}
-//		}
-		//Aug 2023 mins depracated moving to partition function
-		/*
-		//finding the min energy
-		int min = MIN(MIN(m1,m8),MIN(m2,m3));
-		min = (min > MIN(m4,m5))? MIN(m4,m5) : min;
-		min = (min > MIN(m6,m7))? MIN(m6,m7) : min;
-		// Luke adding for additional case 9
-		min = (min > m9)? m9 : min;
-		*/
-//		if (debug ){
-//			printf("VP[%d,%d]: m1 = %d, m2 = %d, m3 = %d, m4 = %d, m5 = %d, m6 = %d, m7 = %d and min = %d \n",i,j,m1,m2,m3,m4,m5,m6,m7,min);
-//		}
 		VP[ij] = d2_energy_vp;
+		//printf("Z_VP(%d,%d) = %Lf \n",i,j,d2_energy_vp);
 	}
 }
 
@@ -862,6 +710,7 @@ void pseudo_loop::compute_PGPW(int i, int j, h_str_features *fres){
 
 		// get the min for WMB Aug 2023 Luke modified
 		PGPW[ij] = d2_energy_pgpw;
+		//printf("Z_PGPw(%d,%d) = %Lf \n",i,j,d2_energy_pgpw);
 //		if (debug && i == 1 && j == 87){
 //			printf("m1 = %d, m3 = %d, m4 = %d and m5 = %d ==> WMBP[%d,%d] = %d\n",m1,m3,m4,m5,i,j,WMBP[ij]);
 //		}
