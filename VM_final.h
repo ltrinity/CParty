@@ -27,20 +27,20 @@ public:
 	}
 	void set_VM_matrix(s_multi_loop *vm){s_vm = vm;}
 	void compute_energy(int i, int j, str_features *fres);
-	int get_energy(int i, int j);
+	pf_t get_energy(int i, int j);
 	//int get_energy_pk_only(int i, int j, str_features *fres); //April 4, 2012
 	void WM_compute_energy(int i, int j);
 	//void WM_compute_energy_pkonly(int i, int j);
-	void set_WM_matrix(int *m){this->WM = m;}
-	int get_energy_WM(int i, int j);
+	void set_WM_matrix(pf_t *m){this->WM = m;}
+	pf_t get_energy_WM(int i, int j);
 	//int get_energy_WM_pkonly(int i, int j);
 	//Luke adding new structure class functions
 	void WM1_compute_energy(int i, int j);
-	void set_WM1_matrix(int *m){this->WM1 = m;}
-	int get_energy_WM1(int i, int j);
+	void set_WM1_matrix(pf_t *m){this->WM1 = m;}
+	pf_t get_energy_WM1(int i, int j);
 	void WMP_compute_energy(int i, int j);
-	void set_WMP_matrix(int *m){this->WMP = m;}
-	int get_energy_WMP(int i, int j);
+	void set_WMP_matrix(pf_t *m){this->WMP = m;}
+	pf_t get_energy_WMP(int i, int j);
 
 	
 protected:
@@ -56,10 +56,10 @@ protected:
     s_multi_loop *s_vm;				// a pointer to the simfold's VM matrix
     
     int *index;    // an array with indexes, such that we don't work with a 2D array, but with a 1D array of length (n*(n+1))/2
-    int *WM;      // WM - 2D array (actually n*(n-1)/2 long 1D array)
-    int *WM1;      // WM1 - 2D array (actually n*(n-1)/2 long 1D array) added by Luke (rightmost branch pseudoknot free)
-	int *WMP;      // WMP - rightmost branch pseudoknotted
-    int *VM;
+    pf_t *WM;      // WM - 2D array (actually n*(n-1)/2 long 1D array)
+    pf_t *WM1;      // WM1 - 2D array (actually n*(n-1)/2 long 1D array) added by Luke (rightmost branch pseudoknot free)
+	pf_t *WMP;      // WMP - rightmost branch pseudoknotted
+    pf_t *VM;
 };
 
 #endif /*VM_FINAL_H_*/
