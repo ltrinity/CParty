@@ -350,6 +350,7 @@ PARAMTYPE s_internal_loop::get_energy_str_restricted (int i, int j, int ip, int 
     int branch1, branch2, l;
     mmin = INF;
     i_j_energy = 0; ip_jp_energy = 0;
+    pf_t d2_energy_il = 0;
 
 	if ((sequence[ip]+sequence[jp] == 3 || sequence[ip]+sequence[jp] == 5) && can_pair(sequence[i],sequence[j])) // normal case
 	{

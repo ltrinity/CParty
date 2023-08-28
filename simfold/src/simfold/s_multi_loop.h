@@ -56,7 +56,7 @@ class s_multi_loop
 		// compute de MFE of a partial multi-loop closed at (i,j), the restricted case
 
         // May 15, 2007. Added "if (i>=j) return INF;"  below. It was miscalculating the backtracked structure.
-        PARAMTYPE get_energy_WM (int i, int j) { if (i>=j) return INF; int ij = index[i]+j-i; return WM[ij]; }
+        pf_t get_energy_WM (int i, int j) { if (i>=j) return INF; int ij = index[i]+j-i; return WM[ij]; }
         // returns the previously computed free energy of WM(i,j)
 
 
@@ -71,7 +71,7 @@ class s_multi_loop
         s_energy_matrix *V;            // a pointer to the free energy matrix V
 
         int *index;    // an array with indexes, such that we don't work with a 2D array, but with a 1D array of length (n*(n+1))/2
-        PARAMTYPE *WM;      // WM - 2D array (actually n*(n-1)/2 long 1D array)
+        pf_t *WM;      // WM - 2D array (actually n*(n-1)/2 long 1D array)
 
 };
 

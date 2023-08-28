@@ -53,6 +53,7 @@ s_energy_matrix::s_energy_matrix (int *seq, int length)
         index[i] = index[i-1]+length-i+1;
 
     // this array holds V(i,j), and what (i,j) encloses: hairpin loop, stack pair, internal loop or multi-loop
+    // Luke Aug 2023 check for overflow here as nodes may not be long double energy
     nodes = new free_energy_node [total_length];
     if (nodes == NULL) giveup ("Cannot allocate memory", "s_energy_matrix");
 }

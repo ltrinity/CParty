@@ -44,7 +44,7 @@ s_multi_loop::s_multi_loop (int *seq, int length)
     for (i=1; i < length; i++)
         index[i] = index[i-1]+length-i+1;
 
-    WM = new PARAMTYPE [total_length];
+    WM = new pf_t [total_length];
     if (WM == NULL) giveup ("Cannot allocate memory", "s_multi_loop");
     // Luke Aug 2023 changing base case to 0
     for (i=0; i < total_length; i++) WM[i] = 0;
@@ -288,71 +288,6 @@ void s_multi_loop::compute_energy_WM_restricted (int j, str_features *fres)
         //track energy
         simfold_energy_wm = 0;
 
-        // previous case 1 Luke removing
-        //tmp = V->get_energy(i,j) +
-        //      AU_penalty (sequence[i], sequence[j]) +
-        //      misc.multi_helix_penalty;
-        //
-        //if (tmp < WM[ij]) {
-        //    WM[ij] = tmp;
-        //}
-
-        //if (fres[i].pair <= -1)
-        //{
-        //    tmp = V->get_energy(i+1,j) +
-        //            AU_penalty (sequence[i+1], sequence[j]) +
-        //            dangle_bot [sequence[j]]
-        //                        [sequence[i+1]]
-        //                        [sequence[i]] +
-        //            misc.multi_helix_penalty +
-        //            misc.multi_free_base_penalty;
-        //    if (tmp < WM[ij])
-        //    {
-        //        WM[ij] = tmp;
-        //    }
-        //}
-        //if (fres[j].pair <= -1)
-        //{
-        //    tmp = V->get_energy(i,j-1) +
-        //            AU_penalty (sequence[i], sequence[j-1]) +
-        //            dangle_top [sequence [j-1]]
-        //                        [sequence [i]]
-        //                        [sequence [j]] +
-        //            misc.multi_helix_penalty +
-        //            misc.multi_free_base_penalty;
-        //    if (tmp < WM[ij])
-        //    {
-        //        WM[ij] = tmp;
-        //    }
-        //}
-
-        //if (fres[i].pair <= -1 && fres[j].pair <= -1)
-        //{
-        //    tmp = V->get_energy(i+1,j-1) +
-        //            AU_penalty (sequence[i+1], sequence[j-1]) +
-        //            dangle_bot [sequence[j-1]]
-        //                        [sequence[i+1]]
-        //                        [sequence[i]] +
-        //            dangle_top [sequence [j-1]]
-        //                        [sequence [i+1]]
-        //                        [sequence [j]] +
-        //            misc.multi_helix_penalty +
-        //            2*misc.multi_free_base_penalty;
-        //    if (tmp < WM[ij])
-        //    {
-        //            WM[ij] = tmp;
-        //    }
-        //}
-
-        //if (fres[i].pair <= -1)
-        //{
-        //    tmp = WM[iplus1j] + misc.multi_free_base_penalty;
-        //    if (tmp < WM[ij])
-        //    {
-        //        WM[ij] = tmp;
-        //    }
-        //}
-
         // new case 5 (j unpaired)
         if (fres[j].pair <= -1)
         {
@@ -367,8 +302,8 @@ void s_multi_loop::compute_energy_WM_restricted (int j, str_features *fres)
                 int ik = index[i]+k-i;
                 int kplus1j = index[k+1]+j-k-1;
                 // v energy for split
-                int V_energy = V->get_energy(k,j) +
-                    AU_penalty (sequence[k], sequence[j]) +
+                int V_energy = V->get_energy(k,j) *
+                    AU_penalty (sequence[k], sequence[j]) *
                     misc.multi_helix_penalty;
                 //unpaired
                 int unpaired_energy =  misc.multi_free_base_penalty *(k-i);
