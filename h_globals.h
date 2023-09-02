@@ -2,6 +2,7 @@
 #define H_GLOBALS_H_
 // Hosna, Nov. 1st, 2011 changed the parameter values based on HOtKNots v2
 //Luke Aug 2023, we need the gas constant for penalty calculation
+//Luke Sep 2023 adding gas constant for scaling penalties
 pf_t oneoverRT = -10.0/(1.98717*310.15);
 double PS_penalty = exp(-138 * oneoverRT); //960; 		//exterior pseudoloop initiation penalty (9.6 Kcal/mol)
 double PSM_penalty = exp(1007 * oneoverRT); //1500;		//penalty for introducing pseudoknot inside a multiloop (15 Kcal/mol)
