@@ -252,6 +252,7 @@ PARAMTYPE s_internal_loop::compute_energy (int i, int j)
 
 PARAMTYPE s_internal_loop::compute_energy_restricted (int i, int j, str_features *fres)
 // computes the MFE of the structure closed by a restricted internal loop closed by (i,j)
+// Luke Sep 2023 need to sum all possible internal loops for partition function
 {
 
     int ip, jp, minq;
@@ -259,6 +260,8 @@ PARAMTYPE s_internal_loop::compute_energy_restricted (int i, int j, str_features
     PARAMTYPE penalty_size, asym_penalty, ip_jp_energy, i_j_energy, en;
     int branch1, branch2, l;
     mmin = INF;
+    // Luke 2023 sum all energy and return it here
+    pf_t d2_energy_il = 0;
 
     for (ip = i+1; ip <= MIN(j-2,i+MAXLOOP+1) ; ip++)  // the -TURN shouldn't be there
     {
@@ -279,14 +282,16 @@ PARAMTYPE s_internal_loop::compute_energy_restricted (int i, int j, str_features
 			// Hosna, March 26, 2012
 			// changed to accommodate non-canonical base pairs in the restricted structure
 			ttmp = get_energy_str_restricted (i, j, ip, jp, fres);
-
-            if (ttmp < mmin)
-            {
-                mmin = ttmp;
+            if (ttmp < 0){
+                d2_energy_il += ttmp;
             }
+            //if (ttmp < mmin)
+            //{
+             //   mmin = ttmp;
+            //}
         }
     }
-    return mmin;
+    return d2_energy_il;
 }
 
 PARAMTYPE s_internal_loop::compute_energy_restricted_pkonly (int i, int j, str_features *fres)
@@ -340,6 +345,8 @@ PARAMTYPE s_internal_loop::get_energy_str_restricted (int i, int j, int ip, int 
 // 1) i.j and ip.jp are enforced in the restricted structure and all are non-canonical
 // 2) i.j is enforced in the restricted structure and we have i.j non-canonical but ip.jp is canonical
 // 3) ip.jp is enforced in the restricted structure and we have i.j canonical but ip.jp is non-canonical
+
+// Luke Sep 2023 we need to sum energy of all stable loops for partition function
 {
     // TODO
     //return 0;
@@ -350,7 +357,7 @@ PARAMTYPE s_internal_loop::get_energy_str_restricted (int i, int j, int ip, int 
     int branch1, branch2, l;
     mmin = INF;
     i_j_energy = 0; ip_jp_energy = 0;
-    pf_t d2_energy_il = 0;
+    pf_t d2_energy_ilb = 0;
 
 	if ((sequence[ip]+sequence[jp] == 3 || sequence[ip]+sequence[jp] == 5) && can_pair(sequence[i],sequence[j])) // normal case
 	{
@@ -371,9 +378,9 @@ PARAMTYPE s_internal_loop::get_energy_str_restricted (int i, int j, int ip, int 
 
 				ttmp = en + V->get_energy (ip, jp);
 
-				if (ttmp < mmin)
+				if (ttmp < 0)
 				{
-					mmin = ttmp;
+					d2_energy_ilb += ttmp;
 				}
 			}
 			else if (branch1 == 1 && branch2 == 2 && !simple_internal_energy)
@@ -384,9 +391,9 @@ PARAMTYPE s_internal_loop::get_energy_str_restricted (int i, int j, int ip, int 
 				[sequence[ip]][sequence[jp]]
 				[sequence[jp+1]];
 				ttmp = en + V->get_energy (ip, jp);
-				if (ttmp < mmin)
+				if (ttmp < 0)
 				{
-					mmin = ttmp;
+					d2_energy_ilb += ttmp;
 				}
 			}
 			else if(branch1 == 2 && branch2 == 1 && !simple_internal_energy)
@@ -397,9 +404,9 @@ PARAMTYPE s_internal_loop::get_energy_str_restricted (int i, int j, int ip, int 
 				[sequence[j]][sequence[i]]
 				[sequence[i+1]];
 				ttmp = en + V->get_energy (ip, jp);
-				if (ttmp < mmin)
+				if (ttmp < 0)
 				{
-					mmin = ttmp;
+					d2_energy_ilb += ttmp;
 				}
 			}
 			else if (branch1 == 2 && branch2 == 2 && !simple_internal_energy)
@@ -410,14 +417,15 @@ PARAMTYPE s_internal_loop::get_energy_str_restricted (int i, int j, int ip, int 
 				[sequence[ip]][sequence[jp]]
 				[sequence[ip-1]][sequence[jp+1]];
 				ttmp = en + V->get_energy (ip, jp);
-				if (ttmp < mmin)
+				if (ttmp < 0)
 				{
-					mmin = ttmp;
+					d2_energy_ilb += ttmp;
 				}
 			}
 			else
 			{
-				// this case is not int11, int21, int22
+				// Luke Sep 2023 continue summing all energies
+                // this case is not int11, int21, int22
 
 				// check if it is a bulge
 				if (branch1 == 0 || branch2 == 0)
@@ -457,9 +465,9 @@ PARAMTYPE s_internal_loop::get_energy_str_restricted (int i, int j, int ip, int 
 						}
 
 						ttmp = en + penalty_size + V->get_energy (ip, jp);
-						if (ttmp < mmin)
+						if (ttmp < 0)
 						{
-							mmin = ttmp;
+							d2_energy_ilb += ttmp;
 						}
 					}
 					else
@@ -470,9 +478,9 @@ PARAMTYPE s_internal_loop::get_energy_str_restricted (int i, int j, int ip, int 
 						AU_penalty (sequence[i],sequence[j]) +
 						AU_penalty (sequence[ip], sequence[jp]) +
 						V->get_energy (ip, jp);
-						if (ttmp < mmin)
+						if (ttmp < 0)
 						{
-							mmin = ttmp;
+							d2_energy_ilb += ttmp;
 						}
 					}
 				}
@@ -520,9 +528,9 @@ PARAMTYPE s_internal_loop::get_energy_str_restricted (int i, int j, int ip, int 
 					asym_penalty + V->get_energy (ip, jp);
 
 
-					if (ttmp < mmin)
+					if (ttmp < 0)
 					{
-						mmin = ttmp;
+						d2_energy_ilb += ttmp;
 					}
 				}
 			}
@@ -547,9 +555,9 @@ PARAMTYPE s_internal_loop::get_energy_str_restricted (int i, int j, int ip, int 
 
 				ttmp = en + V->get_energy (ip, jp);
 
-				if (ttmp < mmin)
+				if (ttmp < 0)
 				{
-					mmin = ttmp;
+					d2_energy_ilb += ttmp;
 				}
 			}
 			else if (branch1 == 1 && branch2 == 2 && !simple_internal_energy)
@@ -561,9 +569,9 @@ PARAMTYPE s_internal_loop::get_energy_str_restricted (int i, int j, int ip, int 
 				[sequence[jp+1]];
 				en = MIN(0,en); // Hosna, March 26, 2012, added to accommodate non-cannonical base pairs in restricted structure
 				ttmp = en + V->get_energy (ip, jp);
-				if (ttmp < mmin)
+				if (ttmp < 0)
 				{
-					mmin = ttmp;
+					d2_energy_ilb += ttmp;
 				}
 			}
 			else if(branch1 == 2 && branch2 == 1 && !simple_internal_energy)
@@ -575,9 +583,9 @@ PARAMTYPE s_internal_loop::get_energy_str_restricted (int i, int j, int ip, int 
 				[sequence[i+1]];
 				en = MIN(0,en); // Hosna, March 26, 2012, added to accommodate non-cannonical base pairs in restricted structure
 				ttmp = en + V->get_energy (ip, jp);
-				if (ttmp < mmin)
+				if (ttmp < 0)
 				{
-					mmin = ttmp;
+					d2_energy_ilb += ttmp;
 				}
 			}
 			else if (branch1 == 2 && branch2 == 2 && !simple_internal_energy)
@@ -590,9 +598,9 @@ PARAMTYPE s_internal_loop::get_energy_str_restricted (int i, int j, int ip, int 
 
 				en = MIN(0,en); // Hosna, March 26, 2012, added to accommodate non-cannonical base pairs in restricted structure
 				ttmp = en + V->get_energy (ip, jp);
-				if (ttmp < mmin)
+				if (ttmp < 0)
 				{
-					mmin = ttmp;
+					d2_energy_ilb += ttmp;
 				}
 			}
 			else
@@ -639,9 +647,9 @@ PARAMTYPE s_internal_loop::get_energy_str_restricted (int i, int j, int ip, int 
 						}
 						ttmp = en + penalty_size + V->get_energy (ip, jp);
 
-						if (ttmp < mmin)
+						if (ttmp < 0)
 						{
-							mmin = ttmp;
+							d2_energy_ilb += ttmp;
 						}
 					}
 					else
@@ -652,9 +660,9 @@ PARAMTYPE s_internal_loop::get_energy_str_restricted (int i, int j, int ip, int 
 						AU_penalty (sequence[i],sequence[j]) +
 						AU_penalty (sequence[ip], sequence[jp]) +
 						V->get_energy (ip, jp);
-						if (ttmp < mmin)
+						if (ttmp < 0)
 						{
-							mmin = ttmp;
+							d2_energy_ilb += ttmp;
 						}
 					}
 				}
@@ -710,9 +718,9 @@ PARAMTYPE s_internal_loop::get_energy_str_restricted (int i, int j, int ip, int 
 					ttmp = i_j_energy + ip_jp_energy + penalty_size +
 					asym_penalty + V->get_energy (ip, jp);
 
-					if (ttmp < mmin)
+					if (ttmp < 0)
 					{
-						mmin = ttmp;
+						d2_energy_ilb += ttmp;
 					}
 				}
 			}
@@ -720,6 +728,10 @@ PARAMTYPE s_internal_loop::get_energy_str_restricted (int i, int j, int ip, int 
 
 
 	}
+    //Luke Sep 2023, just return the sum of energy
+    return d2_energy_ilb;
+    //depracated below
+    /*
     if (mmin < INF/2)
     {
         // add the loss
@@ -735,6 +747,7 @@ PARAMTYPE s_internal_loop::get_energy_str_restricted (int i, int j, int ip, int 
         return mmin;
     }
     return INF;
+    */
 }
 
 PARAMTYPE s_internal_loop::get_energy_str (int i, int j, int ip, int jp)
