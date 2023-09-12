@@ -250,7 +250,7 @@ PARAMTYPE s_internal_loop::compute_energy (int i, int j)
 }
 
 
-PARAMTYPE s_internal_loop::compute_energy_restricted (int i, int j, str_features *fres)
+pf_t s_internal_loop::compute_energy_restricted (int i, int j, str_features *fres)
 // computes the MFE of the structure closed by a restricted internal loop closed by (i,j)
 // Luke Sep 2023 need to sum all possible internal loops for partition function
 {
@@ -336,7 +336,7 @@ PARAMTYPE s_internal_loop::compute_energy_restricted_pkonly (int i, int j, str_f
     return mmin;
 }
 
-PARAMTYPE s_internal_loop::get_energy_str_restricted (int i, int j, int ip, int jp, str_features *fres)
+pf_t s_internal_loop::get_energy_str_restricted (int i, int j, int ip, int jp, str_features *fres)
 // returns the free energy of the structure closed by the internal loop (i,j,ip,jp)
 // This function is just most of what is inside the second for loop of compute_energy
 

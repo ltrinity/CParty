@@ -165,14 +165,15 @@ void s_energy_matrix::compute_energy_restricted (int i, int j, str_features *fre
     {
         //printf ("V(%d,%d) k: %d energy %d\n", i, j, k, min_en[k]);
         //Luke modifying for sum
-        if (min_en[k] < 0)
+        if (min_en[k] <  INF/2)
         {
+            printf ("V(%d,%d) k: %d energy %Lf\n", i, j, k, min_en[k]);
             d2_energy_v += min_en[k];
             //min = min_en[k];
             //min_rank = k;
         }
     }
-    if (d2_energy_v < 0) {
+    if (d2_energy_v < INF/2) {
         int ij = index[i]+j-i;
         nodes[ij].energy = d2_energy_v;
     }
