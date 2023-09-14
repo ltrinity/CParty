@@ -243,7 +243,7 @@ typedef struct seq_node
 
 struct free_energy_node
 {
-    PARAMTYPE energy;
+    pf_t energy;
     char type;          // type may be: N (NONE), H (HAIRPIN), S (STACKED), I (INTERNAL), M (MULTI)
     free_energy_node()
     {
