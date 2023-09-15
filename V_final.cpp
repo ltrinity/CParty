@@ -49,18 +49,18 @@ int V_final::get_energy(int i, int j){
 	printf("V_final: v_energy(%d,%d) = %d and type = %c\n", i,j,v_energy, get_type(i,j));
 	}*/
 	int vm_energy = vm->get_energy(i,j);
-//	printf("V_final: vm_energy(%d,%d) = %d \n", i,j,vm_energy);
+	//printf("V_final: vm_energy(%d,%d) = %d \n", i,j,vm_energy);
 	int ij = index[i]+j-i;
-	if (v_energy < vm_energy){
-		type[ij] = 0;
-	}else{
-		type[ij] = 1;
-	}
+	//if (v_energy < vm_energy){
+	//	type[ij] = 0;
+	//}else{
+	//	type[ij] = 1;
+	//}
 	/// Luke modifying to return sum
-	if(v_energy < 0){
+	if(v_energy < INF/2){
 		d2_energy_v += v_energy;
 	}
-	if(vm_energy < 0){
+	if(vm_energy < INF/2){
 		d2_energy_v += vm_energy;
 	}
 	return d2_energy_v;

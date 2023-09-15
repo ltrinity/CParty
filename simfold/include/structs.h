@@ -243,11 +243,12 @@ typedef struct seq_node
 
 struct free_energy_node
 {
-    pf_t energy;
+    PARAMTYPE energy;
     char type;          // type may be: N (NONE), H (HAIRPIN), S (STACKED), I (INTERNAL), M (MULTI)
     free_energy_node()
     {
-        energy = INF;
+        //Luke changing base case to 0
+        energy = 0;
         type = NONE;
     }
 };

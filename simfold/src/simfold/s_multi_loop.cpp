@@ -63,7 +63,7 @@ s_multi_loop::~s_multi_loop ()
 }
 
 
-// ambiguity here Luke 6/28/23
+// ambiguity here Luke 6/28/23, but refer to WM_restricted, this is not used
 void s_multi_loop::compute_energy_WM (int j)
 // compute the MFE of a partial multi-loop closed at (i,j)
 {
@@ -277,7 +277,7 @@ PARAMTYPE s_multi_loop::compute_energy (int i, int j)
 
 // Luke August 2023 modifying WM restricted (remove dangles, cases to match CParty recurrence scheme pk free here)
 void s_multi_loop::compute_energy_WM_restricted (int j, str_features *fres)
-// compute de MFE of a partial multi-loop closed at (i,j), the restricted case
+// compute the MFE of a partial multi-loop closed at (i,j), the restricted case
 {
     int i;
     PARAMTYPE tmp;
@@ -326,6 +326,8 @@ void s_multi_loop::compute_energy_WM_restricted (int j, str_features *fres)
 
 PARAMTYPE s_multi_loop::compute_energy_restricted (int i, int j, str_features *fres)
 // compute the MFE of a multi-loop closed at (i,j), the restricted case
+// Luke Sep 2023 we have to change this to be unambiguous 
+// But VM is computed later in HFold again so we will not call this
 {
     PARAMTYPE min = INF, tmp;
     int k;

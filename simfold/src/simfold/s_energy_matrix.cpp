@@ -137,12 +137,15 @@ void s_energy_matrix::compute_energy_restricted (int i, int j, str_features *fre
 // Luke removing extra code and simplifying for part func
 {
     int k;
-    pf_t min_en[4], d2_energy_v;
+    PARAMTYPE min_en[4], d2_energy_v;
     d2_energy_v = 0;
+    //hairpin
     min_en[0] = INF;
+    //stack
     min_en[1] = INF;
+    //bulge internal
     min_en[2] = INF;
-    min_en[3] = INF;
+    //multi computed after in HFold/CParty
 
 	// Hosna, March 26, 2012
 	// if the restricted base pairs are non-canonical then checking for can_pair only will cause missing those base pairs
@@ -157,20 +160,21 @@ void s_energy_matrix::compute_energy_restricted (int i, int j, str_features *fre
 
             min_en[1] = S->compute_energy_restricted (i, j,fres);//S->compute_energy (i, j); Hosna, March 26, 2012
             min_en[2] = VBI->compute_energy_restricted (i, j, fres);
-            min_en[3] = VM->compute_energy_restricted (i, j, fres);
+            // Luke Sep 2023 for CParty we modified WM compute restricted
+            // min_en[3] = VM->compute_energy_restricted (i, j, fres);
+            // VM computed after
         }
     }
 
-    for (k=0; k<4; k++)
+    for (k=0; k<3; k++)
     {
-        //printf ("V(%d,%d) k: %d energy %d\n", i, j, k, min_en[k]);
         //Luke modifying for sum
         if (min_en[k] <  INF/2)
         {
-            //printf ("V(%d,%d) k: %d energy %Lf\n", i, j, k, min_en[k]);
+            if(debug){
+                printf ("V(%d,%d) k: %d energy %d\n", i, j, k, min_en[k]);
+            }
             d2_energy_v += min_en[k];
-            //min = min_en[k];
-            //min_rank = k;
         }
     }
     if (d2_energy_v < INF/2) {

@@ -91,23 +91,25 @@ void VM_final::compute_energy(int i, int j, str_features *fres){
     //
 	//int wmb_energy = this->wmb->get_energy(i,j) + a_penalty + PSM_penalty;
 	int ij = index[i]+j-i;
-    if(d2_energy_vm < 0){
+    if(d2_energy_vm < INF/2){
+        //if(debug){
+        //printf("VM[%d,%d] = %Lf \n",i,j,d2_energy_vm);
+        //}
         VM[ij] = d2_energy_vm;
     }
-	//printf("VM[%d,%d] = %d \n",i,j,VM[ij]);
-
+	//printf("VM[%d,%d] = %Lf \n",i,j,VM[ij]);
 }
 
-//Luke Aug 2023 may change to 0 for base case partition function
+//Luke Aug 2023 base case 0 for partition function
 pf_t VM_final::get_energy(int i, int j){
 	int ij = index[i]+j-i;
 	if (i >= j){
-		return INF;
+		return 0;
 	}
 	if (wmb->is_weakly_closed(i,j) == 1 || wmb->is_empty_region(i,j) == 1){
 		return VM[ij];
 	}
-	return INF;
+	return 0;
 }
 
 /**
@@ -163,7 +165,7 @@ pf_t VM_final::get_energy_WM(int i, int j){
  *  Check back after V simfold modification
  */
 void VM_final::WM1_compute_energy(int i, int j){
-    PARAMTYPE v_energy;
+    pf_t v_energy;
     pf_t d2_energy_wm1 = 0;
     //case 2 j unpaired
     pf_t unpaired_energy =  misc.multi_free_base_penalty;

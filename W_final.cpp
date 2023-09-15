@@ -163,22 +163,27 @@ void W_final::return_structure(char *structure){
 void W_final::compute_W_restricted (int j, str_features *fres)
 // compute W(j)
 {
-	//printf("j = %d\n",j);
     pf_t m1, m2, m3;
     int must_choose_this_branch;
 	// Luke init partition function Aug 2023
 	pf_t d2_energy = 0;
     m1 = W[j-1];
-	//printf("W_[0,%d-1] = %Lf\n",j,W[j-1]);
+	//if(debug){
+		//printf("W_[0,%d-1] = %Lf\n",j,W[j-1]);
+	//}
 	d2_energy+= m1;
     m2 = compute_W_br2_restricted (j, fres, must_choose_this_branch);
-	if(m2<0){
-		//printf("V[0,%d] = %Lf\n",j,m2);
+	if(m2<INF/2){
+		//if(debug){
+		//	printf("V[0,%d] = %Lf\n",j,m2);
+		//}
 		d2_energy+= m2;
 	}
     m3 = compute_W_br3_restricted (j, fres);
-	if(m3<0){
-		//printf("P[0,%d] = %Lf\n",j,m3);
+	if(m3<INF/2){
+		//if(debug){
+			//printf("P[0,%d] = %Lf\n",j,m3);
+		//}
 		d2_energy+= m3;
 	}
     if (WMB->is_weakly_closed(0,j) < 0){
@@ -187,8 +192,10 @@ void W_final::compute_W_restricted (int j, str_features *fres)
     	return;
     }
 	W[j] = d2_energy;
+	//if(debug){
 	//printf("W[j] d2 = %Lf = %Lf\n",d2_energy, W[j]);
 	//printf("Z_W(%d,%d) = %Lf \n",0,j,d2_energy);
+	//}
 }
 
 pf_t W_final::compute_W_br2_restricted (int j, str_features *fres, int &must_choose_this_branch)
@@ -209,10 +216,12 @@ pf_t W_final::compute_W_br2_restricted (int j, str_features *fres, int &must_cho
         acc = (i-1>0) ? W[i-1]: 0;
 
         energy_ij = v->get_energy(i,j);
-		if(energy_ij < 0){
+		if(energy_ij < INF/2){
 			d2_energy_v+=energy_ij;
 		}
+		//if(debug){
 		//printf("Z_V(%d,%d) = %Lf \n",i,j,d2_energy_v);
+		//}
     }
 	//Luke modification to return sum of energy Aug 2023
 	return d2_energy_v;
@@ -244,16 +253,20 @@ pf_t W_final::compute_W_br3_restricted(int j, str_features *fres){
 			//printf("acc= %Lf \n",acc);
 
 	        energy_ij = WMB->get_energy(i,j);
-	        if (energy_ij < INF)
+	        if (energy_ij < INF/2)
 	        {
 				
 				//Luke modifying to multiply penalties
 	            tmp = energy_ij * PS_penalty;
-				if(tmp < 0){
+				if(tmp < INF/2){
+					//if(debug){
 					//printf("Z_P(%d,%d) = %Lf \n",i,j,tmp);
+					//}
 					d2_energy_p += tmp;
 				}
+				//if(debug){
 				//printf("Z_P(%d,%d) = %Lf \n",i,j,d2_energy_p);
+				//}
 	        }
 		}
 	}

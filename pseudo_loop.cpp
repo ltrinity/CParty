@@ -225,7 +225,6 @@ void pseudo_loop::initialize(){
 
 void pseudo_loop::compute_energies(int i, int j)
 {
-
 	// Hosna, April 18th, 2007
 	// based on discussion with Anne, we changed WMB to case 2 and WMBP(containing the rest of the recurrences)
 
@@ -233,7 +232,8 @@ void pseudo_loop::compute_energies(int i, int j)
 	//		printf("calculating VP(%d,%d) \n",i,j);
 	//	}
 	compute_VP(i,j,fres); // Hosna, March 14, 2012, changed the position of computing VP from after BE to befor WMBP
-
+	
+	//Luke Sep 2023 CParty scheme structure classes modification
 	compute_PGPW(i,j,fres);
 //	if(debug){
 //		printf("calculating WMBP(%d,%d) \n",i,j);
@@ -335,7 +335,7 @@ void pseudo_loop::compute_WI(int i, int j , h_str_features *fres){
 	// branch 1:
 //	if (fres[i].pair < 0 && fres[j].pair < 0)
 //	{
-	// Luke 6/27/2023: ambiguity here
+	// Luke 6/27/2023: ambiguity here, addressed with split on structure
 	int t;
 	for (t = i; t< j; t++){
 		pf_t wi_1 = get_WI(i,t-1);
