@@ -261,7 +261,7 @@ PARAMTYPE s_internal_loop::compute_energy_restricted (int i, int j, str_features
     int branch1, branch2, l;
     mmin = INF;
     // Luke 2023 sum all energy and return it here
-    pf_t d2_energy_il = 0;
+    PARAMTYPE d2_energy_il = 0;
 
     for (ip = i+1; ip <= MIN(j-2,i+MAXLOOP+1) ; ip++)  // the -TURN shouldn't be there
     {
