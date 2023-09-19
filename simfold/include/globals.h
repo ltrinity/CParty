@@ -25,7 +25,7 @@
 #include "structs.h"
 #include "constants.h"
 
-int debug = 1;        // set debug 1 and recompile if you want to get a more verbose folding
+int debug = 0;        // set debug 1 and recompile if you want to get a more verbose folding
 int ignore_internal = 0;      // for debugging purposes, ignore internal loops
 int ignore_multi = 0;   // for debugging purposes, ignore multi-loops
 int max_internal_loop = MAXLOOP;

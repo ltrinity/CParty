@@ -110,6 +110,7 @@ double W_final::hfold(){
         // if I put this before V calculation, WM(i,j) cannot be calculated, because it returns infinity
         VM->compute_energy_WM_restricted (j, fres);
 
+
 		// test V values
 		/*
 		 for (i=0; i<j; i++)
@@ -126,9 +127,13 @@ double W_final::hfold(){
     {
         for (i =j; i >= 0; i--)//for (i=0; i<=j; i++)
         {
+			
+			vm->compute_energy (i,j, fres);
 			WMB->compute_energies(i,j);
-
+			
+			//add in the pk cases later
 			vm->WM_compute_energy(i,j);
+			vm->WM1_compute_energy(i,j);
 			//        	if (debug){
 			//        		printf("WM_final(%d,%d) = %d \n",i,j,vm->get_energy_WM(i,j));
 			//        	}
@@ -173,24 +178,20 @@ void W_final::compute_W_restricted (int j, str_features *fres)
 	//}
 	d2_energy+= m1;
     m2 = compute_W_br2_restricted (j, fres, must_choose_this_branch);
-	if(m2<INF/2){
-		//if(debug){
-		//	printf("V[0,%d] = %Lf\n",j,m2);
-		//}
-		d2_energy+= m2;
-	}
-    m3 = compute_W_br3_restricted (j, fres);
-	if(m3<INF/2){
-		//if(debug){
-			//printf("P[0,%d] = %Lf\n",j,m3);
-		//}
-		d2_energy+= m3;
-	}
-    if (WMB->is_weakly_closed(0,j) < 0){
+	//if(debug){
+	//	printf("V[0,%d] = %Lf\n",j,m2);
+	//}
+	d2_energy+= m2;
+    //m3 = compute_W_br3_restricted (j, fres);
+	//if(debug){
+		//printf("P[0,%d] = %Lf\n",j,m3);
+	//}
+	//d2_energy+= m3;
+    //if (WMB->is_weakly_closed(0,j) < 0){
 		// Luke changing to 0 for part func
-    	W[j] = 0;
-    	return;
-    }
+    	//W[j] = 0;
+    	//return;
+    //}
 	W[j] = d2_energy;
 	//if(debug){
 	//printf("W[j] d2 = %Lf = %Lf\n",d2_energy, W[j]);
@@ -213,12 +214,13 @@ pf_t W_final::compute_W_br2_restricted (int j, str_features *fres, int &must_cho
 
         // We don't need to make sure i and j don't have to pair with something else,
         //  because that would be INF - done in fold_sequence_restricted
-        acc = (i-1>0) ? W[i-1]: 0;
-
-        energy_ij = v->get_energy(i,j);
-		if(energy_ij < INF/2){
-			d2_energy_v+=energy_ij;
+        //acc = (i-1>0) ? W[i-1]: 0;
+		pf_t Wsubstruc_en = W[i-1];
+		if(i-1 == -1){
+			Wsubstruc_en = 1;
 		}
+        energy_ij = Wsubstruc_en*v->get_energy(i,j);
+		d2_energy_v+=energy_ij;
 		//if(debug){
 		//printf("Z_V(%d,%d) = %Lf \n",i,j,d2_energy_v);
 		//}
@@ -253,21 +255,16 @@ pf_t W_final::compute_W_br3_restricted(int j, str_features *fres){
 			//printf("acc= %Lf \n",acc);
 
 	        energy_ij = WMB->get_energy(i,j);
-	        if (energy_ij < INF/2)
-	        {
-				
-				//Luke modifying to multiply penalties
-	            tmp = energy_ij * PS_penalty;
-				if(tmp < INF/2){
-					//if(debug){
-					//printf("Z_P(%d,%d) = %Lf \n",i,j,tmp);
-					//}
-					d2_energy_p += tmp;
-				}
-				//if(debug){
-				//printf("Z_P(%d,%d) = %Lf \n",i,j,d2_energy_p);
-				//}
-	        }
+			
+			//Luke modifying to multiply penalties
+			tmp = energy_ij * PS_penalty;
+			//if(debug){
+			//printf("Z_P(%d,%d) = %Lf \n",i,j,tmp);
+			//}
+			d2_energy_p += W[i-1]*tmp;
+			//if(debug){
+			//printf("Z_P(%d,%d) = %Lf \n",i,j,d2_energy_p);
+			//}
 		}
 	}
 	//Luke modification to return sum of energy Aug 2023

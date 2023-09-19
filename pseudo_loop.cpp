@@ -365,14 +365,14 @@ void pseudo_loop::compute_WI(int i, int j , h_str_features *fres){
 // Luke modifying for CParty, cases 1-5 unchanged, new cases 6-9
 void pseudo_loop::compute_VP(int i, int j, h_str_features *fres){
 	int ij = index[i]+j-i;
-	//Luke Aug 2023 changing to 0 from INF
-	if (VP[ij] != 0){//has been calculated before
+	//Luke Aug 2023 changing to 0 from INF, now just removing it should be unambiguous
+//	if (VP[ij] != 0){//has been calculated before
 //		if (debug)
 //		{
 //			printf("VP(%d,%d) was calculated before ==> VP(%d,%d) = %d \n",i,j,i,j,VP[ij]);
 //		}
-		return;
-	}
+//		return;
+//	}
 	// base cases:
 	// a) i == j => VP[ij] = INF
 	// b) [i,j] is a weakly_closed region => VP[ij] = INF

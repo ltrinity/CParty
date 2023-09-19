@@ -1,6 +1,7 @@
 #include "VM_final.h"
 #include "externs.h"
 #include "h_externs.h"
+#include "math.h"
 
 VM_final::VM_final(int *seq, int len)
 {
@@ -63,7 +64,8 @@ void VM_final::compute_energy(int i, int j, str_features *fres){
     int kjminus1 = index[k] + j-1-k;
 
     pf_t d2_energy_vm = 0;
-    d2_energy_vm += WMP[kjminus1] * (misc.multi_helix_penalty + misc.multi_offset + AU_penalty (sequence[i], sequence[j]));
+    pf_t oneoverRT = -10.0/(1.98717*310.15);
+    d2_energy_vm += WMP[kjminus1] * exp(misc.multi_helix_penalty + misc.multi_offset + AU_penalty (sequence[i], sequence[j])*oneoverRT);
 
     //modifying for loop exit conditions sans dangles -> prev it was j-3
     for (k = i+2; k <= j-1; k++)
@@ -73,15 +75,15 @@ void VM_final::compute_energy(int i, int j, str_features *fres){
         iplus2k = index[i+2] + k -i-2;
         kplus1jminus2 = index[k+1] + j-2 -k-1;
         // Luke adding new case 1 WM + WM1
-        d2_energy_vm += WM[iplus1k] * WM1[kplus1jminus1] * (misc.multi_helix_penalty + misc.multi_offset + AU_penalty (sequence[i], sequence[j]));;
+        d2_energy_vm += WM[iplus1k] * WM1[kplus1jminus1] * exp((misc.multi_helix_penalty + misc.multi_offset + AU_penalty (sequence[i], sequence[j]))*oneoverRT);;
         // Luke adding new case 2 WM + WMP
-        d2_energy_vm += WM[iplus1k] * WMP[kplus1jminus1] * (misc.multi_helix_penalty + misc.multi_offset + AU_penalty (sequence[i], sequence[j]));
+        //d2_energy_vm += WM[iplus1k] * WMP[kplus1jminus1] * (misc.multi_helix_penalty + misc.multi_offset + AU_penalty (sequence[i], sequence[j]));
         //Luke adding new case 3 WMP 
         //exit early by one iter wrt cases 1 & 2
-        if(k!=j-1){
-            int kjminus1 = index[k] + j-1-k;
-            d2_energy_vm += WMP[kjminus1] * (((k-i-1)*misc.multi_free_base_penalty) + misc.multi_helix_penalty + misc.multi_offset + AU_penalty (sequence[i], sequence[j]));
-        }
+        //if(k!=j-1){
+        //    int kjminus1 = index[k] + j-1-k;
+        //    d2_energy_vm += WMP[kjminus1] * (((k-i-1)*misc.multi_free_base_penalty) + misc.multi_helix_penalty + misc.multi_offset + AU_penalty (sequence[i], sequence[j]));
+        //}
         
     }
 
@@ -143,8 +145,12 @@ void VM_final::WM_compute_energy(int i, int j){
         }
     }
 	int ij = index[i]+j-i;
-	this->WM[ij] = d2_energy_wm;
-//	printf("hfold's WM min = %d \n",min);
+    //pk free for now
+    if(s_wm == INF){
+        s_wm = 0;
+    }
+	this->WM[ij] = s_wm;
+	//printf("hfold's WM min = %d \n",s_wm);
 }
 
 
@@ -167,21 +173,26 @@ pf_t VM_final::get_energy_WM(int i, int j){
 void VM_final::WM1_compute_energy(int i, int j){
     pf_t v_energy;
     pf_t d2_energy_wm1 = 0;
+    pf_t oneoverRT = -10.0/(1.98717*310.15);
     //case 2 j unpaired
-    pf_t unpaired_energy =  misc.multi_free_base_penalty;
-    d2_energy_wm1 += get_energy_WM1(i, j-1) * unpaired_energy;
+    pf_t unpaired_energy =  exp(misc.multi_free_base_penalty*oneoverRT);
+    pf_t wm1substruc_en = get_energy_WM1(i, j-1);
+    d2_energy_wm1 +=  wm1substruc_en * unpaired_energy;
+    //printf("CParty Z_WM1 case 2 = %Lf \n",get_energy_WM1(i, j-1) * unpaired_energy);
     //case 1
-    v_energy = v->get_energy(i,j) *
-                   AU_penalty (sequence[i], sequence[j]) *
-                   misc.multi_helix_penalty;
+    v_energy = v->get_energy(i,j) * exp((
+                   AU_penalty (sequence[i], sequence[j]) +
+                   misc.multi_helix_penalty)*oneoverRT);
+    //printf("CParty Z_WM1 case 1 = %Lf \n",v_energy);
     d2_energy_wm1 += v_energy;
 	int ij = index[i]+j-i;
 	this->WM1[ij] = d2_energy_wm1;
+    //printf("CParty Z_WM1 = %Lf \n",d2_energy_wm1);
 }
 
 pf_t VM_final::get_energy_WM1(int i, int j){
 	if (i >= j || wmb->is_weakly_closed(i,j) != 1 ){
-		return INF;
+		return 0;
 	}
 	int ij = index[i]+j-i;
 	return this->WM1[ij];
@@ -208,7 +219,7 @@ void VM_final::WMP_compute_energy(int i, int j){
 
 pf_t VM_final::get_energy_WMP(int i, int j){
 	if (i >= j || wmb->is_weakly_closed(i,j) != 1 ){
-		return INF;
+		return 0;
 	}
 	int ij = index[i]+j-i;
 	return this->WMP[ij];
