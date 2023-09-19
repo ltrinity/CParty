@@ -20,6 +20,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <math.h>
 // Hosna, March 5, 2012
 // malloc.h is not needed in my mac as stdlib.h does the same
 //#include <malloc.h>
@@ -137,7 +138,8 @@ void s_energy_matrix::compute_energy_restricted (int i, int j, str_features *fre
 // Luke removing extra code and simplifying for part func
 {
     int k;
-    PARAMTYPE min_en[4], d2_energy_v;
+    pf_t min_en[4], d2_energy_v;
+    pf_t oneoverRT = -10.0/(1.98717*310.15);
     d2_energy_v = 0;
     //hairpin
     min_en[0] = INF;
@@ -156,10 +158,10 @@ void s_energy_matrix::compute_energy_restricted (int i, int j, str_features *fre
         else
         {
             if (!exists_restricted (i, j, fres))
-                min_en[0] = H->compute_energy_restricted (i, j, fres); // there was a stupid bug here, I was calling H->compute_energy instead of the restricted version. Fixed on June 30, 2007.
+                min_en[0] = exp(H->compute_energy_restricted (i, j, fres)* oneoverRT); // there was a stupid bug here, I was calling H->compute_energy instead of the restricted version. Fixed on June 30, 2007.
 
-            min_en[1] = S->compute_energy_restricted (i, j,fres);//S->compute_energy (i, j); Hosna, March 26, 2012
-            min_en[2] = VBI->compute_energy_restricted (i, j, fres);
+            min_en[1] = exp(S->compute_energy_restricted (i, j,fres)* oneoverRT);//S->compute_energy (i, j); Hosna, March 26, 2012
+            min_en[2] = exp(VBI->compute_energy_restricted (i, j, fres)* oneoverRT);
             // Luke Sep 2023 for CParty we modified WM compute restricted
             // min_en[3] = VM->compute_energy_restricted (i, j, fres);
             // VM computed after
@@ -172,7 +174,7 @@ void s_energy_matrix::compute_energy_restricted (int i, int j, str_features *fre
         if (min_en[k] <  INF/2)
         {
             if(debug){
-                printf ("V(%d,%d) k: %d energy %d\n", i, j, k, min_en[k]);
+                printf ("V(%d,%d) k: %d energy %Lf\n", i, j, k, min_en[k]);
             }
             d2_energy_v += min_en[k];
         }
