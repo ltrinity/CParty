@@ -49,6 +49,11 @@ PARAMTYPE s_stacked_pair::compute_energy (int i, int j)
 
     V_energy = V->get_energy (i+1,j-1);
 
+    // Luke Sep 2023 if V energy is 0 then i=j, return
+    if(V_energy == 0){
+        return 0;
+    }
+
     local_energy = stack[sequence[i]]
 						[sequence[j]]
 						[sequence[i+1]]
@@ -66,12 +71,12 @@ PARAMTYPE s_stacked_pair::compute_energy (int i, int j)
     min = V_energy + local_energy;
 
     // add the loss
-    if (pred_pairings != NULL)
-    {
-        pred_pairings[i] = j;
-		pred_pairings[j] = i;
-        min = min - loss (i,i) - loss (j,j);
-    }
+    //if (pred_pairings != NULL)
+    //{
+    //    pred_pairings[i] = j;
+	//	pred_pairings[j] = i;
+    //    min = min - loss (i,i) - loss (j,j);
+    //}
     return min;
 }
 

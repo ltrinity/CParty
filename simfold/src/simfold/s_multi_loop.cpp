@@ -295,6 +295,8 @@ void s_multi_loop::compute_energy_WM_restricted (int j, str_features *fres)
         if (fres[j].pair <= -1)
         {
             simfold_energy_wm += (WM[ijminus1] * exp(misc.multi_free_base_penalty*oneoverRTsim));
+            //printf ("WM_i,j-1(%d,%d) energy %Lf\n",i, j, WM[ijminus1]);
+            
         }
 
         //use the for loop for splits modified for CParty
@@ -305,8 +307,9 @@ void s_multi_loop::compute_energy_WM_restricted (int j, str_features *fres)
                 int ik = index[i]+k-i;
                 int kplus1j = index[k+1]+j-k-1;
                 // v energy for split
-                int V_energy = V->get_energy(k,j) *
+                pf_t V_energy = V->get_energy(k,j) *
                     exp(misc.multi_helix_penalty*oneoverRTsim);
+                //printf ("WM in V(%d,%d) energy %Lf\n", k, j, V_energy);
                 //unpaired
                 int unpaired_energy =  exp(misc.multi_free_base_penalty*(k-i)*oneoverRTsim) ;
                 // new case 1 (leftmost branch)

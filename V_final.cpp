@@ -44,12 +44,14 @@ pf_t V_final::get_energy(int i, int j){
 		return 0;
 	}
 
-	int v_energy = v->get_energy(i,j);
+	pf_t v_energy = v->get_energy(i,j);
+	//printf("V_final: v_energy(%d,%d) = %d\n", i,j,v_energy );
 	/*if (i>=13 && j<=39 && v_energy<INF){
 	printf("V_final: v_energy(%d,%d) = %d and type = %c\n", i,j,v_energy, get_type(i,j));
 	}*/
 	int vm_energy = vm->get_energy(i,j);
-	//printf("V_final: vm_energy(%d,%d) = %d \n", i,j,vm_energy);
+	//printf("V_final: v_energy(%d,%d) = %Lf \n", i,j,v_energy);
+	//printf("V_final: v_energy(%d,%d) = %d \n", i,j,vm_energy);
 	int ij = index[i]+j-i;
 	//if (v_energy < vm_energy){
 	//	type[ij] = 0;
@@ -58,7 +60,7 @@ pf_t V_final::get_energy(int i, int j){
 	//}
 	/// Luke modifying to return sum
 	d2_energy_v += v_energy;
-	d2_energy_v += vm_energy;
+	//d2_energy_v += vm_energy;
 	return d2_energy_v;
 }
 
