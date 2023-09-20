@@ -93,12 +93,10 @@ void VM_final::compute_energy(int i, int j, str_features *fres){
     //
 	//int wmb_energy = this->wmb->get_energy(i,j) + a_penalty + PSM_penalty;
 	int ij = index[i]+j-i;
-    if(d2_energy_vm < INF/2){
-        //if(debug){
-        //printf("VM[%d,%d] = %Lf \n",i,j,d2_energy_vm);
-        //}
-        VM[ij] = d2_energy_vm;
-    }
+    //if(debug){
+    //printf("VM[%d,%d] = %Lf \n",i,j,d2_energy_vm);
+    //}
+    VM[ij] = d2_energy_vm;
 	//printf("VM[%d,%d] = %Lf \n",i,j,VM[ij]);
 }
 
@@ -122,7 +120,7 @@ pf_t VM_final::get_energy(int i, int j){
  *  Luk Aug 2023 modifying for part func
  */
 void VM_final::WM_compute_energy(int i, int j){
-	int s_wm = s_vm->get_energy_WM(i,j);
+	pf_t s_wm = s_vm->get_energy_WM(i,j);
     //PARAMTYPE tmp;
     pf_t d2_energy_wm = 0;
     //use the for loop for splits modified for CParty
@@ -150,14 +148,14 @@ void VM_final::WM_compute_energy(int i, int j){
         s_wm = 0;
     }
 	this->WM[ij] = s_wm;
-	//printf("hfold's WM min = %d \n",s_wm);
+	//printf("hfold's WM min = %Lf \n",s_wm);
 }
 
 
 
 pf_t VM_final::get_energy_WM(int i, int j){
 	if (i >= j || wmb->is_weakly_closed(i,j) != 1 ){
-		return INF;
+		return 0;
 	}
 	int ij = index[i]+j-i;
 //	printf("hfold's WM(%d,%d) = %d \n", i,j,WM[ij]);

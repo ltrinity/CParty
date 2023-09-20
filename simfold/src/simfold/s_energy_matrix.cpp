@@ -182,7 +182,7 @@ void s_energy_matrix::compute_energy_restricted (int i, int j, str_features *fre
     }
     int ij = index[i]+j-i;
     nodes[ij].energy = d2_energy_v;
-    printf ("V(%d,%d) energy %Lf\n", i, j, d2_energy_v);
+    //printf ("V(%d,%d) energy %Lf\n", i, j, d2_energy_v);
 }
 
 // Hosna, April 18, 2012
