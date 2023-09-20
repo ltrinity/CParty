@@ -65,7 +65,7 @@ void VM_final::compute_energy(int i, int j, str_features *fres){
 
     pf_t d2_energy_vm = 0;
     pf_t oneoverRT = -10.0/(1.98717*310.15);
-    d2_energy_vm += WMP[kjminus1] * exp(misc.multi_helix_penalty + misc.multi_offset + AU_penalty (sequence[i], sequence[j])*oneoverRT);
+    //d2_energy_vm += WMP[kjminus1] * exp(misc.multi_helix_penalty + misc.multi_offset + AU_penalty (sequence[i], sequence[j])*oneoverRT);
 
     //modifying for loop exit conditions sans dangles -> prev it was j-3
     for (k = i+2; k <= j-1; k++)

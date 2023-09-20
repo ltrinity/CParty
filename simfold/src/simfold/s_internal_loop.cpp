@@ -378,7 +378,7 @@ PARAMTYPE s_internal_loop::get_energy_str_restricted (int i, int j, int ip, int 
 
 				ttmp = en + V->get_energy (ip, jp);
 
-				if (ttmp < INF/2)
+				if (ttmp < INF/2 && V->get_energy (ip, jp)!=INF)
 				{
 					d2_energy_ilb += ttmp;
 				}
@@ -391,7 +391,7 @@ PARAMTYPE s_internal_loop::get_energy_str_restricted (int i, int j, int ip, int 
 				[sequence[ip]][sequence[jp]]
 				[sequence[jp+1]];
 				ttmp = en + V->get_energy (ip, jp);
-				if (ttmp < INF/2)
+				if (ttmp < INF/2 && V->get_energy (ip, jp)!=INF)
 				{
 					d2_energy_ilb += ttmp;
 				}
@@ -404,7 +404,7 @@ PARAMTYPE s_internal_loop::get_energy_str_restricted (int i, int j, int ip, int 
 				[sequence[j]][sequence[i]]
 				[sequence[i+1]];
 				ttmp = en + V->get_energy (ip, jp);
-				if (ttmp < INF/2)
+				if (ttmp < INF/2 && V->get_energy (ip, jp)!=INF)
 				{
 					d2_energy_ilb += ttmp;
 				}
@@ -417,7 +417,7 @@ PARAMTYPE s_internal_loop::get_energy_str_restricted (int i, int j, int ip, int 
 				[sequence[ip]][sequence[jp]]
 				[sequence[ip-1]][sequence[jp+1]];
 				ttmp = en + V->get_energy (ip, jp);
-				if (ttmp < INF/2)
+				if (ttmp < INF/2 && V->get_energy (ip, jp)!=INF)
 				{
 					d2_energy_ilb += ttmp;
 				}
@@ -465,7 +465,7 @@ PARAMTYPE s_internal_loop::get_energy_str_restricted (int i, int j, int ip, int 
 						}
 
 						ttmp = en + penalty_size + V->get_energy (ip, jp);
-						if (ttmp < INF/2)
+						if (ttmp < INF/2 && V->get_energy (ip, jp)!=INF)
 						{
 							d2_energy_ilb += ttmp;
 						}
@@ -478,7 +478,7 @@ PARAMTYPE s_internal_loop::get_energy_str_restricted (int i, int j, int ip, int 
 						AU_penalty (sequence[i],sequence[j]) +
 						AU_penalty (sequence[ip], sequence[jp]) +
 						V->get_energy (ip, jp);
-						if (ttmp < INF/2)
+						if (ttmp < INF/2 && V->get_energy (ip, jp)!=INF)
 						{
 							d2_energy_ilb += ttmp;
 						}
@@ -528,7 +528,7 @@ PARAMTYPE s_internal_loop::get_energy_str_restricted (int i, int j, int ip, int 
 					asym_penalty + V->get_energy (ip, jp);
 
 
-					if (ttmp < INF/2)
+					if (ttmp < INF/2 && V->get_energy (ip, jp)!=INF)
 					{
 						d2_energy_ilb += ttmp;
 					}
@@ -555,7 +555,7 @@ PARAMTYPE s_internal_loop::get_energy_str_restricted (int i, int j, int ip, int 
 
 				ttmp = en + V->get_energy (ip, jp);
 
-				if (ttmp < INF/2)
+				if (ttmp < INF/2 && V->get_energy (ip, jp)!=INF)
 				{
 					d2_energy_ilb += ttmp;
 				}
@@ -569,7 +569,7 @@ PARAMTYPE s_internal_loop::get_energy_str_restricted (int i, int j, int ip, int 
 				[sequence[jp+1]];
 				en = MIN(0,en); // Hosna, March 26, 2012, added to accommodate non-cannonical base pairs in restricted structure
 				ttmp = en + V->get_energy (ip, jp);
-				if (ttmp < INF/2)
+				if (ttmp < INF/2 && V->get_energy (ip, jp)!=INF)
 				{
 					d2_energy_ilb += ttmp;
 				}
@@ -583,7 +583,7 @@ PARAMTYPE s_internal_loop::get_energy_str_restricted (int i, int j, int ip, int 
 				[sequence[i+1]];
 				en = MIN(0,en); // Hosna, March 26, 2012, added to accommodate non-cannonical base pairs in restricted structure
 				ttmp = en + V->get_energy (ip, jp);
-				if (ttmp < INF/2)
+				if (ttmp < INF/2 && V->get_energy (ip, jp)!=INF)
 				{
 					d2_energy_ilb += ttmp;
 				}
@@ -598,7 +598,7 @@ PARAMTYPE s_internal_loop::get_energy_str_restricted (int i, int j, int ip, int 
 
 				en = MIN(0,en); // Hosna, March 26, 2012, added to accommodate non-cannonical base pairs in restricted structure
 				ttmp = en + V->get_energy (ip, jp);
-				if (ttmp < INF/2)
+				if (ttmp < INF/2 && V->get_energy (ip, jp)!=INF)
 				{
 					d2_energy_ilb += ttmp;
 				}
@@ -646,8 +646,8 @@ PARAMTYPE s_internal_loop::get_energy_str_restricted (int i, int j, int ip, int 
 							penalty_size = 0;   // we don't add it for case 1
 						}
 						ttmp = en + penalty_size + V->get_energy (ip, jp);
-
-						if (ttmp < INF/2)
+            
+						if (ttmp < INF/2 && V->get_energy (ip, jp)!=INF)
 						{
 							d2_energy_ilb += ttmp;
 						}
@@ -660,7 +660,7 @@ PARAMTYPE s_internal_loop::get_energy_str_restricted (int i, int j, int ip, int 
 						AU_penalty (sequence[i],sequence[j]) +
 						AU_penalty (sequence[ip], sequence[jp]) +
 						V->get_energy (ip, jp);
-						if (ttmp < INF/2)
+						if (ttmp < INF/2 && V->get_energy (ip, jp)!=INF)
 						{
 							d2_energy_ilb += ttmp;
 						}
@@ -718,7 +718,7 @@ PARAMTYPE s_internal_loop::get_energy_str_restricted (int i, int j, int ip, int 
 					ttmp = i_j_energy + ip_jp_energy + penalty_size +
 					asym_penalty + V->get_energy (ip, jp);
 
-					if (ttmp < INF/2)
+					if (ttmp < INF/2 && V->get_energy (ip, jp)!=INF)
 					{
 						d2_energy_ilb += ttmp;
 					}

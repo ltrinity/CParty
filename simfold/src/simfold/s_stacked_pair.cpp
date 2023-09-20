@@ -49,8 +49,8 @@ PARAMTYPE s_stacked_pair::compute_energy (int i, int j)
 
     V_energy = V->get_energy (i+1,j-1);
 
-    // Luke Sep 2023 if V energy is 0 then i=j, return
-    if(V_energy == 0){
+    // Luke Sep 2023 if V energy is INF then i=j, return
+    if(V_energy == INF){
         return 0;
     }
 
@@ -68,7 +68,7 @@ PARAMTYPE s_stacked_pair::compute_energy (int i, int j)
 //         local_energy = -100;
 
 
-    min = V_energy + local_energy;
+    min = V_energy * local_energy;
 
     // add the loss
     //if (pred_pairings != NULL)

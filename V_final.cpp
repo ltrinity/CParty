@@ -60,7 +60,7 @@ pf_t V_final::get_energy(int i, int j){
 	//}
 	/// Luke modifying to return sum
 	d2_energy_v += v_energy;
-	//d2_energy_v += vm_energy;
+	d2_energy_v += vm_energy;
 	return d2_energy_v;
 }
 

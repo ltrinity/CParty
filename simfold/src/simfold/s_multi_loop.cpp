@@ -295,7 +295,7 @@ void s_multi_loop::compute_energy_WM_restricted (int j, str_features *fres)
         if (fres[j].pair <= -1)
         {
             simfold_energy_wm += (WM[ijminus1] * exp(misc.multi_free_base_penalty*oneoverRTsim));
-            //printf ("WM_i,j-1(%d,%d) energy %Lf\n",i, j, WM[ijminus1]);
+            //printf ("WM_i,j-1(%d,%d) energy %Lf\n",i, j-1, WM[ijminus1]);
             
         }
 
@@ -309,16 +309,19 @@ void s_multi_loop::compute_energy_WM_restricted (int j, str_features *fres)
                 // v energy for split
                 pf_t V_energy = V->get_energy(k,j) *
                     exp(misc.multi_helix_penalty*oneoverRTsim);
-                //printf ("WM in V(%d,%d) energy %Lf\n", k, j, V_energy);
+                
                 //unpaired
                 int unpaired_energy =  exp(misc.multi_free_base_penalty*(k-i)*oneoverRTsim) ;
                 // new case 1 (leftmost branch)
                 simfold_energy_wm += (unpaired_energy * V_energy);
+                //printf ("WM_k,j case 1(%d,%d) energy %Lf\n",k, j, (unpaired_energy * V_energy));
                 // new case 3 (intermediate branch)
                 if (k > i && k < (j-1))
                 {
                     int ikminus1 = index[i]+k-1-i;
                     simfold_energy_wm += (WM[ikminus1] * V_energy);
+                    //printf ("WM_k,j case 3(%d,%d) energy %Lf\n",k, j, (WM[ikminus1] * V_energy));
+                    
                 }
             }
         }
