@@ -45,14 +45,15 @@ s_stacked_pair::~s_stacked_pair ()
 PARAMTYPE s_stacked_pair::compute_energy (int i, int j)
 // compute the free energy of the structure closed by this stacked pair
 {
-    PARAMTYPE min=INF, local_energy, V_energy;
+    pf_t min=0, V_energy;
+    PARAMTYPE local_energy; 
 
     V_energy = V->get_energy (i+1,j-1);
 
     // Luke Sep 2023 if V energy is INF then i=j, return
-    if(V_energy == INF){
-        return 0;
-    }
+    //if(V_energy == INF){
+    //    return 0;
+    //}
 
     local_energy = stack[sequence[i]]
 						[sequence[j]]
@@ -68,7 +69,7 @@ PARAMTYPE s_stacked_pair::compute_energy (int i, int j)
 //         local_energy = -100;
 
 
-    min = V_energy * local_energy;
+    min = V_energy + local_energy;
 
     // add the loss
     //if (pred_pairings != NULL)

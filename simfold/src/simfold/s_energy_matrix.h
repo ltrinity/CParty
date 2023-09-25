@@ -72,7 +72,7 @@ class s_energy_matrix
 
         // May 15, 2007. Added "if (i>=j) return INF;"  below. It was miscalculating the backtracked structure.
         //Luke changing base case to 0?
-        pf_t get_energy (int i, int j) { if (i>=j) return INF; int ij = index[i]+j-i; return nodes[ij].energy; }
+        pf_t get_energy (int i, int j) { if (i>=j) return 0; int ij = index[i]+j-i; return nodes[ij].energy; }
         // return the value at V(i,j)
 
         char get_type (int i, int j) { int ij = index[i]+j-i; return nodes[ij].type; }

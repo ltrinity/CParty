@@ -182,9 +182,9 @@ void W_final::compute_W_restricted (int j, str_features *fres)
 	//	printf("V[0,%d] = %Lf\n",j,m2);
 	//}
 	d2_energy+= m2;
-    //m3 = compute_W_br3_restricted (j, fres);
+    m3 = compute_W_br3_restricted (j, fres);
 	//if(debug){
-		//printf("P[0,%d] = %Lf\n",j,m3);
+	printf("P[0,%d] = %Lf\n",j,m3);
 	//}
 	//d2_energy+= m3;
     //if (WMB->is_weakly_closed(0,j) < 0){

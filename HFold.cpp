@@ -255,7 +255,7 @@ int main (int argc, char *argv[])
 		}
 	}else{
 		printf ("Seq: %s\n", sequence);
-		printf ("Partition Function: %Lf\n", energy);
+		printf ("Partition Function: %Lf\n", energy/100);
         //printf ("RES: %s  %.2lf\n", structure, energy);
 	}
 
