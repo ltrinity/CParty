@@ -172,12 +172,12 @@ void s_energy_matrix::compute_energy_restricted (int i, int j, str_features *fre
         //Luke modifying for sum
         if (min_en[k] <  INF/2 && min_en[k] !=0)
         {
-            pf_t oneoverRT = -10.0/(1.98717*310.15);
+            pf_t RT = (1.98717*310.15);
             //if(debug){
-            //printf ("V(%d,%d) k: %d energy %d\n", i, j, k, min_en[k]);
-            //printf ("Scaled V(%d,%d) k: %d partition function contribution %Lf\n", i, j, k, exp(min_en[k]*oneoverRT));
+            printf ("V(%d,%d) k: %d energy %d\n", i, j, k, min_en[k]);
+            printf ("Scaled V(%d,%d) k: %d partition function contribution %Lf\n", i, j, k, exp((min_en[k]*-10)/RT));
             //}
-            d2_energy_v += exp((min_en[k])*oneoverRT);
+            d2_energy_v += exp((min_en[k]*-10)/RT);
         }
     }
     int ij = index[i]+j-i;
