@@ -174,12 +174,12 @@ void W_final::compute_W_restricted (int j, str_features *fres)
 	pf_t d2_energy = 0;
     m1 = W[j-1];
 	//if(debug){
-	printf("W_[0,%d] = %Lf\n",j-1,W[j-1]);
+	//printf("W_[0,%d] = %Lf\n",j-1,W[j-1]);
 	//}
 	d2_energy+= m1;
     m2 = compute_W_br2_restricted (j, fres, must_choose_this_branch);
 	//if(debug){
-		printf("V[0,%d] = %Lf\n",j,m2);
+		//printf("V[0,%d] = %Lf\n",j,m2);
 	//}
 	d2_energy+= m2;
     //m3 = compute_W_br3_restricted (j, fres);
@@ -195,7 +195,7 @@ void W_final::compute_W_restricted (int j, str_features *fres)
 	W[j] = d2_energy;
 	//if(debug){
 	//printf("W[j] d2 = %Lf = %Lf\n",d2_energy, W[j]);
-	printf("Z_W(%d,%d) = %Lf \n",0,j,d2_energy);
+	//printf("Z_W(%d,%d) = %Lf \n",0,j,d2_energy);
 	//}
 }
 

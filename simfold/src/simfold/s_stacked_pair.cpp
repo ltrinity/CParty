@@ -68,7 +68,6 @@ PARAMTYPE s_stacked_pair::compute_energy (int i, int j)
 //     else
 //         local_energy = -100;
 
-
     min = V_energy * local_energy;
 
     // add the loss

@@ -39,6 +39,10 @@
 #define has_AU_penalty(X,Y)  ((((X) != C || (Y) != G) && ((X) != G || (Y) != C))?1:0)
 #define AU_penalty_enthalpy(X,Y)  ((((X) != C || (Y) != G) && ((X) != G || (Y) != C))?enthalpy_misc.terminal_AU_penalty:0)
 
+pf_t bw(pf_t energy);
+pf_t bw_int(PARAMTYPE energy);
+//return the boltzmann weight
+
 //#define asymmetry_penalty(size1, size2) (MIN (misc.asymmetry_penalty_max_correction, abs (size1-size2) * misc.asymmetry_penalty_array [MIN (2, MIN ((size1), (size2)))-1]))
 
 PARAMTYPE asymmetry_penalty (int size1, int size2);
