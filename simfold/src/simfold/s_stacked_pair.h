@@ -38,11 +38,11 @@ class s_stacked_pair
         void set_energy_matrix (s_energy_matrix *V) { this->V = V; }
         // Set local energy matrix to V
 
-        PARAMTYPE compute_energy (int i, int j);
+        pf_t compute_energy (int i, int j);
         // compute the free energy of the structure closed by this stacked pair
 
 		// Hosna, March 26, 2012
-		PARAMTYPE compute_energy_restricted (int i, int j, str_features *fres);
+		pf_t compute_energy_restricted (int i, int j, str_features *fres);
 		//  compute the free energy if this is restricted to be a stacked pair closed at (i,j)
 
 		// Hosna, April 18, 2012

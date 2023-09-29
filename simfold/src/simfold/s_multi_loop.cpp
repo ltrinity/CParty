@@ -30,8 +30,6 @@
 #include "s_energy_matrix.h"
 #include "constants.h"
 
-//Luke Sep 2023 adding gas constant for scaling penalties
-pf_t oneoverRTsim = -10.0/(1.98717*310.15);
 
 s_multi_loop::s_multi_loop (int *seq, int length)
 // The constructor
@@ -294,7 +292,7 @@ void s_multi_loop::compute_energy_WM_restricted (int j, str_features *fres)
         // new case 5 (j unpaired)
         if (fres[j].pair <= -1)
         {
-            simfold_energy_wm += (WM[ijminus1] * exp(misc.multi_free_base_penalty*oneoverRTsim));
+            simfold_energy_wm += (WM[ijminus1] * bw_int(misc.multi_free_base_penalty));
             //printf ("WM_i,j-1(%d,%d) energy %Lf\n",i, j-1, WM[ijminus1]);
             
         }
@@ -308,10 +306,10 @@ void s_multi_loop::compute_energy_WM_restricted (int j, str_features *fres)
                 int kplus1j = index[k+1]+j-k-1;
                 // v energy for split
                 pf_t V_energy = V->get_energy(k,j) *
-                    exp(misc.multi_helix_penalty*oneoverRTsim);
+                    bw_int(misc.multi_helix_penalty);
                 
                 //unpaired
-                int unpaired_energy =  exp(misc.multi_free_base_penalty*(k-i)*oneoverRTsim) ;
+                int unpaired_energy =  bw_int(misc.multi_free_base_penalty*(k-i)) ;
                 // new case 1 (leftmost branch)
                 simfold_energy_wm += (unpaired_energy * V_energy);
                 //printf ("WM_k,j case 1(%d,%d) energy %Lf\n",k, j, (unpaired_energy * V_energy));

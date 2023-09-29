@@ -42,10 +42,10 @@ s_stacked_pair::~s_stacked_pair ()
 {
 }
 
-PARAMTYPE s_stacked_pair::compute_energy (int i, int j)
+pf_t s_stacked_pair::compute_energy (int i, int j)
 // compute the free energy of the structure closed by this stacked pair
 {
-    pf_t min=0, V_energy;
+    pf_t min, V_energy;
     PARAMTYPE local_energy; 
 
     V_energy = V->get_energy (i+1,j-1);
@@ -67,8 +67,8 @@ PARAMTYPE s_stacked_pair::compute_energy (int i, int j)
 //         local_energy = stack[0][3][0][3];
 //     else
 //         local_energy = -100;
-
-    min = V_energy * local_energy;
+    //printf("Vstack: %Lf local: %Lf mult: %Lf\n",V_energy, bw_int(local_energy), V_energy * bw_int(local_energy));
+    min = V_energy * bw_int(local_energy);
 
     // add the loss
     //if (pred_pairings != NULL)
@@ -81,7 +81,7 @@ PARAMTYPE s_stacked_pair::compute_energy (int i, int j)
 }
 
 //Added by Hosna
-PARAMTYPE s_stacked_pair::compute_energy_restricted (int i, int j, str_features *fres)
+pf_t s_stacked_pair::compute_energy_restricted (int i, int j, str_features *fres)
 // compute the free energy of the structure closed by this stacked pair
 {
 	if (fres[i].pair == j && fres[j].pair==i && !can_pair(sequence[i],sequence[j])){

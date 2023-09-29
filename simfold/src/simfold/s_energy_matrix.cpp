@@ -138,7 +138,7 @@ void s_energy_matrix::compute_energy_restricted (int i, int j, str_features *fre
 // Luke removing extra code and simplifying for part func
 {
     int k;
-    PARAMTYPE min_en[4];
+    pf_t min_en[4];
     pf_t d2_energy_v = 0;
     //hairpin
     min_en[0] = INF;
@@ -173,9 +173,15 @@ void s_energy_matrix::compute_energy_restricted (int i, int j, str_features *fre
         if (min_en[k] <  INF/2 && min_en[k] !=0)
         {
             //if(debug){
-            printf ("V(%d,%d) k: %d energy %d; bw: %Lf\n", i, j, k, min_en[k],bw_int(min_en[k]));
+            
             //}
-            d2_energy_v += bw_int(min_en[k]);
+            if(k == 0 || k == 2){
+                d2_energy_v += bw_int(min_en[k]);
+                printf ("V(%d,%d) k: %d energy %Lf; bw: %Lf\n", i, j, k, min_en[k],bw_int(min_en[k]));
+            } else {
+                printf ("V(%d,%d) k: 1 bw: %Lf\n", i, j, min_en[k]);
+                d2_energy_v += min_en[k];
+            }
         }
     }
     int ij = index[i]+j-i;

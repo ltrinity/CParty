@@ -29,7 +29,6 @@
 
 
 pf_t bw(pf_t e){
-    printf("%Lf",e);
     return exp((e*-10.0)/1.98717*310.15);
 }
 
