@@ -172,14 +172,14 @@ void s_energy_matrix::compute_energy_restricted (int i, int j, str_features *fre
         //Luke modifying for sum
         if (min_en[k] <  INF/2 && min_en[k] !=0)
         {
-            //if(debug){
-            
-            //}
-            if(k == 0 || k == 2){
+            if(k == 0){
                 d2_energy_v += bw_int(min_en[k]);
                 printf ("V(%d,%d) k: %d energy %Lf; bw: %Lf\n", i, j, k, min_en[k],bw_int(min_en[k]));
-            } else {
+            } else  if (k==1){
                 printf ("V(%d,%d) k: 1 bw: %Lf\n", i, j, min_en[k]);
+                d2_energy_v += min_en[k];
+            } else if (k==2){
+                printf ("V(%d,%d) k: 2 bw: %Lf\n", i, j, min_en[k]);
                 d2_energy_v += min_en[k];
             }
         }

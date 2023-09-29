@@ -44,7 +44,7 @@ class s_internal_loop
         PARAMTYPE compute_energy (int i, int j);
         // computes the MFE of the structure closed by an internal loop closed at (i,j)
 
-        PARAMTYPE compute_energy_restricted (int i, int j, str_features *fres);
+        pf_t compute_energy_restricted (int i, int j, str_features *fres);
         // computes the MFE of the structure closed by a restricted internal loop closed by (i,j)
 
 		// Hosna, April 18, 2012
@@ -56,7 +56,7 @@ class s_internal_loop
 
 		// Hosna, March 26, 2012
 		// This function is added for non-cannonical base pairs in the restricted struture
-		PARAMTYPE get_energy_str_restricted (int i, int j, int ip, int jp, str_features *fres);
+		pf_t get_energy_str_restricted (int i, int j, int ip, int jp, str_features *fres);
 		// returns the free energy of the structure closed by the internal loop (i,j,ip,jp)
 
         static PARAMTYPE get_energy (int i, int j, int ip, int jp, int *sequence, int *ptable=NULL);

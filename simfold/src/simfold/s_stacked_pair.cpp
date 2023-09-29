@@ -67,7 +67,7 @@ pf_t s_stacked_pair::compute_energy (int i, int j)
 //         local_energy = stack[0][3][0][3];
 //     else
 //         local_energy = -100;
-    //printf("Vstack: %Lf local: %Lf mult: %Lf\n",V_energy, bw_int(local_energy), V_energy * bw_int(local_energy));
+    //printf("Vstack: %Lf local pre: %d local post: %Lf mult: %Lf\n",V_energy, local_energy, bw_int(local_energy), V_energy * bw_int(local_energy));
     min = V_energy * bw_int(local_energy);
 
     // add the loss
