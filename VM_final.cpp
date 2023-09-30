@@ -96,7 +96,9 @@ void VM_final::compute_energy(int i, int j, str_features *fres){
     //printf("VM[%d,%d] = %Lf \n",i,j,d2_energy_vm);
     //}
     VM[ij] = d2_energy_vm;
-	//printf("VM[%d,%d] = %Lf \n",i,j,VM[ij]);
+    //if (VM[ij] > 0.0){
+	//    printf("VM[%d,%d] = %Lf \n",i,j,VM[ij]);
+    //}
 }
 
 //Luke Aug 2023 base case 0 for partition function

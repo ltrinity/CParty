@@ -108,7 +108,7 @@ PARAMTYPE s_stacked_pair::compute_energy_restricted_pkonly (int i, int j, str_fe
 PARAMTYPE s_stacked_pair::get_energy (int i, int j, int *sequence)
 // returns the free energy of the stacked pair closed at (i,j)
 {
-    if (i+1 >= j-1)     return INF;
+    if (i+1 >= j-1)     return 0;
     // TODO
 //     if (sequence[i] == 0 && sequence[j] == 3 && sequence[i+1] == 0 && sequence[j-1] == 3)
 //         return stack[0][3][0][3];

@@ -28,10 +28,6 @@
 #include "common.h"
 
 
-pf_t bw(pf_t e){
-    return exp((e*-10.0)/1.98717*310.15);
-}
-
 pf_t bw_int(PARAMTYPE e){
     pf_t energy = exp((e*-10.0)/(1.98717*310.15));
     return energy;

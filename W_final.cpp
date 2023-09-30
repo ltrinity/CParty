@@ -168,7 +168,7 @@ void W_final::return_structure(char *structure){
 void W_final::compute_W_restricted (int j, str_features *fres)
 // compute W(j)
 {
-    pf_t m1, m2, m3;
+    pf_t m1, m2, m3=0;
     int must_choose_this_branch;
 	// Luke init partition function Aug 2023
 	pf_t d2_energy = 0;
@@ -182,11 +182,10 @@ void W_final::compute_W_restricted (int j, str_features *fres)
 		//printf("V[0,%d] = %Lf\n",j,m2);
 	//}
 	d2_energy+= m2;
-    //m3 = compute_W_br3_restricted (j, fres);
-	//if(debug){
+    m3 = compute_W_br3_restricted (j, fres);
 	//printf("P[0,%d] = %Lf\n",j,m3);
-	//}
-	//d2_energy+= m3;
+	d2_energy+= m3;
+	
     //if (WMB->is_weakly_closed(0,j) < 0){
 		// Luke changing to 0 for part func
     	//W[j] = 0;
@@ -221,9 +220,9 @@ pf_t W_final::compute_W_br2_restricted (int j, str_features *fres, int &must_cho
 		}
         energy_ij = Wsubstruc_en*v->get_energy(i,j);
 		//if(energy_ij> 0){
-		//	printf("br2: W_i-1(%d,%d) = %Lf\n", i,j,Wsubstruc_en );
-		//	printf("br2: v(%d,%d) = %Lf\n", i,j,v->get_energy(i,j) );
-		//	printf("br2: total(%d,%d) = %Lf\n", i,j,energy_ij );
+			//printf("br2: W_i-1(%d,%d) = %Lf\n", i,j,Wsubstruc_en );
+			//printf("br2: v(%d,%d) = %Lf\n", i,j,v->get_energy(i,j) );
+			//printf("br2: total(%d,%d) = %Lf\n", i,j,energy_ij );
 		//}
 		d2_energy_v+=energy_ij;
 		//if(debug){
@@ -258,15 +257,18 @@ pf_t W_final::compute_W_br3_restricted(int j, str_features *fres){
 	        //  because that would be INF - done in fold_sequence_restricted
 	        //acc = (i-1>0) ? W[i-1]: 0;
 			//printf("acc= %Lf \n",acc);
-
-	        energy_ij = WMB->get_energy(i,j);
 			
 			//Luke modifying to multiply penalties
-			tmp = energy_ij * PS_penalty;
+			pf_t Wsubstruc_en = W[i-1];
+			if(i-1 == -1){
+				Wsubstruc_en = 1;
+			}
+	        energy_ij = Wsubstruc_en* WMB->get_energy(i,j) * PS_penalty;
+			
 			//if(debug){
-			//printf("Z_P(%d,%d) = %Lf \n",i,j,tmp);
+			//printf("Z_P(%d,%d) = %Lf; %Lf; %f\n",i,j,Wsubstruc_en,WMB->get_energy(i,j), PS_penalty);
 			//}
-			d2_energy_p += W[i-1]*tmp;
+			d2_energy_p += energy_ij;
 			//if(debug){
 			//printf("Z_P(%d,%d) = %Lf \n",i,j,d2_energy_p);
 			//}

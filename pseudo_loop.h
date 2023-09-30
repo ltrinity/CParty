@@ -152,8 +152,8 @@ private:
 
 	// Hosna Feb 8th, 2007:
 	// I have to calculate the e_stP in a separate function
-	int get_e_stP(int i, int j);
-	int get_e_intP(int i,int ip, int jp, int j);
+	pf_t get_e_stP(int i, int j);
+	pf_t get_e_intP(int i,int ip, int jp, int j);
 
   	// Hosna: Feb 19th 2007
   	// used for backtracking
