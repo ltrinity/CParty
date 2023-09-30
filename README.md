@@ -1,15 +1,12 @@
 # HFold
 
 #### Description:
-Software implementation of HFold.     
-HFold is an algorithm for predicting the pseudoknotted secondary structures of RNA using strict Hierarchical Folding.
+Software implementation of CParty.     
+CParty is an algorithm for computing the conditional partition function for density-2 RNA pseudoknots.
 
 #### Cite: 
-Jabbari, H., Condon, A., Pop, A., Pop, C., Zhao, Y. (2007). HFold: RNA Pseudoknotted Secondary Structure Prediction Using Hierarchical Folding. In: Giancarlo, R., Hannenhalli, S. (eds) Algorithms in Bioinformatics. WABI 2007. Lecture Notes in Computer Science, vol 4645. Springer, Berlin, Heidelberg. 
-https://doi.org/10.1007/978-3-540-74126-8_30
-
-Jabbari, H., Condon, A., Zhao Y. Novel and Efficient RNA Secondary Structure Prediction Using Hierarchical Folding.Journal of Computational Biology.Mar 2008.139-163.
-http://doi.org/10.1089/cmb.2007.0198
+Trinity, Luke, Sebastian Will, Yann Ponty, Ulrike Stege, and Hosna Jabbari. "CParty: Conditional partition function for density-2 RNA pseudoknots." bioRxiv (2023): 2023-05.
+https://doi.org/10.1101/2023.05.16.541023 
 
 #### Supported OS: 
 Linux 

@@ -247,10 +247,8 @@ int main (int argc, char *argv[])
 		FILE* fp;
 		fp = fopen(outputPath,"w");
 		if(fp){
-			fprintf(fp,"Sequence: %s\n",sequence);
-			fprintf(fp,"Input_structure: %s\n",restricted);
-			fprintf(fp,"Output_structure: %s\n",structure);
-			fprintf(fp,"Energy: %.Lf\n",energy);
+			fprintf(fp,"Seq: %s\n", sequence);
+			fprintf(fp,"Partition Function: %Lf\n", energy);
 			fclose(fp);
 		}
 	}else{

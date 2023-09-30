@@ -164,13 +164,13 @@ void W_final::return_structure(char *structure){
 	//s_min_folding::return_structure(structure);
 }
 
-//Luke Aug 2023 modification for part func
+/// Luke Sep 2023 Z_W exterior structure class
+/// Luke init partition function
 void W_final::compute_W_restricted (int j, str_features *fres)
 // compute W(j)
 {
     pf_t m1, m2, m3=0;
     int must_choose_this_branch;
-	// Luke init partition function Aug 2023
 	pf_t d2_energy = 0;
     m1 = W[j-1];
 	//if(debug){
