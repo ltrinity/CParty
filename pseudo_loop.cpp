@@ -64,7 +64,8 @@ void pseudo_loop::allocate_space()
 
     VP = new pf_t[total_length];
     if (VP == NULL) giveup ("Cannot allocate memory", "VP");
-	//Luke Aug 2023 changing init to 0 from INF for partition function 
+	///Luke Aug 2023 
+	/// changing init to 0 from INF for partition function 
     for (i=0; i < total_length; i++) VP[i] = 0;
 
     WMB = new pf_t[total_length];
@@ -88,7 +89,8 @@ void pseudo_loop::allocate_space()
     for (i=0; i < total_length; i++) WIP[i] = 0;
 
 
-	// Luke added Aug 2023
+	/// Luke added Aug 2023
+	/// new structure classes
 	VPR = new pf_t[total_length];
     if (VPR == NULL) giveup ("Cannot allocate memory", "VPR");
     for (i=0; i < total_length; i++) VPR[i] = 0;
@@ -99,7 +101,9 @@ void pseudo_loop::allocate_space()
 
     BE = new pf_t[total_length];
     if (BE == NULL) giveup ("Cannot allocate memory", "BE");
-    for (i=0; i < total_length; i++) BE[i] = 1; //check
+    for (i=0; i < total_length; i++) BE[i] = 1; 
+	/// Luke veryifed BE needs base case 1
+	/// to allow stack energies to fill matrix
 
     border_bs = new int*[nb_nucleotides];
     for(i = 0; i < nb_nucleotides; i++) border_bs[i] = new int[nb_nucleotides];
@@ -233,7 +237,8 @@ void pseudo_loop::compute_energies(int i, int j)
 	//	}
 	compute_VP(i,j,fres); // Hosna, March 14, 2012, changed the position of computing VP from after BE to befor WMBP
 	
-	//Luke Sep 2023 CParty scheme structure classes modification
+	/// Luke Sep 2023 
+	/// CParty scheme structure classes modification
 	compute_PGPW(i,j,fres);
 //	if(debug){
 //		printf("calculating WMBP(%d,%d) \n",i,j);
@@ -280,7 +285,8 @@ void pseudo_loop::compute_energies(int i, int j)
 void pseudo_loop::compute_WI(int i, int j , h_str_features *fres){
 	pf_t min = INF, m1 = INF, m2= INF, m3= INF;
 
-	// Luke init partition function Aug 2023
+	/// Luke Aug 2023
+	/// init partition function 
 	pf_t d2_energy_wi = 0;
 	int ij = index[i]+j-i;
 	int ijminus1 = index[i] + (j-1)-i;
@@ -335,7 +341,8 @@ void pseudo_loop::compute_WI(int i, int j , h_str_features *fres){
 	// branch 1:
 //	if (fres[i].pair < 0 && fres[j].pair < 0)
 //	{
-	// Luke 6/27/2023: ambiguity here, addressed with split on structure
+	/// Luke 6/27/2023
+	/// ambiguity here, addressed with split on structure
 	int t;
 	for (t = i; t< j; t++){
 		pf_t wi_1 = get_WI(i,t-1);
@@ -362,7 +369,8 @@ void pseudo_loop::compute_WI(int i, int j , h_str_features *fres){
 	//printf("Z_WI(%d,%d) = %Lf \n",i,j,d2_energy_wi);
 }
 
-// Luke modifying for CParty, cases 1-5 unchanged, new cases 6-9
+/// Luke modifying for CParty
+/// cases 1-5 unchanged, new cases 6-9
 void pseudo_loop::compute_VP(int i, int j, h_str_features *fres){
 	int ij = index[i]+j-i;
 	//Luke Aug 2023 changing to 0 from INF, now just removing it should be unambiguous
@@ -559,7 +567,8 @@ void pseudo_loop::compute_VP(int i, int j, h_str_features *fres){
 			}
 		}
 
-		// Luke Aug 2023 Case 7
+		/// Luke Aug 2023 Case 7
+		/// change below from VPP to VP
 		// 7) VP(i,j) = VP(i+1,r) + WIP(r+1,j-1)
 		// Hosna April 9th, 2007
 		// checking the borders as they may be negative numbers
@@ -590,7 +599,8 @@ void pseudo_loop::compute_VP(int i, int j, h_str_features *fres){
 			}
 		}
 
-		// Luke Aug 2023 case 8
+		/// Luke Aug 2023 case 8
+		/// change below to get value from VPR instead of VP
 		// 8) VP(i,j) = WIP(i+1,r-1) + VPR(r,j-1)
 		for (r = i+1; r < min_Bp_j ; r++){
             // Ian Wark July 19 2017
@@ -615,8 +625,8 @@ void pseudo_loop::compute_VP(int i, int j, h_str_features *fres){
 			}
 		}
 
-		// Luke Aug 2023 Case 9
-		// 7) VP(i,j) = VPL(i+1,r) + WIP(r+1,j-1)
+		/// Luke Aug 2023 Case 9
+		///  7) VP(i,j) = VPL(i+1,r) + WIP(r+1,j-1)
 		for (r = max_i_bp+1; r < j ; r++){
             // Ian Wark July 19 2017
             // fres[i].pair >= 0 changed to fres[i].pair >= FRES_RESTRICTED_MIN (which equals -1 at time of writing)
@@ -644,7 +654,8 @@ void pseudo_loop::compute_VP(int i, int j, h_str_features *fres){
 	}
 }
 
-// Luke: adding PG'W
+/// Luke: adding PG'W
+/// init partition function Aug 2023
 void pseudo_loop::compute_PGPW(int i, int j, h_str_features *fres){
 	int ij = index[i]+j-i;
 	// Luke Aug 2023 base case if already computed
@@ -721,7 +732,8 @@ void pseudo_loop::compute_PGPW(int i, int j, h_str_features *fres){
 
 }
 
-// Luke: modifying to follow CParty scheme
+/// Luke Sep 2023
+/// modifying to follow CParty scheme
 void pseudo_loop::compute_WMBP(int i, int j, h_str_features *fres){
 	int ij = index[i]+j-i;
 	if (WMBP[ij] != 0){
@@ -821,7 +833,8 @@ void pseudo_loop::compute_WMBP(int i, int j, h_str_features *fres){
 						// as long as we have i <= arc(l)< j we are fine
 						if (i <= fres[l].arc && fres[l].arc < j && l+TURN <=j){
 							pf_t sum = get_BE(fres[get_B(l,j)].pair,get_B(l,j),fres[get_Bp(l,j)].pair,get_Bp(l,j))* get_WMBP(i,l-1)* get_VP(l,j) *(2*PB_penalty);
-							//Luke adding for PGPW case
+							/// Luke adding for PGPW case
+							/// Aug 2023 part func
 							pf_t sum2 = get_BE(fres[get_B(l,j)].pair,get_B(l,j),fres[get_Bp(l,j)].pair,get_Bp(l,j))* get_PGPW(i,l-1)* get_VP(l,j)*(2*PB_penalty);
 
 							//Luke Aug 2023 part func
@@ -861,8 +874,8 @@ void pseudo_loop::compute_WMBP(int i, int j, h_str_features *fres){
 //		if (debug){
 		//printf("WMBP(%d,%d) branch 4:  VP = %Lf temp = %Lf sum = %Lf\n",i,j,get_VP(i,j), temp, d2_energy_wmbp);
 //		}
-		// Luke: removing, now in PGPW
-		// 5) WMB(i,j) = min_{i<l<j}{WMB(i,l)+WI(l+1,j)} if bp(j)<j
+		/// Luke: removing, now in PGPW
+		/// 5) WMB(i,j) = min_{i<l<j}{WMB(i,l)+WI(l+1,j)} if bp(j)<j
 		// Hosna: Feb 5, 2007
 		// if(fres[j].pair < j){
 		// 	int l,l_min =-1;
@@ -999,7 +1012,8 @@ void pseudo_loop::compute_WMB(int i, int j, h_str_features *fres){
 	}
 }
 
-// Luke 6/28/2023 removing ambiguity
+/// Luke 6/28/2023
+/// removing ambiguity
 void pseudo_loop::compute_WIP(int i, int j, h_str_features *fres){
 	int ij = index[i]+j-i;
 	if (WIP[ij] !=0){ // was calculated before Luke Aug 2023 change to 0 prev INF/2
@@ -1095,7 +1109,8 @@ void pseudo_loop::compute_WIP(int i, int j, h_str_features *fres){
 //	}
 }
 
-// Luke adding VPR, case 1 VP + WI' and case 2 VP (unpaired bases 3')
+/// Luke adding VPR
+/// case 1 VP + WI' and case 2 VP (unpaired bases 3')
 void pseudo_loop::compute_VPR(int i, int j, h_str_features *fres){
 	int ij = index[i]+j-i;
 	if (VPR[ij] != 0){ // computed before
@@ -1163,7 +1178,8 @@ void pseudo_loop::compute_VPR(int i, int j, h_str_features *fres){
 	return;
 }
 
-// Luke adding VPL, case 1 VP (unpaired bases 5')
+/// Luke adding VPL
+/// case 1 VP (unpaired bases 5')
 void pseudo_loop::compute_VPL(int i, int j, h_str_features *fres){
 		int ij = index[i]+j-i;
 	if (VPL[ij] != 0){ // computed before

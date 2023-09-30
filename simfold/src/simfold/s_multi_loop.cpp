@@ -273,7 +273,8 @@ PARAMTYPE s_multi_loop::compute_energy (int i, int j)
     return min;
 }
 
-// Luke August 2023 modifying WM restricted (remove dangles, cases to match CParty recurrence scheme pk free here)
+/// Luke August 2023 
+/// modifying WM restricted (remove dangles, cases to match CParty recurrence scheme pk free here)
 void s_multi_loop::compute_energy_WM_restricted (int j, str_features *fres)
 // compute the MFE of a partial multi-loop closed at (i,j), the restricted case
 {

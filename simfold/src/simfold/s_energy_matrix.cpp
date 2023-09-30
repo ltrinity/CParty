@@ -134,8 +134,8 @@ void s_energy_matrix::compute_energy (int i, int j)
 
 
 void s_energy_matrix::compute_energy_restricted (int i, int j, str_features *fres)
-// compute the V(i,j) value, if the structure must be restricted
-// Luke removing extra code and simplifying for part func
+/// compute the V(i,j) value, if the structure must be restricted
+/// Luke removing extra code and simplifying for part func
 {
     int k;
     pf_t min_en[4];
@@ -161,9 +161,9 @@ void s_energy_matrix::compute_energy_restricted (int i, int j, str_features *fre
 
             min_en[1] = S->compute_energy_restricted (i, j,fres);//S->compute_energy (i, j); Hosna, March 26, 2012
             min_en[2] = VBI->compute_energy_restricted (i, j, fres);
-            // Luke Sep 2023 for CParty we modified WM compute restricted
-            // min_en[3] = VM->compute_energy_restricted (i, j, fres);
-            // VM computed after
+            /// Luke Sep 2023 for CParty we modified WM compute restricted
+            /// min_en[3] = VM->compute_energy_restricted (i, j, fres);
+            /// VM computed after
         }
     }
 
