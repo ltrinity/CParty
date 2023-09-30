@@ -3,8 +3,8 @@
 #ifndef H_GLOBALS_H_
 #define H_GLOBALS_H_
 // Hosna, Nov. 1st, 2011 changed the parameter values based on HOtKNots v2
-//Luke Aug 2023, we need the gas constant for penalty calculation
-//Luke Sep 2023 adding gas constant for scaling penalties
+/// Luke Aug 2023, we need the gas constant for penalty calculation
+/// Luke Sep 2023 adding gas constant for scaling penalties
 double bw(double e){
     //printf("bw: %f\n", exp((e*-10.0)/(1.98717*310.15)));
     return exp((e*-10.0)/(1.98717*310.15));

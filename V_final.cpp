@@ -37,7 +37,8 @@ void V_final::setloops(s_energy_matrix *v, VM_final *vm){
 }
 
 pf_t V_final::get_energy(int i, int j){
-	//Luke modifying to return sum of energies
+	/// Luke modifying to return sum of energies
+	/// Luke modifying to return sum
 	pf_t d2_energy_v = 0;
 	// Hosna: June 28th, 2007
 	if (i >= j || (fres[i].pair > -1 && fres[i].pair != j) || (fres[j].pair > -1 && fres[j].pair != i)){
@@ -58,7 +59,7 @@ pf_t V_final::get_energy(int i, int j){
 	//}else{
 	//	type[ij] = 1;
 	//}
-	/// Luke modifying to return sum
+	
 	d2_energy_v += v_energy;
 	d2_energy_v += vm_energy;
 	return d2_energy_v;

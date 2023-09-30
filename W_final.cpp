@@ -198,12 +198,13 @@ void W_final::compute_W_restricted (int j, str_features *fres)
 	//}
 }
 
+/// Luke modifying to multiply structure classes
+/// Return sum of energy scaled energies Luke Sep 2023
 pf_t W_final::compute_W_br2_restricted (int j, str_features *fres, int &must_choose_this_branch)
 {
 	pf_t energy_ij = 0, acc;
     int i;
 
-	// Luke init partition function Aug 2023
 	pf_t d2_energy_v = 0;
 
     for (i=0; i<=j-1; i++)    // TURN shouldn't be there
@@ -229,10 +230,11 @@ pf_t W_final::compute_W_br2_restricted (int j, str_features *fres, int &must_cho
 		//printf("Z_V(%d,%d) = %Lf \n",i,j,d2_energy_v);
 		//}
     }
-	//Luke modification to return sum of energy Aug 2023
 	return d2_energy_v;
 }
 
+/// Luke modifying to multiply structure classes
+/// Return sum of energy scaled energies Luke Sep 2023
 pf_t W_final::compute_W_br3_restricted(int j, str_features *fres){
 	// Hosna June 30, 2007
 	// The following would not take care of when
@@ -258,7 +260,6 @@ pf_t W_final::compute_W_br3_restricted(int j, str_features *fres){
 	        //acc = (i-1>0) ? W[i-1]: 0;
 			//printf("acc= %Lf \n",acc);
 			
-			//Luke modifying to multiply penalties
 			pf_t Wsubstruc_en = W[i-1];
 			if(i-1 == -1){
 				Wsubstruc_en = 1;
@@ -274,7 +275,6 @@ pf_t W_final::compute_W_br3_restricted(int j, str_features *fres){
 			//}
 		}
 	}
-	//Luke modification to return sum of energy Aug 2023
 	return d2_energy_p;
 }
 
