@@ -1,0 +1,96 @@
+\doxysection{C\+:/\+Users/luket/\+Desktop/testing\+\_\+\+CParty/\+CParty/simfold/simfold\+\_\+pf.cpp File Reference}
+\hypertarget{simfold__pf_8cpp}{}\label{simfold__pf_8cpp}\index{C:/Users/luket/Desktop/testing\_CParty/CParty/simfold/simfold\_pf.cpp@{C:/Users/luket/Desktop/testing\_CParty/CParty/simfold/simfold\_pf.cpp}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include "{}simfold.\+h"{}}\newline
+{\ttfamily \#include "{}externs.\+h"{}}\newline
+{\ttfamily \#include "{}constants.\+h"{}}\newline
+{\ttfamily \#include "{}params.\+h"{}}\newline
+{\ttfamily \#include "{}s\+\_\+partition\+\_\+function.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} \mbox{\hyperlink{simfold__pf_8cpp_a364112f4dc61f0649eec6b78e586509d}{usage}} (\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{const}} \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{prog}})
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} \mbox{\hyperlink{simfold__pf_8cpp_a929f8b23f84928df9703df4058a17b91}{get\+\_\+arguments}} (\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{argc}}, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{argv}}\mbox{[}$\,$\mbox{]})
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} \mbox{\hyperlink{simfold__pf_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main}} (\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{argc}}, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{argv}}\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \mbox{\hyperlink{simfold__pf_8cpp_aab0fa4fa34b613e3a6b4f0e87d1c073b}{sequence}} \mbox{[}\mbox{\hyperlink{constants_8h_a1b8bfc1abb1ba53bcc6c516ddf02ad97}{MAXSLEN}}\mbox{]}
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \mbox{\hyperlink{simfold__pf_8cpp_ab6ba6a7151bca513f51e97c711e38b8c}{parameter\+\_\+filename}} \mbox{[}500\mbox{]} = "{}"{}
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{double}} \mbox{\hyperlink{simfold__pf_8cpp_afcfbedec6ebde62c6a091ce335836ef1}{threshold}} = 0.\+0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{simfold__pf_8cpp_a929f8b23f84928df9703df4058a17b91}\label{simfold__pf_8cpp_a929f8b23f84928df9703df4058a17b91} 
+\index{simfold\_pf.cpp@{simfold\_pf.cpp}!get\_arguments@{get\_arguments}}
+\index{get\_arguments@{get\_arguments}!simfold\_pf.cpp@{simfold\_pf.cpp}}
+\doxysubsubsection{\texorpdfstring{get\_arguments()}{get\_arguments()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} get\+\_\+arguments (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}}}]{argc,  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{simfold__pf_8cpp_source_l00043}{43}} of file \mbox{\hyperlink{simfold__pf_8cpp_source}{simfold\+\_\+pf.\+cpp}}.
+
+\Hypertarget{simfold__pf_8cpp_a0ddf1224851353fc92bfbff6f499fa97}\label{simfold__pf_8cpp_a0ddf1224851353fc92bfbff6f499fa97} 
+\index{simfold\_pf.cpp@{simfold\_pf.cpp}!main@{main}}
+\index{main@{main}!simfold\_pf.cpp@{simfold\_pf.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} main (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}}}]{argc,  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{simfold__pf_8cpp_source_l00081}{81}} of file \mbox{\hyperlink{simfold__pf_8cpp_source}{simfold\+\_\+pf.\+cpp}}.
+
+\Hypertarget{simfold__pf_8cpp_a364112f4dc61f0649eec6b78e586509d}\label{simfold__pf_8cpp_a364112f4dc61f0649eec6b78e586509d} 
+\index{simfold\_pf.cpp@{simfold\_pf.cpp}!usage@{usage}}
+\index{usage@{usage}!simfold\_pf.cpp@{simfold\_pf.cpp}}
+\doxysubsubsection{\texorpdfstring{usage()}{usage()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} usage (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{const}} \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}}]{prog }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{simfold__pf_8cpp_source_l00021}{21}} of file \mbox{\hyperlink{simfold__pf_8cpp_source}{simfold\+\_\+pf.\+cpp}}.
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{simfold__pf_8cpp_ab6ba6a7151bca513f51e97c711e38b8c}\label{simfold__pf_8cpp_ab6ba6a7151bca513f51e97c711e38b8c} 
+\index{simfold\_pf.cpp@{simfold\_pf.cpp}!parameter\_filename@{parameter\_filename}}
+\index{parameter\_filename@{parameter\_filename}!simfold\_pf.cpp@{simfold\_pf.cpp}}
+\doxysubsubsection{\texorpdfstring{parameter\_filename}{parameter\_filename}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} parameter\+\_\+filename\mbox{[}500\mbox{]} = "{}"{}}
+
+
+
+Definition at line \mbox{\hyperlink{simfold__pf_8cpp_source_l00018}{18}} of file \mbox{\hyperlink{simfold__pf_8cpp_source}{simfold\+\_\+pf.\+cpp}}.
+
+\Hypertarget{simfold__pf_8cpp_aab0fa4fa34b613e3a6b4f0e87d1c073b}\label{simfold__pf_8cpp_aab0fa4fa34b613e3a6b4f0e87d1c073b} 
+\index{simfold\_pf.cpp@{simfold\_pf.cpp}!sequence@{sequence}}
+\index{sequence@{sequence}!simfold\_pf.cpp@{simfold\_pf.cpp}}
+\doxysubsubsection{\texorpdfstring{sequence}{sequence}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} sequence\mbox{[}\mbox{\hyperlink{constants_8h_a1b8bfc1abb1ba53bcc6c516ddf02ad97}{MAXSLEN}}\mbox{]}}
+
+
+
+Definition at line \mbox{\hyperlink{simfold__pf_8cpp_source_l00017}{17}} of file \mbox{\hyperlink{simfold__pf_8cpp_source}{simfold\+\_\+pf.\+cpp}}.
+
+\Hypertarget{simfold__pf_8cpp_afcfbedec6ebde62c6a091ce335836ef1}\label{simfold__pf_8cpp_afcfbedec6ebde62c6a091ce335836ef1} 
+\index{simfold\_pf.cpp@{simfold\_pf.cpp}!threshold@{threshold}}
+\index{threshold@{threshold}!simfold\_pf.cpp@{simfold\_pf.cpp}}
+\doxysubsubsection{\texorpdfstring{threshold}{threshold}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{double}} threshold = 0.\+0}
+
+
+
+Definition at line \mbox{\hyperlink{simfold__pf_8cpp_source_l00019}{19}} of file \mbox{\hyperlink{simfold__pf_8cpp_source}{simfold\+\_\+pf.\+cpp}}.
+

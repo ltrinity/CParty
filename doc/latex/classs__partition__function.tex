@@ -1,0 +1,956 @@
+\doxysection{s\+\_\+partition\+\_\+function Class Reference}
+\hypertarget{classs__partition__function}{}\label{classs__partition__function}\index{s\_partition\_function@{s\_partition\_function}}
+
+
+{\ttfamily \#include $<$s\+\_\+partition\+\_\+function.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classs__partition__function_a2ef89fbdb2e12b9a10b5c6914dedc509}{s\+\_\+partition\+\_\+function}} (\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}seq, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} ignore\+\_\+dangles=1, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{compute\+\_\+g\+\_\+dangles}}=0, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}restricted=\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{NULL}})
+\item 
+\mbox{\hyperlink{classs__partition__function_a4bfdce4a0dfe31645270d8d579df75c8}{\texorpdfstring{$\sim$}{\string~}s\+\_\+partition\+\_\+function}} ()
+\item 
+\mbox{\hyperlink{constants_8h_a9377001671b5ece8bb2a2cf636de4b8a}{PFTYPE}} \mbox{\hyperlink{classs__partition__function_a93de58dfd94f46bd8cde188150261eb4}{compute\+\_\+partition\+\_\+function}} ()
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} \mbox{\hyperlink{classs__partition__function_af37ce9a9b66277ac7db4e039bcd48abd}{compute\+\_\+base\+\_\+pair\+\_\+probabilities}} ()
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} \mbox{\hyperlink{classs__partition__function_a2dfaf9684735773446af430af7c8bbde}{print\+\_\+base\+\_\+pair\+\_\+probabilities}} (\mbox{\hyperlink{constants_8h_a9377001671b5ece8bb2a2cf636de4b8a}{PFTYPE}} \mbox{\hyperlink{simfold__pf_8cpp_afcfbedec6ebde62c6a091ce335836ef1}{threshold}}=0.\+0)
+\item 
+\mbox{\hyperlink{constants_8h_a9377001671b5ece8bb2a2cf636de4b8a}{PFTYPE}} \mbox{\hyperlink{classs__partition__function_a22ceb9392c5c70ed4f4f15516558b77e}{get\+\_\+probability}} (\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} i, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} j)
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} \mbox{\hyperlink{classs__partition__function_a057d3ccec7c188b64e85a5a7275fb0ba}{PS\+\_\+dot\+\_\+plot}} (\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{wastlfile}})
+\item 
+\mbox{\hyperlink{constants_8h_a9377001671b5ece8bb2a2cf636de4b8a}{PFTYPE}} \mbox{\hyperlink{classs__partition__function_aff50f7036b16bcf21a91c1e5008191be}{get\+Oneover\+RT}} ()
+\item 
+\mbox{\hyperlink{constants_8h_a9377001671b5ece8bb2a2cf636de4b8a}{PFTYPE}} \mbox{\hyperlink{classs__partition__function_a69e17eb4379e9b3946ced8b6f5488ba4}{compute\+\_\+partition\+\_\+function\+\_\+exhaustively}} ()
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} \mbox{\hyperlink{classs__partition__function_a204c95199a5cfd8294666f931d4d3cc1}{verify\+\_\+partition\+\_\+function}} ()
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} \mbox{\hyperlink{classs__partition__function_a8f1a1b6177aba6333da2a4113118e5b1}{verify\+\_\+recurrences}} ()
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} \mbox{\hyperlink{classs__partition__function_a4cfc09dfd9cbd2e5b9c4f623f2682440}{compute\+\_\+log\+Z\+\_\+gradient}} ()
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} \mbox{\hyperlink{classs__partition__function_abcfd168633b2e6fceaa26c046771f98b}{compute\+\_\+log\+Z\+\_\+gradient\+\_\+exhaustively}} ()
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} \mbox{\hyperlink{classs__partition__function_a8fab3a4e6eb7e77f77c7e1fe50bfcac2}{correct\+\_\+gradient}} ()
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} \mbox{\hyperlink{classs__partition__function_a7ba9cf87db4ee5a5b34c6211f69bbf35}{copy\+\_\+gradient}} (\mbox{\hyperlink{constants_8h_a9377001671b5ece8bb2a2cf636de4b8a}{PFTYPE}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{grad}})
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} \mbox{\hyperlink{classs__partition__function_a4f2923a7510e0c991004d8d703612944}{copy\+\_\+gradient\+\_\+exhaustively}} (\mbox{\hyperlink{constants_8h_a9377001671b5ece8bb2a2cf636de4b8a}{PFTYPE}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{grad}})
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} \mbox{\hyperlink{classs__partition__function_a8da3ad18406669394c760437295d7d0e}{correct\+\_\+gradient\+\_\+nan}} ()
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} \mbox{\hyperlink{classs__partition__function_aacda18b360a63a49529f787212cf2f6f}{print\+\_\+gradient}} ()
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} \mbox{\hyperlink{classs__partition__function_a3e60ee520bccaef6a7d7bb15305ebc76}{print\+\_\+u}} ()
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} \mbox{\hyperlink{classs__partition__function_aec7fc1aba5436d0361495561040cf2ee}{verify\+\_\+simple\+\_\+vs\+\_\+complicated\+\_\+bpp}} (\mbox{\hyperlink{classs__partition__function}{s\+\_\+partition\+\_\+function}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{pf}})
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} \mbox{\hyperlink{classs__partition__function_af5de6731af57258e965681dbe07386cc}{verify\+\_\+simple\+\_\+vs\+\_\+complicated\+\_\+recurrences}} (\mbox{\hyperlink{classs__partition__function}{s\+\_\+partition\+\_\+function}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{otherpf}})
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} \mbox{\hyperlink{classs__partition__function_a265f4da80750bc45beb0d7adcf8ff8b0}{compute\+\_\+log\+Z\+\_\+gradient\+\_\+finite\+\_\+differences}} ()
+\item 
+\mbox{\hyperlink{classs__partition__function_a2ef89fbdb2e12b9a10b5c6914dedc509}{s\+\_\+partition\+\_\+function}} (\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}seq, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} ignore\+\_\+dangles=1, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{compute\+\_\+g\+\_\+dangles}}=0, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}restricted=\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{NULL}})
+\item 
+\mbox{\hyperlink{classs__partition__function_a4bfdce4a0dfe31645270d8d579df75c8}{\texorpdfstring{$\sim$}{\string~}s\+\_\+partition\+\_\+function}} ()
+\item 
+\mbox{\hyperlink{constants_8h_a9377001671b5ece8bb2a2cf636de4b8a}{PFTYPE}} \mbox{\hyperlink{classs__partition__function_a93de58dfd94f46bd8cde188150261eb4}{compute\+\_\+partition\+\_\+function}} ()
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} \mbox{\hyperlink{classs__partition__function_af37ce9a9b66277ac7db4e039bcd48abd}{compute\+\_\+base\+\_\+pair\+\_\+probabilities}} ()
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} \mbox{\hyperlink{classs__partition__function_a2dfaf9684735773446af430af7c8bbde}{print\+\_\+base\+\_\+pair\+\_\+probabilities}} (\mbox{\hyperlink{constants_8h_a9377001671b5ece8bb2a2cf636de4b8a}{PFTYPE}} \mbox{\hyperlink{simfold__pf_8cpp_afcfbedec6ebde62c6a091ce335836ef1}{threshold}}=0.\+0)
+\item 
+\mbox{\hyperlink{constants_8h_a9377001671b5ece8bb2a2cf636de4b8a}{PFTYPE}} \mbox{\hyperlink{classs__partition__function_a22ceb9392c5c70ed4f4f15516558b77e}{get\+\_\+probability}} (\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} i, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} j)
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} \mbox{\hyperlink{classs__partition__function_a057d3ccec7c188b64e85a5a7275fb0ba}{PS\+\_\+dot\+\_\+plot}} (\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{wastlfile}})
+\item 
+\mbox{\hyperlink{constants_8h_a9377001671b5ece8bb2a2cf636de4b8a}{PFTYPE}} \mbox{\hyperlink{classs__partition__function_aff50f7036b16bcf21a91c1e5008191be}{get\+Oneover\+RT}} ()
+\item 
+\mbox{\hyperlink{constants_8h_a9377001671b5ece8bb2a2cf636de4b8a}{PFTYPE}} \mbox{\hyperlink{classs__partition__function_a69e17eb4379e9b3946ced8b6f5488ba4}{compute\+\_\+partition\+\_\+function\+\_\+exhaustively}} ()
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} \mbox{\hyperlink{classs__partition__function_a947a7ae827001f19374d056b41cdae51}{verify\+\_\+partition\+\_\+function}} ()
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} \mbox{\hyperlink{classs__partition__function_a8f1a1b6177aba6333da2a4113118e5b1}{verify\+\_\+recurrences}} ()
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} \mbox{\hyperlink{classs__partition__function_a4cfc09dfd9cbd2e5b9c4f623f2682440}{compute\+\_\+log\+Z\+\_\+gradient}} ()
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} \mbox{\hyperlink{classs__partition__function_abcfd168633b2e6fceaa26c046771f98b}{compute\+\_\+log\+Z\+\_\+gradient\+\_\+exhaustively}} ()
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} \mbox{\hyperlink{classs__partition__function_a8fab3a4e6eb7e77f77c7e1fe50bfcac2}{correct\+\_\+gradient}} ()
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} \mbox{\hyperlink{classs__partition__function_a7ba9cf87db4ee5a5b34c6211f69bbf35}{copy\+\_\+gradient}} (\mbox{\hyperlink{constants_8h_a9377001671b5ece8bb2a2cf636de4b8a}{PFTYPE}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{grad}})
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} \mbox{\hyperlink{classs__partition__function_a4f2923a7510e0c991004d8d703612944}{copy\+\_\+gradient\+\_\+exhaustively}} (\mbox{\hyperlink{constants_8h_a9377001671b5ece8bb2a2cf636de4b8a}{PFTYPE}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{grad}})
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} \mbox{\hyperlink{classs__partition__function_a8da3ad18406669394c760437295d7d0e}{correct\+\_\+gradient\+\_\+nan}} ()
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} \mbox{\hyperlink{classs__partition__function_aacda18b360a63a49529f787212cf2f6f}{print\+\_\+gradient}} ()
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} \mbox{\hyperlink{classs__partition__function_a3e60ee520bccaef6a7d7bb15305ebc76}{print\+\_\+u}} ()
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} \mbox{\hyperlink{classs__partition__function_aec7fc1aba5436d0361495561040cf2ee}{verify\+\_\+simple\+\_\+vs\+\_\+complicated\+\_\+bpp}} (\mbox{\hyperlink{classs__partition__function}{s\+\_\+partition\+\_\+function}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{pf}})
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} \mbox{\hyperlink{classs__partition__function_af5de6731af57258e965681dbe07386cc}{verify\+\_\+simple\+\_\+vs\+\_\+complicated\+\_\+recurrences}} (\mbox{\hyperlink{classs__partition__function}{s\+\_\+partition\+\_\+function}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{otherpf}})
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} \mbox{\hyperlink{classs__partition__function_a265f4da80750bc45beb0d7adcf8ff8b0}{compute\+\_\+log\+Z\+\_\+gradient\+\_\+finite\+\_\+differences}} ()
+\item 
+\mbox{\hyperlink{classs__partition__function_a2ef89fbdb2e12b9a10b5c6914dedc509}{s\+\_\+partition\+\_\+function}} (\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}seq, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} ignore\+\_\+dangles=1, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{compute\+\_\+g\+\_\+dangles}}=0, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}restricted=\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{NULL}})
+\item 
+\mbox{\hyperlink{classs__partition__function_a4bfdce4a0dfe31645270d8d579df75c8}{\texorpdfstring{$\sim$}{\string~}s\+\_\+partition\+\_\+function}} ()
+\item 
+\mbox{\hyperlink{constants_8h_a9377001671b5ece8bb2a2cf636de4b8a}{PFTYPE}} \mbox{\hyperlink{classs__partition__function_a93de58dfd94f46bd8cde188150261eb4}{compute\+\_\+partition\+\_\+function}} ()
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} \mbox{\hyperlink{classs__partition__function_af37ce9a9b66277ac7db4e039bcd48abd}{compute\+\_\+base\+\_\+pair\+\_\+probabilities}} ()
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} \mbox{\hyperlink{classs__partition__function_a2dfaf9684735773446af430af7c8bbde}{print\+\_\+base\+\_\+pair\+\_\+probabilities}} (\mbox{\hyperlink{constants_8h_a9377001671b5ece8bb2a2cf636de4b8a}{PFTYPE}} \mbox{\hyperlink{simfold__pf_8cpp_afcfbedec6ebde62c6a091ce335836ef1}{threshold}}=0.\+0)
+\item 
+\mbox{\hyperlink{constants_8h_a9377001671b5ece8bb2a2cf636de4b8a}{PFTYPE}} \mbox{\hyperlink{classs__partition__function_a22ceb9392c5c70ed4f4f15516558b77e}{get\+\_\+probability}} (\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} i, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} j)
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} \mbox{\hyperlink{classs__partition__function_a057d3ccec7c188b64e85a5a7275fb0ba}{PS\+\_\+dot\+\_\+plot}} (\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{wastlfile}})
+\item 
+\mbox{\hyperlink{constants_8h_a9377001671b5ece8bb2a2cf636de4b8a}{PFTYPE}} \mbox{\hyperlink{classs__partition__function_aff50f7036b16bcf21a91c1e5008191be}{get\+Oneover\+RT}} ()
+\item 
+\mbox{\hyperlink{constants_8h_a9377001671b5ece8bb2a2cf636de4b8a}{PFTYPE}} \mbox{\hyperlink{classs__partition__function_a69e17eb4379e9b3946ced8b6f5488ba4}{compute\+\_\+partition\+\_\+function\+\_\+exhaustively}} ()
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} \mbox{\hyperlink{classs__partition__function_a204c95199a5cfd8294666f931d4d3cc1}{verify\+\_\+partition\+\_\+function}} ()
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} \mbox{\hyperlink{classs__partition__function_a8f1a1b6177aba6333da2a4113118e5b1}{verify\+\_\+recurrences}} ()
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} \mbox{\hyperlink{classs__partition__function_a4cfc09dfd9cbd2e5b9c4f623f2682440}{compute\+\_\+log\+Z\+\_\+gradient}} ()
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} \mbox{\hyperlink{classs__partition__function_abcfd168633b2e6fceaa26c046771f98b}{compute\+\_\+log\+Z\+\_\+gradient\+\_\+exhaustively}} ()
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} \mbox{\hyperlink{classs__partition__function_a8fab3a4e6eb7e77f77c7e1fe50bfcac2}{correct\+\_\+gradient}} ()
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} \mbox{\hyperlink{classs__partition__function_a7ba9cf87db4ee5a5b34c6211f69bbf35}{copy\+\_\+gradient}} (\mbox{\hyperlink{constants_8h_a9377001671b5ece8bb2a2cf636de4b8a}{PFTYPE}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{grad}})
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} \mbox{\hyperlink{classs__partition__function_a4f2923a7510e0c991004d8d703612944}{copy\+\_\+gradient\+\_\+exhaustively}} (\mbox{\hyperlink{constants_8h_a9377001671b5ece8bb2a2cf636de4b8a}{PFTYPE}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{grad}})
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} \mbox{\hyperlink{classs__partition__function_a8da3ad18406669394c760437295d7d0e}{correct\+\_\+gradient\+\_\+nan}} ()
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} \mbox{\hyperlink{classs__partition__function_aacda18b360a63a49529f787212cf2f6f}{print\+\_\+gradient}} ()
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} \mbox{\hyperlink{classs__partition__function_a3e60ee520bccaef6a7d7bb15305ebc76}{print\+\_\+u}} ()
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} \mbox{\hyperlink{classs__partition__function_aec7fc1aba5436d0361495561040cf2ee}{verify\+\_\+simple\+\_\+vs\+\_\+complicated\+\_\+bpp}} (\mbox{\hyperlink{classs__partition__function}{s\+\_\+partition\+\_\+function}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{pf}})
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} \mbox{\hyperlink{classs__partition__function_af5de6731af57258e965681dbe07386cc}{verify\+\_\+simple\+\_\+vs\+\_\+complicated\+\_\+recurrences}} (\mbox{\hyperlink{classs__partition__function}{s\+\_\+partition\+\_\+function}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{otherpf}})
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} \mbox{\hyperlink{classs__partition__function_a265f4da80750bc45beb0d7adcf8ff8b0}{compute\+\_\+log\+Z\+\_\+gradient\+\_\+finite\+\_\+differences}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{constants_8h_a9377001671b5ece8bb2a2cf636de4b8a}{PFTYPE}} \mbox{\hyperlink{classs__partition__function_adf44d1c405bccd7de185e7086e5e95f5}{Z}}
+\item 
+\mbox{\hyperlink{constants_8h_a9377001671b5ece8bb2a2cf636de4b8a}{PFTYPE}} \mbox{\hyperlink{classs__partition__function_aafdcef374fdf2e91dfd70fe4d1509005}{Zexhaustive}}
+\item 
+\mbox{\hyperlink{constants_8h_a9377001671b5ece8bb2a2cf636de4b8a}{PFTYPE}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classs__partition__function_ad3b9d35c653d0b15ddec0a80c1b864a3}{up}}
+\item 
+\mbox{\hyperlink{constants_8h_a9377001671b5ece8bb2a2cf636de4b8a}{PFTYPE}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classs__partition__function_ad57d47e093b43f603323342d18bb6bdd}{upm}}
+\item 
+\mbox{\hyperlink{constants_8h_a9377001671b5ece8bb2a2cf636de4b8a}{PFTYPE}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classs__partition__function_aba4b6be1de9f4b79e5bfaf9a09492034}{u\+\_\+ip\+\_\+jp}}
+\item 
+\mbox{\hyperlink{constants_8h_a9377001671b5ece8bb2a2cf636de4b8a}{PFTYPE}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classs__partition__function_a87d3416f2c4baa9ed45b274485570763}{u\+\_\+ip\+\_\+ju}}
+\item 
+\mbox{\hyperlink{constants_8h_a9377001671b5ece8bb2a2cf636de4b8a}{PFTYPE}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classs__partition__function_a97a795d082ea429945a91798bc37766e}{u\+\_\+iu\+\_\+jp}}
+\item 
+\mbox{\hyperlink{constants_8h_a9377001671b5ece8bb2a2cf636de4b8a}{PFTYPE}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classs__partition__function_ad46c0fd17f3fc41fb429f4313aa894ca}{u\+\_\+iu\+\_\+ju}}
+\item 
+\mbox{\hyperlink{constants_8h_a9377001671b5ece8bb2a2cf636de4b8a}{PFTYPE}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classs__partition__function_a463a1ad0b1d4814015baacc37c4c1222}{s1\+\_\+jp}}
+\item 
+\mbox{\hyperlink{constants_8h_a9377001671b5ece8bb2a2cf636de4b8a}{PFTYPE}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classs__partition__function_a6276d70bacafdfac40f5c4d52797b7f7}{s1\+\_\+ju}}
+\item 
+\mbox{\hyperlink{constants_8h_a9377001671b5ece8bb2a2cf636de4b8a}{PFTYPE}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classs__partition__function_ac555cc480dd1a5a4710bd6bf3ae3d5a5}{u1\+\_\+ip\+\_\+jp}}
+\item 
+\mbox{\hyperlink{constants_8h_a9377001671b5ece8bb2a2cf636de4b8a}{PFTYPE}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classs__partition__function_ae6c41170361cc9e540ff24287a304016}{u1\+\_\+ip\+\_\+ju\+\_\+jm1p}}
+\item 
+\mbox{\hyperlink{constants_8h_a9377001671b5ece8bb2a2cf636de4b8a}{PFTYPE}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classs__partition__function_aff7e050f63b7480a4f4bd6110ca4385a}{u1\+\_\+ip\+\_\+ju}}
+\item 
+\mbox{\hyperlink{constants_8h_a9377001671b5ece8bb2a2cf636de4b8a}{PFTYPE}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classs__partition__function_a27a5847c319ac704ce0f24f898b56585}{u1\+\_\+iu\+\_\+jp}}
+\item 
+\mbox{\hyperlink{constants_8h_a9377001671b5ece8bb2a2cf636de4b8a}{PFTYPE}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classs__partition__function_acf09bc61403b2591cc6a7dfa1f184f43}{u1\+\_\+iu\+\_\+ju\+\_\+jm1p}}
+\item 
+\mbox{\hyperlink{constants_8h_a9377001671b5ece8bb2a2cf636de4b8a}{PFTYPE}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classs__partition__function_a6a6f9189e8455bb28b55db8dbc7bd6a6}{u1\+\_\+iu\+\_\+ju}}
+\item 
+\mbox{\hyperlink{constants_8h_a9377001671b5ece8bb2a2cf636de4b8a}{PFTYPE}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classs__partition__function_a946687bd4ac1a1722dc0f609bba0cc17}{s2\+\_\+jp}}
+\item 
+\mbox{\hyperlink{constants_8h_a9377001671b5ece8bb2a2cf636de4b8a}{PFTYPE}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classs__partition__function_a3d114bf1a2bdf3f2df94c8f035f82bfa}{s2\+\_\+ju}}
+\item 
+\mbox{\hyperlink{constants_8h_a9377001671b5ece8bb2a2cf636de4b8a}{PFTYPE}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classs__partition__function_a76f52302f731b6c7715166852e735730}{s3\+\_\+jp}}
+\item 
+\mbox{\hyperlink{constants_8h_a9377001671b5ece8bb2a2cf636de4b8a}{PFTYPE}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classs__partition__function_a3a44a1fd78b91429419de951fe95befc}{s3\+\_\+ju\+\_\+jm1p}}
+\item 
+\mbox{\hyperlink{constants_8h_a9377001671b5ece8bb2a2cf636de4b8a}{PFTYPE}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classs__partition__function_ad987d2f1851d0eb326ebc5edbcead67a}{s3\+\_\+ju}}
+\item 
+\mbox{\hyperlink{constants_8h_a9377001671b5ece8bb2a2cf636de4b8a}{PFTYPE}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classs__partition__function_a04d0e8824716e05584b24c7c5d0dbb3d}{GlogZ}}
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} \mbox{\hyperlink{classs__partition__function_a5612ba9ed57a8c36dcaf8d4d4ddff05a}{num\+\_\+internal\+\_\+in\+\_\+up}}
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} \mbox{\hyperlink{classs__partition__function_a750958baaf4d5d2e276c8e585999ca73}{num\+\_\+internal\+\_\+in\+\_\+p}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{s__partition__function_8h_source_l00029}{29}} of file \mbox{\hyperlink{s__partition__function_8h_source}{s\+\_\+partition\+\_\+function.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classs__partition__function_a2ef89fbdb2e12b9a10b5c6914dedc509}\label{classs__partition__function_a2ef89fbdb2e12b9a10b5c6914dedc509} 
+\index{s\_partition\_function@{s\_partition\_function}!s\_partition\_function@{s\_partition\_function}}
+\index{s\_partition\_function@{s\_partition\_function}!s\_partition\_function@{s\_partition\_function}}
+\doxysubsubsection{\texorpdfstring{s\_partition\_function()}{s\_partition\_function()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily s\+\_\+partition\+\_\+function\+::s\+\_\+partition\+\_\+function (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}}]{seq,  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}}}]{ignore\+\_\+dangles = {\ttfamily 1},  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}}}]{compute\+\_\+g\+\_\+dangles = {\ttfamily 0},  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}}]{restricted = {\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{NULL}}} }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{s__partition__function_8cpp_source_l00043}{43}} of file \mbox{\hyperlink{s__partition__function_8cpp_source}{s\+\_\+partition\+\_\+function.\+cpp}}.
+
+\Hypertarget{classs__partition__function_a4bfdce4a0dfe31645270d8d579df75c8}\label{classs__partition__function_a4bfdce4a0dfe31645270d8d579df75c8} 
+\index{s\_partition\_function@{s\_partition\_function}!````~s\_partition\_function@{\texorpdfstring{$\sim$}{\string~}s\_partition\_function}}
+\index{````~s\_partition\_function@{\texorpdfstring{$\sim$}{\string~}s\_partition\_function}!s\_partition\_function@{s\_partition\_function}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}s\_partition\_function()}{\string~s\_partition\_function()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily s\+\_\+partition\+\_\+function\+::\texorpdfstring{$\sim$}{\string~}s\+\_\+partition\+\_\+function (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{s__partition__function_8cpp_source_l00275}{275}} of file \mbox{\hyperlink{s__partition__function_8cpp_source}{s\+\_\+partition\+\_\+function.\+cpp}}.
+
+\Hypertarget{classs__partition__function_a2ef89fbdb2e12b9a10b5c6914dedc509}\label{classs__partition__function_a2ef89fbdb2e12b9a10b5c6914dedc509} 
+\index{s\_partition\_function@{s\_partition\_function}!s\_partition\_function@{s\_partition\_function}}
+\index{s\_partition\_function@{s\_partition\_function}!s\_partition\_function@{s\_partition\_function}}
+\doxysubsubsection{\texorpdfstring{s\_partition\_function()}{s\_partition\_function()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily s\+\_\+partition\+\_\+function\+::s\+\_\+partition\+\_\+function (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}}]{seq,  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}}}]{ignore\+\_\+dangles = {\ttfamily 1},  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}}}]{compute\+\_\+g\+\_\+dangles = {\ttfamily 0},  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}}]{restricted = {\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{NULL}}} }\end{DoxyParamCaption})}
+
+\Hypertarget{classs__partition__function_a4bfdce4a0dfe31645270d8d579df75c8}\label{classs__partition__function_a4bfdce4a0dfe31645270d8d579df75c8} 
+\index{s\_partition\_function@{s\_partition\_function}!````~s\_partition\_function@{\texorpdfstring{$\sim$}{\string~}s\_partition\_function}}
+\index{````~s\_partition\_function@{\texorpdfstring{$\sim$}{\string~}s\_partition\_function}!s\_partition\_function@{s\_partition\_function}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}s\_partition\_function()}{\string~s\_partition\_function()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily s\+\_\+partition\+\_\+function\+::\texorpdfstring{$\sim$}{\string~}s\+\_\+partition\+\_\+function (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classs__partition__function_a2ef89fbdb2e12b9a10b5c6914dedc509}\label{classs__partition__function_a2ef89fbdb2e12b9a10b5c6914dedc509} 
+\index{s\_partition\_function@{s\_partition\_function}!s\_partition\_function@{s\_partition\_function}}
+\index{s\_partition\_function@{s\_partition\_function}!s\_partition\_function@{s\_partition\_function}}
+\doxysubsubsection{\texorpdfstring{s\_partition\_function()}{s\_partition\_function()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily s\+\_\+partition\+\_\+function\+::s\+\_\+partition\+\_\+function (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}}]{seq,  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}}}]{ignore\+\_\+dangles = {\ttfamily 1},  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}}}]{compute\+\_\+g\+\_\+dangles = {\ttfamily 0},  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}}]{restricted = {\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{NULL}}} }\end{DoxyParamCaption})}
+
+\Hypertarget{classs__partition__function_a4bfdce4a0dfe31645270d8d579df75c8}\label{classs__partition__function_a4bfdce4a0dfe31645270d8d579df75c8} 
+\index{s\_partition\_function@{s\_partition\_function}!````~s\_partition\_function@{\texorpdfstring{$\sim$}{\string~}s\_partition\_function}}
+\index{````~s\_partition\_function@{\texorpdfstring{$\sim$}{\string~}s\_partition\_function}!s\_partition\_function@{s\_partition\_function}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}s\_partition\_function()}{\string~s\_partition\_function()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily s\+\_\+partition\+\_\+function\+::\texorpdfstring{$\sim$}{\string~}s\+\_\+partition\+\_\+function (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classs__partition__function_af37ce9a9b66277ac7db4e039bcd48abd}\label{classs__partition__function_af37ce9a9b66277ac7db4e039bcd48abd} 
+\index{s\_partition\_function@{s\_partition\_function}!compute\_base\_pair\_probabilities@{compute\_base\_pair\_probabilities}}
+\index{compute\_base\_pair\_probabilities@{compute\_base\_pair\_probabilities}!s\_partition\_function@{s\_partition\_function}}
+\doxysubsubsection{\texorpdfstring{compute\_base\_pair\_probabilities()}{compute\_base\_pair\_probabilities()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} s\+\_\+partition\+\_\+function\+::compute\+\_\+base\+\_\+pair\+\_\+probabilities (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{s__partition__function_8cpp_source_l01443}{1443}} of file \mbox{\hyperlink{s__partition__function_8cpp_source}{s\+\_\+partition\+\_\+function.\+cpp}}.
+
+\Hypertarget{classs__partition__function_af37ce9a9b66277ac7db4e039bcd48abd}\label{classs__partition__function_af37ce9a9b66277ac7db4e039bcd48abd} 
+\index{s\_partition\_function@{s\_partition\_function}!compute\_base\_pair\_probabilities@{compute\_base\_pair\_probabilities}}
+\index{compute\_base\_pair\_probabilities@{compute\_base\_pair\_probabilities}!s\_partition\_function@{s\_partition\_function}}
+\doxysubsubsection{\texorpdfstring{compute\_base\_pair\_probabilities()}{compute\_base\_pair\_probabilities()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} s\+\_\+partition\+\_\+function\+::compute\+\_\+base\+\_\+pair\+\_\+probabilities (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classs__partition__function_af37ce9a9b66277ac7db4e039bcd48abd}\label{classs__partition__function_af37ce9a9b66277ac7db4e039bcd48abd} 
+\index{s\_partition\_function@{s\_partition\_function}!compute\_base\_pair\_probabilities@{compute\_base\_pair\_probabilities}}
+\index{compute\_base\_pair\_probabilities@{compute\_base\_pair\_probabilities}!s\_partition\_function@{s\_partition\_function}}
+\doxysubsubsection{\texorpdfstring{compute\_base\_pair\_probabilities()}{compute\_base\_pair\_probabilities()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} s\+\_\+partition\+\_\+function\+::compute\+\_\+base\+\_\+pair\+\_\+probabilities (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classs__partition__function_a4cfc09dfd9cbd2e5b9c4f623f2682440}\label{classs__partition__function_a4cfc09dfd9cbd2e5b9c4f623f2682440} 
+\index{s\_partition\_function@{s\_partition\_function}!compute\_logZ\_gradient@{compute\_logZ\_gradient}}
+\index{compute\_logZ\_gradient@{compute\_logZ\_gradient}!s\_partition\_function@{s\_partition\_function}}
+\doxysubsubsection{\texorpdfstring{compute\_logZ\_gradient()}{compute\_logZ\_gradient()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} s\+\_\+partition\+\_\+function\+::compute\+\_\+log\+Z\+\_\+gradient (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{s__partition__function_8cpp_source_l03062}{3062}} of file \mbox{\hyperlink{s__partition__function_8cpp_source}{s\+\_\+partition\+\_\+function.\+cpp}}.
+
+\Hypertarget{classs__partition__function_a4cfc09dfd9cbd2e5b9c4f623f2682440}\label{classs__partition__function_a4cfc09dfd9cbd2e5b9c4f623f2682440} 
+\index{s\_partition\_function@{s\_partition\_function}!compute\_logZ\_gradient@{compute\_logZ\_gradient}}
+\index{compute\_logZ\_gradient@{compute\_logZ\_gradient}!s\_partition\_function@{s\_partition\_function}}
+\doxysubsubsection{\texorpdfstring{compute\_logZ\_gradient()}{compute\_logZ\_gradient()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} s\+\_\+partition\+\_\+function\+::compute\+\_\+log\+Z\+\_\+gradient (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classs__partition__function_a4cfc09dfd9cbd2e5b9c4f623f2682440}\label{classs__partition__function_a4cfc09dfd9cbd2e5b9c4f623f2682440} 
+\index{s\_partition\_function@{s\_partition\_function}!compute\_logZ\_gradient@{compute\_logZ\_gradient}}
+\index{compute\_logZ\_gradient@{compute\_logZ\_gradient}!s\_partition\_function@{s\_partition\_function}}
+\doxysubsubsection{\texorpdfstring{compute\_logZ\_gradient()}{compute\_logZ\_gradient()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} s\+\_\+partition\+\_\+function\+::compute\+\_\+log\+Z\+\_\+gradient (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classs__partition__function_abcfd168633b2e6fceaa26c046771f98b}\label{classs__partition__function_abcfd168633b2e6fceaa26c046771f98b} 
+\index{s\_partition\_function@{s\_partition\_function}!compute\_logZ\_gradient\_exhaustively@{compute\_logZ\_gradient\_exhaustively}}
+\index{compute\_logZ\_gradient\_exhaustively@{compute\_logZ\_gradient\_exhaustively}!s\_partition\_function@{s\_partition\_function}}
+\doxysubsubsection{\texorpdfstring{compute\_logZ\_gradient\_exhaustively()}{compute\_logZ\_gradient\_exhaustively()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} s\+\_\+partition\+\_\+function\+::compute\+\_\+log\+Z\+\_\+gradient\+\_\+exhaustively (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{s__partition__function_8cpp_source_l02950}{2950}} of file \mbox{\hyperlink{s__partition__function_8cpp_source}{s\+\_\+partition\+\_\+function.\+cpp}}.
+
+\Hypertarget{classs__partition__function_abcfd168633b2e6fceaa26c046771f98b}\label{classs__partition__function_abcfd168633b2e6fceaa26c046771f98b} 
+\index{s\_partition\_function@{s\_partition\_function}!compute\_logZ\_gradient\_exhaustively@{compute\_logZ\_gradient\_exhaustively}}
+\index{compute\_logZ\_gradient\_exhaustively@{compute\_logZ\_gradient\_exhaustively}!s\_partition\_function@{s\_partition\_function}}
+\doxysubsubsection{\texorpdfstring{compute\_logZ\_gradient\_exhaustively()}{compute\_logZ\_gradient\_exhaustively()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} s\+\_\+partition\+\_\+function\+::compute\+\_\+log\+Z\+\_\+gradient\+\_\+exhaustively (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classs__partition__function_abcfd168633b2e6fceaa26c046771f98b}\label{classs__partition__function_abcfd168633b2e6fceaa26c046771f98b} 
+\index{s\_partition\_function@{s\_partition\_function}!compute\_logZ\_gradient\_exhaustively@{compute\_logZ\_gradient\_exhaustively}}
+\index{compute\_logZ\_gradient\_exhaustively@{compute\_logZ\_gradient\_exhaustively}!s\_partition\_function@{s\_partition\_function}}
+\doxysubsubsection{\texorpdfstring{compute\_logZ\_gradient\_exhaustively()}{compute\_logZ\_gradient\_exhaustively()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} s\+\_\+partition\+\_\+function\+::compute\+\_\+log\+Z\+\_\+gradient\+\_\+exhaustively (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classs__partition__function_a265f4da80750bc45beb0d7adcf8ff8b0}\label{classs__partition__function_a265f4da80750bc45beb0d7adcf8ff8b0} 
+\index{s\_partition\_function@{s\_partition\_function}!compute\_logZ\_gradient\_finite\_differences@{compute\_logZ\_gradient\_finite\_differences}}
+\index{compute\_logZ\_gradient\_finite\_differences@{compute\_logZ\_gradient\_finite\_differences}!s\_partition\_function@{s\_partition\_function}}
+\doxysubsubsection{\texorpdfstring{compute\_logZ\_gradient\_finite\_differences()}{compute\_logZ\_gradient\_finite\_differences()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} s\+\_\+partition\+\_\+function\+::compute\+\_\+log\+Z\+\_\+gradient\+\_\+finite\+\_\+differences (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classs__partition__function_a265f4da80750bc45beb0d7adcf8ff8b0}\label{classs__partition__function_a265f4da80750bc45beb0d7adcf8ff8b0} 
+\index{s\_partition\_function@{s\_partition\_function}!compute\_logZ\_gradient\_finite\_differences@{compute\_logZ\_gradient\_finite\_differences}}
+\index{compute\_logZ\_gradient\_finite\_differences@{compute\_logZ\_gradient\_finite\_differences}!s\_partition\_function@{s\_partition\_function}}
+\doxysubsubsection{\texorpdfstring{compute\_logZ\_gradient\_finite\_differences()}{compute\_logZ\_gradient\_finite\_differences()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} s\+\_\+partition\+\_\+function\+::compute\+\_\+log\+Z\+\_\+gradient\+\_\+finite\+\_\+differences (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classs__partition__function_a265f4da80750bc45beb0d7adcf8ff8b0}\label{classs__partition__function_a265f4da80750bc45beb0d7adcf8ff8b0} 
+\index{s\_partition\_function@{s\_partition\_function}!compute\_logZ\_gradient\_finite\_differences@{compute\_logZ\_gradient\_finite\_differences}}
+\index{compute\_logZ\_gradient\_finite\_differences@{compute\_logZ\_gradient\_finite\_differences}!s\_partition\_function@{s\_partition\_function}}
+\doxysubsubsection{\texorpdfstring{compute\_logZ\_gradient\_finite\_differences()}{compute\_logZ\_gradient\_finite\_differences()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} s\+\_\+partition\+\_\+function\+::compute\+\_\+log\+Z\+\_\+gradient\+\_\+finite\+\_\+differences (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classs__partition__function_a93de58dfd94f46bd8cde188150261eb4}\label{classs__partition__function_a93de58dfd94f46bd8cde188150261eb4} 
+\index{s\_partition\_function@{s\_partition\_function}!compute\_partition\_function@{compute\_partition\_function}}
+\index{compute\_partition\_function@{compute\_partition\_function}!s\_partition\_function@{s\_partition\_function}}
+\doxysubsubsection{\texorpdfstring{compute\_partition\_function()}{compute\_partition\_function()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{constants_8h_a9377001671b5ece8bb2a2cf636de4b8a}{PFTYPE}} s\+\_\+partition\+\_\+function\+::compute\+\_\+partition\+\_\+function (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{s__partition__function_8cpp_source_l00414}{414}} of file \mbox{\hyperlink{s__partition__function_8cpp_source}{s\+\_\+partition\+\_\+function.\+cpp}}.
+
+\Hypertarget{classs__partition__function_a93de58dfd94f46bd8cde188150261eb4}\label{classs__partition__function_a93de58dfd94f46bd8cde188150261eb4} 
+\index{s\_partition\_function@{s\_partition\_function}!compute\_partition\_function@{compute\_partition\_function}}
+\index{compute\_partition\_function@{compute\_partition\_function}!s\_partition\_function@{s\_partition\_function}}
+\doxysubsubsection{\texorpdfstring{compute\_partition\_function()}{compute\_partition\_function()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{constants_8h_a9377001671b5ece8bb2a2cf636de4b8a}{PFTYPE}} s\+\_\+partition\+\_\+function\+::compute\+\_\+partition\+\_\+function (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classs__partition__function_a93de58dfd94f46bd8cde188150261eb4}\label{classs__partition__function_a93de58dfd94f46bd8cde188150261eb4} 
+\index{s\_partition\_function@{s\_partition\_function}!compute\_partition\_function@{compute\_partition\_function}}
+\index{compute\_partition\_function@{compute\_partition\_function}!s\_partition\_function@{s\_partition\_function}}
+\doxysubsubsection{\texorpdfstring{compute\_partition\_function()}{compute\_partition\_function()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{constants_8h_a9377001671b5ece8bb2a2cf636de4b8a}{PFTYPE}} s\+\_\+partition\+\_\+function\+::compute\+\_\+partition\+\_\+function (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classs__partition__function_a69e17eb4379e9b3946ced8b6f5488ba4}\label{classs__partition__function_a69e17eb4379e9b3946ced8b6f5488ba4} 
+\index{s\_partition\_function@{s\_partition\_function}!compute\_partition\_function\_exhaustively@{compute\_partition\_function\_exhaustively}}
+\index{compute\_partition\_function\_exhaustively@{compute\_partition\_function\_exhaustively}!s\_partition\_function@{s\_partition\_function}}
+\doxysubsubsection{\texorpdfstring{compute\_partition\_function\_exhaustively()}{compute\_partition\_function\_exhaustively()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{constants_8h_a9377001671b5ece8bb2a2cf636de4b8a}{PFTYPE}} s\+\_\+partition\+\_\+function\+::compute\+\_\+partition\+\_\+function\+\_\+exhaustively (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{s__partition__function_8cpp_source_l02340}{2340}} of file \mbox{\hyperlink{s__partition__function_8cpp_source}{s\+\_\+partition\+\_\+function.\+cpp}}.
+
+\Hypertarget{classs__partition__function_a69e17eb4379e9b3946ced8b6f5488ba4}\label{classs__partition__function_a69e17eb4379e9b3946ced8b6f5488ba4} 
+\index{s\_partition\_function@{s\_partition\_function}!compute\_partition\_function\_exhaustively@{compute\_partition\_function\_exhaustively}}
+\index{compute\_partition\_function\_exhaustively@{compute\_partition\_function\_exhaustively}!s\_partition\_function@{s\_partition\_function}}
+\doxysubsubsection{\texorpdfstring{compute\_partition\_function\_exhaustively()}{compute\_partition\_function\_exhaustively()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{constants_8h_a9377001671b5ece8bb2a2cf636de4b8a}{PFTYPE}} s\+\_\+partition\+\_\+function\+::compute\+\_\+partition\+\_\+function\+\_\+exhaustively (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classs__partition__function_a69e17eb4379e9b3946ced8b6f5488ba4}\label{classs__partition__function_a69e17eb4379e9b3946ced8b6f5488ba4} 
+\index{s\_partition\_function@{s\_partition\_function}!compute\_partition\_function\_exhaustively@{compute\_partition\_function\_exhaustively}}
+\index{compute\_partition\_function\_exhaustively@{compute\_partition\_function\_exhaustively}!s\_partition\_function@{s\_partition\_function}}
+\doxysubsubsection{\texorpdfstring{compute\_partition\_function\_exhaustively()}{compute\_partition\_function\_exhaustively()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{constants_8h_a9377001671b5ece8bb2a2cf636de4b8a}{PFTYPE}} s\+\_\+partition\+\_\+function\+::compute\+\_\+partition\+\_\+function\+\_\+exhaustively (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classs__partition__function_a7ba9cf87db4ee5a5b34c6211f69bbf35}\label{classs__partition__function_a7ba9cf87db4ee5a5b34c6211f69bbf35} 
+\index{s\_partition\_function@{s\_partition\_function}!copy\_gradient@{copy\_gradient}}
+\index{copy\_gradient@{copy\_gradient}!s\_partition\_function@{s\_partition\_function}}
+\doxysubsubsection{\texorpdfstring{copy\_gradient()}{copy\_gradient()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} s\+\_\+partition\+\_\+function\+::copy\+\_\+gradient (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{constants_8h_a9377001671b5ece8bb2a2cf636de4b8a}{PFTYPE}} \texorpdfstring{$\ast$}{*}}]{grad }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{s__partition__function_8cpp_source_l05726}{5726}} of file \mbox{\hyperlink{s__partition__function_8cpp_source}{s\+\_\+partition\+\_\+function.\+cpp}}.
+
+\Hypertarget{classs__partition__function_a7ba9cf87db4ee5a5b34c6211f69bbf35}\label{classs__partition__function_a7ba9cf87db4ee5a5b34c6211f69bbf35} 
+\index{s\_partition\_function@{s\_partition\_function}!copy\_gradient@{copy\_gradient}}
+\index{copy\_gradient@{copy\_gradient}!s\_partition\_function@{s\_partition\_function}}
+\doxysubsubsection{\texorpdfstring{copy\_gradient()}{copy\_gradient()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} s\+\_\+partition\+\_\+function\+::copy\+\_\+gradient (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{constants_8h_a9377001671b5ece8bb2a2cf636de4b8a}{PFTYPE}} \texorpdfstring{$\ast$}{*}}]{grad }\end{DoxyParamCaption})}
+
+\Hypertarget{classs__partition__function_a7ba9cf87db4ee5a5b34c6211f69bbf35}\label{classs__partition__function_a7ba9cf87db4ee5a5b34c6211f69bbf35} 
+\index{s\_partition\_function@{s\_partition\_function}!copy\_gradient@{copy\_gradient}}
+\index{copy\_gradient@{copy\_gradient}!s\_partition\_function@{s\_partition\_function}}
+\doxysubsubsection{\texorpdfstring{copy\_gradient()}{copy\_gradient()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} s\+\_\+partition\+\_\+function\+::copy\+\_\+gradient (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{constants_8h_a9377001671b5ece8bb2a2cf636de4b8a}{PFTYPE}} \texorpdfstring{$\ast$}{*}}]{grad }\end{DoxyParamCaption})}
+
+\Hypertarget{classs__partition__function_a4f2923a7510e0c991004d8d703612944}\label{classs__partition__function_a4f2923a7510e0c991004d8d703612944} 
+\index{s\_partition\_function@{s\_partition\_function}!copy\_gradient\_exhaustively@{copy\_gradient\_exhaustively}}
+\index{copy\_gradient\_exhaustively@{copy\_gradient\_exhaustively}!s\_partition\_function@{s\_partition\_function}}
+\doxysubsubsection{\texorpdfstring{copy\_gradient\_exhaustively()}{copy\_gradient\_exhaustively()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} s\+\_\+partition\+\_\+function\+::copy\+\_\+gradient\+\_\+exhaustively (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{constants_8h_a9377001671b5ece8bb2a2cf636de4b8a}{PFTYPE}} \texorpdfstring{$\ast$}{*}}]{grad }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{s__partition__function_8cpp_source_l05736}{5736}} of file \mbox{\hyperlink{s__partition__function_8cpp_source}{s\+\_\+partition\+\_\+function.\+cpp}}.
+
+\Hypertarget{classs__partition__function_a4f2923a7510e0c991004d8d703612944}\label{classs__partition__function_a4f2923a7510e0c991004d8d703612944} 
+\index{s\_partition\_function@{s\_partition\_function}!copy\_gradient\_exhaustively@{copy\_gradient\_exhaustively}}
+\index{copy\_gradient\_exhaustively@{copy\_gradient\_exhaustively}!s\_partition\_function@{s\_partition\_function}}
+\doxysubsubsection{\texorpdfstring{copy\_gradient\_exhaustively()}{copy\_gradient\_exhaustively()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} s\+\_\+partition\+\_\+function\+::copy\+\_\+gradient\+\_\+exhaustively (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{constants_8h_a9377001671b5ece8bb2a2cf636de4b8a}{PFTYPE}} \texorpdfstring{$\ast$}{*}}]{grad }\end{DoxyParamCaption})}
+
+\Hypertarget{classs__partition__function_a4f2923a7510e0c991004d8d703612944}\label{classs__partition__function_a4f2923a7510e0c991004d8d703612944} 
+\index{s\_partition\_function@{s\_partition\_function}!copy\_gradient\_exhaustively@{copy\_gradient\_exhaustively}}
+\index{copy\_gradient\_exhaustively@{copy\_gradient\_exhaustively}!s\_partition\_function@{s\_partition\_function}}
+\doxysubsubsection{\texorpdfstring{copy\_gradient\_exhaustively()}{copy\_gradient\_exhaustively()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} s\+\_\+partition\+\_\+function\+::copy\+\_\+gradient\+\_\+exhaustively (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{constants_8h_a9377001671b5ece8bb2a2cf636de4b8a}{PFTYPE}} \texorpdfstring{$\ast$}{*}}]{grad }\end{DoxyParamCaption})}
+
+\Hypertarget{classs__partition__function_a8fab3a4e6eb7e77f77c7e1fe50bfcac2}\label{classs__partition__function_a8fab3a4e6eb7e77f77c7e1fe50bfcac2} 
+\index{s\_partition\_function@{s\_partition\_function}!correct\_gradient@{correct\_gradient}}
+\index{correct\_gradient@{correct\_gradient}!s\_partition\_function@{s\_partition\_function}}
+\doxysubsubsection{\texorpdfstring{correct\_gradient()}{correct\_gradient()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} s\+\_\+partition\+\_\+function\+::correct\+\_\+gradient (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{s__partition__function_8cpp_source_l05692}{5692}} of file \mbox{\hyperlink{s__partition__function_8cpp_source}{s\+\_\+partition\+\_\+function.\+cpp}}.
+
+\Hypertarget{classs__partition__function_a8fab3a4e6eb7e77f77c7e1fe50bfcac2}\label{classs__partition__function_a8fab3a4e6eb7e77f77c7e1fe50bfcac2} 
+\index{s\_partition\_function@{s\_partition\_function}!correct\_gradient@{correct\_gradient}}
+\index{correct\_gradient@{correct\_gradient}!s\_partition\_function@{s\_partition\_function}}
+\doxysubsubsection{\texorpdfstring{correct\_gradient()}{correct\_gradient()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} s\+\_\+partition\+\_\+function\+::correct\+\_\+gradient (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classs__partition__function_a8fab3a4e6eb7e77f77c7e1fe50bfcac2}\label{classs__partition__function_a8fab3a4e6eb7e77f77c7e1fe50bfcac2} 
+\index{s\_partition\_function@{s\_partition\_function}!correct\_gradient@{correct\_gradient}}
+\index{correct\_gradient@{correct\_gradient}!s\_partition\_function@{s\_partition\_function}}
+\doxysubsubsection{\texorpdfstring{correct\_gradient()}{correct\_gradient()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} s\+\_\+partition\+\_\+function\+::correct\+\_\+gradient (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classs__partition__function_a8da3ad18406669394c760437295d7d0e}\label{classs__partition__function_a8da3ad18406669394c760437295d7d0e} 
+\index{s\_partition\_function@{s\_partition\_function}!correct\_gradient\_nan@{correct\_gradient\_nan}}
+\index{correct\_gradient\_nan@{correct\_gradient\_nan}!s\_partition\_function@{s\_partition\_function}}
+\doxysubsubsection{\texorpdfstring{correct\_gradient\_nan()}{correct\_gradient\_nan()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} s\+\_\+partition\+\_\+function\+::correct\+\_\+gradient\+\_\+nan (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{s__partition__function_8cpp_source_l05747}{5747}} of file \mbox{\hyperlink{s__partition__function_8cpp_source}{s\+\_\+partition\+\_\+function.\+cpp}}.
+
+\Hypertarget{classs__partition__function_a8da3ad18406669394c760437295d7d0e}\label{classs__partition__function_a8da3ad18406669394c760437295d7d0e} 
+\index{s\_partition\_function@{s\_partition\_function}!correct\_gradient\_nan@{correct\_gradient\_nan}}
+\index{correct\_gradient\_nan@{correct\_gradient\_nan}!s\_partition\_function@{s\_partition\_function}}
+\doxysubsubsection{\texorpdfstring{correct\_gradient\_nan()}{correct\_gradient\_nan()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} s\+\_\+partition\+\_\+function\+::correct\+\_\+gradient\+\_\+nan (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classs__partition__function_a8da3ad18406669394c760437295d7d0e}\label{classs__partition__function_a8da3ad18406669394c760437295d7d0e} 
+\index{s\_partition\_function@{s\_partition\_function}!correct\_gradient\_nan@{correct\_gradient\_nan}}
+\index{correct\_gradient\_nan@{correct\_gradient\_nan}!s\_partition\_function@{s\_partition\_function}}
+\doxysubsubsection{\texorpdfstring{correct\_gradient\_nan()}{correct\_gradient\_nan()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} s\+\_\+partition\+\_\+function\+::correct\+\_\+gradient\+\_\+nan (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classs__partition__function_a22ceb9392c5c70ed4f4f15516558b77e}\label{classs__partition__function_a22ceb9392c5c70ed4f4f15516558b77e} 
+\index{s\_partition\_function@{s\_partition\_function}!get\_probability@{get\_probability}}
+\index{get\_probability@{get\_probability}!s\_partition\_function@{s\_partition\_function}}
+\doxysubsubsection{\texorpdfstring{get\_probability()}{get\_probability()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{constants_8h_a9377001671b5ece8bb2a2cf636de4b8a}{PFTYPE}} s\+\_\+partition\+\_\+function\+::get\+\_\+probability (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}}}]{i,  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}}}]{j }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{s__partition__function_8h_source_l00051}{51}} of file \mbox{\hyperlink{s__partition__function_8h_source}{s\+\_\+partition\+\_\+function.\+h}}.
+
+\Hypertarget{classs__partition__function_a22ceb9392c5c70ed4f4f15516558b77e}\label{classs__partition__function_a22ceb9392c5c70ed4f4f15516558b77e} 
+\index{s\_partition\_function@{s\_partition\_function}!get\_probability@{get\_probability}}
+\index{get\_probability@{get\_probability}!s\_partition\_function@{s\_partition\_function}}
+\doxysubsubsection{\texorpdfstring{get\_probability()}{get\_probability()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{constants_8h_a9377001671b5ece8bb2a2cf636de4b8a}{PFTYPE}} s\+\_\+partition\+\_\+function\+::get\+\_\+probability (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}}}]{i,  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}}}]{j }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{s__partition__function___r_e_s_t_r_i_c_t_e_d_8h_source_l00050}{50}} of file \mbox{\hyperlink{s__partition__function___r_e_s_t_r_i_c_t_e_d_8h_source}{s\+\_\+partition\+\_\+function\+\_\+\+RESTRICTED.\+h}}.
+
+\Hypertarget{classs__partition__function_a22ceb9392c5c70ed4f4f15516558b77e}\label{classs__partition__function_a22ceb9392c5c70ed4f4f15516558b77e} 
+\index{s\_partition\_function@{s\_partition\_function}!get\_probability@{get\_probability}}
+\index{get\_probability@{get\_probability}!s\_partition\_function@{s\_partition\_function}}
+\doxysubsubsection{\texorpdfstring{get\_probability()}{get\_probability()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{constants_8h_a9377001671b5ece8bb2a2cf636de4b8a}{PFTYPE}} s\+\_\+partition\+\_\+function\+::get\+\_\+probability (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}}}]{i,  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}}}]{j }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{s__partition__function___u_n_r_e_s_t_r_i_c_t_e_d_8h_source_l00050}{50}} of file \mbox{\hyperlink{s__partition__function___u_n_r_e_s_t_r_i_c_t_e_d_8h_source}{s\+\_\+partition\+\_\+function\+\_\+\+UNRESTRICTED.\+h}}.
+
+\Hypertarget{classs__partition__function_aff50f7036b16bcf21a91c1e5008191be}\label{classs__partition__function_aff50f7036b16bcf21a91c1e5008191be} 
+\index{s\_partition\_function@{s\_partition\_function}!getOneoverRT@{getOneoverRT}}
+\index{getOneoverRT@{getOneoverRT}!s\_partition\_function@{s\_partition\_function}}
+\doxysubsubsection{\texorpdfstring{getOneoverRT()}{getOneoverRT()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{constants_8h_a9377001671b5ece8bb2a2cf636de4b8a}{PFTYPE}} s\+\_\+partition\+\_\+function\+::get\+Oneover\+RT (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{s__partition__function_8h_source_l00055}{55}} of file \mbox{\hyperlink{s__partition__function_8h_source}{s\+\_\+partition\+\_\+function.\+h}}.
+
+\Hypertarget{classs__partition__function_aff50f7036b16bcf21a91c1e5008191be}\label{classs__partition__function_aff50f7036b16bcf21a91c1e5008191be} 
+\index{s\_partition\_function@{s\_partition\_function}!getOneoverRT@{getOneoverRT}}
+\index{getOneoverRT@{getOneoverRT}!s\_partition\_function@{s\_partition\_function}}
+\doxysubsubsection{\texorpdfstring{getOneoverRT()}{getOneoverRT()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{constants_8h_a9377001671b5ece8bb2a2cf636de4b8a}{PFTYPE}} s\+\_\+partition\+\_\+function\+::get\+Oneover\+RT (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{s__partition__function___r_e_s_t_r_i_c_t_e_d_8h_source_l00054}{54}} of file \mbox{\hyperlink{s__partition__function___r_e_s_t_r_i_c_t_e_d_8h_source}{s\+\_\+partition\+\_\+function\+\_\+\+RESTRICTED.\+h}}.
+
+\Hypertarget{classs__partition__function_aff50f7036b16bcf21a91c1e5008191be}\label{classs__partition__function_aff50f7036b16bcf21a91c1e5008191be} 
+\index{s\_partition\_function@{s\_partition\_function}!getOneoverRT@{getOneoverRT}}
+\index{getOneoverRT@{getOneoverRT}!s\_partition\_function@{s\_partition\_function}}
+\doxysubsubsection{\texorpdfstring{getOneoverRT()}{getOneoverRT()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{constants_8h_a9377001671b5ece8bb2a2cf636de4b8a}{PFTYPE}} s\+\_\+partition\+\_\+function\+::get\+Oneover\+RT (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{s__partition__function___u_n_r_e_s_t_r_i_c_t_e_d_8h_source_l00054}{54}} of file \mbox{\hyperlink{s__partition__function___u_n_r_e_s_t_r_i_c_t_e_d_8h_source}{s\+\_\+partition\+\_\+function\+\_\+\+UNRESTRICTED.\+h}}.
+
+\Hypertarget{classs__partition__function_a2dfaf9684735773446af430af7c8bbde}\label{classs__partition__function_a2dfaf9684735773446af430af7c8bbde} 
+\index{s\_partition\_function@{s\_partition\_function}!print\_base\_pair\_probabilities@{print\_base\_pair\_probabilities}}
+\index{print\_base\_pair\_probabilities@{print\_base\_pair\_probabilities}!s\_partition\_function@{s\_partition\_function}}
+\doxysubsubsection{\texorpdfstring{print\_base\_pair\_probabilities()}{print\_base\_pair\_probabilities()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} s\+\_\+partition\+\_\+function\+::print\+\_\+base\+\_\+pair\+\_\+probabilities (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{constants_8h_a9377001671b5ece8bb2a2cf636de4b8a}{PFTYPE}}}]{threshold = {\ttfamily 0.0} }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{s__partition__function_8cpp_source_l01486}{1486}} of file \mbox{\hyperlink{s__partition__function_8cpp_source}{s\+\_\+partition\+\_\+function.\+cpp}}.
+
+\Hypertarget{classs__partition__function_a2dfaf9684735773446af430af7c8bbde}\label{classs__partition__function_a2dfaf9684735773446af430af7c8bbde} 
+\index{s\_partition\_function@{s\_partition\_function}!print\_base\_pair\_probabilities@{print\_base\_pair\_probabilities}}
+\index{print\_base\_pair\_probabilities@{print\_base\_pair\_probabilities}!s\_partition\_function@{s\_partition\_function}}
+\doxysubsubsection{\texorpdfstring{print\_base\_pair\_probabilities()}{print\_base\_pair\_probabilities()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} s\+\_\+partition\+\_\+function\+::print\+\_\+base\+\_\+pair\+\_\+probabilities (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{constants_8h_a9377001671b5ece8bb2a2cf636de4b8a}{PFTYPE}}}]{threshold = {\ttfamily 0.0} }\end{DoxyParamCaption})}
+
+\Hypertarget{classs__partition__function_a2dfaf9684735773446af430af7c8bbde}\label{classs__partition__function_a2dfaf9684735773446af430af7c8bbde} 
+\index{s\_partition\_function@{s\_partition\_function}!print\_base\_pair\_probabilities@{print\_base\_pair\_probabilities}}
+\index{print\_base\_pair\_probabilities@{print\_base\_pair\_probabilities}!s\_partition\_function@{s\_partition\_function}}
+\doxysubsubsection{\texorpdfstring{print\_base\_pair\_probabilities()}{print\_base\_pair\_probabilities()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} s\+\_\+partition\+\_\+function\+::print\+\_\+base\+\_\+pair\+\_\+probabilities (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{constants_8h_a9377001671b5ece8bb2a2cf636de4b8a}{PFTYPE}}}]{threshold = {\ttfamily 0.0} }\end{DoxyParamCaption})}
+
+\Hypertarget{classs__partition__function_aacda18b360a63a49529f787212cf2f6f}\label{classs__partition__function_aacda18b360a63a49529f787212cf2f6f} 
+\index{s\_partition\_function@{s\_partition\_function}!print\_gradient@{print\_gradient}}
+\index{print\_gradient@{print\_gradient}!s\_partition\_function@{s\_partition\_function}}
+\doxysubsubsection{\texorpdfstring{print\_gradient()}{print\_gradient()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} s\+\_\+partition\+\_\+function\+::print\+\_\+gradient (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{s__partition__function_8cpp_source_l05765}{5765}} of file \mbox{\hyperlink{s__partition__function_8cpp_source}{s\+\_\+partition\+\_\+function.\+cpp}}.
+
+\Hypertarget{classs__partition__function_aacda18b360a63a49529f787212cf2f6f}\label{classs__partition__function_aacda18b360a63a49529f787212cf2f6f} 
+\index{s\_partition\_function@{s\_partition\_function}!print\_gradient@{print\_gradient}}
+\index{print\_gradient@{print\_gradient}!s\_partition\_function@{s\_partition\_function}}
+\doxysubsubsection{\texorpdfstring{print\_gradient()}{print\_gradient()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} s\+\_\+partition\+\_\+function\+::print\+\_\+gradient (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classs__partition__function_aacda18b360a63a49529f787212cf2f6f}\label{classs__partition__function_aacda18b360a63a49529f787212cf2f6f} 
+\index{s\_partition\_function@{s\_partition\_function}!print\_gradient@{print\_gradient}}
+\index{print\_gradient@{print\_gradient}!s\_partition\_function@{s\_partition\_function}}
+\doxysubsubsection{\texorpdfstring{print\_gradient()}{print\_gradient()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} s\+\_\+partition\+\_\+function\+::print\+\_\+gradient (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classs__partition__function_a3e60ee520bccaef6a7d7bb15305ebc76}\label{classs__partition__function_a3e60ee520bccaef6a7d7bb15305ebc76} 
+\index{s\_partition\_function@{s\_partition\_function}!print\_u@{print\_u}}
+\index{print\_u@{print\_u}!s\_partition\_function@{s\_partition\_function}}
+\doxysubsubsection{\texorpdfstring{print\_u()}{print\_u()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} s\+\_\+partition\+\_\+function\+::print\+\_\+u (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{s__partition__function_8cpp_source_l00521}{521}} of file \mbox{\hyperlink{s__partition__function_8cpp_source}{s\+\_\+partition\+\_\+function.\+cpp}}.
+
+\Hypertarget{classs__partition__function_a3e60ee520bccaef6a7d7bb15305ebc76}\label{classs__partition__function_a3e60ee520bccaef6a7d7bb15305ebc76} 
+\index{s\_partition\_function@{s\_partition\_function}!print\_u@{print\_u}}
+\index{print\_u@{print\_u}!s\_partition\_function@{s\_partition\_function}}
+\doxysubsubsection{\texorpdfstring{print\_u()}{print\_u()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} s\+\_\+partition\+\_\+function\+::print\+\_\+u (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classs__partition__function_a3e60ee520bccaef6a7d7bb15305ebc76}\label{classs__partition__function_a3e60ee520bccaef6a7d7bb15305ebc76} 
+\index{s\_partition\_function@{s\_partition\_function}!print\_u@{print\_u}}
+\index{print\_u@{print\_u}!s\_partition\_function@{s\_partition\_function}}
+\doxysubsubsection{\texorpdfstring{print\_u()}{print\_u()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} s\+\_\+partition\+\_\+function\+::print\+\_\+u (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classs__partition__function_a057d3ccec7c188b64e85a5a7275fb0ba}\label{classs__partition__function_a057d3ccec7c188b64e85a5a7275fb0ba} 
+\index{s\_partition\_function@{s\_partition\_function}!PS\_dot\_plot@{PS\_dot\_plot}}
+\index{PS\_dot\_plot@{PS\_dot\_plot}!s\_partition\_function@{s\_partition\_function}}
+\doxysubsubsection{\texorpdfstring{PS\_dot\_plot()}{PS\_dot\_plot()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} s\+\_\+partition\+\_\+function\+::\+PS\+\_\+dot\+\_\+plot (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}}]{wastlfile }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{s__partition__function_8cpp_source_l02112}{2112}} of file \mbox{\hyperlink{s__partition__function_8cpp_source}{s\+\_\+partition\+\_\+function.\+cpp}}.
+
+\Hypertarget{classs__partition__function_a057d3ccec7c188b64e85a5a7275fb0ba}\label{classs__partition__function_a057d3ccec7c188b64e85a5a7275fb0ba} 
+\index{s\_partition\_function@{s\_partition\_function}!PS\_dot\_plot@{PS\_dot\_plot}}
+\index{PS\_dot\_plot@{PS\_dot\_plot}!s\_partition\_function@{s\_partition\_function}}
+\doxysubsubsection{\texorpdfstring{PS\_dot\_plot()}{PS\_dot\_plot()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} s\+\_\+partition\+\_\+function\+::\+PS\+\_\+dot\+\_\+plot (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}}]{wastlfile }\end{DoxyParamCaption})}
+
+\Hypertarget{classs__partition__function_a057d3ccec7c188b64e85a5a7275fb0ba}\label{classs__partition__function_a057d3ccec7c188b64e85a5a7275fb0ba} 
+\index{s\_partition\_function@{s\_partition\_function}!PS\_dot\_plot@{PS\_dot\_plot}}
+\index{PS\_dot\_plot@{PS\_dot\_plot}!s\_partition\_function@{s\_partition\_function}}
+\doxysubsubsection{\texorpdfstring{PS\_dot\_plot()}{PS\_dot\_plot()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} s\+\_\+partition\+\_\+function\+::\+PS\+\_\+dot\+\_\+plot (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}}]{wastlfile }\end{DoxyParamCaption})}
+
+\Hypertarget{classs__partition__function_a204c95199a5cfd8294666f931d4d3cc1}\label{classs__partition__function_a204c95199a5cfd8294666f931d4d3cc1} 
+\index{s\_partition\_function@{s\_partition\_function}!verify\_partition\_function@{verify\_partition\_function}}
+\index{verify\_partition\_function@{verify\_partition\_function}!s\_partition\_function@{s\_partition\_function}}
+\doxysubsubsection{\texorpdfstring{verify\_partition\_function()}{verify\_partition\_function()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} s\+\_\+partition\+\_\+function\+::verify\+\_\+partition\+\_\+function (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{s__partition__function_8cpp_source_l02696}{2696}} of file \mbox{\hyperlink{s__partition__function_8cpp_source}{s\+\_\+partition\+\_\+function.\+cpp}}.
+
+\Hypertarget{classs__partition__function_a947a7ae827001f19374d056b41cdae51}\label{classs__partition__function_a947a7ae827001f19374d056b41cdae51} 
+\index{s\_partition\_function@{s\_partition\_function}!verify\_partition\_function@{verify\_partition\_function}}
+\index{verify\_partition\_function@{verify\_partition\_function}!s\_partition\_function@{s\_partition\_function}}
+\doxysubsubsection{\texorpdfstring{verify\_partition\_function()}{verify\_partition\_function()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} s\+\_\+partition\+\_\+function\+::verify\+\_\+partition\+\_\+function (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classs__partition__function_a204c95199a5cfd8294666f931d4d3cc1}\label{classs__partition__function_a204c95199a5cfd8294666f931d4d3cc1} 
+\index{s\_partition\_function@{s\_partition\_function}!verify\_partition\_function@{verify\_partition\_function}}
+\index{verify\_partition\_function@{verify\_partition\_function}!s\_partition\_function@{s\_partition\_function}}
+\doxysubsubsection{\texorpdfstring{verify\_partition\_function()}{verify\_partition\_function()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} s\+\_\+partition\+\_\+function\+::verify\+\_\+partition\+\_\+function (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classs__partition__function_a8f1a1b6177aba6333da2a4113118e5b1}\label{classs__partition__function_a8f1a1b6177aba6333da2a4113118e5b1} 
+\index{s\_partition\_function@{s\_partition\_function}!verify\_recurrences@{verify\_recurrences}}
+\index{verify\_recurrences@{verify\_recurrences}!s\_partition\_function@{s\_partition\_function}}
+\doxysubsubsection{\texorpdfstring{verify\_recurrences()}{verify\_recurrences()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} s\+\_\+partition\+\_\+function\+::verify\+\_\+recurrences (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{s__partition__function_8cpp_source_l02737}{2737}} of file \mbox{\hyperlink{s__partition__function_8cpp_source}{s\+\_\+partition\+\_\+function.\+cpp}}.
+
+\Hypertarget{classs__partition__function_a8f1a1b6177aba6333da2a4113118e5b1}\label{classs__partition__function_a8f1a1b6177aba6333da2a4113118e5b1} 
+\index{s\_partition\_function@{s\_partition\_function}!verify\_recurrences@{verify\_recurrences}}
+\index{verify\_recurrences@{verify\_recurrences}!s\_partition\_function@{s\_partition\_function}}
+\doxysubsubsection{\texorpdfstring{verify\_recurrences()}{verify\_recurrences()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} s\+\_\+partition\+\_\+function\+::verify\+\_\+recurrences (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classs__partition__function_a8f1a1b6177aba6333da2a4113118e5b1}\label{classs__partition__function_a8f1a1b6177aba6333da2a4113118e5b1} 
+\index{s\_partition\_function@{s\_partition\_function}!verify\_recurrences@{verify\_recurrences}}
+\index{verify\_recurrences@{verify\_recurrences}!s\_partition\_function@{s\_partition\_function}}
+\doxysubsubsection{\texorpdfstring{verify\_recurrences()}{verify\_recurrences()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} s\+\_\+partition\+\_\+function\+::verify\+\_\+recurrences (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classs__partition__function_aec7fc1aba5436d0361495561040cf2ee}\label{classs__partition__function_aec7fc1aba5436d0361495561040cf2ee} 
+\index{s\_partition\_function@{s\_partition\_function}!verify\_simple\_vs\_complicated\_bpp@{verify\_simple\_vs\_complicated\_bpp}}
+\index{verify\_simple\_vs\_complicated\_bpp@{verify\_simple\_vs\_complicated\_bpp}!s\_partition\_function@{s\_partition\_function}}
+\doxysubsubsection{\texorpdfstring{verify\_simple\_vs\_complicated\_bpp()}{verify\_simple\_vs\_complicated\_bpp()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} s\+\_\+partition\+\_\+function\+::verify\+\_\+simple\+\_\+vs\+\_\+complicated\+\_\+bpp (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classs__partition__function}{s\+\_\+partition\+\_\+function}} \texorpdfstring{$\ast$}{*}}]{pf }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{s__partition__function_8cpp_source_l02522}{2522}} of file \mbox{\hyperlink{s__partition__function_8cpp_source}{s\+\_\+partition\+\_\+function.\+cpp}}.
+
+\Hypertarget{classs__partition__function_aec7fc1aba5436d0361495561040cf2ee}\label{classs__partition__function_aec7fc1aba5436d0361495561040cf2ee} 
+\index{s\_partition\_function@{s\_partition\_function}!verify\_simple\_vs\_complicated\_bpp@{verify\_simple\_vs\_complicated\_bpp}}
+\index{verify\_simple\_vs\_complicated\_bpp@{verify\_simple\_vs\_complicated\_bpp}!s\_partition\_function@{s\_partition\_function}}
+\doxysubsubsection{\texorpdfstring{verify\_simple\_vs\_complicated\_bpp()}{verify\_simple\_vs\_complicated\_bpp()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} s\+\_\+partition\+\_\+function\+::verify\+\_\+simple\+\_\+vs\+\_\+complicated\+\_\+bpp (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classs__partition__function}{s\+\_\+partition\+\_\+function}} \texorpdfstring{$\ast$}{*}}]{pf }\end{DoxyParamCaption})}
+
+\Hypertarget{classs__partition__function_aec7fc1aba5436d0361495561040cf2ee}\label{classs__partition__function_aec7fc1aba5436d0361495561040cf2ee} 
+\index{s\_partition\_function@{s\_partition\_function}!verify\_simple\_vs\_complicated\_bpp@{verify\_simple\_vs\_complicated\_bpp}}
+\index{verify\_simple\_vs\_complicated\_bpp@{verify\_simple\_vs\_complicated\_bpp}!s\_partition\_function@{s\_partition\_function}}
+\doxysubsubsection{\texorpdfstring{verify\_simple\_vs\_complicated\_bpp()}{verify\_simple\_vs\_complicated\_bpp()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} s\+\_\+partition\+\_\+function\+::verify\+\_\+simple\+\_\+vs\+\_\+complicated\+\_\+bpp (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classs__partition__function}{s\+\_\+partition\+\_\+function}} \texorpdfstring{$\ast$}{*}}]{pf }\end{DoxyParamCaption})}
+
+\Hypertarget{classs__partition__function_af5de6731af57258e965681dbe07386cc}\label{classs__partition__function_af5de6731af57258e965681dbe07386cc} 
+\index{s\_partition\_function@{s\_partition\_function}!verify\_simple\_vs\_complicated\_recurrences@{verify\_simple\_vs\_complicated\_recurrences}}
+\index{verify\_simple\_vs\_complicated\_recurrences@{verify\_simple\_vs\_complicated\_recurrences}!s\_partition\_function@{s\_partition\_function}}
+\doxysubsubsection{\texorpdfstring{verify\_simple\_vs\_complicated\_recurrences()}{verify\_simple\_vs\_complicated\_recurrences()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} s\+\_\+partition\+\_\+function\+::verify\+\_\+simple\+\_\+vs\+\_\+complicated\+\_\+recurrences (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classs__partition__function}{s\+\_\+partition\+\_\+function}} \texorpdfstring{$\ast$}{*}}]{otherpf }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{s__partition__function_8cpp_source_l02552}{2552}} of file \mbox{\hyperlink{s__partition__function_8cpp_source}{s\+\_\+partition\+\_\+function.\+cpp}}.
+
+\Hypertarget{classs__partition__function_af5de6731af57258e965681dbe07386cc}\label{classs__partition__function_af5de6731af57258e965681dbe07386cc} 
+\index{s\_partition\_function@{s\_partition\_function}!verify\_simple\_vs\_complicated\_recurrences@{verify\_simple\_vs\_complicated\_recurrences}}
+\index{verify\_simple\_vs\_complicated\_recurrences@{verify\_simple\_vs\_complicated\_recurrences}!s\_partition\_function@{s\_partition\_function}}
+\doxysubsubsection{\texorpdfstring{verify\_simple\_vs\_complicated\_recurrences()}{verify\_simple\_vs\_complicated\_recurrences()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} s\+\_\+partition\+\_\+function\+::verify\+\_\+simple\+\_\+vs\+\_\+complicated\+\_\+recurrences (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classs__partition__function}{s\+\_\+partition\+\_\+function}} \texorpdfstring{$\ast$}{*}}]{otherpf }\end{DoxyParamCaption})}
+
+\Hypertarget{classs__partition__function_af5de6731af57258e965681dbe07386cc}\label{classs__partition__function_af5de6731af57258e965681dbe07386cc} 
+\index{s\_partition\_function@{s\_partition\_function}!verify\_simple\_vs\_complicated\_recurrences@{verify\_simple\_vs\_complicated\_recurrences}}
+\index{verify\_simple\_vs\_complicated\_recurrences@{verify\_simple\_vs\_complicated\_recurrences}!s\_partition\_function@{s\_partition\_function}}
+\doxysubsubsection{\texorpdfstring{verify\_simple\_vs\_complicated\_recurrences()}{verify\_simple\_vs\_complicated\_recurrences()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} s\+\_\+partition\+\_\+function\+::verify\+\_\+simple\+\_\+vs\+\_\+complicated\+\_\+recurrences (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classs__partition__function}{s\+\_\+partition\+\_\+function}} \texorpdfstring{$\ast$}{*}}]{otherpf }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classs__partition__function_a04d0e8824716e05584b24c7c5d0dbb3d}\label{classs__partition__function_a04d0e8824716e05584b24c7c5d0dbb3d} 
+\index{s\_partition\_function@{s\_partition\_function}!GlogZ@{GlogZ}}
+\index{GlogZ@{GlogZ}!s\_partition\_function@{s\_partition\_function}}
+\doxysubsubsection{\texorpdfstring{GlogZ}{GlogZ}}
+{\footnotesize\ttfamily \mbox{\hyperlink{constants_8h_a9377001671b5ece8bb2a2cf636de4b8a}{PFTYPE}} \texorpdfstring{$\ast$}{*} s\+\_\+partition\+\_\+function\+::\+GlogZ}
+
+
+
+Definition at line \mbox{\hyperlink{s__partition__function_8h_source_l00124}{124}} of file \mbox{\hyperlink{s__partition__function_8h_source}{s\+\_\+partition\+\_\+function.\+h}}.
+
+\Hypertarget{classs__partition__function_a750958baaf4d5d2e276c8e585999ca73}\label{classs__partition__function_a750958baaf4d5d2e276c8e585999ca73} 
+\index{s\_partition\_function@{s\_partition\_function}!num\_internal\_in\_p@{num\_internal\_in\_p}}
+\index{num\_internal\_in\_p@{num\_internal\_in\_p}!s\_partition\_function@{s\_partition\_function}}
+\doxysubsubsection{\texorpdfstring{num\_internal\_in\_p}{num\_internal\_in\_p}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} s\+\_\+partition\+\_\+function\+::num\+\_\+internal\+\_\+in\+\_\+p}
+
+
+
+Definition at line \mbox{\hyperlink{s__partition__function_8h_source_l00128}{128}} of file \mbox{\hyperlink{s__partition__function_8h_source}{s\+\_\+partition\+\_\+function.\+h}}.
+
+\Hypertarget{classs__partition__function_a5612ba9ed57a8c36dcaf8d4d4ddff05a}\label{classs__partition__function_a5612ba9ed57a8c36dcaf8d4d4ddff05a} 
+\index{s\_partition\_function@{s\_partition\_function}!num\_internal\_in\_up@{num\_internal\_in\_up}}
+\index{num\_internal\_in\_up@{num\_internal\_in\_up}!s\_partition\_function@{s\_partition\_function}}
+\doxysubsubsection{\texorpdfstring{num\_internal\_in\_up}{num\_internal\_in\_up}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} s\+\_\+partition\+\_\+function\+::num\+\_\+internal\+\_\+in\+\_\+up}
+
+
+
+Definition at line \mbox{\hyperlink{s__partition__function_8h_source_l00127}{127}} of file \mbox{\hyperlink{s__partition__function_8h_source}{s\+\_\+partition\+\_\+function.\+h}}.
+
+\Hypertarget{classs__partition__function_a463a1ad0b1d4814015baacc37c4c1222}\label{classs__partition__function_a463a1ad0b1d4814015baacc37c4c1222} 
+\index{s\_partition\_function@{s\_partition\_function}!s1\_jp@{s1\_jp}}
+\index{s1\_jp@{s1\_jp}!s\_partition\_function@{s\_partition\_function}}
+\doxysubsubsection{\texorpdfstring{s1\_jp}{s1\_jp}}
+{\footnotesize\ttfamily \mbox{\hyperlink{constants_8h_a9377001671b5ece8bb2a2cf636de4b8a}{PFTYPE}} \texorpdfstring{$\ast$}{*} s\+\_\+partition\+\_\+function\+::s1\+\_\+jp}
+
+
+
+Definition at line \mbox{\hyperlink{s__partition__function_8h_source_l00107}{107}} of file \mbox{\hyperlink{s__partition__function_8h_source}{s\+\_\+partition\+\_\+function.\+h}}.
+
+\Hypertarget{classs__partition__function_a6276d70bacafdfac40f5c4d52797b7f7}\label{classs__partition__function_a6276d70bacafdfac40f5c4d52797b7f7} 
+\index{s\_partition\_function@{s\_partition\_function}!s1\_ju@{s1\_ju}}
+\index{s1\_ju@{s1\_ju}!s\_partition\_function@{s\_partition\_function}}
+\doxysubsubsection{\texorpdfstring{s1\_ju}{s1\_ju}}
+{\footnotesize\ttfamily \mbox{\hyperlink{constants_8h_a9377001671b5ece8bb2a2cf636de4b8a}{PFTYPE}} \texorpdfstring{$\ast$}{*} s\+\_\+partition\+\_\+function\+::s1\+\_\+ju}
+
+
+
+Definition at line \mbox{\hyperlink{s__partition__function_8h_source_l00108}{108}} of file \mbox{\hyperlink{s__partition__function_8h_source}{s\+\_\+partition\+\_\+function.\+h}}.
+
+\Hypertarget{classs__partition__function_a946687bd4ac1a1722dc0f609bba0cc17}\label{classs__partition__function_a946687bd4ac1a1722dc0f609bba0cc17} 
+\index{s\_partition\_function@{s\_partition\_function}!s2\_jp@{s2\_jp}}
+\index{s2\_jp@{s2\_jp}!s\_partition\_function@{s\_partition\_function}}
+\doxysubsubsection{\texorpdfstring{s2\_jp}{s2\_jp}}
+{\footnotesize\ttfamily \mbox{\hyperlink{constants_8h_a9377001671b5ece8bb2a2cf636de4b8a}{PFTYPE}} \texorpdfstring{$\ast$}{*} s\+\_\+partition\+\_\+function\+::s2\+\_\+jp}
+
+
+
+Definition at line \mbox{\hyperlink{s__partition__function_8h_source_l00117}{117}} of file \mbox{\hyperlink{s__partition__function_8h_source}{s\+\_\+partition\+\_\+function.\+h}}.
+
+\Hypertarget{classs__partition__function_a3d114bf1a2bdf3f2df94c8f035f82bfa}\label{classs__partition__function_a3d114bf1a2bdf3f2df94c8f035f82bfa} 
+\index{s\_partition\_function@{s\_partition\_function}!s2\_ju@{s2\_ju}}
+\index{s2\_ju@{s2\_ju}!s\_partition\_function@{s\_partition\_function}}
+\doxysubsubsection{\texorpdfstring{s2\_ju}{s2\_ju}}
+{\footnotesize\ttfamily \mbox{\hyperlink{constants_8h_a9377001671b5ece8bb2a2cf636de4b8a}{PFTYPE}} \texorpdfstring{$\ast$}{*} s\+\_\+partition\+\_\+function\+::s2\+\_\+ju}
+
+
+
+Definition at line \mbox{\hyperlink{s__partition__function_8h_source_l00118}{118}} of file \mbox{\hyperlink{s__partition__function_8h_source}{s\+\_\+partition\+\_\+function.\+h}}.
+
+\Hypertarget{classs__partition__function_a76f52302f731b6c7715166852e735730}\label{classs__partition__function_a76f52302f731b6c7715166852e735730} 
+\index{s\_partition\_function@{s\_partition\_function}!s3\_jp@{s3\_jp}}
+\index{s3\_jp@{s3\_jp}!s\_partition\_function@{s\_partition\_function}}
+\doxysubsubsection{\texorpdfstring{s3\_jp}{s3\_jp}}
+{\footnotesize\ttfamily \mbox{\hyperlink{constants_8h_a9377001671b5ece8bb2a2cf636de4b8a}{PFTYPE}} \texorpdfstring{$\ast$}{*} s\+\_\+partition\+\_\+function\+::s3\+\_\+jp}
+
+
+
+Definition at line \mbox{\hyperlink{s__partition__function_8h_source_l00119}{119}} of file \mbox{\hyperlink{s__partition__function_8h_source}{s\+\_\+partition\+\_\+function.\+h}}.
+
+\Hypertarget{classs__partition__function_ad987d2f1851d0eb326ebc5edbcead67a}\label{classs__partition__function_ad987d2f1851d0eb326ebc5edbcead67a} 
+\index{s\_partition\_function@{s\_partition\_function}!s3\_ju@{s3\_ju}}
+\index{s3\_ju@{s3\_ju}!s\_partition\_function@{s\_partition\_function}}
+\doxysubsubsection{\texorpdfstring{s3\_ju}{s3\_ju}}
+{\footnotesize\ttfamily \mbox{\hyperlink{constants_8h_a9377001671b5ece8bb2a2cf636de4b8a}{PFTYPE}} \texorpdfstring{$\ast$}{*} s\+\_\+partition\+\_\+function\+::s3\+\_\+ju}
+
+
+
+Definition at line \mbox{\hyperlink{s__partition__function_8h_source_l00121}{121}} of file \mbox{\hyperlink{s__partition__function_8h_source}{s\+\_\+partition\+\_\+function.\+h}}.
+
+\Hypertarget{classs__partition__function_a3a44a1fd78b91429419de951fe95befc}\label{classs__partition__function_a3a44a1fd78b91429419de951fe95befc} 
+\index{s\_partition\_function@{s\_partition\_function}!s3\_ju\_jm1p@{s3\_ju\_jm1p}}
+\index{s3\_ju\_jm1p@{s3\_ju\_jm1p}!s\_partition\_function@{s\_partition\_function}}
+\doxysubsubsection{\texorpdfstring{s3\_ju\_jm1p}{s3\_ju\_jm1p}}
+{\footnotesize\ttfamily \mbox{\hyperlink{constants_8h_a9377001671b5ece8bb2a2cf636de4b8a}{PFTYPE}} \texorpdfstring{$\ast$}{*} s\+\_\+partition\+\_\+function\+::s3\+\_\+ju\+\_\+jm1p}
+
+
+
+Definition at line \mbox{\hyperlink{s__partition__function_8h_source_l00120}{120}} of file \mbox{\hyperlink{s__partition__function_8h_source}{s\+\_\+partition\+\_\+function.\+h}}.
+
+\Hypertarget{classs__partition__function_ac555cc480dd1a5a4710bd6bf3ae3d5a5}\label{classs__partition__function_ac555cc480dd1a5a4710bd6bf3ae3d5a5} 
+\index{s\_partition\_function@{s\_partition\_function}!u1\_ip\_jp@{u1\_ip\_jp}}
+\index{u1\_ip\_jp@{u1\_ip\_jp}!s\_partition\_function@{s\_partition\_function}}
+\doxysubsubsection{\texorpdfstring{u1\_ip\_jp}{u1\_ip\_jp}}
+{\footnotesize\ttfamily \mbox{\hyperlink{constants_8h_a9377001671b5ece8bb2a2cf636de4b8a}{PFTYPE}} \texorpdfstring{$\ast$}{*} s\+\_\+partition\+\_\+function\+::u1\+\_\+ip\+\_\+jp}
+
+
+
+Definition at line \mbox{\hyperlink{s__partition__function_8h_source_l00111}{111}} of file \mbox{\hyperlink{s__partition__function_8h_source}{s\+\_\+partition\+\_\+function.\+h}}.
+
+\Hypertarget{classs__partition__function_aff7e050f63b7480a4f4bd6110ca4385a}\label{classs__partition__function_aff7e050f63b7480a4f4bd6110ca4385a} 
+\index{s\_partition\_function@{s\_partition\_function}!u1\_ip\_ju@{u1\_ip\_ju}}
+\index{u1\_ip\_ju@{u1\_ip\_ju}!s\_partition\_function@{s\_partition\_function}}
+\doxysubsubsection{\texorpdfstring{u1\_ip\_ju}{u1\_ip\_ju}}
+{\footnotesize\ttfamily \mbox{\hyperlink{constants_8h_a9377001671b5ece8bb2a2cf636de4b8a}{PFTYPE}} \texorpdfstring{$\ast$}{*} s\+\_\+partition\+\_\+function\+::u1\+\_\+ip\+\_\+ju}
+
+
+
+Definition at line \mbox{\hyperlink{s__partition__function_8h_source_l00113}{113}} of file \mbox{\hyperlink{s__partition__function_8h_source}{s\+\_\+partition\+\_\+function.\+h}}.
+
+\Hypertarget{classs__partition__function_ae6c41170361cc9e540ff24287a304016}\label{classs__partition__function_ae6c41170361cc9e540ff24287a304016} 
+\index{s\_partition\_function@{s\_partition\_function}!u1\_ip\_ju\_jm1p@{u1\_ip\_ju\_jm1p}}
+\index{u1\_ip\_ju\_jm1p@{u1\_ip\_ju\_jm1p}!s\_partition\_function@{s\_partition\_function}}
+\doxysubsubsection{\texorpdfstring{u1\_ip\_ju\_jm1p}{u1\_ip\_ju\_jm1p}}
+{\footnotesize\ttfamily \mbox{\hyperlink{constants_8h_a9377001671b5ece8bb2a2cf636de4b8a}{PFTYPE}} \texorpdfstring{$\ast$}{*} s\+\_\+partition\+\_\+function\+::u1\+\_\+ip\+\_\+ju\+\_\+jm1p}
+
+
+
+Definition at line \mbox{\hyperlink{s__partition__function_8h_source_l00112}{112}} of file \mbox{\hyperlink{s__partition__function_8h_source}{s\+\_\+partition\+\_\+function.\+h}}.
+
+\Hypertarget{classs__partition__function_a27a5847c319ac704ce0f24f898b56585}\label{classs__partition__function_a27a5847c319ac704ce0f24f898b56585} 
+\index{s\_partition\_function@{s\_partition\_function}!u1\_iu\_jp@{u1\_iu\_jp}}
+\index{u1\_iu\_jp@{u1\_iu\_jp}!s\_partition\_function@{s\_partition\_function}}
+\doxysubsubsection{\texorpdfstring{u1\_iu\_jp}{u1\_iu\_jp}}
+{\footnotesize\ttfamily \mbox{\hyperlink{constants_8h_a9377001671b5ece8bb2a2cf636de4b8a}{PFTYPE}} \texorpdfstring{$\ast$}{*} s\+\_\+partition\+\_\+function\+::u1\+\_\+iu\+\_\+jp}
+
+
+
+Definition at line \mbox{\hyperlink{s__partition__function_8h_source_l00114}{114}} of file \mbox{\hyperlink{s__partition__function_8h_source}{s\+\_\+partition\+\_\+function.\+h}}.
+
+\Hypertarget{classs__partition__function_a6a6f9189e8455bb28b55db8dbc7bd6a6}\label{classs__partition__function_a6a6f9189e8455bb28b55db8dbc7bd6a6} 
+\index{s\_partition\_function@{s\_partition\_function}!u1\_iu\_ju@{u1\_iu\_ju}}
+\index{u1\_iu\_ju@{u1\_iu\_ju}!s\_partition\_function@{s\_partition\_function}}
+\doxysubsubsection{\texorpdfstring{u1\_iu\_ju}{u1\_iu\_ju}}
+{\footnotesize\ttfamily \mbox{\hyperlink{constants_8h_a9377001671b5ece8bb2a2cf636de4b8a}{PFTYPE}} \texorpdfstring{$\ast$}{*} s\+\_\+partition\+\_\+function\+::u1\+\_\+iu\+\_\+ju}
+
+
+
+Definition at line \mbox{\hyperlink{s__partition__function_8h_source_l00116}{116}} of file \mbox{\hyperlink{s__partition__function_8h_source}{s\+\_\+partition\+\_\+function.\+h}}.
+
+\Hypertarget{classs__partition__function_acf09bc61403b2591cc6a7dfa1f184f43}\label{classs__partition__function_acf09bc61403b2591cc6a7dfa1f184f43} 
+\index{s\_partition\_function@{s\_partition\_function}!u1\_iu\_ju\_jm1p@{u1\_iu\_ju\_jm1p}}
+\index{u1\_iu\_ju\_jm1p@{u1\_iu\_ju\_jm1p}!s\_partition\_function@{s\_partition\_function}}
+\doxysubsubsection{\texorpdfstring{u1\_iu\_ju\_jm1p}{u1\_iu\_ju\_jm1p}}
+{\footnotesize\ttfamily \mbox{\hyperlink{constants_8h_a9377001671b5ece8bb2a2cf636de4b8a}{PFTYPE}} \texorpdfstring{$\ast$}{*} s\+\_\+partition\+\_\+function\+::u1\+\_\+iu\+\_\+ju\+\_\+jm1p}
+
+
+
+Definition at line \mbox{\hyperlink{s__partition__function_8h_source_l00115}{115}} of file \mbox{\hyperlink{s__partition__function_8h_source}{s\+\_\+partition\+\_\+function.\+h}}.
+
+\Hypertarget{classs__partition__function_aba4b6be1de9f4b79e5bfaf9a09492034}\label{classs__partition__function_aba4b6be1de9f4b79e5bfaf9a09492034} 
+\index{s\_partition\_function@{s\_partition\_function}!u\_ip\_jp@{u\_ip\_jp}}
+\index{u\_ip\_jp@{u\_ip\_jp}!s\_partition\_function@{s\_partition\_function}}
+\doxysubsubsection{\texorpdfstring{u\_ip\_jp}{u\_ip\_jp}}
+{\footnotesize\ttfamily \mbox{\hyperlink{constants_8h_a9377001671b5ece8bb2a2cf636de4b8a}{PFTYPE}} \texorpdfstring{$\ast$}{*} s\+\_\+partition\+\_\+function\+::u\+\_\+ip\+\_\+jp}
+
+
+
+Definition at line \mbox{\hyperlink{s__partition__function_8h_source_l00103}{103}} of file \mbox{\hyperlink{s__partition__function_8h_source}{s\+\_\+partition\+\_\+function.\+h}}.
+
+\Hypertarget{classs__partition__function_a87d3416f2c4baa9ed45b274485570763}\label{classs__partition__function_a87d3416f2c4baa9ed45b274485570763} 
+\index{s\_partition\_function@{s\_partition\_function}!u\_ip\_ju@{u\_ip\_ju}}
+\index{u\_ip\_ju@{u\_ip\_ju}!s\_partition\_function@{s\_partition\_function}}
+\doxysubsubsection{\texorpdfstring{u\_ip\_ju}{u\_ip\_ju}}
+{\footnotesize\ttfamily \mbox{\hyperlink{constants_8h_a9377001671b5ece8bb2a2cf636de4b8a}{PFTYPE}} \texorpdfstring{$\ast$}{*} s\+\_\+partition\+\_\+function\+::u\+\_\+ip\+\_\+ju}
+
+
+
+Definition at line \mbox{\hyperlink{s__partition__function_8h_source_l00104}{104}} of file \mbox{\hyperlink{s__partition__function_8h_source}{s\+\_\+partition\+\_\+function.\+h}}.
+
+\Hypertarget{classs__partition__function_a97a795d082ea429945a91798bc37766e}\label{classs__partition__function_a97a795d082ea429945a91798bc37766e} 
+\index{s\_partition\_function@{s\_partition\_function}!u\_iu\_jp@{u\_iu\_jp}}
+\index{u\_iu\_jp@{u\_iu\_jp}!s\_partition\_function@{s\_partition\_function}}
+\doxysubsubsection{\texorpdfstring{u\_iu\_jp}{u\_iu\_jp}}
+{\footnotesize\ttfamily \mbox{\hyperlink{constants_8h_a9377001671b5ece8bb2a2cf636de4b8a}{PFTYPE}} \texorpdfstring{$\ast$}{*} s\+\_\+partition\+\_\+function\+::u\+\_\+iu\+\_\+jp}
+
+
+
+Definition at line \mbox{\hyperlink{s__partition__function_8h_source_l00105}{105}} of file \mbox{\hyperlink{s__partition__function_8h_source}{s\+\_\+partition\+\_\+function.\+h}}.
+
+\Hypertarget{classs__partition__function_ad46c0fd17f3fc41fb429f4313aa894ca}\label{classs__partition__function_ad46c0fd17f3fc41fb429f4313aa894ca} 
+\index{s\_partition\_function@{s\_partition\_function}!u\_iu\_ju@{u\_iu\_ju}}
+\index{u\_iu\_ju@{u\_iu\_ju}!s\_partition\_function@{s\_partition\_function}}
+\doxysubsubsection{\texorpdfstring{u\_iu\_ju}{u\_iu\_ju}}
+{\footnotesize\ttfamily \mbox{\hyperlink{constants_8h_a9377001671b5ece8bb2a2cf636de4b8a}{PFTYPE}} \texorpdfstring{$\ast$}{*} s\+\_\+partition\+\_\+function\+::u\+\_\+iu\+\_\+ju}
+
+
+
+Definition at line \mbox{\hyperlink{s__partition__function_8h_source_l00106}{106}} of file \mbox{\hyperlink{s__partition__function_8h_source}{s\+\_\+partition\+\_\+function.\+h}}.
+
+\Hypertarget{classs__partition__function_ad3b9d35c653d0b15ddec0a80c1b864a3}\label{classs__partition__function_ad3b9d35c653d0b15ddec0a80c1b864a3} 
+\index{s\_partition\_function@{s\_partition\_function}!up@{up}}
+\index{up@{up}!s\_partition\_function@{s\_partition\_function}}
+\doxysubsubsection{\texorpdfstring{up}{up}}
+{\footnotesize\ttfamily \mbox{\hyperlink{constants_8h_a9377001671b5ece8bb2a2cf636de4b8a}{PFTYPE}} \texorpdfstring{$\ast$}{*} s\+\_\+partition\+\_\+function\+::up}
+
+
+
+Definition at line \mbox{\hyperlink{s__partition__function_8h_source_l00099}{99}} of file \mbox{\hyperlink{s__partition__function_8h_source}{s\+\_\+partition\+\_\+function.\+h}}.
+
+\Hypertarget{classs__partition__function_ad57d47e093b43f603323342d18bb6bdd}\label{classs__partition__function_ad57d47e093b43f603323342d18bb6bdd} 
+\index{s\_partition\_function@{s\_partition\_function}!upm@{upm}}
+\index{upm@{upm}!s\_partition\_function@{s\_partition\_function}}
+\doxysubsubsection{\texorpdfstring{upm}{upm}}
+{\footnotesize\ttfamily \mbox{\hyperlink{constants_8h_a9377001671b5ece8bb2a2cf636de4b8a}{PFTYPE}} \texorpdfstring{$\ast$}{*} s\+\_\+partition\+\_\+function\+::upm}
+
+
+
+Definition at line \mbox{\hyperlink{s__partition__function_8h_source_l00100}{100}} of file \mbox{\hyperlink{s__partition__function_8h_source}{s\+\_\+partition\+\_\+function.\+h}}.
+
+\Hypertarget{classs__partition__function_adf44d1c405bccd7de185e7086e5e95f5}\label{classs__partition__function_adf44d1c405bccd7de185e7086e5e95f5} 
+\index{s\_partition\_function@{s\_partition\_function}!Z@{Z}}
+\index{Z@{Z}!s\_partition\_function@{s\_partition\_function}}
+\doxysubsubsection{\texorpdfstring{Z}{Z}}
+{\footnotesize\ttfamily \mbox{\hyperlink{constants_8h_a9377001671b5ece8bb2a2cf636de4b8a}{PFTYPE}} s\+\_\+partition\+\_\+function\+::Z}
+
+
+
+Definition at line \mbox{\hyperlink{s__partition__function_8h_source_l00059}{59}} of file \mbox{\hyperlink{s__partition__function_8h_source}{s\+\_\+partition\+\_\+function.\+h}}.
+
+\Hypertarget{classs__partition__function_aafdcef374fdf2e91dfd70fe4d1509005}\label{classs__partition__function_aafdcef374fdf2e91dfd70fe4d1509005} 
+\index{s\_partition\_function@{s\_partition\_function}!Zexhaustive@{Zexhaustive}}
+\index{Zexhaustive@{Zexhaustive}!s\_partition\_function@{s\_partition\_function}}
+\doxysubsubsection{\texorpdfstring{Zexhaustive}{Zexhaustive}}
+{\footnotesize\ttfamily \mbox{\hyperlink{constants_8h_a9377001671b5ece8bb2a2cf636de4b8a}{PFTYPE}} s\+\_\+partition\+\_\+function\+::\+Zexhaustive}
+
+
+
+Definition at line \mbox{\hyperlink{s__partition__function_8h_source_l00060}{60}} of file \mbox{\hyperlink{s__partition__function_8h_source}{s\+\_\+partition\+\_\+function.\+h}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/luket/\+Desktop/testing\+\_\+\+CParty/\+CParty/simfold/src/simfold/\mbox{\hyperlink{s__partition__function_8h}{s\+\_\+partition\+\_\+function.\+h}}\item 
+C\+:/\+Users/luket/\+Desktop/testing\+\_\+\+CParty/\+CParty/simfold/src/simfold/\mbox{\hyperlink{s__partition__function___r_e_s_t_r_i_c_t_e_d_8h}{s\+\_\+partition\+\_\+function\+\_\+\+RESTRICTED.\+h}}\item 
+C\+:/\+Users/luket/\+Desktop/testing\+\_\+\+CParty/\+CParty/simfold/src/simfold/\mbox{\hyperlink{s__partition__function___u_n_r_e_s_t_r_i_c_t_e_d_8h}{s\+\_\+partition\+\_\+function\+\_\+\+UNRESTRICTED.\+h}}\item 
+C\+:/\+Users/luket/\+Desktop/testing\+\_\+\+CParty/\+CParty/simfold/src/simfold/\mbox{\hyperlink{s__partition__function_8cpp}{s\+\_\+partition\+\_\+function.\+cpp}}\item 
+C\+:/\+Users/luket/\+Desktop/testing\+\_\+\+CParty/\+CParty/simfold/src/simfold/\mbox{\hyperlink{s__partition__function___i_s_m_b_8cpp}{s\+\_\+partition\+\_\+function\+\_\+\+ISMB.\+cpp}}\item 
+C\+:/\+Users/luket/\+Desktop/testing\+\_\+\+CParty/\+CParty/simfold/src/simfold/\mbox{\hyperlink{s__partition__function___r_e_s_t_r_i_c_t_e_d_8cpp}{s\+\_\+partition\+\_\+function\+\_\+\+RESTRICTED.\+cpp}}\item 
+C\+:/\+Users/luket/\+Desktop/testing\+\_\+\+CParty/\+CParty/simfold/src/simfold/\mbox{\hyperlink{s__partition__function__savedangle_8cpp}{s\+\_\+partition\+\_\+function\+\_\+savedangle.\+cpp}}\item 
+C\+:/\+Users/luket/\+Desktop/testing\+\_\+\+CParty/\+CParty/simfold/src/simfold/\mbox{\hyperlink{s__partition__function___u_n_r_e_s_t_r_i_c_t_e_d_8cpp}{s\+\_\+partition\+\_\+function\+\_\+\+UNRESTRICTED.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,93 @@
+\doxysection{melting\+\_\+temp.\+cpp}
+\hypertarget{melting__temp_8cpp_source}{}\label{melting__temp_8cpp_source}\index{C:/Users/luket/Desktop/testing\_CParty/CParty/simfold/melting\_temp.cpp@{C:/Users/luket/Desktop/testing\_CParty/CParty/simfold/melting\_temp.cpp}}
+\mbox{\hyperlink{melting__temp_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{melting__temp_8cpp_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{melting__temp_8cpp_source_l00002}00002\ \textcolor{comment}{//\ a\ simple\ driver\ for\ the\ pairfold}}
+\DoxyCodeLine{\Hypertarget{melting__temp_8cpp_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{melting__temp_8cpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{\Hypertarget{melting__temp_8cpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <string.h>}}
+\DoxyCodeLine{\Hypertarget{melting__temp_8cpp_source_l00006}00006\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{\Hypertarget{melting__temp_8cpp_source_l00007}00007\ \textcolor{preprocessor}{\#include\ <time.h>}}
+\DoxyCodeLine{\Hypertarget{melting__temp_8cpp_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{melting__temp_8cpp_source_l00009}00009\ \textcolor{comment}{//\ include\ the\ pairfold\ library}}
+\DoxyCodeLine{\Hypertarget{melting__temp_8cpp_source_l00010}00010\ \textcolor{preprocessor}{\#include\ "{}pairfold.h"{}}}
+\DoxyCodeLine{\Hypertarget{melting__temp_8cpp_source_l00011}00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{externs_8h}{externs.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{melting__temp_8cpp_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{melting__temp_8cpp_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{melting__temp_8cpp_source_l00014}\mbox{\hyperlink{melting__temp_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{00014}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{melting__temp_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main}}\ (\textcolor{keywordtype}{int}\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{argc}},\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{argv}}[])}
+\DoxyCodeLine{\Hypertarget{melting__temp_8cpp_source_l00015}00015\ \{}
+\DoxyCodeLine{\Hypertarget{melting__temp_8cpp_source_l00016}00016\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{sequence1}}[\mbox{\hyperlink{constants_8h_a1b8bfc1abb1ba53bcc6c516ddf02ad97}{MAXSLEN}}],\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{sequence2}}[\mbox{\hyperlink{constants_8h_a1b8bfc1abb1ba53bcc6c516ddf02ad97}{MAXSLEN}}];}
+\DoxyCodeLine{\Hypertarget{melting__temp_8cpp_source_l00017}00017\ \ \ \ \ \textcolor{keywordtype}{char}\ structure[2*\mbox{\hyperlink{constants_8h_a1b8bfc1abb1ba53bcc6c516ddf02ad97}{MAXSLEN}}];}
+\DoxyCodeLine{\Hypertarget{melting__temp_8cpp_source_l00018}00018\ \ \ \ \ \textcolor{keywordtype}{double}\ energy;}
+\DoxyCodeLine{\Hypertarget{melting__temp_8cpp_source_l00019}00019\ \ \ \ \ \textcolor{keywordtype}{int}\ i;}
+\DoxyCodeLine{\Hypertarget{melting__temp_8cpp_source_l00020}00020\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{structures}}[\mbox{\hyperlink{constants_8h_a306d2aeba34312506525e9d92f3f608c}{MAXSUBSTR}}][\mbox{\hyperlink{constants_8h_a1b8bfc1abb1ba53bcc6c516ddf02ad97}{MAXSLEN}}];}
+\DoxyCodeLine{\Hypertarget{melting__temp_8cpp_source_l00021}00021\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{energies}}[\mbox{\hyperlink{constants_8h_a306d2aeba34312506525e9d92f3f608c}{MAXSUBSTR}}];\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{melting__temp_8cpp_source_l00022}00022\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{melting__temp_8cpp_source_l00023}00023\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{argc}}\ !=\ 2)}
+\DoxyCodeLine{\Hypertarget{melting__temp_8cpp_source_l00024}00024\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{melting__temp_8cpp_source_l00025}00025\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{printf}}\ (\textcolor{stringliteral}{"{}Usage:\ \%s\ <input\_file>\(\backslash\)n"{}},\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{argv}}[0]);}
+\DoxyCodeLine{\Hypertarget{melting__temp_8cpp_source_l00026}00026\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{printf}}\ (\textcolor{stringliteral}{"{}Example:\ \%s\ owczarzy04.txt\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{melting__temp_8cpp_source_l00027}00027\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{melting__temp_8cpp_source_l00028}00028\ \ \ \ \ \}\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{melting__temp_8cpp_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{melting__temp_8cpp_source_l00030}00030\ \ \ \ \ \textcolor{comment}{//\ Before\ calling\ any\ function\ in\ the\ library,\ you\ have\ to\ initialize\ config\_file,\ dna\_or\_rna,\ temperature}}
+\DoxyCodeLine{\Hypertarget{melting__temp_8cpp_source_l00031}00031\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ and\ to\ call\ the\ function\ init\_data,\ which\ loads\ the\ thermodynamic\ parameters\ into\ memory}}
+\DoxyCodeLine{\Hypertarget{melting__temp_8cpp_source_l00032}00032\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{melting__temp_8cpp_source_l00033}00033\ \ \ \ \ \textcolor{comment}{//\ configuration\ file,\ the\ path\ should\ relative\ to\ the\ location\ of\ this\ executable}}
+\DoxyCodeLine{\Hypertarget{melting__temp_8cpp_source_l00034}00034\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{config\_file}}[200]\ =\ \textcolor{stringliteral}{"{}params/multirnafold.conf"{}};}
+\DoxyCodeLine{\Hypertarget{melting__temp_8cpp_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{melting__temp_8cpp_source_l00036}00036\ \ \ \ \ \textcolor{comment}{//\ what\ to\ fold:\ RNA\ or\ DNA}}
+\DoxyCodeLine{\Hypertarget{melting__temp_8cpp_source_l00037}00037\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{simfold_8cpp_a9202d5b1688659bf6c62dfe6833ca77c}{dna\_or\_rna}}\ =\ \mbox{\hyperlink{constants_8h_a7e1f80c2888e5e4d779d8571e66ae50d}{DNA}};}
+\DoxyCodeLine{\Hypertarget{melting__temp_8cpp_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{melting__temp_8cpp_source_l00039}00039\ \ \ \ \ \textcolor{comment}{//\ temperature:\ any\ integer\ or\ real\ number\ between\ 0\ and\ 100}}
+\DoxyCodeLine{\Hypertarget{melting__temp_8cpp_source_l00040}00040\ \ \ \ \ \textcolor{comment}{//\ represents\ degrees\ Celsius}}
+\DoxyCodeLine{\Hypertarget{melting__temp_8cpp_source_l00041}00041\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{simfold_8cpp_ab4b11c8d9c758430960896bc3fe82ead}{temperature}}\ =\ 37;\ }
+\DoxyCodeLine{\Hypertarget{melting__temp_8cpp_source_l00042}00042\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{melting__temp_8cpp_source_l00043}00043\ \ \ \ \ \textcolor{comment}{//\ initialize\ the\ thermodynamic\ parameters}}
+\DoxyCodeLine{\Hypertarget{melting__temp_8cpp_source_l00044}00044\ \ \ \ \ \textcolor{comment}{//\ call\ init\_data\ only\ once\ for\ the\ same\ dna\_or\_rna\ and\ same\ temperature}}
+\DoxyCodeLine{\Hypertarget{melting__temp_8cpp_source_l00045}00045\ \ \ \ \ \textcolor{comment}{//\ if\ one\ of\ them\ changes,\ call\ init\_data\ again\ \ \ }}
+\DoxyCodeLine{\Hypertarget{melting__temp_8cpp_source_l00046}00046\ \ \ \ \ \mbox{\hyperlink{init_8h_a550dbc06a52605c5de12f99a4b347c57}{init\_data}}\ (\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{argv}}[0],\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{config\_file}},\ \mbox{\hyperlink{simfold_8cpp_a9202d5b1688659bf6c62dfe6833ca77c}{dna\_or\_rna}},\ \mbox{\hyperlink{simfold_8cpp_ab4b11c8d9c758430960896bc3fe82ead}{temperature}});\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{melting__temp_8cpp_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{melting__temp_8cpp_source_l00048}00048\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{melting__temp_8cpp_source_l00049}00049\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{buffer}}[256];\ \textcolor{comment}{//\ read\ each\ line\ from\ file\ in\ buffer\ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{melting__temp_8cpp_source_l00050}00050\ \ \ \ \ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{FILE}}\ *\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{file}};}
+\DoxyCodeLine{\Hypertarget{melting__temp_8cpp_source_l00051}00051\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{tmpstr}}[\mbox{\hyperlink{constants_8h_a1b8bfc1abb1ba53bcc6c516ddf02ad97}{MAXSLEN}}];}
+\DoxyCodeLine{\Hypertarget{melting__temp_8cpp_source_l00052}00052\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{conc}};}
+\DoxyCodeLine{\Hypertarget{melting__temp_8cpp_source_l00053}00053\ \ \ \ \ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{conc}}\ =\ 2\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{e}}-\/6;}
+\DoxyCodeLine{\Hypertarget{melting__temp_8cpp_source_l00054}00054\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{Tm1}},\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{Tm2}};}
+\DoxyCodeLine{\Hypertarget{melting__temp_8cpp_source_l00055}00055\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{melting__temp_8cpp_source_l00056}00056\ \ \ \ \ \textcolor{comment}{//\ open\ file\ and\ check\ if\ operation\ was\ successful}}
+\DoxyCodeLine{\Hypertarget{melting__temp_8cpp_source_l00057}00057\ \ \ \ \ \textcolor{keywordflow}{if}\ (\ (\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{file}}\ =\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{fopen}}\ (\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{argv}}[1],\textcolor{stringliteral}{"{}r"{}}))\ ==\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{NULL}}\ )}
+\DoxyCodeLine{\Hypertarget{melting__temp_8cpp_source_l00058}00058\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{melting__temp_8cpp_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{fprintf}}(\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{stderr}},\textcolor{stringliteral}{"{}Cannot\ open\ file:\ \%s\(\backslash\)n"{}},\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{argv}}[2]);}
+\DoxyCodeLine{\Hypertarget{melting__temp_8cpp_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{exit}}(0);}
+\DoxyCodeLine{\Hypertarget{melting__temp_8cpp_source_l00061}00061\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{melting__temp_8cpp_source_l00062}00062\ \ \ \ \ \textcolor{comment}{//\ if\ file\ was\ opened,\ read\ first\ line}}
+\DoxyCodeLine{\Hypertarget{melting__temp_8cpp_source_l00063}00063\ \ \ \ \ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{fgets}}(\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{buffer}},\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{buffer}}),\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{file}});}
+\DoxyCodeLine{\Hypertarget{melting__temp_8cpp_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{melting__temp_8cpp_source_l00065}00065\ \ \ \ \ \textcolor{comment}{//\ read\ file\ line\ by\ line\ until\ you\ reach\ end\ of\ file}}
+\DoxyCodeLine{\Hypertarget{melting__temp_8cpp_source_l00066}00066\ \ \ \ \ \textcolor{keywordflow}{while}\ (!\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{feof}}(\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{file}}))}
+\DoxyCodeLine{\Hypertarget{melting__temp_8cpp_source_l00067}00067\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{melting__temp_8cpp_source_l00068}00068\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ skip\ comments\ and\ blank\ lines}}
+\DoxyCodeLine{\Hypertarget{melting__temp_8cpp_source_l00069}00069\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{buffer}}[0]\ ==\ \textcolor{charliteral}{'\#'}\ ||\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{buffer}}[0]\ ==\ \textcolor{charliteral}{'\(\backslash\)n'})}
+\DoxyCodeLine{\Hypertarget{melting__temp_8cpp_source_l00070}00070\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{melting__temp_8cpp_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{fgets}}\ (\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{buffer}},\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{buffer}}),\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{file}});}
+\DoxyCodeLine{\Hypertarget{melting__temp_8cpp_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{melting__temp_8cpp_source_l00073}00073\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{melting__temp_8cpp_source_l00074}00074\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{sscanf}}\ (\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{buffer}},\ \textcolor{stringliteral}{"{}\%s"{}},\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{tmpstr}});}
+\DoxyCodeLine{\Hypertarget{melting__temp_8cpp_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{melting__temp_8cpp_source_l00076}00076\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{Tm1}}\ =\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{calc\_Tm\_complementary}}\ (\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{tmpstr}},\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{conc}},\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{conc}},\ 1.0);}
+\DoxyCodeLine{\Hypertarget{melting__temp_8cpp_source_l00077}00077\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{Tm2}}\ =\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{calc\_Tm\_complementary\_with\_entropy\_santalucia\_2004}}\ (\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{tmpstr}},\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{conc}},\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{conc}},\ 1.0);}
+\DoxyCodeLine{\Hypertarget{melting__temp_8cpp_source_l00078}00078\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{printf}}\ (\textcolor{stringliteral}{"{}\%30s\(\backslash\)t\%.2lf\(\backslash\)t\%.2lf\(\backslash\)n"{}},\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{tmpstr}},\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{Tm1}},\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{Tm2}});}
+\DoxyCodeLine{\Hypertarget{melting__temp_8cpp_source_l00079}00079\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{fgets}}\ (\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{buffer}},\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{buffer}}),\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{file}});}
+\DoxyCodeLine{\Hypertarget{melting__temp_8cpp_source_l00080}00080\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{melting__temp_8cpp_source_l00081}00081\ \ \ \ \ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{fclose}}\ (\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{file}});\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{melting__temp_8cpp_source_l00082}00082\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{melting__temp_8cpp_source_l00083}00083\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{melting__temp_8cpp_source_l00084}00084\ \}}
+\DoxyCodeLine{\Hypertarget{melting__temp_8cpp_source_l00085}00085\ }
+\DoxyCodeLine{\Hypertarget{melting__temp_8cpp_source_l00086}00086\ }
+\DoxyCodeLine{\Hypertarget{melting__temp_8cpp_source_l00087}00087\ \ }
+
+\end{DoxyCode}

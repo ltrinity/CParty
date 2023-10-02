@@ -1,0 +1,169 @@
+\doxysection{pseudo\+\_\+loop.\+h}
+\hypertarget{pseudo__loop_8h_source}{}\label{pseudo__loop_8h_source}\index{C:/Users/luket/Desktop/testing\_CParty/CParty/pseudo\_loop.h@{C:/Users/luket/Desktop/testing\_CParty/CParty/pseudo\_loop.h}}
+\mbox{\hyperlink{pseudo__loop_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00001}00001\ \textcolor{preprocessor}{\#ifndef\ PSEUDO\_LOOP\_H\_}}
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00002}00002\ \textcolor{preprocessor}{\#define\ PSEUDO\_LOOP\_H\_}}
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <string.h>}}
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{h__struct_8h}{h\_struct.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00006}00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{h__common_8h}{h\_common.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00007}00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_v__final_8h}{V\_final.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00008}00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_v_m__final_8h}{VM\_final.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00010}00010\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_v_m__final}{VM\_final}};}
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00011}00011\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_v__final}{V\_final}};}
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00012}\mbox{\hyperlink{classpseudo__loop}{00012}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classpseudo__loop}{pseudo\_loop}}\{}
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00014}00014\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00015}00015\ \ \ \ \ \textcolor{comment}{//\ constructor}}
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00016}00016\ \ \ \ \ \mbox{\hyperlink{classpseudo__loop}{pseudo\_loop}}(\textcolor{keywordtype}{char}\ *seq,\ \textcolor{keywordtype}{char}*\ restricted,\ \mbox{\hyperlink{class_v__final}{V\_final}}\ *V,\ \mbox{\hyperlink{classs__hairpin__loop}{s\_hairpin\_loop}}\ *H,\ \mbox{\hyperlink{classs__stacked__pair}{s\_stacked\_pair}}\ *S,\ \mbox{\hyperlink{classs__internal__loop}{s\_internal\_loop}}\ *VBI,\ \mbox{\hyperlink{class_v_m__final}{VM\_final}}\ *VM);}
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00018}00018\ \ \ \ \ \textcolor{comment}{//\ destructor}}
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00019}00019\ \ \ \ \ \mbox{\hyperlink{classpseudo__loop_ab930a914d9810139bd56b75d371a0624}{\string~pseudo\_loop}}();}
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00022}00022\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classpseudo__loop_a02ac8103b8616e8b945f404ce237f27b}{set\_features}}(\mbox{\hyperlink{structh__str__features}{h\_str\_features}}\ *f);}
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00023}00023\ \ \ \ \ \textcolor{comment}{//\ changed\ the\ code\ and\ added\ the\ initialized\ function}}
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00024}00024\ \ \ \ \ \textcolor{comment}{//\ such\ that\ I\ can\ call\ WMB\ right\ after\ V}}
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00025}00025\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classpseudo__loop_a35b59052fe82c83a23b335feef899886}{initialize}}();}
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00026}00026\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classpseudo__loop_ac088af56832d7f5accf2745c0110b805}{compute\_energies}}(\textcolor{keywordtype}{int}\ i,\ \textcolor{keywordtype}{int}\ j);}
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00028}00028\ \ \ \ \ \mbox{\hyperlink{constants_8h_adf823d40ac379702030cb342e84d5f2e}{pf\_t}}\ \mbox{\hyperlink{classpseudo__loop_a6aff3e370e0de9dbfc403dedb202cac1}{get\_energy}}(\textcolor{keywordtype}{int}\ i,\ \textcolor{keywordtype}{int}\ j);}
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00029}00029\ \ \ \ \ \textcolor{comment}{//\ in\ order\ to\ be\ able\ to\ check\ the\ border\ values\ consistantly}}
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00030}00030\ \ \ \ \ \textcolor{comment}{//\ I\ am\ adding\ these\ get\ functions}}
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00031}00031\ \ \ \ \ \mbox{\hyperlink{constants_8h_adf823d40ac379702030cb342e84d5f2e}{pf\_t}}\ \mbox{\hyperlink{classpseudo__loop_a75e539c2fbde8212c0c31ff2e34383e8}{get\_WI}}(\textcolor{keywordtype}{int}\ i,\ \textcolor{keywordtype}{int}\ j);}
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00032}00032\ \ \ \ \ \textcolor{comment}{//\ Hosna,\ May\ 1st,\ 2012}}
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00033}00033\ \ \ \ \ \textcolor{comment}{//\ I\ don't\ think\ we\ need\ specific\ getter\ function\ for\ pkonly\ case}}
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00034}00034\ \ \ \ \ \textcolor{comment}{//int\ get\_WI\_pkonly(int\ i,\ int\ j);\ //\ April\ 3,\ 2012}}
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00036}00036\ \ \ \ \ \mbox{\hyperlink{constants_8h_adf823d40ac379702030cb342e84d5f2e}{pf\_t}}\ \mbox{\hyperlink{classpseudo__loop_a720b0a0fd5d23d81a3f5962fea75df95}{get\_VP}}(\textcolor{keywordtype}{int}\ i,\ \textcolor{keywordtype}{int}\ j);}
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00037}00037\ \ \ \ \ \mbox{\hyperlink{constants_8h_adf823d40ac379702030cb342e84d5f2e}{pf\_t}}\ \mbox{\hyperlink{classpseudo__loop_a4a77ef59e441b2e9000d706b7015fdbc}{get\_WMB}}(\textcolor{keywordtype}{int}\ i,\ \textcolor{keywordtype}{int}\ j);}
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00038}00038\ \ \ \ \ \mbox{\hyperlink{constants_8h_adf823d40ac379702030cb342e84d5f2e}{pf\_t}}\ \mbox{\hyperlink{classpseudo__loop_a596fc43af51becc32268522245f1013b}{get\_BE}}(\textcolor{keywordtype}{int}\ i,\ \textcolor{keywordtype}{int}\ j,\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{ip}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{jp}});}
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00039}00039\ \ \ \ \ \mbox{\hyperlink{constants_8h_adf823d40ac379702030cb342e84d5f2e}{pf\_t}}\ \mbox{\hyperlink{classpseudo__loop_a1c2cdb819e496f735d3828723bcb7c8c}{get\_WIP}}(\textcolor{keywordtype}{int}\ i,\ \textcolor{keywordtype}{int}\ j);}
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00040}00040\ \ \ \ \ \textcolor{comment}{//\ Hosna,\ May\ 1st,\ 2012}}
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00041}00041\ \ \ \ \ \textcolor{comment}{//\ I\ don't\ think\ we\ need\ specific\ getter\ function\ for\ pkonly\ case}}
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00042}00042\ \ \ \ \ \textcolor{comment}{//int\ get\_WIP\_pkonly(int\ i,\ int\ j);\ //\ April\ 3,\ 2012}}
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00045}00045\ \ \ \ \ \textcolor{comment}{//Luke\ Aug\ 2023}}
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00046}00046\ \ \ \ \ \mbox{\hyperlink{constants_8h_adf823d40ac379702030cb342e84d5f2e}{pf\_t}}\ \mbox{\hyperlink{classpseudo__loop_ac1a5556afa4b42a5d0b80f58ff9d295d}{get\_VPR}}(\textcolor{keywordtype}{int}\ i,\ \textcolor{keywordtype}{int}\ j);}
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00047}00047\ \ \ \ \ \mbox{\hyperlink{constants_8h_adf823d40ac379702030cb342e84d5f2e}{pf\_t}}\ \mbox{\hyperlink{classpseudo__loop_ae9e89a19e8c13c07adfb7cf50ff42e41}{get\_VPL}}(\textcolor{keywordtype}{int}\ i,\ \textcolor{keywordtype}{int}\ j);}
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00049}00049\ \ \ \ \ \textcolor{comment}{//\ based\ on\ discussion\ with\ Anne,\ we\ changed\ WMB\ to\ case\ 2\ and\ WMBP(containing\ the\ rest\ of\ the\ recurrences)}}
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00050}00050\ \ \ \ \ \mbox{\hyperlink{constants_8h_adf823d40ac379702030cb342e84d5f2e}{pf\_t}}\ \mbox{\hyperlink{classpseudo__loop_af7b02378c32ebe7aafaa3768b63c854a}{get\_WMBP}}(\textcolor{keywordtype}{int}\ i,\ \textcolor{keywordtype}{int}\ j);}
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00051}00051\ \ \ \ \ \textcolor{comment}{//\ Luke\ adding\ for\ PGPW}}
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00052}00052\ \ \ \ \ \mbox{\hyperlink{constants_8h_adf823d40ac379702030cb342e84d5f2e}{pf\_t}}\ \mbox{\hyperlink{classpseudo__loop_a5ee2782d64281d18cf487ee8047f6438}{get\_PGPW}}(\textcolor{keywordtype}{int}\ i,\ \textcolor{keywordtype}{int}\ j);}
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00054}00054\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classpseudo__loop_ac1df80ab6645a8851e9fb3e6909737a5}{is\_weakly\_closed}}(\textcolor{keywordtype}{int}\ i,\ \textcolor{keywordtype}{int}\ j);}
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00055}00055\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classpseudo__loop_a1694b876c1b29584cf3cb9ba3ee804c4}{is\_empty\_region}}(\textcolor{keywordtype}{int}\ i,\ \textcolor{keywordtype}{int}\ j);}
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00058}00058\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classpseudo__loop_a08ac2a8914d191598e43ecfaef8ec8db}{set\_stack\_interval}}(\mbox{\hyperlink{structseq__interval}{seq\_interval}}\ *stack\_interval);}
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00059}\mbox{\hyperlink{classpseudo__loop_a783849dd89539f33b3767ef209d643df}{00059}}\ \ \ \ \ \mbox{\hyperlink{structseq__interval}{seq\_interval}}\ *\mbox{\hyperlink{classpseudo__loop_a783849dd89539f33b3767ef209d643df}{get\_stack\_interval}}()\{\textcolor{keywordflow}{return}\ stack\_interval;\}}
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00060}\mbox{\hyperlink{classpseudo__loop_a6175b447523c76768bfa12f440300faa}{00060}}\ \ \ \ \ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{classpseudo__loop_a6175b447523c76768bfa12f440300faa}{get\_structure}}()\{\textcolor{keywordflow}{return}\ structure;\}}
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00061}\mbox{\hyperlink{classpseudo__loop_ab04eb3546140b6d0243b445cde06db5f}{00061}}\ \ \ \ \ \mbox{\hyperlink{structminimum__fold}{minimum\_fold}}\ *\mbox{\hyperlink{classpseudo__loop_ab04eb3546140b6d0243b445cde06db5f}{get\_minimum\_fold}}()\{\textcolor{keywordflow}{return}\ f;\}}
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00063}00063\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00065}00065\ \ \ \ \ \textcolor{keywordtype}{int}\ nb\_nucleotides;}
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00066}00066\ \ \ \ \ \textcolor{keywordtype}{int}\ *int\_sequence;}
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00067}00067\ \ \ \ \ \textcolor{keywordtype}{char}\ *sequence;}
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00068}00068\ \ \ \ \ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{simfold_8cpp_acc011911591feaa0e5e5ac5889ee9a26}{restricted}};}
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00070}00070\ \ \ \ \ \mbox{\hyperlink{classs__hairpin__loop}{s\_hairpin\_loop}}\ *H;\ \ \ \ \ \ \textcolor{comment}{//\ hairpin\ loop\ object}}
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00071}00071\ \ \ \ \ \mbox{\hyperlink{classs__stacked__pair}{s\_stacked\_pair}}\ *S;\ \ \ \ \ \ \textcolor{comment}{//\ stack\ pair\ object}}
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00072}00072\ \ \ \ \ \mbox{\hyperlink{classs__internal__loop}{s\_internal\_loop}}\ *VBI;\ \ \ \textcolor{comment}{//\ internal\ loop\ object}}
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00073}00073\ \ \ \ \ \mbox{\hyperlink{class_v_m__final}{VM\_final}}\ *VM;\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ multi\ loop\ object}}
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00074}00074\ \ \ \ \ \mbox{\hyperlink{class_v__final}{V\_final}}\ *V;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ the\ V\ object}}
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00076}00076\ \ \ \ \ \mbox{\hyperlink{structh__str__features}{h\_str\_features}}\ *fres;}
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00077}00077\ \ \ \ \ \mbox{\hyperlink{structseq__interval}{seq\_interval}}\ *stack\_interval;}
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00078}00078\ \ \ \ \ \textcolor{keywordtype}{char}\ *structure;}
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00079}00079\ \ \ \ \ \mbox{\hyperlink{structminimum__fold}{minimum\_fold}}\ *f;}
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00080}00080\ }
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00081}00081\ \ \ \ \ \textcolor{keywordtype}{int}\ needs\_computation;\ \textcolor{comment}{//\ This\ global\ variable\ is\ used\ so\ that\ we\ don't\ compute\ energies\ in\ backtracking}}
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00082}00082\ }
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00083}00083\ \ \ \ \ \textcolor{comment}{//Hosna}}
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00084}00084\ \ \ \ \ \mbox{\hyperlink{constants_8h_adf823d40ac379702030cb342e84d5f2e}{pf\_t}}\ *WI;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ the\ loop\ inside\ a\ pseudoknot\ (in\ general\ it\ looks\ like\ a\ W\ but\ is\ inside\ a\ pseudoknot)}}
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00085}00085\ \ \ \ \ \mbox{\hyperlink{constants_8h_adf823d40ac379702030cb342e84d5f2e}{pf\_t}}\ *VP;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ the\ loop\ corresponding\ to\ the\ pseudoknotted\ region\ of\ WMB}}
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00086}00086\ \ \ \ \ \mbox{\hyperlink{constants_8h_adf823d40ac379702030cb342e84d5f2e}{pf\_t}}\ *WMB;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ the\ main\ loop\ for\ pseudoloops\ and\ bands}}
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00087}00087\ \ \ \ \ \textcolor{keywordtype}{int}\ *weakly\_closed;\ \ \ \ \ \textcolor{comment}{//\ the\ array\ which\ is\ keeping\ track\ of\ which\ regions\ are\ weakly\ closed}}
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00088}00088\ \ \ \ \ \textcolor{keywordtype}{int}\ *not\_paired\_all;\ \ \ \ \textcolor{comment}{//\ the\ array\ which\ keeps\ track\ of\ empty\ regions}}
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00089}00089\ \ \ \ \ \textcolor{keywordtype}{int}\ *index;\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ the\ array\ to\ keep\ the\ index\ of\ two\ dimensional\ arrays\ like\ WI\ and\ weakly\_closed}}
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00090}00090\ \ \ \ \ \textcolor{keywordtype}{int}\ **border\_bs;\ \ \ \ \ \ \ \ \textcolor{comment}{//\ keeps\ track\ of\ border\_b\ and\ border\_B}}
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00091}00091\ \ \ \ \ \textcolor{keywordtype}{int}\ **border\_bps;\ \ \ \ \ \ \ \textcolor{comment}{//\ keeps\ track\ of\ border\_bp\ and\ border\_Bp}}
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00092}00092\ \ \ \ \ \mbox{\hyperlink{constants_8h_adf823d40ac379702030cb342e84d5f2e}{pf\_t}}\ *WIP;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ the\ loop\ corresponding\ to\ WI'}}
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00093}00093\ \ \ \ \ \textcolor{comment}{//Luke\ Aug\ 2023}}
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00094}00094\ \ \ \ \ \mbox{\hyperlink{constants_8h_adf823d40ac379702030cb342e84d5f2e}{pf\_t}}\ *VPR;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ the\ loop\ corresponding\ to\ VPR}}
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00095}00095\ \ \ \ \ \mbox{\hyperlink{constants_8h_adf823d40ac379702030cb342e84d5f2e}{pf\_t}}\ *VPL;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ the\ loop\ corresponding\ to\ VPL}}
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00096}00096\ \ \ \ \ \mbox{\hyperlink{constants_8h_adf823d40ac379702030cb342e84d5f2e}{pf\_t}}\ *BE;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ the\ loop\ corresponding\ to\ BE}}
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00097}00097\ }
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00098}00098\ \ \ \ \ \textcolor{comment}{//\ Hosna,\ April\ 18th,\ 2007}}
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00099}00099\ \ \ \ \ \textcolor{comment}{//\ based\ on\ discussion\ with\ Anne,\ we\ changed\ WMB\ to\ case\ 2\ and\ WMBP(containing\ the\ rest\ of\ the\ recurrences)}}
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00100}00100\ \ \ \ \ \mbox{\hyperlink{constants_8h_adf823d40ac379702030cb342e84d5f2e}{pf\_t}}\ *WMBP;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ the\ main\ loop\ to\ calculate\ WMB}}
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00101}00101\ \ \ \ \ \textcolor{comment}{//\ Luke\ adding}}
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00102}00102\ \ \ \ \ \mbox{\hyperlink{constants_8h_adf823d40ac379702030cb342e84d5f2e}{pf\_t}}\ *PGPW;}
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00103}00103\ }
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00104}00104\ \ \ \ \ \textcolor{comment}{//\ function\ to\ allocate\ space\ for\ the\ arrays}}
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00105}00105\ \ \ \ \ \textcolor{keywordtype}{void}\ allocate\_space();}
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00106}00106\ }
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00107}00107\ \ \ \ \ \textcolor{keywordtype}{void}\ compute\_WI(\textcolor{keywordtype}{int}\ i,\ \textcolor{keywordtype}{int}\ j,\ \mbox{\hyperlink{structh__str__features}{h\_str\_features}}\ *fres);}
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00108}00108\ \ \ \ \ \textcolor{comment}{//\ Hosna:\ This\ function\ is\ supposed\ to\ fill\ in\ the\ WI\ array}}
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00109}00109\ }
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00110}00110\ \ \ \ \ \textcolor{keywordtype}{void}\ compute\_WI\_pkonly(\textcolor{keywordtype}{int}\ i,\ \textcolor{keywordtype}{int}\ j,\ \mbox{\hyperlink{structh__str__features}{h\_str\_features}}\ *fres);}
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00111}00111\ \ \ \ \ \textcolor{comment}{//\ April\ 3,\ 2012}}
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00112}00112\ \ \ \ \ \textcolor{comment}{//\ Hosna:\ This\ function\ is\ supposed\ to\ fill\ in\ the\ WI\ array\ with\ pk\ only\ base\ pairs}}
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00113}00113\ }
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00114}00114\ \ \ \ \ \textcolor{keywordtype}{void}\ compute\_VP(\textcolor{keywordtype}{int}\ i,\ \textcolor{keywordtype}{int}\ j,\ \mbox{\hyperlink{structh__str__features}{h\_str\_features}}\ *fres);}
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00115}00115\ \ \ \ \ \textcolor{comment}{//\ Hosna:\ this\ function\ is\ supposed\ to\ fill\ the\ VP\ array}}
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00116}00116\ }
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00117}00117\ \ \ \ \ \textcolor{keywordtype}{void}\ compute\_WMB(\textcolor{keywordtype}{int}\ i,\ \textcolor{keywordtype}{int}\ j,\ \mbox{\hyperlink{structh__str__features}{h\_str\_features}}\ *fres);}
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00118}00118\ \ \ \ \ \textcolor{comment}{//\ Hosna:\ this\ function\ is\ supposed\ to\ fill\ the\ WMB\ array}}
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00119}00119\ }
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00120}00120\ \ \ \ \ \textcolor{comment}{//\ based\ on\ discussion\ with\ Anne,\ we\ changed\ WMB\ to\ case\ 2\ and\ WMBP(containing\ the\ rest\ of\ the\ recurrences)}}
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00121}00121\ \ \ \ \ \textcolor{keywordtype}{void}\ compute\_WMBP(\textcolor{keywordtype}{int}\ i,\ \textcolor{keywordtype}{int}\ j,\ \mbox{\hyperlink{structh__str__features}{h\_str\_features}}\ *fres);}
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00122}00122\ \ \ \ \ \textcolor{comment}{//\ this\ is\ the\ helper\ recurrence\ to\ fill\ the\ WMB\ array}}
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00123}00123\ }
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00124}00124\ \ \ \ \ \textcolor{comment}{//\ Luke\ adding}}
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00125}00125\ \ \ \ \ \textcolor{keywordtype}{void}\ compute\_PGPW(\textcolor{keywordtype}{int}\ i,\ \textcolor{keywordtype}{int}\ j,\ \mbox{\hyperlink{structh__str__features}{h\_str\_features}}\ *fres);}
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00126}00126\ \ \ \ \ \textcolor{comment}{//\ this\ is\ the\ helper\ HELPER\ recurrence\ to\ fill\ the\ WMB\ array}}
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00127}00127\ }
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00128}00128\ \ \ \ \ \textcolor{keywordtype}{void}\ compute\_BE(\textcolor{keywordtype}{int}\ i,\ \textcolor{keywordtype}{int}\ j,\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{ip}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{jp}},\ \mbox{\hyperlink{structh__str__features}{h\_str\_features}}\ *fres);}
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00129}00129\ \ \ \ \ \textcolor{comment}{//\ Hosna:\ this\ function\ is\ supposed\ to\ fill\ the\ BE\ array}}
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00130}00130\ }
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00131}00131\ \ \ \ \ \textcolor{keywordtype}{void}\ compute\_WIP(\textcolor{keywordtype}{int}\ i,\ \textcolor{keywordtype}{int}\ j,\ \mbox{\hyperlink{structh__str__features}{h\_str\_features}}\ *fres);}
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00132}00132\ \ \ \ \ \textcolor{comment}{//\ Hosna:\ this\ function\ is\ supposed\ to\ fill\ the\ WIP\ array}}
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00133}00133\ }
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00134}00134\ \ \ \ \ \textcolor{keywordtype}{void}\ compute\_WIP\_pkonly(\textcolor{keywordtype}{int}\ i,\ \textcolor{keywordtype}{int}\ j,\ \mbox{\hyperlink{structh__str__features}{h\_str\_features}}\ *fres);}
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00135}00135\ \ \ \ \ \textcolor{comment}{//\ April\ 3,\ 2012}}
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00136}00136\ \ \ \ \ \textcolor{comment}{//\ Hosna:\ this\ function\ is\ supposed\ to\ fill\ the\ WIP\ array\ with\ pk\ only\ base\ pairs}}
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00137}00137\ }
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00138}00138\ }
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00139}00139\ \ \ \ \ \textcolor{keywordtype}{void}\ compute\_VPR(\textcolor{keywordtype}{int}\ i,\ \textcolor{keywordtype}{int}\ j,\ \mbox{\hyperlink{structh__str__features}{h\_str\_features}}\ *fres);}
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00140}00140\ \ \ \ \ \textcolor{comment}{//\ Luke:\ this\ function\ is\ supposed\ to\ fill\ the\ VPR\ array}}
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00141}00141\ }
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00142}00142\ \ \ \ \ \textcolor{keywordtype}{void}\ compute\_VPL(\textcolor{keywordtype}{int}\ i,\ \textcolor{keywordtype}{int}\ j,\ \mbox{\hyperlink{structh__str__features}{h\_str\_features}}\ *fres);}
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00143}00143\ \ \ \ \ \textcolor{comment}{//\ Luke:\ this\ function\ is\ supposed\ to\ fill\ the\ VPL\ array}}
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00144}00144\ }
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00145}00145\ \ \ \ \ \textcolor{comment}{//\ Hosna\ Feb\ 8th,\ 2007:}}
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00146}00146\ \ \ \ \ \textcolor{comment}{//\ To\ get\ the\ band\ borders\ easily}}
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00147}00147\ \ \ \ \ \textcolor{comment}{//\ I\ am\ adding\ the\ following\ functions}}
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00148}00148\ \ \ \ \ \textcolor{keywordtype}{int}\ get\_b(\textcolor{keywordtype}{int}\ i,\textcolor{keywordtype}{int}\ j);}
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00149}00149\ \ \ \ \ \textcolor{keywordtype}{int}\ get\_bp(\textcolor{keywordtype}{int}\ i,\textcolor{keywordtype}{int}\ j);}
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00150}00150\ \ \ \ \ \textcolor{keywordtype}{int}\ get\_B(\textcolor{keywordtype}{int}\ i,\textcolor{keywordtype}{int}\ j);}
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00151}00151\ \ \ \ \ \textcolor{keywordtype}{int}\ get\_Bp(\textcolor{keywordtype}{int}\ i,\textcolor{keywordtype}{int}\ j);}
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00152}00152\ }
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00153}00153\ \ \ \ \ \textcolor{comment}{//\ Hosna\ Feb\ 8th,\ 2007:}}
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00154}00154\ \ \ \ \ \textcolor{comment}{//\ I\ have\ to\ calculate\ the\ e\_stP\ in\ a\ separate\ function}}
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00155}00155\ \ \ \ \ \mbox{\hyperlink{constants_8h_adf823d40ac379702030cb342e84d5f2e}{pf\_t}}\ get\_e\_stP(\textcolor{keywordtype}{int}\ i,\ \textcolor{keywordtype}{int}\ j);}
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00156}00156\ \ \ \ \ \mbox{\hyperlink{constants_8h_adf823d40ac379702030cb342e84d5f2e}{pf\_t}}\ get\_e\_intP(\textcolor{keywordtype}{int}\ i,\textcolor{keywordtype}{int}\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{ip}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{jp}},\ \textcolor{keywordtype}{int}\ j);}
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00157}00157\ }
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00158}00158\ \ \ \ \ \textcolor{comment}{//\ Hosna:\ Feb\ 19th\ 2007}}
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00159}00159\ \ \ \ \ \textcolor{comment}{//\ used\ for\ backtracking}}
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00160}00160\ \ \ \ \ \textcolor{keywordtype}{void}\ insert\_node\ (\textcolor{keywordtype}{int}\ i,\ \textcolor{keywordtype}{int}\ j,\ \textcolor{keywordtype}{char}\ type);\textcolor{comment}{//,\ seq\_interval\ *stack\_interval);}}
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00161}00161\ }
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00162}00162\ \};}
+\DoxyCodeLine{\Hypertarget{pseudo__loop_8h_source_l00163}00163\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*PSEUDO\_LOOP\_H\_*/}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

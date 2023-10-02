@@ -1,0 +1,33 @@
+\doxysection{hfold\+\_\+validation.\+h}
+\hypertarget{hfold__validation_8h_source}{}\label{hfold__validation_8h_source}\index{C:/Users/luket/Desktop/testing\_CParty/CParty/hfold\_validation.h@{C:/Users/luket/Desktop/testing\_CParty/CParty/hfold\_validation.h}}
+\mbox{\hyperlink{hfold__validation_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{hfold__validation_8h_source_l00001}00001\ \textcolor{comment}{//created\ by\ Kevin\ Chang\ 19\ June\ 2017}}
+\DoxyCodeLine{\Hypertarget{hfold__validation_8h_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{hfold__validation_8h_source_l00003}00003\ \textcolor{comment}{//change\ filename.txt\ to\ filename\_timestamp.txt}}
+\DoxyCodeLine{\Hypertarget{hfold__validation_8h_source_l00004}00004\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{hfold__validation_8h_ae8a117a2dcbeb6258213f4540b4020f5}{addTimestamp}}(\textcolor{keywordtype}{char}**\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{path}});}
+\DoxyCodeLine{\Hypertarget{hfold__validation_8h_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{hfold__validation_8h_source_l00006}00006\ \textcolor{comment}{//check\ if\ sequence\ is\ valid\ with\ regular\ expression}}
+\DoxyCodeLine{\Hypertarget{hfold__validation_8h_source_l00007}00007\ \textcolor{comment}{//check\ length\ and\ if\ any\ characters\ other\ than\ GCAUT}}
+\DoxyCodeLine{\Hypertarget{hfold__validation_8h_source_l00008}00008\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{hfold__validation_8h_a1b2cd8e9e6eb9be82431efc7edbe1a2e}{validateSequence}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\textcolor{keywordtype}{string});}
+\DoxyCodeLine{\Hypertarget{hfold__validation_8h_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{hfold__validation_8h_source_l00010}00010\ \textcolor{comment}{//check\ if\ structure\ is\ valid}}
+\DoxyCodeLine{\Hypertarget{hfold__validation_8h_source_l00011}00011\ \textcolor{comment}{//check\ if\ length\ match\ with\ sequence}}
+\DoxyCodeLine{\Hypertarget{hfold__validation_8h_source_l00012}00012\ \textcolor{comment}{//check\ if\ any\ characters\ other\ than\ .\_()\{\}[]}}
+\DoxyCodeLine{\Hypertarget{hfold__validation_8h_source_l00013}00013\ \textcolor{comment}{//check\ if\ pk-\/free}}
+\DoxyCodeLine{\Hypertarget{hfold__validation_8h_source_l00014}00014\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{hfold__validation_8h_a29e7d192394f27e55948467537688793}{validateStructure}}(\textcolor{keywordtype}{char}*\ structure,\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{simfold_8cpp_aab0fa4fa34b613e3a6b4f0e87d1c073b}{sequence}});}
+\DoxyCodeLine{\Hypertarget{hfold__validation_8h_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{hfold__validation_8h_source_l00016}00016\ \textcolor{comment}{//change\ all\ \{\}\ []\ to\ ()\ in\ structure}}
+\DoxyCodeLine{\Hypertarget{hfold__validation_8h_source_l00017}00017\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{hfold__validation_8h_af39bbad0592ce8c2c1449d2d04a97c40}{replaceBrackets}}(\textcolor{keywordtype}{char}*\ structure);}
+\DoxyCodeLine{\Hypertarget{hfold__validation_8h_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{hfold__validation_8h_source_l00019}00019\ \textcolor{comment}{//if\ output\_path\ is\ not\ a\ path\ -\/>\ take\ base\ path\ of\ input\ file\ path\ (if\ exist)\ and\ concat\ with\ output\_path}}
+\DoxyCodeLine{\Hypertarget{hfold__validation_8h_source_l00020}00020\ \textcolor{comment}{//if\ output\_path\ is\ a\ path\ -\/>\ do\ nothing}}
+\DoxyCodeLine{\Hypertarget{hfold__validation_8h_source_l00021}00021\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{hfold__validation_8h_a3f7585afa01b4bc7b3a31a7385abadcf}{addPath}}(\textcolor{keywordtype}{char}**\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{output\_path}},\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{input\_path}});}
+\DoxyCodeLine{\Hypertarget{hfold__validation_8h_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{hfold__validation_8h_source_l00023}00023\ \textcolor{comment}{//check\ if\ input\ file\ is\ in\ correct\ format\ and\ store\ value\ into\ corresponding\ variable}}
+\DoxyCodeLine{\Hypertarget{hfold__validation_8h_source_l00024}00024\ \textcolor{comment}{//return\ true\ on\ success,\ false\ on\ fail}}
+\DoxyCodeLine{\Hypertarget{hfold__validation_8h_source_l00025}00025\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{hfold__validation_8h_a2e47d3c1ffb72903980366700d71f9b5}{validateInteractingInputFile}}(\textcolor{keywordtype}{char}*\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{path}},\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{seq1}},\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{struc1}},\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{seq2}},\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{struc2}});}
+\DoxyCodeLine{\Hypertarget{hfold__validation_8h_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{hfold__validation_8h_source_l00027}00027\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{hfold__validation_8h_ab3052e31450bfd3b931df3bbd2e3b9c9}{validateHFOLDInputFile}}(\textcolor{keywordtype}{char}*\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{path}},\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{seq1}},\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{struc1}});}
+
+\end{DoxyCode}

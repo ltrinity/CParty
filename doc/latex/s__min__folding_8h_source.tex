@@ -1,0 +1,117 @@
+\doxysection{s\+\_\+min\+\_\+folding.\+h}
+\hypertarget{s__min__folding_8h_source}{}\label{s__min__folding_8h_source}\index{C:/Users/luket/Desktop/testing\_CParty/CParty/simfold/src/simfold/s\_min\_folding.h@{C:/Users/luket/Desktop/testing\_CParty/CParty/simfold/src/simfold/s\_min\_folding.h}}
+\mbox{\hyperlink{s__min__folding_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{s__min__folding_8h_source_l00001}00001\ \textcolor{comment}{/***************************************************************************}}
+\DoxyCodeLine{\Hypertarget{s__min__folding_8h_source_l00002}00002\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ s\_min\_folding.cpp\ \ -\/\ \ description}}
+\DoxyCodeLine{\Hypertarget{s__min__folding_8h_source_l00003}00003\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{s__min__folding_8h_source_l00004}00004\ \textcolor{comment}{\ \ \ \ begin\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ Thu\ Apr\ 11\ 2002}}
+\DoxyCodeLine{\Hypertarget{s__min__folding_8h_source_l00005}00005\ \textcolor{comment}{\ \ \ \ copyright\ \ \ \ \ \ \ \ \ \ \ \ :\ (C)\ 2002\ by\ Mirela\ Andronescu}}
+\DoxyCodeLine{\Hypertarget{s__min__folding_8h_source_l00006}00006\ \textcolor{comment}{\ \ \ \ email\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ andrones@cs.ubc.ca}}
+\DoxyCodeLine{\Hypertarget{s__min__folding_8h_source_l00007}00007\ \textcolor{comment}{\ ***************************************************************************/}}
+\DoxyCodeLine{\Hypertarget{s__min__folding_8h_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{s__min__folding_8h_source_l00009}00009\ \textcolor{comment}{/***************************************************************************}}
+\DoxyCodeLine{\Hypertarget{s__min__folding_8h_source_l00010}00010\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{s__min__folding_8h_source_l00011}00011\ \textcolor{comment}{\ *\ \ \ This\ program\ is\ free\ software;\ you\ can\ redistribute\ it\ and/or\ modify\ \ *}}
+\DoxyCodeLine{\Hypertarget{s__min__folding_8h_source_l00012}00012\ \textcolor{comment}{\ *\ \ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by\ \ *}}
+\DoxyCodeLine{\Hypertarget{s__min__folding_8h_source_l00013}00013\ \textcolor{comment}{\ *\ \ \ the\ Free\ Software\ Foundation;\ either\ version\ 2\ of\ the\ License,\ or\ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{s__min__folding_8h_source_l00014}00014\ \textcolor{comment}{\ *\ \ \ (at\ your\ option)\ any\ later\ version.\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{s__min__folding_8h_source_l00015}00015\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{s__min__folding_8h_source_l00016}00016\ \textcolor{comment}{\ ***************************************************************************/}}
+\DoxyCodeLine{\Hypertarget{s__min__folding_8h_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{s__min__folding_8h_source_l00018}00018\ \textcolor{comment}{//\ This\ class\ is\ the\ main\ class\ to\ compute\ the\ MFE\ prediction}}
+\DoxyCodeLine{\Hypertarget{s__min__folding_8h_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{s__min__folding_8h_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{s__min__folding_8h_source_l00021}00021\ \textcolor{preprocessor}{\#ifndef\ S\_MIN\_FOLDING\_H}}
+\DoxyCodeLine{\Hypertarget{s__min__folding_8h_source_l00022}00022\ \textcolor{preprocessor}{\#define\ S\_MIN\_FOLDING\_H}}
+\DoxyCodeLine{\Hypertarget{s__min__folding_8h_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{s__min__folding_8h_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{s__min__folding_8h_source_l00025}00025\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{\Hypertarget{s__min__folding_8h_source_l00026}00026\ \textcolor{preprocessor}{\#include\ <string.h>}}
+\DoxyCodeLine{\Hypertarget{s__min__folding_8h_source_l00027}00027\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{structs_8h}{structs.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{s__min__folding_8h_source_l00028}00028\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{s__energy__matrix_8h}{s\_energy\_matrix.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{s__min__folding_8h_source_l00029}00029\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{s__multi__loop_8h}{s\_multi\_loop.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{s__min__folding_8h_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{s__min__folding_8h_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{s__min__folding_8h_source_l00032}\mbox{\hyperlink{classs__min__folding}{00032}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classs__min__folding}{s\_min\_folding}}}
+\DoxyCodeLine{\Hypertarget{s__min__folding_8h_source_l00033}00033\ \{}
+\DoxyCodeLine{\Hypertarget{s__min__folding_8h_source_l00034}00034\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{s__min__folding_8h_source_l00035}00035\ \ \ }
+\DoxyCodeLine{\Hypertarget{s__min__folding_8h_source_l00036}00036\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classs__min__folding}{s\_min\_folding}}\ (\textcolor{keywordtype}{char}\ *seq);}
+\DoxyCodeLine{\Hypertarget{s__min__folding_8h_source_l00037}00037\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ constructor\ for\ the\ unrestricted\ mfe\ case\ }}
+\DoxyCodeLine{\Hypertarget{s__min__folding_8h_source_l00038}00038\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{s__min__folding_8h_source_l00039}00039\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classs__min__folding}{s\_min\_folding}}\ (\textcolor{keywordtype}{char}\ *seq,\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{classs__min__folding_af7911102d9682d1a5f111c27d505fbd2}{restricted}});}
+\DoxyCodeLine{\Hypertarget{s__min__folding_8h_source_l00040}00040\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ constructor\ for\ the\ restricted\ mfe\ case}}
+\DoxyCodeLine{\Hypertarget{s__min__folding_8h_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{s__min__folding_8h_source_l00042}00042\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classs__min__folding_a8dc3b67c5dc7e5f6c421601b9c80adb0}{\string~s\_min\_folding}}\ ();}
+\DoxyCodeLine{\Hypertarget{s__min__folding_8h_source_l00043}00043\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ The\ destructor}}
+\DoxyCodeLine{\Hypertarget{s__min__folding_8h_source_l00044}00044\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{s__min__folding_8h_source_l00045}00045\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classs__min__folding_af7c388bc6d90f6e62ae2c4924f7891e3}{s\_simfold}}\ ();}
+\DoxyCodeLine{\Hypertarget{s__min__folding_8h_source_l00046}00046\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ PRE:\ \ the\ init\_data\ function\ has\ been\ called;}}
+\DoxyCodeLine{\Hypertarget{s__min__folding_8h_source_l00047}00047\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ the\ space\ for\ structure\ has\ been\ allocated}}
+\DoxyCodeLine{\Hypertarget{s__min__folding_8h_source_l00048}00048\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ POST:\ fold\ sequence,\ return\ the\ MFE\ structure\ in\ structure,\ and\ return\ the\ MFE\ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{s__min__folding_8h_source_l00049}00049\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{s__min__folding_8h_source_l00050}00050\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classs__min__folding_a4885a6b250659c11b4dd2a544c5d48bb}{s\_simfold\_restricted}}\ ();}
+\DoxyCodeLine{\Hypertarget{s__min__folding_8h_source_l00051}00051\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ PRE:\ \ the\ init\_data\ function\ has\ been\ called;}}
+\DoxyCodeLine{\Hypertarget{s__min__folding_8h_source_l00052}00052\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ the\ space\ for\ structure\ has\ been\ allocate}}
+\DoxyCodeLine{\Hypertarget{s__min__folding_8h_source_l00053}00053\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ POST:\ fold\ sequence,\ return\ the\ MFE\ structure\ in\ structure,\ and\ return\ the\ MFE}}
+\DoxyCodeLine{\Hypertarget{s__min__folding_8h_source_l00054}00054\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{s__min__folding_8h_source_l00055}\mbox{\hyperlink{classs__min__folding_a23bd85b8122328fcd186765c158b9b35}{00055}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classs__min__folding_a23bd85b8122328fcd186765c158b9b35}{return\_structure}}\ (\textcolor{keywordtype}{char}\ *\mbox{\hyperlink{classs__min__folding_a28f1f660ab67d7e92c20ad83fc889f78}{structure}})\ \{\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{strcpy}}\ (\mbox{\hyperlink{classs__min__folding_a28f1f660ab67d7e92c20ad83fc889f78}{structure}},\ this-\/>structure);\ \}\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{s__min__folding_8h_source_l00056}00056\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ writes\ the\ predicted\ MFE\ structure\ into\ structure\ \ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{s__min__folding_8h_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{s__min__folding_8h_source_l00058}00058\ \ \ \ \ \textcolor{comment}{//\ better\ to\ have\ protected\ variable\ rather\ than\ private,\ it's\ necessary\ for\ Hfold}}
+\DoxyCodeLine{\Hypertarget{s__min__folding_8h_source_l00059}00059\ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{\Hypertarget{s__min__folding_8h_source_l00060}00060\ \ \ \ \ \textcolor{comment}{//private:}}
+\DoxyCodeLine{\Hypertarget{s__min__folding_8h_source_l00061}00061\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{s__min__folding_8h_source_l00062}\mbox{\hyperlink{classs__min__folding_a28f1f660ab67d7e92c20ad83fc889f78}{00062}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{classs__min__folding_a28f1f660ab67d7e92c20ad83fc889f78}{structure}};\ \ \ \ \ \ \ \ \textcolor{comment}{//\ MFE\ structure}}
+\DoxyCodeLine{\Hypertarget{s__min__folding_8h_source_l00063}\mbox{\hyperlink{classs__min__folding_a38715e50a51541b1f717e2efd23c11e5}{00063}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classs__hairpin__loop}{s\_hairpin\_loop}}\ *\mbox{\hyperlink{classs__min__folding_a38715e50a51541b1f717e2efd23c11e5}{H}};\ \ \ \ \ \ \textcolor{comment}{//\ hairpin\ loop\ object\ \ }}
+\DoxyCodeLine{\Hypertarget{s__min__folding_8h_source_l00064}\mbox{\hyperlink{classs__min__folding_a3b7df12b558d5a37c4b26a6ad769ff77}{00064}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classs__stacked__pair}{s\_stacked\_pair}}\ *\mbox{\hyperlink{classs__min__folding_a3b7df12b558d5a37c4b26a6ad769ff77}{S}};\ \ \ \ \ \ \textcolor{comment}{//\ stack\ pair\ object\ }}
+\DoxyCodeLine{\Hypertarget{s__min__folding_8h_source_l00065}\mbox{\hyperlink{classs__min__folding_a4f1da2024d99f1c5d4daae1a6f090fb5}{00065}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classs__internal__loop}{s\_internal\_loop}}\ *\mbox{\hyperlink{classs__min__folding_a4f1da2024d99f1c5d4daae1a6f090fb5}{VBI}};\ \ \ \textcolor{comment}{//\ internal\ loop\ object}}
+\DoxyCodeLine{\Hypertarget{s__min__folding_8h_source_l00066}\mbox{\hyperlink{classs__min__folding_a96950a20dc16559c73781e3a8ca50ac1}{00066}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classs__multi__loop}{s\_multi\_loop}}\ *\mbox{\hyperlink{classs__min__folding_a96950a20dc16559c73781e3a8ca50ac1}{VM}};\ \ \ \ \ \ \ \textcolor{comment}{//\ multi\ loop\ object}}
+\DoxyCodeLine{\Hypertarget{s__min__folding_8h_source_l00067}\mbox{\hyperlink{classs__min__folding_a1a566b92a0ef683ad930eb296436b194}{00067}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classs__energy__matrix}{s\_energy\_matrix}}\ *\mbox{\hyperlink{classs__min__folding_a1a566b92a0ef683ad930eb296436b194}{V}};\ \ \ \ \ \textcolor{comment}{//\ the\ V\ object}}
+\DoxyCodeLine{\Hypertarget{s__min__folding_8h_source_l00068}\mbox{\hyperlink{classs__min__folding_ae12c3246e6121b110e4877c97288877c}{00068}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}*\ \mbox{\hyperlink{classs__min__folding_ae12c3246e6121b110e4877c97288877c}{int\_sequence}};\ \ \ \ \ \ \textcolor{comment}{//\ sequence\ in\ integer\ representation\ (faster)\ \ }}
+\DoxyCodeLine{\Hypertarget{s__min__folding_8h_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{s__min__folding_8h_source_l00070}\mbox{\hyperlink{classs__min__folding_ad3d22186eb051573ea07372dc41306bd}{00070}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structminimum__fold}{minimum\_fold}}\ *\mbox{\hyperlink{classs__min__folding_ad3d22186eb051573ea07372dc41306bd}{f}};\ \ \ \ \ \ \ \ \textcolor{comment}{//\ the\ minimum\ folding,\ see\ structs.h}}
+\DoxyCodeLine{\Hypertarget{s__min__folding_8h_source_l00071}\mbox{\hyperlink{classs__min__folding_aa3433a30de20386a94b6776c764099cd}{00071}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{constants_8h_adf823d40ac379702030cb342e84d5f2e}{pf\_t}}\ *\mbox{\hyperlink{classs__min__folding_aa3433a30de20386a94b6776c764099cd}{W}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ the\ W\ exterior\ loop\ array}}
+\DoxyCodeLine{\Hypertarget{s__min__folding_8h_source_l00072}\mbox{\hyperlink{classs__min__folding_a7a8de4989108c0924abad2f00383ac7c}{00072}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classs__min__folding_a7a8de4989108c0924abad2f00383ac7c}{nb\_nucleotides}};\ \ \ \ \ \textcolor{comment}{//\ sequence\ length\ (number\ of\ nucleotides)}}
+\DoxyCodeLine{\Hypertarget{s__min__folding_8h_source_l00073}\mbox{\hyperlink{classs__min__folding_a86e6b0847c0c62f6ff820b720688bdad}{00073}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{classs__min__folding_a86e6b0847c0c62f6ff820b720688bdad}{sequence}};}
+\DoxyCodeLine{\Hypertarget{s__min__folding_8h_source_l00074}\mbox{\hyperlink{classs__min__folding_aa876a6f8a00c373771cd60150c192d97}{00074}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structseq__interval}{seq\_interval}}\ *\mbox{\hyperlink{classs__min__folding_aa876a6f8a00c373771cd60150c192d97}{stack\_interval}};\ \ \textcolor{comment}{//\ used\ for\ backtracking}}
+\DoxyCodeLine{\Hypertarget{s__min__folding_8h_source_l00075}\mbox{\hyperlink{classs__min__folding_af7911102d9682d1a5f111c27d505fbd2}{00075}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{classs__min__folding_af7911102d9682d1a5f111c27d505fbd2}{restricted}};\ \ \ \ \textcolor{comment}{//\ restricted\ structure\ given\ as\ input\ -\/\ restricts\ base\ pairs\ eg\ (\_\_\_\_\_\_\_\_)\ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{s__min__folding_8h_source_l00076}\mbox{\hyperlink{classs__min__folding_acb8918922f5fc5fda49497103aa068e3}{00076}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{classs__min__folding_acb8918922f5fc5fda49497103aa068e3}{known\_structure}};\ \ \textcolor{comment}{//\ known\ structure,\ used\ for\ the\ loss-\/augmented\ prediction}}
+\DoxyCodeLine{\Hypertarget{s__min__folding_8h_source_l00077}00077\ }
+\DoxyCodeLine{\Hypertarget{s__min__folding_8h_source_l00078}00078\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classs__min__folding_a452b422ab1680e9aeb5c6bf8d8a6e97f}{allocate\_space}}();}
+\DoxyCodeLine{\Hypertarget{s__min__folding_8h_source_l00079}00079\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ allocate\ the\ necessary\ memory}}
+\DoxyCodeLine{\Hypertarget{s__min__folding_8h_source_l00080}00080\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{s__min__folding_8h_source_l00081}00081\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classs__min__folding_a9b2ebe3a059ac958ef7b12b1b439882f}{fold\_sequence}}\ ();}
+\DoxyCodeLine{\Hypertarget{s__min__folding_8h_source_l00082}00082\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classs__min__folding_a1becbae42071ea089a8dea02c61cbc8a}{fold\_sequence\_restricted}}\ ();}
+\DoxyCodeLine{\Hypertarget{s__min__folding_8h_source_l00083}00083\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classs__min__folding_a01d02be9e9cd0ede77b7aa514d55a95a}{insert\_node}}\ (\textcolor{keywordtype}{int}\ i,\ \textcolor{keywordtype}{int}\ j,\ \textcolor{keywordtype}{char}\ type);}
+\DoxyCodeLine{\Hypertarget{s__min__folding_8h_source_l00084}00084\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{s__min__folding_8h_source_l00085}00085\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classs__min__folding_a086dcbab70388ebaebf7aa1b2c4e4ff9}{backtrack}}\ (\mbox{\hyperlink{structseq__interval}{seq\_interval}}\ *cur\_interval);}
+\DoxyCodeLine{\Hypertarget{s__min__folding_8h_source_l00086}00086\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ backtrack\ to\ retreive\ the\ MFE\ structure}}
+\DoxyCodeLine{\Hypertarget{s__min__folding_8h_source_l00087}00087\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ PRE:\ \ All\ matrixes\ V,\ VM,\ WM\ and\ W\ have\ been\ filled}}
+\DoxyCodeLine{\Hypertarget{s__min__folding_8h_source_l00088}00088\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ POST:\ Discover\ the\ MFE\ path}}
+\DoxyCodeLine{\Hypertarget{s__min__folding_8h_source_l00089}00089\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{s__min__folding_8h_source_l00090}00090\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classs__min__folding_a03b471440e09061319b31db7c7b4a7af}{backtrack\_restricted}}\ (\mbox{\hyperlink{structseq__interval}{seq\_interval}}\ *cur\_interval,\ \mbox{\hyperlink{structstr__features}{str\_features}}\ *fres);}
+\DoxyCodeLine{\Hypertarget{s__min__folding_8h_source_l00091}00091\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ backtrack,\ the\ restricted\ case}}
+\DoxyCodeLine{\Hypertarget{s__min__folding_8h_source_l00092}00092\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{s__min__folding_8h_source_l00093}00093\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classs__min__folding_ae28b5d1f4cf50508a400404e230389a4}{compute\_W}}\ (\textcolor{keywordtype}{int}\ j);}
+\DoxyCodeLine{\Hypertarget{s__min__folding_8h_source_l00094}00094\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ fill\ the\ W\ array}}
+\DoxyCodeLine{\Hypertarget{s__min__folding_8h_source_l00095}00095\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{s__min__folding_8h_source_l00096}00096\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{constants_8h_ac9a8588270279e7ab92df9794938f2ca}{PARAMTYPE}}\ \mbox{\hyperlink{classs__min__folding_a2bd60705c1779dc9e0de46d0bc4a1f03}{compute\_W\_br2}}\ (\textcolor{keywordtype}{int}\ j);}
+\DoxyCodeLine{\Hypertarget{s__min__folding_8h_source_l00097}00097\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ fill\ the\ second\ branch\ of\ the\ W\ array}}
+\DoxyCodeLine{\Hypertarget{s__min__folding_8h_source_l00098}00098\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{s__min__folding_8h_source_l00099}00099\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classs__min__folding_adbf218ca0fe79daebcd1f8121984ac33}{compute\_W\_restricted}}\ (\textcolor{keywordtype}{int}\ j,\ \mbox{\hyperlink{structstr__features}{str\_features}}\ *fres);}
+\DoxyCodeLine{\Hypertarget{s__min__folding_8h_source_l00100}00100\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ fill\ the\ W\ array,\ the\ restricted\ case}}
+\DoxyCodeLine{\Hypertarget{s__min__folding_8h_source_l00101}00101\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{s__min__folding_8h_source_l00102}00102\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{constants_8h_ac9a8588270279e7ab92df9794938f2ca}{PARAMTYPE}}\ \mbox{\hyperlink{classs__min__folding_a4d85db666a5c39a3e99c59b822ece39d}{compute\_W\_br2\_restricted}}\ (\textcolor{keywordtype}{int}\ j,\ \mbox{\hyperlink{structstr__features}{str\_features}}\ *fres,\ \textcolor{keywordtype}{int}\ \&\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{must\_choose\_this\_branch}});}
+\DoxyCodeLine{\Hypertarget{s__min__folding_8h_source_l00103}00103\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ fill\ the\ second\ branch\ of\ the\ W\ array,\ the\ restricted\ case}}
+\DoxyCodeLine{\Hypertarget{s__min__folding_8h_source_l00104}00104\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{s__min__folding_8h_source_l00105}00105\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classs__min__folding_a424154d4d941872e4dabaf3c4e1b363a}{print\_result}}\ ();}
+\DoxyCodeLine{\Hypertarget{s__min__folding_8h_source_l00106}00106\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ PRE:\ \ The\ matrix\ V\ has\ been\ calculated\ and\ the\ results\ written\ in\ f}}
+\DoxyCodeLine{\Hypertarget{s__min__folding_8h_source_l00107}00107\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ POST:\ Prints\ details\ of\ each\ elementary\ structure\ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{s__min__folding_8h_source_l00108}00108\ }
+\DoxyCodeLine{\Hypertarget{s__min__folding_8h_source_l00109}00109\ \};}
+\DoxyCodeLine{\Hypertarget{s__min__folding_8h_source_l00110}00110\ }
+\DoxyCodeLine{\Hypertarget{s__min__folding_8h_source_l00111}00111\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//S\_MIN\_FOLDING\_H}}
+
+\end{DoxyCode}

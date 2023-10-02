@@ -1,0 +1,148 @@
+\doxysection{simfold\+\_\+pf.\+cpp}
+\hypertarget{simfold__pf_8cpp_source}{}\label{simfold__pf_8cpp_source}\index{C:/Users/luket/Desktop/testing\_CParty/CParty/simfold/simfold\_pf.cpp@{C:/Users/luket/Desktop/testing\_CParty/CParty/simfold/simfold\_pf.cpp}}
+\mbox{\hyperlink{simfold__pf_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00002}00002\ \textcolor{comment}{//\ a\ simple\ driver\ for\ the\ simfold}}
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <string.h>}}
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00006}00006\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00007}00007\ \textcolor{preprocessor}{\#include\ <time.h>}}
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00008}00008\ \textcolor{preprocessor}{\#include\ <unistd.h>}}
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00010}00010\ \textcolor{comment}{//\ include\ the\ simfold\ header\ files}}
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00011}00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{simfold_8h}{simfold.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00012}00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{externs_8h}{externs.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00013}00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{constants_8h}{constants.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00014}00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{params_8h}{params.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00015}00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{s__partition__function_8h}{s\_partition\_function.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00017}\mbox{\hyperlink{simfold__pf_8cpp_aab0fa4fa34b613e3a6b4f0e87d1c073b}{00017}}\ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{simfold__pf_8cpp_aab0fa4fa34b613e3a6b4f0e87d1c073b}{sequence}}[\mbox{\hyperlink{constants_8h_a1b8bfc1abb1ba53bcc6c516ddf02ad97}{MAXSLEN}}];}
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00018}\mbox{\hyperlink{simfold__pf_8cpp_ab6ba6a7151bca513f51e97c711e38b8c}{00018}}\ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{simfold__pf_8cpp_ab6ba6a7151bca513f51e97c711e38b8c}{parameter\_filename}}[500]\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00019}\mbox{\hyperlink{simfold__pf_8cpp_afcfbedec6ebde62c6a091ce335836ef1}{00019}}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{simfold__pf_8cpp_afcfbedec6ebde62c6a091ce335836ef1}{threshold}}\ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00021}\mbox{\hyperlink{simfold__pf_8cpp_a364112f4dc61f0649eec6b78e586509d}{00021}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{simfold__pf_8cpp_a364112f4dc61f0649eec6b78e586509d}{usage}}\ (\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{prog}})}
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00022}00022\ \textcolor{comment}{//\ PRE:\ \ None}}
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00023}00023\ \textcolor{comment}{//\ POST:\ Prints\ the\ usage\ message\ and\ exits}}
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00024}00024\ \{}
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00025}00025\ \ \ \ \ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{printf}}\ (\textcolor{stringliteral}{"{}Usage:\ \%s\ -\/s\ <sequence>\ [options]\(\backslash\)n\(\backslash\)n"{}},\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{prog}});}
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00026}00026\ \ \ \ \ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{printf}}\ (\textcolor{stringliteral}{"{}\ \ -\/s\ <sequence>\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00027}00027\ \ \ \ \ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{printf}}\ (\textcolor{stringliteral}{"{}\(\backslash\)tThe\ RNA\ sequence\ to\ fold,\ max\ length\ is\ \%d\(\backslash\)n\(\backslash\)n"{}},\ \mbox{\hyperlink{constants_8h_a1b8bfc1abb1ba53bcc6c516ddf02ad97}{MAXSLEN}});}
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00028}00028\ \ \ \ \ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{printf}}\ (\textcolor{stringliteral}{"{}Options:\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00029}00029\ \ \ \ \ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{printf}}\ (\textcolor{stringliteral}{"{}\ \ -\/t\ <probability\_threshold>\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00030}00030\ \ \ \ \ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{printf}}\ (\textcolor{stringliteral}{"{}\(\backslash\)tDisplays\ probabilities\ above\ given\ threshold.\ DEFAULT\ \%.2lf\(\backslash\)n\(\backslash\)n"{}},\ \mbox{\hyperlink{simfold__pf_8cpp_afcfbedec6ebde62c6a091ce335836ef1}{threshold}});}
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00031}00031\ \ \ \ \ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{printf}}\ (\textcolor{stringliteral}{"{}\ \ -\/p\ <parameter\_file>\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00032}00032\ \ \ \ \ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{printf}}\ (\textcolor{stringliteral}{"{}\(\backslash\)tIf\ none\ specified,\ it\ is\ using\ the\ Turner99\ parameters.\(\backslash\)n\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00033}00033\ \ \ \ \ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{printf}}\ (\textcolor{stringliteral}{"{}\ \ -\/d\(\backslash\)n\(\backslash\)tTurn\ debug\ on,\ by\ default\ it\ is\ off\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00034}00034\ \ \ \ \ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{printf}}\ (\textcolor{stringliteral}{"{}\ \ -\/h\(\backslash\)n\(\backslash\)tPrint\ this\ help\ message\(\backslash\)n\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00035}00035\ \ \ \ \ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{printf}}\ (\textcolor{stringliteral}{"{}Examples:\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00036}00036\ \ \ \ \ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{printf}}\ (\textcolor{stringliteral}{"{}\(\backslash\)t\%s\ -\/s\ \(\backslash\)"{}GCAACGAUGACAUACAUCGCUAGUCGACGC\(\backslash\)"{}\(\backslash\)n"{}},\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{prog}});}
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00037}00037\ \ \ \ \ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{printf}}\ (\textcolor{stringliteral}{"{}\(\backslash\)t\%s\ -\/s\ \(\backslash\)"{}GCAACGAUGACAUACAUCGCUAGUCGACGC\(\backslash\)"{}\ -\/t\ 0.5\(\backslash\)n"{}},\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{prog}});}
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00038}00038\ \ \ \ \ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{printf}}\ (\textcolor{stringliteral}{"{}\(\backslash\)t\%s\ -\/s\ \(\backslash\)"{}GCAACGAUGACAUACAUCGCUAGUCGACGC\(\backslash\)"{}\ -\/p\ params/CG\_best\_parameters\_ISMB2007.txt\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00039}00039\ \ \ \ \ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{exit}}\ (0);}
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00040}00040\ \}}
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00043}\mbox{\hyperlink{simfold__pf_8cpp_a929f8b23f84928df9703df4058a17b91}{00043}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{simfold__pf_8cpp_a929f8b23f84928df9703df4058a17b91}{get\_arguments}}\ (\textcolor{keywordtype}{int}\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{argc}},\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{argv}}[])}
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00044}00044\ \textcolor{comment}{//\ PRE:\ \ None}}
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00045}00045\ \textcolor{comment}{//\ POST:\ Get\ the\ parameters\ from\ the\ command\ line}}
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00046}00046\ \{}
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00047}00047\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{c}};}
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00048}00048\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{optarg}};}
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00049}00049\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{optind}};}
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00050}00050\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{errflag}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00052}00052\ \ \ \ \ \textcolor{keywordflow}{while}\ ((\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{c}}\ =\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{getopt}}\ (\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{argc}},\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{argv}},\ \textcolor{stringliteral}{"{}s:t:p:dh?"{}}))\ !=\ -\/1)}
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00053}00053\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00054}00054\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{c}})}
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00055}00055\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'s'}:}
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{strcpy}}\ (\mbox{\hyperlink{simfold__pf_8cpp_aab0fa4fa34b613e3a6b4f0e87d1c073b}{sequence}},\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{optarg}});}
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'t'}:}
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{simfold__pf_8cpp_afcfbedec6ebde62c6a091ce335836ef1}{threshold}}\ =\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{atof}}\ (\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{optarg}});}
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'p'}:}
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{strcpy}}\ (\mbox{\hyperlink{simfold__pf_8cpp_ab6ba6a7151bca513f51e97c711e38b8c}{parameter\_filename}},\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{optarg}});}
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'d'}:}
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{externs_8h_ac3e1795766a80ec63b157951b4b9a7d4}{debug}}\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'h'}:}
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'?'}:}
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{errflag}}\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00072}00072\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00073}00073\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00074}00074\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{errflag}}\ ||\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{optind}}\ !=\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{argc}}\ ||\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{argc}}\ <\ 3)}
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00075}00075\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{simfold__pf_8cpp_a364112f4dc61f0649eec6b78e586509d}{usage}}\ (\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{argv}}[0]);}
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00077}00077\ \}}
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00078}00078\ }
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00079}00079\ }
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00080}00080\ }
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00081}\mbox{\hyperlink{simfold__pf_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{00081}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{simfold__pf_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main}}\ (\textcolor{keywordtype}{int}\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{argc}},\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{argv}}[])}
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00082}00082\ \{}
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00083}00083\ \ \ \ \ \textcolor{keywordtype}{char}\ structure[\mbox{\hyperlink{constants_8h_a1b8bfc1abb1ba53bcc6c516ddf02ad97}{MAXSLEN}}];\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00084}00084\ \ \ \ \ \textcolor{keywordtype}{double}\ energy;}
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00085}00085\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{structures}}[\mbox{\hyperlink{constants_8h_a306d2aeba34312506525e9d92f3f608c}{MAXSUBSTR}}][\mbox{\hyperlink{constants_8h_a1b8bfc1abb1ba53bcc6c516ddf02ad97}{MAXSLEN}}];}
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00086}00086\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{energies}}[\mbox{\hyperlink{constants_8h_a306d2aeba34312506525e9d92f3f608c}{MAXSUBSTR}}];\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00087}00087\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{actual\_num\_str}};}
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00088}00088\ \ \ \ \ \textcolor{comment}{//debug\ =\ 1;}}
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00089}00089\ }
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00090}00090\ \ \ \ \ \mbox{\hyperlink{simfold__pf_8cpp_a929f8b23f84928df9703df4058a17b91}{get\_arguments}}\ (\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{argc}},\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{argv}});}
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00091}00091\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00092}00092\ \ \ \ \ \textcolor{comment}{//\ Before\ calling\ any\ function\ in\ the\ library,\ you\ have\ to\ initialize\ config\_file,\ dna\_or\_rna,\ temperature}}
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00093}00093\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ and\ to\ call\ the\ function\ init\_data,\ which\ loads\ the\ thermodynamic\ parameters\ into\ memory}}
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00094}00094\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00095}00095\ \ \ \ \ \textcolor{comment}{//\ configuration\ file,\ the\ path\ should\ be\ relative\ to\ the\ location\ of\ this\ executable}}
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00096}00096\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{config\_file}}[200];}
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00097}00097\ \ \ \ \ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{strcpy}}\ (\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{config\_file}},\ \textcolor{stringliteral}{"{}params/multirnafold.conf"{}});}
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00098}00098\ }
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00099}00099\ \ \ \ \ \textcolor{comment}{//\ what\ to\ fold:\ RNA\ or\ DNA}}
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00100}00100\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{simfold_8cpp_a9202d5b1688659bf6c62dfe6833ca77c}{dna\_or\_rna}};}
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00101}00101\ \ \ \ \ \mbox{\hyperlink{simfold_8cpp_a9202d5b1688659bf6c62dfe6833ca77c}{dna\_or\_rna}}\ =\ \mbox{\hyperlink{constants_8h_a537ad9bceff6e06ac5081146d81adff3}{RNA}};}
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00102}00102\ }
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00103}00103\ \ \ \ \ \textcolor{comment}{//\ temperature:\ any\ integer\ or\ real\ number\ between\ 0\ and\ 100}}
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00104}00104\ \ \ \ \ \textcolor{comment}{//\ represents\ degrees\ Celsius}}
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00105}00105\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{simfold_8cpp_ab4b11c8d9c758430960896bc3fe82ead}{temperature}}\ =\ 37.0;\ }
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00106}00106\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00107}00107\ \ \ \ \ \textcolor{comment}{//\ initialize\ the\ thermodynamic\ parameters}}
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00108}00108\ \ \ \ \ \textcolor{comment}{//\ call\ init\_data\ only\ once\ for\ the\ same\ dna\_or\_rna\ and\ same\ temperature}}
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00109}00109\ \ \ \ \ \textcolor{comment}{//\ if\ one\ of\ them\ changes,\ call\ init\_data\ again\ \ \ }}
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00110}00110\ \ \ \ \ \mbox{\hyperlink{init_8h_a550dbc06a52605c5de12f99a4b347c57}{init\_data}}\ (\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{argv}}[0],\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{config\_file}},\ \mbox{\hyperlink{simfold_8cpp_a9202d5b1688659bf6c62dfe6833ca77c}{dna\_or\_rna}},\ \mbox{\hyperlink{simfold_8cpp_ab4b11c8d9c758430960896bc3fe82ead}{temperature}});\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00111}00111\ }
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00112}00112\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{strlen}}\ (\mbox{\hyperlink{simfold__pf_8cpp_ab6ba6a7151bca513f51e97c711e38b8c}{parameter\_filename}})\ >\ 0)}
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00113}00113\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{params_8cpp_ad04d5fbafd45055ca361b3305bead804}{fill\_data\_structures\_with\_new\_parameters}}\ (\mbox{\hyperlink{simfold__pf_8cpp_ab6ba6a7151bca513f51e97c711e38b8c}{parameter\_filename}});}
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00114}00114\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00115}00115\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{params_8cpp_ad04d5fbafd45055ca361b3305bead804}{fill\_data\_structures\_with\_new\_parameters}}\ (\textcolor{stringliteral}{"{}params/turner\_parameters\_fm363\_constrdangles.txt"{}});}
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00116}00116\ }
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00117}00117\ \ \ \ \ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{printf}}\ (\textcolor{stringliteral}{"{}Seq:\ \%s\(\backslash\)n"{}},\ \mbox{\hyperlink{simfold__pf_8cpp_aab0fa4fa34b613e3a6b4f0e87d1c073b}{sequence}});}
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00118}00118\ }
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00119}00119\ \ \ \ \ \textcolor{comment}{//\ create\ the\ partition\ function\ object.\ By\ default,\ it\ includes\ dangling\ ends.}}
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00120}00120\ \ \ \ \ \textcolor{comment}{//\ \ Add\ 1\ to\ the\ constructor\ if\ you\ want\ not\ to\ include\ the\ dangling\ ends\ (faster)}}
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00121}00121\ \ \ \ \ \textcolor{comment}{//\ WARNING:\ if\ your\ sequence\ is\ longer\ than\ 1000,\ you\ may\ get\ overflow.\ This\ will\ be\ fixed\ in\ a\ next\ release.}}
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00122}00122\ \ \ \ \ \mbox{\hyperlink{classs__partition__function}{s\_partition\_function}}\ *\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{part}}\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classs__partition__function}{s\_partition\_function}}\ (\mbox{\hyperlink{simfold__pf_8cpp_aab0fa4fa34b613e3a6b4f0e87d1c073b}{sequence}});}
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00123}00123\ }
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00124}00124\ \ \ \ \ \textcolor{comment}{//\ compute\ the\ partition\ function}}
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00125}00125\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{pf}}\ =\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{part}}-\/>compute\_partition\_function();}
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00126}00126\ \ \ \ \ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{printf}}\ (\textcolor{stringliteral}{"{}Partition\ function\ =\ \%g\(\backslash\)n"{}},\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{pf}});}
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00127}00127\ }
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00128}00128\ \ \ \ \ \textcolor{comment}{//\ compute\ the\ base\ pair\ probabilities\ if\ you\ need\ (the\ partition\ function\ has\ to\ be\ computed)}}
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00129}00129\ \ \ \ \ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{part}}-\/>compute\_base\_pair\_probabilities();}
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00130}00130\ }
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00131}00131\ \ \ \ \ \textcolor{comment}{//\ save\ the\ dot\ plot\ file\ (the\ lower\ triangle\ is\ empty\ for\ now)}}
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00132}00132\ \ \ \ \ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{part}}-\/>PS\_dot\_plot(\textcolor{stringliteral}{"{}dot.ps"{}});}
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00133}00133\ }
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00134}00134\ }
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00135}00135\ \ \ \ \ \textcolor{comment}{//\ You\ can\ print\ the\ base\ pair\ probabilities\ above\ some\ threshold,\ for\ example\ 0.9}}
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00136}00136\ \ \ \ \ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{part}}-\/>print\_base\_pair\_probabilities(\mbox{\hyperlink{simfold__pf_8cpp_afcfbedec6ebde62c6a091ce335836ef1}{threshold}});}
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00137}00137\ }
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00138}00138\ \ \ \ \ \textcolor{keyword}{delete}\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{part}};}
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00139}00139\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00140}00140\ \}}
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00141}00141\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{simfold__pf_8cpp_source_l00142}00142\ \ \ }
+
+\end{DoxyCode}

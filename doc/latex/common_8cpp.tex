@@ -1,0 +1,496 @@
+\doxysection{C\+:/\+Users/luket/\+Desktop/testing\+\_\+\+CParty/\+CParty/simfold/src/common/common.cpp File Reference}
+\hypertarget{common_8cpp}{}\label{common_8cpp}\index{C:/Users/luket/Desktop/testing\_CParty/CParty/simfold/src/common/common.cpp@{C:/Users/luket/Desktop/testing\_CParty/CParty/simfold/src/common/common.cpp}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include "{}constants.\+h"{}}\newline
+{\ttfamily \#include "{}structs.\+h"{}}\newline
+{\ttfamily \#include "{}externs.\+h"{}}\newline
+{\ttfamily \#include "{}common.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{constants_8h_adf823d40ac379702030cb342e84d5f2e}{pf\+\_\+t}} \mbox{\hyperlink{common_8cpp_a9fe853f65a0f16e66d7a28c7b9fa551c}{bw\+\_\+int}} (\mbox{\hyperlink{constants_8h_ac9a8588270279e7ab92df9794938f2ca}{PARAMTYPE}} \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{e}})
+\item 
+\mbox{\hyperlink{constants_8h_ac9a8588270279e7ab92df9794938f2ca}{PARAMTYPE}} \mbox{\hyperlink{common_8cpp_a49bd2250b9398238354af0511447b75f}{asymmetry\+\_\+penalty}} (\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{size1}}, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{size2}})
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} \mbox{\hyperlink{common_8cpp_abcd56a7f37a58d25c08b9c34acab5e82}{get\+\_\+sorted\+\_\+positions}} (\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{n}}, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{double}} \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{numbers}}\mbox{[}$\,$\mbox{]}, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{positions}}\mbox{[}$\,$\mbox{]})
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} \mbox{\hyperlink{common_8cpp_aa6443b2d67b7db4b6bc448667da9a40d}{is\+\_\+structured}} (\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} i, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} j, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}structure)
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} \mbox{\hyperlink{common_8cpp_a52cf181e7737480120ac9706aeba4cd3}{loss}} (\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{first}}, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{last}})
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{double}} \mbox{\hyperlink{common_8cpp_adf937511c738706e18044281ea2c71b3}{compute\+\_\+accuracy}} (\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{ref\+\_\+structure}}, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{pred\+\_\+structure}})
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{double}} \mbox{\hyperlink{common_8cpp_a53055b8129e1e9ee8b4f4ad0c4f025a7}{compute\+\_\+distance}} (\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{ref\+\_\+structure}}, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{pred\+\_\+structure}})
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{double}} \mbox{\hyperlink{common_8cpp_a07176b8ab0c63c61c9e357f97f83f5e6}{compute\+\_\+sensitivity}} (\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{ref\+\_\+structure}}, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{pred\+\_\+structure}})
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{double}} \mbox{\hyperlink{common_8cpp_a7d939958c0f394316a997427b88cfbb0}{compute\+\_\+ppv}} (\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{ref\+\_\+structure}}, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{pred\+\_\+structure}})
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{double}} \mbox{\hyperlink{common_8cpp_a1167055e906bfe3c94ddbd70ae1617ff}{compute\+\_\+pf\+\_\+ppv}} (\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{ref\+\_\+structure}}, \mbox{\hyperlink{classs__partition__function}{s\+\_\+partition\+\_\+function}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{part}}, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{double}} \mbox{\hyperlink{simfold__pf_8cpp_afcfbedec6ebde62c6a091ce335836ef1}{threshold}})
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{double}} \mbox{\hyperlink{common_8cpp_a55e76ae0cbe5fb891f0db3c725305e5f}{compute\+\_\+pf\+\_\+sensitivity}} (\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{ref\+\_\+structure}}, \mbox{\hyperlink{classs__partition__function}{s\+\_\+partition\+\_\+function}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{part}}, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{double}} \mbox{\hyperlink{simfold__pf_8cpp_afcfbedec6ebde62c6a091ce335836ef1}{threshold}})
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} \mbox{\hyperlink{common_8cpp_a92de552f74ae0cdbb3b86774d44b8b85}{giveup}} (\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{const}} \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{string1}}, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{const}} \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{string2}})
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} \mbox{\hyperlink{common_8cpp_a57cd5cbcb3c47c0834f3cad82a031174}{create\+\_\+random\+\_\+sequence}} (\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} length, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{simfold_8cpp_aab0fa4fa34b613e3a6b4f0e87d1c073b}{sequence}})
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} \mbox{\hyperlink{common_8cpp_a934c0b6585493e8a843da71e6412a6ab}{create\+\_\+random\+\_\+restricted}} (\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{simfold_8cpp_aab0fa4fa34b613e3a6b4f0e87d1c073b}{sequence}}, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{simfold_8cpp_acc011911591feaa0e5e5ac5889ee9a26}{restricted}})
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} \mbox{\hyperlink{common_8cpp_a352f68c729456ca0665f43df71fc4cd5}{remove\+\_\+space}} (\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}structure)
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} \mbox{\hyperlink{common_8cpp_ae367d5af38b22de88bfe1bf34c33ace7}{empty\+\_\+string}} (\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{str}})
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} \mbox{\hyperlink{common_8cpp_ad0433cbe61d72ee1de16e95665b584f9}{can\+\_\+pair}} (\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{base1}}, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{base2}})
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} \mbox{\hyperlink{common_8cpp_a1855e8a86a27b75c76d0fd7181db2418}{watson\+\_\+crick}} (\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{base1}}, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{base2}})
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} \mbox{\hyperlink{common_8cpp_abd36ff7d78eb8c8fe26397adcaad96d1}{nuc\+\_\+to\+\_\+int}} (\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{nucleotide}})
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \mbox{\hyperlink{common_8cpp_a087137713d395d142d4520cc5c445b43}{int\+\_\+to\+\_\+nuc}} (\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{inuc}})
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} \mbox{\hyperlink{common_8cpp_a164516e3d80f54c08f3b77854beb0c1b}{is\+\_\+nucleotide}} (\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{base}})
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} \mbox{\hyperlink{common_8cpp_ac051437fe40460f6426150cf1daa361e}{check\+\_\+sequence}} (\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{simfold_8cpp_aab0fa4fa34b613e3a6b4f0e87d1c073b}{sequence}})
+\item 
+\mbox{\hyperlink{constants_8h_ac9a8588270279e7ab92df9794938f2ca}{PARAMTYPE}} \mbox{\hyperlink{common_8cpp_ad25a525ba12c1ae0f5c392ab9abf3137}{penalty\+\_\+by\+\_\+size}} (\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{size}}, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} type)
+\item 
+\mbox{\hyperlink{constants_8h_ac9a8588270279e7ab92df9794938f2ca}{PARAMTYPE}} \mbox{\hyperlink{common_8cpp_a964a81fc12718029391b0f149ee3a802}{penalty\+\_\+by\+\_\+size\+\_\+enthalpy}} (\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{size}}, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} type)
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} \mbox{\hyperlink{common_8cpp_add20cc636f68fbe2685a9c2911f54e6d}{substr}} (\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{source}}, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{begin}}, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{end}}, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{dest}})
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} \mbox{\hyperlink{common_8cpp_aad8d1acb03848eaee434aa969e8930be}{replace\+\_\+str\+\_\+piece}} (\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{simfold_8cpp_aab0fa4fa34b613e3a6b4f0e87d1c073b}{sequence}}, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{position}}, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}seq)
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \mbox{\hyperlink{common_8cpp_aca609a0aa2078b7464de53a2efb58398}{complement}} (\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{base}})
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} \mbox{\hyperlink{common_8cpp_a5d444f84e3a2771f6a12b36d0bcef497}{reverse\+\_\+complement\+\_\+of\+\_\+seq}} (\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{const}} \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}seq, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{complem}})
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} \mbox{\hyperlink{common_8cpp_a814a6bb4a951da67ae8104b13a834144}{insert\+\_\+space}} (\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}structure, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{place}})
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} \mbox{\hyperlink{common_8cpp_a2200dbed947fbefbbd174ea3d6ddb0b2}{init}} (\mbox{\hyperlink{structstack__ds}{stack\+\_\+ds}} \texorpdfstring{$\ast$}{*}st)
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} \mbox{\hyperlink{common_8cpp_a3be95b90641a337632cedd972d38e8dc}{push}} (\mbox{\hyperlink{structstack__ds}{stack\+\_\+ds}} \texorpdfstring{$\ast$}{*}st, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{el}})
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} \mbox{\hyperlink{common_8cpp_a40339bb9d531dda036b52eb288035a17}{pop}} (\mbox{\hyperlink{structstack__ds}{stack\+\_\+ds}} \texorpdfstring{$\ast$}{*}st)
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} \mbox{\hyperlink{common_8cpp_ac58bc56eaf06e36d94df86891c4a33f5}{detect\+\_\+original\+\_\+pairs}} (\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}structure, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{p\+\_\+table}})
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} \mbox{\hyperlink{common_8cpp_a834a69f7dd0f29faaf4ec0e1ec2c472e}{valid\+\_\+structure}} (\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} i, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} j, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}structure)
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} \mbox{\hyperlink{common_8cpp_af3add2d67ee16e4a81fa26db508d7bba}{detect\+\_\+structure\+\_\+features}} (\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}structure, \mbox{\hyperlink{structstr__features}{str\+\_\+features}} \texorpdfstring{$\ast$}{*}f)
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} \mbox{\hyperlink{common_8cpp_ae989ca659fda0e23fc8f17bef527404c}{complementary\+\_\+bases}} (\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{b1}}, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{b2}})
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} \mbox{\hyperlink{common_8cpp_a307cfb24a53e2fba8e99de0a25ee56c2}{self\+\_\+complementary}} (\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{simfold_8cpp_aab0fa4fa34b613e3a6b4f0e87d1c073b}{sequence}})
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} \mbox{\hyperlink{common_8cpp_a9b09473d2b76490bca5e73e7af9f756d}{exists\+\_\+restricted}} (\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} i, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} j, \mbox{\hyperlink{structstr__features}{str\+\_\+features}} \texorpdfstring{$\ast$}{*}fres)
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} \mbox{\hyperlink{common_8cpp_add121e632701995b40374d740f919717}{exists\+\_\+restricted\+\_\+ptable}} (\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} i, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} j, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{ptable}})
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} \mbox{\hyperlink{common_8cpp_a4d76863f044eee2995ba2dda28a8cff8}{read\+\_\+parsi\+\_\+options\+\_\+from\+\_\+file}} (\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{filename}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{common_8cpp_a49bd2250b9398238354af0511447b75f}\label{common_8cpp_a49bd2250b9398238354af0511447b75f} 
+\index{common.cpp@{common.cpp}!asymmetry\_penalty@{asymmetry\_penalty}}
+\index{asymmetry\_penalty@{asymmetry\_penalty}!common.cpp@{common.cpp}}
+\doxysubsubsection{\texorpdfstring{asymmetry\_penalty()}{asymmetry\_penalty()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{constants_8h_ac9a8588270279e7ab92df9794938f2ca}{PARAMTYPE}} asymmetry\+\_\+penalty (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}}}]{size1,  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}}}]{size2 }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{common_8cpp_source_l00036}{36}} of file \mbox{\hyperlink{common_8cpp_source}{common.\+cpp}}.
+
+\Hypertarget{common_8cpp_a9fe853f65a0f16e66d7a28c7b9fa551c}\label{common_8cpp_a9fe853f65a0f16e66d7a28c7b9fa551c} 
+\index{common.cpp@{common.cpp}!bw\_int@{bw\_int}}
+\index{bw\_int@{bw\_int}!common.cpp@{common.cpp}}
+\doxysubsubsection{\texorpdfstring{bw\_int()}{bw\_int()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{constants_8h_adf823d40ac379702030cb342e84d5f2e}{pf\+\_\+t}} bw\+\_\+int (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{constants_8h_ac9a8588270279e7ab92df9794938f2ca}{PARAMTYPE}}}]{e }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{common_8cpp_source_l00031}{31}} of file \mbox{\hyperlink{common_8cpp_source}{common.\+cpp}}.
+
+\Hypertarget{common_8cpp_ad0433cbe61d72ee1de16e95665b584f9}\label{common_8cpp_ad0433cbe61d72ee1de16e95665b584f9} 
+\index{common.cpp@{common.cpp}!can\_pair@{can\_pair}}
+\index{can\_pair@{can\_pair}!common.cpp@{common.cpp}}
+\doxysubsubsection{\texorpdfstring{can\_pair()}{can\_pair()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} can\+\_\+pair (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}}}]{base1,  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}}}]{base2 }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{common_8cpp_source_l00466}{466}} of file \mbox{\hyperlink{common_8cpp_source}{common.\+cpp}}.
+
+\Hypertarget{common_8cpp_ac051437fe40460f6426150cf1daa361e}\label{common_8cpp_ac051437fe40460f6426150cf1daa361e} 
+\index{common.cpp@{common.cpp}!check\_sequence@{check\_sequence}}
+\index{check\_sequence@{check\_sequence}!common.cpp@{common.cpp}}
+\doxysubsubsection{\texorpdfstring{check\_sequence()}{check\_sequence()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} check\+\_\+sequence (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}}]{sequence }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{common_8cpp_source_l00612}{612}} of file \mbox{\hyperlink{common_8cpp_source}{common.\+cpp}}.
+
+\Hypertarget{common_8cpp_aca609a0aa2078b7464de53a2efb58398}\label{common_8cpp_aca609a0aa2078b7464de53a2efb58398} 
+\index{common.cpp@{common.cpp}!complement@{complement}}
+\index{complement@{complement}!common.cpp@{common.cpp}}
+\doxysubsubsection{\texorpdfstring{complement()}{complement()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} complement (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}}}]{base }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{common_8cpp_source_l00798}{798}} of file \mbox{\hyperlink{common_8cpp_source}{common.\+cpp}}.
+
+\Hypertarget{common_8cpp_ae989ca659fda0e23fc8f17bef527404c}\label{common_8cpp_ae989ca659fda0e23fc8f17bef527404c} 
+\index{common.cpp@{common.cpp}!complementary\_bases@{complementary\_bases}}
+\index{complementary\_bases@{complementary\_bases}!common.cpp@{common.cpp}}
+\doxysubsubsection{\texorpdfstring{complementary\_bases()}{complementary\_bases()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} complementary\+\_\+bases (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}}}]{b1,  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}}}]{b2 }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{common_8cpp_source_l01104}{1104}} of file \mbox{\hyperlink{common_8cpp_source}{common.\+cpp}}.
+
+\Hypertarget{common_8cpp_adf937511c738706e18044281ea2c71b3}\label{common_8cpp_adf937511c738706e18044281ea2c71b3} 
+\index{common.cpp@{common.cpp}!compute\_accuracy@{compute\_accuracy}}
+\index{compute\_accuracy@{compute\_accuracy}!common.cpp@{common.cpp}}
+\doxysubsubsection{\texorpdfstring{compute\_accuracy()}{compute\_accuracy()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{double}} compute\+\_\+accuracy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}}]{ref\+\_\+structure,  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}}]{pred\+\_\+structure }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{common_8cpp_source_l00161}{161}} of file \mbox{\hyperlink{common_8cpp_source}{common.\+cpp}}.
+
+\Hypertarget{common_8cpp_a53055b8129e1e9ee8b4f4ad0c4f025a7}\label{common_8cpp_a53055b8129e1e9ee8b4f4ad0c4f025a7} 
+\index{common.cpp@{common.cpp}!compute\_distance@{compute\_distance}}
+\index{compute\_distance@{compute\_distance}!common.cpp@{common.cpp}}
+\doxysubsubsection{\texorpdfstring{compute\_distance()}{compute\_distance()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{double}} compute\+\_\+distance (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}}]{ref\+\_\+structure,  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}}]{pred\+\_\+structure }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{common_8cpp_source_l00183}{183}} of file \mbox{\hyperlink{common_8cpp_source}{common.\+cpp}}.
+
+\Hypertarget{common_8cpp_a1167055e906bfe3c94ddbd70ae1617ff}\label{common_8cpp_a1167055e906bfe3c94ddbd70ae1617ff} 
+\index{common.cpp@{common.cpp}!compute\_pf\_ppv@{compute\_pf\_ppv}}
+\index{compute\_pf\_ppv@{compute\_pf\_ppv}!common.cpp@{common.cpp}}
+\doxysubsubsection{\texorpdfstring{compute\_pf\_ppv()}{compute\_pf\_ppv()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{double}} compute\+\_\+pf\+\_\+ppv (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}}]{ref\+\_\+structure,  }\item[{\mbox{\hyperlink{classs__partition__function}{s\+\_\+partition\+\_\+function}} \texorpdfstring{$\ast$}{*}}]{part,  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{double}}}]{threshold }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{common_8cpp_source_l00267}{267}} of file \mbox{\hyperlink{common_8cpp_source}{common.\+cpp}}.
+
+\Hypertarget{common_8cpp_a55e76ae0cbe5fb891f0db3c725305e5f}\label{common_8cpp_a55e76ae0cbe5fb891f0db3c725305e5f} 
+\index{common.cpp@{common.cpp}!compute\_pf\_sensitivity@{compute\_pf\_sensitivity}}
+\index{compute\_pf\_sensitivity@{compute\_pf\_sensitivity}!common.cpp@{common.cpp}}
+\doxysubsubsection{\texorpdfstring{compute\_pf\_sensitivity()}{compute\_pf\_sensitivity()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{double}} compute\+\_\+pf\+\_\+sensitivity (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}}]{ref\+\_\+structure,  }\item[{\mbox{\hyperlink{classs__partition__function}{s\+\_\+partition\+\_\+function}} \texorpdfstring{$\ast$}{*}}]{part,  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{double}}}]{threshold }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{common_8cpp_source_l00325}{325}} of file \mbox{\hyperlink{common_8cpp_source}{common.\+cpp}}.
+
+\Hypertarget{common_8cpp_a7d939958c0f394316a997427b88cfbb0}\label{common_8cpp_a7d939958c0f394316a997427b88cfbb0} 
+\index{common.cpp@{common.cpp}!compute\_ppv@{compute\_ppv}}
+\index{compute\_ppv@{compute\_ppv}!common.cpp@{common.cpp}}
+\doxysubsubsection{\texorpdfstring{compute\_ppv()}{compute\_ppv()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{double}} compute\+\_\+ppv (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}}]{ref\+\_\+structure,  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}}]{pred\+\_\+structure }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{common_8cpp_source_l00237}{237}} of file \mbox{\hyperlink{common_8cpp_source}{common.\+cpp}}.
+
+\Hypertarget{common_8cpp_a07176b8ab0c63c61c9e357f97f83f5e6}\label{common_8cpp_a07176b8ab0c63c61c9e357f97f83f5e6} 
+\index{common.cpp@{common.cpp}!compute\_sensitivity@{compute\_sensitivity}}
+\index{compute\_sensitivity@{compute\_sensitivity}!common.cpp@{common.cpp}}
+\doxysubsubsection{\texorpdfstring{compute\_sensitivity()}{compute\_sensitivity()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{double}} compute\+\_\+sensitivity (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}}]{ref\+\_\+structure,  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}}]{pred\+\_\+structure }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{common_8cpp_source_l00205}{205}} of file \mbox{\hyperlink{common_8cpp_source}{common.\+cpp}}.
+
+\Hypertarget{common_8cpp_a934c0b6585493e8a843da71e6412a6ab}\label{common_8cpp_a934c0b6585493e8a843da71e6412a6ab} 
+\index{common.cpp@{common.cpp}!create\_random\_restricted@{create\_random\_restricted}}
+\index{create\_random\_restricted@{create\_random\_restricted}!common.cpp@{common.cpp}}
+\doxysubsubsection{\texorpdfstring{create\_random\_restricted()}{create\_random\_restricted()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} create\+\_\+random\+\_\+restricted (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}}]{sequence,  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}}]{restricted }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{common_8cpp_source_l00408}{408}} of file \mbox{\hyperlink{common_8cpp_source}{common.\+cpp}}.
+
+\Hypertarget{common_8cpp_a57cd5cbcb3c47c0834f3cad82a031174}\label{common_8cpp_a57cd5cbcb3c47c0834f3cad82a031174} 
+\index{common.cpp@{common.cpp}!create\_random\_sequence@{create\_random\_sequence}}
+\index{create\_random\_sequence@{create\_random\_sequence}!common.cpp@{common.cpp}}
+\doxysubsubsection{\texorpdfstring{create\_random\_sequence()}{create\_random\_sequence()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} create\+\_\+random\+\_\+sequence (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}}}]{length,  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}}]{sequence }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{common_8cpp_source_l00387}{387}} of file \mbox{\hyperlink{common_8cpp_source}{common.\+cpp}}.
+
+\Hypertarget{common_8cpp_ac58bc56eaf06e36d94df86891c4a33f5}\label{common_8cpp_ac58bc56eaf06e36d94df86891c4a33f5} 
+\index{common.cpp@{common.cpp}!detect\_original\_pairs@{detect\_original\_pairs}}
+\index{detect\_original\_pairs@{detect\_original\_pairs}!common.cpp@{common.cpp}}
+\doxysubsubsection{\texorpdfstring{detect\_original\_pairs()}{detect\_original\_pairs()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} detect\+\_\+original\+\_\+pairs (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}}]{structure,  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} \texorpdfstring{$\ast$}{*}}]{p\+\_\+table }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{common_8cpp_source_l00878}{878}} of file \mbox{\hyperlink{common_8cpp_source}{common.\+cpp}}.
+
+\Hypertarget{common_8cpp_af3add2d67ee16e4a81fa26db508d7bba}\label{common_8cpp_af3add2d67ee16e4a81fa26db508d7bba} 
+\index{common.cpp@{common.cpp}!detect\_structure\_features@{detect\_structure\_features}}
+\index{detect\_structure\_features@{detect\_structure\_features}!common.cpp@{common.cpp}}
+\doxysubsubsection{\texorpdfstring{detect\_structure\_features()}{detect\_structure\_features()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} detect\+\_\+structure\+\_\+features (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}}]{structure,  }\item[{\mbox{\hyperlink{structstr__features}{str\+\_\+features}} \texorpdfstring{$\ast$}{*}}]{f }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{common_8cpp_source_l00941}{941}} of file \mbox{\hyperlink{common_8cpp_source}{common.\+cpp}}.
+
+\Hypertarget{common_8cpp_ae367d5af38b22de88bfe1bf34c33ace7}\label{common_8cpp_ae367d5af38b22de88bfe1bf34c33ace7} 
+\index{common.cpp@{common.cpp}!empty\_string@{empty\_string}}
+\index{empty\_string@{empty\_string}!common.cpp@{common.cpp}}
+\doxysubsubsection{\texorpdfstring{empty\_string()}{empty\_string()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} empty\+\_\+string (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}}]{str }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{common_8cpp_source_l00455}{455}} of file \mbox{\hyperlink{common_8cpp_source}{common.\+cpp}}.
+
+\Hypertarget{common_8cpp_a9b09473d2b76490bca5e73e7af9f756d}\label{common_8cpp_a9b09473d2b76490bca5e73e7af9f756d} 
+\index{common.cpp@{common.cpp}!exists\_restricted@{exists\_restricted}}
+\index{exists\_restricted@{exists\_restricted}!common.cpp@{common.cpp}}
+\doxysubsubsection{\texorpdfstring{exists\_restricted()}{exists\_restricted()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} exists\+\_\+restricted (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}}}]{i,  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}}}]{j,  }\item[{\mbox{\hyperlink{structstr__features}{str\+\_\+features}} \texorpdfstring{$\ast$}{*}}]{fres }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{common_8cpp_source_l01160}{1160}} of file \mbox{\hyperlink{common_8cpp_source}{common.\+cpp}}.
+
+\Hypertarget{common_8cpp_add121e632701995b40374d740f919717}\label{common_8cpp_add121e632701995b40374d740f919717} 
+\index{common.cpp@{common.cpp}!exists\_restricted\_ptable@{exists\_restricted\_ptable}}
+\index{exists\_restricted\_ptable@{exists\_restricted\_ptable}!common.cpp@{common.cpp}}
+\doxysubsubsection{\texorpdfstring{exists\_restricted\_ptable()}{exists\_restricted\_ptable()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} exists\+\_\+restricted\+\_\+ptable (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}}}]{i,  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}}}]{j,  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} \texorpdfstring{$\ast$}{*}}]{ptable }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{common_8cpp_source_l01180}{1180}} of file \mbox{\hyperlink{common_8cpp_source}{common.\+cpp}}.
+
+\Hypertarget{common_8cpp_abcd56a7f37a58d25c08b9c34acab5e82}\label{common_8cpp_abcd56a7f37a58d25c08b9c34acab5e82} 
+\index{common.cpp@{common.cpp}!get\_sorted\_positions@{get\_sorted\_positions}}
+\index{get\_sorted\_positions@{get\_sorted\_positions}!common.cpp@{common.cpp}}
+\doxysubsubsection{\texorpdfstring{get\_sorted\_positions()}{get\_sorted\_positions()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} get\+\_\+sorted\+\_\+positions (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}}}]{n,  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{double}}}]{numbers\mbox{[}$\,$\mbox{]},  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}}}]{positions\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{common_8cpp_source_l00087}{87}} of file \mbox{\hyperlink{common_8cpp_source}{common.\+cpp}}.
+
+\Hypertarget{common_8cpp_a92de552f74ae0cdbb3b86774d44b8b85}\label{common_8cpp_a92de552f74ae0cdbb3b86774d44b8b85} 
+\index{common.cpp@{common.cpp}!giveup@{giveup}}
+\index{giveup@{giveup}!common.cpp@{common.cpp}}
+\doxysubsubsection{\texorpdfstring{giveup()}{giveup()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} giveup (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{const}} \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}}]{string1,  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{const}} \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}}]{string2 }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{common_8cpp_source_l00377}{377}} of file \mbox{\hyperlink{common_8cpp_source}{common.\+cpp}}.
+
+\Hypertarget{common_8cpp_a2200dbed947fbefbbd174ea3d6ddb0b2}\label{common_8cpp_a2200dbed947fbefbbd174ea3d6ddb0b2} 
+\index{common.cpp@{common.cpp}!init@{init}}
+\index{init@{init}!common.cpp@{common.cpp}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstack__ds}{stack\+\_\+ds}} \texorpdfstring{$\ast$}{*}}]{st }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{common_8cpp_source_l00850}{850}} of file \mbox{\hyperlink{common_8cpp_source}{common.\+cpp}}.
+
+\Hypertarget{common_8cpp_a814a6bb4a951da67ae8104b13a834144}\label{common_8cpp_a814a6bb4a951da67ae8104b13a834144} 
+\index{common.cpp@{common.cpp}!insert\_space@{insert\_space}}
+\index{insert\_space@{insert\_space}!common.cpp@{common.cpp}}
+\doxysubsubsection{\texorpdfstring{insert\_space()}{insert\_space()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} insert\+\_\+space (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}}]{structure,  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}}}]{place }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{common_8cpp_source_l00828}{828}} of file \mbox{\hyperlink{common_8cpp_source}{common.\+cpp}}.
+
+\Hypertarget{common_8cpp_a087137713d395d142d4520cc5c445b43}\label{common_8cpp_a087137713d395d142d4520cc5c445b43} 
+\index{common.cpp@{common.cpp}!int\_to\_nuc@{int\_to\_nuc}}
+\index{int\_to\_nuc@{int\_to\_nuc}!common.cpp@{common.cpp}}
+\doxysubsubsection{\texorpdfstring{int\_to\_nuc()}{int\_to\_nuc()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} int\+\_\+to\+\_\+nuc (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}}}]{inuc }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{common_8cpp_source_l00589}{589}} of file \mbox{\hyperlink{common_8cpp_source}{common.\+cpp}}.
+
+\Hypertarget{common_8cpp_a164516e3d80f54c08f3b77854beb0c1b}\label{common_8cpp_a164516e3d80f54c08f3b77854beb0c1b} 
+\index{common.cpp@{common.cpp}!is\_nucleotide@{is\_nucleotide}}
+\index{is\_nucleotide@{is\_nucleotide}!common.cpp@{common.cpp}}
+\doxysubsubsection{\texorpdfstring{is\_nucleotide()}{is\_nucleotide()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} is\+\_\+nucleotide (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}}}]{base }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{common_8cpp_source_l00602}{602}} of file \mbox{\hyperlink{common_8cpp_source}{common.\+cpp}}.
+
+\Hypertarget{common_8cpp_aa6443b2d67b7db4b6bc448667da9a40d}\label{common_8cpp_aa6443b2d67b7db4b6bc448667da9a40d} 
+\index{common.cpp@{common.cpp}!is\_structured@{is\_structured}}
+\index{is\_structured@{is\_structured}!common.cpp@{common.cpp}}
+\doxysubsubsection{\texorpdfstring{is\_structured()}{is\_structured()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} is\+\_\+structured (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}}}]{i,  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}}}]{j,  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}}]{structure }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{common_8cpp_source_l00116}{116}} of file \mbox{\hyperlink{common_8cpp_source}{common.\+cpp}}.
+
+\Hypertarget{common_8cpp_a52cf181e7737480120ac9706aeba4cd3}\label{common_8cpp_a52cf181e7737480120ac9706aeba4cd3} 
+\index{common.cpp@{common.cpp}!loss@{loss}}
+\index{loss@{loss}!common.cpp@{common.cpp}}
+\doxysubsubsection{\texorpdfstring{loss()}{loss()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} loss (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}}}]{first,  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}}}]{last }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{common_8cpp_source_l00131}{131}} of file \mbox{\hyperlink{common_8cpp_source}{common.\+cpp}}.
+
+\Hypertarget{common_8cpp_abd36ff7d78eb8c8fe26397adcaad96d1}\label{common_8cpp_abd36ff7d78eb8c8fe26397adcaad96d1} 
+\index{common.cpp@{common.cpp}!nuc\_to\_int@{nuc\_to\_int}}
+\index{nuc\_to\_int@{nuc\_to\_int}!common.cpp@{common.cpp}}
+\doxysubsubsection{\texorpdfstring{nuc\_to\_int()}{nuc\_to\_int()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} nuc\+\_\+to\+\_\+int (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}}}]{nucleotide }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{common_8cpp_source_l00537}{537}} of file \mbox{\hyperlink{common_8cpp_source}{common.\+cpp}}.
+
+\Hypertarget{common_8cpp_ad25a525ba12c1ae0f5c392ab9abf3137}\label{common_8cpp_ad25a525ba12c1ae0f5c392ab9abf3137} 
+\index{common.cpp@{common.cpp}!penalty\_by\_size@{penalty\_by\_size}}
+\index{penalty\_by\_size@{penalty\_by\_size}!common.cpp@{common.cpp}}
+\doxysubsubsection{\texorpdfstring{penalty\_by\_size()}{penalty\_by\_size()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{constants_8h_ac9a8588270279e7ab92df9794938f2ca}{PARAMTYPE}} penalty\+\_\+by\+\_\+size (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}}}]{size,  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}}}]{type }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{common_8cpp_source_l00664}{664}} of file \mbox{\hyperlink{common_8cpp_source}{common.\+cpp}}.
+
+\Hypertarget{common_8cpp_a964a81fc12718029391b0f149ee3a802}\label{common_8cpp_a964a81fc12718029391b0f149ee3a802} 
+\index{common.cpp@{common.cpp}!penalty\_by\_size\_enthalpy@{penalty\_by\_size\_enthalpy}}
+\index{penalty\_by\_size\_enthalpy@{penalty\_by\_size\_enthalpy}!common.cpp@{common.cpp}}
+\doxysubsubsection{\texorpdfstring{penalty\_by\_size\_enthalpy()}{penalty\_by\_size\_enthalpy()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{constants_8h_ac9a8588270279e7ab92df9794938f2ca}{PARAMTYPE}} penalty\+\_\+by\+\_\+size\+\_\+enthalpy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}}}]{size,  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}}}]{type }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{common_8cpp_source_l00745}{745}} of file \mbox{\hyperlink{common_8cpp_source}{common.\+cpp}}.
+
+\Hypertarget{common_8cpp_a40339bb9d531dda036b52eb288035a17}\label{common_8cpp_a40339bb9d531dda036b52eb288035a17} 
+\index{common.cpp@{common.cpp}!pop@{pop}}
+\index{pop@{pop}!common.cpp@{common.cpp}}
+\doxysubsubsection{\texorpdfstring{pop()}{pop()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} pop (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstack__ds}{stack\+\_\+ds}} \texorpdfstring{$\ast$}{*}}]{st }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{common_8cpp_source_l00864}{864}} of file \mbox{\hyperlink{common_8cpp_source}{common.\+cpp}}.
+
+\Hypertarget{common_8cpp_a3be95b90641a337632cedd972d38e8dc}\label{common_8cpp_a3be95b90641a337632cedd972d38e8dc} 
+\index{common.cpp@{common.cpp}!push@{push}}
+\index{push@{push}!common.cpp@{common.cpp}}
+\doxysubsubsection{\texorpdfstring{push()}{push()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} push (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstack__ds}{stack\+\_\+ds}} \texorpdfstring{$\ast$}{*}}]{st,  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}}}]{el }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{common_8cpp_source_l00857}{857}} of file \mbox{\hyperlink{common_8cpp_source}{common.\+cpp}}.
+
+\Hypertarget{common_8cpp_a4d76863f044eee2995ba2dda28a8cff8}\label{common_8cpp_a4d76863f044eee2995ba2dda28a8cff8} 
+\index{common.cpp@{common.cpp}!read\_parsi\_options\_from\_file@{read\_parsi\_options\_from\_file}}
+\index{read\_parsi\_options\_from\_file@{read\_parsi\_options\_from\_file}!common.cpp@{common.cpp}}
+\doxysubsubsection{\texorpdfstring{read\_parsi\_options\_from\_file()}{read\_parsi\_options\_from\_file()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} read\+\_\+parsi\+\_\+options\+\_\+from\+\_\+file (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}}]{filename }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{common_8cpp_source_l01194}{1194}} of file \mbox{\hyperlink{common_8cpp_source}{common.\+cpp}}.
+
+\Hypertarget{common_8cpp_a352f68c729456ca0665f43df71fc4cd5}\label{common_8cpp_a352f68c729456ca0665f43df71fc4cd5} 
+\index{common.cpp@{common.cpp}!remove\_space@{remove\_space}}
+\index{remove\_space@{remove\_space}!common.cpp@{common.cpp}}
+\doxysubsubsection{\texorpdfstring{remove\_space()}{remove\_space()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} remove\+\_\+space (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}}]{structure }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{common_8cpp_source_l00437}{437}} of file \mbox{\hyperlink{common_8cpp_source}{common.\+cpp}}.
+
+\Hypertarget{common_8cpp_aad8d1acb03848eaee434aa969e8930be}\label{common_8cpp_aad8d1acb03848eaee434aa969e8930be} 
+\index{common.cpp@{common.cpp}!replace\_str\_piece@{replace\_str\_piece}}
+\index{replace\_str\_piece@{replace\_str\_piece}!common.cpp@{common.cpp}}
+\doxysubsubsection{\texorpdfstring{replace\_str\_piece()}{replace\_str\_piece()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} replace\+\_\+str\+\_\+piece (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}}]{sequence,  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}}}]{position,  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}}]{seq }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{common_8cpp_source_l00788}{788}} of file \mbox{\hyperlink{common_8cpp_source}{common.\+cpp}}.
+
+\Hypertarget{common_8cpp_a5d444f84e3a2771f6a12b36d0bcef497}\label{common_8cpp_a5d444f84e3a2771f6a12b36d0bcef497} 
+\index{common.cpp@{common.cpp}!reverse\_complement\_of\_seq@{reverse\_complement\_of\_seq}}
+\index{reverse\_complement\_of\_seq@{reverse\_complement\_of\_seq}!common.cpp@{common.cpp}}
+\doxysubsubsection{\texorpdfstring{reverse\_complement\_of\_seq()}{reverse\_complement\_of\_seq()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} reverse\+\_\+complement\+\_\+of\+\_\+seq (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{const}} \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}}]{seq,  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}}]{complem }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{common_8cpp_source_l00812}{812}} of file \mbox{\hyperlink{common_8cpp_source}{common.\+cpp}}.
+
+\Hypertarget{common_8cpp_a307cfb24a53e2fba8e99de0a25ee56c2}\label{common_8cpp_a307cfb24a53e2fba8e99de0a25ee56c2} 
+\index{common.cpp@{common.cpp}!self\_complementary@{self\_complementary}}
+\index{self\_complementary@{self\_complementary}!common.cpp@{common.cpp}}
+\doxysubsubsection{\texorpdfstring{self\_complementary()}{self\_complementary()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} self\+\_\+complementary (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}}]{sequence }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{common_8cpp_source_l01139}{1139}} of file \mbox{\hyperlink{common_8cpp_source}{common.\+cpp}}.
+
+\Hypertarget{common_8cpp_add20cc636f68fbe2685a9c2911f54e6d}\label{common_8cpp_add20cc636f68fbe2685a9c2911f54e6d} 
+\index{common.cpp@{common.cpp}!substr@{substr}}
+\index{substr@{substr}!common.cpp@{common.cpp}}
+\doxysubsubsection{\texorpdfstring{substr()}{substr()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} substr (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}}]{source,  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}}}]{begin,  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}}}]{end,  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}}]{dest }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{common_8cpp_source_l00777}{777}} of file \mbox{\hyperlink{common_8cpp_source}{common.\+cpp}}.
+
+\Hypertarget{common_8cpp_a834a69f7dd0f29faaf4ec0e1ec2c472e}\label{common_8cpp_a834a69f7dd0f29faaf4ec0e1ec2c472e} 
+\index{common.cpp@{common.cpp}!valid\_structure@{valid\_structure}}
+\index{valid\_structure@{valid\_structure}!common.cpp@{common.cpp}}
+\doxysubsubsection{\texorpdfstring{valid\_structure()}{valid\_structure()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} valid\+\_\+structure (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}}}]{i,  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}}}]{j,  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}}]{structure }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{common_8cpp_source_l00918}{918}} of file \mbox{\hyperlink{common_8cpp_source}{common.\+cpp}}.
+
+\Hypertarget{common_8cpp_a1855e8a86a27b75c76d0fd7181db2418}\label{common_8cpp_a1855e8a86a27b75c76d0fd7181db2418} 
+\index{common.cpp@{common.cpp}!watson\_crick@{watson\_crick}}
+\index{watson\_crick@{watson\_crick}!common.cpp@{common.cpp}}
+\doxysubsubsection{\texorpdfstring{watson\_crick()}{watson\_crick()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} watson\+\_\+crick (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}}}]{base1,  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}}}]{base2 }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{common_8cpp_source_l00503}{503}} of file \mbox{\hyperlink{common_8cpp_source}{common.\+cpp}}.
+

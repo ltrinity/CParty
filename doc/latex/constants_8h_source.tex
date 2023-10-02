@@ -1,0 +1,166 @@
+\doxysection{constants.\+h}
+\hypertarget{constants_8h_source}{}\label{constants_8h_source}\index{C:/Users/luket/Desktop/testing\_CParty/CParty/simfold/include/constants.h@{C:/Users/luket/Desktop/testing\_CParty/CParty/simfold/include/constants.h}}
+\mbox{\hyperlink{constants_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00001}00001\ \textcolor{comment}{/***************************************************************************}}
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00002}00002\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ constants.h\ \ -\/\ \ description}}
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00003}00003\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00004}00004\ \textcolor{comment}{\ \ \ \ begin\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ Thu\ Apr\ 11\ 2002}}
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00005}00005\ \textcolor{comment}{\ \ \ \ copyright\ \ \ \ \ \ \ \ \ \ \ \ :\ (C)\ 2002\ by\ Mirela\ Andronescu}}
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00006}00006\ \textcolor{comment}{\ \ \ \ email\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ andrones@cs.ubc.ca}}
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00007}00007\ \textcolor{comment}{\ ***************************************************************************/}}
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00009}00009\ \textcolor{comment}{/***************************************************************************}}
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00010}00010\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00011}00011\ \textcolor{comment}{\ *\ \ \ This\ program\ is\ free\ software;\ you\ can\ redistribute\ it\ and/or\ modify\ \ *}}
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00012}00012\ \textcolor{comment}{\ *\ \ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by\ \ *}}
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00013}00013\ \textcolor{comment}{\ *\ \ \ the\ Free\ Software\ Foundation;\ either\ version\ 2\ of\ the\ License,\ or\ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00014}00014\ \textcolor{comment}{\ *\ \ \ (at\ your\ option)\ any\ later\ version.\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00015}00015\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00016}00016\ \textcolor{comment}{\ ***************************************************************************/}}
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00018}00018\ \textcolor{preprocessor}{\#ifndef\ CONSTANTS\_H}}
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00019}00019\ \textcolor{preprocessor}{\#define\ CONSTANTS\_H}}
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00021}00021\ \textcolor{comment}{//\ define\ the\ model}}
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00023}00023\ \textcolor{comment}{//\ Instead\ of\ doing\ this,\ I\ have\ 3\ levels\ of\ parsi\_xxx\ variables.}}
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00024}00024\ \textcolor{comment}{//\ \ This\ permits\ me\ to\ add\ things\ on\ top\ of\ the\ SIMPLE\ (turner99)\ model,\ and\ also\ to\ compile\ only\ once}}
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00025}\mbox{\hyperlink{constants_8h_a0449a5c5d108678150edf62cca8914ae}{00025}}\ \textcolor{preprocessor}{\#define\ PARSI\ 1}}
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00026}\mbox{\hyperlink{constants_8h_a1b89fcdaed1c7825418c20531234d568}{00026}}\ \textcolor{preprocessor}{\#define\ LAVISH\ 0}}
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00027}\mbox{\hyperlink{constants_8h_abd7e6b50f27a8b1d1a130843d6e6fbfa}{00027}}\ \textcolor{preprocessor}{\#define\ T99\ 2}}
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00028}\mbox{\hyperlink{constants_8h_acad5a671fada05e1c2e444c5bda614f6}{00028}}\ \textcolor{preprocessor}{\#define\ ZL\ 3}}
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00029}00029\ \textcolor{comment}{//\ ZL\ is\ the\ Zhiang\_Liang\_2008\ model\ for\ bulge\ and\ internal\ loop\ length.\ The\ number\ of\ features\ is\ the\ same\ as\ for\ parsimonious.\ I\ only\ incorporate\ the\ slope.}}
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00030}\mbox{\hyperlink{constants_8h_a86e0d87f8c19cd1573f0bb889f1547fb}{00030}}\ \textcolor{preprocessor}{\#define\ HLI\ 4}}
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00031}00031\ \textcolor{comment}{//\ HLI\ =\ HALF\ LAVISH\ for\ internal\ loops:\ meaning\ I\ add\ the\ parsi,\ +\ the\ internal\ loops\ that\ appear\ in\ the\ experiments,\ but\ no\ more.}}
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00032}00032\ \textcolor{comment}{//\ the\ implementation\ for\ HLI\ is\ not\ finished}}
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00033}\mbox{\hyperlink{constants_8h_ad353ffa2124c8c6672ac517ec95db273}{00033}}\ \textcolor{preprocessor}{\#define\ T99\_LAVISH\ \ 5}}
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00034}00034\ \textcolor{comment}{//\ include\ both\ the\ Turner99\ specials\ and\ the\ Lavish.}}
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00036}00036\ \textcolor{comment}{//\ \#ifdef\ EXTENDEDMODEL}}
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00037}00037\ \textcolor{comment}{//\ \#define\ MODEL\ EXTENDED}}
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00038}00038\ \textcolor{comment}{//\ \#else}}
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00039}00039\ \textcolor{comment}{//\ \#define\ MODEL\ SIMPLE}}
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00040}00040\ \textcolor{comment}{//\ \#endif}}
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00041}00041\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00042}00042\ \textcolor{comment}{//\ \#define\ SIMPLE\ 0\ \ \ \ \ \ \ \ //\ the\ model\ with\ 363\ parameters\ that\ I\ used\ in\ the\ ISMB\ 2007\ paper}}
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00043}00043\ \textcolor{comment}{//\ \#define\ EXTENDED\ 1}}
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00046}00046\ \textcolor{comment}{//\ Luke\ Aug\ 2023\ defining\ long\ double\ part\ func\ type}}
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00047}\mbox{\hyperlink{constants_8h_adf823d40ac379702030cb342e84d5f2e}{00047}}\ \textcolor{preprocessor}{\#define\ pf\_t\ long\ double}}
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00049}00049\ \textcolor{comment}{//\ define\ the\ parameters\ type}}
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00050}00050\ \textcolor{preprocessor}{\#ifdef\ DOUBLEPARAMS}}
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00051}00051\ \textcolor{preprocessor}{\#define\ PARAMTYPE\ double}}
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00052}00052\ \textcolor{preprocessor}{\#define\ PFTYPE\ double}}
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00053}00053\ \textcolor{preprocessor}{\#define\ EXP\ exp}}
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00054}00054\ \textcolor{preprocessor}{\#define\ LOG\ log}}
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00056}00056\ \textcolor{preprocessor}{\#elif\ LDOUBLEPARAMS}}
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00057}00057\ \textcolor{preprocessor}{\#define\ PARAMTYPE\ long\ double}}
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00058}00058\ \textcolor{preprocessor}{\#define\ PFTYPE\ long\ double}}
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00059}00059\ \textcolor{preprocessor}{\#define\ EXP\ expl}}
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00060}00060\ \textcolor{preprocessor}{\#define\ LOG\ logl}}
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00062}00062\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00063}\mbox{\hyperlink{constants_8h_ac9a8588270279e7ab92df9794938f2ca}{00063}}\ \textcolor{preprocessor}{\#define\ PARAMTYPE\ int}}
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00064}\mbox{\hyperlink{constants_8h_a9377001671b5ece8bb2a2cf636de4b8a}{00064}}\ \textcolor{preprocessor}{\#define\ PFTYPE\ double}}
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00065}\mbox{\hyperlink{constants_8h_a84db90500a1f9527c04e28817d9f60a1}{00065}}\ \textcolor{preprocessor}{\#define\ EXP\ exp}}
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00066}\mbox{\hyperlink{constants_8h_a159ca84d25a5487d8e81e4438725df19}{00066}}\ \textcolor{preprocessor}{\#define\ LOG\ log}}
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00067}00067\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00070}00070\ \textcolor{preprocessor}{\#ifdef\ DOUBLEPARAMS}}
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00071}00071\ \textcolor{preprocessor}{\#define\ INCLUDE\_FUNCTIONS}}
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00072}00072\ \textcolor{preprocessor}{\#elif\ LDOUBLEPARAMS}}
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00073}00073\ \textcolor{preprocessor}{\#define\ INCLUDE\_FUNCTIONS}}
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00074}00074\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00076}00076\ \textcolor{comment}{//\ the\ type\ of\ the\ partition\ function\ arrays}}
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00077}00077\ }
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00078}\mbox{\hyperlink{constants_8h_a7bbcf3adc401923b5f7b1deb6acb2538}{00078}}\ \textcolor{preprocessor}{\#define\ PFFORMAT\ g}}
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00079}00079\ }
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00080}\mbox{\hyperlink{constants_8h_a537ad9bceff6e06ac5081146d81adff3}{00080}}\ \textcolor{preprocessor}{\#define\ RNA\ \ \ 0}}
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00081}\mbox{\hyperlink{constants_8h_a7e1f80c2888e5e4d779d8571e66ae50d}{00081}}\ \textcolor{preprocessor}{\#define\ DNA\ \ \ 1}}
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00082}00082\ }
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00083}00083\ \textcolor{comment}{//\ change\ these\ if\ necessary}}
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00084}\mbox{\hyperlink{constants_8h_a1b8bfc1abb1ba53bcc6c516ddf02ad97}{00084}}\ \textcolor{preprocessor}{\#define\ MAXSLEN\ \ \ \ \ \ \ \ \ 40000\ \ }\textcolor{comment}{//\ maximum\ of\ total\ sequence\ length.\ The\ maximum\ value\ that\ can\ be\ used\ without\ causing\ an\ overflow\ is\ 46340.\ //\ Hosna:\ November\ 16,\ 2015,\ changed\ value\ from\ 5000}}
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00085}\mbox{\hyperlink{constants_8h_aaddd34e855d91a29bdd72f002577cd70}{00085}}\ \textcolor{preprocessor}{\#define\ MAXENERGY\ \ \ \ \ \ \ 0\ \ \ \ \ }\textcolor{comment}{//\ the\ maximum\ energy\ that\ this\ program\ returns\ (usually\ 0)}}
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00086}\mbox{\hyperlink{constants_8h_a33d4bf0118147ac61bf7338681ef2afa}{00086}}\ \textcolor{preprocessor}{\#define\ MAX\_BRANCHES\ \ \ \ MAXSLEN/2\ \ \ \ }\textcolor{comment}{//\ maximum\ \#\ of\ branches\ in\ multiloops\ \ \ //\ should\ be\ no\ more\ than\ 50\ or\ so,\ but\ if\ the\ parameters\ go\ nuts,\ I\ may\ have\ many\ branches}}
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00087}\mbox{\hyperlink{constants_8h_a306d2aeba34312506525e9d92f3f608c}{00087}}\ \textcolor{preprocessor}{\#define\ MAXSUBSTR\ \ \ \ \ \ \ 100\ \ }\textcolor{comment}{//\ maximum\ number\ of\ suboptimal\ structures}}
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00088}00088\ }
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00089}00089\ \textcolor{comment}{//\ No\ need\ to\ change\ the\ following}}
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00090}00090\ }
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00091}\mbox{\hyperlink{constants_8h_a362ed021cc35547b6d5c41c8e1b70c0e}{00091}}\ \textcolor{preprocessor}{\#define\ MAXNUMPARAMS\ \ \ \ 9000\ \ }\textcolor{comment}{//\ max\ \#\ of\ thermodynamic\ parameters}}
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00092}\mbox{\hyperlink{constants_8h_a4c824147b00663f15dce37416a35b296}{00092}}\ \textcolor{preprocessor}{\#define\ MAXPNAME\ \ \ \ \ \ \ \ 500\ \ \ \ }\textcolor{comment}{//\ max\ length\ of\ a\ parameter\ name}}
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00093}00093\ }
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00094}00094\ \textcolor{comment}{//\ for\ MultiFold}}
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00095}\mbox{\hyperlink{constants_8h_a4b4ce695d2412b491b28cedcf74aaaa1}{00095}}\ \textcolor{preprocessor}{\#define\ MAXNUMSEQ\ \ \ \ \ \ 50}}
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00096}00096\ }
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00097}\mbox{\hyperlink{constants_8h_abf67970a35810c954de9e38d77b92641}{00097}}\ \textcolor{preprocessor}{\#define\ NUM\_DANG\ \ \ \ \ \ \ 48\ \ \ \ \ \ \ \ }\textcolor{comment}{//\ there\ are\ 48\ dangling\ ends}}
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00098}00098\ }
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00099}\mbox{\hyperlink{constants_8h_aee3fa4bf0a9b1a18223607f2a7daaba2a42a4ade1acd55a49164099104990e09f}{00099}}\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{constants_8h_aee3fa4bf0a9b1a18223607f2a7daaba2}{bases}}\ \{\mbox{\hyperlink{constants_8h_aee3fa4bf0a9b1a18223607f2a7daaba2a42a4ade1acd55a49164099104990e09f}{A}}=0,\mbox{\hyperlink{constants_8h_aee3fa4bf0a9b1a18223607f2a7daaba2a739ce3f516592d245d16fd8a3893472c}{C}}=1,\mbox{\hyperlink{constants_8h_aee3fa4bf0a9b1a18223607f2a7daaba2a2fe993340f6abb2234e543cd427df70b}{G}}=2,\mbox{\hyperlink{constants_8h_aee3fa4bf0a9b1a18223607f2a7daaba2a21f40778b7db9343a6ca75ec2c41ccce}{T}}=3,\mbox{\hyperlink{constants_8h_aee3fa4bf0a9b1a18223607f2a7daaba2ac461e84f27bbb236874e1011cd66031f}{U}}=3,\mbox{\hyperlink{constants_8h_aee3fa4bf0a9b1a18223607f2a7daaba2a58833a3110c570fb05130d40c365d1e4}{X}}=4\};}
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00100}00100\ }
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00101}\mbox{\hyperlink{constants_8h_a12c2040f25d8e3a7b9e1c2024c618cb6}{00101}}\ \textcolor{preprocessor}{\#define\ INF\ \ \ \ \ \ \ \ \ \ \ \ \ 1600000\ \ \ \ \ \ }\textcolor{comment}{//\ a\ very\ big\ value\ (infinity)}}
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00102}\mbox{\hyperlink{constants_8h_a151d093c6ce590f6447a065c9d1142fe}{00102}}\ \textcolor{preprocessor}{\#define\ NUCL\ \ \ \ \ \ \ \ \ \ \ \ 4\ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{//\ number\ of\ nucleotides:\ 4:\ A,\ C,\ G,\ T}}
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00103}\mbox{\hyperlink{constants_8h_ad1bd6eabac419670ddd3c9ed82145988}{00103}}\ \textcolor{preprocessor}{\#define\ MAXLOOP\ \ \ \ \ \ \ \ \ 30\ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{//\ max\ size\ for\ internal\ loops,\ hairpin\ loops\ and\ bulge\ loops}}
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00104}00104\ }
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00105}\mbox{\hyperlink{constants_8h_abe37de2e40a1056893eb9b01463b8665}{00105}}\ \textcolor{preprocessor}{\#define\ MAXLOOP\_ASYM\ \ \ \ 29}}
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00106}\mbox{\hyperlink{constants_8h_a8f5d1b5c93bf06640e2602378e6f01fd}{00106}}\ \textcolor{preprocessor}{\#define\ MAX\_EXP\_ASYM\ \ \ \ 4}}
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00107}00107\ \textcolor{comment}{//\ the\ maximum\ internal\ loop\ asymmetry\ (abs(size1-\/size2))\ for\ which\ we\ have\ experimental\ values}}
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00108}00108\ }
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00109}00109\ \textcolor{comment}{//\ max\ loop\ size\ for\ which\ tabulated\ values\ are\ experimentally\ determined}}
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00110}00110\ \textcolor{comment}{//\ \ \ \ for\ len\ >\ MAX,\ the\ following\ formula\ is\ applied:\ lenpen\ (len)\ =\ lenpen(MAX)\ +\ 1.75\ RT*log(1.0*len/MAX));}}
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00111}00111\ \textcolor{comment}{//\ \ \ \ RT\ =\ 1.75\ *\ 1.98717\ /\ 1000\ *\ 310.15;}}
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00112}00112\ }
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00113}\mbox{\hyperlink{constants_8h_aa4db476b01ddafd28027dee368b28c4e}{00113}}\ \textcolor{preprocessor}{\#define\ MAXLOOP\_H\_T99\ \ \ 9}}
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00114}\mbox{\hyperlink{constants_8h_ae159faa55fa15f96527a338f23d811a3}{00114}}\ \textcolor{preprocessor}{\#define\ MAXLOOP\_I\_T99\ \ \ 6}}
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00115}\mbox{\hyperlink{constants_8h_a8d6c8f33a93d898f079965d43a06ba18}{00115}}\ \textcolor{preprocessor}{\#define\ MAXLOOP\_B\_T99\ \ \ 6}}
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00116}00116\ }
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00117}00117\ \textcolor{comment}{//\ the\ maximum\ size\ of\ a\ hairpin/internal/bulge\ loop\ for\ which\ there\ is\ experimental\ value}}
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00118}\mbox{\hyperlink{constants_8h_ae8f9118803953a5e3808a6f42c83716a}{00118}}\ \textcolor{preprocessor}{\#define\ MAXLOOP\_H\_PARSI\ \ \ 9}}
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00119}\mbox{\hyperlink{constants_8h_a02d9f45c59d9a9e7b42ae35ffb995d18}{00119}}\ \textcolor{preprocessor}{\#define\ MAXLOOP\_I\_PARSI\ \ \ 10}}
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00120}\mbox{\hyperlink{constants_8h_a6f61fb8f0e7c91738216b77a94a7e75b}{00120}}\ \textcolor{preprocessor}{\#define\ MAXLOOP\_B\_PARSI\ \ \ 3}}
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00121}00121\ }
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00122}\mbox{\hyperlink{constants_8h_a97789b593fbfef942a242248920305f7}{00122}}\ \textcolor{preprocessor}{\#define\ MAXLOOP\_H\_LAVISH\ \ \ \ \ 30}}
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00123}\mbox{\hyperlink{constants_8h_a116fbec386cbcb5a94570b6e59a54209}{00123}}\ \textcolor{preprocessor}{\#define\ MAXLOOP\_I\_LAVISH\ \ \ \ \ 30}}
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00124}\mbox{\hyperlink{constants_8h_a28e7809271253236478de3b293923586}{00124}}\ \textcolor{preprocessor}{\#define\ MAXLOOP\_B\_LAVISH\ \ \ \ \ 30}}
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00125}00125\ }
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00126}\mbox{\hyperlink{constants_8h_a269074c5a44c71724f1d04cf7ad2fed5}{00126}}\ \textcolor{preprocessor}{\#define\ MAXTRILOOPNO\ \ \ \ 100\ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{//\ max\ number\ of\ hairpin\ loops\ of\ size\ 3}}
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00127}\mbox{\hyperlink{constants_8h_aea5e5dd5c3d3536e40928b0732b4ef87}{00127}}\ \textcolor{preprocessor}{\#define\ MAXTLOOPNO\ \ \ \ \ \ 400\ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{//\ max\ number\ of\ hairpin\ loops\ of\ size\ 4}}
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00128}\mbox{\hyperlink{constants_8h_a62276925fd66212a9b59fd7689e0d943}{00128}}\ \textcolor{preprocessor}{\#define\ MAX\_SPECIAL\_LOOP\_NO\ 400\ \ \ \ \ \ }\textcolor{comment}{//\ max\ number\ of\ special\ hairpin\ loops\ for\ MODEL\ EXTENDED}}
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00129}\mbox{\hyperlink{constants_8h_a002b2f4894492820fe708b1b7e7c5e70}{00129}}\ \textcolor{preprocessor}{\#define\ EPSILON\ \ \ \ \ \ \ \ \ 0.0001\ \ \ \ \ \ \ }\textcolor{comment}{//\ a\ very\ small\ value}}
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00130}\mbox{\hyperlink{constants_8h_ae646250fd59311356c7e5722a81c3a96}{00130}}\ \textcolor{preprocessor}{\#define\ TURN\ \ \ \ \ \ \ \ \ \ \ \ 3\ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{//\ the\ minimum\ number\ of\ free\ bases\ in\ a\ hairpin\ loop}}
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00131}00131\ \textcolor{comment}{//\ for\ partition\ function\ for\ restricted\ sequences,\ TURN\ should\ be\ 0,\ otherwise\ I\ can't\ get\ internal\ loops\ etc\ next\ to\ ()}}
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00132}00132\ \textcolor{comment}{//\ However,\ this\ screws\ up\ the\ partition\ function\ and\ gradient\ for\ the\ unrestricted\ case}}
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00133}\mbox{\hyperlink{constants_8h_a1bc9d1d98e2202146a99ff23167d26cc}{00133}}\ \textcolor{preprocessor}{\#define\ MIN\_HAIRPIN\ \ \ \ \ 3}}
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00134}00134\ \textcolor{comment}{//\ TURN\ used\ to\ be\ 3,\ but\ for\ the\ restricted\ cases\ it\ can\ be\ 0.\ So\ I\ changed\ it\ to\ 0.}}
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00135}00135\ }
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00136}\mbox{\hyperlink{constants_8h_a655c84af1b0034986ff56e12e84f983d}{00136}}\ \textcolor{preprocessor}{\#define\ NONE\ \ \ \ \ \ \ \ \ \ \ \ 'N'\ \ \ \ \ \ \ \ \ }\textcolor{comment}{//\ no\ structure}}
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00137}\mbox{\hyperlink{constants_8h_a078d353fca9f6b899c0cae52c529ff90}{00137}}\ \textcolor{preprocessor}{\#define\ HAIRP\ \ \ \ \ \ \ \ \ \ \ 'H'\ \ \ \ \ \ \ \ \ }\textcolor{comment}{//\ closes\ a\ hairpin\ loop}}
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00138}\mbox{\hyperlink{constants_8h_a2cc8f2d83039de1aef6590f9782921ee}{00138}}\ \textcolor{preprocessor}{\#define\ STACK\ \ \ \ \ \ \ \ \ \ \ 'S'\ \ \ \ \ \ \ \ \ }\textcolor{comment}{//\ closes\ a\ stacked\ pair}}
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00139}\mbox{\hyperlink{constants_8h_ab42e84239d08647291f8bb79633075dc}{00139}}\ \textcolor{preprocessor}{\#define\ INTER\ \ \ \ \ \ \ \ \ \ \ 'I'\ \ \ \ \ \ \ \ \ }\textcolor{comment}{//\ closes\ an\ internal\ loop}}
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00140}\mbox{\hyperlink{constants_8h_ac7b4d7c5e5a25aeee8c5b6b37f1d2ba6}{00140}}\ \textcolor{preprocessor}{\#define\ MULTI\ \ \ \ \ \ \ \ \ \ \ 'M'\ \ \ \ \ \ \ \ \ }\textcolor{comment}{//\ closes\ a\ regular\ multi-\/loop}}
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00141}\mbox{\hyperlink{constants_8h_ac0c9a8fb8ad171632521d39797f6534c}{00141}}\ \textcolor{preprocessor}{\#define\ MULTI\_LINK\ \ \ \ \ \ 'O'\ \ \ \ \ \ \ \ \ }\textcolor{comment}{//\ closes\ a\ special\ multi-\/loop}}
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00142}00142\ }
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00143}\mbox{\hyperlink{constants_8h_a8f7607b0fec08c706f1f9881b87e6043}{00143}}\ \textcolor{preprocessor}{\#define\ M\_WM\ \ \ \ \ \ \ \ \ \ \ \ 'B'\ \ \ \ \ \ \ \ \ }\textcolor{comment}{//\ closes\ a\ regular\ partial\ multi-\/loop}}
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00144}\mbox{\hyperlink{constants_8h_a7b394b5ffcc3be5e18fd9daae1a99cf1}{00144}}\ \textcolor{preprocessor}{\#define\ M\_WM\_LINK\ \ \ \ \ \ \ 'C'\ \ \ \ \ \ \ \ \ }\textcolor{comment}{//\ closes\ a\ special\ partial\ multi-\/loop}}
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00145}00145\ }
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00146}\mbox{\hyperlink{constants_8h_a9a8e700d56e7d858108b755ad3edb52e}{00146}}\ \textcolor{preprocessor}{\#define\ FREE\ \ \ \ \ \ \ \ \ \ \ \ 'W'\ \ \ \ \ \ \ \ \ }\textcolor{comment}{//\ this\ base\ is\ free\ to\ be\ paired\ or\ unpaired\ to\ other\ base}}
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00147}\mbox{\hyperlink{constants_8h_a8e8f11caf539de9555d07b4e7ef5b1da}{00147}}\ \textcolor{preprocessor}{\#define\ LOOP\ \ \ \ \ \ \ \ \ \ \ \ 'V'\ \ \ \ \ \ \ \ \ }\textcolor{comment}{//\ closes\ a\ loop}}
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00148}00148\ }
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00149}\mbox{\hyperlink{constants_8h_a239cee7c486c455c32a9a5b4361df02d}{00149}}\ \textcolor{preprocessor}{\#define\ M\_FM\ \ \ \ \ \ \ \ \ \ \ \ 'F'\ \ \ \ \ \ \ \ \ }\textcolor{comment}{//\ regular\ FM\ from\ the\ multiloop\ decomposition\ of\ Wutchy\ et\ al}}
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00150}\mbox{\hyperlink{constants_8h_ad805212d577471464b78dd99f16d3f15}{00150}}\ \textcolor{preprocessor}{\#define\ M\_FM1\ \ \ \ \ \ \ \ \ \ \ 'A'\ \ \ \ \ \ \ \ \ }\textcolor{comment}{//\ regular\ FM1\ from\ the\ multiloop\ decomposition\ of\ Wutchy\ et\ al}}
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00151}00151\ }
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00152}\mbox{\hyperlink{constants_8h_a2b76c9bc8f95a46ee5660752b137efe7}{00152}}\ \textcolor{preprocessor}{\#define\ M\_FM\_LINK\ \ \ \ \ \ \ 'P'\ \ \ \ \ \ \ \ \ }\textcolor{comment}{//\ special\ FM\ adapted\ from\ FM\ =\ the\ multiloop\ decomposition\ of\ Wutchy\ et\ al}}
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00153}\mbox{\hyperlink{constants_8h_a24881da07a3023a2dc61e8e5a147e7da}{00153}}\ \textcolor{preprocessor}{\#define\ M\_FM1\_LINK\ \ \ \ \ \ 'Q'\ \ \ \ \ \ \ \ \ }\textcolor{comment}{//\ special\ FM1\ adapted\ from\ FM1\ =\ the\ multiloop\ decomposition\ of\ Wutchy\ et\ al}}
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00154}00154\ }
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00155}00155\ \textcolor{comment}{//\ Structure\ types}}
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00156}\mbox{\hyperlink{constants_8h_af4a5d9cf09228950763b33b5847f5a3b}{00156}}\ \textcolor{preprocessor}{\#define\ OLIGO\ \ \ "{}AO"{}}}
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00157}\mbox{\hyperlink{constants_8h_a0c923b084cd3b9d22c1bc56755739481}{00157}}\ \textcolor{preprocessor}{\#define\ GENE\ \ \ \ "{}GE"{}}}
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00158}00158\ }
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00159}00159\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{constants_8h_source_l00160}00160\ }
+
+\end{DoxyCode}

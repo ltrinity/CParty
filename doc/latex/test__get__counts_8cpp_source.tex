@@ -1,0 +1,118 @@
+\doxysection{test\+\_\+get\+\_\+counts.\+cpp}
+\hypertarget{test__get__counts_8cpp_source}{}\label{test__get__counts_8cpp_source}\index{C:/Users/luket/Desktop/testing\_CParty/CParty/simfold/test\_get\_counts.cpp@{C:/Users/luket/Desktop/testing\_CParty/CParty/simfold/test\_get\_counts.cpp}}
+\mbox{\hyperlink{test__get__counts_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{test__get__counts_8cpp_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{test__get__counts_8cpp_source_l00002}00002\ \textcolor{comment}{//\ test\ the\ function\ get\_feature\_counts\_restricted}}
+\DoxyCodeLine{\Hypertarget{test__get__counts_8cpp_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{test__get__counts_8cpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{\Hypertarget{test__get__counts_8cpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <string.h>}}
+\DoxyCodeLine{\Hypertarget{test__get__counts_8cpp_source_l00006}00006\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{\Hypertarget{test__get__counts_8cpp_source_l00007}00007\ \textcolor{preprocessor}{\#include\ <time.h>}}
+\DoxyCodeLine{\Hypertarget{test__get__counts_8cpp_source_l00008}00008\ \textcolor{preprocessor}{\#include\ <math.h>}}
+\DoxyCodeLine{\Hypertarget{test__get__counts_8cpp_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{test__get__counts_8cpp_source_l00010}00010\ \textcolor{comment}{//\ include\ the\ simfold\ header\ files}}
+\DoxyCodeLine{\Hypertarget{test__get__counts_8cpp_source_l00011}00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{simfold_8h}{simfold.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{test__get__counts_8cpp_source_l00012}00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{externs_8h}{externs.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{test__get__counts_8cpp_source_l00013}00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{constants_8h}{constants.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{test__get__counts_8cpp_source_l00014}00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{params_8h}{params.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{test__get__counts_8cpp_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{test__get__counts_8cpp_source_l00016}00016\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{test__get__counts_8cpp_source_l00017}00017\ \textcolor{comment}{int\ check\_counts\_linear\ (int\ numpars,\ double\ *params,\ double\ *c,\ double\ f,\ double\ energy)}}
+\DoxyCodeLine{\Hypertarget{test__get__counts_8cpp_source_l00018}00018\ \textcolor{comment}{//\ Return\ 1\ if\ energy\ \string~=\ c'x\ +\ f\ \ \ \ (where\ x\ is\ params)}}
+\DoxyCodeLine{\Hypertarget{test__get__counts_8cpp_source_l00019}00019\ \textcolor{comment}{//\ Return\ 0\ otherwise}}
+\DoxyCodeLine{\Hypertarget{test__get__counts_8cpp_source_l00020}00020\ \textcolor{comment}{//\ Added\ on\ Feb\ 29,\ 2008}}
+\DoxyCodeLine{\Hypertarget{test__get__counts_8cpp_source_l00021}00021\ \textcolor{comment}{\{}}
+\DoxyCodeLine{\Hypertarget{test__get__counts_8cpp_source_l00022}00022\ \textcolor{comment}{\ \ \ \ double\ energy\_c\ =\ 0;}}
+\DoxyCodeLine{\Hypertarget{test__get__counts_8cpp_source_l00023}00023\ \textcolor{comment}{\ \ \ \ int\ i;}}
+\DoxyCodeLine{\Hypertarget{test__get__counts_8cpp_source_l00024}00024\ \textcolor{comment}{\ \ \ \ for\ (i=0;\ i\ <\ numpars;\ i++)}}
+\DoxyCodeLine{\Hypertarget{test__get__counts_8cpp_source_l00025}00025\ \textcolor{comment}{\ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{test__get__counts_8cpp_source_l00026}00026\ \textcolor{comment}{\ \ \ \ \ \ \ \ energy\_c\ +=\ \ c[i]\ *\ params[i];\ \ }}
+\DoxyCodeLine{\Hypertarget{test__get__counts_8cpp_source_l00027}00027\ \textcolor{comment}{\ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{test__get__counts_8cpp_source_l00028}00028\ \textcolor{comment}{\ \ \ \ energy\_c\ +=\ f;}}
+\DoxyCodeLine{\Hypertarget{test__get__counts_8cpp_source_l00029}00029\ \textcolor{comment}{\ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{test__get__counts_8cpp_source_l00030}00030\ \textcolor{comment}{\ \ \ \ if\ (fabs(energy\_c\ -\/\ energy)\ >\ 0.1)\ \ //\ not\ really\ sure\ what's\ a\ good\ threshold.\ Maybe\ 0\ is\ fine}}
+\DoxyCodeLine{\Hypertarget{test__get__counts_8cpp_source_l00031}00031\ \textcolor{comment}{\ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{test__get__counts_8cpp_source_l00032}00032\ \textcolor{comment}{\ \ \ \ \ \ \ \ printf\ ("{}ERROR!\ Something\ is\ wrong\ with\ the\ counts\ or\ the\ free\ energy:\ c'x+f\ =\ \%.2lf,\ energy\ =\ \%.2lf\ diff=\%.2lf\(\backslash\)n"{},\ energy\_c,\ energy,\ fabs(energy\_c-\/energy));}}
+\DoxyCodeLine{\Hypertarget{test__get__counts_8cpp_source_l00033}00033\ \textcolor{comment}{\ \ \ \ \ \ \ \ return\ 0;}}
+\DoxyCodeLine{\Hypertarget{test__get__counts_8cpp_source_l00034}00034\ \textcolor{comment}{\ \ \ \ \}\ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{test__get__counts_8cpp_source_l00035}00035\ \textcolor{comment}{\ \ \ \ return\ 1;}}
+\DoxyCodeLine{\Hypertarget{test__get__counts_8cpp_source_l00036}00036\ \textcolor{comment}{\}}}
+\DoxyCodeLine{\Hypertarget{test__get__counts_8cpp_source_l00037}00037\ \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{test__get__counts_8cpp_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{test__get__counts_8cpp_source_l00039}\mbox{\hyperlink{test__get__counts_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{00039}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{test__get__counts_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main}}\ (\textcolor{keywordtype}{int}\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{argc}},\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{argv}}[])}
+\DoxyCodeLine{\Hypertarget{test__get__counts_8cpp_source_l00040}00040\ \{}
+\DoxyCodeLine{\Hypertarget{test__get__counts_8cpp_source_l00041}00041\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{simfold_8cpp_aab0fa4fa34b613e3a6b4f0e87d1c073b}{sequence}}[\mbox{\hyperlink{constants_8h_a1b8bfc1abb1ba53bcc6c516ddf02ad97}{MAXSLEN}}];}
+\DoxyCodeLine{\Hypertarget{test__get__counts_8cpp_source_l00042}00042\ \ \ \ \ \textcolor{keywordtype}{char}\ structure[\mbox{\hyperlink{constants_8h_a1b8bfc1abb1ba53bcc6c516ddf02ad97}{MAXSLEN}}];}
+\DoxyCodeLine{\Hypertarget{test__get__counts_8cpp_source_l00043}00043\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{simfold_8cpp_acc011911591feaa0e5e5ac5889ee9a26}{restricted}}[\mbox{\hyperlink{constants_8h_a1b8bfc1abb1ba53bcc6c516ddf02ad97}{MAXSLEN}}];}
+\DoxyCodeLine{\Hypertarget{test__get__counts_8cpp_source_l00044}00044\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{paramfile}}[200];}
+\DoxyCodeLine{\Hypertarget{test__get__counts_8cpp_source_l00045}00045\ \ \ \ \ \textcolor{keywordtype}{double}\ energy;}
+\DoxyCodeLine{\Hypertarget{test__get__counts_8cpp_source_l00046}00046\ \ \ \ \ \textcolor{keywordtype}{int}\ ignore\_dangles;}
+\DoxyCodeLine{\Hypertarget{test__get__counts_8cpp_source_l00047}00047\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{with\_counts}};}
+\DoxyCodeLine{\Hypertarget{test__get__counts_8cpp_source_l00048}00048\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{test__get__counts_8cpp_source_l00049}00049\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{argc}}\ !=\ 5)}
+\DoxyCodeLine{\Hypertarget{test__get__counts_8cpp_source_l00050}00050\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{test__get__counts_8cpp_source_l00051}00051\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{printf}}\ (\textcolor{stringliteral}{"{}Usage:\ \%s\ <sequence>\ <structure>\ <ignore\_dangles:0|1>\ <with\_counts:0|1>\(\backslash\)n"{}},\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{argv}}[0]);}
+\DoxyCodeLine{\Hypertarget{test__get__counts_8cpp_source_l00052}00052\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{printf}}\ (\textcolor{stringliteral}{"{}Example:\ \%s\ \(\backslash\)"{}ACCAACAAAACAGG\(\backslash\)"{}\ \(\backslash\)"{}.((..<xxxx>.))\(\backslash\)"{}\ 0\ 1\(\backslash\)n"{}},\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{argv}}[0]);\ }
+\DoxyCodeLine{\Hypertarget{test__get__counts_8cpp_source_l00053}00053\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{test__get__counts_8cpp_source_l00054}00054\ \ \ \ \ \}\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{test__get__counts_8cpp_source_l00055}00055\ \ \ \ \ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{strcpy}}\ (\mbox{\hyperlink{simfold_8cpp_aab0fa4fa34b613e3a6b4f0e87d1c073b}{sequence}},\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{argv}}[1]);\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{test__get__counts_8cpp_source_l00056}00056\ \ \ \ \ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{strcpy}}\ (structure,\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{argv}}[2]);}
+\DoxyCodeLine{\Hypertarget{test__get__counts_8cpp_source_l00057}00057\ \ \ \ \ ignore\_dangles\ =\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{atoi}}\ (\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{argv}}[3]);}
+\DoxyCodeLine{\Hypertarget{test__get__counts_8cpp_source_l00058}00058\ \ \ \ \ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{with\_counts}}\ =\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{atoi}}\ (\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{argv}}[4]);}
+\DoxyCodeLine{\Hypertarget{test__get__counts_8cpp_source_l00059}00059\ \ \ \ \ \mbox{\hyperlink{externs_8h_ac3e1795766a80ec63b157951b4b9a7d4}{debug}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{test__get__counts_8cpp_source_l00060}00060\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{test__get__counts_8cpp_source_l00061}00061\ \ \ \ \ \textcolor{comment}{//\ Before\ calling\ any\ function\ in\ the\ library,\ you\ have\ to\ initialize\ config\_file,\ dna\_or\_rna,\ temperature}}
+\DoxyCodeLine{\Hypertarget{test__get__counts_8cpp_source_l00062}00062\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ and\ to\ call\ the\ function\ init\_data,\ which\ loads\ the\ thermodynamic\ parameters\ into\ memory}}
+\DoxyCodeLine{\Hypertarget{test__get__counts_8cpp_source_l00063}00063\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{test__get__counts_8cpp_source_l00064}00064\ \ \ \ \ \textcolor{comment}{//\ configuration\ file,\ the\ path\ should\ relative\ to\ the\ location\ of\ this\ executable}}
+\DoxyCodeLine{\Hypertarget{test__get__counts_8cpp_source_l00065}00065\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{config\_file}}[200]\ =\ \textcolor{stringliteral}{"{}params/multirnafold.conf"{}};}
+\DoxyCodeLine{\Hypertarget{test__get__counts_8cpp_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{test__get__counts_8cpp_source_l00067}00067\ \ \ \ \ \textcolor{comment}{//\ what\ to\ fold:\ RNA\ or\ DNA}}
+\DoxyCodeLine{\Hypertarget{test__get__counts_8cpp_source_l00068}00068\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{simfold_8cpp_a9202d5b1688659bf6c62dfe6833ca77c}{dna\_or\_rna}}\ =\ \mbox{\hyperlink{constants_8h_a537ad9bceff6e06ac5081146d81adff3}{RNA}};}
+\DoxyCodeLine{\Hypertarget{test__get__counts_8cpp_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{test__get__counts_8cpp_source_l00070}00070\ \ \ \ \ \textcolor{comment}{//\ temperature:\ any\ integer\ or\ real\ number\ between\ 0\ and\ 100}}
+\DoxyCodeLine{\Hypertarget{test__get__counts_8cpp_source_l00071}00071\ \ \ \ \ \textcolor{comment}{//\ represents\ degrees\ Celsius}}
+\DoxyCodeLine{\Hypertarget{test__get__counts_8cpp_source_l00072}00072\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{simfold_8cpp_ab4b11c8d9c758430960896bc3fe82ead}{temperature}}\ =\ 37;\ }
+\DoxyCodeLine{\Hypertarget{test__get__counts_8cpp_source_l00073}00073\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{test__get__counts_8cpp_source_l00074}00074\ \ \ \ \ \textcolor{comment}{//\ initialize\ the\ thermodynamic\ parameters}}
+\DoxyCodeLine{\Hypertarget{test__get__counts_8cpp_source_l00075}00075\ \ \ \ \ \textcolor{comment}{//\ call\ init\_data\ only\ once\ for\ the\ same\ dna\_or\_rna\ and\ same\ temperature}}
+\DoxyCodeLine{\Hypertarget{test__get__counts_8cpp_source_l00076}00076\ \ \ \ \ \textcolor{comment}{//\ if\ one\ of\ them\ changes,\ call\ init\_data\ again\ \ \ }}
+\DoxyCodeLine{\Hypertarget{test__get__counts_8cpp_source_l00077}00077\ \ \ \ \ \mbox{\hyperlink{init_8h_a550dbc06a52605c5de12f99a4b347c57}{init\_data}}\ (\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{argv}}[0],\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{config\_file}},\ \mbox{\hyperlink{simfold_8cpp_a9202d5b1688659bf6c62dfe6833ca77c}{dna\_or\_rna}},\ \mbox{\hyperlink{simfold_8cpp_ab4b11c8d9c758430960896bc3fe82ead}{temperature}});}
+\DoxyCodeLine{\Hypertarget{test__get__counts_8cpp_source_l00078}00078\ }
+\DoxyCodeLine{\Hypertarget{test__get__counts_8cpp_source_l00079}00079\ \ \ \ \ \textcolor{comment}{//\ I\ have\ to\ call\ the\ following\ function\ because\ the\ counter\ function\ doesn't\ do\ minimization\ of\ dangling\ ends}}
+\DoxyCodeLine{\Hypertarget{test__get__counts_8cpp_source_l00080}00080\ \ \ \ \ \textcolor{comment}{//fill\_data\_structures\_with\_new\_parameters\ ("{}params/turner\_parameters\_fm363\_constrdangles.txt"{});}}
+\DoxyCodeLine{\Hypertarget{test__get__counts_8cpp_source_l00081}00081\ \ \ \ \ \mbox{\hyperlink{params_8cpp_ad04d5fbafd45055ca361b3305bead804}{fill\_data\_structures\_with\_new\_parameters}}\ (\textcolor{stringliteral}{"{}params\_sub-\/1.txt"{}});}
+\DoxyCodeLine{\Hypertarget{test__get__counts_8cpp_source_l00082}00082\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{test__get__counts_8cpp_source_l00083}00083\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{num\_parameters}}\ =\ \mbox{\hyperlink{params_8cpp_a63d7da1d23274d6fc04c16a24b32c2e9}{get\_num\_params}}();}
+\DoxyCodeLine{\Hypertarget{test__get__counts_8cpp_source_l00084}00084\ \ \ \ \ \mbox{\hyperlink{constants_8h_ac9a8588270279e7ab92df9794938f2ca}{PARAMTYPE}}\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{params}}[\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{num\_parameters}}];}
+\DoxyCodeLine{\Hypertarget{test__get__counts_8cpp_source_l00085}00085\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{dparams}}[\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{num\_parameters}}];}
+\DoxyCodeLine{\Hypertarget{test__get__counts_8cpp_source_l00086}00086\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{c}}[\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{num\_parameters}}];}
+\DoxyCodeLine{\Hypertarget{test__get__counts_8cpp_source_l00087}00087\ \ \ \ \ \textcolor{keywordtype}{double}\ f;}
+\DoxyCodeLine{\Hypertarget{test__get__counts_8cpp_source_l00088}00088\ }
+\DoxyCodeLine{\Hypertarget{test__get__counts_8cpp_source_l00089}00089\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{with\_counts}})}
+\DoxyCodeLine{\Hypertarget{test__get__counts_8cpp_source_l00090}00090\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{test__get__counts_8cpp_source_l00091}00091\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{params_8cpp_ada5b80578f6778bc05506cfd07db9036}{save\_parameters\_in\_array}}\ (\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{params}});}
+\DoxyCodeLine{\Hypertarget{test__get__counts_8cpp_source_l00092}00092\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ this\ function\ saves\ the\ params*100,\ so\ divide\ by\ 100\ here}}
+\DoxyCodeLine{\Hypertarget{test__get__counts_8cpp_source_l00093}00093\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i=0;\ i\ <\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{num\_parameters}};\ i++)\ \ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{dparams}}[i]\ =\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{params}}[i]/100.0;}
+\DoxyCodeLine{\Hypertarget{test__get__counts_8cpp_source_l00094}00094\ \ \ \ \ \ \ \ \ energy\ =\ \mbox{\hyperlink{params_8cpp_a5dd89ea190a64e07368376d98fd2dc43}{get\_feature\_counts\_restricted}}\ (\mbox{\hyperlink{simfold_8cpp_aab0fa4fa34b613e3a6b4f0e87d1c073b}{sequence}},\ structure,\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{c}},\ f,\ 1,\ ignore\_dangles,\ 1);}
+\DoxyCodeLine{\Hypertarget{test__get__counts_8cpp_source_l00095}00095\ \ \ \ \ \ \ \ \ \textcolor{comment}{//energy\ =\ get\_feature\_counts\ (sequence,\ structure,\ c,\ f);}}
+\DoxyCodeLine{\Hypertarget{test__get__counts_8cpp_source_l00096}00096\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{params_8cpp_a0d25c9cf509b5ca0504f49da61e9412f}{print\_counter}}\ (\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{c}},\ f);}
+\DoxyCodeLine{\Hypertarget{test__get__counts_8cpp_source_l00097}00097\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{params_8cpp_a6ffef30dd67079f2f99eacbdbc759604}{check\_counts\_linear}}\ (\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{num\_parameters}},\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{dparams}},\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{c}},\ f,\ energy))}
+\DoxyCodeLine{\Hypertarget{test__get__counts_8cpp_source_l00098}00098\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{test__get__counts_8cpp_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{printf}}\ (\textcolor{stringliteral}{"{}Energy\ and\ c'x+f\ MATCH!\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{test__get__counts_8cpp_source_l00100}00100\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{test__get__counts_8cpp_source_l00101}00101\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{test__get__counts_8cpp_source_l00102}00102\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{test__get__counts_8cpp_source_l00103}00103\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{test__get__counts_8cpp_source_l00104}00104\ \ \ \ \ \ \ \ \ energy\ =\ \mbox{\hyperlink{params_8cpp_a5dd89ea190a64e07368376d98fd2dc43}{get\_feature\_counts\_restricted}}\ (\mbox{\hyperlink{simfold_8cpp_aab0fa4fa34b613e3a6b4f0e87d1c073b}{sequence}},\ structure,\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{NULL}},\ f,\ 1,\ ignore\_dangles,\ 0);\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{test__get__counts_8cpp_source_l00105}00105\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{test__get__counts_8cpp_source_l00106}00106\ \ \ \ \ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{printf}}\ (\textcolor{stringliteral}{"{}Energy\ is\ \%.2lf\(\backslash\)n"{}},\ energy);}
+\DoxyCodeLine{\Hypertarget{test__get__counts_8cpp_source_l00107}00107\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{test__get__counts_8cpp_source_l00108}00108\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{test__get__counts_8cpp_source_l00109}00109\ \}}
+\DoxyCodeLine{\Hypertarget{test__get__counts_8cpp_source_l00110}00110\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{test__get__counts_8cpp_source_l00111}00111\ }
+\DoxyCodeLine{\Hypertarget{test__get__counts_8cpp_source_l00112}00112\ }
+
+\end{DoxyCode}

@@ -1,0 +1,316 @@
+\doxysection{s\+\_\+energy\+\_\+matrix Class Reference}
+\hypertarget{classs__energy__matrix}{}\label{classs__energy__matrix}\index{s\_energy\_matrix@{s\_energy\_matrix}}
+
+
+{\ttfamily \#include $<$s\+\_\+energy\+\_\+matrix.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classs__energy__matrix_aeda2b0d24ef05598523cbbf55f42334a}{s\+\_\+energy\+\_\+matrix}} (\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} \texorpdfstring{$\ast$}{*}seq, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} length)
+\item 
+\mbox{\hyperlink{classs__energy__matrix_a42ec6d0669d182d5ddc898f7ed376370}{\texorpdfstring{$\sim$}{\string~}s\+\_\+energy\+\_\+matrix}} ()
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} \mbox{\hyperlink{classs__energy__matrix_a0663817d00421f5bd3fa64df9e017530}{set\+\_\+loops}} (\mbox{\hyperlink{classs__hairpin__loop}{s\+\_\+hairpin\+\_\+loop}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classs__energy__matrix_a7c0620b6c5692b51d73551cdecc62ff7}{H}}, \mbox{\hyperlink{classs__stacked__pair}{s\+\_\+stacked\+\_\+pair}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classs__energy__matrix_a14d29a29c0149c8f3732e286f6cf1593}{S}}, \mbox{\hyperlink{classs__internal__loop}{s\+\_\+internal\+\_\+loop}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classs__energy__matrix_a9e4a4d2f86c36fccd109d2cbe3651b20}{VBI}}, \mbox{\hyperlink{classs__multi__loop}{s\+\_\+multi\+\_\+loop}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classs__energy__matrix_ad895970184a0a67b2290a3888cfe3e2d}{VM}}, \mbox{\hyperlink{classs__multi__loop__sub}{s\+\_\+multi\+\_\+loop\+\_\+sub}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classs__energy__matrix_ad425443527b59e5838bab254a07fd765}{VM\+\_\+sub}})
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} \mbox{\hyperlink{classs__energy__matrix_aad28b030408b0b641b40b08015e4ed8e}{compute\+\_\+energy}} (\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} i, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} j)
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} \mbox{\hyperlink{classs__energy__matrix_a42736fe59d91a18f42f7cf5ddb669036}{compute\+\_\+energy\+\_\+restricted}} (\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} i, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} j, \mbox{\hyperlink{structstr__features}{str\+\_\+features}} \texorpdfstring{$\ast$}{*}fres)
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} \mbox{\hyperlink{classs__energy__matrix_a3af4f9011010dd9d92704f06209fb16b}{compute\+\_\+energy\+\_\+restricted\+\_\+pkonly}} (\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} i, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} j, \mbox{\hyperlink{structstr__features}{str\+\_\+features}} \texorpdfstring{$\ast$}{*}fres)
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} \mbox{\hyperlink{classs__energy__matrix_a6ba2ba97a75f06a01e9f23832546416f}{compute\+\_\+energy\+\_\+sub}} (\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} i, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} j)
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} \mbox{\hyperlink{classs__energy__matrix_a0b71d86b71735b13f187c534f42046f9}{compute\+\_\+energy\+\_\+sub\+\_\+restricted}} (\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} i, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} j, \mbox{\hyperlink{structstr__features}{str\+\_\+features}} \texorpdfstring{$\ast$}{*}fres)
+\item 
+\mbox{\hyperlink{structfree__energy__node}{free\+\_\+energy\+\_\+node}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classs__energy__matrix_a2b2f03fe3f8cb3056904a11ac3f2fe7e}{get\+\_\+node}} (\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} i, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} j)
+\item 
+\mbox{\hyperlink{constants_8h_adf823d40ac379702030cb342e84d5f2e}{pf\+\_\+t}} \mbox{\hyperlink{classs__energy__matrix_aac7b05ab7b594d69b7aabaa30305a57a}{get\+\_\+energy}} (\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} i, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} j)
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \mbox{\hyperlink{classs__energy__matrix_aa79a6843cde177e9ae732ad13db6b00a}{get\+\_\+type}} (\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} i, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} j)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classs__hairpin__loop}{s\+\_\+hairpin\+\_\+loop}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classs__energy__matrix_a7c0620b6c5692b51d73551cdecc62ff7}{H}}
+\item 
+\mbox{\hyperlink{classs__stacked__pair}{s\+\_\+stacked\+\_\+pair}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classs__energy__matrix_a14d29a29c0149c8f3732e286f6cf1593}{S}}
+\item 
+\mbox{\hyperlink{classs__internal__loop}{s\+\_\+internal\+\_\+loop}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classs__energy__matrix_a9e4a4d2f86c36fccd109d2cbe3651b20}{VBI}}
+\item 
+\mbox{\hyperlink{classs__multi__loop}{s\+\_\+multi\+\_\+loop}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classs__energy__matrix_ad895970184a0a67b2290a3888cfe3e2d}{VM}}
+\item 
+\mbox{\hyperlink{classs__multi__loop__sub}{s\+\_\+multi\+\_\+loop\+\_\+sub}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classs__energy__matrix_ad425443527b59e5838bab254a07fd765}{VM\+\_\+sub}}
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classs__energy__matrix_a8a87b1ad4ed64bb1197f9496dbb8c49f}{sequence}}
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} \mbox{\hyperlink{classs__energy__matrix_a5c204773a1bb7683963d1e003a335de9}{seqlen}}
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classs__energy__matrix_a4572ad7f931fed99a32ba30113d5b6cf}{index}}
+\item 
+\mbox{\hyperlink{structfree__energy__node}{free\+\_\+energy\+\_\+node}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classs__energy__matrix_a89b33d771af70195420683cf389c70ce}{nodes}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{class}} \mbox{\hyperlink{classs__energy__matrix_ac81dcf7a35fcfba9dacdd64bd386dc48}{s\+\_\+stacked\+\_\+pair}}
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{class}} \mbox{\hyperlink{classs__energy__matrix_abe5aef1b7a622630d886e61100136bc5}{s\+\_\+internal\+\_\+loop}}
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{class}} \mbox{\hyperlink{classs__energy__matrix_a5c84420bcc0acc194b62956d080dfeae}{s\+\_\+multi\+\_\+loop}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{s__energy__matrix_8h_source_l00030}{30}} of file \mbox{\hyperlink{s__energy__matrix_8h_source}{s\+\_\+energy\+\_\+matrix.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classs__energy__matrix_aeda2b0d24ef05598523cbbf55f42334a}\label{classs__energy__matrix_aeda2b0d24ef05598523cbbf55f42334a} 
+\index{s\_energy\_matrix@{s\_energy\_matrix}!s\_energy\_matrix@{s\_energy\_matrix}}
+\index{s\_energy\_matrix@{s\_energy\_matrix}!s\_energy\_matrix@{s\_energy\_matrix}}
+\doxysubsubsection{\texorpdfstring{s\_energy\_matrix()}{s\_energy\_matrix()}}
+{\footnotesize\ttfamily s\+\_\+energy\+\_\+matrix\+::s\+\_\+energy\+\_\+matrix (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} \texorpdfstring{$\ast$}{*}}]{seq,  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}}}]{length }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{s__energy__matrix_8cpp_source_l00038}{38}} of file \mbox{\hyperlink{s__energy__matrix_8cpp_source}{s\+\_\+energy\+\_\+matrix.\+cpp}}.
+
+\Hypertarget{classs__energy__matrix_a42ec6d0669d182d5ddc898f7ed376370}\label{classs__energy__matrix_a42ec6d0669d182d5ddc898f7ed376370} 
+\index{s\_energy\_matrix@{s\_energy\_matrix}!````~s\_energy\_matrix@{\texorpdfstring{$\sim$}{\string~}s\_energy\_matrix}}
+\index{````~s\_energy\_matrix@{\texorpdfstring{$\sim$}{\string~}s\_energy\_matrix}!s\_energy\_matrix@{s\_energy\_matrix}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}s\_energy\_matrix()}{\string~s\_energy\_matrix()}}
+{\footnotesize\ttfamily s\+\_\+energy\+\_\+matrix\+::\texorpdfstring{$\sim$}{\string~}s\+\_\+energy\+\_\+matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{s__energy__matrix_8cpp_source_l00063}{63}} of file \mbox{\hyperlink{s__energy__matrix_8cpp_source}{s\+\_\+energy\+\_\+matrix.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classs__energy__matrix_aad28b030408b0b641b40b08015e4ed8e}\label{classs__energy__matrix_aad28b030408b0b641b40b08015e4ed8e} 
+\index{s\_energy\_matrix@{s\_energy\_matrix}!compute\_energy@{compute\_energy}}
+\index{compute\_energy@{compute\_energy}!s\_energy\_matrix@{s\_energy\_matrix}}
+\doxysubsubsection{\texorpdfstring{compute\_energy()}{compute\_energy()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} s\+\_\+energy\+\_\+matrix\+::compute\+\_\+energy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}}}]{i,  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}}}]{j }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{s__energy__matrix_8cpp_source_l00072}{72}} of file \mbox{\hyperlink{s__energy__matrix_8cpp_source}{s\+\_\+energy\+\_\+matrix.\+cpp}}.
+
+\Hypertarget{classs__energy__matrix_a42736fe59d91a18f42f7cf5ddb669036}\label{classs__energy__matrix_a42736fe59d91a18f42f7cf5ddb669036} 
+\index{s\_energy\_matrix@{s\_energy\_matrix}!compute\_energy\_restricted@{compute\_energy\_restricted}}
+\index{compute\_energy\_restricted@{compute\_energy\_restricted}!s\_energy\_matrix@{s\_energy\_matrix}}
+\doxysubsubsection{\texorpdfstring{compute\_energy\_restricted()}{compute\_energy\_restricted()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} s\+\_\+energy\+\_\+matrix\+::compute\+\_\+energy\+\_\+restricted (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}}}]{i,  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}}}]{j,  }\item[{\mbox{\hyperlink{structstr__features}{str\+\_\+features}} \texorpdfstring{$\ast$}{*}}]{fres }\end{DoxyParamCaption})}
+
+compute the V(i,j) value, if the structure must be restricted Luke removing extra code and simplifying for part func Luke Sep 2023 for CParty we modified WM compute restricted min\+\_\+en\mbox{[}3\mbox{]} = VM-\/\texorpdfstring{$>$}{>}compute\+\_\+energy\+\_\+restricted (i, j, fres); VM computed after
+
+Definition at line \mbox{\hyperlink{s__energy__matrix_8cpp_source_l00136}{136}} of file \mbox{\hyperlink{s__energy__matrix_8cpp_source}{s\+\_\+energy\+\_\+matrix.\+cpp}}.
+
+\Hypertarget{classs__energy__matrix_a3af4f9011010dd9d92704f06209fb16b}\label{classs__energy__matrix_a3af4f9011010dd9d92704f06209fb16b} 
+\index{s\_energy\_matrix@{s\_energy\_matrix}!compute\_energy\_restricted\_pkonly@{compute\_energy\_restricted\_pkonly}}
+\index{compute\_energy\_restricted\_pkonly@{compute\_energy\_restricted\_pkonly}!s\_energy\_matrix@{s\_energy\_matrix}}
+\doxysubsubsection{\texorpdfstring{compute\_energy\_restricted\_pkonly()}{compute\_energy\_restricted\_pkonly()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} s\+\_\+energy\+\_\+matrix\+::compute\+\_\+energy\+\_\+restricted\+\_\+pkonly (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}}}]{i,  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}}}]{j,  }\item[{\mbox{\hyperlink{structstr__features}{str\+\_\+features}} \texorpdfstring{$\ast$}{*}}]{fres }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{s__energy__matrix_8cpp_source_l00195}{195}} of file \mbox{\hyperlink{s__energy__matrix_8cpp_source}{s\+\_\+energy\+\_\+matrix.\+cpp}}.
+
+\Hypertarget{classs__energy__matrix_a6ba2ba97a75f06a01e9f23832546416f}\label{classs__energy__matrix_a6ba2ba97a75f06a01e9f23832546416f} 
+\index{s\_energy\_matrix@{s\_energy\_matrix}!compute\_energy\_sub@{compute\_energy\_sub}}
+\index{compute\_energy\_sub@{compute\_energy\_sub}!s\_energy\_matrix@{s\_energy\_matrix}}
+\doxysubsubsection{\texorpdfstring{compute\_energy\_sub()}{compute\_energy\_sub()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} s\+\_\+energy\+\_\+matrix\+::compute\+\_\+energy\+\_\+sub (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}}}]{i,  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}}}]{j }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{s__energy__matrix_8cpp_source_l00257}{257}} of file \mbox{\hyperlink{s__energy__matrix_8cpp_source}{s\+\_\+energy\+\_\+matrix.\+cpp}}.
+
+\Hypertarget{classs__energy__matrix_a0b71d86b71735b13f187c534f42046f9}\label{classs__energy__matrix_a0b71d86b71735b13f187c534f42046f9} 
+\index{s\_energy\_matrix@{s\_energy\_matrix}!compute\_energy\_sub\_restricted@{compute\_energy\_sub\_restricted}}
+\index{compute\_energy\_sub\_restricted@{compute\_energy\_sub\_restricted}!s\_energy\_matrix@{s\_energy\_matrix}}
+\doxysubsubsection{\texorpdfstring{compute\_energy\_sub\_restricted()}{compute\_energy\_sub\_restricted()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} s\+\_\+energy\+\_\+matrix\+::compute\+\_\+energy\+\_\+sub\+\_\+restricted (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}}}]{i,  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}}}]{j,  }\item[{\mbox{\hyperlink{structstr__features}{str\+\_\+features}} \texorpdfstring{$\ast$}{*}}]{fres }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{s__energy__matrix_8cpp_source_l00318}{318}} of file \mbox{\hyperlink{s__energy__matrix_8cpp_source}{s\+\_\+energy\+\_\+matrix.\+cpp}}.
+
+\Hypertarget{classs__energy__matrix_aac7b05ab7b594d69b7aabaa30305a57a}\label{classs__energy__matrix_aac7b05ab7b594d69b7aabaa30305a57a} 
+\index{s\_energy\_matrix@{s\_energy\_matrix}!get\_energy@{get\_energy}}
+\index{get\_energy@{get\_energy}!s\_energy\_matrix@{s\_energy\_matrix}}
+\doxysubsubsection{\texorpdfstring{get\_energy()}{get\_energy()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{constants_8h_adf823d40ac379702030cb342e84d5f2e}{pf\+\_\+t}} s\+\_\+energy\+\_\+matrix\+::get\+\_\+energy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}}}]{i,  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}}}]{j }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{s__energy__matrix_8h_source_l00075}{75}} of file \mbox{\hyperlink{s__energy__matrix_8h_source}{s\+\_\+energy\+\_\+matrix.\+h}}.
+
+\Hypertarget{classs__energy__matrix_a2b2f03fe3f8cb3056904a11ac3f2fe7e}\label{classs__energy__matrix_a2b2f03fe3f8cb3056904a11ac3f2fe7e} 
+\index{s\_energy\_matrix@{s\_energy\_matrix}!get\_node@{get\_node}}
+\index{get\_node@{get\_node}!s\_energy\_matrix@{s\_energy\_matrix}}
+\doxysubsubsection{\texorpdfstring{get\_node()}{get\_node()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structfree__energy__node}{free\+\_\+energy\+\_\+node}} \texorpdfstring{$\ast$}{*} s\+\_\+energy\+\_\+matrix\+::get\+\_\+node (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}}}]{i,  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}}}]{j }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{s__energy__matrix_8h_source_l00070}{70}} of file \mbox{\hyperlink{s__energy__matrix_8h_source}{s\+\_\+energy\+\_\+matrix.\+h}}.
+
+\Hypertarget{classs__energy__matrix_aa79a6843cde177e9ae732ad13db6b00a}\label{classs__energy__matrix_aa79a6843cde177e9ae732ad13db6b00a} 
+\index{s\_energy\_matrix@{s\_energy\_matrix}!get\_type@{get\_type}}
+\index{get\_type@{get\_type}!s\_energy\_matrix@{s\_energy\_matrix}}
+\doxysubsubsection{\texorpdfstring{get\_type()}{get\_type()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} s\+\_\+energy\+\_\+matrix\+::get\+\_\+type (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}}}]{i,  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}}}]{j }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{s__energy__matrix_8h_source_l00078}{78}} of file \mbox{\hyperlink{s__energy__matrix_8h_source}{s\+\_\+energy\+\_\+matrix.\+h}}.
+
+\Hypertarget{classs__energy__matrix_a0663817d00421f5bd3fa64df9e017530}\label{classs__energy__matrix_a0663817d00421f5bd3fa64df9e017530} 
+\index{s\_energy\_matrix@{s\_energy\_matrix}!set\_loops@{set\_loops}}
+\index{set\_loops@{set\_loops}!s\_energy\_matrix@{s\_energy\_matrix}}
+\doxysubsubsection{\texorpdfstring{set\_loops()}{set\_loops()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} s\+\_\+energy\+\_\+matrix\+::set\+\_\+loops (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classs__hairpin__loop}{s\+\_\+hairpin\+\_\+loop}} \texorpdfstring{$\ast$}{*}}]{H,  }\item[{\mbox{\hyperlink{classs__stacked__pair}{s\+\_\+stacked\+\_\+pair}} \texorpdfstring{$\ast$}{*}}]{S,  }\item[{\mbox{\hyperlink{classs__internal__loop}{s\+\_\+internal\+\_\+loop}} \texorpdfstring{$\ast$}{*}}]{VBI,  }\item[{\mbox{\hyperlink{classs__multi__loop}{s\+\_\+multi\+\_\+loop}} \texorpdfstring{$\ast$}{*}}]{VM,  }\item[{\mbox{\hyperlink{classs__multi__loop__sub}{s\+\_\+multi\+\_\+loop\+\_\+sub}} \texorpdfstring{$\ast$}{*}}]{VM\+\_\+sub }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{s__energy__matrix_8h_source_l00044}{44}} of file \mbox{\hyperlink{s__energy__matrix_8h_source}{s\+\_\+energy\+\_\+matrix.\+h}}.
+
+
+
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{classs__energy__matrix_abe5aef1b7a622630d886e61100136bc5}\label{classs__energy__matrix_abe5aef1b7a622630d886e61100136bc5} 
+\index{s\_energy\_matrix@{s\_energy\_matrix}!s\_internal\_loop@{s\_internal\_loop}}
+\index{s\_internal\_loop@{s\_internal\_loop}!s\_energy\_matrix@{s\_energy\_matrix}}
+\doxysubsubsection{\texorpdfstring{s\_internal\_loop}{s\_internal\_loop}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{friend}} \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{class}} \mbox{\hyperlink{classs__internal__loop}{s\+\_\+internal\+\_\+loop}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Definition at line \mbox{\hyperlink{s__energy__matrix_8h_source_l00035}{35}} of file \mbox{\hyperlink{s__energy__matrix_8h_source}{s\+\_\+energy\+\_\+matrix.\+h}}.
+
+\Hypertarget{classs__energy__matrix_a5c84420bcc0acc194b62956d080dfeae}\label{classs__energy__matrix_a5c84420bcc0acc194b62956d080dfeae} 
+\index{s\_energy\_matrix@{s\_energy\_matrix}!s\_multi\_loop@{s\_multi\_loop}}
+\index{s\_multi\_loop@{s\_multi\_loop}!s\_energy\_matrix@{s\_energy\_matrix}}
+\doxysubsubsection{\texorpdfstring{s\_multi\_loop}{s\_multi\_loop}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{friend}} \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{class}} \mbox{\hyperlink{classs__multi__loop}{s\+\_\+multi\+\_\+loop}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Definition at line \mbox{\hyperlink{s__energy__matrix_8h_source_l00036}{36}} of file \mbox{\hyperlink{s__energy__matrix_8h_source}{s\+\_\+energy\+\_\+matrix.\+h}}.
+
+\Hypertarget{classs__energy__matrix_ac81dcf7a35fcfba9dacdd64bd386dc48}\label{classs__energy__matrix_ac81dcf7a35fcfba9dacdd64bd386dc48} 
+\index{s\_energy\_matrix@{s\_energy\_matrix}!s\_stacked\_pair@{s\_stacked\_pair}}
+\index{s\_stacked\_pair@{s\_stacked\_pair}!s\_energy\_matrix@{s\_energy\_matrix}}
+\doxysubsubsection{\texorpdfstring{s\_stacked\_pair}{s\_stacked\_pair}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{friend}} \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{class}} \mbox{\hyperlink{classs__stacked__pair}{s\+\_\+stacked\+\_\+pair}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Definition at line \mbox{\hyperlink{s__energy__matrix_8h_source_l00034}{34}} of file \mbox{\hyperlink{s__energy__matrix_8h_source}{s\+\_\+energy\+\_\+matrix.\+h}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classs__energy__matrix_a7c0620b6c5692b51d73551cdecc62ff7}\label{classs__energy__matrix_a7c0620b6c5692b51d73551cdecc62ff7} 
+\index{s\_energy\_matrix@{s\_energy\_matrix}!H@{H}}
+\index{H@{H}!s\_energy\_matrix@{s\_energy\_matrix}}
+\doxysubsubsection{\texorpdfstring{H}{H}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classs__hairpin__loop}{s\+\_\+hairpin\+\_\+loop}}\texorpdfstring{$\ast$}{*} s\+\_\+energy\+\_\+matrix\+::H\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{s__energy__matrix_8h_source_l00085}{85}} of file \mbox{\hyperlink{s__energy__matrix_8h_source}{s\+\_\+energy\+\_\+matrix.\+h}}.
+
+\Hypertarget{classs__energy__matrix_a4572ad7f931fed99a32ba30113d5b6cf}\label{classs__energy__matrix_a4572ad7f931fed99a32ba30113d5b6cf} 
+\index{s\_energy\_matrix@{s\_energy\_matrix}!index@{index}}
+\index{index@{index}!s\_energy\_matrix@{s\_energy\_matrix}}
+\doxysubsubsection{\texorpdfstring{index}{index}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}}\texorpdfstring{$\ast$}{*} s\+\_\+energy\+\_\+matrix\+::index\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{s__energy__matrix_8h_source_l00094}{94}} of file \mbox{\hyperlink{s__energy__matrix_8h_source}{s\+\_\+energy\+\_\+matrix.\+h}}.
+
+\Hypertarget{classs__energy__matrix_a89b33d771af70195420683cf389c70ce}\label{classs__energy__matrix_a89b33d771af70195420683cf389c70ce} 
+\index{s\_energy\_matrix@{s\_energy\_matrix}!nodes@{nodes}}
+\index{nodes@{nodes}!s\_energy\_matrix@{s\_energy\_matrix}}
+\doxysubsubsection{\texorpdfstring{nodes}{nodes}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structfree__energy__node}{free\+\_\+energy\+\_\+node}}\texorpdfstring{$\ast$}{*} s\+\_\+energy\+\_\+matrix\+::nodes\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{s__energy__matrix_8h_source_l00095}{95}} of file \mbox{\hyperlink{s__energy__matrix_8h_source}{s\+\_\+energy\+\_\+matrix.\+h}}.
+
+\Hypertarget{classs__energy__matrix_a14d29a29c0149c8f3732e286f6cf1593}\label{classs__energy__matrix_a14d29a29c0149c8f3732e286f6cf1593} 
+\index{s\_energy\_matrix@{s\_energy\_matrix}!S@{S}}
+\index{S@{S}!s\_energy\_matrix@{s\_energy\_matrix}}
+\doxysubsubsection{\texorpdfstring{S}{S}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classs__stacked__pair}{s\+\_\+stacked\+\_\+pair}}\texorpdfstring{$\ast$}{*} s\+\_\+energy\+\_\+matrix\+::S\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{s__energy__matrix_8h_source_l00086}{86}} of file \mbox{\hyperlink{s__energy__matrix_8h_source}{s\+\_\+energy\+\_\+matrix.\+h}}.
+
+\Hypertarget{classs__energy__matrix_a5c204773a1bb7683963d1e003a335de9}\label{classs__energy__matrix_a5c204773a1bb7683963d1e003a335de9} 
+\index{s\_energy\_matrix@{s\_energy\_matrix}!seqlen@{seqlen}}
+\index{seqlen@{seqlen}!s\_energy\_matrix@{s\_energy\_matrix}}
+\doxysubsubsection{\texorpdfstring{seqlen}{seqlen}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} s\+\_\+energy\+\_\+matrix\+::seqlen\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{s__energy__matrix_8h_source_l00093}{93}} of file \mbox{\hyperlink{s__energy__matrix_8h_source}{s\+\_\+energy\+\_\+matrix.\+h}}.
+
+\Hypertarget{classs__energy__matrix_a8a87b1ad4ed64bb1197f9496dbb8c49f}\label{classs__energy__matrix_a8a87b1ad4ed64bb1197f9496dbb8c49f} 
+\index{s\_energy\_matrix@{s\_energy\_matrix}!sequence@{sequence}}
+\index{sequence@{sequence}!s\_energy\_matrix@{s\_energy\_matrix}}
+\doxysubsubsection{\texorpdfstring{sequence}{sequence}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}}\texorpdfstring{$\ast$}{*} s\+\_\+energy\+\_\+matrix\+::sequence\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{s__energy__matrix_8h_source_l00091}{91}} of file \mbox{\hyperlink{s__energy__matrix_8h_source}{s\+\_\+energy\+\_\+matrix.\+h}}.
+
+\Hypertarget{classs__energy__matrix_a9e4a4d2f86c36fccd109d2cbe3651b20}\label{classs__energy__matrix_a9e4a4d2f86c36fccd109d2cbe3651b20} 
+\index{s\_energy\_matrix@{s\_energy\_matrix}!VBI@{VBI}}
+\index{VBI@{VBI}!s\_energy\_matrix@{s\_energy\_matrix}}
+\doxysubsubsection{\texorpdfstring{VBI}{VBI}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classs__internal__loop}{s\+\_\+internal\+\_\+loop}}\texorpdfstring{$\ast$}{*} s\+\_\+energy\+\_\+matrix\+::\+VBI\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{s__energy__matrix_8h_source_l00087}{87}} of file \mbox{\hyperlink{s__energy__matrix_8h_source}{s\+\_\+energy\+\_\+matrix.\+h}}.
+
+\Hypertarget{classs__energy__matrix_ad895970184a0a67b2290a3888cfe3e2d}\label{classs__energy__matrix_ad895970184a0a67b2290a3888cfe3e2d} 
+\index{s\_energy\_matrix@{s\_energy\_matrix}!VM@{VM}}
+\index{VM@{VM}!s\_energy\_matrix@{s\_energy\_matrix}}
+\doxysubsubsection{\texorpdfstring{VM}{VM}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classs__multi__loop}{s\+\_\+multi\+\_\+loop}}\texorpdfstring{$\ast$}{*} s\+\_\+energy\+\_\+matrix\+::\+VM\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{s__energy__matrix_8h_source_l00088}{88}} of file \mbox{\hyperlink{s__energy__matrix_8h_source}{s\+\_\+energy\+\_\+matrix.\+h}}.
+
+\Hypertarget{classs__energy__matrix_ad425443527b59e5838bab254a07fd765}\label{classs__energy__matrix_ad425443527b59e5838bab254a07fd765} 
+\index{s\_energy\_matrix@{s\_energy\_matrix}!VM\_sub@{VM\_sub}}
+\index{VM\_sub@{VM\_sub}!s\_energy\_matrix@{s\_energy\_matrix}}
+\doxysubsubsection{\texorpdfstring{VM\_sub}{VM\_sub}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classs__multi__loop__sub}{s\+\_\+multi\+\_\+loop\+\_\+sub}}\texorpdfstring{$\ast$}{*} s\+\_\+energy\+\_\+matrix\+::\+VM\+\_\+sub\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{s__energy__matrix_8h_source_l00089}{89}} of file \mbox{\hyperlink{s__energy__matrix_8h_source}{s\+\_\+energy\+\_\+matrix.\+h}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/luket/\+Desktop/testing\+\_\+\+CParty/\+CParty/simfold/src/simfold/\mbox{\hyperlink{s__energy__matrix_8h}{s\+\_\+energy\+\_\+matrix.\+h}}\item 
+C\+:/\+Users/luket/\+Desktop/testing\+\_\+\+CParty/\+CParty/simfold/src/simfold/\mbox{\hyperlink{s__energy__matrix_8cpp}{s\+\_\+energy\+\_\+matrix.\+cpp}}\end{DoxyCompactItemize}

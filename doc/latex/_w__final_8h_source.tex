@@ -1,0 +1,73 @@
+\doxysection{W\+\_\+final.\+h}
+\hypertarget{_w__final_8h_source}{}\label{_w__final_8h_source}\index{C:/Users/luket/Desktop/testing\_CParty/CParty/W\_final.h@{C:/Users/luket/Desktop/testing\_CParty/CParty/W\_final.h}}
+\mbox{\hyperlink{_w__final_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_w__final_8h_source_l00001}00001\ \textcolor{preprocessor}{\#ifndef\ W\_FINAL\_H\_}}
+\DoxyCodeLine{\Hypertarget{_w__final_8h_source_l00002}00002\ \textcolor{preprocessor}{\#define\ W\_FINAL\_H\_}}
+\DoxyCodeLine{\Hypertarget{_w__final_8h_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_w__final_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_v_m__final_8h}{VM\_final.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_w__final_8h_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_v__final_8h}{V\_final.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_w__final_8h_source_l00006}00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{pseudo__loop_8h}{pseudo\_loop.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_w__final_8h_source_l00007}00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{s__min__folding_8h}{s\_min\_folding.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_w__final_8h_source_l00008}00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{h__common_8h}{h\_common.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_w__final_8h_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{_w__final_8h_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{_w__final_8h_source_l00011}\mbox{\hyperlink{class_w__final}{00011}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_w__final}{W\_final}}:\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classs__min__folding}{s\_min\_folding}}\{}
+\DoxyCodeLine{\Hypertarget{_w__final_8h_source_l00012}00012\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_w__final_8h_source_l00013}00013\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_w__final}{W\_final}}(\textcolor{keywordtype}{char}\ *seq,\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{res}});}
+\DoxyCodeLine{\Hypertarget{_w__final_8h_source_l00014}00014\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ constructor\ for\ the\ restricted\ mfe\ case}}
+\DoxyCodeLine{\Hypertarget{_w__final_8h_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{_w__final_8h_source_l00016}00016\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_w__final_ac377e9c8c7d0904e14edf55bdf8af0df}{\string~W\_final}}\ ();}
+\DoxyCodeLine{\Hypertarget{_w__final_8h_source_l00017}00017\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ The\ destructor}}
+\DoxyCodeLine{\Hypertarget{_w__final_8h_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{_w__final_8h_source_l00019}00019\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_w__final_a1034484f3e3ab4e234aff226819a9266}{hfold}}\ ();}
+\DoxyCodeLine{\Hypertarget{_w__final_8h_source_l00020}00020\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ PRE:\ \ the\ init\_data\ function\ has\ been\ called;}}
+\DoxyCodeLine{\Hypertarget{_w__final_8h_source_l00021}00021\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ the\ space\ for\ structure\ has\ been\ allocate}}
+\DoxyCodeLine{\Hypertarget{_w__final_8h_source_l00022}00022\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ POST:\ fold\ sequence,\ return\ the\ MFE\ structure\ in\ structure,\ and\ return\ the\ MFE}}
+\DoxyCodeLine{\Hypertarget{_w__final_8h_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{_w__final_8h_source_l00024}\mbox{\hyperlink{class_w__final_aa26fa52963ad140ff1eb2191b0f5911f}{00024}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_w__final_aa26fa52963ad140ff1eb2191b0f5911f}{hfold\_pkonly}}\ ();}
+\DoxyCodeLine{\Hypertarget{_w__final_8h_source_l00025}00025\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ PRE:\ \ the\ init\_data\ function\ has\ been\ called;}}
+\DoxyCodeLine{\Hypertarget{_w__final_8h_source_l00026}00026\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ the\ space\ for\ structure\ has\ been\ allocate}}
+\DoxyCodeLine{\Hypertarget{_w__final_8h_source_l00027}00027\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ POST:\ fold\ sequence,\ return\ the\ MFE\ structure\ in\ structure,\ and\ return\ the\ MFE}}
+\DoxyCodeLine{\Hypertarget{_w__final_8h_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{_w__final_8h_source_l00029}00029\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_w__final_a6c1576a959615aa2970ff2c418da9d94}{return\_structure}}\ (\textcolor{keywordtype}{char}\ *\mbox{\hyperlink{classs__min__folding_a28f1f660ab67d7e92c20ad83fc889f78}{structure}})\ ;}
+\DoxyCodeLine{\Hypertarget{_w__final_8h_source_l00030}00030\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ writes\ the\ predicted\ MFE\ structure\ into\ structure}}
+\DoxyCodeLine{\Hypertarget{_w__final_8h_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{_w__final_8h_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{_w__final_8h_source_l00033}00033\ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{\Hypertarget{_w__final_8h_source_l00034}00034\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Hosna:\ June\ 18th,\ 2007:}}
+\DoxyCodeLine{\Hypertarget{_w__final_8h_source_l00035}00035\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ this\ pointer\ is\ the\ main\ part\ of\ the\ Hierarchical\ fold\ program}}
+\DoxyCodeLine{\Hypertarget{_w__final_8h_source_l00036}00036\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ and\ corresponds\ to\ WMB\ recurrence}}
+\DoxyCodeLine{\Hypertarget{_w__final_8h_source_l00037}\mbox{\hyperlink{class_w__final_aff18b05c7958818e08abbfe01eb2f160}{00037}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classpseudo__loop}{pseudo\_loop}}\ *\mbox{\hyperlink{class_w__final_aff18b05c7958818e08abbfe01eb2f160}{WMB}};}
+\DoxyCodeLine{\Hypertarget{_w__final_8h_source_l00038}00038\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ pointer\ to\ the\ final\ V\ matrix}}
+\DoxyCodeLine{\Hypertarget{_w__final_8h_source_l00039}\mbox{\hyperlink{class_w__final_a259437349f1638168ae4580ffd697ef5}{00039}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v__final}{V\_final}}\ *\mbox{\hyperlink{class_w__final_a259437349f1638168ae4580ffd697ef5}{v}};}
+\DoxyCodeLine{\Hypertarget{_w__final_8h_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{_w__final_8h_source_l00041}00041\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ pointer\ to\ the\ final\ VM\ matrix}}
+\DoxyCodeLine{\Hypertarget{_w__final_8h_source_l00042}\mbox{\hyperlink{class_w__final_abbb9d273dda39d426a09ce72c4314346}{00042}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_m__final}{VM\_final}}\ *\mbox{\hyperlink{class_w__final_abbb9d273dda39d426a09ce72c4314346}{vm}};}
+\DoxyCodeLine{\Hypertarget{_w__final_8h_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{_w__final_8h_source_l00044}00044\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_w__final_adff37cea8bbccda956b154341416d661}{space\_allocation}}();}
+\DoxyCodeLine{\Hypertarget{_w__final_8h_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{_w__final_8h_source_l00046}00046\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ allocate\ the\ necessary\ memory}}
+\DoxyCodeLine{\Hypertarget{_w__final_8h_source_l00047}\mbox{\hyperlink{class_w__final_ae6a6417f04db4d71f79fcf63fd560027}{00047}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_w__final_ae6a6417f04db4d71f79fcf63fd560027}{fold\_sequence\_restricted}}\ ();}
+\DoxyCodeLine{\Hypertarget{_w__final_8h_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{_w__final_8h_source_l00049}00049\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_w__final_a16fd6075b01c78356337fc7cc15b0893}{compute\_W\_restricted}}\ (\textcolor{keywordtype}{int}\ j,\ \mbox{\hyperlink{structstr__features}{str\_features}}\ *fres);}
+\DoxyCodeLine{\Hypertarget{_w__final_8h_source_l00050}00050\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ fill\ the\ W\ array,\ the\ restricted\ case}}
+\DoxyCodeLine{\Hypertarget{_w__final_8h_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{_w__final_8h_source_l00052}00052\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{constants_8h_adf823d40ac379702030cb342e84d5f2e}{pf\_t}}\ \mbox{\hyperlink{class_w__final_a9e355828900f8cb5867a2dd2b0d94753}{compute\_W\_br2\_restricted}}\ (\textcolor{keywordtype}{int}\ j,\ \mbox{\hyperlink{structstr__features}{str\_features}}\ *fres,\ \textcolor{keywordtype}{int}\ \&\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{must\_choose\_this\_branch}});}
+\DoxyCodeLine{\Hypertarget{_w__final_8h_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{_w__final_8h_source_l00054}00054\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{constants_8h_adf823d40ac379702030cb342e84d5f2e}{pf\_t}}\ \mbox{\hyperlink{class_w__final_a968b2daf0c403282cdbe97984bf7b1c1}{compute\_W\_br3\_restricted}}\ (\textcolor{keywordtype}{int}\ j,\ \mbox{\hyperlink{structstr__features}{str\_features}}\ *fres);}
+\DoxyCodeLine{\Hypertarget{_w__final_8h_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{_w__final_8h_source_l00056}00056\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_w__final_ac1cf651acaf01dfb5a0ef9a157d7b55c}{print\_result}}();}
+\DoxyCodeLine{\Hypertarget{_w__final_8h_source_l00057}00057\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ PRE:\ \ The\ matrix\ V\ has\ been\ calculated\ and\ the\ results\ written\ in\ f}}
+\DoxyCodeLine{\Hypertarget{_w__final_8h_source_l00058}00058\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ POST:\ Prints\ details\ of\ each\ elementary\ structure}}
+\DoxyCodeLine{\Hypertarget{_w__final_8h_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{_w__final_8h_source_l00060}00060\ \ \ \ \ \ \ \ \ \textcolor{comment}{//s\_min\_folding\ *s\_w;}}
+\DoxyCodeLine{\Hypertarget{_w__final_8h_source_l00061}00061\ \ \ \ \ \ \ \ \ \textcolor{comment}{//int\ seq\_length;}}
+\DoxyCodeLine{\Hypertarget{_w__final_8h_source_l00062}00062\ \ \ \ \ \ \ \ \ \textcolor{comment}{//int\ *intseq;}}
+\DoxyCodeLine{\Hypertarget{_w__final_8h_source_l00063}00063\ \textcolor{comment}{//\ \ \ \ \ \ \ \ int\ *index;}}
+\DoxyCodeLine{\Hypertarget{_w__final_8h_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{_w__final_8h_source_l00065}00065\ \};}
+\DoxyCodeLine{\Hypertarget{_w__final_8h_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{_w__final_8h_source_l00067}00067\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*W\_FINAL\_H\_*/}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

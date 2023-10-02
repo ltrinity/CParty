@@ -1,0 +1,85 @@
+\chapter{HFold}
+\hypertarget{md__c_1_2_users_2luket_2_desktop_2testing___c_party_2_c_party_2_r_e_a_d_m_e}{}\label{md__c_1_2_users_2luket_2_desktop_2testing___c_party_2_c_party_2_r_e_a_d_m_e}\index{HFold@{HFold}}
+\label{md__c_1_2_users_2luket_2_desktop_2testing___c_party_2_c_party_2_r_e_a_d_m_e_autotoc_md0}%
+\Hypertarget{md__c_1_2_users_2luket_2_desktop_2testing___c_party_2_c_party_2_r_e_a_d_m_e_autotoc_md0}%
+ \hypertarget{md__c_1_2_users_2luket_2_desktop_2testing___c_party_2_c_party_2_r_e_a_d_m_e_autotoc_md1}{}\doxysubsubsection{\texorpdfstring{Description\+:}{Description:}}\label{md__c_1_2_users_2luket_2_desktop_2testing___c_party_2_c_party_2_r_e_a_d_m_e_autotoc_md1}
+Software implementation of CParty. ~\newline
+ CParty is an algorithm for computing the conditional partition function for density-\/2 RNA pseudoknots.\hypertarget{md__c_1_2_users_2luket_2_desktop_2testing___c_party_2_c_party_2_r_e_a_d_m_e_autotoc_md2}{}\doxysubsubsection{\texorpdfstring{Cite\+:}{Cite:}}\label{md__c_1_2_users_2luket_2_desktop_2testing___c_party_2_c_party_2_r_e_a_d_m_e_autotoc_md2}
+Trinity, Luke, Sebastian Will, Yann Ponty, Ulrike Stege, and Hosna Jabbari. "{}\+CParty\+: Conditional partition function for density-\/2 RNA pseudoknots."{} bio\+Rxiv (2023)\+: 2023-\/05. \href{https://doi.org/10.1101/2023.05.16.541023}{\texttt{ https\+://doi.\+org/10.\+1101/2023.\+05.\+16.\+541023}}\hypertarget{md__c_1_2_users_2luket_2_desktop_2testing___c_party_2_c_party_2_r_e_a_d_m_e_autotoc_md3}{}\doxysubsubsection{\texorpdfstring{Supported OS\+:}{Supported OS:}}\label{md__c_1_2_users_2luket_2_desktop_2testing___c_party_2_c_party_2_r_e_a_d_m_e_autotoc_md3}
+Linux mac\+OS\hypertarget{md__c_1_2_users_2luket_2_desktop_2testing___c_party_2_c_party_2_r_e_a_d_m_e_autotoc_md4}{}\doxysubsection{\texorpdfstring{Installation\+:}{Installation:}}\label{md__c_1_2_users_2luket_2_desktop_2testing___c_party_2_c_party_2_r_e_a_d_m_e_autotoc_md4}
+Requirements\+: A compiler that supports C++11 standard (tested with g++ version 4.\+7.\+2 or higher) and CMake version 3.\+1 or greater. ~\newline
+
+
+\href{https://cmake.org/install/}{\texttt{ CMake}} version 3.\+1 or greater must be installed in a way that HFold can find it. ~\newline
+ To test if your Mac or Linux system already has CMake, you can type into a terminal\+: ~\newline
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{cmake\ -\/-\/version}
+
+\end{DoxyCode}
+ If it does not print a cmake version greater than or equal to 3.\+1, you will have to install CMake depending on your operating system.\hypertarget{md__c_1_2_users_2luket_2_desktop_2testing___c_party_2_c_party_2_r_e_a_d_m_e_autotoc_md5}{}\doxysubsubsection{\texorpdfstring{Mac\+:}{Mac:}}\label{md__c_1_2_users_2luket_2_desktop_2testing___c_party_2_c_party_2_r_e_a_d_m_e_autotoc_md5}
+Easiest way is to install homebrew and use that to install CMake. ~\newline
+ To do so, run the following from a terminal to install homebrew\+: ~\newline
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{/usr/bin/ruby\ -\/e\ "{}\$(curl\ -\/fsSL\ https://raw.githubusercontent.com/Homebrew/install/master/install)"{}\ \ \ }
+
+\end{DoxyCode}
+ When that finishes, run the following from a terminal to install CMake. ~\newline
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{brew\ install\ cmake\ \ \ }
+
+\end{DoxyCode}
+ \hypertarget{md__c_1_2_users_2luket_2_desktop_2testing___c_party_2_c_party_2_r_e_a_d_m_e_autotoc_md6}{}\doxysubsubsection{\texorpdfstring{Linux\+:}{Linux:}}\label{md__c_1_2_users_2luket_2_desktop_2testing___c_party_2_c_party_2_r_e_a_d_m_e_autotoc_md6}
+Run from a terminal ~\newline
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{wget\ http://www.cmake.org/files/v3.8/cmake-\/3.8.2.tar.gz}
+\DoxyCodeLine{tar\ xzf\ cmake-\/3.8.2.tar.gz}
+\DoxyCodeLine{cd\ cmake-\/3.8.2}
+\DoxyCodeLine{./configure}
+\DoxyCodeLine{make}
+\DoxyCodeLine{make\ install}
+
+\end{DoxyCode}
+ \href{https://geeksww.com/tutorials/operating_systems/linux/installation/downloading_compiling_and_installing_cmake_on_linux.php}{\texttt{ Linux instructions source}}\hypertarget{md__c_1_2_users_2luket_2_desktop_2testing___c_party_2_c_party_2_r_e_a_d_m_e_autotoc_md7}{}\doxysubsubsection{\texorpdfstring{Steps for installation}{Steps for installation}}\label{md__c_1_2_users_2luket_2_desktop_2testing___c_party_2_c_party_2_r_e_a_d_m_e_autotoc_md7}
+
+\begin{DoxyEnumerate}
+\item \href{https://github.com/HosnaJabbari/HFold.git}{\texttt{ Download the repository}} and extract the files onto your system.
+\item From a command line in the root directory (where this \doxylink{_r_e_a_d_m_e_8md}{README.\+md} is) run 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{cmake\ -\/H.\ -\/Bbuild}
+\DoxyCodeLine{cmake\ -\/-\/build\ build}
+
+\end{DoxyCode}
+ If you need to specify a specific compiler, such as g++, you can instead run something like ~\newline
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{cmake\ -\/H.\ -\/Bbuild\ -\/DCMAKE\_CXX\_COMPILER=g++}
+\DoxyCodeLine{cmake\ -\/-\/build\ build}
+
+\end{DoxyCode}
+ This can be useful if you are getting errors about your compiler not having C++11 features.
+\end{DoxyEnumerate}
+
+After installing you can move the executables wherever you wish, but you should not delete or move the simfold folder, or you must recompile the executables. If you move the folders and wish to recompile, you should first delete the created "{}build"{} folder before recompiling.\hypertarget{md__c_1_2_users_2luket_2_desktop_2testing___c_party_2_c_party_2_r_e_a_d_m_e_autotoc_md8}{}\doxysubsubsection{\texorpdfstring{How to use\+:}{How to use:}}\label{md__c_1_2_users_2luket_2_desktop_2testing___c_party_2_c_party_2_r_e_a_d_m_e_autotoc_md8}
+Arguments\+: HFold\+: -\/s $<$sequence$>$ -\/r $<$structure$>$ -\/i \texorpdfstring{$<$}{<}/path/to/file\texorpdfstring{$>$}{>} -\/o \texorpdfstring{$<$}{<}/path/to/file\texorpdfstring{$>$}{>}
+
+Remarks\+: make sure the $<$arguments$>$ are enclosed in "{}"{}, for example -\/r "{}..().."{} instead of -\/r ..().. input file for -\/i must be .txt if -\/i is provided with just a file name without a path, it is assuming the file is in the diretory where the executable is called if -\/o is provided with just a file name without a path, the output file will be generated in the diretory where the executable is called if -\/o is provided with just a file name without a path, and if -\/i is provided, then the output file will be generated in the directory where the input file is located
+
+Sequence requirements\+: containing only characters GCAUT
+
+Structure requirements\+: -\/pseudoknot free -\/containing only characters .\doxylink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{\+\_\+()}\{\}\mbox{[}\mbox{]} Remarks\+: Restricted structure symbols\+: () restricted base pair \+\_\+ no restriction
+
+\begin{DoxyVerb}Input file requirements:
+        Line1: Sequence
+        Line2: Structure
+    sample:
+        GCAACGAUGACAUACAUCGCUAGUCGACGC
+        (____________________________)
+\end{DoxyVerb}
+ \hypertarget{md__c_1_2_users_2luket_2_desktop_2testing___c_party_2_c_party_2_r_e_a_d_m_e_autotoc_md9}{}\doxysubsubsection{\texorpdfstring{Example\+:}{Example:}}\label{md__c_1_2_users_2luket_2_desktop_2testing___c_party_2_c_party_2_r_e_a_d_m_e_autotoc_md9}
+assume you are in the directory where the HFold executable is loacted ./\+HFold --i "{}/home/username/\+Desktop/myinputfile.\+txt"{} ./\+HFold --i "{}/home/username/\+Desktop/myinputfile.\+txt"{} --o "{}outputfile.\+txt"{} ./\+HFold --i "{}/home/username/\+Desktop/myinputfile.\+txt"{} --o "{}/home/username/\+Desktop/some\+\_\+folder/outputfile.\+txt"{} ./\+HFold --s "{}\+GCAACGAUGACAUACAUCGCUAGUCGACGC"{} --r "{}(\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+)"{} ./\+HFold --s "{}\+GCAACGAUGACAUACAUCGCUAGUCGACGC"{} --r "{}(\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+)"{} --o "{}outputfile.\+txt"{} ./\+HFold --s "{}\+GCAACGAUGACAUACAUCGCUAGUCGACGC"{} --r "{}(\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+)"{} --o "{}/home/username/\+Desktop/some\+\_\+folder/outputfile.\+txt"{}\hypertarget{md__c_1_2_users_2luket_2_desktop_2testing___c_party_2_c_party_2_r_e_a_d_m_e_autotoc_md10}{}\doxysubsubsection{\texorpdfstring{Exit code\+:}{Exit code:}}\label{md__c_1_2_users_2luket_2_desktop_2testing___c_party_2_c_party_2_r_e_a_d_m_e_autotoc_md10}
+0 success 1 invalid argument error 3 thread error 4 i/o error 5 pipe error error code with special meaning\+: \href{http://tldp.org/LDP/abs/html/exitcodes.html}{\texttt{ http\+://tldp.\+org/\+LDP/abs/html/exitcodes.\+html}} 2 Misuse of shell builtins (according to Bash documentation) 126 Command invoked cannot execute 127 "{}command not found"{} 128 Invalid argument to exit ~\newline
+ 128+n Fatal error signal "{}n"{} 130 Script terminated by Control-\/C 255 Exit status out of range (range is 0-\/255) 

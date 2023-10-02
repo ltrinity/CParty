@@ -1,0 +1,90 @@
+\doxysection{s\+\_\+multi\+\_\+loop\+\_\+sub.\+h}
+\hypertarget{s__multi__loop__sub_8h_source}{}\label{s__multi__loop__sub_8h_source}\index{C:/Users/luket/Desktop/testing\_CParty/CParty/simfold/src/simfold/s\_multi\_loop\_sub.h@{C:/Users/luket/Desktop/testing\_CParty/CParty/simfold/src/simfold/s\_multi\_loop\_sub.h}}
+\mbox{\hyperlink{s__multi__loop__sub_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{s__multi__loop__sub_8h_source_l00001}00001\ \textcolor{comment}{/***************************************************************************}}
+\DoxyCodeLine{\Hypertarget{s__multi__loop__sub_8h_source_l00002}00002\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ s\_multi\_loop\_sub.h\ \ -\/\ \ description}}
+\DoxyCodeLine{\Hypertarget{s__multi__loop__sub_8h_source_l00003}00003\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{s__multi__loop__sub_8h_source_l00004}00004\ \textcolor{comment}{\ \ \ \ begin\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ Mon\ Apr\ 15\ 2002}}
+\DoxyCodeLine{\Hypertarget{s__multi__loop__sub_8h_source_l00005}00005\ \textcolor{comment}{\ \ \ \ copyright\ \ \ \ \ \ \ \ \ \ \ \ :\ (C)\ 2002\ by\ Mirela\ Andronescu}}
+\DoxyCodeLine{\Hypertarget{s__multi__loop__sub_8h_source_l00006}00006\ \textcolor{comment}{\ \ \ \ email\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ andrones@cs.ubc.ca}}
+\DoxyCodeLine{\Hypertarget{s__multi__loop__sub_8h_source_l00007}00007\ \textcolor{comment}{\ ***************************************************************************/}}
+\DoxyCodeLine{\Hypertarget{s__multi__loop__sub_8h_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{s__multi__loop__sub_8h_source_l00009}00009\ \textcolor{comment}{/***************************************************************************}}
+\DoxyCodeLine{\Hypertarget{s__multi__loop__sub_8h_source_l00010}00010\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{s__multi__loop__sub_8h_source_l00011}00011\ \textcolor{comment}{\ *\ \ \ This\ program\ is\ free\ software;\ you\ can\ redistribute\ it\ and/or\ modify\ \ *}}
+\DoxyCodeLine{\Hypertarget{s__multi__loop__sub_8h_source_l00012}00012\ \textcolor{comment}{\ *\ \ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by\ \ *}}
+\DoxyCodeLine{\Hypertarget{s__multi__loop__sub_8h_source_l00013}00013\ \textcolor{comment}{\ *\ \ \ the\ Free\ Software\ Foundation;\ either\ version\ 2\ of\ the\ License,\ or\ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{s__multi__loop__sub_8h_source_l00014}00014\ \textcolor{comment}{\ *\ \ \ (at\ your\ option)\ any\ later\ version.\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{s__multi__loop__sub_8h_source_l00015}00015\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{s__multi__loop__sub_8h_source_l00016}00016\ \textcolor{comment}{\ ***************************************************************************/}}
+\DoxyCodeLine{\Hypertarget{s__multi__loop__sub_8h_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{s__multi__loop__sub_8h_source_l00018}00018\ \textcolor{comment}{//\ this\ class\ represents\ multi-\/loops\ for\ suboptimal\ pairfold,\ it\ implements\ the\ Wuchty\ complete\ suboptimal\ paper\ }}
+\DoxyCodeLine{\Hypertarget{s__multi__loop__sub_8h_source_l00019}00019\ \ }
+\DoxyCodeLine{\Hypertarget{s__multi__loop__sub_8h_source_l00020}00020\ \textcolor{preprocessor}{\#ifndef\ S\_MULTI\_LOOP\_SUB\_H}}
+\DoxyCodeLine{\Hypertarget{s__multi__loop__sub_8h_source_l00021}00021\ \textcolor{preprocessor}{\#define\ S\_MULTI\_LOOP\_SUB\_H}}
+\DoxyCodeLine{\Hypertarget{s__multi__loop__sub_8h_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{s__multi__loop__sub_8h_source_l00023}00023\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{structs_8h}{structs.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{s__multi__loop__sub_8h_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{s__multi__loop__sub_8h_source_l00025}00025\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classs__energy__matrix}{s\_energy\_matrix}};}
+\DoxyCodeLine{\Hypertarget{s__multi__loop__sub_8h_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{s__multi__loop__sub_8h_source_l00027}\mbox{\hyperlink{classs__multi__loop__sub}{00027}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classs__multi__loop__sub}{s\_multi\_loop\_sub}}}
+\DoxyCodeLine{\Hypertarget{s__multi__loop__sub_8h_source_l00028}00028\ \{}
+\DoxyCodeLine{\Hypertarget{s__multi__loop__sub_8h_source_l00029}00029\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{s__multi__loop__sub_8h_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{s__multi__loop__sub_8h_source_l00031}\mbox{\hyperlink{classs__multi__loop__sub_a6951369f675ca4a521a35801f9316739}{00031}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classs__energy__matrix}{s\_energy\_matrix}};}
+\DoxyCodeLine{\Hypertarget{s__multi__loop__sub_8h_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{s__multi__loop__sub_8h_source_l00033}00033\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classs__multi__loop__sub}{s\_multi\_loop\_sub}}\ (\textcolor{keywordtype}{int}\ *seq,\ \textcolor{keywordtype}{int}\ length);}
+\DoxyCodeLine{\Hypertarget{s__multi__loop__sub_8h_source_l00034}00034\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ The\ constructor}}
+\DoxyCodeLine{\Hypertarget{s__multi__loop__sub_8h_source_l00035}00035\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{s__multi__loop__sub_8h_source_l00036}00036\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classs__multi__loop__sub_a79b31fa7a035428e85f463f1c4ea7f82}{\string~s\_multi\_loop\_sub}}\ ();}
+\DoxyCodeLine{\Hypertarget{s__multi__loop__sub_8h_source_l00037}00037\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ The\ destructor}}
+\DoxyCodeLine{\Hypertarget{s__multi__loop__sub_8h_source_l00038}00038\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{s__multi__loop__sub_8h_source_l00039}\mbox{\hyperlink{classs__multi__loop__sub_a33307cf1231aa473419b234fa8854ca0}{00039}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classs__multi__loop__sub_a33307cf1231aa473419b234fa8854ca0}{set\_energy\_matrix}}\ (\mbox{\hyperlink{classs__energy__matrix}{s\_energy\_matrix}}\ *\mbox{\hyperlink{classs__multi__loop__sub_a40dd1d30329742525003c30fcbdefab0}{V}})\ \{\ this-\/>V\ =\ \mbox{\hyperlink{classs__multi__loop__sub_a40dd1d30329742525003c30fcbdefab0}{V}};\ \}}
+\DoxyCodeLine{\Hypertarget{s__multi__loop__sub_8h_source_l00040}00040\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Set\ local\ energy\ matrix\ to\ V}}
+\DoxyCodeLine{\Hypertarget{s__multi__loop__sub_8h_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{s__multi__loop__sub_8h_source_l00042}00042\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{constants_8h_ac9a8588270279e7ab92df9794938f2ca}{PARAMTYPE}}\ \mbox{\hyperlink{classs__multi__loop__sub_aab0ab8da2d81b17b39602f694f416ced}{compute\_energy}}\ (\textcolor{keywordtype}{int}\ i,\ \textcolor{keywordtype}{int}\ j);}
+\DoxyCodeLine{\Hypertarget{s__multi__loop__sub_8h_source_l00043}00043\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ computes\ the\ free\ energy\ of\ a\ multi-\/loop\ closed\ by\ i\ and\ j}}
+\DoxyCodeLine{\Hypertarget{s__multi__loop__sub_8h_source_l00044}00044\ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{s__multi__loop__sub_8h_source_l00045}00045\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classs__multi__loop__sub_a4161f27d08c49e12ab0314ddd13e782d}{compute\_energy\_FM}}\ (\textcolor{keywordtype}{int}\ j);}
+\DoxyCodeLine{\Hypertarget{s__multi__loop__sub_8h_source_l00046}00046\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ computes\ a\ partial\ multi-\/loop}}
+\DoxyCodeLine{\Hypertarget{s__multi__loop__sub_8h_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{s__multi__loop__sub_8h_source_l00048}00048\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classs__multi__loop__sub_a66dd0de55c650af8a910734491932a43}{compute\_energy\_FM1}}\ (\textcolor{keywordtype}{int}\ j);}
+\DoxyCodeLine{\Hypertarget{s__multi__loop__sub_8h_source_l00049}00049\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ compute\ the\ multi-\/loop\ branch\ which\ is\ right\ at\ the\ left\ of\ j}}
+\DoxyCodeLine{\Hypertarget{s__multi__loop__sub_8h_source_l00050}00050\ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{s__multi__loop__sub_8h_source_l00051}00051\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classs__multi__loop__sub_ac34118458666456a7420087812616a1a}{compute\_energy\_FM1\_restricted}}\ (\textcolor{keywordtype}{int}\ j,\ \mbox{\hyperlink{structstr__features}{str\_features}}\ *fres);}
+\DoxyCodeLine{\Hypertarget{s__multi__loop__sub_8h_source_l00052}00052\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ compute\ the\ multi-\/loop\ branch\ which\ is\ right\ at\ the\ left\ of\ j,\ the\ restricted\ case}}
+\DoxyCodeLine{\Hypertarget{s__multi__loop__sub_8h_source_l00053}00053\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{s__multi__loop__sub_8h_source_l00054}00054\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classs__multi__loop__sub_a71ce45eb5ab91e559f3b65c225423e3b}{compute\_energy\_FM\_restricted}}\ (\textcolor{keywordtype}{int}\ j,\ \mbox{\hyperlink{structstr__features}{str\_features}}\ *fres);}
+\DoxyCodeLine{\Hypertarget{s__multi__loop__sub_8h_source_l00055}00055\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ computes\ a\ partial\ multi-\/loop,\ the\ restricted\ case\ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{s__multi__loop__sub_8h_source_l00056}00056\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{s__multi__loop__sub_8h_source_l00057}\mbox{\hyperlink{classs__multi__loop__sub_af5917b401a8d7dde0b7bc7437ea2fd37}{00057}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{constants_8h_ac9a8588270279e7ab92df9794938f2ca}{PARAMTYPE}}\ \mbox{\hyperlink{classs__multi__loop__sub_af5917b401a8d7dde0b7bc7437ea2fd37}{get\_FM\_energy}}\ (\textcolor{keywordtype}{int}\ i,\ \textcolor{keywordtype}{int}\ j)\ \{\ \textcolor{keywordflow}{if}\ (i>=j)\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{constants_8h_a12c2040f25d8e3a7b9e1c2024c618cb6}{INF}};\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classs__multi__loop__sub_a64b68faf574db5ffccb6a855d811747b}{FM}}[\mbox{\hyperlink{classs__multi__loop__sub_ac89e50ce0158c85be0d1694cb9db9303}{index}}[i]-\/i+j];\ \}}
+\DoxyCodeLine{\Hypertarget{s__multi__loop__sub_8h_source_l00058}00058\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ return\ the\ energy\ of\ FM(i,j)}}
+\DoxyCodeLine{\Hypertarget{s__multi__loop__sub_8h_source_l00059}00059\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{s__multi__loop__sub_8h_source_l00060}\mbox{\hyperlink{classs__multi__loop__sub_ae7e1a6e94d14059a2ec4ef83ce8581e9}{00060}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{constants_8h_ac9a8588270279e7ab92df9794938f2ca}{PARAMTYPE}}\ \mbox{\hyperlink{classs__multi__loop__sub_ae7e1a6e94d14059a2ec4ef83ce8581e9}{get\_FM1\_energy}}\ (\textcolor{keywordtype}{int}\ i,\ \textcolor{keywordtype}{int}\ j)\ \{\ \textcolor{keywordflow}{if}\ (i>=j)\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{constants_8h_a12c2040f25d8e3a7b9e1c2024c618cb6}{INF}};\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classs__multi__loop__sub_a8aa4ce4f9f95311736c3dd07f263fa33}{FM1}}[\mbox{\hyperlink{classs__multi__loop__sub_ac89e50ce0158c85be0d1694cb9db9303}{index}}[i]-\/i+j];\ \}}
+\DoxyCodeLine{\Hypertarget{s__multi__loop__sub_8h_source_l00061}00061\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ return\ the\ energy\ of\ FM1(i,j)}}
+\DoxyCodeLine{\Hypertarget{s__multi__loop__sub_8h_source_l00062}00062\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{s__multi__loop__sub_8h_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{s__multi__loop__sub_8h_source_l00064}00064\ \ \ \ \ \textcolor{comment}{//\ better\ to\ have\ protected\ variable\ rather\ than\ private,\ it's\ necessary\ for\ Hfold}}
+\DoxyCodeLine{\Hypertarget{s__multi__loop__sub_8h_source_l00065}00065\ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{\Hypertarget{s__multi__loop__sub_8h_source_l00066}00066\ \ \ \ \ \textcolor{comment}{//private:}}
+\DoxyCodeLine{\Hypertarget{s__multi__loop__sub_8h_source_l00067}00067\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{s__multi__loop__sub_8h_source_l00068}\mbox{\hyperlink{classs__multi__loop__sub_ad9c285b5739a8e8309f5e5f414f3a425}{00068}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ *\mbox{\hyperlink{classs__multi__loop__sub_ad9c285b5739a8e8309f5e5f414f3a425}{sequence}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ the\ entire\ sequence\ for\ which\ we\ compute\ the\ energy.\ }}
+\DoxyCodeLine{\Hypertarget{s__multi__loop__sub_8h_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ Each\ base\ is\ converted\ into\ integer,\ because\ it's\ faster.}}
+\DoxyCodeLine{\Hypertarget{s__multi__loop__sub_8h_source_l00070}\mbox{\hyperlink{classs__multi__loop__sub_a6515d3a3323677d8658e9aba82efab9f}{00070}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classs__multi__loop__sub_a6515d3a3323677d8658e9aba82efab9f}{seqlen}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ sequence\ length}}
+\DoxyCodeLine{\Hypertarget{s__multi__loop__sub_8h_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{s__multi__loop__sub_8h_source_l00072}\mbox{\hyperlink{classs__multi__loop__sub_a40dd1d30329742525003c30fcbdefab0}{00072}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classs__energy__matrix}{s\_energy\_matrix}}\ *\mbox{\hyperlink{classs__multi__loop__sub_a40dd1d30329742525003c30fcbdefab0}{V}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ a\ pointer\ to\ the\ free\ energy\ matrix\ V}}
+\DoxyCodeLine{\Hypertarget{s__multi__loop__sub_8h_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{s__multi__loop__sub_8h_source_l00074}\mbox{\hyperlink{classs__multi__loop__sub_ac89e50ce0158c85be0d1694cb9db9303}{00074}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ *\mbox{\hyperlink{classs__multi__loop__sub_ac89e50ce0158c85be0d1694cb9db9303}{index}};\ \ \ \ \textcolor{comment}{//\ an\ array\ with\ indexes,\ such\ that\ we\ don't\ work\ with\ a\ 2D\ array,\ but\ with\ a\ 1D\ array\ of\ length\ (n*(n+1))/2}}
+\DoxyCodeLine{\Hypertarget{s__multi__loop__sub_8h_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{s__multi__loop__sub_8h_source_l00076}\mbox{\hyperlink{classs__multi__loop__sub_a64b68faf574db5ffccb6a855d811747b}{00076}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{constants_8h_ac9a8588270279e7ab92df9794938f2ca}{PARAMTYPE}}*\ \mbox{\hyperlink{classs__multi__loop__sub_a64b68faf574db5ffccb6a855d811747b}{FM}};\ \ \textcolor{comment}{//\ 2D\ array\ to\ keep\ the\ energy\ for\ FM\ (actually\ 1D\ of\ length\ n*(n-\/1)/2)}}
+\DoxyCodeLine{\Hypertarget{s__multi__loop__sub_8h_source_l00077}\mbox{\hyperlink{classs__multi__loop__sub_a8aa4ce4f9f95311736c3dd07f263fa33}{00077}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{constants_8h_ac9a8588270279e7ab92df9794938f2ca}{PARAMTYPE}}*\ \mbox{\hyperlink{classs__multi__loop__sub_a8aa4ce4f9f95311736c3dd07f263fa33}{FM1}};\ \ \textcolor{comment}{//\ 2d\ array\ to\ keep\ the\ energy\ for\ FM1\ (actually\ 1D\ of\ length\ n*(n-\/1)/2)}}
+\DoxyCodeLine{\Hypertarget{s__multi__loop__sub_8h_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ FM1\ contains\ the\ rightmost\ multi-\/loop\ branch\ at\ this\ point}}
+\DoxyCodeLine{\Hypertarget{s__multi__loop__sub_8h_source_l00079}00079\ }
+\DoxyCodeLine{\Hypertarget{s__multi__loop__sub_8h_source_l00080}00080\ \};}
+\DoxyCodeLine{\Hypertarget{s__multi__loop__sub_8h_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{s__multi__loop__sub_8h_source_l00082}00082\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{s__energy__matrix_8h}{s\_energy\_matrix.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{s__multi__loop__sub_8h_source_l00083}00083\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{s__multi__loop__sub_8h_source_l00084}00084\ }
+
+\end{DoxyCode}

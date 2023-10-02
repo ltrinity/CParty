@@ -1,0 +1,219 @@
+\doxysection{common.\+h}
+\hypertarget{common_8h_source}{}\label{common_8h_source}\index{C:/Users/luket/Desktop/testing\_CParty/CParty/simfold/src/common/common.h@{C:/Users/luket/Desktop/testing\_CParty/CParty/simfold/src/common/common.h}}
+\mbox{\hyperlink{common_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00001}00001\ \textcolor{comment}{/***************************************************************************}}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00002}00002\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ common.h\ \ -\/\ \ description}}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00003}00003\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00004}00004\ \textcolor{comment}{\ \ \ \ begin\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ Thu\ Sep\ 5\ 2002}}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00005}00005\ \textcolor{comment}{\ \ \ \ copyright\ \ \ \ \ \ \ \ \ \ \ \ :\ (C)\ 2002\ by\ Mirela\ Andronescu}}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00006}00006\ \textcolor{comment}{\ \ \ \ email\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ andrones@cs.ubc.ca}}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00007}00007\ \textcolor{comment}{\ ***************************************************************************/}}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00009}00009\ \textcolor{comment}{/***************************************************************************}}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00010}00010\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00011}00011\ \textcolor{comment}{\ *\ \ \ This\ program\ is\ free\ software;\ you\ can\ redistribute\ it\ and/or\ modify\ \ *}}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00012}00012\ \textcolor{comment}{\ *\ \ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by\ \ *}}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00013}00013\ \textcolor{comment}{\ *\ \ \ the\ Free\ Software\ Foundation;\ either\ version\ 2\ of\ the\ License,\ or\ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00014}00014\ \textcolor{comment}{\ *\ \ \ (at\ your\ option)\ any\ later\ version.\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00015}00015\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00016}00016\ \textcolor{comment}{\ ***************************************************************************/}}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00018}00018\ \textcolor{preprocessor}{\#ifndef\ COMMON\_H}}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00019}00019\ \textcolor{preprocessor}{\#define\ COMMON\_H}}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00021}00021\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00022}00022\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{structs_8h}{structs.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00023}00023\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{s__partition__function_8h}{s\_partition\_function.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00025}\mbox{\hyperlink{common_8h_acb35cc1ddcaa23d25b32e7706cc0e7ec}{00025}}\ \textcolor{preprocessor}{\#define\ isY(i)\ \ (i==U\ ||\ i==C)}}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00026}\mbox{\hyperlink{common_8h_a0bfa18bf916e8a38fd5c28ac9f632b6f}{00026}}\ \textcolor{preprocessor}{\#define\ isR(i)\ \ (i==A\ ||\ i==G)}}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00028}\mbox{\hyperlink{common_8h_adcd021ac91d43a62b2cdecf9a5b971a7}{00028}}\ \textcolor{preprocessor}{\#define\ MIN(A,\ B)\ \ \ \ \ \ ((A)\ <\ (B)\ ?\ (A)\ :\ (B))}}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00029}\mbox{\hyperlink{common_8h_ad935f1ff1a50822e317bdb321ce991ad}{00029}}\ \textcolor{preprocessor}{\#define\ MAX(A,\ B)\ \ \ \ \ \ ((A)\ >\ (B)\ ?\ (A)\ :\ (B))}}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00031}00031\ \textcolor{comment}{//\ I\ precomputed\ these\ values\ in\ s\_partition\_function.cpp}}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00032}00032\ \textcolor{comment}{//\#define\ EXPA\ \ \ (exp\ (misc.multi\_offset\ *\ oneoverRT))}}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00033}00033\ \textcolor{comment}{//\#define\ EXPB(X)\ \ \ (exp\ (((X)*misc.multi\_helix\_penalty)\ *\ oneoverRT))}}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00034}00034\ \textcolor{comment}{//\#define\ EXPC(X)\ \ \ (exp\ (((X)*misc.multi\_free\_base\_penalty)\ *\ oneoverRT))}}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00036}\mbox{\hyperlink{common_8h_a3c9e278560fae2498388e453e648362d}{00036}}\ \textcolor{preprocessor}{\#define\ IFD\ \ \ \ if\ (ignore\_dangles)}}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00038}\mbox{\hyperlink{common_8h_ab8cd17eff60c63faedab23965fdf886d}{00038}}\ \textcolor{preprocessor}{\#define\ AU\_penalty(X,Y)\ \ ((((X)\ !=\ C\ ||\ (Y)\ !=\ G)\ \&\&\ ((X)\ !=\ G\ ||\ (Y)\ !=\ C))?misc.terminal\_AU\_penalty:0)}}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00039}\mbox{\hyperlink{common_8h_a72461aabc8f6c589898842150a9490a0}{00039}}\ \textcolor{preprocessor}{\#define\ has\_AU\_penalty(X,Y)\ \ ((((X)\ !=\ C\ ||\ (Y)\ !=\ G)\ \&\&\ ((X)\ !=\ G\ ||\ (Y)\ !=\ C))?1:0)}}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00040}\mbox{\hyperlink{common_8h_aa479b80a5eb9bb91262ffc9e3a636c54}{00040}}\ \textcolor{preprocessor}{\#define\ AU\_penalty\_enthalpy(X,Y)\ \ ((((X)\ !=\ C\ ||\ (Y)\ !=\ G)\ \&\&\ ((X)\ !=\ G\ ||\ (Y)\ !=\ C))?enthalpy\_misc.terminal\_AU\_penalty:0)}}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00042}\mbox{\hyperlink{common_8h_aab7d92a0239e381b4df6a3878040d0f2}{00042}}\ \mbox{\hyperlink{constants_8h_adf823d40ac379702030cb342e84d5f2e}{pf\_t}}\ \mbox{\hyperlink{common_8h_aab7d92a0239e381b4df6a3878040d0f2}{bw}}(\mbox{\hyperlink{constants_8h_adf823d40ac379702030cb342e84d5f2e}{pf\_t}}\ energy);}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00043}00043\ \mbox{\hyperlink{constants_8h_adf823d40ac379702030cb342e84d5f2e}{pf\_t}}\ \mbox{\hyperlink{common_8h_ad89e17e2414e83109a26132f59086d9a}{bw\_int}}(\mbox{\hyperlink{constants_8h_ac9a8588270279e7ab92df9794938f2ca}{PARAMTYPE}}\ energy);}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00044}00044\ \textcolor{comment}{//return\ the\ boltzmann\ weight}}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00046}00046\ \textcolor{comment}{//\#define\ asymmetry\_penalty(size1,\ size2)\ (MIN\ (misc.asymmetry\_penalty\_max\_correction,\ abs\ (size1-\/size2)\ *\ misc.asymmetry\_penalty\_array\ [MIN\ (2,\ MIN\ ((size1),\ (size2)))-\/1]))}}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00048}00048\ \mbox{\hyperlink{constants_8h_ac9a8588270279e7ab92df9794938f2ca}{PARAMTYPE}}\ \mbox{\hyperlink{common_8h_a49bd2250b9398238354af0511447b75f}{asymmetry\_penalty}}\ (\textcolor{keywordtype}{int}\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{size1}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{size2}});}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00050}\mbox{\hyperlink{common_8h_a0911b477170bdc6eb74f4fba2b6540f2}{00050}}\ \textcolor{preprocessor}{\#define\ asymmetry\_penalty\_enthalpy(size1,\ size2)\ (MIN\ (enthalpy\_misc.asymmetry\_penalty\_max\_correction,\ abs\ (size1-\/size2)\ *\ enthalpy\_misc.asymmetry\_penalty\_array\ [MIN\ (2,\ MIN\ ((size1),\ (size2)))-\/1]))}}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00052}\mbox{\hyperlink{common_8h_af6281f6892fe05b4b4dfd7b8f3f10522}{00052}}\ \textcolor{preprocessor}{\#define\ IGINF(x)\ (((x)\ ==\ INF)?0:(x))}}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00053}00053\ \textcolor{comment}{//\ ignore\ infinite\ values}}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00055}00055\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{common_8h_abcd56a7f37a58d25c08b9c34acab5e82}{get\_sorted\_positions}}\ (\textcolor{keywordtype}{int}\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{n}},\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{numbers}}[],\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{positions}}[]);}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00056}00056\ \textcolor{comment}{//\ does\ not\ modify\ numbers}}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00059}00059\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{common_8h_adf937511c738706e18044281ea2c71b3}{compute\_accuracy}}\ (\textcolor{keywordtype}{char}\ *\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{ref\_structure}},\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{pred\_structure}});}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00060}00060\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{common_8h_a07176b8ab0c63c61c9e357f97f83f5e6}{compute\_sensitivity}}\ (\textcolor{keywordtype}{char}\ *\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{ref\_structure}},\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{pred\_structure}});}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00061}00061\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{common_8h_a7d939958c0f394316a997427b88cfbb0}{compute\_ppv}}\ (\textcolor{keywordtype}{char}\ *\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{ref\_structure}},\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{pred\_structure}});}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00063}00063\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{common_8h_a55e76ae0cbe5fb891f0db3c725305e5f}{compute\_pf\_sensitivity}}\ (\textcolor{keywordtype}{char}\ *\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{ref\_structure}},\ \mbox{\hyperlink{classs__partition__function}{s\_partition\_function}}\ *\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{part}},\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{simfold__pf_8cpp_afcfbedec6ebde62c6a091ce335836ef1}{threshold}});}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00064}00064\ \textcolor{comment}{//\ compute\ the\ sensitivity\ obtained\ after\ thresholding\ the\ base\ pair\ probabilities}}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00065}00065\ \textcolor{comment}{//\ part\ is\ the\ partition\ function\ object,\ which\ contains\ base\ pair\ probabilities}}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00066}00066\ \textcolor{comment}{//\ returns\ -\/1\ if\ undefined\ (denominator\ is\ 0)}}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00068}00068\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{common_8h_a1167055e906bfe3c94ddbd70ae1617ff}{compute\_pf\_ppv}}\ (\textcolor{keywordtype}{char}\ *\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{ref\_structure}},\ \mbox{\hyperlink{classs__partition__function}{s\_partition\_function}}\ *\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{part}},\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{simfold__pf_8cpp_afcfbedec6ebde62c6a091ce335836ef1}{threshold}});}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00069}00069\ \textcolor{comment}{//\ compute\ the\ positive\ predictive\ value\ obtained\ after\ thresholding\ the\ base\ pair\ probabilities}}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00070}00070\ \textcolor{comment}{//\ part\ is\ the\ partition\ function\ object,\ which\ contains\ base\ pair\ probabilities}}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00071}00071\ \textcolor{comment}{//\ returns\ -\/1\ if\ undefined\ (denominator\ is\ 0)}}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00072}00072\ }
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00073}00073\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{common_8h_a92de552f74ae0cdbb3b86774d44b8b85}{giveup}}\ (\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{string1}},\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{string2}});}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00074}00074\ \textcolor{comment}{//\ to\ add:\ variable\ nb\ of\ parameters,\ as\ in\ scanf,\ printf}}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00076}\mbox{\hyperlink{common_8h_a78298fa47448af40ddb09750b65a56ba}{00076}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{common_8h_a78298fa47448af40ddb09750b65a56ba}{giveup2}}\ (\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{string1}},\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{string2}},\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{FILE}}\ *\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{file}});}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00077}00077\ \textcolor{comment}{//\ to\ add:\ variable\ nb\ of\ parameters,\ as\ in\ scanf,\ printf}}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00078}00078\ }
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00079}00079\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{common_8h_a57cd5cbcb3c47c0834f3cad82a031174}{create\_random\_sequence}}\ (\textcolor{keywordtype}{int}\ length,\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{simfold_8cpp_aab0fa4fa34b613e3a6b4f0e87d1c073b}{sequence}});}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00080}00080\ \textcolor{comment}{//\ function\ to\ create\ uniformly\ random\ sequences\ -\/\ for\ demonstration\ purposes}}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00082}00082\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{common_8h_a934c0b6585493e8a843da71e6412a6ab}{create\_random\_restricted}}\ (\textcolor{keywordtype}{char}\ *\mbox{\hyperlink{simfold_8cpp_aab0fa4fa34b613e3a6b4f0e87d1c073b}{sequence}},\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{simfold_8cpp_acc011911591feaa0e5e5ac5889ee9a26}{restricted}});}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00083}00083\ \textcolor{comment}{//\ sequence\ is\ an\ input\ argument}}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00084}00084\ \textcolor{comment}{//\ restricted\ is\ the\ output\ argument}}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00085}00085\ }
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00086}00086\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{common_8h_a352f68c729456ca0665f43df71fc4cd5}{remove\_space}}\ (\textcolor{keywordtype}{char}\ *structure);}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00087}00087\ \textcolor{comment}{//\ PRE:\ none}}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00088}00088\ \textcolor{comment}{//\ POST:\ remove\ the\ space(s)\ from\ structure,\ if\ any;\ modifies\ structure}}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00089}00089\ }
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00090}00090\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{common_8h_ae367d5af38b22de88bfe1bf34c33ace7}{empty\_string}}\ (\textcolor{keywordtype}{char}\ *\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{str}});}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00091}00091\ }
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00092}00092\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{common_8h_ad0433cbe61d72ee1de16e95665b584f9}{can\_pair}}\ (\textcolor{keywordtype}{int}\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{base1}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{base2}});}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00093}00093\ \textcolor{comment}{//\ PRE:\ \ base1\ and\ base2\ are\ nucleotides\ over\ the\ alphabet\ \{A,\ C,\ G,\ T,\ U\}}}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00094}00094\ \textcolor{comment}{//\ POST:\ return\ 1\ if\ they\ can\ pair,\ 0\ otherwise}}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00095}00095\ }
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00096}00096\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{common_8h_a1855e8a86a27b75c76d0fd7181db2418}{watson\_crick}}\ (\textcolor{keywordtype}{int}\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{base1}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{base2}});}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00097}00097\ \textcolor{comment}{//\ PRE:\ \ base1\ and\ base2\ are\ nucleotides\ over\ the\ alphabet\ \{A,\ C,\ G,\ T,\ U\}}}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00098}00098\ \textcolor{comment}{//\ POST:\ return\ 1\ if\ they\ are\ watson\ crick\ pair,\ 0\ otherwise}}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00099}00099\ }
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00100}00100\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{common_8h_abd36ff7d78eb8c8fe26397adcaad96d1}{nuc\_to\_int}}\ (\textcolor{keywordtype}{char}\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{nucleotide}});}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00101}00101\ \textcolor{comment}{//\ PRE:\ \ nucleotide\ is\ 'A',\ 'C',\ 'G'\ or\ 'T'}}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00102}00102\ \textcolor{comment}{//\ POST:\ Return\ 0\ for\ A,\ 1\ for\ C,\ 2\ for\ G,\ 3\ for\ T}}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00103}00103\ }
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00104}00104\ }
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00105}00105\ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{common_8h_a087137713d395d142d4520cc5c445b43}{int\_to\_nuc}}\ (\textcolor{keywordtype}{int}\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{inuc}});}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00106}00106\ }
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00107}00107\ }
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00108}00108\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{common_8h_a164516e3d80f54c08f3b77854beb0c1b}{is\_nucleotide}}\ (\textcolor{keywordtype}{char}\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{base}});}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00109}00109\ \textcolor{comment}{//\ PRE:\ \ base\ is\ a\ character}}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00110}00110\ \textcolor{comment}{//\ POST:\ return\ true\ if\ base\ is\ a\ nucleotide\ (A,\ C,\ G\ or\ T)}}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00111}00111\ \textcolor{comment}{//\ \ \ \ \ \ \ return\ false\ otherwise}}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00112}00112\ }
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00113}00113\ }
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00114}00114\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{common_8h_ac051437fe40460f6426150cf1daa361e}{check\_sequence}}\ (\textcolor{keywordtype}{char}\ *\mbox{\hyperlink{simfold_8cpp_aab0fa4fa34b613e3a6b4f0e87d1c073b}{sequence}});}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00115}00115\ \textcolor{comment}{//\ check\ sequence\ for\ length\ and\ alphabet}}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00116}00116\ }
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00117}00117\ }
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00118}00118\ \mbox{\hyperlink{constants_8h_ac9a8588270279e7ab92df9794938f2ca}{PARAMTYPE}}\ \mbox{\hyperlink{common_8h_ad25a525ba12c1ae0f5c392ab9abf3137}{penalty\_by\_size}}\ (\textcolor{keywordtype}{int}\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{size}},\ \textcolor{keywordtype}{char}\ type);}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00119}00119\ \textcolor{comment}{//\ PRE:\ \ size\ is\ the\ size\ of\ the\ loop}}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00120}00120\ \textcolor{comment}{//\ \ \ \ \ \ \ type\ is\ HAIRP\ or\ INTER\ or\ BULGE}}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00121}00121\ \textcolor{comment}{//\ POST:\ return\ the\ penalty\ by\ size\ of\ the\ loop}}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00122}00122\ }
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00123}00123\ \textcolor{comment}{//PARAMTYPE\ IL\_penalty\_by\_size\_2D\ (int\ size1,\ int\ size2);}}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00124}00124\ }
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00125}00125\ \mbox{\hyperlink{constants_8h_ac9a8588270279e7ab92df9794938f2ca}{PARAMTYPE}}\ \mbox{\hyperlink{common_8h_a964a81fc12718029391b0f149ee3a802}{penalty\_by\_size\_enthalpy}}\ (\textcolor{keywordtype}{int}\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{size}},\ \textcolor{keywordtype}{char}\ type);}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00126}00126\ }
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00127}00127\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{common_8h_add20cc636f68fbe2685a9c2911f54e6d}{substr}}\ (\textcolor{keywordtype}{char}\ *\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{source}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{begin}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{end}},\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{dest}});}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00128}00128\ \textcolor{comment}{//\ PRE:\ \ begin\ and\ end\ are\ smaller\ than\ strlen(source)}}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00129}00129\ \textcolor{comment}{//\ POST:\ Put\ in\ dest\ what\ is\ in\ source\ between\ position\ begin\ and\ position\ end}}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00130}00130\ }
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00131}00131\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{common_8h_aad8d1acb03848eaee434aa969e8930be}{replace\_str\_piece}}\ (\textcolor{keywordtype}{char}\ *\mbox{\hyperlink{simfold_8cpp_aab0fa4fa34b613e3a6b4f0e87d1c073b}{sequence}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{position}},\ \textcolor{keywordtype}{char}\ *seq);}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00132}00132\ \textcolor{comment}{//\ PRE:\ \ begin\ +\ strlen(seq)\ <\ strlen\ (sequence)}}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00133}00133\ \textcolor{comment}{//\ POST:\ In\ sequence,\ at\ position,\ replace\ what\ is\ was\ by\ seq}}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00134}00134\ }
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00135}00135\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{common_8h_a5d444f84e3a2771f6a12b36d0bcef497}{reverse\_complement\_of\_seq}}\ (\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *seq,\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{complem}});}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00136}00136\ \textcolor{comment}{//\ PRE:\ \ seq\ is\ a\ sequence}}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00137}00137\ \textcolor{comment}{//\ POST:\ complement\ and\ reverse\ sequence\ and\ put\ the\ result\ into\ compl}}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00138}00138\ }
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00139}00139\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{common_8h_a814a6bb4a951da67ae8104b13a834144}{insert\_space}}\ (\textcolor{keywordtype}{char}\ *structure,\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{place}});}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00140}00140\ \textcolor{comment}{//\ PRE:\ \ None}}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00141}00141\ \textcolor{comment}{//\ POST:\ insert\ a\ space\ at\ the\ specified\ place,\ in\ structure}}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00142}00142\ }
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00143}00143\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{common_8h_ac58bc56eaf06e36d94df86891c4a33f5}{detect\_original\_pairs}}(\textcolor{keywordtype}{char}\ *structure,\ \textcolor{keywordtype}{int}\ *\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{p\_table}});}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00144}00144\ \textcolor{comment}{//\ PRE:\ \ structure\ contains\ the\ desired\ structure}}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00145}00145\ \textcolor{comment}{//\ POST:\ p\_table\ will\ contain\ the\ index\ of\ each\ base\ pair}}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00146}00146\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ or\ -\/1\ if\ it\ does\ not\ pair}}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00147}00147\ \textcolor{comment}{//\ Feb\ 28,\ 2008:\ structure\ can\ also\ have:}}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00148}00148\ \textcolor{comment}{//\ \ -\/\ angles:\ <\ or\ >,\ which\ denote\ the\ ends\ of\ a\ pseudoknot.\ In\ that\ case,\ p\_table\ would\ still\ be\ filled\ in\ the\ same\ way.}}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00149}00149\ \textcolor{comment}{//\ \ \ \ \ \ The\ assumption\ is\ that\ the\ <>\ pairs\ are\ always\ nested\ within\ parentheses.}}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00150}00150\ \textcolor{comment}{//\ \ \ \ \ \ That\ is,\ a\ structure\ like\ this\ (<)>\ is\ not\ possible.}}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00151}00151\ \textcolor{comment}{//\ \ -\/\ x,\ which\ denotes\ that\ I\ should\ ignore\ that\ part.\ p\_table\ would\ be\ -\/3\ in\ that\ case/}}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00152}00152\ }
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00153}00153\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{common_8h_a834a69f7dd0f29faaf4ec0e1ec2c472e}{valid\_structure}}\ (\textcolor{keywordtype}{int}\ i,\ \textcolor{keywordtype}{int}\ j,\ \textcolor{keywordtype}{char}\ *structure);}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00154}00154\ \textcolor{comment}{//\ returns\ 1\ if\ this\ structure\ is\ valid\ (i.e.\ complete),\ 0\ if\ it's\ partial}}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00155}00155\ }
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00156}00156\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{common_8h_af3add2d67ee16e4a81fa26db508d7bba}{detect\_structure\_features}}\ (\textcolor{keywordtype}{char}\ *structure,\ \mbox{\hyperlink{structstr__features}{str\_features}}\ *f);}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00157}00157\ \textcolor{comment}{//\ PRE:\ \ None}}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00158}00158\ \textcolor{comment}{//\ POST:\ The\ variable\ f\ is\ filled\ with\ structure\ features,\ i.e.\ what\ type\ of\ elementary\ structure}}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00159}00159\ \textcolor{comment}{//\ \ \ \ \ \ \ this\ base\ is\ closing\ (such\ as\ stacked\ pair,\ hairpin\ loop\ etc.)}}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00160}00160\ }
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00161}00161\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{common_8h_ae989ca659fda0e23fc8f17bef527404c}{complementary\_bases}}\ (\textcolor{keywordtype}{char}\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{b1}},\ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{b2}});}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00162}00162\ \textcolor{comment}{//\ returns\ 1\ if\ b1\ and\ b2\ are\ complementary\ bases}}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00163}00163\ }
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00164}00164\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{common_8h_a307cfb24a53e2fba8e99de0a25ee56c2}{self\_complementary}}\ (\textcolor{keywordtype}{char}\ *\mbox{\hyperlink{simfold_8cpp_aab0fa4fa34b613e3a6b4f0e87d1c073b}{sequence}});}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00165}00165\ \textcolor{comment}{//\ return\ 1\ if\ this\ sequence\ is\ self-\/complementary}}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00166}00166\ \textcolor{comment}{//\ self\_complementary\ means\ the\ first\ half\ is\ the\ reverse\ complement\ of\ the\ second\ half}}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00167}00167\ \textcolor{comment}{//\ if\ length\ (sequence)\ is\ an\ odd\ number,\ the\ middle\ base\ does\ not\ matter}}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00168}00168\ }
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00169}00169\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{common_8h_a9b09473d2b76490bca5e73e7af9f756d}{exists\_restricted}}\ (\textcolor{keywordtype}{int}\ i,\ \textcolor{keywordtype}{int}\ j,\ \mbox{\hyperlink{structstr__features}{str\_features}}\ *fres);}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00170}00170\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{common_8h_add121e632701995b40374d740f919717}{exists\_restricted\_ptable}}\ (\textcolor{keywordtype}{int}\ i,\ \textcolor{keywordtype}{int}\ j,\ \textcolor{keywordtype}{int}\ *\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{ptable}});}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00171}00171\ }
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00172}00172\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{common_8h_aa6443b2d67b7db4b6bc448667da9a40d}{is\_structured}}\ (\textcolor{keywordtype}{int}\ i,\ \textcolor{keywordtype}{int}\ j,\ \textcolor{keywordtype}{char}\ *structure);}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00173}00173\ \textcolor{comment}{//\ return\ 1\ if\ structure\ has\ some\ parentheses\ between\ i\ and\ j\ inclusive}}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00174}00174\ \textcolor{comment}{//\ return\ 0\ otherwise}}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00175}00175\ }
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00176}00176\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{common_8h_a645476abe527688874e08869aa5aaa95}{print\_stacking\_energies}}();}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00177}00177\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{common_8h_a33c26686217b8d0f638fa2e1530dae5d}{print\_tstacki\_dangling\_energies}}();}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00178}00178\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{common_8h_a25065a28b5a8c502fa8342c1b54b4263}{print\_stack\_dangling\_energies}}();}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00179}00179\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{common_8h_add35f0edfbd22d0a458580b3e56703dd}{print\_stack\_equation\_dangling}}();}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00180}00180\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{common_8h_a515165325cd6ab18df53c8ff32c38ad0}{print\_int22\_tstacki}}();}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00181}00181\ }
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00182}00182\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{common_8h_a4d76863f044eee2995ba2dda28a8cff8}{read\_parsi\_options\_from\_file}}\ (\textcolor{keywordtype}{char}\ *\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{filename}});}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00183}00183\ \textcolor{comment}{//\ the\ file\ should\ contain\ values\ (0\ or\ 1)\ for\ each\ of\ the\ parsi\ options.\ For\ example\ the\ following\ is\ all-\/parsimonious\ options}}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00184}00184\ \textcolor{comment}{//\ \ \ \ \ parsi\_tstackh\ =\ 1;}}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00185}00185\ \textcolor{comment}{//\ \ \ \ \ parsi\_tstacki\ =\ 1;}}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00186}00186\ \textcolor{comment}{//\ \ \ \ \ parsi\_asymmetry\ =\ 1;}}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00187}00187\ \textcolor{comment}{//\ \ \ \ \ parsi\_int11\ =\ 1;}}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00188}00188\ \textcolor{comment}{//\ \ \ \ \ parsi\_int21\ =\ 1;}}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00189}00189\ \textcolor{comment}{//\ \ \ \ \ parsi\_int22\ =\ 1;}}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00190}00190\ \textcolor{comment}{//\ \ \ \ \ parsi\_bulge1\ =\ 1;}}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00191}00191\ \textcolor{comment}{//\ \ \ \ \ parsi\_dangles\ =\ 1;}}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00192}00192\ \textcolor{comment}{//\ \ \ \ \ parsi\_others\ =\ 1;}}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00193}00193\ \textcolor{comment}{//\ \ \ \ \ parsi\_length\ =\ 1;}}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00194}00194\ \textcolor{comment}{//\ \ \ \ \ parsi\_special\ =\ 1;}}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00195}00195\ }
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00196}00196\ }
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00197}00197\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{common_8h_a52cf181e7737480120ac9706aeba4cd3}{loss}}\ (\textcolor{keywordtype}{int}\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{first}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{last}});}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00198}00198\ \textcolor{comment}{//\ known\_pairings\ contains\ the\ pairings\ from\ 0\ to\ n-\/1,\ of\ the\ reference\ structure}}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00199}00199\ \textcolor{comment}{//\ pred\_pairings\ contains\ the\ pairings\ of\ a\ potential\ structure\ on\ the\ region\ first-\/last\ inclusive}}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00200}00200\ \textcolor{comment}{//\ \ \ \ \ \ the\ other\ regions\ don't\ matter}}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00201}00201\ \textcolor{comment}{//\ Returns\ the\ "{}Hamming"{}\ distance\ between\ known\_pairings\ and\ pred\_pairings\ on\ the\ region\ first-\/last\ inclusive}}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00202}00202\ \textcolor{comment}{//\ This\ function\ is\ used\ for\ the\ loss-\/augmented\ prediction}}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00203}00203\ \textcolor{comment}{//\ Written\ on\ August\ 9,\ 2008}}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00204}00204\ \textcolor{comment}{//\ Note:\ Maybe\ this\ measure\ is\ better\ than\ the\ Hamming\ distance:}}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00205}00205\ \textcolor{comment}{//\ \ \ \ \ \ (\#\ correctly\ predicted\ bp\ -\/\ \#\ incorrectly\ predicted\ bp)\ /\ \#\ true\ bp.}}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00206}00206\ \textcolor{comment}{//\ \ \ \ \ \ This\ will\ be\ in\ (-\/inf,1],\ but\ it\ only\ includes\ the\ base\ pairs,}}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00207}00207\ \textcolor{comment}{//\ \ \ \ \ \ whereas\ the\ Hamming\ distance\ measure\ also\ includes\ the\ unpaired\ bases.}}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00208}00208\ }
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00209}00209\ \textcolor{comment}{//\ Added\ on\ Sep\ 3,\ 2008,\ for\ loss-\/augmented\ prediction}}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00210}00210\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{common_8h_a53055b8129e1e9ee8b4f4ad0c4f025a7}{compute\_distance}}\ (\textcolor{keywordtype}{char}\ *\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{ref\_structure}},\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{pred\_structure}});}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00211}00211\ \textcolor{comment}{//\ It\ has\ to\ be\ the\ same\ mathematical\ function\ as\ the\ one\ implemented\ in\ "{}loss"{}}}
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00212}00212\ }
+\DoxyCodeLine{\Hypertarget{common_8h_source_l00213}00213\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

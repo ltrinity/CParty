@@ -1,0 +1,67 @@
+\doxysection{timer.\+cpp}
+\hypertarget{timer_8cpp_source}{}\label{timer_8cpp_source}\index{C:/Users/luket/Desktop/testing\_CParty/CParty/simfold/src/common/timer.cpp@{C:/Users/luket/Desktop/testing\_CParty/CParty/simfold/src/common/timer.cpp}}
+\mbox{\hyperlink{timer_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{timer_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ <math.h>}}
+\DoxyCodeLine{\Hypertarget{timer_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ <ctype.h>}}
+\DoxyCodeLine{\Hypertarget{timer_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <time.h>}}
+\DoxyCodeLine{\Hypertarget{timer_8cpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <string.h>}}
+\DoxyCodeLine{\Hypertarget{timer_8cpp_source_l00005}00005\ \textcolor{comment}{//\#include\ <strstream.h>}}
+\DoxyCodeLine{\Hypertarget{timer_8cpp_source_l00006}00006\ \textcolor{comment}{//\#include\ <fstream.h>}}
+\DoxyCodeLine{\Hypertarget{timer_8cpp_source_l00007}00007\ \textcolor{preprocessor}{\#include\ <sys/times.h>}}
+\DoxyCodeLine{\Hypertarget{timer_8cpp_source_l00008}00008\ \textcolor{preprocessor}{\#include\ <limits.h>}}
+\DoxyCodeLine{\Hypertarget{timer_8cpp_source_l00009}00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{timer_8h}{timer.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{timer_8cpp_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{timer_8cpp_source_l00011}00011\ \textcolor{comment}{//\ timer\ class\ for\ measuring\ cpu-\/time\ of\ program\ fragments\ */}}
+\DoxyCodeLine{\Hypertarget{timer_8cpp_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{timer_8cpp_source_l00013}\mbox{\hyperlink{classtimer_ab513ecb2f68cbd108fff3236e8b44670}{00013}}\ \mbox{\hyperlink{classtimer_ab513ecb2f68cbd108fff3236e8b44670}{timer::timer}}(\textcolor{keywordtype}{void})\ \{}
+\DoxyCodeLine{\Hypertarget{timer_8cpp_source_l00014}00014\ \ \ t\_start\_u=0;}
+\DoxyCodeLine{\Hypertarget{timer_8cpp_source_l00015}00015\ \ \ t\_start\_s=0;}
+\DoxyCodeLine{\Hypertarget{timer_8cpp_source_l00016}00016\ \ \ t\_stop\_u=0;}
+\DoxyCodeLine{\Hypertarget{timer_8cpp_source_l00017}00017\ \ \ t\_stop\_s=0;}
+\DoxyCodeLine{\Hypertarget{timer_8cpp_source_l00018}00018\ \ \ st\ =\ STOPPED;}
+\DoxyCodeLine{\Hypertarget{timer_8cpp_source_l00019}00019\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{timer_8cpp_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{timer_8cpp_source_l00021}\mbox{\hyperlink{classtimer_ac755334f169d75fec80d30936899ee3a}{00021}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtimer_ac755334f169d75fec80d30936899ee3a}{timer::start}}(\textcolor{keywordtype}{void})\ \{}
+\DoxyCodeLine{\Hypertarget{timer_8cpp_source_l00022}00022\ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{tms}}\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{buf}};}
+\DoxyCodeLine{\Hypertarget{timer_8cpp_source_l00023}00023\ \ \ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{clock\_t}}\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{t}};}
+\DoxyCodeLine{\Hypertarget{timer_8cpp_source_l00024}00024\ \ \ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{t}}\ =\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{times}}(\&\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{buf}});}
+\DoxyCodeLine{\Hypertarget{timer_8cpp_source_l00025}00025\ \ \ t\_start\_u\ =\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{buf}}.tms\_utime;}
+\DoxyCodeLine{\Hypertarget{timer_8cpp_source_l00026}00026\ \ \ t\_start\_s\ =\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{buf}}.tms\_stime;}
+\DoxyCodeLine{\Hypertarget{timer_8cpp_source_l00027}00027\ \ \ st\ =\ RUNNING;}
+\DoxyCodeLine{\Hypertarget{timer_8cpp_source_l00028}00028\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{timer_8cpp_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{timer_8cpp_source_l00030}\mbox{\hyperlink{classtimer_a07881224194ae4cd323f6ab3ff287b65}{00030}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtimer_a07881224194ae4cd323f6ab3ff287b65}{timer::stop}}(\textcolor{keywordtype}{void})\ \{}
+\DoxyCodeLine{\Hypertarget{timer_8cpp_source_l00031}00031\ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{tms}}\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{buf}};}
+\DoxyCodeLine{\Hypertarget{timer_8cpp_source_l00032}00032\ \ \ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{clock\_t}}\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{t}};}
+\DoxyCodeLine{\Hypertarget{timer_8cpp_source_l00033}00033\ \ \ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{t}}\ =\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{times}}(\&\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{buf}});}
+\DoxyCodeLine{\Hypertarget{timer_8cpp_source_l00034}00034\ \ \ t\_stop\_u\ =\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{buf}}.tms\_utime;}
+\DoxyCodeLine{\Hypertarget{timer_8cpp_source_l00035}00035\ \ \ t\_stop\_s\ =\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{buf}}.tms\_stime;\ \ }
+\DoxyCodeLine{\Hypertarget{timer_8cpp_source_l00036}00036\ \ \ st\ =\ STOPPED;}
+\DoxyCodeLine{\Hypertarget{timer_8cpp_source_l00037}00037\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{timer_8cpp_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{timer_8cpp_source_l00039}\mbox{\hyperlink{classtimer_a6fce9ffd6007b3d5abc657d11a039a59}{00039}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtimer_a6fce9ffd6007b3d5abc657d11a039a59}{timer::reset}}(\textcolor{keywordtype}{void})\ \{}
+\DoxyCodeLine{\Hypertarget{timer_8cpp_source_l00040}00040\ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{tms}}\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{buf}};}
+\DoxyCodeLine{\Hypertarget{timer_8cpp_source_l00041}00041\ \ \ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{clock\_t}}\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{t}};}
+\DoxyCodeLine{\Hypertarget{timer_8cpp_source_l00042}00042\ \ \ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{t}}\ =\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{times}}(\&\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{buf}});}
+\DoxyCodeLine{\Hypertarget{timer_8cpp_source_l00043}00043\ \ \ t\_start\_u\ =\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{buf}}.tms\_utime;}
+\DoxyCodeLine{\Hypertarget{timer_8cpp_source_l00044}00044\ \ \ t\_start\_s\ =\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{buf}}.tms\_stime;}
+\DoxyCodeLine{\Hypertarget{timer_8cpp_source_l00045}00045\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{timer_8cpp_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{timer_8cpp_source_l00047}\mbox{\hyperlink{classtimer_aa80b06a77dce2626dc586471bf8fb54a}{00047}}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classtimer_aa80b06a77dce2626dc586471bf8fb54a}{timer::elapsed}}(\textcolor{keywordtype}{void})\ \{}
+\DoxyCodeLine{\Hypertarget{timer_8cpp_source_l00048}00048\ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{tms}}\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{buf}};}
+\DoxyCodeLine{\Hypertarget{timer_8cpp_source_l00049}00049\ \ \ \textcolor{keywordflow}{if}\ (st==STOPPED)}
+\DoxyCodeLine{\Hypertarget{timer_8cpp_source_l00050}00050\ \ \ \ \ \textcolor{keywordflow}{return}(1.0*((t\_stop\_u+t\_stop\_s)-\/(t\_start\_u+t\_start\_s))/\mbox{\hyperlink{timer_8h_a03df76d1f70664d745ca8de2864e39b3}{CLK\_TCK}});}
+\DoxyCodeLine{\Hypertarget{timer_8cpp_source_l00051}00051\ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{timer_8cpp_source_l00052}00052\ \ \ \ \ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{clock\_t}}\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{t}};}
+\DoxyCodeLine{\Hypertarget{timer_8cpp_source_l00053}00053\ \ \ \ \ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{t}}\ =\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{times}}(\&\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{buf}});}
+\DoxyCodeLine{\Hypertarget{timer_8cpp_source_l00054}00054\ \ \ \ \ \textcolor{keywordflow}{return}(1.0*((\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{buf}}.tms\_utime+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{buf}}.tms\_stime)-\/(t\_start\_u+t\_start\_s))/\mbox{\hyperlink{timer_8h_a03df76d1f70664d745ca8de2864e39b3}{CLK\_TCK}});}
+\DoxyCodeLine{\Hypertarget{timer_8cpp_source_l00055}00055\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{timer_8cpp_source_l00056}00056\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{timer_8cpp_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{timer_8cpp_source_l00058}\mbox{\hyperlink{classtimer_a20dae956c690402eb760ce0419f7f15e}{00058}}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classtimer_a20dae956c690402eb760ce0419f7f15e}{timer::resolution}}(\textcolor{keywordtype}{void})\ \{}
+\DoxyCodeLine{\Hypertarget{timer_8cpp_source_l00059}00059\ \ \ \textcolor{keywordflow}{return}(1.0/\mbox{\hyperlink{timer_8h_a03df76d1f70664d745ca8de2864e39b3}{CLK\_TCK}});}
+\DoxyCodeLine{\Hypertarget{timer_8cpp_source_l00060}00060\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{timer_8cpp_source_l00061}00061\ }
+
+\end{DoxyCode}

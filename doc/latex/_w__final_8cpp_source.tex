@@ -1,0 +1,326 @@
+\doxysection{W\+\_\+final.\+cpp}
+\hypertarget{_w__final_8cpp_source}{}\label{_w__final_8cpp_source}\index{C:/Users/luket/Desktop/testing\_CParty/CParty/W\_final.cpp@{C:/Users/luket/Desktop/testing\_CParty/CParty/W\_final.cpp}}
+\mbox{\hyperlink{_w__final_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <math.h>}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <string.h>}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00007}00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{pseudo__loop_8h}{pseudo\_loop.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00008}00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_v__final_8h}{V\_final.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00009}00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_w__final_8h}{W\_final.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00010}00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{constants_8h}{constants.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00011}00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{h__struct_8h}{h\_struct.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00012}00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{externs_8h}{externs.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00013}00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{h__externs_8h}{h\_externs.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00014}00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{h__common_8h}{h\_common.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00019}00019\ \textcolor{comment}{//\ Hosna\ June\ 20th,\ 2007}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00020}00020\ \textcolor{comment}{//\ calls\ the\ constructor\ for\ s\_min\_folding}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00021}00021\ \textcolor{comment}{//\ to\ create\ all\ the\ matrixes\ required\ for\ simfold}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00022}00022\ \textcolor{comment}{//\ and\ then\ calls\ allocate\_space\ in\ here\ to\ allocate}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00023}00023\ \textcolor{comment}{//\ space\ for\ WMB\ and\ V\_final}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00024}\mbox{\hyperlink{class_w__final_acaa234a0921a4efe09c3623f8c7fe464}{00024}}\ \mbox{\hyperlink{class_w__final_acaa234a0921a4efe09c3623f8c7fe464}{W\_final::W\_final}}(\textcolor{keywordtype}{char}\ *seq,\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{res}}):\mbox{\hyperlink{classs__min__folding}{s\_min\_folding}}(seq,\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{res}})}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00025}00025\ \{}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00026}00026\ \ \ \ \ this-\/>\mbox{\hyperlink{classs__min__folding_a7a8de4989108c0924abad2f00383ac7c}{nb\_nucleotides}}\ =\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{strlen}}(seq);}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00027}00027\ \ \ \ \ \mbox{\hyperlink{class_w__final_adff37cea8bbccda956b154341416d661}{space\_allocation}}();}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00028}00028\ \}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00031}\mbox{\hyperlink{class_w__final_ac377e9c8c7d0904e14edf55bdf8af0df}{00031}}\ \mbox{\hyperlink{class_w__final_ac377e9c8c7d0904e14edf55bdf8af0df}{W\_final::\string~W\_final}}()}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00032}00032\ \{}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00033}00033\ \ \ \ \ \textcolor{keyword}{delete}\ \mbox{\hyperlink{class_w__final_abbb9d273dda39d426a09ce72c4314346}{vm}};}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00034}00034\ \ \ \ \ \textcolor{keyword}{delete}\ \mbox{\hyperlink{class_w__final_a259437349f1638168ae4580ffd697ef5}{v}};}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00035}00035\ \ \ \ \ \textcolor{keyword}{delete}\ \mbox{\hyperlink{class_w__final_aff18b05c7958818e08abbfe01eb2f160}{WMB}};}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00037}00037\ \}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00039}00039\ \textcolor{comment}{//\ Hosna\ June\ 20th,\ 2007}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00040}00040\ \textcolor{comment}{//\ allocates\ space\ for\ WMB\ object\ and\ V\_final}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00041}\mbox{\hyperlink{class_w__final_adff37cea8bbccda956b154341416d661}{00041}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_w__final_adff37cea8bbccda956b154341416d661}{W\_final::space\_allocation}}()\{}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00043}00043\ \ \ \ \ \textcolor{comment}{//\ Hosna\ June\ 20th,\ 2007}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00044}00044\ \ \ \ \ \mbox{\hyperlink{class_w__final_abbb9d273dda39d426a09ce72c4314346}{vm}}\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_v_m__final}{VM\_final}}(this-\/>\mbox{\hyperlink{classs__min__folding_ae12c3246e6121b110e4877c97288877c}{int\_sequence}},this-\/>\mbox{\hyperlink{classs__min__folding_a7a8de4989108c0924abad2f00383ac7c}{nb\_nucleotides}});}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00045}00045\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_w__final_abbb9d273dda39d426a09ce72c4314346}{vm}}\ ==\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{NULL}})\ \mbox{\hyperlink{common_8cpp_a92de552f74ae0cdbb3b86774d44b8b85}{giveup}}\ (\textcolor{stringliteral}{"{}Cannot\ allocate\ memory"{}},\ \textcolor{stringliteral}{"{}W\_final"{}});}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00046}00046\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{externs_8h_ac3e1795766a80ec63b157951b4b9a7d4}{debug}})\{}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00047}00047\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{printf}}(\textcolor{stringliteral}{"{}nb\_nucleotides\ =\ \%d\ \(\backslash\)n"{}},this-\/>\mbox{\hyperlink{classs__min__folding_a7a8de4989108c0924abad2f00383ac7c}{nb\_nucleotides}});}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00048}00048\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00050}00050\ \ \ \ \ \textcolor{comment}{//\ Hosna\ June\ 20th,\ 2007}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00051}00051\ \ \ \ \ \mbox{\hyperlink{class_w__final_a259437349f1638168ae4580ffd697ef5}{v}}\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_v__final}{V\_final}}(\mbox{\hyperlink{classs__min__folding_a7a8de4989108c0924abad2f00383ac7c}{nb\_nucleotides}});}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00052}00052\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_w__final_a259437349f1638168ae4580ffd697ef5}{v}}\ ==\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{NULL}})\ \mbox{\hyperlink{common_8cpp_a92de552f74ae0cdbb3b86774d44b8b85}{giveup}}\ (\textcolor{stringliteral}{"{}Cannot\ allocate\ memory"{}},\ \textcolor{stringliteral}{"{}W\_final"{}});}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00053}00053\ \ \ \ \ \textcolor{comment}{//s\_min\_folding::V,\ s\_min\_folding::H,\ s\_min\_folding::S,\ s\_min\_folding::VBI,\ vm);}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00054}00054\ \ \ \ \ \mbox{\hyperlink{class_w__final_a259437349f1638168ae4580ffd697ef5}{v}}-\/>\mbox{\hyperlink{class_v__final_aa69463334244b014cee464cc25d1be5d}{setloops}}(this-\/>\mbox{\hyperlink{classs__min__folding_a1a566b92a0ef683ad930eb296436b194}{V}},\mbox{\hyperlink{class_w__final_abbb9d273dda39d426a09ce72c4314346}{vm}});}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00056}00056\ \ \ \ \ \textcolor{comment}{//\ Hosna:\ June\ 20th\ 2007}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00057}00057\ \ \ \ \ \mbox{\hyperlink{class_w__final_aff18b05c7958818e08abbfe01eb2f160}{WMB}}\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classpseudo__loop}{pseudo\_loop}}\ (\mbox{\hyperlink{classs__min__folding_a86e6b0847c0c62f6ff820b720688bdad}{sequence}},\mbox{\hyperlink{classs__min__folding_af7911102d9682d1a5f111c27d505fbd2}{restricted}},\mbox{\hyperlink{class_w__final_a259437349f1638168ae4580ffd697ef5}{v}},this-\/>\mbox{\hyperlink{classs__min__folding_a38715e50a51541b1f717e2efd23c11e5}{H}},this-\/>\mbox{\hyperlink{classs__min__folding_a3b7df12b558d5a37c4b26a6ad769ff77}{S}},this-\/>\mbox{\hyperlink{classs__min__folding_a4f1da2024d99f1c5d4daae1a6f090fb5}{VBI}},\mbox{\hyperlink{class_w__final_abbb9d273dda39d426a09ce72c4314346}{vm}});}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00058}00058\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_w__final_aff18b05c7958818e08abbfe01eb2f160}{WMB}}\ ==\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{NULL}})\ \mbox{\hyperlink{common_8cpp_a92de552f74ae0cdbb3b86774d44b8b85}{giveup}}\ (\textcolor{stringliteral}{"{}Cannot\ allocate\ memory"{}},\ \textcolor{stringliteral}{"{}W\_final"{}});}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00060}00060\ \ \ \ \ \textcolor{comment}{//\ Hosna:\ June\ 20th\ 2007}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00061}00061\ \ \ \ \ \mbox{\hyperlink{class_w__final_abbb9d273dda39d426a09ce72c4314346}{vm}}-\/>\mbox{\hyperlink{class_v_m__final_ae1349f9d61aaebf4418c2a660ca8b4d5}{set\_V\_matrix}}(\mbox{\hyperlink{class_w__final_a259437349f1638168ae4580ffd697ef5}{v}});}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00062}00062\ \ \ \ \ \mbox{\hyperlink{class_w__final_abbb9d273dda39d426a09ce72c4314346}{vm}}-\/>\mbox{\hyperlink{class_v_m__final_a8ad73cf0711920021d215603a6b6d96b}{set\_WMB\_matrix}}(\mbox{\hyperlink{class_w__final_aff18b05c7958818e08abbfe01eb2f160}{WMB}});}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00064}00064\ \}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00066}\mbox{\hyperlink{class_w__final_a1034484f3e3ab4e234aff226819a9266}{00066}}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_w__final_a1034484f3e3ab4e234aff226819a9266}{W\_final::hfold}}()\{}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00068}00068\ \ \ \ \ \mbox{\hyperlink{constants_8h_adf823d40ac379702030cb342e84d5f2e}{pf\_t}}\ energy;}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00069}00069\ \ \ \ \ \textcolor{keywordtype}{int}\ i,\ j;}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00071}00071\ \ \ \ \ \mbox{\hyperlink{structh__str__features}{h\_str\_features}}\ *\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{h\_fres}};}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00072}00072\ \ \ \ \ \textcolor{keywordflow}{if}\ ((\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{h\_fres}}\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{structh__str__features}{h\_str\_features}}[\mbox{\hyperlink{classs__min__folding_a7a8de4989108c0924abad2f00383ac7c}{nb\_nucleotides}}])\ ==\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{NULL}})\ \mbox{\hyperlink{common_8cpp_a92de552f74ae0cdbb3b86774d44b8b85}{giveup}}\ (\textcolor{stringliteral}{"{}Cannot\ allocate\ memory"{}},\ \textcolor{stringliteral}{"{}h\_str\_features"{}});}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00073}00073\ \ \ \ \ \textcolor{comment}{//\ detect\ the\ structure\ features}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00074}00074\ \ \ \ \ \mbox{\hyperlink{h__common_8cpp_a6db56685344ecb7ca88251cf10680130}{detect\_h\_structure\_features}}\ (\mbox{\hyperlink{classs__min__folding_af7911102d9682d1a5f111c27d505fbd2}{restricted}},\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{h\_fres}});}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00075}00075\ \ \ \ \ \mbox{\hyperlink{class_w__final_aff18b05c7958818e08abbfe01eb2f160}{WMB}}-\/>\mbox{\hyperlink{classpseudo__loop_a02ac8103b8616e8b945f404ce237f27b}{set\_features}}(\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{h\_fres}});}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00076}00076\ \ \ \ \ \mbox{\hyperlink{class_w__final_aff18b05c7958818e08abbfe01eb2f160}{WMB}}-\/>\mbox{\hyperlink{classpseudo__loop_a35b59052fe82c83a23b335feef899886}{initialize}}();}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00077}00077\ }
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00078}00078\ \ \ \ \ \mbox{\hyperlink{structstr__features}{str\_features}}\ *fres;}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00079}00079\ \ \ \ \ \textcolor{keywordflow}{if}\ ((fres\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{structstr__features}{str\_features}}[\mbox{\hyperlink{classs__min__folding_a7a8de4989108c0924abad2f00383ac7c}{nb\_nucleotides}}])\ ==\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{NULL}})\ \mbox{\hyperlink{common_8cpp_a92de552f74ae0cdbb3b86774d44b8b85}{giveup}}\ (\textcolor{stringliteral}{"{}Cannot\ allocate\ memory"{}},\ \textcolor{stringliteral}{"{}str\_features"{}});}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00080}00080\ \ \ \ \ \textcolor{comment}{//\ detect\ the\ structure\ features}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00081}00081\ \ \ \ \ \mbox{\hyperlink{common_8cpp_af3add2d67ee16e4a81fa26db508d7bba}{detect\_structure\_features}}\ (\mbox{\hyperlink{classs__min__folding_af7911102d9682d1a5f111c27d505fbd2}{restricted}},\ fres);}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00082}00082\ }
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00083}00083\ \ \ \ \ \textcolor{comment}{//\ Hosna:\ June\ 28,\ 2007}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00084}00084\ \ \ \ \ \textcolor{comment}{//\ set\ the\ features\ for\ checking}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00085}00085\ \ \ \ \ \mbox{\hyperlink{class_w__final_a259437349f1638168ae4580ffd697ef5}{v}}-\/>\mbox{\hyperlink{class_v__final_af91d083b8af0f0d688815aef26251aaa}{set\_features}}(fres);}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00086}00086\ }
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00087}00087\ \ \ \ \ \textcolor{comment}{//\ Hosna:\ July\ 2nd,\ 2007}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00088}00088\ \ \ \ \ \textcolor{comment}{//\ set\ the\ VM\ matrix\ for\ VM\_final}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00089}00089\ \ \ \ \ \mbox{\hyperlink{class_w__final_abbb9d273dda39d426a09ce72c4314346}{vm}}-\/>\mbox{\hyperlink{class_v_m__final_a64eef1b8a660457da409891255934bca}{set\_VM\_matrix}}(\mbox{\hyperlink{classs__min__folding_a96950a20dc16559c73781e3a8ca50ac1}{VM}});}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00090}00090\ }
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00091}00091\ }
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00092}00092\ \ \ \ \ \textcolor{comment}{//\ TODO:}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00093}00093\ \ \ \ \ \textcolor{comment}{//\ I\ think\ I\ shoud\ fill\ simfold\ tables\ here,\ before\ filling\ the\ HFold\ tables}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00094}00094\ \ \ \ \ \textcolor{comment}{//\ Hosna,\ March\ 8,\ 2012}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00095}00095\ }
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00096}00096\ \ \ \ \ \textcolor{comment}{//\ 1)\ fill\ all\ th\ ematrices\ simfold\ needs\ (i.e.\ pk\ free\ ones)}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00097}00097\ \ \ \ \ \textcolor{comment}{//\ This\ is\ done\ similar\ to\ s\_min\_folding::fold\_sequence\_restricted()}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00098}00098\ \ \ \ \ \textcolor{keywordflow}{for}\ (j=0;\ j\ <\ \mbox{\hyperlink{classs__min__folding_a7a8de4989108c0924abad2f00383ac7c}{nb\_nucleotides}};\ j++)}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00099}00099\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00100}00100\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (i=0;\ i<j;\ i++)}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00101}00101\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ V(i,j)\ =\ infinity\ if\ i\ restricted\ or\ j\ restricted\ and\ pair\ of\ i\ is\ not\ j}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((fres[i].\mbox{\hyperlink{structpair}{pair}}\ >\ -\/1\ \&\&\ fres[i].\mbox{\hyperlink{structpair}{pair}}\ !=j)\ ||\ (fres[j].\mbox{\hyperlink{structpair}{pair}}\ >\ -\/1\ \&\&\ fres[j].\mbox{\hyperlink{structpair}{pair}}\ !=\ i))}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00104}00104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (fres[i].\mbox{\hyperlink{structpair}{pair}}\ ==\ -\/1\ ||\ fres[j].\mbox{\hyperlink{structpair}{pair}}\ ==\ -\/1)\ \ \ \textcolor{comment}{//\ i\ or\ j\ MUST\ be\ unpaired}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classs__min__folding_a1a566b92a0ef683ad930eb296436b194}{V}}-\/>\mbox{\hyperlink{classs__energy__matrix_a42736fe59d91a18f42f7cf5ddb669036}{compute\_energy\_restricted}}\ (i,\ j,\ fres);}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00108}00108\ }
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00109}00109\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00110}00110\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ if\ I\ put\ this\ before\ V\ calculation,\ WM(i,j)\ cannot\ be\ calculated,\ because\ it\ returns\ infinity}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00111}00111\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classs__min__folding_a96950a20dc16559c73781e3a8ca50ac1}{VM}}-\/>\mbox{\hyperlink{classs__multi__loop_a54c48adcec593497f1f1d5d80d06f385}{compute\_energy\_WM\_restricted}}\ (j,\ fres);}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00112}00112\ }
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00113}00113\ }
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00114}00114\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ test\ V\ values}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00115}00115\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00116}00116\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ for\ (i=0;\ i<j;\ i++)}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00117}00117\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00118}00118\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ if\ (fres[i].pair\ ==j\ \&\&\ fres[j].pair\ ==i)\{}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00119}00119\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ printf("{}-\/-\/-\/-\/>>\ V(\%d,\%d)\ =\ \%d\ \(\backslash\)n"{},i,j,\ V-\/>get\_energy(i,j));}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00120}00120\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00121}00121\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00122}00122\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00123}00123\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00124}00124\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00125}00125\ }
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00126}00126\ \ \ \ \ \textcolor{keywordflow}{for}\ (j=0;\ j\ <\ \mbox{\hyperlink{classs__min__folding_a7a8de4989108c0924abad2f00383ac7c}{nb\_nucleotides}};\ j++)}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00127}00127\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00128}00128\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (i\ =j;\ i\ >=\ 0;\ i-\/-\/)\textcolor{comment}{//for\ (i=0;\ i<=j;\ i++)}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00129}00129\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00130}00130\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00131}00131\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_w__final_abbb9d273dda39d426a09ce72c4314346}{vm}}-\/>\mbox{\hyperlink{class_v_m__final_a93be16c2f2e6d3b7a24db48dd48e76b7}{compute\_energy}}\ (i,j,\ fres);}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00132}00132\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_w__final_aff18b05c7958818e08abbfe01eb2f160}{WMB}}-\/>\mbox{\hyperlink{classpseudo__loop_ac088af56832d7f5accf2745c0110b805}{compute\_energies}}(i,j);}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00133}00133\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00134}00134\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//add\ in\ the\ pk\ cases\ later}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00135}00135\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_w__final_abbb9d273dda39d426a09ce72c4314346}{vm}}-\/>\mbox{\hyperlink{class_v_m__final_a9c3e90075d7373cd51e15843d3e268a2}{WM\_compute\_energy}}(i,j);}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00136}00136\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_w__final_abbb9d273dda39d426a09ce72c4314346}{vm}}-\/>\mbox{\hyperlink{class_v_m__final_a820f63cb34cbeec468513c98826a8795}{WM1\_compute\_energy}}(i,j);}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00137}00137\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ if\ (debug)\{}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00138}00138\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ printf("{}WM\_final(\%d,\%d)\ =\ \%d\ \(\backslash\)n"{},i,j,vm-\/>get\_energy\_WM(i,j));}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00139}00139\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00140}00140\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00141}00141\ }
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00142}00142\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00143}00143\ }
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00144}00144\ \ \ \ \ \textcolor{comment}{//\ end\ of\ addition\ at\ March\ 8,\ 2012,\ Hosna}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00145}00145\ \ \ \ \ \textcolor{keywordflow}{for}\ (j=\ 1;\ j\ <\ \mbox{\hyperlink{classs__min__folding_a7a8de4989108c0924abad2f00383ac7c}{nb\_nucleotides}};\ j++)}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00146}00146\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00147}00147\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_w__final_a16fd6075b01c78356337fc7cc15b0893}{compute\_W\_restricted}}(j,fres);}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00148}00148\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00149}00149\ \ \ \ \ energy\ =\ this-\/>\mbox{\hyperlink{classs__min__folding_aa3433a30de20386a94b6776c764099cd}{W}}[nb\_nucleotides-\/1];}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00150}00150\ \ \ \ \ \textcolor{comment}{//\ \ \ \ printf("{}energy\ =\ \%f\ \(\backslash\)n"{},\ energy);}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00151}00151\ }
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00152}00152\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{externs_8h_ac3e1795766a80ec63b157951b4b9a7d4}{debug}})}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00153}00153\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00154}00154\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_w__final_ac1cf651acaf01dfb5a0ef9a157d7b55c}{print\_result}}\ ();}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00155}00155\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00156}00156\ \ \ \ \ \textcolor{keyword}{delete}\ []\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{h\_fres}};}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00157}00157\ \ \ \ \ \textcolor{keyword}{delete}\ []\ fres;}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00158}00158\ \ \ \ \ \textcolor{keywordflow}{return}\ energy;}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00159}00159\ }
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00160}00160\ \}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00161}00161\ }
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00162}\mbox{\hyperlink{class_w__final_a6c1576a959615aa2970ff2c418da9d94}{00162}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_w__final_a6c1576a959615aa2970ff2c418da9d94}{W\_final::return\_structure}}(\textcolor{keywordtype}{char}\ *structure)\{}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00163}00163\ \ \ \ \ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{strcpy}}\ (\mbox{\hyperlink{classs__min__folding_a28f1f660ab67d7e92c20ad83fc889f78}{structure}},\ this-\/>structure);}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00164}00164\ \ \ \ \ \textcolor{comment}{//s\_min\_folding::return\_structure(structure);}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00165}00165\ \}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00166}00166\ }
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00169}\mbox{\hyperlink{class_w__final_a16fd6075b01c78356337fc7cc15b0893}{00169}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_w__final_a16fd6075b01c78356337fc7cc15b0893}{W\_final::compute\_W\_restricted}}\ (\textcolor{keywordtype}{int}\ j,\ \mbox{\hyperlink{structstr__features}{str\_features}}\ *fres)}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00170}00170\ \textcolor{comment}{//\ compute\ W(j)}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00171}00171\ \{}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00172}00172\ \ \ \ \ \mbox{\hyperlink{constants_8h_adf823d40ac379702030cb342e84d5f2e}{pf\_t}}\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{m1}},\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{m2}},\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{m3}}=0;}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00173}00173\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{must\_choose\_this\_branch}};}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00174}00174\ \ \ \ \ \mbox{\hyperlink{constants_8h_adf823d40ac379702030cb342e84d5f2e}{pf\_t}}\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{d2\_energy}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00175}00175\ \ \ \ \ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{m1}}\ =\ \mbox{\hyperlink{classs__min__folding_aa3433a30de20386a94b6776c764099cd}{W}}[j-\/1];}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00176}00176\ \ \ \ \ \textcolor{comment}{//if(debug)\{}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00177}00177\ \ \ \ \ \textcolor{comment}{//printf("{}W\_[0,\%d]\ =\ \%Lf\(\backslash\)n"{},j-\/1,W[j-\/1]);}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00178}00178\ \ \ \ \ \textcolor{comment}{//\}}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00179}00179\ \ \ \ \ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{d2\_energy}}+=\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{m1}};}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00180}00180\ \ \ \ \ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{m2}}\ =\ \mbox{\hyperlink{class_w__final_a9e355828900f8cb5867a2dd2b0d94753}{compute\_W\_br2\_restricted}}\ (j,\ fres,\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{must\_choose\_this\_branch}});}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00181}00181\ \ \ \ \ \textcolor{comment}{//if(debug)\{}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00182}00182\ \ \ \ \ \ \ \ \ \textcolor{comment}{//printf("{}V[0,\%d]\ =\ \%Lf\(\backslash\)n"{},j,m2);}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00183}00183\ \ \ \ \ \textcolor{comment}{//\}}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00184}00184\ \ \ \ \ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{d2\_energy}}+=\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{m2}};}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00185}00185\ \ \ \ \ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{m3}}\ =\ \mbox{\hyperlink{class_w__final_a968b2daf0c403282cdbe97984bf7b1c1}{compute\_W\_br3\_restricted}}\ (j,\ fres);}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00186}00186\ \ \ \ \ \textcolor{comment}{//printf("{}P[0,\%d]\ =\ \%Lf\(\backslash\)n"{},j,m3);}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00187}00187\ \ \ \ \ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{d2\_energy}}+=\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{m3}};}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00188}00188\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00189}00189\ \ \ \ \ \textcolor{comment}{//if\ (WMB-\/>is\_weakly\_closed(0,j)\ <\ 0)\{}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00190}00190\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Luke\ changing\ to\ 0\ for\ part\ func}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00191}00191\ \ \ \ \ \ \ \ \ \textcolor{comment}{//W[j]\ =\ 0;}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00192}00192\ \ \ \ \ \ \ \ \ \textcolor{comment}{//return;}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00193}00193\ \ \ \ \ \textcolor{comment}{//\}}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00194}00194\ \ \ \ \ \mbox{\hyperlink{classs__min__folding_aa3433a30de20386a94b6776c764099cd}{W}}[j]\ =\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{d2\_energy}};}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00195}00195\ \ \ \ \ \textcolor{comment}{//if(debug)\{}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00196}00196\ \ \ \ \ \textcolor{comment}{//printf("{}W[j]\ d2\ =\ \%Lf\ =\ \%Lf\(\backslash\)n"{},d2\_energy,\ W[j]);}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00197}00197\ \ \ \ \ \textcolor{comment}{//printf("{}Z\_W(\%d,\%d)\ =\ \%Lf\ \(\backslash\)n"{},0,j,d2\_energy);}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00198}00198\ \ \ \ \ \textcolor{comment}{//\}}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00199}00199\ \}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00200}00200\ }
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00203}\mbox{\hyperlink{class_w__final_a9e355828900f8cb5867a2dd2b0d94753}{00203}}\ \mbox{\hyperlink{constants_8h_adf823d40ac379702030cb342e84d5f2e}{pf\_t}}\ \mbox{\hyperlink{class_w__final_a9e355828900f8cb5867a2dd2b0d94753}{W\_final::compute\_W\_br2\_restricted}}\ (\textcolor{keywordtype}{int}\ j,\ \mbox{\hyperlink{structstr__features}{str\_features}}\ *fres,\ \textcolor{keywordtype}{int}\ \&\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{must\_choose\_this\_branch}})}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00204}00204\ \{}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00205}00205\ \ \ \ \ \mbox{\hyperlink{constants_8h_adf823d40ac379702030cb342e84d5f2e}{pf\_t}}\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{energy\_ij}}\ =\ 0,\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{acc}};}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00206}00206\ \ \ \ \ \textcolor{keywordtype}{int}\ i;}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00207}00207\ }
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00208}00208\ \ \ \ \ \mbox{\hyperlink{constants_8h_adf823d40ac379702030cb342e84d5f2e}{pf\_t}}\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{d2\_energy\_v}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00209}00209\ }
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00210}00210\ \ \ \ \ \textcolor{keywordflow}{for}\ (i=0;\ i<=j-\/1;\ i++)\ \ \ \ \textcolor{comment}{//\ TURN\ shouldn't\ be\ there}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00211}00211\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00212}00212\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ don't\ allow\ pairing\ with\ restricted\ i's}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00213}00213\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ added\ Jan\ 28,\ 2006}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00214}00214\ }
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00215}00215\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ We\ don't\ need\ to\ make\ sure\ i\ and\ j\ don't\ have\ to\ pair\ with\ something\ else,}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00216}00216\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ because\ that\ would\ be\ INF\ -\/\ done\ in\ fold\_sequence\_restricted}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00217}00217\ \ \ \ \ \ \ \ \ \textcolor{comment}{//acc\ =\ (i-\/1>0)\ ?\ W[i-\/1]:\ 0;}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00218}00218\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{constants_8h_adf823d40ac379702030cb342e84d5f2e}{pf\_t}}\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{Wsubstruc\_en}}\ =\ \mbox{\hyperlink{classs__min__folding_aa3433a30de20386a94b6776c764099cd}{W}}[i-\/1];}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00219}00219\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(i-\/1\ ==\ -\/1)\{}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00220}00220\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{Wsubstruc\_en}}\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00221}00221\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00222}00222\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{energy\_ij}}\ =\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{Wsubstruc\_en}}*\mbox{\hyperlink{class_w__final_a259437349f1638168ae4580ffd697ef5}{v}}-\/>\mbox{\hyperlink{class_v__final_ae23f580a926dc89582ba33921e2fe1b3}{get\_energy}}(i,j);}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00223}00223\ \ \ \ \ \ \ \ \ \textcolor{comment}{//if(energy\_ij>\ 0)\{}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00224}00224\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//printf("{}br2:\ W\_i-\/1(\%d,\%d)\ =\ \%Lf\(\backslash\)n"{},\ i,j,Wsubstruc\_en\ );}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00225}00225\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//printf("{}br2:\ v(\%d,\%d)\ =\ \%Lf\(\backslash\)n"{},\ i,j,v-\/>get\_energy(i,j)\ );}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00226}00226\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//printf("{}br2:\ total(\%d,\%d)\ =\ \%Lf\(\backslash\)n"{},\ i,j,energy\_ij\ );}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00227}00227\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\}}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00228}00228\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{d2\_energy\_v}}+=\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{energy\_ij}};}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00229}00229\ \ \ \ \ \ \ \ \ \textcolor{comment}{//if(debug)\{}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00230}00230\ \ \ \ \ \ \ \ \ \textcolor{comment}{//printf("{}Z\_V(\%d,\%d)\ =\ \%Lf\ \(\backslash\)n"{},i,j,d2\_energy\_v);}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00231}00231\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\}}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00232}00232\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00233}00233\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{d2\_energy\_v}};}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00234}00234\ \}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00235}00235\ }
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00238}\mbox{\hyperlink{class_w__final_a968b2daf0c403282cdbe97984bf7b1c1}{00238}}\ \mbox{\hyperlink{constants_8h_adf823d40ac379702030cb342e84d5f2e}{pf\_t}}\ \mbox{\hyperlink{class_w__final_a968b2daf0c403282cdbe97984bf7b1c1}{W\_final::compute\_W\_br3\_restricted}}(\textcolor{keywordtype}{int}\ j,\ \mbox{\hyperlink{structstr__features}{str\_features}}\ *fres)\{}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00239}00239\ \ \ \ \ \textcolor{comment}{//\ Hosna\ June\ 30,\ 2007}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00240}00240\ \ \ \ \ \textcolor{comment}{//\ The\ following\ would\ not\ take\ care\ of\ when}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00241}00241\ \ \ \ \ \textcolor{comment}{//\ we\ have\ some\ unpaired\ bases\ before\ the\ start\ of\ the\ WMB}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00242}00242\ \ \ \ \ \textcolor{comment}{//return\ WMB-\/>get\_energy(0,j)\ +\ PS\_penalty;}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00243}00243\ \ \ \ \ \mbox{\hyperlink{constants_8h_adf823d40ac379702030cb342e84d5f2e}{pf\_t}}\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{tmp}},\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{energy\_ij}}\ =\ 0,\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{acc}};}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00244}00244\ \ \ \ \ \textcolor{keywordtype}{int}\ i;}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00245}00245\ }
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00246}00246\ \ \ \ \ \mbox{\hyperlink{constants_8h_adf823d40ac379702030cb342e84d5f2e}{pf\_t}}\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{d2\_energy\_p}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00247}00247\ }
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00248}00248\ }
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00249}00249\ \ \ \ \ \textcolor{keywordflow}{for}\ (i=0;\ i<=j-\/1;\ i++)\ \ \ \ \textcolor{comment}{//\ TURN\ shouldn't\ be\ there}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00250}00250\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00251}00251\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ don't\ allow\ pairing\ with\ restricted\ i's}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00252}00252\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ added\ Jan\ 28,\ 2006}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00253}00253\ }
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00254}00254\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Hosna:\ July\ 9,\ 2007}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00255}00255\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ We\ only\ chop\ W\ to\ W\ +\ WMB\ when\ the\ bases\ before\ WMB\ are\ free}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00256}00256\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ ==\ 0\ ||\ (\mbox{\hyperlink{class_w__final_aff18b05c7958818e08abbfe01eb2f160}{WMB}}-\/>\mbox{\hyperlink{classpseudo__loop_ac1df80ab6645a8851e9fb3e6909737a5}{is\_weakly\_closed}}(0,i-\/1)\ \&\&\ \mbox{\hyperlink{class_w__final_aff18b05c7958818e08abbfe01eb2f160}{WMB}}-\/>\mbox{\hyperlink{classpseudo__loop_ac1df80ab6645a8851e9fb3e6909737a5}{is\_weakly\_closed}}(i,j)))\{}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00257}00257\ }
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00258}00258\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ We\ don't\ need\ to\ make\ sure\ i\ and\ j\ don't\ have\ to\ pair\ with\ something\ else,}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00259}00259\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ because\ that\ would\ be\ INF\ -\/\ done\ in\ fold\_sequence\_restricted}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00260}00260\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//acc\ =\ (i-\/1>0)\ ?\ W[i-\/1]:\ 0;}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00261}00261\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//printf("{}acc=\ \%Lf\ \(\backslash\)n"{},acc);}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00262}00262\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00263}00263\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{constants_8h_adf823d40ac379702030cb342e84d5f2e}{pf\_t}}\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{Wsubstruc\_en}}\ =\ \mbox{\hyperlink{classs__min__folding_aa3433a30de20386a94b6776c764099cd}{W}}[i-\/1];}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00264}00264\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(i-\/1\ ==\ -\/1)\{}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00265}00265\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{Wsubstruc\_en}}\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00266}00266\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00267}00267\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{energy\_ij}}\ =\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{Wsubstruc\_en}}*\ \mbox{\hyperlink{class_w__final_aff18b05c7958818e08abbfe01eb2f160}{WMB}}-\/>\mbox{\hyperlink{classpseudo__loop_a6aff3e370e0de9dbfc403dedb202cac1}{get\_energy}}(i,j)\ *\ \mbox{\hyperlink{h__externs_8h_ad38438909fe54a0e7346982deb291072}{PS\_penalty}};}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00268}00268\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00269}00269\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//if(debug)\{}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00270}00270\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//printf("{}Z\_P(\%d,\%d)\ =\ \%Lf;\ \%Lf;\ \%f\(\backslash\)n"{},i,j,Wsubstruc\_en,WMB-\/>get\_energy(i,j),\ PS\_penalty);}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00271}00271\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\}}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00272}00272\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{d2\_energy\_p}}\ +=\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{energy\_ij}};}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00273}00273\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//if(debug)\{}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00274}00274\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//printf("{}Z\_P(\%d,\%d)\ =\ \%Lf\ \(\backslash\)n"{},i,j,d2\_energy\_p);}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00275}00275\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\}}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00276}00276\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00277}00277\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00278}00278\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{d2\_energy\_p}};}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00279}00279\ \}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00280}00280\ }
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00281}00281\ \textcolor{comment}{//depracated\ }}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00282}\mbox{\hyperlink{class_w__final_ac1cf651acaf01dfb5a0ef9a157d7b55c}{00282}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_w__final_ac1cf651acaf01dfb5a0ef9a157d7b55c}{W\_final::print\_result}}\ ()}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00283}00283\ \textcolor{comment}{//\ PRE:\ \ The\ matrix\ V\ has\ been\ calculated\ and\ the\ results\ written\ in\ f}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00284}00284\ \textcolor{comment}{//\ POST:\ Prints\ details\ of\ each\ elementary\ structure}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00285}00285\ \{}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00286}00286\ \ \ \ \ \textcolor{keywordtype}{int}\ i;}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00287}00287\ \ \ \ \ \textcolor{keywordtype}{int}\ energy\ =\ \mbox{\hyperlink{constants_8h_a12c2040f25d8e3a7b9e1c2024c618cb6}{INF}},\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{sum}};}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00288}00288\ }
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00289}00289\ \ \ \ \ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{printf}}\ (\textcolor{stringliteral}{"{}Minimum\ energy:\ \%Lf\(\backslash\)n"{}},\ \mbox{\hyperlink{classs__min__folding_aa3433a30de20386a94b6776c764099cd}{W}}[\mbox{\hyperlink{classs__min__folding_a7a8de4989108c0924abad2f00383ac7c}{nb\_nucleotides}}-\/1]);}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00290}00290\ \ \ \ \ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{sum}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00291}00291\ }
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00292}00292\ \ \ \ \ \textcolor{keywordflow}{for}\ (i=0;\ i<\ \mbox{\hyperlink{classs__min__folding_a7a8de4989108c0924abad2f00383ac7c}{nb\_nucleotides}};\ i++)}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00293}00293\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00294}00294\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classs__min__folding_ad3d22186eb051573ea07372dc41306bd}{f}}[i].\mbox{\hyperlink{structpair}{pair}}\ >\ i)}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00295}00295\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00296}00296\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Hosna\ March\ 8,\ 2012}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00297}00297\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ changing\ nested\ ifs\ to\ switch\ for\ optimality}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00298}00298\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (\mbox{\hyperlink{classs__min__folding_ad3d22186eb051573ea07372dc41306bd}{f}}[i].type)\{}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00299}00299\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{constants_8h_a078d353fca9f6b899c0cae52c529ff90}{HAIRP}}:}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00300}00300\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//if\ (f[i].type\ ==\ HAIRP)}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00301}00301\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ energy\ =\ \mbox{\hyperlink{classs__min__folding_a1a566b92a0ef683ad930eb296436b194}{V}}-\/>\mbox{\hyperlink{classs__energy__matrix_aac7b05ab7b594d69b7aabaa30305a57a}{get\_energy}}(i,\ \mbox{\hyperlink{classs__min__folding_ad3d22186eb051573ea07372dc41306bd}{f}}[i].\mbox{\hyperlink{structpair}{pair}});}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00302}00302\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00303}00303\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{constants_8h_a2cc8f2d83039de1aef6590f9782921ee}{STACK}}:}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00304}00304\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//else\ if\ (f[i].type\ ==\ STACK)}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00305}00305\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ energy\ =\ \mbox{\hyperlink{classs__min__folding_a1a566b92a0ef683ad930eb296436b194}{V}}-\/>\mbox{\hyperlink{classs__energy__matrix_aac7b05ab7b594d69b7aabaa30305a57a}{get\_energy}}(i,\ \mbox{\hyperlink{classs__min__folding_ad3d22186eb051573ea07372dc41306bd}{f}}[i].\mbox{\hyperlink{structpair}{pair}})\ -\/\ \mbox{\hyperlink{classs__min__folding_a1a566b92a0ef683ad930eb296436b194}{V}}-\/>\mbox{\hyperlink{classs__energy__matrix_aac7b05ab7b594d69b7aabaa30305a57a}{get\_energy}}(i+1,\ \mbox{\hyperlink{classs__min__folding_ad3d22186eb051573ea07372dc41306bd}{f}}[i+1].\mbox{\hyperlink{structpair}{pair}});}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00306}00306\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00307}00307\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{h__common_8h_addcf7b153ef8396dcb32539626ee8f68}{P\_VP}}:}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00308}00308\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Hosna:\ June\ 28th,\ 2007}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00309}00309\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//else\ if\ (f[i].type\ ==\ P\_VP)\{}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00310}00310\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ energy\ =\ \mbox{\hyperlink{class_w__final_aff18b05c7958818e08abbfe01eb2f160}{WMB}}-\/>\mbox{\hyperlink{classpseudo__loop_a720b0a0fd5d23d81a3f5962fea75df95}{get\_VP}}(i,\mbox{\hyperlink{classs__min__folding_ad3d22186eb051573ea07372dc41306bd}{f}}[i].\mbox{\hyperlink{structpair}{pair}});}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00311}00311\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00312}00312\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//case\ P\_VPP:}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00313}00313\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\}else\ if(f[i].type\ ==\ P\_VPP)\{}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00314}00314\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ energy\ =\ WMB-\/>get\_VPP(i,f[i].pair);}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00315}00315\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\}}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00316}00316\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ break;}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00317}00317\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00318}00318\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{printf}}\ (\textcolor{stringliteral}{"{}Pair\ (\%d,\%d),\ type\ \%c,\(\backslash\)tenergy\ \%6d\(\backslash\)n"{}},\ i,\ \mbox{\hyperlink{classs__min__folding_ad3d22186eb051573ea07372dc41306bd}{f}}[i].\mbox{\hyperlink{structpair}{pair}},\ \mbox{\hyperlink{classs__min__folding_ad3d22186eb051573ea07372dc41306bd}{f}}[i].type,\ energy);}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00319}00319\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{sum}}\ +=\ energy;}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00320}00320\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00321}00321\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00322}00322\ \ \ \ \ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{printf}}\ (\textcolor{stringliteral}{"{}0....,....1....,....2....,....3....,....4....,....5....,....6....,....7....,....8\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00323}00323\ \ \ \ \ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{printf}}\ (\textcolor{stringliteral}{"{}\%s\(\backslash\)n"{}},\ \mbox{\hyperlink{classs__min__folding_a86e6b0847c0c62f6ff820b720688bdad}{sequence}});}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00324}00324\ \ \ \ \ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{printf}}\ (\textcolor{stringliteral}{"{}\%s\(\backslash\)n"{}},\ \mbox{\hyperlink{classs__min__folding_a28f1f660ab67d7e92c20ad83fc889f78}{structure}});}
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00325}00325\ }
+\DoxyCodeLine{\Hypertarget{_w__final_8cpp_source_l00326}00326\ \}}
+
+\end{DoxyCode}

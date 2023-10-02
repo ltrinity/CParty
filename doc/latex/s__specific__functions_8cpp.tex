@@ -1,0 +1,334 @@
+\doxysection{C\+:/\+Users/luket/\+Desktop/testing\+\_\+\+CParty/\+CParty/simfold/src/simfold/s\+\_\+specific\+\_\+functions.cpp File Reference}
+\hypertarget{s__specific__functions_8cpp}{}\label{s__specific__functions_8cpp}\index{C:/Users/luket/Desktop/testing\_CParty/CParty/simfold/src/simfold/s\_specific\_functions.cpp@{C:/Users/luket/Desktop/testing\_CParty/CParty/simfold/src/simfold/s\_specific\_functions.cpp}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include "{}constants.\+h"{}}\newline
+{\ttfamily \#include "{}structs.\+h"{}}\newline
+{\ttfamily \#include "{}externs.\+h"{}}\newline
+{\ttfamily \#include "{}common.\+h"{}}\newline
+{\ttfamily \#include "{}simfold.\+h"{}}\newline
+{\ttfamily \#include "{}s\+\_\+stacked\+\_\+pair.\+h"{}}\newline
+{\ttfamily \#include "{}s\+\_\+specific\+\_\+functions.\+h"{}}\newline
+{\ttfamily \#include "{}s\+\_\+min\+\_\+folding.\+h"{}}\newline
+{\ttfamily \#include "{}s\+\_\+sub\+\_\+folding.\+h"{}}\newline
+{\ttfamily \#include "{}s\+\_\+partition\+\_\+function.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{constants_8h_ac9a8588270279e7ab92df9794938f2ca}{PARAMTYPE}} \mbox{\hyperlink{s__specific__functions_8cpp_adc8d0c5598020a09c3e46f69b8e46ca1}{s\+\_\+dangling\+\_\+energy}} (\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{simfold_8cpp_aab0fa4fa34b613e3a6b4f0e87d1c073b}{sequence}}, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}structure, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{i1}}, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{i2}}, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{i3}}, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{i4}})
+\item 
+\mbox{\hyperlink{constants_8h_ac9a8588270279e7ab92df9794938f2ca}{PARAMTYPE}} \mbox{\hyperlink{s__specific__functions_8cpp_ac6d547b009c8e60cca2ee59842e6690e}{s\+\_\+dangling\+\_\+energy\+\_\+left}} (\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{simfold_8cpp_aab0fa4fa34b613e3a6b4f0e87d1c073b}{sequence}}, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}structure, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{i1}}, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{i2}}, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{i3}}, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{i4}})
+\item 
+\mbox{\hyperlink{constants_8h_ac9a8588270279e7ab92df9794938f2ca}{PARAMTYPE}} \mbox{\hyperlink{s__specific__functions_8cpp_ab1357cc778095711d2f4f248774e99da}{s\+\_\+dangling\+\_\+energy\+\_\+right}} (\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{simfold_8cpp_aab0fa4fa34b613e3a6b4f0e87d1c073b}{sequence}}, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}structure, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{i1}}, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{i2}}, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{i3}}, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{i4}})
+\item 
+\mbox{\hyperlink{constants_8h_ac9a8588270279e7ab92df9794938f2ca}{PARAMTYPE}} \mbox{\hyperlink{s__specific__functions_8cpp_ac80e37d0467361fa50eeab08981be388}{s\+\_\+dangling\+\_\+enthalpy}} (\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{simfold_8cpp_aab0fa4fa34b613e3a6b4f0e87d1c073b}{sequence}}, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{i1}}, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{i2}}, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{i3}}, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{i4}})
+\item 
+\mbox{\hyperlink{constants_8h_ac9a8588270279e7ab92df9794938f2ca}{PARAMTYPE}} \mbox{\hyperlink{s__specific__functions_8cpp_affff9e8f75c116a7ee34a18dd28e07c5}{s\+\_\+dangling\+\_\+enthalpy\+\_\+left}} (\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{simfold_8cpp_aab0fa4fa34b613e3a6b4f0e87d1c073b}{sequence}}, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{i1}}, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{i2}}, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{i3}}, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{i4}})
+\item 
+\mbox{\hyperlink{constants_8h_ac9a8588270279e7ab92df9794938f2ca}{PARAMTYPE}} \mbox{\hyperlink{s__specific__functions_8cpp_a45b24d581a7a7624223f6d6a0534c1d3}{s\+\_\+dangling\+\_\+enthalpy\+\_\+right}} (\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{simfold_8cpp_aab0fa4fa34b613e3a6b4f0e87d1c073b}{sequence}}, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{i1}}, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{i2}}, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{i3}}, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{i4}})
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{double}} \mbox{\hyperlink{s__specific__functions_8cpp_a39135dc419aae7654ac7329df9f84f3e}{free\+\_\+energy\+\_\+simfold}} (\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{simfold_8cpp_aab0fa4fa34b613e3a6b4f0e87d1c073b}{sequence}}, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}structure)
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{double}} \mbox{\hyperlink{s__specific__functions_8cpp_a02590cdd007e831a46ed94155a8a01cc}{free\+\_\+energy\+\_\+simfold\+\_\+restricted}} (\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{simfold_8cpp_aab0fa4fa34b613e3a6b4f0e87d1c073b}{sequence}}, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}structure, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{simfold_8cpp_acc011911591feaa0e5e5ac5889ee9a26}{restricted}})
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{double}} \mbox{\hyperlink{s__specific__functions_8cpp_acfcfe2ab7cf2424dc1f8ef7e7852a65b}{enthalpy\+\_\+simfold}} (\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{simfold_8cpp_aab0fa4fa34b613e3a6b4f0e87d1c073b}{sequence}}, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}structure)
+\item 
+\mbox{\hyperlink{constants_8h_ac9a8588270279e7ab92df9794938f2ca}{PARAMTYPE}} \mbox{\hyperlink{s__specific__functions_8cpp_a1604f2d53f73a0a1968a09a637a7680e}{s\+\_\+calculate\+\_\+energy}} (\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{simfold_8cpp_aab0fa4fa34b613e3a6b4f0e87d1c073b}{sequence}}, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}csequence, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}structure, \mbox{\hyperlink{structstr__features}{str\+\_\+features}} \texorpdfstring{$\ast$}{*}f, \mbox{\hyperlink{structstr__features}{str\+\_\+features}} \texorpdfstring{$\ast$}{*}fres)
+\item 
+\mbox{\hyperlink{constants_8h_ac9a8588270279e7ab92df9794938f2ca}{PARAMTYPE}} \mbox{\hyperlink{s__specific__functions_8cpp_aed7147e062ffd4dfaa6e7d90fa7f8bd2}{s\+\_\+calculate\+\_\+enthalpy}} (\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{simfold_8cpp_aab0fa4fa34b613e3a6b4f0e87d1c073b}{sequence}}, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}csequence, \mbox{\hyperlink{structstr__features}{str\+\_\+features}} \texorpdfstring{$\ast$}{*}f)
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{double}} \mbox{\hyperlink{s__specific__functions_8cpp_ad130348d2a643c634f0341ec7afc7b1c}{simfold}} (\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{simfold_8cpp_aab0fa4fa34b613e3a6b4f0e87d1c073b}{sequence}}, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}structure)
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{double}} \mbox{\hyperlink{s__specific__functions_8cpp_a6fcda610a2e8870e3b274477d8e370a2}{simfold\+\_\+loss\+\_\+augmented}} (\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{simfold_8cpp_aab0fa4fa34b613e3a6b4f0e87d1c073b}{sequence}}, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{simfold_8cpp_aa146a8acd512643a7a71027449740a73}{known\+\_\+structure}}, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{pred\+\_\+structure}})
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{double}} \mbox{\hyperlink{s__specific__functions_8cpp_a4626e46dc94154685b95145b8f0b88df}{simfold\+\_\+restricted}} (\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{simfold_8cpp_aab0fa4fa34b613e3a6b4f0e87d1c073b}{sequence}}, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{simfold_8cpp_acc011911591feaa0e5e5ac5889ee9a26}{restricted}}, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}structure)
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} \mbox{\hyperlink{s__specific__functions_8cpp_a765be992851fe94c9f085fa9ce9f0c3c}{simfold\+\_\+unordered\+\_\+suboptimals\+\_\+range}} (\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{simfold_8cpp_aab0fa4fa34b613e3a6b4f0e87d1c073b}{sequence}}, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{double}} max\+\_\+energy, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{structures}}\mbox{[}$\,$\mbox{]}\mbox{[}\mbox{\hyperlink{constants_8h_a1b8bfc1abb1ba53bcc6c516ddf02ad97}{MAXSLEN}}\mbox{]}, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{double}} \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{energies}}\mbox{[}$\,$\mbox{]}, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} \mbox{\hyperlink{simfold_8cpp_a60ba794f7becf36e1752f46a0fcda223}{num\+\_\+subopt}})
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} \mbox{\hyperlink{s__specific__functions_8cpp_a309358aa4b2d2fdfd6dd0cc5c30eb9fc}{simfold\+\_\+restricted\+\_\+unordered\+\_\+suboptimals\+\_\+range}} (\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{simfold_8cpp_aab0fa4fa34b613e3a6b4f0e87d1c073b}{sequence}}, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{simfold_8cpp_acc011911591feaa0e5e5ac5889ee9a26}{restricted}}, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{double}} max\+\_\+energy, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{structures}}\mbox{[}$\,$\mbox{]}\mbox{[}\mbox{\hyperlink{constants_8h_a1b8bfc1abb1ba53bcc6c516ddf02ad97}{MAXSLEN}}\mbox{]}, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{double}} \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{energies}}\mbox{[}$\,$\mbox{]})
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} \mbox{\hyperlink{s__specific__functions_8cpp_a862783c3f10d17861359811db51ac940}{simfold\+\_\+unordered\+\_\+suboptimals}} (\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{simfold_8cpp_aab0fa4fa34b613e3a6b4f0e87d1c073b}{sequence}}, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{number}}, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{structures}}\mbox{[}$\,$\mbox{]}\mbox{[}\mbox{\hyperlink{constants_8h_a1b8bfc1abb1ba53bcc6c516ddf02ad97}{MAXSLEN}}\mbox{]}, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{double}} \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{energies}}\mbox{[}$\,$\mbox{]})
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} \mbox{\hyperlink{s__specific__functions_8cpp_af016964cbfc2f31f3614b293a7fa4c77}{simfold\+\_\+ordered\+\_\+suboptimals}} (\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{simfold_8cpp_aab0fa4fa34b613e3a6b4f0e87d1c073b}{sequence}}, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{number}}, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{structures}}\mbox{[}$\,$\mbox{]}\mbox{[}\mbox{\hyperlink{constants_8h_a1b8bfc1abb1ba53bcc6c516ddf02ad97}{MAXSLEN}}\mbox{]}, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{double}} \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{energies}}\mbox{[}$\,$\mbox{]})
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} \mbox{\hyperlink{s__specific__functions_8cpp_a9daf92fa0e9395641f394013d194b351}{simfold\+\_\+restricted\+\_\+unordered\+\_\+suboptimals}} (\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{simfold_8cpp_aab0fa4fa34b613e3a6b4f0e87d1c073b}{sequence}}, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{simfold_8cpp_acc011911591feaa0e5e5ac5889ee9a26}{restricted}}, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{number}}, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{structures}}\mbox{[}$\,$\mbox{]}\mbox{[}\mbox{\hyperlink{constants_8h_a1b8bfc1abb1ba53bcc6c516ddf02ad97}{MAXSLEN}}\mbox{]}, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{double}} \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{energies}}\mbox{[}$\,$\mbox{]})
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} \mbox{\hyperlink{s__specific__functions_8cpp_acdf3e2a9b6646385246ac4c20078d8c8}{simfold\+\_\+restricted\+\_\+all\+\_\+suboptimals}} (\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{simfold_8cpp_aab0fa4fa34b613e3a6b4f0e87d1c073b}{sequence}}, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{simfold_8cpp_acc011911591feaa0e5e5ac5889ee9a26}{restricted}}, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{structures}}\mbox{[}$\,$\mbox{]}\mbox{[}\mbox{\hyperlink{constants_8h_a1b8bfc1abb1ba53bcc6c516ddf02ad97}{MAXSLEN}}\mbox{]}, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{double}} \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{energies}}\mbox{[}$\,$\mbox{]})
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} \mbox{\hyperlink{s__specific__functions_8cpp_add93eb44fafdb1d00aa555582fdd786a}{simfold\+\_\+restricted\+\_\+all\+\_\+mfe\+\_\+structures}} (\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{simfold_8cpp_aab0fa4fa34b613e3a6b4f0e87d1c073b}{sequence}}, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{simfold_8cpp_acc011911591feaa0e5e5ac5889ee9a26}{restricted}}, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{structures}}\mbox{[}$\,$\mbox{]}\mbox{[}\mbox{\hyperlink{constants_8h_a1b8bfc1abb1ba53bcc6c516ddf02ad97}{MAXSLEN}}\mbox{]}, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{double}} \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{energies}}\mbox{[}$\,$\mbox{]})
+\item 
+\mbox{\hyperlink{constants_8h_a9377001671b5ece8bb2a2cf636de4b8a}{PFTYPE}} \mbox{\hyperlink{s__specific__functions_8cpp_a2f45ac263300f525b9dad8b47af7930e}{simfold\+\_\+partition\+\_\+function\+\_\+smart}} (\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{simfold_8cpp_aab0fa4fa34b613e3a6b4f0e87d1c073b}{sequence}}, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} ignore\+\_\+dangles, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} compute\+\_\+gradient\+\_\+dangles)
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} \mbox{\hyperlink{s__specific__functions_8cpp_a037149669c356bd3896c0462d148220e}{simfold\+\_\+gradient\+\_\+smart}} (\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{simfold_8cpp_aab0fa4fa34b613e3a6b4f0e87d1c073b}{sequence}}, \mbox{\hyperlink{constants_8h_a9377001671b5ece8bb2a2cf636de4b8a}{PFTYPE}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{grad}}, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} ignore\+\_\+dangles, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} compute\+\_\+gradient\+\_\+dangles)
+\item 
+\mbox{\hyperlink{constants_8h_a9377001671b5ece8bb2a2cf636de4b8a}{PFTYPE}} \mbox{\hyperlink{s__specific__functions_8cpp_a0835664e8b341c7920f49a931fcf894d}{simfold\+\_\+f\+\_\+and\+\_\+gradient\+\_\+smart}} (\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{simfold_8cpp_aab0fa4fa34b613e3a6b4f0e87d1c073b}{sequence}}, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{simfold_8cpp_acc011911591feaa0e5e5ac5889ee9a26}{restricted}}, \mbox{\hyperlink{constants_8h_a9377001671b5ece8bb2a2cf636de4b8a}{PFTYPE}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{grad}}, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} ignore\+\_\+dangles, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} compute\+\_\+gradient\+\_\+dangles)
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} \mbox{\hyperlink{s__specific__functions_8cpp_ad9368745d48f01829661471f9d7c0a51}{simfold\+\_\+partition\+\_\+function\+\_\+both}} (\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{simfold_8cpp_aab0fa4fa34b613e3a6b4f0e87d1c073b}{sequence}})
+\item 
+\mbox{\hyperlink{constants_8h_a9377001671b5ece8bb2a2cf636de4b8a}{PFTYPE}} \mbox{\hyperlink{s__specific__functions_8cpp_a890b2c18e868addb5334a1aa244ec9c6}{simfold\+\_\+partition\+\_\+function\+\_\+approximately}} (\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{simfold_8cpp_aab0fa4fa34b613e3a6b4f0e87d1c073b}{sequence}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{s__specific__functions_8cpp_acfcfe2ab7cf2424dc1f8ef7e7852a65b}\label{s__specific__functions_8cpp_acfcfe2ab7cf2424dc1f8ef7e7852a65b} 
+\index{s\_specific\_functions.cpp@{s\_specific\_functions.cpp}!enthalpy\_simfold@{enthalpy\_simfold}}
+\index{enthalpy\_simfold@{enthalpy\_simfold}!s\_specific\_functions.cpp@{s\_specific\_functions.cpp}}
+\doxysubsubsection{\texorpdfstring{enthalpy\_simfold()}{enthalpy\_simfold()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{double}} enthalpy\+\_\+simfold (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}}]{sequence,  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}}]{structure }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{s__specific__functions_8cpp_source_l00340}{340}} of file \mbox{\hyperlink{s__specific__functions_8cpp_source}{s\+\_\+specific\+\_\+functions.\+cpp}}.
+
+\Hypertarget{s__specific__functions_8cpp_a39135dc419aae7654ac7329df9f84f3e}\label{s__specific__functions_8cpp_a39135dc419aae7654ac7329df9f84f3e} 
+\index{s\_specific\_functions.cpp@{s\_specific\_functions.cpp}!free\_energy\_simfold@{free\_energy\_simfold}}
+\index{free\_energy\_simfold@{free\_energy\_simfold}!s\_specific\_functions.cpp@{s\_specific\_functions.cpp}}
+\doxysubsubsection{\texorpdfstring{free\_energy\_simfold()}{free\_energy\_simfold()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{double}} free\+\_\+energy\+\_\+simfold (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}}]{sequence,  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}}]{structure }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{s__specific__functions_8cpp_source_l00274}{274}} of file \mbox{\hyperlink{s__specific__functions_8cpp_source}{s\+\_\+specific\+\_\+functions.\+cpp}}.
+
+\Hypertarget{s__specific__functions_8cpp_a02590cdd007e831a46ed94155a8a01cc}\label{s__specific__functions_8cpp_a02590cdd007e831a46ed94155a8a01cc} 
+\index{s\_specific\_functions.cpp@{s\_specific\_functions.cpp}!free\_energy\_simfold\_restricted@{free\_energy\_simfold\_restricted}}
+\index{free\_energy\_simfold\_restricted@{free\_energy\_simfold\_restricted}!s\_specific\_functions.cpp@{s\_specific\_functions.cpp}}
+\doxysubsubsection{\texorpdfstring{free\_energy\_simfold\_restricted()}{free\_energy\_simfold\_restricted()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{double}} free\+\_\+energy\+\_\+simfold\+\_\+restricted (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}}]{sequence,  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}}]{structure,  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}}]{restricted }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{s__specific__functions_8cpp_source_l00304}{304}} of file \mbox{\hyperlink{s__specific__functions_8cpp_source}{s\+\_\+specific\+\_\+functions.\+cpp}}.
+
+\Hypertarget{s__specific__functions_8cpp_a1604f2d53f73a0a1968a09a637a7680e}\label{s__specific__functions_8cpp_a1604f2d53f73a0a1968a09a637a7680e} 
+\index{s\_specific\_functions.cpp@{s\_specific\_functions.cpp}!s\_calculate\_energy@{s\_calculate\_energy}}
+\index{s\_calculate\_energy@{s\_calculate\_energy}!s\_specific\_functions.cpp@{s\_specific\_functions.cpp}}
+\doxysubsubsection{\texorpdfstring{s\_calculate\_energy()}{s\_calculate\_energy()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{constants_8h_ac9a8588270279e7ab92df9794938f2ca}{PARAMTYPE}} s\+\_\+calculate\+\_\+energy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} \texorpdfstring{$\ast$}{*}}]{sequence,  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}}]{csequence,  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}}]{structure,  }\item[{\mbox{\hyperlink{structstr__features}{str\+\_\+features}} \texorpdfstring{$\ast$}{*}}]{f,  }\item[{\mbox{\hyperlink{structstr__features}{str\+\_\+features}} \texorpdfstring{$\ast$}{*}}]{fres }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{s__specific__functions_8cpp_source_l00370}{370}} of file \mbox{\hyperlink{s__specific__functions_8cpp_source}{s\+\_\+specific\+\_\+functions.\+cpp}}.
+
+\Hypertarget{s__specific__functions_8cpp_aed7147e062ffd4dfaa6e7d90fa7f8bd2}\label{s__specific__functions_8cpp_aed7147e062ffd4dfaa6e7d90fa7f8bd2} 
+\index{s\_specific\_functions.cpp@{s\_specific\_functions.cpp}!s\_calculate\_enthalpy@{s\_calculate\_enthalpy}}
+\index{s\_calculate\_enthalpy@{s\_calculate\_enthalpy}!s\_specific\_functions.cpp@{s\_specific\_functions.cpp}}
+\doxysubsubsection{\texorpdfstring{s\_calculate\_enthalpy()}{s\_calculate\_enthalpy()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{constants_8h_ac9a8588270279e7ab92df9794938f2ca}{PARAMTYPE}} s\+\_\+calculate\+\_\+enthalpy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} \texorpdfstring{$\ast$}{*}}]{sequence,  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}}]{csequence,  }\item[{\mbox{\hyperlink{structstr__features}{str\+\_\+features}} \texorpdfstring{$\ast$}{*}}]{f }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{s__specific__functions_8cpp_source_l00583}{583}} of file \mbox{\hyperlink{s__specific__functions_8cpp_source}{s\+\_\+specific\+\_\+functions.\+cpp}}.
+
+\Hypertarget{s__specific__functions_8cpp_adc8d0c5598020a09c3e46f69b8e46ca1}\label{s__specific__functions_8cpp_adc8d0c5598020a09c3e46f69b8e46ca1} 
+\index{s\_specific\_functions.cpp@{s\_specific\_functions.cpp}!s\_dangling\_energy@{s\_dangling\_energy}}
+\index{s\_dangling\_energy@{s\_dangling\_energy}!s\_specific\_functions.cpp@{s\_specific\_functions.cpp}}
+\doxysubsubsection{\texorpdfstring{s\_dangling\_energy()}{s\_dangling\_energy()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{constants_8h_ac9a8588270279e7ab92df9794938f2ca}{PARAMTYPE}} s\+\_\+dangling\+\_\+energy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} \texorpdfstring{$\ast$}{*}}]{sequence,  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}}]{structure,  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}}}]{i1,  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}}}]{i2,  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}}}]{i3,  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}}}]{i4 }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{s__specific__functions_8cpp_source_l00037}{37}} of file \mbox{\hyperlink{s__specific__functions_8cpp_source}{s\+\_\+specific\+\_\+functions.\+cpp}}.
+
+\Hypertarget{s__specific__functions_8cpp_ac6d547b009c8e60cca2ee59842e6690e}\label{s__specific__functions_8cpp_ac6d547b009c8e60cca2ee59842e6690e} 
+\index{s\_specific\_functions.cpp@{s\_specific\_functions.cpp}!s\_dangling\_energy\_left@{s\_dangling\_energy\_left}}
+\index{s\_dangling\_energy\_left@{s\_dangling\_energy\_left}!s\_specific\_functions.cpp@{s\_specific\_functions.cpp}}
+\doxysubsubsection{\texorpdfstring{s\_dangling\_energy\_left()}{s\_dangling\_energy\_left()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{constants_8h_ac9a8588270279e7ab92df9794938f2ca}{PARAMTYPE}} s\+\_\+dangling\+\_\+energy\+\_\+left (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} \texorpdfstring{$\ast$}{*}}]{sequence,  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}}]{structure,  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}}}]{i1,  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}}}]{i2,  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}}}]{i3,  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}}}]{i4 }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{s__specific__functions_8cpp_source_l00091}{91}} of file \mbox{\hyperlink{s__specific__functions_8cpp_source}{s\+\_\+specific\+\_\+functions.\+cpp}}.
+
+\Hypertarget{s__specific__functions_8cpp_ab1357cc778095711d2f4f248774e99da}\label{s__specific__functions_8cpp_ab1357cc778095711d2f4f248774e99da} 
+\index{s\_specific\_functions.cpp@{s\_specific\_functions.cpp}!s\_dangling\_energy\_right@{s\_dangling\_energy\_right}}
+\index{s\_dangling\_energy\_right@{s\_dangling\_energy\_right}!s\_specific\_functions.cpp@{s\_specific\_functions.cpp}}
+\doxysubsubsection{\texorpdfstring{s\_dangling\_energy\_right()}{s\_dangling\_energy\_right()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{constants_8h_ac9a8588270279e7ab92df9794938f2ca}{PARAMTYPE}} s\+\_\+dangling\+\_\+energy\+\_\+right (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} \texorpdfstring{$\ast$}{*}}]{sequence,  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}}]{structure,  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}}}]{i1,  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}}}]{i2,  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}}}]{i3,  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}}}]{i4 }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{s__specific__functions_8cpp_source_l00134}{134}} of file \mbox{\hyperlink{s__specific__functions_8cpp_source}{s\+\_\+specific\+\_\+functions.\+cpp}}.
+
+\Hypertarget{s__specific__functions_8cpp_ac80e37d0467361fa50eeab08981be388}\label{s__specific__functions_8cpp_ac80e37d0467361fa50eeab08981be388} 
+\index{s\_specific\_functions.cpp@{s\_specific\_functions.cpp}!s\_dangling\_enthalpy@{s\_dangling\_enthalpy}}
+\index{s\_dangling\_enthalpy@{s\_dangling\_enthalpy}!s\_specific\_functions.cpp@{s\_specific\_functions.cpp}}
+\doxysubsubsection{\texorpdfstring{s\_dangling\_enthalpy()}{s\_dangling\_enthalpy()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{constants_8h_ac9a8588270279e7ab92df9794938f2ca}{PARAMTYPE}} s\+\_\+dangling\+\_\+enthalpy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} \texorpdfstring{$\ast$}{*}}]{sequence,  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}}}]{i1,  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}}}]{i2,  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}}}]{i3,  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}}}]{i4 }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{s__specific__functions_8cpp_source_l00177}{177}} of file \mbox{\hyperlink{s__specific__functions_8cpp_source}{s\+\_\+specific\+\_\+functions.\+cpp}}.
+
+\Hypertarget{s__specific__functions_8cpp_affff9e8f75c116a7ee34a18dd28e07c5}\label{s__specific__functions_8cpp_affff9e8f75c116a7ee34a18dd28e07c5} 
+\index{s\_specific\_functions.cpp@{s\_specific\_functions.cpp}!s\_dangling\_enthalpy\_left@{s\_dangling\_enthalpy\_left}}
+\index{s\_dangling\_enthalpy\_left@{s\_dangling\_enthalpy\_left}!s\_specific\_functions.cpp@{s\_specific\_functions.cpp}}
+\doxysubsubsection{\texorpdfstring{s\_dangling\_enthalpy\_left()}{s\_dangling\_enthalpy\_left()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{constants_8h_ac9a8588270279e7ab92df9794938f2ca}{PARAMTYPE}} s\+\_\+dangling\+\_\+enthalpy\+\_\+left (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} \texorpdfstring{$\ast$}{*}}]{sequence,  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}}}]{i1,  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}}}]{i2,  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}}}]{i3,  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}}}]{i4 }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{s__specific__functions_8cpp_source_l00208}{208}} of file \mbox{\hyperlink{s__specific__functions_8cpp_source}{s\+\_\+specific\+\_\+functions.\+cpp}}.
+
+\Hypertarget{s__specific__functions_8cpp_a45b24d581a7a7624223f6d6a0534c1d3}\label{s__specific__functions_8cpp_a45b24d581a7a7624223f6d6a0534c1d3} 
+\index{s\_specific\_functions.cpp@{s\_specific\_functions.cpp}!s\_dangling\_enthalpy\_right@{s\_dangling\_enthalpy\_right}}
+\index{s\_dangling\_enthalpy\_right@{s\_dangling\_enthalpy\_right}!s\_specific\_functions.cpp@{s\_specific\_functions.cpp}}
+\doxysubsubsection{\texorpdfstring{s\_dangling\_enthalpy\_right()}{s\_dangling\_enthalpy\_right()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{constants_8h_ac9a8588270279e7ab92df9794938f2ca}{PARAMTYPE}} s\+\_\+dangling\+\_\+enthalpy\+\_\+right (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} \texorpdfstring{$\ast$}{*}}]{sequence,  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}}}]{i1,  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}}}]{i2,  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}}}]{i3,  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}}}]{i4 }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{s__specific__functions_8cpp_source_l00242}{242}} of file \mbox{\hyperlink{s__specific__functions_8cpp_source}{s\+\_\+specific\+\_\+functions.\+cpp}}.
+
+\Hypertarget{s__specific__functions_8cpp_ad130348d2a643c634f0341ec7afc7b1c}\label{s__specific__functions_8cpp_ad130348d2a643c634f0341ec7afc7b1c} 
+\index{s\_specific\_functions.cpp@{s\_specific\_functions.cpp}!simfold@{simfold}}
+\index{simfold@{simfold}!s\_specific\_functions.cpp@{s\_specific\_functions.cpp}}
+\doxysubsubsection{\texorpdfstring{simfold()}{simfold()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{double}} simfold (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}}]{sequence,  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}}]{structure }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{s__specific__functions_8cpp_source_l00755}{755}} of file \mbox{\hyperlink{s__specific__functions_8cpp_source}{s\+\_\+specific\+\_\+functions.\+cpp}}.
+
+\Hypertarget{s__specific__functions_8cpp_a0835664e8b341c7920f49a931fcf894d}\label{s__specific__functions_8cpp_a0835664e8b341c7920f49a931fcf894d} 
+\index{s\_specific\_functions.cpp@{s\_specific\_functions.cpp}!simfold\_f\_and\_gradient\_smart@{simfold\_f\_and\_gradient\_smart}}
+\index{simfold\_f\_and\_gradient\_smart@{simfold\_f\_and\_gradient\_smart}!s\_specific\_functions.cpp@{s\_specific\_functions.cpp}}
+\doxysubsubsection{\texorpdfstring{simfold\_f\_and\_gradient\_smart()}{simfold\_f\_and\_gradient\_smart()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{constants_8h_a9377001671b5ece8bb2a2cf636de4b8a}{PFTYPE}} simfold\+\_\+f\+\_\+and\+\_\+gradient\+\_\+smart (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}}]{sequence,  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}}]{restricted,  }\item[{\mbox{\hyperlink{constants_8h_a9377001671b5ece8bb2a2cf636de4b8a}{PFTYPE}} \texorpdfstring{$\ast$}{*}}]{grad,  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}}}]{ignore\+\_\+dangles,  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}}}]{compute\+\_\+gradient\+\_\+dangles }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{s__specific__functions_8cpp_source_l01181}{1181}} of file \mbox{\hyperlink{s__specific__functions_8cpp_source}{s\+\_\+specific\+\_\+functions.\+cpp}}.
+
+\Hypertarget{s__specific__functions_8cpp_a037149669c356bd3896c0462d148220e}\label{s__specific__functions_8cpp_a037149669c356bd3896c0462d148220e} 
+\index{s\_specific\_functions.cpp@{s\_specific\_functions.cpp}!simfold\_gradient\_smart@{simfold\_gradient\_smart}}
+\index{simfold\_gradient\_smart@{simfold\_gradient\_smart}!s\_specific\_functions.cpp@{s\_specific\_functions.cpp}}
+\doxysubsubsection{\texorpdfstring{simfold\_gradient\_smart()}{simfold\_gradient\_smart()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} simfold\+\_\+gradient\+\_\+smart (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}}]{sequence,  }\item[{\mbox{\hyperlink{constants_8h_a9377001671b5ece8bb2a2cf636de4b8a}{PFTYPE}} \texorpdfstring{$\ast$}{*}}]{grad,  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}}}]{ignore\+\_\+dangles,  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}}}]{compute\+\_\+gradient\+\_\+dangles }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{s__specific__functions_8cpp_source_l01167}{1167}} of file \mbox{\hyperlink{s__specific__functions_8cpp_source}{s\+\_\+specific\+\_\+functions.\+cpp}}.
+
+\Hypertarget{s__specific__functions_8cpp_a6fcda610a2e8870e3b274477d8e370a2}\label{s__specific__functions_8cpp_a6fcda610a2e8870e3b274477d8e370a2} 
+\index{s\_specific\_functions.cpp@{s\_specific\_functions.cpp}!simfold\_loss\_augmented@{simfold\_loss\_augmented}}
+\index{simfold\_loss\_augmented@{simfold\_loss\_augmented}!s\_specific\_functions.cpp@{s\_specific\_functions.cpp}}
+\doxysubsubsection{\texorpdfstring{simfold\_loss\_augmented()}{simfold\_loss\_augmented()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{double}} simfold\+\_\+loss\+\_\+augmented (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}}]{sequence,  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}}]{known\+\_\+structure,  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}}]{pred\+\_\+structure }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{s__specific__functions_8cpp_source_l00769}{769}} of file \mbox{\hyperlink{s__specific__functions_8cpp_source}{s\+\_\+specific\+\_\+functions.\+cpp}}.
+
+\Hypertarget{s__specific__functions_8cpp_af016964cbfc2f31f3614b293a7fa4c77}\label{s__specific__functions_8cpp_af016964cbfc2f31f3614b293a7fa4c77} 
+\index{s\_specific\_functions.cpp@{s\_specific\_functions.cpp}!simfold\_ordered\_suboptimals@{simfold\_ordered\_suboptimals}}
+\index{simfold\_ordered\_suboptimals@{simfold\_ordered\_suboptimals}!s\_specific\_functions.cpp@{s\_specific\_functions.cpp}}
+\doxysubsubsection{\texorpdfstring{simfold\_ordered\_suboptimals()}{simfold\_ordered\_suboptimals()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} simfold\+\_\+ordered\+\_\+suboptimals (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}}]{sequence,  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}}}]{number,  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}}}]{structures\mbox{[}$\,$\mbox{]}\mbox{[}\+MAXSLEN\mbox{]},  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{double}}}]{energies\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{s__specific__functions_8cpp_source_l00948}{948}} of file \mbox{\hyperlink{s__specific__functions_8cpp_source}{s\+\_\+specific\+\_\+functions.\+cpp}}.
+
+\Hypertarget{s__specific__functions_8cpp_a890b2c18e868addb5334a1aa244ec9c6}\label{s__specific__functions_8cpp_a890b2c18e868addb5334a1aa244ec9c6} 
+\index{s\_specific\_functions.cpp@{s\_specific\_functions.cpp}!simfold\_partition\_function\_approximately@{simfold\_partition\_function\_approximately}}
+\index{simfold\_partition\_function\_approximately@{simfold\_partition\_function\_approximately}!s\_specific\_functions.cpp@{s\_specific\_functions.cpp}}
+\doxysubsubsection{\texorpdfstring{simfold\_partition\_function\_approximately()}{simfold\_partition\_function\_approximately()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{constants_8h_a9377001671b5ece8bb2a2cf636de4b8a}{PFTYPE}} simfold\+\_\+partition\+\_\+function\+\_\+approximately (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}}]{sequence }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{s__specific__functions_8cpp_source_l01225}{1225}} of file \mbox{\hyperlink{s__specific__functions_8cpp_source}{s\+\_\+specific\+\_\+functions.\+cpp}}.
+
+\Hypertarget{s__specific__functions_8cpp_ad9368745d48f01829661471f9d7c0a51}\label{s__specific__functions_8cpp_ad9368745d48f01829661471f9d7c0a51} 
+\index{s\_specific\_functions.cpp@{s\_specific\_functions.cpp}!simfold\_partition\_function\_both@{simfold\_partition\_function\_both}}
+\index{simfold\_partition\_function\_both@{simfold\_partition\_function\_both}!s\_specific\_functions.cpp@{s\_specific\_functions.cpp}}
+\doxysubsubsection{\texorpdfstring{simfold\_partition\_function\_both()}{simfold\_partition\_function\_both()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} simfold\+\_\+partition\+\_\+function\+\_\+both (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}}]{sequence }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{s__specific__functions_8cpp_source_l01211}{1211}} of file \mbox{\hyperlink{s__specific__functions_8cpp_source}{s\+\_\+specific\+\_\+functions.\+cpp}}.
+
+\Hypertarget{s__specific__functions_8cpp_a2f45ac263300f525b9dad8b47af7930e}\label{s__specific__functions_8cpp_a2f45ac263300f525b9dad8b47af7930e} 
+\index{s\_specific\_functions.cpp@{s\_specific\_functions.cpp}!simfold\_partition\_function\_smart@{simfold\_partition\_function\_smart}}
+\index{simfold\_partition\_function\_smart@{simfold\_partition\_function\_smart}!s\_specific\_functions.cpp@{s\_specific\_functions.cpp}}
+\doxysubsubsection{\texorpdfstring{simfold\_partition\_function\_smart()}{simfold\_partition\_function\_smart()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{constants_8h_a9377001671b5ece8bb2a2cf636de4b8a}{PFTYPE}} simfold\+\_\+partition\+\_\+function\+\_\+smart (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}}]{sequence,  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}}}]{ignore\+\_\+dangles,  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}}}]{compute\+\_\+gradient\+\_\+dangles }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{s__specific__functions_8cpp_source_l01151}{1151}} of file \mbox{\hyperlink{s__specific__functions_8cpp_source}{s\+\_\+specific\+\_\+functions.\+cpp}}.
+
+\Hypertarget{s__specific__functions_8cpp_a4626e46dc94154685b95145b8f0b88df}\label{s__specific__functions_8cpp_a4626e46dc94154685b95145b8f0b88df} 
+\index{s\_specific\_functions.cpp@{s\_specific\_functions.cpp}!simfold\_restricted@{simfold\_restricted}}
+\index{simfold\_restricted@{simfold\_restricted}!s\_specific\_functions.cpp@{s\_specific\_functions.cpp}}
+\doxysubsubsection{\texorpdfstring{simfold\_restricted()}{simfold\_restricted()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{double}} simfold\+\_\+restricted (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}}]{sequence,  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}}]{restricted,  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}}]{structure }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{s__specific__functions_8cpp_source_l00789}{789}} of file \mbox{\hyperlink{s__specific__functions_8cpp_source}{s\+\_\+specific\+\_\+functions.\+cpp}}.
+
+\Hypertarget{s__specific__functions_8cpp_add93eb44fafdb1d00aa555582fdd786a}\label{s__specific__functions_8cpp_add93eb44fafdb1d00aa555582fdd786a} 
+\index{s\_specific\_functions.cpp@{s\_specific\_functions.cpp}!simfold\_restricted\_all\_mfe\_structures@{simfold\_restricted\_all\_mfe\_structures}}
+\index{simfold\_restricted\_all\_mfe\_structures@{simfold\_restricted\_all\_mfe\_structures}!s\_specific\_functions.cpp@{s\_specific\_functions.cpp}}
+\doxysubsubsection{\texorpdfstring{simfold\_restricted\_all\_mfe\_structures()}{simfold\_restricted\_all\_mfe\_structures()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} simfold\+\_\+restricted\+\_\+all\+\_\+mfe\+\_\+structures (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}}]{sequence,  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}}]{restricted,  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}}}]{structures\mbox{[}$\,$\mbox{]}\mbox{[}\+MAXSLEN\mbox{]},  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{double}}}]{energies\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{s__specific__functions_8cpp_source_l01108}{1108}} of file \mbox{\hyperlink{s__specific__functions_8cpp_source}{s\+\_\+specific\+\_\+functions.\+cpp}}.
+
+\Hypertarget{s__specific__functions_8cpp_acdf3e2a9b6646385246ac4c20078d8c8}\label{s__specific__functions_8cpp_acdf3e2a9b6646385246ac4c20078d8c8} 
+\index{s\_specific\_functions.cpp@{s\_specific\_functions.cpp}!simfold\_restricted\_all\_suboptimals@{simfold\_restricted\_all\_suboptimals}}
+\index{simfold\_restricted\_all\_suboptimals@{simfold\_restricted\_all\_suboptimals}!s\_specific\_functions.cpp@{s\_specific\_functions.cpp}}
+\doxysubsubsection{\texorpdfstring{simfold\_restricted\_all\_suboptimals()}{simfold\_restricted\_all\_suboptimals()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} simfold\+\_\+restricted\+\_\+all\+\_\+suboptimals (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}}]{sequence,  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}}]{restricted,  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}}}]{structures\mbox{[}$\,$\mbox{]}\mbox{[}\+MAXSLEN\mbox{]},  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{double}}}]{energies\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{s__specific__functions_8cpp_source_l01088}{1088}} of file \mbox{\hyperlink{s__specific__functions_8cpp_source}{s\+\_\+specific\+\_\+functions.\+cpp}}.
+
+\Hypertarget{s__specific__functions_8cpp_a9daf92fa0e9395641f394013d194b351}\label{s__specific__functions_8cpp_a9daf92fa0e9395641f394013d194b351} 
+\index{s\_specific\_functions.cpp@{s\_specific\_functions.cpp}!simfold\_restricted\_unordered\_suboptimals@{simfold\_restricted\_unordered\_suboptimals}}
+\index{simfold\_restricted\_unordered\_suboptimals@{simfold\_restricted\_unordered\_suboptimals}!s\_specific\_functions.cpp@{s\_specific\_functions.cpp}}
+\doxysubsubsection{\texorpdfstring{simfold\_restricted\_unordered\_suboptimals()}{simfold\_restricted\_unordered\_suboptimals()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} simfold\+\_\+restricted\+\_\+unordered\+\_\+suboptimals (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}}]{sequence,  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}}]{restricted,  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}}}]{number,  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}}}]{structures\mbox{[}$\,$\mbox{]}\mbox{[}\+MAXSLEN\mbox{]},  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{double}}}]{energies\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{s__specific__functions_8cpp_source_l01054}{1054}} of file \mbox{\hyperlink{s__specific__functions_8cpp_source}{s\+\_\+specific\+\_\+functions.\+cpp}}.
+
+\Hypertarget{s__specific__functions_8cpp_a309358aa4b2d2fdfd6dd0cc5c30eb9fc}\label{s__specific__functions_8cpp_a309358aa4b2d2fdfd6dd0cc5c30eb9fc} 
+\index{s\_specific\_functions.cpp@{s\_specific\_functions.cpp}!simfold\_restricted\_unordered\_suboptimals\_range@{simfold\_restricted\_unordered\_suboptimals\_range}}
+\index{simfold\_restricted\_unordered\_suboptimals\_range@{simfold\_restricted\_unordered\_suboptimals\_range}!s\_specific\_functions.cpp@{s\_specific\_functions.cpp}}
+\doxysubsubsection{\texorpdfstring{simfold\_restricted\_unordered\_suboptimals\_range()}{simfold\_restricted\_unordered\_suboptimals\_range()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} simfold\+\_\+restricted\+\_\+unordered\+\_\+suboptimals\+\_\+range (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}}]{sequence,  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}}]{restricted,  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{double}}}]{max\+\_\+energy,  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}}}]{structures\mbox{[}$\,$\mbox{]}\mbox{[}\+MAXSLEN\mbox{]},  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{double}}}]{energies\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{s__specific__functions_8cpp_source_l00870}{870}} of file \mbox{\hyperlink{s__specific__functions_8cpp_source}{s\+\_\+specific\+\_\+functions.\+cpp}}.
+
+\Hypertarget{s__specific__functions_8cpp_a862783c3f10d17861359811db51ac940}\label{s__specific__functions_8cpp_a862783c3f10d17861359811db51ac940} 
+\index{s\_specific\_functions.cpp@{s\_specific\_functions.cpp}!simfold\_unordered\_suboptimals@{simfold\_unordered\_suboptimals}}
+\index{simfold\_unordered\_suboptimals@{simfold\_unordered\_suboptimals}!s\_specific\_functions.cpp@{s\_specific\_functions.cpp}}
+\doxysubsubsection{\texorpdfstring{simfold\_unordered\_suboptimals()}{simfold\_unordered\_suboptimals()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} simfold\+\_\+unordered\+\_\+suboptimals (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}}]{sequence,  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}}}]{number,  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}}}]{structures\mbox{[}$\,$\mbox{]}\mbox{[}\+MAXSLEN\mbox{]},  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{double}}}]{energies\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{s__specific__functions_8cpp_source_l00913}{913}} of file \mbox{\hyperlink{s__specific__functions_8cpp_source}{s\+\_\+specific\+\_\+functions.\+cpp}}.
+
+\Hypertarget{s__specific__functions_8cpp_a765be992851fe94c9f085fa9ce9f0c3c}\label{s__specific__functions_8cpp_a765be992851fe94c9f085fa9ce9f0c3c} 
+\index{s\_specific\_functions.cpp@{s\_specific\_functions.cpp}!simfold\_unordered\_suboptimals\_range@{simfold\_unordered\_suboptimals\_range}}
+\index{simfold\_unordered\_suboptimals\_range@{simfold\_unordered\_suboptimals\_range}!s\_specific\_functions.cpp@{s\_specific\_functions.cpp}}
+\doxysubsubsection{\texorpdfstring{simfold\_unordered\_suboptimals\_range()}{simfold\_unordered\_suboptimals\_range()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} simfold\+\_\+unordered\+\_\+suboptimals\+\_\+range (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}}]{sequence,  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{double}}}]{max\+\_\+energy,  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}}}]{structures\mbox{[}$\,$\mbox{]}\mbox{[}\+MAXSLEN\mbox{]},  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{double}}}]{energies\mbox{[}$\,$\mbox{]},  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}}}]{num\+\_\+subopt }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{s__specific__functions_8cpp_source_l00827}{827}} of file \mbox{\hyperlink{s__specific__functions_8cpp_source}{s\+\_\+specific\+\_\+functions.\+cpp}}.
+

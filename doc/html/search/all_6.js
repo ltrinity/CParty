@@ -1,0 +1,28 @@
+var searchData=
+[
+  ['f_0',['f',['../structstruct__node.html#adcca3e9f7d0e02116ab180bf625c817b',1,'struct_node::f'],['../classs__min__folding.html#ad3d22186eb051573ea07372dc41306bd',1,'s_min_folding::f']]],
+  ['fill_5fdata_5fstructures_5fwith_5fnew_5fparameters_1',['fill_data_structures_with_new_parameters',['../params_8cpp.html#ad04d5fbafd45055ca361b3305bead804',1,'fill_data_structures_with_new_parameters(const char *filename):&#160;params.cpp'],['../params_8h.html#ad04d5fbafd45055ca361b3305bead804',1,'fill_data_structures_with_new_parameters(const char *filename):&#160;params.cpp']]],
+  ['fill_5fdata_5fstructures_5fwith_5fnew_5fparameters_5fdouble_2',['fill_data_structures_with_new_parameters_double',['../params_8h.html#a5740ac54328b8f880b91c79a5bc23c0f',1,'params.h']]],
+  ['fill_5fdata_5fstructures_5fwith_5fnew_5fparameters_5ffixed_5fdangles_3',['fill_data_structures_with_new_parameters_fixed_dangles',['../params_8h.html#af020bc29cfc3e22ddb7dfff7f191b796',1,'params.h']]],
+  ['fill_5fdata_5fstructures_5fwith_5fnew_5fparameters_5ffrom_5farray_4',['fill_data_structures_with_new_parameters_from_array',['../params_8h.html#a9d35bc01f673b8596ffb43242712a00b',1,'fill_data_structures_with_new_parameters_from_array(PARAMTYPE *array):&#160;params.cpp'],['../params_8cpp.html#a9d35bc01f673b8596ffb43242712a00b',1,'fill_data_structures_with_new_parameters_from_array(PARAMTYPE *array):&#160;params.cpp']]],
+  ['fill_5fsimilarity_5frule_5fwith_5foptical_5fmelting_5freference_5',['fill_similarity_rule_with_optical_melting_reference',['../params_8cpp.html#a8ba7e4b547695fb8636a82bfae549062',1,'fill_similarity_rule_with_optical_melting_reference(char *xml_filename):&#160;params.cpp'],['../params_8h.html#a8ba7e4b547695fb8636a82bfae549062',1,'fill_similarity_rule_with_optical_melting_reference(char *xml_filename):&#160;params.cpp']]],
+  ['fill_5fsimilarity_5frules_6',['fill_similarity_rules',['../params_8cpp.html#a981a96135dd2d7468647ec752cc666df',1,'fill_similarity_rules():&#160;params.cpp'],['../params_8h.html#a981a96135dd2d7468647ec752cc666df',1,'fill_similarity_rules():&#160;params.cpp']]],
+  ['filled_7',['filled',['../structminimum__fold.html#a922d072dd927d8874468393a40655b23',1,'minimum_fold']]],
+  ['find_5findeces_5fof_5fbbtypes_8',['find_indeces_of_bbtypes',['../params_8cpp.html#a8f433352791e12ad237878de0bfb685e',1,'params.cpp']]],
+  ['fix_5fdangles_9',['fix_dangles',['../externs_8h.html#a55ee7773098740a75b4172aa85e014d0',1,'fix_dangles:&#160;globals.h'],['../globals_8h.html#a55ee7773098740a75b4172aa85e014d0',1,'fix_dangles:&#160;globals.h']]],
+  ['fm_10',['FM',['../classs__multi__loop__sub.html#a64b68faf574db5ffccb6a855d811747b',1,'s_multi_loop_sub']]],
+  ['fm1_11',['FM1',['../classs__multi__loop__sub.html#a8aa4ce4f9f95311736c3dd07f263fa33',1,'s_multi_loop_sub']]],
+  ['fold_5fsequence_12',['fold_sequence',['../classs__min__folding.html#a9b2ebe3a059ac958ef7b12b1b439882f',1,'s_min_folding::fold_sequence()'],['../classs__sub__folding.html#ab1d9106e91683b409bbb5b94c92a293f',1,'s_sub_folding::fold_sequence()']]],
+  ['fold_5fsequence_5frestricted_13',['fold_sequence_restricted',['../classs__min__folding.html#a1becbae42071ea089a8dea02c61cbc8a',1,'s_min_folding::fold_sequence_restricted()'],['../classs__sub__folding.html#a981f154f0122db09b1aa1b3d44842b49',1,'s_sub_folding::fold_sequence_restricted()'],['../class_w__final.html#ae6a6417f04db4d71f79fcf63fd560027',1,'W_final::fold_sequence_restricted()']]],
+  ['folding_5flist_14',['folding_list',['../classs__sub__folding.html#a17f6eb19f7e2ca82820d4d306b9e1953',1,'s_sub_folding']]],
+  ['for_20installation_15',['Steps for installation',['../md__c_1_2_users_2luket_2_desktop_2testing___c_party_2_c_party_2_r_e_a_d_m_e.html#autotoc_md7',1,'']]],
+  ['formula_16',['formula',['../init_8cpp.html#a4f493ff0539485be26eac0a2277ebdb3',1,'init.cpp']]],
+  ['free_17',['FREE',['../constants_8h.html#a9a8e700d56e7d858108b755ad3edb52e',1,'constants.h']]],
+  ['free_5fenergy_2ecpp_18',['free_energy.cpp',['../free__energy_8cpp.html',1,'']]],
+  ['free_5fenergy_5fnode_19',['free_energy_node',['../structfree__energy__node.html#a5778ec2e9a82821a18039222e5ab42b2',1,'free_energy_node::free_energy_node()'],['../structfree__energy__node.html',1,'free_energy_node']]],
+  ['free_5fenergy_5fsimfold_20',['free_energy_simfold',['../simfold_8h.html#a39135dc419aae7654ac7329df9f84f3e',1,'free_energy_simfold(char *sequence, char *structure):&#160;s_specific_functions.cpp'],['../s__specific__functions_8cpp.html#a39135dc419aae7654ac7329df9f84f3e',1,'free_energy_simfold(char *sequence, char *structure):&#160;s_specific_functions.cpp']]],
+  ['free_5fenergy_5fsimfold_5frestricted_21',['free_energy_simfold_restricted',['../simfold_8h.html#a02590cdd007e831a46ed94155a8a01cc',1,'free_energy_simfold_restricted(char *sequence, char *structure, char *restricted):&#160;s_specific_functions.cpp'],['../s__specific__functions_8cpp.html#a02590cdd007e831a46ed94155a8a01cc',1,'free_energy_simfold_restricted(char *sequence, char *structure, char *restricted):&#160;s_specific_functions.cpp']]],
+  ['free_5fto_5fpair_22',['FREE_TO_PAIR',['../h__common_8h.html#adad7ed9ea2fd17f12de45607bbb5c893',1,'h_common.h']]],
+  ['fres_23',['fres',['../class_v__final.html#a9d78c27a7cc66f7f6be61ba0c61f85c5',1,'V_final']]],
+  ['fres_5frestricted_5fmin_24',['FRES_RESTRICTED_MIN',['../pseudo__loop_8cpp.html#a536c83dcb191c18219c8f6c8f1419149',1,'pseudo_loop.cpp']]]
+];

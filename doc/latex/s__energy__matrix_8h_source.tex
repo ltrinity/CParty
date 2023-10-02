@@ -1,0 +1,106 @@
+\doxysection{s\+\_\+energy\+\_\+matrix.\+h}
+\hypertarget{s__energy__matrix_8h_source}{}\label{s__energy__matrix_8h_source}\index{C:/Users/luket/Desktop/testing\_CParty/CParty/simfold/src/simfold/s\_energy\_matrix.h@{C:/Users/luket/Desktop/testing\_CParty/CParty/simfold/src/simfold/s\_energy\_matrix.h}}
+\mbox{\hyperlink{s__energy__matrix_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{s__energy__matrix_8h_source_l00001}00001\ \textcolor{comment}{/***************************************************************************}}
+\DoxyCodeLine{\Hypertarget{s__energy__matrix_8h_source_l00002}00002\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ s\_energy\_matrix.h\ \ -\/\ \ description}}
+\DoxyCodeLine{\Hypertarget{s__energy__matrix_8h_source_l00003}00003\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{s__energy__matrix_8h_source_l00004}00004\ \textcolor{comment}{\ \ \ \ begin\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ Fri\ Apr\ 12\ 2002}}
+\DoxyCodeLine{\Hypertarget{s__energy__matrix_8h_source_l00005}00005\ \textcolor{comment}{\ \ \ \ copyright\ \ \ \ \ \ \ \ \ \ \ \ :\ (C)\ 2002\ by\ Mirela\ Andronescu}}
+\DoxyCodeLine{\Hypertarget{s__energy__matrix_8h_source_l00006}00006\ \textcolor{comment}{\ \ \ \ email\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ andrones@cs.ubc.ca}}
+\DoxyCodeLine{\Hypertarget{s__energy__matrix_8h_source_l00007}00007\ \textcolor{comment}{\ ***************************************************************************/}}
+\DoxyCodeLine{\Hypertarget{s__energy__matrix_8h_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{s__energy__matrix_8h_source_l00009}00009\ \textcolor{comment}{/***************************************************************************}}
+\DoxyCodeLine{\Hypertarget{s__energy__matrix_8h_source_l00010}00010\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{s__energy__matrix_8h_source_l00011}00011\ \textcolor{comment}{\ *\ \ \ This\ program\ is\ free\ software;\ you\ can\ redistribute\ it\ and/or\ modify\ \ *}}
+\DoxyCodeLine{\Hypertarget{s__energy__matrix_8h_source_l00012}00012\ \textcolor{comment}{\ *\ \ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by\ \ *}}
+\DoxyCodeLine{\Hypertarget{s__energy__matrix_8h_source_l00013}00013\ \textcolor{comment}{\ *\ \ \ the\ Free\ Software\ Foundation;\ either\ version\ 2\ of\ the\ License,\ or\ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{s__energy__matrix_8h_source_l00014}00014\ \textcolor{comment}{\ *\ \ \ (at\ your\ option)\ any\ later\ version.\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{s__energy__matrix_8h_source_l00015}00015\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{s__energy__matrix_8h_source_l00016}00016\ \textcolor{comment}{\ ***************************************************************************/}}
+\DoxyCodeLine{\Hypertarget{s__energy__matrix_8h_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{s__energy__matrix_8h_source_l00018}00018\ \textcolor{comment}{//\ the\ V\ matrix}}
+\DoxyCodeLine{\Hypertarget{s__energy__matrix_8h_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{s__energy__matrix_8h_source_l00020}00020\ \textcolor{preprocessor}{\#ifndef\ ENERGY\_MATRIX\_H}}
+\DoxyCodeLine{\Hypertarget{s__energy__matrix_8h_source_l00021}00021\ \textcolor{preprocessor}{\#define\ ENERGY\_MATRIX\_H}}
+\DoxyCodeLine{\Hypertarget{s__energy__matrix_8h_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{s__energy__matrix_8h_source_l00023}00023\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{s__stacked__pair_8h}{s\_stacked\_pair.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{s__energy__matrix_8h_source_l00024}00024\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{s__hairpin__loop_8h}{s\_hairpin\_loop.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{s__energy__matrix_8h_source_l00025}00025\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{s__internal__loop_8h}{s\_internal\_loop.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{s__energy__matrix_8h_source_l00026}00026\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{s__multi__loop_8h}{s\_multi\_loop.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{s__energy__matrix_8h_source_l00027}00027\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{s__multi__loop__sub_8h}{s\_multi\_loop\_sub.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{s__energy__matrix_8h_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{s__energy__matrix_8h_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{s__energy__matrix_8h_source_l00030}\mbox{\hyperlink{classs__energy__matrix}{00030}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classs__energy__matrix}{s\_energy\_matrix}}}
+\DoxyCodeLine{\Hypertarget{s__energy__matrix_8h_source_l00031}00031\ \{}
+\DoxyCodeLine{\Hypertarget{s__energy__matrix_8h_source_l00032}00032\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{s__energy__matrix_8h_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{s__energy__matrix_8h_source_l00034}\mbox{\hyperlink{classs__energy__matrix_ac81dcf7a35fcfba9dacdd64bd386dc48}{00034}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classs__stacked__pair}{s\_stacked\_pair}};}
+\DoxyCodeLine{\Hypertarget{s__energy__matrix_8h_source_l00035}\mbox{\hyperlink{classs__energy__matrix_abe5aef1b7a622630d886e61100136bc5}{00035}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classs__internal__loop}{s\_internal\_loop}};}
+\DoxyCodeLine{\Hypertarget{s__energy__matrix_8h_source_l00036}\mbox{\hyperlink{classs__energy__matrix_a5c84420bcc0acc194b62956d080dfeae}{00036}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classs__multi__loop}{s\_multi\_loop}};}
+\DoxyCodeLine{\Hypertarget{s__energy__matrix_8h_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{s__energy__matrix_8h_source_l00038}00038\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classs__energy__matrix}{s\_energy\_matrix}}\ (\textcolor{keywordtype}{int}\ *seq,\ \textcolor{keywordtype}{int}\ length);}
+\DoxyCodeLine{\Hypertarget{s__energy__matrix_8h_source_l00039}00039\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ The\ constructor}}
+\DoxyCodeLine{\Hypertarget{s__energy__matrix_8h_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{s__energy__matrix_8h_source_l00041}00041\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classs__energy__matrix_a42ec6d0669d182d5ddc898f7ed376370}{\string~s\_energy\_matrix}}\ ();}
+\DoxyCodeLine{\Hypertarget{s__energy__matrix_8h_source_l00042}00042\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ The\ destructor}}
+\DoxyCodeLine{\Hypertarget{s__energy__matrix_8h_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{s__energy__matrix_8h_source_l00044}\mbox{\hyperlink{classs__energy__matrix_a0663817d00421f5bd3fa64df9e017530}{00044}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classs__energy__matrix_a0663817d00421f5bd3fa64df9e017530}{set\_loops}}\ (\mbox{\hyperlink{classs__hairpin__loop}{s\_hairpin\_loop}}\ *\mbox{\hyperlink{classs__energy__matrix_a7c0620b6c5692b51d73551cdecc62ff7}{H}},\ \mbox{\hyperlink{classs__stacked__pair}{s\_stacked\_pair}}\ *\mbox{\hyperlink{classs__energy__matrix_a14d29a29c0149c8f3732e286f6cf1593}{S}},}
+\DoxyCodeLine{\Hypertarget{s__energy__matrix_8h_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classs__internal__loop}{s\_internal\_loop}}\ *\mbox{\hyperlink{classs__energy__matrix_a9e4a4d2f86c36fccd109d2cbe3651b20}{VBI}},\ \mbox{\hyperlink{classs__multi__loop}{s\_multi\_loop}}\ *\mbox{\hyperlink{classs__energy__matrix_ad895970184a0a67b2290a3888cfe3e2d}{VM}},\ \mbox{\hyperlink{classs__multi__loop__sub}{s\_multi\_loop\_sub}}\ *\mbox{\hyperlink{classs__energy__matrix_ad425443527b59e5838bab254a07fd765}{VM\_sub}})}
+\DoxyCodeLine{\Hypertarget{s__energy__matrix_8h_source_l00046}00046\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Set\ the\ local\ loops\ to\ the\ given\ values}}
+\DoxyCodeLine{\Hypertarget{s__energy__matrix_8h_source_l00047}00047\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{s__energy__matrix_8h_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>H\ =\ \mbox{\hyperlink{classs__energy__matrix_a7c0620b6c5692b51d73551cdecc62ff7}{H}};}
+\DoxyCodeLine{\Hypertarget{s__energy__matrix_8h_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>S\ =\ \mbox{\hyperlink{classs__energy__matrix_a14d29a29c0149c8f3732e286f6cf1593}{S}};}
+\DoxyCodeLine{\Hypertarget{s__energy__matrix_8h_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>VBI\ =\ \mbox{\hyperlink{classs__energy__matrix_a9e4a4d2f86c36fccd109d2cbe3651b20}{VBI}};}
+\DoxyCodeLine{\Hypertarget{s__energy__matrix_8h_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>VM\ =\ \mbox{\hyperlink{classs__energy__matrix_ad895970184a0a67b2290a3888cfe3e2d}{VM}};}
+\DoxyCodeLine{\Hypertarget{s__energy__matrix_8h_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>VM\_sub\ =\ \mbox{\hyperlink{classs__energy__matrix_ad425443527b59e5838bab254a07fd765}{VM\_sub}};}
+\DoxyCodeLine{\Hypertarget{s__energy__matrix_8h_source_l00053}00053\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{s__energy__matrix_8h_source_l00054}00054\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ VM\_sub\ should\ be\ NULL\ if\ you\ don't\ want\ suboptimals}}
+\DoxyCodeLine{\Hypertarget{s__energy__matrix_8h_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{s__energy__matrix_8h_source_l00056}00056\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classs__energy__matrix_aad28b030408b0b641b40b08015e4ed8e}{compute\_energy}}\ (\textcolor{keywordtype}{int}\ i,\ \textcolor{keywordtype}{int}\ j);}
+\DoxyCodeLine{\Hypertarget{s__energy__matrix_8h_source_l00057}00057\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ compute\ the\ V(i,j)\ value}}
+\DoxyCodeLine{\Hypertarget{s__energy__matrix_8h_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{s__energy__matrix_8h_source_l00059}00059\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classs__energy__matrix_a42736fe59d91a18f42f7cf5ddb669036}{compute\_energy\_restricted}}\ (\textcolor{keywordtype}{int}\ i,\ \textcolor{keywordtype}{int}\ j,\ \mbox{\hyperlink{structstr__features}{str\_features}}\ *fres);}
+\DoxyCodeLine{\Hypertarget{s__energy__matrix_8h_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{s__energy__matrix_8h_source_l00061}00061\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classs__energy__matrix_a3af4f9011010dd9d92704f06209fb16b}{compute\_energy\_restricted\_pkonly}}\ (\textcolor{keywordtype}{int}\ i,\ \textcolor{keywordtype}{int}\ j,\ \mbox{\hyperlink{structstr__features}{str\_features}}\ *fres);}
+\DoxyCodeLine{\Hypertarget{s__energy__matrix_8h_source_l00062}00062\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ April\ 18,\ 2012,\ Hosna:}}
+\DoxyCodeLine{\Hypertarget{s__energy__matrix_8h_source_l00063}00063\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ this\ is\ the\ necessary\ change\ for\ having\ the\ pkonly\ variation\ of\ HFold}}
+\DoxyCodeLine{\Hypertarget{s__energy__matrix_8h_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{s__energy__matrix_8h_source_l00065}00065\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classs__energy__matrix_a6ba2ba97a75f06a01e9f23832546416f}{compute\_energy\_sub}}\ (\textcolor{keywordtype}{int}\ i,\ \textcolor{keywordtype}{int}\ j);}
+\DoxyCodeLine{\Hypertarget{s__energy__matrix_8h_source_l00066}00066\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ compute\ the\ V(i,j)\ value}}
+\DoxyCodeLine{\Hypertarget{s__energy__matrix_8h_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{s__energy__matrix_8h_source_l00068}00068\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classs__energy__matrix_a0b71d86b71735b13f187c534f42046f9}{compute\_energy\_sub\_restricted}}\ (\textcolor{keywordtype}{int}\ i,\ \textcolor{keywordtype}{int}\ j,\ \mbox{\hyperlink{structstr__features}{str\_features}}\ *fres);}
+\DoxyCodeLine{\Hypertarget{s__energy__matrix_8h_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{s__energy__matrix_8h_source_l00070}\mbox{\hyperlink{classs__energy__matrix_a2b2f03fe3f8cb3056904a11ac3f2fe7e}{00070}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structfree__energy__node}{free\_energy\_node}}*\ \mbox{\hyperlink{classs__energy__matrix_a2b2f03fe3f8cb3056904a11ac3f2fe7e}{get\_node}}\ (\textcolor{keywordtype}{int}\ i,\ \textcolor{keywordtype}{int}\ j)\ \{\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{ij}}\ =\ \mbox{\hyperlink{classs__energy__matrix_a4572ad7f931fed99a32ba30113d5b6cf}{index}}[i]+j-\/i;\ \textcolor{keywordflow}{return}\ \&\mbox{\hyperlink{classs__energy__matrix_a89b33d771af70195420683cf389c70ce}{nodes}}[\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{ij}}];\ \}}
+\DoxyCodeLine{\Hypertarget{s__energy__matrix_8h_source_l00071}00071\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ return\ the\ node\ at\ (i,j)}}
+\DoxyCodeLine{\Hypertarget{s__energy__matrix_8h_source_l00072}00072\ }
+\DoxyCodeLine{\Hypertarget{s__energy__matrix_8h_source_l00073}00073\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ May\ 15,\ 2007.\ Added\ "{}if\ (i>=j)\ return\ INF;"{}\ \ below.\ It\ was\ miscalculating\ the\ backtracked\ structure.}}
+\DoxyCodeLine{\Hypertarget{s__energy__matrix_8h_source_l00074}00074\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Luke\ changing\ base\ case\ to\ 0?}}
+\DoxyCodeLine{\Hypertarget{s__energy__matrix_8h_source_l00075}\mbox{\hyperlink{classs__energy__matrix_aac7b05ab7b594d69b7aabaa30305a57a}{00075}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{constants_8h_adf823d40ac379702030cb342e84d5f2e}{pf\_t}}\ \mbox{\hyperlink{classs__energy__matrix_aac7b05ab7b594d69b7aabaa30305a57a}{get\_energy}}\ (\textcolor{keywordtype}{int}\ i,\ \textcolor{keywordtype}{int}\ j)\ \{\ \textcolor{keywordflow}{if}\ (i>=j)\ \textcolor{keywordflow}{return}\ 0;\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{ij}}\ =\ \mbox{\hyperlink{classs__energy__matrix_a4572ad7f931fed99a32ba30113d5b6cf}{index}}[i]+j-\/i;\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classs__energy__matrix_a89b33d771af70195420683cf389c70ce}{nodes}}[\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{ij}}].\mbox{\hyperlink{structfree__energy__node_af8c4ffb5733f775fb6d2cb714c018679}{energy}};\ \}}
+\DoxyCodeLine{\Hypertarget{s__energy__matrix_8h_source_l00076}00076\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ return\ the\ value\ at\ V(i,j)}}
+\DoxyCodeLine{\Hypertarget{s__energy__matrix_8h_source_l00077}00077\ }
+\DoxyCodeLine{\Hypertarget{s__energy__matrix_8h_source_l00078}\mbox{\hyperlink{classs__energy__matrix_aa79a6843cde177e9ae732ad13db6b00a}{00078}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{classs__energy__matrix_aa79a6843cde177e9ae732ad13db6b00a}{get\_type}}\ (\textcolor{keywordtype}{int}\ i,\ \textcolor{keywordtype}{int}\ j)\ \{\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{ij}}\ =\ \mbox{\hyperlink{classs__energy__matrix_a4572ad7f931fed99a32ba30113d5b6cf}{index}}[i]+j-\/i;\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classs__energy__matrix_a89b33d771af70195420683cf389c70ce}{nodes}}[\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{ij}}].\mbox{\hyperlink{structfree__energy__node_a239870fe8226d6dc9651b81b9b57e967}{type}};\ \}}
+\DoxyCodeLine{\Hypertarget{s__energy__matrix_8h_source_l00079}00079\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ return\ the\ type\ at\ V(i,j)}}
+\DoxyCodeLine{\Hypertarget{s__energy__matrix_8h_source_l00080}00080\ }
+\DoxyCodeLine{\Hypertarget{s__energy__matrix_8h_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{s__energy__matrix_8h_source_l00082}00082\ \ \ \ \ \textcolor{comment}{//\ better\ to\ have\ protected\ variable\ rather\ than\ private,\ it's\ necessary\ for\ Hfold}}
+\DoxyCodeLine{\Hypertarget{s__energy__matrix_8h_source_l00083}00083\ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{\Hypertarget{s__energy__matrix_8h_source_l00084}00084\ \ \ \ \ \textcolor{comment}{//private:}}
+\DoxyCodeLine{\Hypertarget{s__energy__matrix_8h_source_l00085}\mbox{\hyperlink{classs__energy__matrix_a7c0620b6c5692b51d73551cdecc62ff7}{00085}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classs__hairpin__loop}{s\_hairpin\_loop}}\ *\mbox{\hyperlink{classs__energy__matrix_a7c0620b6c5692b51d73551cdecc62ff7}{H}};}
+\DoxyCodeLine{\Hypertarget{s__energy__matrix_8h_source_l00086}\mbox{\hyperlink{classs__energy__matrix_a14d29a29c0149c8f3732e286f6cf1593}{00086}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classs__stacked__pair}{s\_stacked\_pair}}\ *\mbox{\hyperlink{classs__energy__matrix_a14d29a29c0149c8f3732e286f6cf1593}{S}};}
+\DoxyCodeLine{\Hypertarget{s__energy__matrix_8h_source_l00087}\mbox{\hyperlink{classs__energy__matrix_a9e4a4d2f86c36fccd109d2cbe3651b20}{00087}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classs__internal__loop}{s\_internal\_loop}}\ *\mbox{\hyperlink{classs__energy__matrix_a9e4a4d2f86c36fccd109d2cbe3651b20}{VBI}};}
+\DoxyCodeLine{\Hypertarget{s__energy__matrix_8h_source_l00088}\mbox{\hyperlink{classs__energy__matrix_ad895970184a0a67b2290a3888cfe3e2d}{00088}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classs__multi__loop}{s\_multi\_loop}}\ *\mbox{\hyperlink{classs__energy__matrix_ad895970184a0a67b2290a3888cfe3e2d}{VM}};}
+\DoxyCodeLine{\Hypertarget{s__energy__matrix_8h_source_l00089}\mbox{\hyperlink{classs__energy__matrix_ad425443527b59e5838bab254a07fd765}{00089}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classs__multi__loop__sub}{s\_multi\_loop\_sub}}\ *\mbox{\hyperlink{classs__energy__matrix_ad425443527b59e5838bab254a07fd765}{VM\_sub}};}
+\DoxyCodeLine{\Hypertarget{s__energy__matrix_8h_source_l00090}00090\ }
+\DoxyCodeLine{\Hypertarget{s__energy__matrix_8h_source_l00091}\mbox{\hyperlink{classs__energy__matrix_a8a87b1ad4ed64bb1197f9496dbb8c49f}{00091}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ *\mbox{\hyperlink{classs__energy__matrix_a8a87b1ad4ed64bb1197f9496dbb8c49f}{sequence}};\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ the\ entire\ sequence\ for\ which\ we\ compute\ the\ energy.}}
+\DoxyCodeLine{\Hypertarget{s__energy__matrix_8h_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ Each\ base\ is\ converted\ into\ integer,\ because\ it's\ faster.}}
+\DoxyCodeLine{\Hypertarget{s__energy__matrix_8h_source_l00093}\mbox{\hyperlink{classs__energy__matrix_a5c204773a1bb7683963d1e003a335de9}{00093}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classs__energy__matrix_a5c204773a1bb7683963d1e003a335de9}{seqlen}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ sequence\ length}}
+\DoxyCodeLine{\Hypertarget{s__energy__matrix_8h_source_l00094}\mbox{\hyperlink{classs__energy__matrix_a4572ad7f931fed99a32ba30113d5b6cf}{00094}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ *\mbox{\hyperlink{classs__energy__matrix_a4572ad7f931fed99a32ba30113d5b6cf}{index}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ an\ array\ with\ indexes,\ such\ that\ we\ don't\ work\ with\ a\ 2D\ array,\ but\ with\ a\ 1D\ array\ of\ length\ (n*(n+1))/2}}
+\DoxyCodeLine{\Hypertarget{s__energy__matrix_8h_source_l00095}\mbox{\hyperlink{classs__energy__matrix_a89b33d771af70195420683cf389c70ce}{00095}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structfree__energy__node}{free\_energy\_node}}\ *\mbox{\hyperlink{classs__energy__matrix_a89b33d771af70195420683cf389c70ce}{nodes}};\ \ \ \textcolor{comment}{//\ the\ free\ energy\ and\ type\ (i.e.\ base\ pair\ closing\ a\ hairpin\ loops,\ stacked\ pair\ etc),\ for\ each\ i\ and\ j}}
+\DoxyCodeLine{\Hypertarget{s__energy__matrix_8h_source_l00096}00096\ \};}
+\DoxyCodeLine{\Hypertarget{s__energy__matrix_8h_source_l00097}00097\ }
+\DoxyCodeLine{\Hypertarget{s__energy__matrix_8h_source_l00098}00098\ }
+\DoxyCodeLine{\Hypertarget{s__energy__matrix_8h_source_l00099}00099\ }
+\DoxyCodeLine{\Hypertarget{s__energy__matrix_8h_source_l00100}00100\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

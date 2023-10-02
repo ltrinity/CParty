@@ -1,0 +1,82 @@
+\doxysection{s\+\_\+specific\+\_\+functions.\+h}
+\hypertarget{s__specific__functions_8h_source}{}\label{s__specific__functions_8h_source}\index{C:/Users/luket/Desktop/testing\_CParty/CParty/simfold/src/simfold/s\_specific\_functions.h@{C:/Users/luket/Desktop/testing\_CParty/CParty/simfold/src/simfold/s\_specific\_functions.h}}
+\mbox{\hyperlink{s__specific__functions_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{s__specific__functions_8h_source_l00001}00001\ \textcolor{comment}{/***************************************************************************}}
+\DoxyCodeLine{\Hypertarget{s__specific__functions_8h_source_l00002}00002\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ s\_specific\_functions.h\ \ -\/\ \ description}}
+\DoxyCodeLine{\Hypertarget{s__specific__functions_8h_source_l00003}00003\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{s__specific__functions_8h_source_l00004}00004\ \textcolor{comment}{\ \ \ \ begin\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ Thu\ Sep\ 5\ 2002}}
+\DoxyCodeLine{\Hypertarget{s__specific__functions_8h_source_l00005}00005\ \textcolor{comment}{\ \ \ \ copyright\ \ \ \ \ \ \ \ \ \ \ \ :\ (C)\ 2002\ by\ Mirela\ Andronescu}}
+\DoxyCodeLine{\Hypertarget{s__specific__functions_8h_source_l00006}00006\ \textcolor{comment}{\ \ \ \ email\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ andrones@cs.ubc.ca}}
+\DoxyCodeLine{\Hypertarget{s__specific__functions_8h_source_l00007}00007\ \textcolor{comment}{\ ***************************************************************************/}}
+\DoxyCodeLine{\Hypertarget{s__specific__functions_8h_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{s__specific__functions_8h_source_l00009}00009\ \textcolor{comment}{/***************************************************************************}}
+\DoxyCodeLine{\Hypertarget{s__specific__functions_8h_source_l00010}00010\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{s__specific__functions_8h_source_l00011}00011\ \textcolor{comment}{\ *\ \ \ This\ program\ is\ free\ software;\ you\ can\ redistribute\ it\ and/or\ modify\ \ *}}
+\DoxyCodeLine{\Hypertarget{s__specific__functions_8h_source_l00012}00012\ \textcolor{comment}{\ *\ \ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by\ \ *}}
+\DoxyCodeLine{\Hypertarget{s__specific__functions_8h_source_l00013}00013\ \textcolor{comment}{\ *\ \ \ the\ Free\ Software\ Foundation;\ either\ version\ 2\ of\ the\ License,\ or\ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{s__specific__functions_8h_source_l00014}00014\ \textcolor{comment}{\ *\ \ \ (at\ your\ option)\ any\ later\ version.\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{s__specific__functions_8h_source_l00015}00015\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{s__specific__functions_8h_source_l00016}00016\ \textcolor{comment}{\ ***************************************************************************/}}
+\DoxyCodeLine{\Hypertarget{s__specific__functions_8h_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{s__specific__functions_8h_source_l00018}00018\ \textcolor{comment}{//\ This\ file\ contains\ functions\ specific\ to\ simfold}}
+\DoxyCodeLine{\Hypertarget{s__specific__functions_8h_source_l00019}00019\ \ }
+\DoxyCodeLine{\Hypertarget{s__specific__functions_8h_source_l00020}00020\ \ }
+\DoxyCodeLine{\Hypertarget{s__specific__functions_8h_source_l00021}00021\ \textcolor{preprocessor}{\#ifndef\ S\_SPECIFIC\_FUNCTIONS\_H}}
+\DoxyCodeLine{\Hypertarget{s__specific__functions_8h_source_l00022}00022\ \textcolor{preprocessor}{\#define\ S\_SPECIFIC\_FUNCTIONS\_H}}
+\DoxyCodeLine{\Hypertarget{s__specific__functions_8h_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{s__specific__functions_8h_source_l00024}00024\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{\Hypertarget{s__specific__functions_8h_source_l00025}00025\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{structs_8h}{structs.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{s__specific__functions_8h_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{s__specific__functions_8h_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{s__specific__functions_8h_source_l00028}00028\ \mbox{\hyperlink{constants_8h_ac9a8588270279e7ab92df9794938f2ca}{PARAMTYPE}}\ \mbox{\hyperlink{s__specific__functions_8h_adc8d0c5598020a09c3e46f69b8e46ca1}{s\_dangling\_energy}}\ (\textcolor{keywordtype}{int}\ *\mbox{\hyperlink{simfold_8cpp_aab0fa4fa34b613e3a6b4f0e87d1c073b}{sequence}},\ \textcolor{keywordtype}{char}\ *structure,\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{i1}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{i2}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{i3}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{i4}});}
+\DoxyCodeLine{\Hypertarget{s__specific__functions_8h_source_l00029}00029\ \textcolor{comment}{//\ PRE:\ \ (i1,\ i2)\ and\ (i3,\ i4)\ are\ pairs,\ i2\ and\ i3\ are\ neighbours,\ i2\ <\ i3}}
+\DoxyCodeLine{\Hypertarget{s__specific__functions_8h_source_l00030}00030\ \textcolor{comment}{//\ POST:\ return\ dangling\ energy\ between\ i2\ and\ i3}}
+\DoxyCodeLine{\Hypertarget{s__specific__functions_8h_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{s__specific__functions_8h_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{s__specific__functions_8h_source_l00033}00033\ \mbox{\hyperlink{constants_8h_ac9a8588270279e7ab92df9794938f2ca}{PARAMTYPE}}\ \mbox{\hyperlink{s__specific__functions_8h_ac6d547b009c8e60cca2ee59842e6690e}{s\_dangling\_energy\_left}}\ (\textcolor{keywordtype}{int}\ *\mbox{\hyperlink{simfold_8cpp_aab0fa4fa34b613e3a6b4f0e87d1c073b}{sequence}},\ \textcolor{keywordtype}{char}\ *structure,\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{i1}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{i2}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{i3}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{i4}});}
+\DoxyCodeLine{\Hypertarget{s__specific__functions_8h_source_l00034}00034\ \textcolor{comment}{//\ \ \ \ \ \ (....(\ \ \ \ )\ \ \ )}}
+\DoxyCodeLine{\Hypertarget{s__specific__functions_8h_source_l00035}00035\ \textcolor{comment}{//\ \ \ \ \ \ i1\ \ \ i3\ \ i4\ \ i2}}
+\DoxyCodeLine{\Hypertarget{s__specific__functions_8h_source_l00036}00036\ \textcolor{comment}{//\ PRE:\ \ (i1,\ i2)\ and\ (i3,\ i4)\ are\ pairs,\ i1\ and\ i3\ are\ neighbours,\ i3\ <\ i2}}
+\DoxyCodeLine{\Hypertarget{s__specific__functions_8h_source_l00037}00037\ \textcolor{comment}{//\ POST:\ return\ dangling\ energy\ between\ i1\ and\ i3}}
+\DoxyCodeLine{\Hypertarget{s__specific__functions_8h_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{s__specific__functions_8h_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{s__specific__functions_8h_source_l00040}00040\ \mbox{\hyperlink{constants_8h_ac9a8588270279e7ab92df9794938f2ca}{PARAMTYPE}}\ \mbox{\hyperlink{s__specific__functions_8h_ab1357cc778095711d2f4f248774e99da}{s\_dangling\_energy\_right}}\ (\textcolor{keywordtype}{int}\ *\mbox{\hyperlink{simfold_8cpp_aab0fa4fa34b613e3a6b4f0e87d1c073b}{sequence}},\ \textcolor{keywordtype}{char}\ *structure,\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{i1}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{i2}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{i3}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{i4}});}
+\DoxyCodeLine{\Hypertarget{s__specific__functions_8h_source_l00041}00041\ \textcolor{comment}{//\ \ \ \ \ \ (\ \ \ \ (\ \ \ \ )...)}}
+\DoxyCodeLine{\Hypertarget{s__specific__functions_8h_source_l00042}00042\ \textcolor{comment}{//\ \ \ \ \ \ i1\ \ \ i3\ \ i4\ \ i2}}
+\DoxyCodeLine{\Hypertarget{s__specific__functions_8h_source_l00043}00043\ \textcolor{comment}{//\ PRE:\ \ (i1,\ i2)\ and\ (i3,\ i4)\ are\ pairs,\ i1\ and\ i3\ are\ neighbours,\ i3\ <\ i2}}
+\DoxyCodeLine{\Hypertarget{s__specific__functions_8h_source_l00044}00044\ \textcolor{comment}{//\ POST:\ return\ dangling\ energy\ between\ i4\ and\ i2}}
+\DoxyCodeLine{\Hypertarget{s__specific__functions_8h_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{s__specific__functions_8h_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{s__specific__functions_8h_source_l00047}00047\ \mbox{\hyperlink{constants_8h_ac9a8588270279e7ab92df9794938f2ca}{PARAMTYPE}}\ \mbox{\hyperlink{s__specific__functions_8h_ac80e37d0467361fa50eeab08981be388}{s\_dangling\_enthalpy}}\ (\textcolor{keywordtype}{int}\ *\mbox{\hyperlink{simfold_8cpp_aab0fa4fa34b613e3a6b4f0e87d1c073b}{sequence}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{i1}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{i2}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{i3}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{i4}});}
+\DoxyCodeLine{\Hypertarget{s__specific__functions_8h_source_l00048}00048\ \textcolor{comment}{//\ PRE:\ \ (i1,\ i2)\ and\ (i3,\ i4)\ are\ pairs,\ i2\ and\ i3\ are\ neighbours,\ i2\ <\ i3}}
+\DoxyCodeLine{\Hypertarget{s__specific__functions_8h_source_l00049}00049\ \textcolor{comment}{//\ POST:\ return\ dangling\ enthalpy\ between\ i2\ and\ i3}}
+\DoxyCodeLine{\Hypertarget{s__specific__functions_8h_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{s__specific__functions_8h_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{s__specific__functions_8h_source_l00052}00052\ \mbox{\hyperlink{constants_8h_ac9a8588270279e7ab92df9794938f2ca}{PARAMTYPE}}\ \mbox{\hyperlink{s__specific__functions_8h_affff9e8f75c116a7ee34a18dd28e07c5}{s\_dangling\_enthalpy\_left}}\ (\textcolor{keywordtype}{int}\ *\mbox{\hyperlink{simfold_8cpp_aab0fa4fa34b613e3a6b4f0e87d1c073b}{sequence}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{i1}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{i2}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{i3}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{i4}});}
+\DoxyCodeLine{\Hypertarget{s__specific__functions_8h_source_l00053}00053\ \textcolor{comment}{//\ \ \ \ \ \ (....(\ \ \ \ )\ \ \ )}}
+\DoxyCodeLine{\Hypertarget{s__specific__functions_8h_source_l00054}00054\ \textcolor{comment}{//\ \ \ \ \ \ i1\ \ \ i3\ \ i4\ \ i2}}
+\DoxyCodeLine{\Hypertarget{s__specific__functions_8h_source_l00055}00055\ \textcolor{comment}{//\ PRE:\ \ (i1,\ i2)\ and\ (i3,\ i4)\ are\ pairs,\ i1\ and\ i3\ are\ neighbours,\ i3\ <\ i2}}
+\DoxyCodeLine{\Hypertarget{s__specific__functions_8h_source_l00056}00056\ \textcolor{comment}{//\ POST:\ return\ dangling\ enthalpy\ between\ i1\ and\ i3}}
+\DoxyCodeLine{\Hypertarget{s__specific__functions_8h_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{s__specific__functions_8h_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{s__specific__functions_8h_source_l00059}00059\ \mbox{\hyperlink{constants_8h_ac9a8588270279e7ab92df9794938f2ca}{PARAMTYPE}}\ \mbox{\hyperlink{s__specific__functions_8h_a45b24d581a7a7624223f6d6a0534c1d3}{s\_dangling\_enthalpy\_right}}\ (\textcolor{keywordtype}{int}\ *\mbox{\hyperlink{simfold_8cpp_aab0fa4fa34b613e3a6b4f0e87d1c073b}{sequence}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{i1}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{i2}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{i3}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{i4}});}
+\DoxyCodeLine{\Hypertarget{s__specific__functions_8h_source_l00060}00060\ \textcolor{comment}{//\ \ \ \ \ \ (....(\ \ \ \ )\ \ \ )}}
+\DoxyCodeLine{\Hypertarget{s__specific__functions_8h_source_l00061}00061\ \textcolor{comment}{//\ \ \ \ \ \ i1\ \ \ i3\ \ i4\ \ i2}}
+\DoxyCodeLine{\Hypertarget{s__specific__functions_8h_source_l00062}00062\ \textcolor{comment}{//\ PRE:\ \ (i1,\ i2)\ and\ (i3,\ i4)\ are\ pairs,\ i1\ and\ i3\ are\ neighbours,\ i3\ <\ i2}}
+\DoxyCodeLine{\Hypertarget{s__specific__functions_8h_source_l00063}00063\ \textcolor{comment}{//\ POST:\ return\ dangling\ enthalpy\ between\ i1\ and\ i3}}
+\DoxyCodeLine{\Hypertarget{s__specific__functions_8h_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{s__specific__functions_8h_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{s__specific__functions_8h_source_l00066}00066\ \mbox{\hyperlink{constants_8h_ac9a8588270279e7ab92df9794938f2ca}{PARAMTYPE}}\ \mbox{\hyperlink{s__specific__functions_8h_a1604f2d53f73a0a1968a09a637a7680e}{s\_calculate\_energy}}\ (\textcolor{keywordtype}{int}\ *\mbox{\hyperlink{simfold_8cpp_aab0fa4fa34b613e3a6b4f0e87d1c073b}{sequence}},\ \textcolor{keywordtype}{char}\ *csequence,\ \textcolor{keywordtype}{char}\ *structure,\ \mbox{\hyperlink{structstr__features}{str\_features}}\ *f,\ \mbox{\hyperlink{structstr__features}{str\_features}}\ *fres);}
+\DoxyCodeLine{\Hypertarget{s__specific__functions_8h_source_l00067}00067\ \textcolor{comment}{//\ PRE:\ \ the\ structure\ features\ have\ been\ determined}}
+\DoxyCodeLine{\Hypertarget{s__specific__functions_8h_source_l00068}00068\ \textcolor{comment}{//\ POST:\ return\ the\ free\ energy\ (as\ integer)}}
+\DoxyCodeLine{\Hypertarget{s__specific__functions_8h_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{s__specific__functions_8h_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{s__specific__functions_8h_source_l00071}00071\ \mbox{\hyperlink{constants_8h_ac9a8588270279e7ab92df9794938f2ca}{PARAMTYPE}}\ \mbox{\hyperlink{s__specific__functions_8h_aed7147e062ffd4dfaa6e7d90fa7f8bd2}{s\_calculate\_enthalpy}}\ (\textcolor{keywordtype}{int}\ *\mbox{\hyperlink{simfold_8cpp_aab0fa4fa34b613e3a6b4f0e87d1c073b}{sequence}},\ \textcolor{keywordtype}{char}\ *csequence,\ \mbox{\hyperlink{structstr__features}{str\_features}}\ *f);}
+\DoxyCodeLine{\Hypertarget{s__specific__functions_8h_source_l00072}00072\ \textcolor{comment}{//\ PRE:\ \ the\ structure\ features\ have\ been\ determined}}
+\DoxyCodeLine{\Hypertarget{s__specific__functions_8h_source_l00073}00073\ \textcolor{comment}{//\ POST:\ return\ the\ enthalpy\ (as\ integer)}}
+\DoxyCodeLine{\Hypertarget{s__specific__functions_8h_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{s__specific__functions_8h_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{s__specific__functions_8h_source_l00076}00076\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

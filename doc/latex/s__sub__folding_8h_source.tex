@@ -1,0 +1,168 @@
+\doxysection{s\+\_\+sub\+\_\+folding.\+h}
+\hypertarget{s__sub__folding_8h_source}{}\label{s__sub__folding_8h_source}\index{C:/Users/luket/Desktop/testing\_CParty/CParty/simfold/src/simfold/s\_sub\_folding.h@{C:/Users/luket/Desktop/testing\_CParty/CParty/simfold/src/simfold/s\_sub\_folding.h}}
+\mbox{\hyperlink{s__sub__folding_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00001}00001\ \textcolor{comment}{/***************************************************************************}}
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00002}00002\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ s\_sub\_folding.h\ \ -\/\ \ description}}
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00003}00003\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00004}00004\ \textcolor{comment}{\ \ \ \ begin\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ Thu\ May\ 06\ 2005}}
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00005}00005\ \textcolor{comment}{\ \ \ \ copyright\ \ \ \ \ \ \ \ \ \ \ \ :\ (C)\ 2003\ orginally\ started\ by\ Zhi\ Chuan\ Zhang,\ }}
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00006}00006\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ continued\ by\ Mirela\ Andronescu}}
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00007}00007\ \textcolor{comment}{\ \ \ \ email\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ andrones@cs.ubc.ca}}
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00008}00008\ \textcolor{comment}{\ ***************************************************************************/}}
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00010}00010\ \textcolor{comment}{/***************************************************************************}}
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00011}00011\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00012}00012\ \textcolor{comment}{\ *\ \ \ This\ program\ is\ free\ software;\ you\ can\ redistribute\ it\ and/or\ modify\ \ *}}
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00013}00013\ \textcolor{comment}{\ *\ \ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by\ \ *}}
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00014}00014\ \textcolor{comment}{\ *\ \ \ the\ Free\ Software\ Foundation;\ either\ version\ 2\ of\ the\ License,\ or\ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00015}00015\ \textcolor{comment}{\ *\ \ \ (at\ your\ option)\ any\ later\ version.\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00016}00016\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00017}00017\ \textcolor{comment}{\ ***************************************************************************/}}
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00019}00019\ \textcolor{comment}{//\ this\ class\ represents\ free\ energy\ minimization\ and\ backtracking\ for\ pairfold}}
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00020}00020\ \textcolor{comment}{//\ WITH\ suboptimal\ structures.\ Recurrences\ are\ from\ Wutchy\ complete\ suboptimal\ }}
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00021}00021\ \textcolor{comment}{//\ folding\ paper.\ The\ dangling\ free\ energies\ for\ suboptimal\ structures\ are\ not\ like}}
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00022}00022\ \textcolor{comment}{//\ in\ the\ MFE\ folding,\ but\ the\ 5'\ and\ 3'\ dangling\ ends\ are\ added\ all\ in\ any\ case.}}
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00023}00023\ \ }
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00024}00024\ \ }
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00025}00025\ \textcolor{preprocessor}{\#ifndef\ S\_SUB\_FOLDING\_H}}
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00026}00026\ \textcolor{preprocessor}{\#define\ S\_SUB\_FOLDING\_H}}
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00029}00029\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00030}00030\ \textcolor{preprocessor}{\#include\ <string.h>}}
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00031}00031\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{structs_8h}{structs.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00032}00032\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{s__energy__matrix_8h}{s\_energy\_matrix.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00033}00033\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{s__multi__loop__sub_8h}{s\_multi\_loop\_sub.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00036}\mbox{\hyperlink{classs__sub__folding}{00036}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classs__sub__folding}{s\_sub\_folding}}}
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00037}00037\ \{}
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00038}00038\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00039}00039\ \ }
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00040}00040\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classs__sub__folding}{s\_sub\_folding}}\ (\textcolor{keywordtype}{char}\ *seq,\ \mbox{\hyperlink{constants_8h_ac9a8588270279e7ab92df9794938f2ca}{PARAMTYPE}}\ \mbox{\hyperlink{classs__sub__folding_a3537928f9a98909dbc7207cab4a1d51c}{en\_var}});}
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00041}00041\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ CONSTRUCTOR}}
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00042}00042\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00043}00043\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classs__sub__folding}{s\_sub\_folding}}\ (\textcolor{keywordtype}{char}\ *seq,\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{classs__sub__folding_aac1646dd6962c8220e3d48c78af647d9}{restricted}},\ \mbox{\hyperlink{constants_8h_ac9a8588270279e7ab92df9794938f2ca}{PARAMTYPE}}\ \mbox{\hyperlink{classs__sub__folding_a3537928f9a98909dbc7207cab4a1d51c}{en\_var}});}
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00044}00044\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ CONSTRUCTOR,\ the\ restricted\ case}}
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00045}00045\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00046}00046\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classs__sub__folding_ae1701d9b22e7cdfc9a29fada7fd507ca}{\string~s\_sub\_folding}}\ ();}
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00047}00047\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ The\ destructor}}
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00049}00049\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classs__sub__folding_a8a4cb2fdd53f3c1660f61ffe9018d4e2}{s\_simfold}}\ (\textcolor{keywordtype}{double}\ \&\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{enthalpy}});}
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00050}00050\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ fold\ sequence}}
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00051}00051\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00052}00052\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classs__sub__folding_aba68870a16fbf94614f424ea1bf2cfb2}{s\_simfold\_restricted}}\ (\textcolor{keywordtype}{double}\ \&\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{enthalpy}});}
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00053}00053\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ fold\ sequence,\ the\ restricted\ case}}
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00054}00054\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00055}\mbox{\hyperlink{classs__sub__folding_a511cef3ccd382e9046cb002a01f00261}{00055}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{long}\ \mbox{\hyperlink{classs__sub__folding_a511cef3ccd382e9046cb002a01f00261}{get\_num\_partial\_structures\_thrown\_away}}()\ \ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classs__sub__folding_afd7dfc16b4d75241498ce40841bdfff1}{num\_partial\_structures\_thrown\_away}};\ \};\ }
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00056}00056\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{constants_8h_ac9a8588270279e7ab92df9794938f2ca}{PARAMTYPE}}\ \mbox{\hyperlink{classs__sub__folding_a7f4deddd5cb4c031248ab886ddd373c0}{compute\_W\_br2}}\ (\textcolor{keywordtype}{int}\ j);}
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00058}00058\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classs__sub__folding_aea8012dab2e2d3b50d542295851bac2b}{compute\_W}}\ (\textcolor{keywordtype}{int}\ j);}
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00059}00059\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classs__sub__folding_a87d9c7c821da1df7fabe4ebb9fff7e7f}{compute\_W\_restricted}}\ (\textcolor{keywordtype}{int}\ j,\ \mbox{\hyperlink{structstr__features}{str\_features}}\ *fres);}
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00060}00060\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00061}\mbox{\hyperlink{classs__sub__folding_a2c60fb3aa7719ecf6eb2ea2d3f4dd3a6}{00061}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{constants_8h_ac9a8588270279e7ab92df9794938f2ca}{PARAMTYPE}}\ \mbox{\hyperlink{classs__sub__folding_a2c60fb3aa7719ecf6eb2ea2d3f4dd3a6}{calculate\_enthalpy}}\ (\textcolor{keywordtype}{int}\ i);}
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00062}00062\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classs__sub__folding_a2a5396e7a3a2449fe95277217ff9f2c4}{backtrack\_hairpin}}(\textcolor{keywordtype}{int}\ i,\ \textcolor{keywordtype}{int}\ j);}
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00063}00063\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classs__sub__folding_ac010002ad557ccf5d5df694f60821576}{backtrack\_VBI}}(\textcolor{keywordtype}{int}\ i,\ \textcolor{keywordtype}{int}\ j);\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00064}00064\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classs__sub__folding_a46c0c4be865896a98fa7cc43ac6c97f9}{backtrack\_stack}}(\textcolor{keywordtype}{int}\ i,\ \textcolor{keywordtype}{int}\ j);}
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00065}00065\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classs__sub__folding_a9fb01846b9cb944228f1f5d844e791fd}{backtrack\_multi}}(\textcolor{keywordtype}{int}\ i,\ \textcolor{keywordtype}{int}\ j);}
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00066}00066\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classs__sub__folding_aa0536c8e20153228ce4848c5676427e2}{backtrack\_freebases}}(\textcolor{keywordtype}{int}\ i,\ \textcolor{keywordtype}{int}\ j);}
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00067}00067\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classs__sub__folding_af433f0bff34192b851acc573a6d118c1}{backtrack\_MFM1}}(\textcolor{keywordtype}{int}\ i,\ \textcolor{keywordtype}{int}\ j);}
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00068}00068\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classs__sub__folding_a469ad6890c438a14580050260497b4de}{backtrack\_MFM}}(\textcolor{keywordtype}{int}\ i,\ \textcolor{keywordtype}{int}\ j);}
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00069}00069\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classs__sub__folding_a8f0f2d75324ec21e8d78773587f156b3}{backtrack}}();}
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00070}00070\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00071}00071\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classs__sub__folding_ab6844955a9bf17df92830eb052cedc90}{backtrack\_restricted}}\ (\mbox{\hyperlink{structstr__features}{str\_features}}\ *fres);\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00072}00072\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classs__sub__folding_a216751c69e807fb59300d172b4a3f98e}{backtrack\_hairpin\_restricted}}\ (\textcolor{keywordtype}{int}\ i,\ \textcolor{keywordtype}{int}\ j,\ \mbox{\hyperlink{structstr__features}{str\_features}}\ *fres);}
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00073}00073\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classs__sub__folding_aaa3094ddac21251292da42fefbf6c4e1}{backtrack\_VBI\_restricted}}\ (\textcolor{keywordtype}{int}\ i,\ \textcolor{keywordtype}{int}\ j,\ \mbox{\hyperlink{structstr__features}{str\_features}}\ *fres);}
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00074}00074\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classs__sub__folding_a16f1b944bcf15fb9c5a11f1b1fd2eb1f}{backtrack\_freebases\_restricted}}\ (\textcolor{keywordtype}{int}\ i,\ \textcolor{keywordtype}{int}\ j,\ \mbox{\hyperlink{structstr__features}{str\_features}}\ *fres);}
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00075}00075\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classs__sub__folding_a68070b9eaf0310861cfa91392131bfff}{backtrack\_MFM1\_restricted}}\ (\textcolor{keywordtype}{int}\ i,\ \textcolor{keywordtype}{int}\ j,\ \mbox{\hyperlink{structstr__features}{str\_features}}\ *fres);}
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00076}00076\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classs__sub__folding_aa4f27de5d4fc67a94fe1aa1f549393b0}{backtrack\_MFM\_restricted}}\ (\textcolor{keywordtype}{int}\ i,\ \textcolor{keywordtype}{int}\ j,\ \mbox{\hyperlink{structstr__features}{str\_features}}\ *fres);}
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00077}00077\ }
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00079}00079\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structstruct__node}{struct\_node}}*\ \mbox{\hyperlink{classs__sub__folding_ac090e39741263543ff10d2c98563125f}{copy\_struct}}();}
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00080}00080\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classs__sub__folding_a8cd3fb7e39b02eb85674a315a0525deb}{release\_struct}}(\mbox{\hyperlink{structstruct__node}{struct\_node}}*\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{sn}});}
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00081}00081\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classs__sub__folding_a3e80609e337576e61e5f3daf550c47ad}{print\_result}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{flag}});}
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00082}00082\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classs__sub__folding_aceff358e8d79c05e3595799b7b289978}{insert\_node}}(\mbox{\hyperlink{structstruct__node}{struct\_node}}*\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{sn}});}
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00083}00083\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classs__sub__folding_a0ac933d9f94c46ae44b13d66e39eae0f}{set\_limit}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{classs__sub__folding_a4028b51f072ce4176b91c0ce77f2e6fc}{limit}});}
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00084}\mbox{\hyperlink{classs__sub__folding_ab6cb8632230523b7ad4208cda2de6ef2}{00084}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classs__sub__folding_ab6cb8632230523b7ad4208cda2de6ef2}{adjust}}();}
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00085}00085\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00086}00086\ \ \ \ \ \ \ \ \ \textcolor{comment}{//int\ return\_structures\ (char\ **structures,\ double\ energies[]);}}
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00087}00087\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classs__sub__folding_a49f1d15e19f99e82e892b4539868fac9}{return\_structures}}\ (\textcolor{keywordtype}{char}\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{structures}}[][\mbox{\hyperlink{constants_8h_a1b8bfc1abb1ba53bcc6c516ddf02ad97}{MAXSLEN}}],\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{energies}}[]);}
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00088}00088\ }
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00089}00089\ \ \ \ \ \textcolor{comment}{//\ better\ to\ have\ protected\ variable\ rather\ than\ private,\ it's\ necessary\ for\ Hfold}}
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00090}00090\ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00091}00091\ \ \ \ \ \textcolor{comment}{//private:}}
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00092}00092\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00093}00093\ \ \ \ \ \ \ \ \ \textcolor{comment}{//char*\ structure;}}
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00094}\mbox{\hyperlink{classs__sub__folding_aa8e637e61a6db72c090dd751d37b73c1}{00094}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classs__hairpin__loop}{s\_hairpin\_loop}}\ *\mbox{\hyperlink{classs__sub__folding_aa8e637e61a6db72c090dd751d37b73c1}{H}};}
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00095}\mbox{\hyperlink{classs__sub__folding_a38740a41182a0e264ebe40dc91fa0174}{00095}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classs__stacked__pair}{s\_stacked\_pair}}\ *\mbox{\hyperlink{classs__sub__folding_a38740a41182a0e264ebe40dc91fa0174}{S}};}
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00096}\mbox{\hyperlink{classs__sub__folding_a381346893aa874fa81dd96a272c0d6ae}{00096}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classs__internal__loop}{s\_internal\_loop}}\ *\mbox{\hyperlink{classs__sub__folding_a381346893aa874fa81dd96a272c0d6ae}{VBI}};}
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00097}\mbox{\hyperlink{classs__sub__folding_ac07be0377d42ad01e008b0e7c2ca394d}{00097}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classs__multi__loop__sub}{s\_multi\_loop\_sub}}\ *\mbox{\hyperlink{classs__sub__folding_ac07be0377d42ad01e008b0e7c2ca394d}{VM\_sub}};}
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00098}\mbox{\hyperlink{classs__sub__folding_a19b1f329653f41cdc07ffbe09494a688}{00098}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classs__energy__matrix}{s\_energy\_matrix}}\ *\mbox{\hyperlink{classs__sub__folding_a19b1f329653f41cdc07ffbe09494a688}{V}};\ \ }
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00099}\mbox{\hyperlink{classs__sub__folding_a4c385a6a068adda1973b09ad8f654fda}{00099}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}*\ \mbox{\hyperlink{classs__sub__folding_a4c385a6a068adda1973b09ad8f654fda}{int\_sequence}};}
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00100}00100\ }
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00101}00101\ \ \ \ \ \ \ \ \ \textcolor{comment}{//minimum\_fold\ *f;//\ the\ minimum\ folding;\ }}
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00102}\mbox{\hyperlink{classs__sub__folding_a841c14e41904b75a6d33059c7c81a17d}{00102}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{constants_8h_ac9a8588270279e7ab92df9794938f2ca}{PARAMTYPE}}\ *\mbox{\hyperlink{classs__sub__folding_a841c14e41904b75a6d33059c7c81a17d}{W}};}
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00103}\mbox{\hyperlink{classs__sub__folding_af7567adbc06acdadce6e2c4508989b99}{00103}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classs__sub__folding_af7567adbc06acdadce6e2c4508989b99}{nb\_nucleotides}};}
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00104}\mbox{\hyperlink{classs__sub__folding_a74ca1604e30ec9e76ef0cdcc9e8b6644}{00104}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{classs__sub__folding_a74ca1604e30ec9e76ef0cdcc9e8b6644}{sequence}};}
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00105}\mbox{\hyperlink{classs__sub__folding_aac1646dd6962c8220e3d48c78af647d9}{00105}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{classs__sub__folding_aac1646dd6962c8220e3d48c78af647d9}{restricted}};}
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00106}00106\ \ \ }
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00107}00107\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ A\ stack\ of\ valid\ structures,\ each\ represented\ by\ a\ list}}
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00108}\mbox{\hyperlink{classs__sub__folding_a17f6eb19f7e2ca82820d4d306b9e1953}{00108}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structstruct__node}{struct\_node}}*\ \mbox{\hyperlink{classs__sub__folding_a17f6eb19f7e2ca82820d4d306b9e1953}{folding\_list}};}
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00109}00109\ }
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00110}00110\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ M:\ added}}
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00111}\mbox{\hyperlink{classs__sub__folding_a9ae691093bb11ab8f9cb3bb7fa4f5112}{00111}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structstruct__node}{struct\_node}}\ *\mbox{\hyperlink{classs__sub__folding_a9ae691093bb11ab8f9cb3bb7fa4f5112}{tail\_folding\_list}};\ \ \ \ \ \ \textcolor{comment}{//\ the\ last\ node\ of\ the\ folding\_list}}
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00112}00112\ }
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00113}00113\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Use\ two\ temporary\ variable\ cur\_folding\ for\ the\ struct\ poped\ out}}
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00114}\mbox{\hyperlink{classs__sub__folding_a2c2c1db07bcc88a07e88ed1cf29df300}{00114}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structstruct__node}{struct\_node}}*\ \mbox{\hyperlink{classs__sub__folding_a2c2c1db07bcc88a07e88ed1cf29df300}{cur\_folding}};}
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00115}00115\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Use\ two\ temporary\ variable\ cur\_intevral\ for\ the\ interval\ that\ is\ being\ backtracked\ }}
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00116}\mbox{\hyperlink{classs__sub__folding_a23d6ad7ad33c7b2816c393548317180e}{00116}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structseq__interval}{seq\_interval}}*\ \mbox{\hyperlink{classs__sub__folding_a23d6ad7ad33c7b2816c393548317180e}{cur\_interval}};}
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00117}00117\ }
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00118}00118\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Keep\ all\ the\ valid\ structure\ so\ that\ it\ can\ be\ printed\ out}}
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00119}\mbox{\hyperlink{classs__sub__folding_a14ac0c651c99dc968d55a2d6f8d3fc3f}{00119}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structstruct__node}{struct\_node}}\ *\mbox{\hyperlink{classs__sub__folding_a14ac0c651c99dc968d55a2d6f8d3fc3f}{result\_list}};}
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00120}\mbox{\hyperlink{classs__sub__folding_a112934432b7bb698b574637cf4e92f31}{00120}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structstruct__node}{struct\_node}}\ *\mbox{\hyperlink{classs__sub__folding_a112934432b7bb698b574637cf4e92f31}{last\_list}};}
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00121}00121\ }
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00122}00122\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Min\_energy\ }}
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00123}\mbox{\hyperlink{classs__sub__folding_a3d72bd570316ce65f319c15eb56d8872}{00123}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{constants_8h_ac9a8588270279e7ab92df9794938f2ca}{PARAMTYPE}}\ \mbox{\hyperlink{classs__sub__folding_a3d72bd570316ce65f319c15eb56d8872}{min\_energy}};}
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00124}00124\ }
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00125}00125\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ how\ much\ energy\ from\ the\ MFE\ we\ allow}}
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00126}\mbox{\hyperlink{classs__sub__folding_a3537928f9a98909dbc7207cab4a1d51c}{00126}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{constants_8h_ac9a8588270279e7ab92df9794938f2ca}{PARAMTYPE}}\ \mbox{\hyperlink{classs__sub__folding_a3537928f9a98909dbc7207cab4a1d51c}{en\_var}};}
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00127}00127\ }
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00128}00128\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Number\ of\ valid\ structures\ needed}}
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00129}\mbox{\hyperlink{classs__sub__folding_a4028b51f072ce4176b91c0ce77f2e6fc}{00129}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classs__sub__folding_a4028b51f072ce4176b91c0ce77f2e6fc}{limit}};}
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00130}00130\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00131}00131\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ M:\ added}}
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00132}\mbox{\hyperlink{classs__sub__folding_a48d6a0debbaa669d1dc5420c02d2f253}{00132}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classs__sub__folding_a48d6a0debbaa669d1dc5420c02d2f253}{num\_partial\_structures}};}
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00133}00133\ }
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00134}00134\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ M:\ added}}
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00135}\mbox{\hyperlink{classs__sub__folding_a2ac1ce956ca4ba9f02232326eee37fcf}{00135}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classs__sub__folding_a2ac1ce956ca4ba9f02232326eee37fcf}{num\_complete\_structures}};}
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00136}00136\ }
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00137}00137\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ M:\ added}}
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00138}\mbox{\hyperlink{classs__sub__folding_a2a6eadad9331bdcb88e4d5d121191a63}{00138}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{constants_8h_ac9a8588270279e7ab92df9794938f2ca}{PARAMTYPE}}\ \mbox{\hyperlink{classs__sub__folding_a2a6eadad9331bdcb88e4d5d121191a63}{max\_energy}};}
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00139}00139\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ having\ "{}limit"{}\ partial\ structures,\ the\ energy\ of\ the\ last\ suboptimal\ structure\ (i.e.\ max\_energy)\ }}
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00140}00140\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ will\ be\ at\ least\ as\ low\ as\ the\ energy\ of\ the\ last\ partial\ structure.}}
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00141}00141\ }
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00142}00142\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ M:\ added\ on\ July\ 5th}}
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00143}\mbox{\hyperlink{classs__sub__folding_afd7dfc16b4d75241498ce40841bdfff1}{00143}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{long}\ \mbox{\hyperlink{classs__sub__folding_afd7dfc16b4d75241498ce40841bdfff1}{num\_partial\_structures\_thrown\_away}};}
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00144}00144\ }
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00145}00145\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Mybe\ need\ to\ keep\ pointers\ to\ V,\ FM,\ FM1,\ W\ */}}
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00146}00146\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Best\ way\ is\ to\ put\ the\ code\ in\ energy.cpp\ and\ energy.h\ in\ this\ class\ */}}
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00147}00147\ }
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00148}00148\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classs__sub__folding_ab1d9106e91683b409bbb5b94c92a293f}{fold\_sequence}}\ (\textcolor{keywordtype}{double}\ \&\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{enthalpy}});\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00149}00149\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00150}00150\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classs__sub__folding_a981f154f0122db09b1aa1b3d44842b49}{fold\_sequence\_restricted}}\ (\textcolor{keywordtype}{double}\ \&\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{enthalpy}});\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00151}00151\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00152}00152\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classs__sub__folding_a1c3c6ace07bf8f2daa086de0296abcaf}{allocate\_space}}\ (\textcolor{keywordtype}{char}\ *seq,\ \mbox{\hyperlink{constants_8h_ac9a8588270279e7ab92df9794938f2ca}{PARAMTYPE}}\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{var}});}
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00153}00153\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00154}00154\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classs__sub__folding_a1ecc54164eb2174a12e8ae3f779c8748}{copy\_list}}\ (\mbox{\hyperlink{structseq__interval}{seq\_interval}}*\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{from}},\ \mbox{\hyperlink{structseq__interval}{seq\_interval}}\ *\&\ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{to}});}
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00155}00155\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ PRE:\ from\ is\ a\ linked\ list}}
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00156}00156\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ POST:\ copy\ all\ linked\ list\ from\ "{}from"{}\ to\ "{}to"{}}}
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00157}00157\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ M:\ added\ \ \ }}
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00158}00158\ }
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00159}00159\ }
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00160}00160\ \};}
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00161}00161\ }
+\DoxyCodeLine{\Hypertarget{s__sub__folding_8h_source_l00162}00162\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//S\_SUB\_FOLDING\_H}}
+
+\end{DoxyCode}

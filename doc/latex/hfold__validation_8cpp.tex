@@ -1,0 +1,122 @@
+\doxysection{C\+:/\+Users/luket/\+Desktop/testing\+\_\+\+CParty/\+CParty/hfold\+\_\+validation.cpp File Reference}
+\hypertarget{hfold__validation_8cpp}{}\label{hfold__validation_8cpp}\index{C:/Users/luket/Desktop/testing\_CParty/CParty/hfold\_validation.cpp@{C:/Users/luket/Desktop/testing\_CParty/CParty/hfold\_validation.cpp}}
+{\ttfamily \#include $<$libgen.\+h$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$stack$>$}\newline
+{\ttfamily \#include "{}externs.\+h"{}}\newline
+{\ttfamily \#include $<$regex$>$}\newline
+{\ttfamily \#include $<$ctime$>$}\newline
+{\ttfamily \#include "{}hfold\+\_\+validation.\+h"{}}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{define}} \mbox{\hyperlink{hfold__validation_8cpp_ac7b30cf7f83588cb6bc1c716be66f5a2}{\+\_\+\+XOPEN\+\_\+\+SOURCE\+\_\+\+EXTENDED}}~1
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} \mbox{\hyperlink{hfold__validation_8cpp_af39bbad0592ce8c2c1449d2d04a97c40}{replace\+Brackets}} (\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}structure)
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{bool}} \mbox{\hyperlink{hfold__validation_8cpp_a29e7d192394f27e55948467537688793}{validate\+Structure}} (\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}structure, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{simfold_8cpp_aab0fa4fa34b613e3a6b4f0e87d1c073b}{sequence}})
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{bool}} \mbox{\hyperlink{hfold__validation_8cpp_a1b2cd8e9e6eb9be82431efc7edbe1a2e}{validate\+Sequence}} (\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{const}} \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{string}})
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} \mbox{\hyperlink{hfold__validation_8cpp_a3f7585afa01b4bc7b3a31a7385abadcf}{add\+Path}} (\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{output\+\_\+path}}, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{input\+\_\+path}})
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} \mbox{\hyperlink{hfold__validation_8cpp_ae8a117a2dcbeb6258213f4540b4020f5}{add\+Timestamp}} (\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{path}})
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{bool}} \mbox{\hyperlink{hfold__validation_8cpp_a2e47d3c1ffb72903980366700d71f9b5}{validate\+Interacting\+Input\+File}} (\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{path}}, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{seq1}}, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{struc1}}, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{seq2}}, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{struc2}})
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{bool}} \mbox{\hyperlink{hfold__validation_8cpp_ab3052e31450bfd3b931df3bbd2e3b9c9}{validate\+HFOLDInput\+File}} (\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{path}}, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{seq1}}, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{struc1}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{hfold__validation_8cpp_ac7b30cf7f83588cb6bc1c716be66f5a2}\label{hfold__validation_8cpp_ac7b30cf7f83588cb6bc1c716be66f5a2} 
+\index{hfold\_validation.cpp@{hfold\_validation.cpp}!\_XOPEN\_SOURCE\_EXTENDED@{\_XOPEN\_SOURCE\_EXTENDED}}
+\index{\_XOPEN\_SOURCE\_EXTENDED@{\_XOPEN\_SOURCE\_EXTENDED}!hfold\_validation.cpp@{hfold\_validation.cpp}}
+\doxysubsubsection{\texorpdfstring{\_XOPEN\_SOURCE\_EXTENDED}{\_XOPEN\_SOURCE\_EXTENDED}}
+{\footnotesize\ttfamily \#\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{define}} \+\_\+\+XOPEN\+\_\+\+SOURCE\+\_\+\+EXTENDED~1}
+
+
+
+Definition at line \mbox{\hyperlink{hfold__validation_8cpp_source_l00002}{2}} of file \mbox{\hyperlink{hfold__validation_8cpp_source}{hfold\+\_\+validation.\+cpp}}.
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{hfold__validation_8cpp_a3f7585afa01b4bc7b3a31a7385abadcf}\label{hfold__validation_8cpp_a3f7585afa01b4bc7b3a31a7385abadcf} 
+\index{hfold\_validation.cpp@{hfold\_validation.cpp}!addPath@{addPath}}
+\index{addPath@{addPath}!hfold\_validation.cpp@{hfold\_validation.cpp}}
+\doxysubsubsection{\texorpdfstring{addPath()}{addPath()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} add\+Path (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{output\+\_\+path,  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}}]{input\+\_\+path }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{hfold__validation_8cpp_source_l00131}{131}} of file \mbox{\hyperlink{hfold__validation_8cpp_source}{hfold\+\_\+validation.\+cpp}}.
+
+\Hypertarget{hfold__validation_8cpp_ae8a117a2dcbeb6258213f4540b4020f5}\label{hfold__validation_8cpp_ae8a117a2dcbeb6258213f4540b4020f5} 
+\index{hfold\_validation.cpp@{hfold\_validation.cpp}!addTimestamp@{addTimestamp}}
+\index{addTimestamp@{addTimestamp}!hfold\_validation.cpp@{hfold\_validation.cpp}}
+\doxysubsubsection{\texorpdfstring{addTimestamp()}{addTimestamp()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} add\+Timestamp (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{path }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{hfold__validation_8cpp_source_l00151}{151}} of file \mbox{\hyperlink{hfold__validation_8cpp_source}{hfold\+\_\+validation.\+cpp}}.
+
+\Hypertarget{hfold__validation_8cpp_af39bbad0592ce8c2c1449d2d04a97c40}\label{hfold__validation_8cpp_af39bbad0592ce8c2c1449d2d04a97c40} 
+\index{hfold\_validation.cpp@{hfold\_validation.cpp}!replaceBrackets@{replaceBrackets}}
+\index{replaceBrackets@{replaceBrackets}!hfold\_validation.cpp@{hfold\_validation.cpp}}
+\doxysubsubsection{\texorpdfstring{replaceBrackets()}{replaceBrackets()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} replace\+Brackets (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}}]{structure }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{hfold__validation_8cpp_source_l00021}{21}} of file \mbox{\hyperlink{hfold__validation_8cpp_source}{hfold\+\_\+validation.\+cpp}}.
+
+\Hypertarget{hfold__validation_8cpp_ab3052e31450bfd3b931df3bbd2e3b9c9}\label{hfold__validation_8cpp_ab3052e31450bfd3b931df3bbd2e3b9c9} 
+\index{hfold\_validation.cpp@{hfold\_validation.cpp}!validateHFOLDInputFile@{validateHFOLDInputFile}}
+\index{validateHFOLDInputFile@{validateHFOLDInputFile}!hfold\_validation.cpp@{hfold\_validation.cpp}}
+\doxysubsubsection{\texorpdfstring{validateHFOLDInputFile()}{validateHFOLDInputFile()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{bool}} validate\+HFOLDInput\+File (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}}]{path,  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}}]{seq1,  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}}]{struc1 }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{hfold__validation_8cpp_source_l00216}{216}} of file \mbox{\hyperlink{hfold__validation_8cpp_source}{hfold\+\_\+validation.\+cpp}}.
+
+\Hypertarget{hfold__validation_8cpp_a2e47d3c1ffb72903980366700d71f9b5}\label{hfold__validation_8cpp_a2e47d3c1ffb72903980366700d71f9b5} 
+\index{hfold\_validation.cpp@{hfold\_validation.cpp}!validateInteractingInputFile@{validateInteractingInputFile}}
+\index{validateInteractingInputFile@{validateInteractingInputFile}!hfold\_validation.cpp@{hfold\_validation.cpp}}
+\doxysubsubsection{\texorpdfstring{validateInteractingInputFile()}{validateInteractingInputFile()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{bool}} validate\+Interacting\+Input\+File (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}}]{path,  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}}]{seq1,  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}}]{struc1,  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}}]{seq2,  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}}]{struc2 }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{hfold__validation_8cpp_source_l00171}{171}} of file \mbox{\hyperlink{hfold__validation_8cpp_source}{hfold\+\_\+validation.\+cpp}}.
+
+\Hypertarget{hfold__validation_8cpp_a1b2cd8e9e6eb9be82431efc7edbe1a2e}\label{hfold__validation_8cpp_a1b2cd8e9e6eb9be82431efc7edbe1a2e} 
+\index{hfold\_validation.cpp@{hfold\_validation.cpp}!validateSequence@{validateSequence}}
+\index{validateSequence@{validateSequence}!hfold\_validation.cpp@{hfold\_validation.cpp}}
+\doxysubsubsection{\texorpdfstring{validateSequence()}{validateSequence()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{bool}} validate\+Sequence (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{const}} \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}}]{string }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{hfold__validation_8cpp_source_l00107}{107}} of file \mbox{\hyperlink{hfold__validation_8cpp_source}{hfold\+\_\+validation.\+cpp}}.
+
+\Hypertarget{hfold__validation_8cpp_a29e7d192394f27e55948467537688793}\label{hfold__validation_8cpp_a29e7d192394f27e55948467537688793} 
+\index{hfold\_validation.cpp@{hfold\_validation.cpp}!validateStructure@{validateStructure}}
+\index{validateStructure@{validateStructure}!hfold\_validation.cpp@{hfold\_validation.cpp}}
+\doxysubsubsection{\texorpdfstring{validateStructure()}{validateStructure()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{bool}} validate\+Structure (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}}]{structure,  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}}]{sequence }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{hfold__validation_8cpp_source_l00039}{39}} of file \mbox{\hyperlink{hfold__validation_8cpp_source}{hfold\+\_\+validation.\+cpp}}.
+

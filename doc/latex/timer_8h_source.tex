@@ -1,0 +1,29 @@
+\doxysection{timer.\+h}
+\hypertarget{timer_8h_source}{}\label{timer_8h_source}\index{C:/Users/luket/Desktop/testing\_CParty/CParty/simfold/src/common/timer.h@{C:/Users/luket/Desktop/testing\_CParty/CParty/simfold/src/common/timer.h}}
+\mbox{\hyperlink{timer_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{timer_8h_source_l00001}00001\ \textcolor{preprocessor}{\#include\ <sys/times.h>}}
+\DoxyCodeLine{\Hypertarget{timer_8h_source_l00002}00002\ \textcolor{preprocessor}{\#include\ <limits.h>}}
+\DoxyCodeLine{\Hypertarget{timer_8h_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{timer_8h_source_l00004}00004\ \textcolor{comment}{//\ timer\ class\ for\ measuring\ cpu-\/time\ of\ program\ fragments\ */}}
+\DoxyCodeLine{\Hypertarget{timer_8h_source_l00005}\mbox{\hyperlink{classtimer}{00005}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtimer}{timer}}\ \{}
+\DoxyCodeLine{\Hypertarget{timer_8h_source_l00006}00006\ \ \ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{clock\_t}}\ t\_start\_u,\ t\_start\_s;}
+\DoxyCodeLine{\Hypertarget{timer_8h_source_l00007}00007\ \ \ \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{clock\_t}}\ t\_stop\_u,\ t\_stop\_s;}
+\DoxyCodeLine{\Hypertarget{timer_8h_source_l00008}00008\ \ \ \textcolor{keyword}{enum}\ state\ \{RUNNING,STOPPED\};}
+\DoxyCodeLine{\Hypertarget{timer_8h_source_l00009}00009\ \ \ state\ st;}
+\DoxyCodeLine{\Hypertarget{timer_8h_source_l00010}00010\ \ \ }
+\DoxyCodeLine{\Hypertarget{timer_8h_source_l00011}00011\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{timer_8h_source_l00012}00012\ \ \ \mbox{\hyperlink{classtimer_ab513ecb2f68cbd108fff3236e8b44670}{timer}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{timer_8h_source_l00013}00013\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtimer_ac755334f169d75fec80d30936899ee3a}{start}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{timer_8h_source_l00014}00014\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtimer_a07881224194ae4cd323f6ab3ff287b65}{stop}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{timer_8h_source_l00015}00015\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtimer_a6fce9ffd6007b3d5abc657d11a039a59}{reset}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{timer_8h_source_l00016}00016\ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classtimer_a20dae956c690402eb760ce0419f7f15e}{resolution}}(\textcolor{keywordtype}{void});\ }
+\DoxyCodeLine{\Hypertarget{timer_8h_source_l00017}00017\ \ \ \textcolor{comment}{//\ returns\ resolution\ of\ timer\ in\ CPU-\/seconds\ */}}
+\DoxyCodeLine{\Hypertarget{timer_8h_source_l00018}00018\ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classtimer_aa80b06a77dce2626dc586471bf8fb54a}{elapsed}}(\textcolor{keywordtype}{void});\ \ \textcolor{comment}{//\ returns\ stopped\ time\ in\ CPU-\/seconds\ */}}
+\DoxyCodeLine{\Hypertarget{timer_8h_source_l00019}00019\ \};}
+\DoxyCodeLine{\Hypertarget{timer_8h_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{timer_8h_source_l00021}00021\ \textcolor{preprocessor}{\#ifndef\ CLK\_TCK}}
+\DoxyCodeLine{\Hypertarget{timer_8h_source_l00022}\mbox{\hyperlink{timer_8h_a03df76d1f70664d745ca8de2864e39b3}{00022}}\ \textcolor{preprocessor}{\#define\ CLK\_TCK\ 60}}
+\DoxyCodeLine{\Hypertarget{timer_8h_source_l00023}00023\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

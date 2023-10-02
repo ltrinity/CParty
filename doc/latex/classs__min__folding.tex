@@ -1,0 +1,415 @@
+\doxysection{s\+\_\+min\+\_\+folding Class Reference}
+\hypertarget{classs__min__folding}{}\label{classs__min__folding}\index{s\_min\_folding@{s\_min\_folding}}
+
+
+{\ttfamily \#include $<$s\+\_\+min\+\_\+folding.\+h$>$}
+
+Inheritance diagram for s\+\_\+min\+\_\+folding\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classs__min__folding}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classs__min__folding_af6b603d730718bc52673f07bdeb7f6ce}{s\+\_\+min\+\_\+folding}} (\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}seq)
+\item 
+\mbox{\hyperlink{classs__min__folding_a6c0256c139d0bc7bc7142889bc39a57b}{s\+\_\+min\+\_\+folding}} (\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}seq, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classs__min__folding_af7911102d9682d1a5f111c27d505fbd2}{restricted}})
+\item 
+\mbox{\hyperlink{classs__min__folding_a8dc3b67c5dc7e5f6c421601b9c80adb0}{\texorpdfstring{$\sim$}{\string~}s\+\_\+min\+\_\+folding}} ()
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{double}} \mbox{\hyperlink{classs__min__folding_af7c388bc6d90f6e62ae2c4924f7891e3}{s\+\_\+simfold}} ()
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{double}} \mbox{\hyperlink{classs__min__folding_a4885a6b250659c11b4dd2a544c5d48bb}{s\+\_\+simfold\+\_\+restricted}} ()
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} \mbox{\hyperlink{classs__min__folding_a23bd85b8122328fcd186765c158b9b35}{return\+\_\+structure}} (\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classs__min__folding_a28f1f660ab67d7e92c20ad83fc889f78}{structure}})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} \mbox{\hyperlink{classs__min__folding_a452b422ab1680e9aeb5c6bf8d8a6e97f}{allocate\+\_\+space}} ()
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{double}} \mbox{\hyperlink{classs__min__folding_a9b2ebe3a059ac958ef7b12b1b439882f}{fold\+\_\+sequence}} ()
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{double}} \mbox{\hyperlink{classs__min__folding_a1becbae42071ea089a8dea02c61cbc8a}{fold\+\_\+sequence\+\_\+restricted}} ()
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} \mbox{\hyperlink{classs__min__folding_a01d02be9e9cd0ede77b7aa514d55a95a}{insert\+\_\+node}} (\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} i, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} j, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} type)
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} \mbox{\hyperlink{classs__min__folding_a086dcbab70388ebaebf7aa1b2c4e4ff9}{backtrack}} (\mbox{\hyperlink{structseq__interval}{seq\+\_\+interval}} \texorpdfstring{$\ast$}{*}cur\+\_\+interval)
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} \mbox{\hyperlink{classs__min__folding_a03b471440e09061319b31db7c7b4a7af}{backtrack\+\_\+restricted}} (\mbox{\hyperlink{structseq__interval}{seq\+\_\+interval}} \texorpdfstring{$\ast$}{*}cur\+\_\+interval, \mbox{\hyperlink{structstr__features}{str\+\_\+features}} \texorpdfstring{$\ast$}{*}fres)
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} \mbox{\hyperlink{classs__min__folding_ae28b5d1f4cf50508a400404e230389a4}{compute\+\_\+W}} (\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} j)
+\item 
+\mbox{\hyperlink{constants_8h_ac9a8588270279e7ab92df9794938f2ca}{PARAMTYPE}} \mbox{\hyperlink{classs__min__folding_a2bd60705c1779dc9e0de46d0bc4a1f03}{compute\+\_\+\+W\+\_\+br2}} (\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} j)
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} \mbox{\hyperlink{classs__min__folding_adbf218ca0fe79daebcd1f8121984ac33}{compute\+\_\+\+W\+\_\+restricted}} (\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} j, \mbox{\hyperlink{structstr__features}{str\+\_\+features}} \texorpdfstring{$\ast$}{*}fres)
+\item 
+\mbox{\hyperlink{constants_8h_ac9a8588270279e7ab92df9794938f2ca}{PARAMTYPE}} \mbox{\hyperlink{classs__min__folding_a4d85db666a5c39a3e99c59b822ece39d}{compute\+\_\+\+W\+\_\+br2\+\_\+restricted}} (\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} j, \mbox{\hyperlink{structstr__features}{str\+\_\+features}} \texorpdfstring{$\ast$}{*}fres, \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} \&\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{must\+\_\+choose\+\_\+this\+\_\+branch}})
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} \mbox{\hyperlink{classs__min__folding_a424154d4d941872e4dabaf3c4e1b363a}{print\+\_\+result}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classs__min__folding_a28f1f660ab67d7e92c20ad83fc889f78}{structure}}
+\item 
+\mbox{\hyperlink{classs__hairpin__loop}{s\+\_\+hairpin\+\_\+loop}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classs__min__folding_a38715e50a51541b1f717e2efd23c11e5}{H}}
+\item 
+\mbox{\hyperlink{classs__stacked__pair}{s\+\_\+stacked\+\_\+pair}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classs__min__folding_a3b7df12b558d5a37c4b26a6ad769ff77}{S}}
+\item 
+\mbox{\hyperlink{classs__internal__loop}{s\+\_\+internal\+\_\+loop}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classs__min__folding_a4f1da2024d99f1c5d4daae1a6f090fb5}{VBI}}
+\item 
+\mbox{\hyperlink{classs__multi__loop}{s\+\_\+multi\+\_\+loop}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classs__min__folding_a96950a20dc16559c73781e3a8ca50ac1}{VM}}
+\item 
+\mbox{\hyperlink{classs__energy__matrix}{s\+\_\+energy\+\_\+matrix}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classs__min__folding_a1a566b92a0ef683ad930eb296436b194}{V}}
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classs__min__folding_ae12c3246e6121b110e4877c97288877c}{int\+\_\+sequence}}
+\item 
+\mbox{\hyperlink{structminimum__fold}{minimum\+\_\+fold}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classs__min__folding_ad3d22186eb051573ea07372dc41306bd}{f}}
+\item 
+\mbox{\hyperlink{constants_8h_adf823d40ac379702030cb342e84d5f2e}{pf\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classs__min__folding_aa3433a30de20386a94b6776c764099cd}{W}}
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} \mbox{\hyperlink{classs__min__folding_a7a8de4989108c0924abad2f00383ac7c}{nb\+\_\+nucleotides}}
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classs__min__folding_a86e6b0847c0c62f6ff820b720688bdad}{sequence}}
+\item 
+\mbox{\hyperlink{structseq__interval}{seq\+\_\+interval}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classs__min__folding_aa876a6f8a00c373771cd60150c192d97}{stack\+\_\+interval}}
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classs__min__folding_af7911102d9682d1a5f111c27d505fbd2}{restricted}}
+\item 
+\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classs__min__folding_acb8918922f5fc5fda49497103aa068e3}{known\+\_\+structure}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{s__min__folding_8h_source_l00032}{32}} of file \mbox{\hyperlink{s__min__folding_8h_source}{s\+\_\+min\+\_\+folding.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classs__min__folding_af6b603d730718bc52673f07bdeb7f6ce}\label{classs__min__folding_af6b603d730718bc52673f07bdeb7f6ce} 
+\index{s\_min\_folding@{s\_min\_folding}!s\_min\_folding@{s\_min\_folding}}
+\index{s\_min\_folding@{s\_min\_folding}!s\_min\_folding@{s\_min\_folding}}
+\doxysubsubsection{\texorpdfstring{s\_min\_folding()}{s\_min\_folding()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily s\+\_\+min\+\_\+folding\+::s\+\_\+min\+\_\+folding (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}}]{seq }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{s__min__folding_8cpp_source_l00037}{37}} of file \mbox{\hyperlink{s__min__folding_8cpp_source}{s\+\_\+min\+\_\+folding.\+cpp}}.
+
+\Hypertarget{classs__min__folding_a6c0256c139d0bc7bc7142889bc39a57b}\label{classs__min__folding_a6c0256c139d0bc7bc7142889bc39a57b} 
+\index{s\_min\_folding@{s\_min\_folding}!s\_min\_folding@{s\_min\_folding}}
+\index{s\_min\_folding@{s\_min\_folding}!s\_min\_folding@{s\_min\_folding}}
+\doxysubsubsection{\texorpdfstring{s\_min\_folding()}{s\_min\_folding()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily s\+\_\+min\+\_\+folding\+::s\+\_\+min\+\_\+folding (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}}]{seq,  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}}]{restricted }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{s__min__folding_8cpp_source_l00046}{46}} of file \mbox{\hyperlink{s__min__folding_8cpp_source}{s\+\_\+min\+\_\+folding.\+cpp}}.
+
+\Hypertarget{classs__min__folding_a8dc3b67c5dc7e5f6c421601b9c80adb0}\label{classs__min__folding_a8dc3b67c5dc7e5f6c421601b9c80adb0} 
+\index{s\_min\_folding@{s\_min\_folding}!````~s\_min\_folding@{\texorpdfstring{$\sim$}{\string~}s\_min\_folding}}
+\index{````~s\_min\_folding@{\texorpdfstring{$\sim$}{\string~}s\_min\_folding}!s\_min\_folding@{s\_min\_folding}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}s\_min\_folding()}{\string~s\_min\_folding()}}
+{\footnotesize\ttfamily s\+\_\+min\+\_\+folding\+::\texorpdfstring{$\sim$}{\string~}s\+\_\+min\+\_\+folding (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{s__min__folding_8cpp_source_l00097}{97}} of file \mbox{\hyperlink{s__min__folding_8cpp_source}{s\+\_\+min\+\_\+folding.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classs__min__folding_a452b422ab1680e9aeb5c6bf8d8a6e97f}\label{classs__min__folding_a452b422ab1680e9aeb5c6bf8d8a6e97f} 
+\index{s\_min\_folding@{s\_min\_folding}!allocate\_space@{allocate\_space}}
+\index{allocate\_space@{allocate\_space}!s\_min\_folding@{s\_min\_folding}}
+\doxysubsubsection{\texorpdfstring{allocate\_space()}{allocate\_space()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} s\+\_\+min\+\_\+folding\+::allocate\+\_\+space (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{s__min__folding_8cpp_source_l00056}{56}} of file \mbox{\hyperlink{s__min__folding_8cpp_source}{s\+\_\+min\+\_\+folding.\+cpp}}.
+
+\Hypertarget{classs__min__folding_a086dcbab70388ebaebf7aa1b2c4e4ff9}\label{classs__min__folding_a086dcbab70388ebaebf7aa1b2c4e4ff9} 
+\index{s\_min\_folding@{s\_min\_folding}!backtrack@{backtrack}}
+\index{backtrack@{backtrack}!s\_min\_folding@{s\_min\_folding}}
+\doxysubsubsection{\texorpdfstring{backtrack()}{backtrack()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} s\+\_\+min\+\_\+folding\+::backtrack (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structseq__interval}{seq\+\_\+interval}} \texorpdfstring{$\ast$}{*}}]{cur\+\_\+interval }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{s__min__folding_8cpp_source_l00282}{282}} of file \mbox{\hyperlink{s__min__folding_8cpp_source}{s\+\_\+min\+\_\+folding.\+cpp}}.
+
+\Hypertarget{classs__min__folding_a03b471440e09061319b31db7c7b4a7af}\label{classs__min__folding_a03b471440e09061319b31db7c7b4a7af} 
+\index{s\_min\_folding@{s\_min\_folding}!backtrack\_restricted@{backtrack\_restricted}}
+\index{backtrack\_restricted@{backtrack\_restricted}!s\_min\_folding@{s\_min\_folding}}
+\doxysubsubsection{\texorpdfstring{backtrack\_restricted()}{backtrack\_restricted()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} s\+\_\+min\+\_\+folding\+::backtrack\+\_\+restricted (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structseq__interval}{seq\+\_\+interval}} \texorpdfstring{$\ast$}{*}}]{cur\+\_\+interval,  }\item[{\mbox{\hyperlink{structstr__features}{str\+\_\+features}} \texorpdfstring{$\ast$}{*}}]{fres }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{s__min__folding_8cpp_source_l00689}{689}} of file \mbox{\hyperlink{s__min__folding_8cpp_source}{s\+\_\+min\+\_\+folding.\+cpp}}.
+
+\Hypertarget{classs__min__folding_ae28b5d1f4cf50508a400404e230389a4}\label{classs__min__folding_ae28b5d1f4cf50508a400404e230389a4} 
+\index{s\_min\_folding@{s\_min\_folding}!compute\_W@{compute\_W}}
+\index{compute\_W@{compute\_W}!s\_min\_folding@{s\_min\_folding}}
+\doxysubsubsection{\texorpdfstring{compute\_W()}{compute\_W()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} s\+\_\+min\+\_\+folding\+::compute\+\_\+W (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}}}]{j }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{s__min__folding_8cpp_source_l01186}{1186}} of file \mbox{\hyperlink{s__min__folding_8cpp_source}{s\+\_\+min\+\_\+folding.\+cpp}}.
+
+\Hypertarget{classs__min__folding_a2bd60705c1779dc9e0de46d0bc4a1f03}\label{classs__min__folding_a2bd60705c1779dc9e0de46d0bc4a1f03} 
+\index{s\_min\_folding@{s\_min\_folding}!compute\_W\_br2@{compute\_W\_br2}}
+\index{compute\_W\_br2@{compute\_W\_br2}!s\_min\_folding@{s\_min\_folding}}
+\doxysubsubsection{\texorpdfstring{compute\_W\_br2()}{compute\_W\_br2()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{constants_8h_ac9a8588270279e7ab92df9794938f2ca}{PARAMTYPE}} s\+\_\+min\+\_\+folding\+::compute\+\_\+\+W\+\_\+br2 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}}}]{j }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{s__min__folding_8cpp_source_l01093}{1093}} of file \mbox{\hyperlink{s__min__folding_8cpp_source}{s\+\_\+min\+\_\+folding.\+cpp}}.
+
+\Hypertarget{classs__min__folding_a4d85db666a5c39a3e99c59b822ece39d}\label{classs__min__folding_a4d85db666a5c39a3e99c59b822ece39d} 
+\index{s\_min\_folding@{s\_min\_folding}!compute\_W\_br2\_restricted@{compute\_W\_br2\_restricted}}
+\index{compute\_W\_br2\_restricted@{compute\_W\_br2\_restricted}!s\_min\_folding@{s\_min\_folding}}
+\doxysubsubsection{\texorpdfstring{compute\_W\_br2\_restricted()}{compute\_W\_br2\_restricted()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{constants_8h_ac9a8588270279e7ab92df9794938f2ca}{PARAMTYPE}} s\+\_\+min\+\_\+folding\+::compute\+\_\+\+W\+\_\+br2\+\_\+restricted (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}}}]{j,  }\item[{\mbox{\hyperlink{structstr__features}{str\+\_\+features}} \texorpdfstring{$\ast$}{*}}]{fres,  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} \&}]{must\+\_\+choose\+\_\+this\+\_\+branch }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{s__min__folding_8cpp_source_l01210}{1210}} of file \mbox{\hyperlink{s__min__folding_8cpp_source}{s\+\_\+min\+\_\+folding.\+cpp}}.
+
+\Hypertarget{classs__min__folding_adbf218ca0fe79daebcd1f8121984ac33}\label{classs__min__folding_adbf218ca0fe79daebcd1f8121984ac33} 
+\index{s\_min\_folding@{s\_min\_folding}!compute\_W\_restricted@{compute\_W\_restricted}}
+\index{compute\_W\_restricted@{compute\_W\_restricted}!s\_min\_folding@{s\_min\_folding}}
+\doxysubsubsection{\texorpdfstring{compute\_W\_restricted()}{compute\_W\_restricted()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} s\+\_\+min\+\_\+folding\+::compute\+\_\+\+W\+\_\+restricted (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}}}]{j,  }\item[{\mbox{\hyperlink{structstr__features}{str\+\_\+features}} \texorpdfstring{$\ast$}{*}}]{fres }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{s__min__folding_8cpp_source_l01343}{1343}} of file \mbox{\hyperlink{s__min__folding_8cpp_source}{s\+\_\+min\+\_\+folding.\+cpp}}.
+
+\Hypertarget{classs__min__folding_a9b2ebe3a059ac958ef7b12b1b439882f}\label{classs__min__folding_a9b2ebe3a059ac958ef7b12b1b439882f} 
+\index{s\_min\_folding@{s\_min\_folding}!fold\_sequence@{fold\_sequence}}
+\index{fold\_sequence@{fold\_sequence}!s\_min\_folding@{s\_min\_folding}}
+\doxysubsubsection{\texorpdfstring{fold\_sequence()}{fold\_sequence()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{double}} s\+\_\+min\+\_\+folding\+::fold\+\_\+sequence (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{s__min__folding_8cpp_source_l00134}{134}} of file \mbox{\hyperlink{s__min__folding_8cpp_source}{s\+\_\+min\+\_\+folding.\+cpp}}.
+
+\Hypertarget{classs__min__folding_a1becbae42071ea089a8dea02c61cbc8a}\label{classs__min__folding_a1becbae42071ea089a8dea02c61cbc8a} 
+\index{s\_min\_folding@{s\_min\_folding}!fold\_sequence\_restricted@{fold\_sequence\_restricted}}
+\index{fold\_sequence\_restricted@{fold\_sequence\_restricted}!s\_min\_folding@{s\_min\_folding}}
+\doxysubsubsection{\texorpdfstring{fold\_sequence\_restricted()}{fold\_sequence\_restricted()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{double}} s\+\_\+min\+\_\+folding\+::fold\+\_\+sequence\+\_\+restricted (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{s__min__folding_8cpp_source_l00193}{193}} of file \mbox{\hyperlink{s__min__folding_8cpp_source}{s\+\_\+min\+\_\+folding.\+cpp}}.
+
+\Hypertarget{classs__min__folding_a01d02be9e9cd0ede77b7aa514d55a95a}\label{classs__min__folding_a01d02be9e9cd0ede77b7aa514d55a95a} 
+\index{s\_min\_folding@{s\_min\_folding}!insert\_node@{insert\_node}}
+\index{insert\_node@{insert\_node}!s\_min\_folding@{s\_min\_folding}}
+\doxysubsubsection{\texorpdfstring{insert\_node()}{insert\_node()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} s\+\_\+min\+\_\+folding\+::insert\+\_\+node (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}}}]{i,  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}}}]{j,  }\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}}}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{s__min__folding_8cpp_source_l00268}{268}} of file \mbox{\hyperlink{s__min__folding_8cpp_source}{s\+\_\+min\+\_\+folding.\+cpp}}.
+
+\Hypertarget{classs__min__folding_a424154d4d941872e4dabaf3c4e1b363a}\label{classs__min__folding_a424154d4d941872e4dabaf3c4e1b363a} 
+\index{s\_min\_folding@{s\_min\_folding}!print\_result@{print\_result}}
+\index{print\_result@{print\_result}!s\_min\_folding@{s\_min\_folding}}
+\doxysubsubsection{\texorpdfstring{print\_result()}{print\_result()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} s\+\_\+min\+\_\+folding\+::print\+\_\+result (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{s__min__folding_8cpp_source_l01374}{1374}} of file \mbox{\hyperlink{s__min__folding_8cpp_source}{s\+\_\+min\+\_\+folding.\+cpp}}.
+
+\Hypertarget{classs__min__folding_a23bd85b8122328fcd186765c158b9b35}\label{classs__min__folding_a23bd85b8122328fcd186765c158b9b35} 
+\index{s\_min\_folding@{s\_min\_folding}!return\_structure@{return\_structure}}
+\index{return\_structure@{return\_structure}!s\_min\_folding@{s\_min\_folding}}
+\doxysubsubsection{\texorpdfstring{return\_structure()}{return\_structure()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{void}} s\+\_\+min\+\_\+folding\+::return\+\_\+structure (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}} \texorpdfstring{$\ast$}{*}}]{structure }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{s__min__folding_8h_source_l00055}{55}} of file \mbox{\hyperlink{s__min__folding_8h_source}{s\+\_\+min\+\_\+folding.\+h}}.
+
+\Hypertarget{classs__min__folding_af7c388bc6d90f6e62ae2c4924f7891e3}\label{classs__min__folding_af7c388bc6d90f6e62ae2c4924f7891e3} 
+\index{s\_min\_folding@{s\_min\_folding}!s\_simfold@{s\_simfold}}
+\index{s\_simfold@{s\_simfold}!s\_min\_folding@{s\_min\_folding}}
+\doxysubsubsection{\texorpdfstring{s\_simfold()}{s\_simfold()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{double}} s\+\_\+min\+\_\+folding\+::s\+\_\+simfold (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{s__min__folding_8cpp_source_l00112}{112}} of file \mbox{\hyperlink{s__min__folding_8cpp_source}{s\+\_\+min\+\_\+folding.\+cpp}}.
+
+\Hypertarget{classs__min__folding_a4885a6b250659c11b4dd2a544c5d48bb}\label{classs__min__folding_a4885a6b250659c11b4dd2a544c5d48bb} 
+\index{s\_min\_folding@{s\_min\_folding}!s\_simfold\_restricted@{s\_simfold\_restricted}}
+\index{s\_simfold\_restricted@{s\_simfold\_restricted}!s\_min\_folding@{s\_min\_folding}}
+\doxysubsubsection{\texorpdfstring{s\_simfold\_restricted()}{s\_simfold\_restricted()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{double}} s\+\_\+min\+\_\+folding\+::s\+\_\+simfold\+\_\+restricted (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{s__min__folding_8cpp_source_l00123}{123}} of file \mbox{\hyperlink{s__min__folding_8cpp_source}{s\+\_\+min\+\_\+folding.\+cpp}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classs__min__folding_ad3d22186eb051573ea07372dc41306bd}\label{classs__min__folding_ad3d22186eb051573ea07372dc41306bd} 
+\index{s\_min\_folding@{s\_min\_folding}!f@{f}}
+\index{f@{f}!s\_min\_folding@{s\_min\_folding}}
+\doxysubsubsection{\texorpdfstring{f}{f}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structminimum__fold}{minimum\+\_\+fold}}\texorpdfstring{$\ast$}{*} s\+\_\+min\+\_\+folding\+::f\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{s__min__folding_8h_source_l00070}{70}} of file \mbox{\hyperlink{s__min__folding_8h_source}{s\+\_\+min\+\_\+folding.\+h}}.
+
+\Hypertarget{classs__min__folding_a38715e50a51541b1f717e2efd23c11e5}\label{classs__min__folding_a38715e50a51541b1f717e2efd23c11e5} 
+\index{s\_min\_folding@{s\_min\_folding}!H@{H}}
+\index{H@{H}!s\_min\_folding@{s\_min\_folding}}
+\doxysubsubsection{\texorpdfstring{H}{H}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classs__hairpin__loop}{s\+\_\+hairpin\+\_\+loop}}\texorpdfstring{$\ast$}{*} s\+\_\+min\+\_\+folding\+::H\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{s__min__folding_8h_source_l00063}{63}} of file \mbox{\hyperlink{s__min__folding_8h_source}{s\+\_\+min\+\_\+folding.\+h}}.
+
+\Hypertarget{classs__min__folding_ae12c3246e6121b110e4877c97288877c}\label{classs__min__folding_ae12c3246e6121b110e4877c97288877c} 
+\index{s\_min\_folding@{s\_min\_folding}!int\_sequence@{int\_sequence}}
+\index{int\_sequence@{int\_sequence}!s\_min\_folding@{s\_min\_folding}}
+\doxysubsubsection{\texorpdfstring{int\_sequence}{int\_sequence}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}}\texorpdfstring{$\ast$}{*} s\+\_\+min\+\_\+folding\+::int\+\_\+sequence\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{s__min__folding_8h_source_l00068}{68}} of file \mbox{\hyperlink{s__min__folding_8h_source}{s\+\_\+min\+\_\+folding.\+h}}.
+
+\Hypertarget{classs__min__folding_acb8918922f5fc5fda49497103aa068e3}\label{classs__min__folding_acb8918922f5fc5fda49497103aa068e3} 
+\index{s\_min\_folding@{s\_min\_folding}!known\_structure@{known\_structure}}
+\index{known\_structure@{known\_structure}!s\_min\_folding@{s\_min\_folding}}
+\doxysubsubsection{\texorpdfstring{known\_structure}{known\_structure}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}}\texorpdfstring{$\ast$}{*} s\+\_\+min\+\_\+folding\+::known\+\_\+structure\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{s__min__folding_8h_source_l00076}{76}} of file \mbox{\hyperlink{s__min__folding_8h_source}{s\+\_\+min\+\_\+folding.\+h}}.
+
+\Hypertarget{classs__min__folding_a7a8de4989108c0924abad2f00383ac7c}\label{classs__min__folding_a7a8de4989108c0924abad2f00383ac7c} 
+\index{s\_min\_folding@{s\_min\_folding}!nb\_nucleotides@{nb\_nucleotides}}
+\index{nb\_nucleotides@{nb\_nucleotides}!s\_min\_folding@{s\_min\_folding}}
+\doxysubsubsection{\texorpdfstring{nb\_nucleotides}{nb\_nucleotides}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{int}} s\+\_\+min\+\_\+folding\+::nb\+\_\+nucleotides\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{s__min__folding_8h_source_l00072}{72}} of file \mbox{\hyperlink{s__min__folding_8h_source}{s\+\_\+min\+\_\+folding.\+h}}.
+
+\Hypertarget{classs__min__folding_af7911102d9682d1a5f111c27d505fbd2}\label{classs__min__folding_af7911102d9682d1a5f111c27d505fbd2} 
+\index{s\_min\_folding@{s\_min\_folding}!restricted@{restricted}}
+\index{restricted@{restricted}!s\_min\_folding@{s\_min\_folding}}
+\doxysubsubsection{\texorpdfstring{restricted}{restricted}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}}\texorpdfstring{$\ast$}{*} s\+\_\+min\+\_\+folding\+::restricted\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{s__min__folding_8h_source_l00075}{75}} of file \mbox{\hyperlink{s__min__folding_8h_source}{s\+\_\+min\+\_\+folding.\+h}}.
+
+\Hypertarget{classs__min__folding_a3b7df12b558d5a37c4b26a6ad769ff77}\label{classs__min__folding_a3b7df12b558d5a37c4b26a6ad769ff77} 
+\index{s\_min\_folding@{s\_min\_folding}!S@{S}}
+\index{S@{S}!s\_min\_folding@{s\_min\_folding}}
+\doxysubsubsection{\texorpdfstring{S}{S}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classs__stacked__pair}{s\+\_\+stacked\+\_\+pair}}\texorpdfstring{$\ast$}{*} s\+\_\+min\+\_\+folding\+::S\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{s__min__folding_8h_source_l00064}{64}} of file \mbox{\hyperlink{s__min__folding_8h_source}{s\+\_\+min\+\_\+folding.\+h}}.
+
+\Hypertarget{classs__min__folding_a86e6b0847c0c62f6ff820b720688bdad}\label{classs__min__folding_a86e6b0847c0c62f6ff820b720688bdad} 
+\index{s\_min\_folding@{s\_min\_folding}!sequence@{sequence}}
+\index{sequence@{sequence}!s\_min\_folding@{s\_min\_folding}}
+\doxysubsubsection{\texorpdfstring{sequence}{sequence}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}}\texorpdfstring{$\ast$}{*} s\+\_\+min\+\_\+folding\+::sequence\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{s__min__folding_8h_source_l00073}{73}} of file \mbox{\hyperlink{s__min__folding_8h_source}{s\+\_\+min\+\_\+folding.\+h}}.
+
+\Hypertarget{classs__min__folding_aa876a6f8a00c373771cd60150c192d97}\label{classs__min__folding_aa876a6f8a00c373771cd60150c192d97} 
+\index{s\_min\_folding@{s\_min\_folding}!stack\_interval@{stack\_interval}}
+\index{stack\_interval@{stack\_interval}!s\_min\_folding@{s\_min\_folding}}
+\doxysubsubsection{\texorpdfstring{stack\_interval}{stack\_interval}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structseq__interval}{seq\+\_\+interval}}\texorpdfstring{$\ast$}{*} s\+\_\+min\+\_\+folding\+::stack\+\_\+interval\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{s__min__folding_8h_source_l00074}{74}} of file \mbox{\hyperlink{s__min__folding_8h_source}{s\+\_\+min\+\_\+folding.\+h}}.
+
+\Hypertarget{classs__min__folding_a28f1f660ab67d7e92c20ad83fc889f78}\label{classs__min__folding_a28f1f660ab67d7e92c20ad83fc889f78} 
+\index{s\_min\_folding@{s\_min\_folding}!structure@{structure}}
+\index{structure@{structure}!s\_min\_folding@{s\_min\_folding}}
+\doxysubsubsection{\texorpdfstring{structure}{structure}}
+{\footnotesize\ttfamily \mbox{\hyperlink{externs_8h_aafffe6ecab26711851f2a71b500f0509}{char}}\texorpdfstring{$\ast$}{*} s\+\_\+min\+\_\+folding\+::structure\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{s__min__folding_8h_source_l00062}{62}} of file \mbox{\hyperlink{s__min__folding_8h_source}{s\+\_\+min\+\_\+folding.\+h}}.
+
+\Hypertarget{classs__min__folding_a1a566b92a0ef683ad930eb296436b194}\label{classs__min__folding_a1a566b92a0ef683ad930eb296436b194} 
+\index{s\_min\_folding@{s\_min\_folding}!V@{V}}
+\index{V@{V}!s\_min\_folding@{s\_min\_folding}}
+\doxysubsubsection{\texorpdfstring{V}{V}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classs__energy__matrix}{s\+\_\+energy\+\_\+matrix}}\texorpdfstring{$\ast$}{*} s\+\_\+min\+\_\+folding\+::V\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{s__min__folding_8h_source_l00067}{67}} of file \mbox{\hyperlink{s__min__folding_8h_source}{s\+\_\+min\+\_\+folding.\+h}}.
+
+\Hypertarget{classs__min__folding_a4f1da2024d99f1c5d4daae1a6f090fb5}\label{classs__min__folding_a4f1da2024d99f1c5d4daae1a6f090fb5} 
+\index{s\_min\_folding@{s\_min\_folding}!VBI@{VBI}}
+\index{VBI@{VBI}!s\_min\_folding@{s\_min\_folding}}
+\doxysubsubsection{\texorpdfstring{VBI}{VBI}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classs__internal__loop}{s\+\_\+internal\+\_\+loop}}\texorpdfstring{$\ast$}{*} s\+\_\+min\+\_\+folding\+::\+VBI\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{s__min__folding_8h_source_l00065}{65}} of file \mbox{\hyperlink{s__min__folding_8h_source}{s\+\_\+min\+\_\+folding.\+h}}.
+
+\Hypertarget{classs__min__folding_a96950a20dc16559c73781e3a8ca50ac1}\label{classs__min__folding_a96950a20dc16559c73781e3a8ca50ac1} 
+\index{s\_min\_folding@{s\_min\_folding}!VM@{VM}}
+\index{VM@{VM}!s\_min\_folding@{s\_min\_folding}}
+\doxysubsubsection{\texorpdfstring{VM}{VM}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classs__multi__loop}{s\+\_\+multi\+\_\+loop}}\texorpdfstring{$\ast$}{*} s\+\_\+min\+\_\+folding\+::\+VM\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{s__min__folding_8h_source_l00066}{66}} of file \mbox{\hyperlink{s__min__folding_8h_source}{s\+\_\+min\+\_\+folding.\+h}}.
+
+\Hypertarget{classs__min__folding_aa3433a30de20386a94b6776c764099cd}\label{classs__min__folding_aa3433a30de20386a94b6776c764099cd} 
+\index{s\_min\_folding@{s\_min\_folding}!W@{W}}
+\index{W@{W}!s\_min\_folding@{s\_min\_folding}}
+\doxysubsubsection{\texorpdfstring{W}{W}}
+{\footnotesize\ttfamily \mbox{\hyperlink{constants_8h_adf823d40ac379702030cb342e84d5f2e}{pf\+\_\+t}}\texorpdfstring{$\ast$}{*} s\+\_\+min\+\_\+folding\+::W\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{s__min__folding_8h_source_l00071}{71}} of file \mbox{\hyperlink{s__min__folding_8h_source}{s\+\_\+min\+\_\+folding.\+h}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/luket/\+Desktop/testing\+\_\+\+CParty/\+CParty/simfold/src/simfold/\mbox{\hyperlink{s__min__folding_8h}{s\+\_\+min\+\_\+folding.\+h}}\item 
+C\+:/\+Users/luket/\+Desktop/testing\+\_\+\+CParty/\+CParty/simfold/src/simfold/\mbox{\hyperlink{s__min__folding_8cpp}{s\+\_\+min\+\_\+folding.\+cpp}}\end{DoxyCompactItemize}

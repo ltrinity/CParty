@@ -1,0 +1,88 @@
+\doxysection{h\+\_\+common.\+h}
+\hypertarget{h__common_8h_source}{}\label{h__common_8h_source}\index{C:/Users/luket/Desktop/testing\_CParty/CParty/h\_common.h@{C:/Users/luket/Desktop/testing\_CParty/CParty/h\_common.h}}
+\mbox{\hyperlink{h__common_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{h__common_8h_source_l00001}00001\ \textcolor{preprocessor}{\#ifndef\ H\_COMMON\_H\_}}
+\DoxyCodeLine{\Hypertarget{h__common_8h_source_l00002}00002\ \textcolor{preprocessor}{\#define\ H\_COMMON\_H\_}}
+\DoxyCodeLine{\Hypertarget{h__common_8h_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{h__common_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{h__struct_8h}{h\_struct.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{h__common_8h_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{common_8h}{common.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{h__common_8h_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{h__common_8h_source_l00007}00007\ \textcolor{comment}{//Hosna:\ June\ 22,\ 2007}}
+\DoxyCodeLine{\Hypertarget{h__common_8h_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{h__common_8h_source_l00009}00009\ \textcolor{comment}{//\ \#define\ PS\_penalty\ =\ 960\ \ \ \ \ \ \ \ \ //exterior\ pseudoloop\ initiation\ penalty\ (9.6\ Kcal/mol)}}
+\DoxyCodeLine{\Hypertarget{h__common_8h_source_l00010}00010\ \textcolor{comment}{//\ \#define\ PSM\_penalty\ \ \ \ \ \ 1500\ \ \ \ \ \ \ \ //penalty\ for\ introducing\ pseudoknot\ inside\ a\ multiloop\ (15\ Kcal/mol)}}
+\DoxyCodeLine{\Hypertarget{h__common_8h_source_l00011}00011\ \textcolor{comment}{//\ \#define\ PSP\_penalty\ \ \ \ \ \ 1500\ \ \ \ \ \ \ \ //penalty\ for\ introducing\ pseudoknot\ inside\ a\ pseudoloop\ (15\ Kcal/mol)}}
+\DoxyCodeLine{\Hypertarget{h__common_8h_source_l00012}00012\ \textcolor{comment}{//\ \#define\ PB\_penalty\ \ \ \ \ \ \ \ \ \ \ 20\ \ \ \ \ \ \ \ \ \ //band\ penalty\ (0.2\ Kcal/mol)}}
+\DoxyCodeLine{\Hypertarget{h__common_8h_source_l00013}00013\ \textcolor{comment}{//\ \#define\ PUP\_penalty\ \ \ \ \ \ \ \ \ \ 10\ \ \ \ \ \ \ \ \ \ //penalty\ for\ an\ un-\/paired\ base\ in\ a\ pseudoloop\ or\ a\ band\ (0.1\ Kcal/mol)}}
+\DoxyCodeLine{\Hypertarget{h__common_8h_source_l00014}00014\ \textcolor{comment}{//\ \#define\ PPS\_penalty\ \ \ \ \ \ 10\ \ \ \ \ \ \ \ \ \ //penalty\ for\ nested\ closed\ region\ inside\ either\ a\ pseudoloop\ or\ a\ multiloop\ that\ spans\ a\ band(0.1\ Kcal/mol)}}
+\DoxyCodeLine{\Hypertarget{h__common_8h_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{h__common_8h_source_l00016}00016\ \textcolor{comment}{//\ \#define\ a\_penalty\ \ \ \ \ \ \ \ \ \ \ \ 340\ \ \ \ \ \ \ \ \ //penalty\ for\ introducing\ a\ multiloop\ (3.4\ Kcal/mol)}}
+\DoxyCodeLine{\Hypertarget{h__common_8h_source_l00017}00017\ \textcolor{comment}{//\ \#define\ b\_penalty\ \ \ \ \ \ \ \ \ \ \ \ 40\ \ \ \ \ \ \ \ \ \ //penalty\ for\ base\ pair\ in\ a\ multiloop\ (0.4\ Kcal/mol)}}
+\DoxyCodeLine{\Hypertarget{h__common_8h_source_l00018}00018\ \textcolor{comment}{//\ \#define\ c\_penalty\ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ //penalty\ for\ un-\/paired\ base\ in\ a\ multi-\/loop}}
+\DoxyCodeLine{\Hypertarget{h__common_8h_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{h__common_8h_source_l00020}00020\ \textcolor{comment}{//\ \#define\ e\_stP\_penalty\ \ \ \ \ \ \ \ 0.83\ \ \ \ \ \ \ \ //\ e\_stP\ =\ 0.83\ *\ e\_s}}
+\DoxyCodeLine{\Hypertarget{h__common_8h_source_l00021}00021\ \textcolor{comment}{//\ \#define\ e\_intP\_penalty\ \ \ \ \ \ \ 0.83\ \ \ \ \ \ \ \ //\ e\_intP\ =\ 0.83\ *\ e\_int}}
+\DoxyCodeLine{\Hypertarget{h__common_8h_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{h__common_8h_source_l00023}00023\ \textcolor{comment}{//\ \#define\ ap\_penalty\ \ \ \ \ \ \ \ \ \ \ 340\ \ \ \ \ \ \ \ \ //penalty\ for\ introducing\ a\ multiloop\ that\ spans\ a\ band\ (3.4\ Kcal/mol)}}
+\DoxyCodeLine{\Hypertarget{h__common_8h_source_l00024}00024\ \textcolor{comment}{//\ \#define\ bp\_penalty\ \ \ \ \ \ \ \ \ \ \ 40\ \ \ \ \ \ \ \ \ \ //base\ pair\ penalty\ for\ a\ multiloop\ that\ spans\ a\ band\ (0.4\ Kcal/mol)}}
+\DoxyCodeLine{\Hypertarget{h__common_8h_source_l00025}00025\ \textcolor{comment}{//\ \#define\ cp\_penalty\ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ //penalty\ for\ unpaired\ base\ in\ a\ multiloop\ that\ spans\ a\ band}}
+\DoxyCodeLine{\Hypertarget{h__common_8h_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{h__common_8h_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{h__common_8h_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{h__common_8h_source_l00029}\mbox{\hyperlink{h__common_8h_a9ffd83caf863c43dc2264bd6581307b2}{00029}}\ \textcolor{preprocessor}{\#define\ P\_WMB\ \ \ \ \ \ \ \ \ \ \ 'R'}}
+\DoxyCodeLine{\Hypertarget{h__common_8h_source_l00030}\mbox{\hyperlink{h__common_8h_addcf7b153ef8396dcb32539626ee8f68}{00030}}\ \textcolor{preprocessor}{\#define\ P\_VP\ \ \ \ \ \ \ \ \ \ \ \ 'D'}}
+\DoxyCodeLine{\Hypertarget{h__common_8h_source_l00031}\mbox{\hyperlink{h__common_8h_a7e6c098bae690f34ab840a99e089c013}{00031}}\ \textcolor{preprocessor}{\#define\ P\_VPP\ \ \ \ \ \ \ \ \ \ \ 'E'}}
+\DoxyCodeLine{\Hypertarget{h__common_8h_source_l00032}\mbox{\hyperlink{h__common_8h_a6d76946f6010aa81d6e45f30b872e482}{00032}}\ \textcolor{preprocessor}{\#define\ P\_WI\ \ \ \ \ \ \ \ \ \ \ \ 'G'}}
+\DoxyCodeLine{\Hypertarget{h__common_8h_source_l00033}\mbox{\hyperlink{h__common_8h_aafba16b85a5e735f428b0febfd28032c}{00033}}\ \textcolor{preprocessor}{\#define\ P\_BE\ \ \ \ \ \ \ \ \ \ \ \ 'J'}}
+\DoxyCodeLine{\Hypertarget{h__common_8h_source_l00034}\mbox{\hyperlink{h__common_8h_a46924438021d2326e0428deea96bdea8}{00034}}\ \textcolor{preprocessor}{\#define\ P\_WIP\ \ \ \ \ \ \ \ \ \ \ 'L'}}
+\DoxyCodeLine{\Hypertarget{h__common_8h_source_l00035}\mbox{\hyperlink{h__common_8h_ae940374582c856ce5152de6b3911e2ce}{00035}}\ \textcolor{preprocessor}{\#define\ P\_WMBP\ \ \ \ \ \ \ \ \ \ 'T'}}
+\DoxyCodeLine{\Hypertarget{h__common_8h_source_l00036}\mbox{\hyperlink{h__common_8h_adac2627327d6c9be8df4c0cbb96e9bfa}{00036}}\ \textcolor{preprocessor}{\#define\ P\_V\ \ \ \ \ \ \ \ \ \ \ \ \ 'A'\ }\textcolor{comment}{//\ This\ case\ is\ only\ for\ the\ cases\ that\ we\ have\ some\ pairings\ in\ input\ structure\ that\ are\ not\ valid\ in\ terms\ of\ simfold\ restrictions}}
+\DoxyCodeLine{\Hypertarget{h__common_8h_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{h__common_8h_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{h__common_8h_source_l00039}\mbox{\hyperlink{h__common_8h_afc8c70f58f687e02e46a71fefe951b35}{00039}}\ \textcolor{preprocessor}{\#define\ NOT\_COVERED\ \ \ \ \ -\/1}}
+\DoxyCodeLine{\Hypertarget{h__common_8h_source_l00040}\mbox{\hyperlink{h__common_8h_afceb75332628ecda1b4793a63b70f00c}{00040}}\ \textcolor{preprocessor}{\#define\ STACK\_EMPTY\ -\/1\ }\textcolor{comment}{//\ originally\ this\ value\ is\ 0,\ which\ I\ think\ is\ wrong!\ Hosna,\ March\ 8,\ 2012}}
+\DoxyCodeLine{\Hypertarget{h__common_8h_source_l00041}\mbox{\hyperlink{h__common_8h_a244b85e428a16d879fa14538944458ad}{00041}}\ \textcolor{preprocessor}{\#define\ RESTRICTED\_UNPAIR\ -\/1}}
+\DoxyCodeLine{\Hypertarget{h__common_8h_source_l00042}\mbox{\hyperlink{h__common_8h_adad7ed9ea2fd17f12de45607bbb5c893}{00042}}\ \textcolor{preprocessor}{\#define\ FREE\_TO\_PAIR\ \ \ \ -\/2}}
+\DoxyCodeLine{\Hypertarget{h__common_8h_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{h__common_8h_source_l00044}00044\ \textcolor{comment}{//\ Hosna,\ March\ 19,\ 2012}}
+\DoxyCodeLine{\Hypertarget{h__common_8h_source_l00045}00045\ \textcolor{comment}{//\ the\ original\ value\ of\ the\ matrices\ should\ be\ set\ to\ -\/INF\ and\ then\ be\ changed\ to\ their\ correct\ value}}
+\DoxyCodeLine{\Hypertarget{h__common_8h_source_l00046}\mbox{\hyperlink{h__common_8h_aa48b28e62c168ecef26792b023bedb09}{00046}}\ \textcolor{preprocessor}{\#define\ MINUS\_INF\ \ \ \ \ \ \ \ \ \ \ \ \ -\/1600000\ \ \ \ \ \ }\textcolor{comment}{//\ a\ very\ small\ value\ (minus\ infinity)}}
+\DoxyCodeLine{\Hypertarget{h__common_8h_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{h__common_8h_source_l00048}00048\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{h__common_8h_a367971bf256e56868d6222afd792f2cc}{detect\_original\_pairs\_arcs}}(\textcolor{keywordtype}{char}\ *structure,\ \textcolor{keywordtype}{int}\ *p\_table,\ \textcolor{keywordtype}{int}\ *arc\_table);}
+\DoxyCodeLine{\Hypertarget{h__common_8h_source_l00049}00049\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{h__common_8h_a9de4c0f7f37d05ed804be185fc9ad3dc}{detect\_original\_PKed\_pairs}}(\textcolor{keywordtype}{char}\ *structure,\ \textcolor{keywordtype}{int}\ *p\_table);}
+\DoxyCodeLine{\Hypertarget{h__common_8h_source_l00050}00050\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{h__common_8h_a06ed4db46210373289b77c8c9efe39f8}{compute\_h\_sensitivity}}\ (\textcolor{keywordtype}{char}\ *ref\_structure,\ \textcolor{keywordtype}{char}\ *pred\_structure);}
+\DoxyCodeLine{\Hypertarget{h__common_8h_source_l00051}00051\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{h__common_8h_a8397b5dd54942fc1f2299d9c8ed4f691}{compute\_h\_ppv}}\ (\textcolor{keywordtype}{char}\ *ref\_structure,\ \textcolor{keywordtype}{char}\ *pred\_structure);}
+\DoxyCodeLine{\Hypertarget{h__common_8h_source_l00052}00052\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{h__common_8h_af7b2a4f02f84c6441085b88afb9830c8}{h\_fill\_data\_structures\_with\_new\_parameters}}\ (\textcolor{keywordtype}{char}\ *filename);}
+\DoxyCodeLine{\Hypertarget{h__common_8h_source_l00053}00053\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{h__common_8h_af7b2a4f02f84c6441085b88afb9830c8}{h\_fill\_data\_structures\_with\_new\_parameters}}\ (\textcolor{keywordtype}{double}\ *param);}
+\DoxyCodeLine{\Hypertarget{h__common_8h_source_l00054}00054\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{h__common_8h_a32a8964f33ef26ca47d3d386cb79b054}{h\_create\_string\_params}}();}
+\DoxyCodeLine{\Hypertarget{h__common_8h_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{h__common_8h_source_l00056}00056\ \textcolor{comment}{//\ Hosna:\ helper\ function\ to\ fill\ in\ the\ weakly\_closed\ array}}
+\DoxyCodeLine{\Hypertarget{h__common_8h_source_l00057}00057\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{h__common_8h_af0b61aebc7f4a1c89b07b9938641b49f}{detect\_weakly\_closed}}(\mbox{\hyperlink{structh__str__features}{h\_str\_features}}\ *fres,\ \textcolor{keywordtype}{int}\ *weakly\_closed,\ \textcolor{keywordtype}{int}\ nb\_nucleotides,\ \textcolor{keywordtype}{int}\ *index);}
+\DoxyCodeLine{\Hypertarget{h__common_8h_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{h__common_8h_source_l00059}00059\ \textcolor{comment}{//\ Hosna:\ helper\ function\ to\ fill\ in\ the\ not\_paired\_all\ array}}
+\DoxyCodeLine{\Hypertarget{h__common_8h_source_l00060}00060\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{h__common_8h_aa3145a4d386a9c64f57c75247c2c6a88}{detect\_not\_paired\_all}}(\mbox{\hyperlink{structh__str__features}{h\_str\_features}}\ *fres,\ \textcolor{keywordtype}{int}\ *not\_paired\_all,\ \textcolor{keywordtype}{int}\ nb\_nucleotides,\ \textcolor{keywordtype}{int}\ *index);}
+\DoxyCodeLine{\Hypertarget{h__common_8h_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{h__common_8h_source_l00062}00062\ \textcolor{comment}{//\ Hosna:\ this\ function\ fills\ the\ bs\ table\ which\ keeps\ track\ of}}
+\DoxyCodeLine{\Hypertarget{h__common_8h_source_l00063}00063\ \textcolor{comment}{//\ bs\ and\ Bs\ for\ each\ i\ and\ l}}
+\DoxyCodeLine{\Hypertarget{h__common_8h_source_l00064}00064\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{h__common_8h_ad6f4a6c870887bb4b251de90f9716ac2}{detect\_border\_bs}}(\mbox{\hyperlink{structh__str__features}{h\_str\_features}}\ *fres,\ \textcolor{keywordtype}{int}**\ border\_bs,\ \textcolor{keywordtype}{int}\ nb\_nucleotides);}
+\DoxyCodeLine{\Hypertarget{h__common_8h_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{h__common_8h_source_l00066}00066\ \textcolor{comment}{//\ Hosna:\ this\ function\ filld\ the\ bps\ table\ which\ keeps\ track\ of}}
+\DoxyCodeLine{\Hypertarget{h__common_8h_source_l00067}00067\ \textcolor{comment}{//\ b'\ and\ B'\ for\ each\ l\ and\ j}}
+\DoxyCodeLine{\Hypertarget{h__common_8h_source_l00068}00068\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{h__common_8h_a1b94287a143030c6e8dc4bb16cbe51a8}{detect\_border\_bps}}(\mbox{\hyperlink{structh__str__features}{h\_str\_features}}\ *fres,\ \textcolor{keywordtype}{int}**\ border\_bps,\ \textcolor{keywordtype}{int}\ nb\_nucleotides);}
+\DoxyCodeLine{\Hypertarget{h__common_8h_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{h__common_8h_source_l00070}00070\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{h__common_8h_a39e9aa35d2095cdc77175feb759239ce}{h\_init}}\ (\mbox{\hyperlink{structstack__ds}{stack\_ds}}\ *st);}
+\DoxyCodeLine{\Hypertarget{h__common_8h_source_l00071}00071\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{h__common_8h_a85687a94232c56c9b284ef3a3718dd7f}{h\_push}}\ (\mbox{\hyperlink{structstack__ds}{stack\_ds}}\ *st,\ \textcolor{keywordtype}{int}\ el);}
+\DoxyCodeLine{\Hypertarget{h__common_8h_source_l00072}00072\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{h__common_8h_a2b4a93aa35bfa3714621023dce38f850}{h\_pop}}\ (\mbox{\hyperlink{structstack__ds}{stack\_ds}}\ *st);}
+\DoxyCodeLine{\Hypertarget{h__common_8h_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{h__common_8h_source_l00074}00074\ \textcolor{comment}{//\ Hosna\ June\ 26,\ 2007}}
+\DoxyCodeLine{\Hypertarget{h__common_8h_source_l00075}00075\ \textcolor{comment}{//\ I\ need\ functions\ to\ convert\ str\_features\ to\ h\_str\_features\ and\ the\ other\ way\ around}}
+\DoxyCodeLine{\Hypertarget{h__common_8h_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{h__common_8h_source_l00077}00077\ \mbox{\hyperlink{structh__str__features}{h\_str\_features}}\ *\mbox{\hyperlink{h__common_8h_a271b9545db1fb8f36ede7bca0e8ce067}{convert\_str\_features\_to\_h\_str\_features}}(\mbox{\hyperlink{structstr__features}{str\_features}}\ *f);}
+\DoxyCodeLine{\Hypertarget{h__common_8h_source_l00078}00078\ \mbox{\hyperlink{structstr__features}{str\_features}}\ *\mbox{\hyperlink{h__common_8h_a63c5314cefb1d9219fa59b57c50d4e71}{convert\_h\_str\_features\_to\_str\_features}}(\mbox{\hyperlink{structh__str__features}{h\_str\_features}}\ *f);}
+\DoxyCodeLine{\Hypertarget{h__common_8h_source_l00079}00079\ }
+\DoxyCodeLine{\Hypertarget{h__common_8h_source_l00080}00080\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{h__common_8h_a6db56685344ecb7ca88251cf10680130}{detect\_h\_structure\_features}}\ (\textcolor{keywordtype}{char}\ *structure,\ \mbox{\hyperlink{structh__str__features}{h\_str\_features}}\ *f);}
+\DoxyCodeLine{\Hypertarget{h__common_8h_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{h__common_8h_source_l00082}00082\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*H\_COMMON\_H\_*/}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}
