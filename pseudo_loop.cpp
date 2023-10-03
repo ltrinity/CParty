@@ -101,8 +101,8 @@ void pseudo_loop::allocate_space()
 
     BE = new pf_t[total_length];
     if (BE == NULL) giveup ("Cannot allocate memory", "BE");
-    for (i=0; i < total_length; i++) BE[i] = 1; 
-	/// Luke veryifed BE needs base case 1
+    for (i=0; i < total_length; i++) BE[i] = 0; 
+	/// Luke BE needs base case 1
 	/// to allow stack energies to fill matrix
 
     border_bs = new int*[nb_nucleotides];
@@ -472,7 +472,7 @@ void pseudo_loop::compute_VP(int i, int j, h_str_features *fres){
 			m4 = get_e_stP(i,j) * get_VP(i+1,j-1);
 			d2_energy_vp += m4;
 //			if (debug){
-//			printf("VP[%d,%d] branch 4: S->get_energy(%d,%d) = %Lf and VP[%d,%d] = %Lf  so m4 = %Lf\n", i,j,i,j, S->get_energy(i,j,int_sequence), i+1, j-1, get_VP(i+1,j-1), m4);
+//			printf("VP[%d,%d] branch 4: S->get_energy(%d,%d) = %Lf and VP[%d,%d] = %Lf  so m4 = %Lf\n", i,j,i,j,  get_e_stP(i,j), i+1, j-1, get_VP(i+1,j-1), m4);
 //			}
 		}
 
@@ -523,7 +523,7 @@ void pseudo_loop::compute_VP(int i, int j, h_str_features *fres){
 							pf_t temp = get_e_intP(i,ip,jp,j) * get_VP(ip,jp);
 							d2_energy_vp += temp;
 //							if (debug){
-//								printf("VP(%d,%d) branch 5: e_intP(%d,%d,%d,%d) = %d, VP(%d,%d) = %d, temp = %d \n",i,j,i,ip,jp,j,get_e_intP(i,ip,jp,j),ip,jp,get_VP(ip,jp),temp);
+//								printf("VP(%d,%d) branch 5: e_intP(%d,%d,%d,%d) = %Lf, VP(%d,%d) = %Lf, temp = %Lf \n",i,j,i,ip,jp,j,get_e_intP(i,ip,jp,j),ip,jp,get_VP(ip,jp),temp);
 //							}
 //							printf("m5 = %d \n", m5);
 							//depracated
@@ -558,7 +558,7 @@ void pseudo_loop::compute_VP(int i, int j, h_str_features *fres){
 				d2_energy_vp += tmp;
 //				if (debug)
 //				{
-//					printf("VP(%d,%d) branch 6: WIP(%d,%d) = %Lf, VPP(%d,%d) = %Lf ==> tmp = %d and m6 = %d \n",i,j,i+1,r-1,get_WIP(i+1,r-1),r,j-1,get_VP(r,j-1),tmp,m6);
+//					printf("VP(%d,%d) branch 6: WIP(%d,%d) = %Lf, VPP(%d,%d) = %Lf ==> tmp = %Lf and m6 = %Lf \n",i,j,i+1,r-1,get_WIP(i+1,r-1),r,j-1,get_VP(r,j-1),tmp,m6);
 //				}
 				//depracated
 				//if (tmp < m6){
@@ -616,7 +616,7 @@ void pseudo_loop::compute_VP(int i, int j, h_str_features *fres){
 				d2_energy_vp += tmp;
 //				if (debug)
 //				{
-//					printf("VP(%d,%d) branch 6: WIP(%d,%d) = %Lf, VPP(%d,%d) = %Lf ==> tmp = %d and m6 = %d \n",i,j,i+1,r-1,get_WIP(i+1,r-1),r,j-1,get_VPR(r,j-1),tmp,m6);
+//					printf("VP(%d,%d) branch 6: WIP(%d,%d) = %Lf, VPP(%d,%d) = %Lf ==> tmp = %Lf and m6 = %Lf \n",i,j,i+1,r-1,get_WIP(i+1,r-1),r,j-1,get_VPR(r,j-1),tmp,m6);
 //				}
 				//depracated
 				//if (tmp < m8){
@@ -641,7 +641,7 @@ void pseudo_loop::compute_VP(int i, int j, h_str_features *fres){
 				d2_energy_vp += tmp;
 //				if (debug)
 //				{
-//					printf("VP(%d,%d) branch 7: VP(%d,%d) = %Lf, WIP(%d,%d) = %Lf ==> tmp = %Lf and m7 = %d \n",i,j,i+1,r,get_VPL(i+1,r),r+1,j-1,get_WIP(r+1,j-1),tmp,m7);
+//					printf("VP(%d,%d) branch 7: VP(%d,%d) = %Lf, WIP(%d,%d) = %Lf ==> tmp = %Lf and m7 = %Lf \n",i,j,i+1,r,get_VPL(i+1,r),r+1,j-1,get_WIP(r+1,j-1),tmp,m7);
 //				}
 				//depracated
 				//if (tmp < m9){
@@ -788,7 +788,9 @@ void pseudo_loop::compute_WMBP(int i, int j, h_str_features *fres){
 					pf_t WI_energy = get_WI(bp_i_l +1,l-1);
 					pf_t VP_energy = get_VP(l,j);
 					pf_t sum = BE_energy * WI_energy * VP_energy * (2*PB_penalty);
-					//printf("sum: %Lf", sum);
+					//printf("WMBP(%d,%d) inside branch 1: %d is paired with %d  and b'(%d,%d) = %d  and bp(b')= %d \n",i,j, i,fres[i].pair, i,l,bp_i_l, fres[bp_i_l].pair);
+					//printf("l = %d, BE(%d,%d,%d,%d) = %Lf, WI = %Lf, VP = %Lf, --> sum = %Lf; pen: %f\n",l,i,fres[i].pair,bp_i_l,fres[bp_i_l].pair,BE_energy,WI_energy,VP_energy, sum, PB_penalty);
+ 					//printf("***************\n");						
 					//Luke Aug 2023 part func
 					d2_energy_wmbp += sum;
 					//depracated
@@ -840,7 +842,7 @@ void pseudo_loop::compute_WMBP(int i, int j, h_str_features *fres){
 							//Luke Aug 2023 part func
 							d2_energy_wmbp += sum;
 							d2_energy_wmbp += sum2;
-							//printf("d2energy: %Lf", d2_energy_wmbp);
+		//					printf("d2energy: %Lf", d2_energy_wmbp);
 							//depracated
 							//if (temp > sum){
 							//	temp = sum;
@@ -848,7 +850,7 @@ void pseudo_loop::compute_WMBP(int i, int j, h_str_features *fres){
 							//}
 	//						if (debug && fres[get_B(l,j)].pair == 6 && fres[get_Bp(l,j)].pair == 11){
 	//							printf("***************\n");
-	//							printf("WMBP(%d,%d) inside branch 3: l = %d, BE = %d, WMBP = %d, VP = %d ~~> sum = %d \n",i,j,l,get_BE(fres[get_B(l,j)].pair,get_B(l,j),fres[get_Bp(l,j)].pair,get_Bp(l,j)),get_WMBP(i,l-1),get_VP(l,j), sum);
+	//							printf("WMBP(%d,%d) inside branch 3: l = %d, BE = %Lf, WMBP = %Lf, VP = %Lf ~~> sum = %Lf sum2 = %Lf \n",i,j,l,get_BE(fres[get_B(l,j)].pair,get_B(l,j),fres[get_Bp(l,j)].pair,get_Bp(l,j)),get_WMBP(i,l-1),get_VP(l,j), sum,sum2);
 	//							printf("***************\n");
 	//						}
 						}
@@ -971,7 +973,7 @@ void pseudo_loop::compute_WMB(int i, int j, h_str_features *fres){
 					if (get_Bp(l,j) >= 0 && get_Bp(l,j)<nb_nucleotides){
 						//Luke Aug 2023 part func
 						pf_t sum = get_BE(bp_j,j,fres[get_Bp(l,j)].pair,get_Bp(l,j)) * get_WMBP(i,l) * get_WI(l+1,get_Bp(l,j)-1) * PB_penalty;
-						//printf("Z_BE(%d,%d) = %Lf WMBP: %Lf PWI: %Lf B_pen: %f\n",i,j,get_BE(bp_j,j,fres[get_Bp(l,j)].pair,get_Bp(l,j)),get_WMBP(i,l),get_WI(l+1,get_Bp(l,j)-1),PB_penalty);
+						//printf("sum: %Lf; Z_BE(%d,%d) = %Lf WMBP: %Lf PWI: %Lf B_pen: %f\n",sum,i,j,get_BE(bp_j,j,fres[get_Bp(l,j)].pair,get_Bp(l,j)),get_WMBP(i,l),get_WI(l+1,get_Bp(l,j)-1),PB_penalty);
 						d2_energy_p += sum;
 						//printf("Z_P(%d,%d) = %Lf \n",i,j,d2_energy_p);
 						if (l == 600 && i == 522 && j == 615) {
@@ -1245,6 +1247,7 @@ void pseudo_loop::compute_BE(int i, int j, int ip, int jp, h_str_features * fres
 		return;
 	}
 	int iip = index[i]+ip-i;
+	//printf("index: %d; ip: %d' i: %d\n",index[i],ip,i);
 	if (BE[iip] != 0){ // computed before
 //		if (debug && i == 6 && ip == 11){
 //			printf("BE(%d,%d,%d,%d) was calculated before ==> BE=%d\n",i,j,ip,jp,BE[iip]);
@@ -1264,7 +1267,7 @@ void pseudo_loop::compute_BE(int i, int j, int ip, int jp, h_str_features * fres
 	// base case:
 	if(i == ip && j == jp && i<j){
 //		if (debug ){
-//			printf("BE(%d,%d,%d,%d) = 0 \n",i,j,ip,jp);
+			//printf("BE(%d,%d,%d,%d) = 1; %d \n",i,j,ip,jp, iip);
 //		}
 		BE[iip] = 1;
 		return;
@@ -1278,7 +1281,7 @@ void pseudo_loop::compute_BE(int i, int j, int ip, int jp, h_str_features * fres
 		m1 = get_e_stP(i,j) * get_BE(i+1,j-1,ip,jp);
 		d2_energy_be += m1;
 //		if(debug ){
-			printf("BE(%d,%d,%d,%d) Case 1: e_stP(%d,%d) = %Lf and BE(%d,%d,%d,%d) = %Lf ==> m1 = %Lf \n",i,j,ip,jp,i,j,get_e_stP(i,j),i+1,j-1,ip,jp,get_BE(i+1,j-1,ip,jp),m1);
+//			printf("BE(%d,%d,%d,%d) Case 1: e_stP(%d,%d) = %Lf and BE(%d,%d,%d,%d) = %Lf ==> m1 = %Lf; %d \n",i,j,ip,jp,i,j,get_e_stP(i,j),i+1,j-1,ip,jp,get_BE(i+1,j-1,ip,jp),m1,iip);
 //		}
 	}
 
@@ -1305,8 +1308,9 @@ void pseudo_loop::compute_BE(int i, int j, int ip, int jp, h_str_features * fres
 			if (is_empty_region(i+1,l-1) == 1 && is_empty_region(lp+1,j-1) == 1 ){//&& !(ip == (i+1) && jp==(j-1)) && !(l == (i+1) && lp == (j-1))){
 				pf_t temp = get_e_intP(i,l,lp,j)* get_BE(l,lp,ip,jp);
 				d2_energy_be += temp;
+				
 //				if (debug){
-//					printf("BE(%d,%d,%d,%d) branch 2: e_intP(%d,%d,%d,%d) = %Lf, BE(%d,%d,%d,%d)= %Lf ==> temp = %d  and m2 = %d\n",i,j,ip,jp,i,l,lp,j,get_e_intP(i,l,lp,j),l,lp,ip,jp,get_BE(l,lp,ip,jp));
+//					printf("BE(%d,%d,%d,%d) branch 2: e_intP(%d,%d,%d,%d) = %Lf, BE(%d,%d,%d,%d)= %Lf ==> temp = %Lf  and m2 = %Lf\n",i,j,ip,jp,i,l,lp,j,get_e_intP(i,l,lp,j),l,lp,ip,jp,get_BE(l,lp,ip,jp),temp,m2);
 //				}
 				//if (m2 > temp){
 				//	m2 = temp;
@@ -1321,7 +1325,7 @@ void pseudo_loop::compute_BE(int i, int j, int ip, int jp, h_str_features * fres
 				pf_t temp = get_WIP(i+1,l-1) * get_BE(l,lp,ip,jp) * get_WIP(lp+1,j-1) * (ap_penalty + (2* bp_penalty));
 				d2_energy_be += temp;
 //				if (debug){
-//					printf("BE(%d,%d,%d,%d) branch 3: WIP(%d,%d) = %d, BE(%d,%d,%d,%d)= %d, WIP(%d,%d)= %d ==> temp = %d  and m3 = %d\n",i,j,ip,jp,i+1,l-1,get_WIP(i+1,l-1),l,lp,ip,jp,get_BE(l,lp,ip,jp),lp+1,j-1,get_WIP(lp+1,j-1),temp,m3);
+//					printf("BE(%d,%d,%d,%d) branch 3: WIP(%d,%d) = %Lf, BE(%d,%d,%d,%d)= %Lf, WIP(%d,%d)= %Lf ==> temp = %Lf  and m3 = %Lf\n",i,j,ip,jp,i+1,l-1,get_WIP(i+1,l-1),l,lp,ip,jp,get_BE(l,lp,ip,jp),lp+1,j-1,get_WIP(lp+1,j-1),temp,m3);
 //				}
 				//if (m3 > temp){
 				//	m3 = temp;
@@ -1336,7 +1340,7 @@ void pseudo_loop::compute_BE(int i, int j, int ip, int jp, h_str_features * fres
 				pf_t temp = get_WIP(i+1,l-1) * get_BE(l,lp,ip,jp) * ((cp_penalty * (j-lp+1)) + ap_penalty + (2*bp_penalty));
 				d2_energy_be += temp;
 //				if (debug){
-//					printf("BE(%d,%d,%d,%d) branch 4: WIP(%d,%d) = %d, BE(%d,%d,%d,%d)= %d ==> temp = %d  and m4 = %d\n",i,j,ip,jp,i+1,l-1,get_WIP(i+1,l-1),l,lp,ip,jp,get_BE(l,lp,ip,jp),temp,m4);
+//					printf("BE(%d,%d,%d,%d) branch 4: WIP(%d,%d) = %Lf, BE(%d,%d,%d,%d)= %Lf ==> temp = %Lf  and m4 = %Lf\n",i,j,ip,jp,i+1,l-1,get_WIP(i+1,l-1),l,lp,ip,jp,get_BE(l,lp,ip,jp),temp,m4);
 //				}
 				//if (m4 > temp){
 				//	m4 = temp;
@@ -1351,7 +1355,7 @@ void pseudo_loop::compute_BE(int i, int j, int ip, int jp, h_str_features * fres
 				pf_t temp = (ap_penalty + (2*bp_penalty) + (cp_penalty * (l-i+1))) * get_BE(l,lp,ip,jp) * get_WIP(lp+1,j-1);
 				d2_energy_be += temp;
 //				if (debug && l == 9 && ip == 11){
-//					printf("BE(%d,%d,%d,%d) branch 5: BE(%d,%d,%d,%d)= %d and WIP(%d,%d) = %d ==> temp = %d \n", i,j,ip,jp,l,lp,ip,jp,get_BE(l,lp,ip,jp),lp+1,j-1,get_WIP(lp+1,j-1),temp);
+//					printf("BE(%d,%d,%d,%d) branch 5: BE(%d,%d,%d,%d)= %Lf and WIP(%d,%d) = %Lf ==> temp = %Lf \n", i,j,ip,jp,l,lp,ip,jp,get_BE(l,lp,ip,jp),lp+1,j-1,get_WIP(lp+1,j-1),temp);
 //				}
 				//if (m5 > temp){
 				//	m5 = temp;
@@ -1493,9 +1497,11 @@ pf_t pseudo_loop::get_WMBP(int i, int j){
 pf_t pseudo_loop::get_BE(int i, int j, int ip, int jp){
 	// Hosna, March 16, 2012,
 	// i and j should be at least 3 bases apart
+	//printf("computing BE(%d,%d,%d,%d) \n",i,j,ip,jp);
 	if (j-i>= TURN && i >= 0 && i <= ip && ip < jp && jp <= j && j < nb_nucleotides && fres[i].pair >=0 && fres[j].pair >= 0 && fres[ip].pair >= 0 && fres[jp].pair >= 0 && fres[i].pair == j && fres[j].pair == i && fres[ip].pair == jp && fres[jp].pair == ip){
 		if(i == ip && j == jp && i<j){
-			return 0;
+			//printf("return 0 computing BE(%d,%d,%d,%d) \n",i,j,ip,jp);
+			return 1;
 		}
 		int iip = index[i]+ip-i;
 		// Hosna, May 1st , 2012

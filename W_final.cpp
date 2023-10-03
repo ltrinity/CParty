@@ -169,7 +169,7 @@ void W_final::return_structure(char *structure){
 void W_final::compute_W_restricted (int j, str_features *fres)
 // compute W(j)
 {
-    pf_t m1, m2, m3=0;
+    pf_t m1, m2, m3;
     int must_choose_this_branch;
 	pf_t d2_energy = 0;
     m1 = W[j-1];
@@ -179,7 +179,7 @@ void W_final::compute_W_restricted (int j, str_features *fres)
 	d2_energy+= m1;
     m2 = compute_W_br2_restricted (j, fres, must_choose_this_branch);
 	//if(debug){
-		//printf("V[0,%d] = %Lf\n",j,m2);
+	//printf("V[0,%d] = %Lf\n",j,m2);
 	//}
 	d2_energy+= m2;
     m3 = compute_W_br3_restricted (j, fres);
@@ -220,11 +220,11 @@ pf_t W_final::compute_W_br2_restricted (int j, str_features *fres, int &must_cho
 			Wsubstruc_en = 1;
 		}
         energy_ij = Wsubstruc_en*v->get_energy(i,j);
-		//if(energy_ij> 0){
+		if(energy_ij> 0){
 			//printf("br2: W_i-1(%d,%d) = %Lf\n", i,j,Wsubstruc_en );
 			//printf("br2: v(%d,%d) = %Lf\n", i,j,v->get_energy(i,j) );
 			//printf("br2: total(%d,%d) = %Lf\n", i,j,energy_ij );
-		//}
+		}
 		d2_energy_v+=energy_ij;
 		//if(debug){
 		//printf("Z_V(%d,%d) = %Lf \n",i,j,d2_energy_v);
