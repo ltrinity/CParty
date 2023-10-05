@@ -554,7 +554,7 @@ void pseudo_loop::compute_VP(int i, int j, h_str_features *fres){
 				// After meeting with Anne and Cristina --> ap should have 2* bp to consider the biggest and the one that crosses
 				// in a multiloop that spans a band
 				//Luke Aug 2023 : change here to get value from VP instead of VPP for part func.
-				pf_t tmp = get_WIP(i+1,r-1) * get_VP(r,j-1) * (ap_penalty + (2*bp_penalty));
+				pf_t tmp = get_WIP(i+1,r-1) * get_VP(r,j-1) * ap_penalty * bp_penalty * bp_penalty;
 				d2_energy_vp += tmp;
 //				if (debug)
 //				{
@@ -586,7 +586,7 @@ void pseudo_loop::compute_VP(int i, int j, h_str_features *fres){
 				// After meeting with Anne and Cristina --> ap should have 2* bp to consider the biggest and the one that crosses
 				// in a multiloop that spans a band
 				// Luke Aug 2023: change here from VPP to VP
-				pf_t tmp = get_VP(i+1,r) * get_WIP(r+1,j-1) * (ap_penalty + (2* bp_penalty));
+				pf_t tmp = get_VP(i+1,r) * get_WIP(r+1,j-1) * ap_penalty * bp_penalty * bp_penalty;
 				d2_energy_vp += tmp;
 //				if (debug)
 //				{
@@ -612,7 +612,7 @@ void pseudo_loop::compute_VP(int i, int j, h_str_features *fres){
 				// After meeting with Anne and Cristina --> ap should have 2* bp to consider the biggest and the one that crosses
 				// in a multiloop that spans a band
 				//Luke Aug 2023: change here to get value from VPR instead of VP
-				pf_t tmp = get_WIP(i+1,r-1) * get_VPR(r,j-1) * (ap_penalty + (2*bp_penalty));
+				pf_t tmp = get_WIP(i+1,r-1) * get_VPR(r,j-1) * ap_penalty * bp_penalty * bp_penalty;
 				d2_energy_vp += tmp;
 //				if (debug)
 //				{
@@ -637,7 +637,7 @@ void pseudo_loop::compute_VP(int i, int j, h_str_features *fres){
 				// After meeting with Anne and Cristina --> ap should have 2* bp to consider the biggest and the one that crosses
 				// in a multiloop that spans a band
 				//Luke Aug 2023: change here from VP to VPL
-				pf_t tmp = get_VPL(i+1,r) * get_WIP(r+1,j-1) * (ap_penalty + (2* bp_penalty));
+				pf_t tmp = get_VPL(i+1,r) * get_WIP(r+1,j-1) * ap_penalty * bp_penalty * bp_penalty;
 				d2_energy_vp += tmp;
 //				if (debug)
 //				{
@@ -787,7 +787,7 @@ void pseudo_loop::compute_WMBP(int i, int j, h_str_features *fres){
 					pf_t BE_energy = get_BE(i,fres[i].pair,bp_i_l,fres[bp_i_l].pair);
 					pf_t WI_energy = get_WI(bp_i_l +1,l-1);
 					pf_t VP_energy = get_VP(l,j);
-					pf_t sum = BE_energy * WI_energy * VP_energy * (2*PB_penalty);
+					pf_t sum = BE_energy * WI_energy * VP_energy * PB_penalty * PB_penalty;
 					//printf("WMBP(%d,%d) inside branch 1: %d is paired with %d  and b'(%d,%d) = %d  and bp(b')= %d \n",i,j, i,fres[i].pair, i,l,bp_i_l, fres[bp_i_l].pair);
 					//printf("l = %d, BE(%d,%d,%d,%d) = %Lf, WI = %Lf, VP = %Lf, --> sum = %Lf; pen: %f\n",l,i,fres[i].pair,bp_i_l,fres[bp_i_l].pair,BE_energy,WI_energy,VP_energy, sum, PB_penalty);
  					//printf("***************\n");						
@@ -800,9 +800,9 @@ void pseudo_loop::compute_WMBP(int i, int j, h_str_features *fres){
 					//}
 //					if (debug  && i == 6 && bp_i_l == 11 ){
 //						printf("***************\n");
-//						printf("WMBP(%d,%d) inside branch 1: %d is paired with %d  and b'(%d,%d) = %d  and bp(b')= %d \n",i,j, i,fres[i].pair, i,l,bp_i_l, fres[bp_i_l].pair);
-//						printf("l = %d, BE(%d,%d,%d,%d) = %d, WI = %d, VP = %d, --> sum = %d \n",l,i,fres[i].pair,bp_i_l,fres[bp_i_l].pair,BE_energy,WI_energy,VP_energy, sum);
-//						printf("***************\n");
+						//printf("WMBP(%d,%d) inside branch 1: %d is paired with %d  and b'(%d,%d) = %d  and bp(b')= %d \n",i,j, i,fres[i].pair, i,l,bp_i_l, fres[bp_i_l].pair);
+						//printf("l = %d, BE(%d,%d,%d,%d) = %Lf, WI = %Lf, VP = %Lf, --> sum = %Lf \n",l,i,fres[i].pair,bp_i_l,fres[bp_i_l].pair,BE_energy,WI_energy,VP_energy, sum);
+						//printf("***************\n");
 //					}
 				}
 			}
@@ -834,14 +834,17 @@ void pseudo_loop::compute_WMBP(int i, int j, h_str_features *fres){
 						// Hosna: July 5th, 2007:
 						// as long as we have i <= arc(l)< j we are fine
 						if (i <= fres[l].arc && fres[l].arc < j && l+TURN <=j){
-							pf_t sum = get_BE(fres[get_B(l,j)].pair,get_B(l,j),fres[get_Bp(l,j)].pair,get_Bp(l,j))* get_WMBP(i,l-1)* get_VP(l,j) *(2*PB_penalty);
+							pf_t sum = get_BE(fres[get_B(l,j)].pair,get_B(l,j),fres[get_Bp(l,j)].pair,get_Bp(l,j))* get_WMBP(i,l-1)* get_VP(l,j) *PB_penalty * PB_penalty;
 							/// Luke adding for PGPW case
 							/// Aug 2023 part func
-							pf_t sum2 = get_BE(fres[get_B(l,j)].pair,get_B(l,j),fres[get_Bp(l,j)].pair,get_Bp(l,j))* get_PGPW(i,l-1)* get_VP(l,j)*(2*PB_penalty);
+							pf_t sum2 = get_BE(fres[get_B(l,j)].pair,get_B(l,j),fres[get_Bp(l,j)].pair,get_Bp(l,j))* get_PGPW(i,l-1)* get_VP(l,j) *PB_penalty * PB_penalty;
 
 							//Luke Aug 2023 part func
 							d2_energy_wmbp += sum;
 							d2_energy_wmbp += sum2;
+							//printf("***************\n");
+							//printf("WMBP(%d,%d) case 1: l = %d, BE = %Lf, WMBP = %Lf, VP = %Lf ~~> sum = %Lf sum2 = %Lf \n",i,j,l,get_BE(fres[get_B(l,j)].pair,get_B(l,j),fres[get_Bp(l,j)].pair,get_Bp(l,j)),get_WMBP(i,l-1),get_VP(l,j), sum,sum2);
+							//printf("***************\n");
 		//					printf("d2energy: %Lf", d2_energy_wmbp);
 							//depracated
 							//if (temp > sum){
@@ -874,7 +877,7 @@ void pseudo_loop::compute_WMBP(int i, int j, h_str_features *fres){
 		//	m4 = temp;
 		//}
 //		if (debug){
-		//printf("WMBP(%d,%d) branch 4:  VP = %Lf temp = %Lf sum = %Lf\n",i,j,get_VP(i,j), temp, d2_energy_wmbp);
+//		printf("WMBP(%d,%d) branch 4:  VP = %Lf temp = %Lf sum = %Lf\n",i,j,get_VP(i,j), temp, d2_energy_wmbp);
 //		}
 		/// Luke: removing, now in PGPW
 		/// 5) WMB(i,j) = min_{i<l<j}{WMB(i,l)+WI(l+1,j)} if bp(j)<j
@@ -1158,7 +1161,7 @@ void pseudo_loop::compute_VPR(int i, int j, h_str_features *fres){
         // fres[i].pair < 0 changed to fres[i].pair < FRES_RESTRICTED_MIN (which equals -1 at time of writing)
         // otherwise it will create pairs in spots where the restricted structure says there should be no pairs
 		if (fres[r].pair < FRES_RESTRICTED_MIN && this->is_empty_region(r+1,j)){
-			pf_t tmp = get_VP(i,r) * (cp_penalty *(j-r)); // check the (j-r) part
+			pf_t tmp = get_VP(i,r) * pow(cp_penalty,(j-r)); // 
 			d2_energy_vpr+=tmp;
 //			if (debug){
  			//printf("VP(%d,%d) branch 2: VP(%d,%d) = %Lf, %d *(%d-%d)= %f ==> tmp = %Lf\n",i,j,i,r,get_VP(i,r),cp_penalty,j,r,cp_penalty *(j-r),tmp);
@@ -1214,7 +1217,7 @@ void pseudo_loop::compute_VPL(int i, int j, h_str_features *fres){
         // fres[i].pair < 0 changed to fres[i].pair < FRES_RESTRICTED_MIN (which equals -1 at time of writing)
         // otherwise it will create pairs in spots where the restricted structure says there should be no pairs
 		if (fres[r].pair < FRES_RESTRICTED_MIN && this->is_empty_region(i,r-1)){
-			pf_t tmp = (cp_penalty * (r-i)) * get_VP(r,j);
+			pf_t tmp = pow(cp_penalty,(r-i)) * get_VP(r,j);
 			d2_energy_vpl += tmp;
 //			if (debug){
 			//printf("VPL(%d,%d) branch 4: %d *(%d-%d) = %d, VP(%d,%d)= %Lf ==> tmp = %Lf\n",i,j,cp_penalty,r,i,cp_penalty * (r-i),r,j,get_VP(r,j),tmp);
@@ -1322,7 +1325,7 @@ void pseudo_loop::compute_BE(int i, int j, int ip, int jp, h_str_features * fres
 				// Hosna: July 5th, 2007
 				// After meeting with Anne and Cristina --> ap should have 2* bp to consider the biggest and the one that crosses
 				// in a multiloop that spans a band
-				pf_t temp = get_WIP(i+1,l-1) * get_BE(l,lp,ip,jp) * get_WIP(lp+1,j-1) * (ap_penalty + (2* bp_penalty));
+				pf_t temp = get_WIP(i+1,l-1) * get_BE(l,lp,ip,jp) * get_WIP(lp+1,j-1) * ap_penalty * bp_penalty * bp_penalty;
 				d2_energy_be += temp;
 //				if (debug){
 //					printf("BE(%d,%d,%d,%d) branch 3: WIP(%d,%d) = %Lf, BE(%d,%d,%d,%d)= %Lf, WIP(%d,%d)= %Lf ==> temp = %Lf  and m3 = %Lf\n",i,j,ip,jp,i+1,l-1,get_WIP(i+1,l-1),l,lp,ip,jp,get_BE(l,lp,ip,jp),lp+1,j-1,get_WIP(lp+1,j-1),temp,m3);
@@ -1337,7 +1340,7 @@ void pseudo_loop::compute_BE(int i, int j, int ip, int jp, h_str_features * fres
 				// Hosna: July 5th, 2007
 				// After meeting with Anne and Cristina --> ap should have 2* bp to consider the biggest and the one that crosses
 				// in a multiloop that spans a band
-				pf_t temp = get_WIP(i+1,l-1) * get_BE(l,lp,ip,jp) * ((cp_penalty * (j-lp+1)) + ap_penalty + (2*bp_penalty));
+				pf_t temp = get_WIP(i+1,l-1) * get_BE(l,lp,ip,jp) * pow(cp_penalty,(j-lp+1)) * ap_penalty * bp_penalty * bp_penalty;
 				d2_energy_be += temp;
 //				if (debug){
 //					printf("BE(%d,%d,%d,%d) branch 4: WIP(%d,%d) = %Lf, BE(%d,%d,%d,%d)= %Lf ==> temp = %Lf  and m4 = %Lf\n",i,j,ip,jp,i+1,l-1,get_WIP(i+1,l-1),l,lp,ip,jp,get_BE(l,lp,ip,jp),temp,m4);
@@ -1352,7 +1355,7 @@ void pseudo_loop::compute_BE(int i, int j, int ip, int jp, h_str_features * fres
 				// Hosna: July 5th, 2007
 				// After meeting with Anne and Cristina --> ap should have 2* bp to consider the biggest and the one that crosses
 				// in a multiloop that spans a band
-				pf_t temp = (ap_penalty + (2*bp_penalty) + (cp_penalty * (l-i+1))) * get_BE(l,lp,ip,jp) * get_WIP(lp+1,j-1);
+				pf_t temp = ap_penalty * bp_penalty * bp_penalty * pow(cp_penalty,l-i+1) * get_BE(l,lp,ip,jp) * get_WIP(lp+1,j-1);
 				d2_energy_be += temp;
 //				if (debug && l == 9 && ip == 11){
 //					printf("BE(%d,%d,%d,%d) branch 5: BE(%d,%d,%d,%d)= %Lf and WIP(%d,%d) = %Lf ==> temp = %Lf \n", i,j,ip,jp,l,lp,ip,jp,get_BE(l,lp,ip,jp),lp+1,j-1,get_WIP(lp+1,j-1),temp);

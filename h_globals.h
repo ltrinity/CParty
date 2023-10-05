@@ -9,7 +9,7 @@ double bw(double e){
     //printf("bw: %f\n", exp((e*-10.0)/(1.98717*310.15)));
     return exp((e*-10.0)/(1.98717*310.15));
 }
-double PS_penalty = bw(-138); //960; 		//exterior pseudoloop initiation penalty (9.6 Kcal/mol)
+double PS_penalty = bw(-138);//bw(-138); //960; 		//exterior pseudoloop initiation penalty (9.6 Kcal/mol)
 double PSM_penalty = bw(1007); //1500;		//penalty for introducing pseudoknot inside a multiloop (15 Kcal/mol)
 double PSP_penalty = bw(1500);		//penalty for introducing pseudoknot inside a pseudoloop (15 Kcal/mol)
 double PB_penalty = bw(246); //20;		//band penalty (0.2 Kcal/mol)

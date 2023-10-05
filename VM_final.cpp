@@ -135,7 +135,7 @@ void VM_final::WM_compute_energy(int i, int j){
         // add a b_penalty to this case to match the previous cases
         pf_t wmb_energy = wmb->get_energy(k,j)*PSM_penalty*b_penalty;
         //unpaired
-        pf_t unpaired_energy =  bw_int(misc.multi_free_base_penalty) *(k-i);
+        pf_t unpaired_energy =  bw_int(misc.multi_free_base_penalty*(k-i)) ;
         // new case 2 (leftmost branch pseudoknotted)
         d2_energy_wm += (unpaired_energy * wmb_energy);
         // new case 4 checking both WM for now (intermediate branch pseudoknotted)

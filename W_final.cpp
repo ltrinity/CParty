@@ -219,7 +219,7 @@ pf_t W_final::compute_W_br2_restricted (int j, str_features *fres, int &must_cho
 		if(i-1 == -1){
 			Wsubstruc_en = 1;
 		}
-        energy_ij = Wsubstruc_en*v->get_energy(i,j);
+        energy_ij = Wsubstruc_en*v->get_energy(i,j)* bw_int(AU_penalty (int_sequence[i],int_sequence[j]));
 		if(energy_ij> 0){
 			//printf("br2: W_i-1(%d,%d) = %Lf\n", i,j,Wsubstruc_en );
 			//printf("br2: v(%d,%d) = %Lf\n", i,j,v->get_energy(i,j) );
