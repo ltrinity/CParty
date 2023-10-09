@@ -102,8 +102,6 @@ void pseudo_loop::allocate_space()
     BE = new pf_t[total_length];
     if (BE == NULL) giveup ("Cannot allocate memory", "BE");
     for (i=0; i < total_length; i++) BE[i] = 0; 
-	/// Luke BE needs base case 1
-	/// to allow stack energies to fill matrix
 
     border_bs = new int*[nb_nucleotides];
     for(i = 0; i < nb_nucleotides; i++) border_bs[i] = new int[nb_nucleotides];
@@ -472,7 +470,7 @@ void pseudo_loop::compute_VP(int i, int j, h_str_features *fres){
 			m4 = get_e_stP(i,j) * get_VP(i+1,j-1);
 			d2_energy_vp += m4;
 //			if (debug){
-//			printf("VP[%d,%d] branch 4: S->get_energy(%d,%d) = %Lf and VP[%d,%d] = %Lf  so m4 = %Lf\n", i,j,i,j,  get_e_stP(i,j), i+1, j-1, get_VP(i+1,j-1), m4);
+			//printf("VP[%d,%d] branch 4: S->get_energy(%d,%d) = %Lf and VP[%d,%d] = %Lf  so m4 = %Lf\n", i,j,i,j,  get_e_stP(i,j), i+1, j-1, get_VP(i+1,j-1), m4);
 //			}
 		}
 
@@ -1284,7 +1282,7 @@ void pseudo_loop::compute_BE(int i, int j, int ip, int jp, h_str_features * fres
 		m1 = get_e_stP(i,j) * get_BE(i+1,j-1,ip,jp);
 		d2_energy_be += m1;
 //		if(debug ){
-//			printf("BE(%d,%d,%d,%d) Case 1: e_stP(%d,%d) = %Lf and BE(%d,%d,%d,%d) = %Lf ==> m1 = %Lf; %d \n",i,j,ip,jp,i,j,get_e_stP(i,j),i+1,j-1,ip,jp,get_BE(i+1,j-1,ip,jp),m1,iip);
+			//printf("BE(%d,%d,%d,%d) Case 1: e_stP(%d,%d) = %Lf and BE(%d,%d,%d,%d) = %Lf ==> m1 = %Lf; %d \n",i,j,ip,jp,i,j,get_e_stP(i,j),i+1,j-1,ip,jp,get_BE(i+1,j-1,ip,jp),m1,iip);
 //		}
 	}
 
@@ -1370,7 +1368,7 @@ void pseudo_loop::compute_BE(int i, int j, int ip, int jp, h_str_features * fres
 	// finding the min and putting it in BE[iip]
 	BE[iip] = d2_energy_be; //MIN(m1,MIN(MIN(m2,m3),MIN(m4,m5)));
 //	if (debug && i == 6 && ip == 11){
-	//	printf("BE[%d,%d,%d,%d]: min = %Lf \n",i,j,ip,jp,BE[iip]);
+//		printf("BE[%d,%d,%d,%d]: min = %Lf \n",i,j,ip,jp,BE[iip]);
 //	}
 }
 
@@ -1671,9 +1669,9 @@ pf_t pseudo_loop::get_e_stP(int i, int j){
 	}
 	int ss = S->get_energy(i,j,int_sequence);
 //	if (debug){
-		//printf("stack energy got from simfold is %d \n", ss);
+//		printf("stack energy got from simfold is %d scaled %Lf, pen %f, mult %Lf\n", ss, bw_int(ss), e_stP_penalty,bw_int(e_stP_penalty*ss));
 //	}
-	return e_stP_penalty * bw_int(ss);
+	return  bw_int(e_stP_penalty*ss);
 }
 
 pf_t pseudo_loop::get_e_intP(int i, int ip, int jp, int j){
@@ -1690,7 +1688,7 @@ pf_t pseudo_loop::get_e_intP(int i, int ip, int jp, int j){
 	// e_intP = 0.83 * e_int
 //	printf("test: e_int(5,30,7,29) = %d \n",VBI->get_energy(5,30,7,29,int_sequence));
 //	printf("e_int(%d,%d,%d,%d) = %d \n",i,j,ip,jp,e_int);
-	pf_t energy = e_intP_penalty * bw_int(e_int);
+	pf_t energy =  bw_int(e_intP_penalty *e_int);
 //	printf("e_intP(%d,%d,%d,%d) = %d \n",i,ip,jp,j,energy);
 	return energy;
 }

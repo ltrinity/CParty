@@ -267,7 +267,7 @@ pf_t W_final::compute_W_br3_restricted(int j, str_features *fres){
 	        energy_ij = Wsubstruc_en* WMB->get_energy(i,j) * PS_penalty;
 			
 			//if(debug){
-			//printf("Z_P(%d,%d) = %Lf; %Lf; %f\n",i,j,Wsubstruc_en,WMB->get_energy(i,j), PS_penalty);
+			//printf("Z_P(%d,%d) = %Lf; %Lf; %f\n",i,j,energy_ij,WMB->get_energy(i,j), PS_penalty);
 			//}
 			d2_energy_p += energy_ij;
 			//if(debug){

@@ -16,8 +16,8 @@ double PB_penalty = bw(246); //20;		//band penalty (0.2 Kcal/mol)
 double PUP_penalty	= bw(6); //10;		//penalty for an un-paired base in a pseudoloop or a band (0.1 Kcal/mol)
 double PPS_penalty = bw(96);//10;		//penalty for nested closed region inside either a pseudoloop or a multiloop that spans a band(0.1 Kcal/mol)
 
-double e_stP_penalty = bw(0.89); //0.83		// e_stP = 0.83 * e_s
-double e_intP_penalty = bw(0.74); //0.83;		// e_intP = 0.83 * e_int
+double e_stP_penalty = 0.89; //0.83		// e_stP = 0.83 * e_s
+double e_intP_penalty = 0.74; //0.83;		// e_intP = 0.83 * e_int
 
 // Hosna, Nov. 2nd, 2011
 // changed the multiloop penalties to be the same as the simfold's values
