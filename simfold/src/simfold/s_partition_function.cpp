@@ -435,37 +435,37 @@ PFTYPE s_partition_function::compute_partition_function ()
 
                 if (isinf(upm[ij]) || isnan(upm[ij]))
                 {
-                    fprintf(stderr,"UPM(%d,%d) = %Lg\n", i, j, upm[ij]);
+                    fprintf(stderr,"UPM(%d,%d) = %f\n", i, j, upm[ij]);
                     exit(1);
                 }
                 if (isinf(up[ij])  || isnan(up[ij]))
                 {
-                    fprintf(stderr,"UP(%d,%d) = %Lg\n", i, j, up[ij]);
+                    fprintf(stderr,"UP(%d,%d) = %f\n", i, j, up[ij]);
                     exit(1);
                 }
                 if (isinf(s1[ij])  || isnan(s1[ij]))
                 {
-                    fprintf(stderr,"S1(%d,%d) = %Lg\n", i, j, s1[ij]);
+                    fprintf(stderr,"S1(%d,%d) = %f\n", i, j, s1[ij]);
                     exit(1);
                 }
                 if (isinf(u[ij])   || isnan(u[ij]))
                 {
-                    fprintf(stderr,"U(%d,%d) = %Lg\n", i, j, u[ij]);
+                    fprintf(stderr,"U(%d,%d) = %f\n", i, j, u[ij]);
                     exit(1);
                 }
                 if (isinf(s3[ij])  || isnan(s3[ij]))
                 {
-                    fprintf(stderr,"S3(%d,%d) = %Lg\n", i, j, s3[ij]);
+                    fprintf(stderr,"S3(%d,%d) = %f\n", i, j, s3[ij]);
                     exit(1);
                 }
                 if (isinf(u1[ij])  || isnan(u1[ij]))
                 {
-                    fprintf(stderr,"U1(%d,%d) = %Lg\n", i, j, u1[ij]);
+                    fprintf(stderr,"U1(%d,%d) = %f\n", i, j, u1[ij]);
                     exit(1);
                 }
                 if (isinf(s2[ij])  || isnan(s2[ij]))
                 {
-                    fprintf(stderr,"S2(%d,%d) = %Lg\n", i, j, s2[ij]);
+                    fprintf(stderr,"S2(%d,%d) = %f\n", i, j, s2[ij]);
                     exit(1);
                 }
             }

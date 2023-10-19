@@ -158,7 +158,7 @@ double s_min_folding::fold_sequence ()
     {
         for (j=1; j < nb_nucleotides; j++)
         {
-            printf ("W(%d) = %d\n", j, W[j]);
+            printf ("W(%d) = %Lf\n", j, W[j]);
         }
     }
 
@@ -231,7 +231,7 @@ double s_min_folding::fold_sequence_restricted ()
     {
         for (j=1; j < nb_nucleotides; j++)
         {
-            printf ("W(%d) = %d\n", j, W[j]);
+            printf ("W(%d) = %Lf\n", j, W[j]);
         }
     }
 
@@ -1379,7 +1379,7 @@ void s_min_folding::print_result ()
 //  char type[5][10] = {"hairpin","stacked","internal", "multi", "bulge"};
     PARAMTYPE energy = INF, sum;
 
-    printf ("Minimum energy: %d\n", W[nb_nucleotides-1]);
+    printf ("Minimum energy: %Lf\n", W[nb_nucleotides-1]);
     sum = 0;
 
     for (i=0; i< nb_nucleotides; i++)

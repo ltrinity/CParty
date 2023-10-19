@@ -1390,7 +1390,7 @@ double count_types (int link, int *sequence, char *csequence, char *structure, c
             {
                 AUpen = AU_penalty (sequence[i], sequence[f[i].pair]);
                 if (debug)
-                    printf ("%d - AUpen1 \t- add energy %6g\n", i, AUpen);
+                    printf ("%d - AUpen1 \t- add energy %d\n", i, AUpen);
                 energy += AUpen;
                 if (counter != NULL)    count_AU_penalty (sequence[i], sequence[f[i].pair], counter);
             }
@@ -1401,7 +1401,7 @@ double count_types (int link, int *sequence, char *csequence, char *structure, c
         {
             AUpen = AU_penalty (sequence[i], sequence[f[i].pair]);
             if (debug)
-                printf ("%d - AUpen2 \t- add energy %6g\n", i, AUpen);
+                printf ("%d - AUpen2 \t- add energy %d\n", i, AUpen);
             energy += AUpen;
             if (counter != NULL)    count_AU_penalty (sequence[i], sequence[f[i].pair], counter);
         }
@@ -1426,8 +1426,8 @@ double count_types (int link, int *sequence, char *csequence, char *structure, c
                 AUpen = AU_penalty (sequence[i+1], sequence[f[i+1].pair]);
                 if (debug)
                 {
-                    printf ("%d - dangle1 \t- add energy %6g\n", i, dang);
-                    printf ("%d - AUpen3 \t- add energy %6g\n", i, AUpen);
+                    printf ("%d - dangle1 \t- add energy %d\n", i, dang);
+                    printf ("%d - AUpen3 \t- add energy %d\n", i, AUpen);
                 }
                 energy += dang + AUpen;
                 if (counter != NULL)    count_AU_penalty (sequence[i+1], sequence[f[i+1].pair], counter);
@@ -1444,7 +1444,7 @@ double count_types (int link, int *sequence, char *csequence, char *structure, c
                     //dang = MIN (0, IGINF(dangle_top [sequence[i-1]] [sequence[f[i-1].pair]] [sequence[i]]));
                     dang = IGINF(dangle_top [sequence[i-1]] [sequence[f[i-1].pair]] [sequence[i]]);
                     if (debug)
-                        printf ("%d - dangle2 \t- add energy %6g\n", i, dang);
+                        printf ("%d - dangle2 \t- add energy %d\n", i, dang);
                     energy += dang;
                     sprintf (type, "dangle_top[%d][%d][%d]",sequence[i-1], sequence[f[i-1].pair], sequence[i]);
                     index = structure_type_index (type);
@@ -1466,8 +1466,8 @@ double count_types (int link, int *sequence, char *csequence, char *structure, c
                 AUpen = AU_penalty (sequence[i+1], sequence[f[i+1].pair]);
                 if (debug)
                 {
-                    printf ("%d - dangle1 \t- add energy %6g\n", i, dang);
-                    printf ("%d - AUpen4 \t- add energy %6g\n", i, AUpen);
+                    printf ("%d - dangle1 \t- add energy %d\n", i, dang);
+                    printf ("%d - AUpen4 \t- add energy %d\n", i, AUpen);
                 }
                 energy += dang + AUpen;
                 if (counter != NULL)    count_AU_penalty (sequence[i+1], sequence[f[i+1].pair], counter);
@@ -1487,7 +1487,7 @@ double count_types (int link, int *sequence, char *csequence, char *structure, c
         {
             en = s_stacked_pair::get_energy (i, f[i].pair, sequence);
             if (debug)
-                printf ("%d stack \t- add energy %6g\n", i, en);
+                printf ("%d stack \t- add energy %d\n", i, en);
             energy += en;
             if (counter != NULL)    s_stacked_pair::count_get_energy (i, f[i].pair, sequence, counter);
         }
@@ -1499,7 +1499,7 @@ double count_types (int link, int *sequence, char *csequence, char *structure, c
                 misc_energy = misc.intermolecular_initiation;
                 index = structure_type_index ("misc.intermolecular_initiation");
                 if (debug)
-                    printf ("%d intermol \t- add energy %6g\n", i, misc.intermolecular_initiation);
+                    printf ("%d intermol \t- add energy %d\n", i, misc.intermolecular_initiation);
                 if (counter != NULL)    counter[index]++;
                 energy += misc_energy;
                 // add AU penalty
@@ -1516,7 +1516,7 @@ double count_types (int link, int *sequence, char *csequence, char *structure, c
                         dang = IGINF(dangle_top [sequence[i]] [sequence[f[i].pair]] [sequence[i+1]]);
                         if (debug)
                         {
-                            printf ("%d - dangle-spec-hairp \t- add energy %6g\n", i, dang);
+                            printf ("%d - dangle-spec-hairp \t- add energy %d\n", i, dang);
                         }
                         energy += dang;
                         sprintf (type, "dangle_top[%d][%d][%d]", sequence[i], sequence[f[i].pair], sequence[i+1]);
@@ -1533,7 +1533,7 @@ double count_types (int link, int *sequence, char *csequence, char *structure, c
                         dang = IGINF(dangle_bot [sequence[i]] [sequence[f[i].pair]] [sequence[f[i].pair-1]]);
                         if (debug)
                         {
-                            printf ("%d - dangle-spec-hairp \t- add energy %6g\n", i, dang);
+                            printf ("%d - dangle-spec-hairp \t- add energy %d\n", i, dang);
                         }
                         energy += dang;
                         sprintf (type, "dangle_bot[%d][%d][%d]", sequence[i], sequence[f[i].pair], sequence[f[i].pair-1]);
@@ -1547,7 +1547,7 @@ double count_types (int link, int *sequence, char *csequence, char *structure, c
             {
                 en = s_hairpin_loop::get_energy (i, f[i].pair, sequence, csequence, p_table);
                 if (debug)
-                    printf ("%d hairpin \t- add energy %6g\n", i, en);
+                    printf ("%d hairpin \t- add energy %d\n", i, en);
                 energy += en;
                 if (counter != NULL)    s_hairpin_loop::count_get_energy (i, f[i].pair, sequence, csequence, counter);
             }
@@ -1561,7 +1561,7 @@ double count_types (int link, int *sequence, char *csequence, char *structure, c
             cannot_add_dangling[jp+1] = 1;
             en = s_internal_loop::get_energy (i, f[i].pair, ip, jp, sequence, p_table);
             if (debug)
-                printf ("%d internal \t- add energy %6g\n", i, en);
+                printf ("%d internal \t- add energy %d\n", i, en);
             energy += en;
             if (counter != NULL)    s_internal_loop::count_get_energy (i, f[i].pair, ip, jp, sequence, counter);
         }
@@ -1673,9 +1673,9 @@ double count_types (int link, int *sequence, char *csequence, char *structure, c
             }
             if (debug)
             {
-                printf ("%d - multi m\t- add energy %6g\n", i, misc_energy);
-                printf ("%d - multi d\t- add energy %6g\n", i, dang);
-                printf ("%d - multi AU\t- add energy %6g\n", i, AUpen);
+                printf ("%d - multi m\t- add energy %d\n", i, misc_energy);
+                printf ("%d - multi d\t- add energy %d\n", i, dang);
+                printf ("%d - multi AU\t- add energy %d\n", i, AUpen);
             }
             energy += misc_energy + dang + AUpen;
         }
@@ -1828,10 +1828,10 @@ void print_counter (double *counter, double free_value)
             printf ("%4d\t%30s\t% 10.2lf\t%4.2lf\n", i, string_params_human_readable[i], (double)params_array[i], counter[i]);
         }
     }
-    if (free_value != 0)
-    {
-        printf ("%4d\t%30s\t% 10s\t%4.2lf\n", num_params, "FREE PARAMETER", "", (double)free_value);
-    }
+    //if (free_value != 0)
+    //{
+    //    printf ("%4d\t%30s\t% 10s\t%4.2lf\n", num_params, "FREE PARAMETER", "", (double)free_value);
+    //}
     printf ("==================================================================\n");
 }
 
@@ -2088,7 +2088,7 @@ void check_int11_parameters (int i, int j, int k, int l, int m, int n)
 
         if (fabs(int11_shouldbe - int11[i][j][k][l][m][n]) > 0.01)
         {
-            fprintf(stderr,"DIFFERENCE between what int11 should be (%Lg) and what it is (%Lg) at 5'-%c%c%c/%c%c%c-3\n",
+            fprintf(stderr,"DIFFERENCE between what int11 should be (%d) and what it is (%d) at 5'-%c%c%c/%c%c%c-3\n",
                     int11_shouldbe,  int11[i][j][k][l][m][n], int_to_nuc(i), int_to_nuc(k), int_to_nuc(m),
                             int_to_nuc(n), int_to_nuc(l), int_to_nuc(j));
             exit(1);

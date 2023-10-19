@@ -788,7 +788,7 @@ void s_sub_folding::backtrack_VBI(int i, int j)
                 sn->intervals = si;           
 
                 if (debug)
-                    printf ("Insert node in bt_VBI, i=%d, j=%d, ip=%d, jp=%d, i_energy=%d, increment=%d, V(i,j)=%d, V(ip,jp)=%d, type=%c\n", 
+                    printf ("Insert node in bt_VBI, i=%d, j=%d, ip=%d, jp=%d, i_energy=%d, increment=%d, V(i,j)=%Lf, V(ip,jp)=%Lf, type=%c\n", 
                   i, j, ip, jp, i_energy, increment, V->get_energy(i,j), V->get_energy(ip,jp), V->get_type(ip,jp));
                 insert_node(sn);
             }//if
@@ -855,7 +855,7 @@ void s_sub_folding::backtrack_VBI_restricted (int i, int j, str_features *fres)
                 sn->intervals = si;           
 
                 if (debug)
-                    printf ("Insert node in bt_VBI, i=%d, j=%d, ip=%d, jp=%d, i_energy=%d, increment=%d, V(i,j)=%d, V(ip,jp)=%d, type=%c\n", 
+                    printf ("Insert node in bt_VBI, i=%d, j=%d, ip=%d, jp=%d, i_energy=%d, increment=%d, V(i,j)=%Lf, V(ip,jp)=%Lf, type=%c\n", 
                   i, j, ip, jp, i_energy, increment, V->get_energy(i,j), V->get_energy(ip,jp), V->get_type(ip,jp));
                 insert_node(sn);
             }//if

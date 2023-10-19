@@ -1,4 +1,4 @@
-# HFold
+# CParty
 
 #### Description:
 Software implementation of CParty.     
@@ -62,7 +62,7 @@ After installing you can move the executables wherever you wish, but you should 
 
 #### How to use:
     Arguments:
-        HFold:
+        CParty:
             -s <sequence>
             -r <structure>
             -i </path/to/file>
@@ -96,12 +96,15 @@ After installing you can move the executables wherever you wish, but you should 
 
 #### Example:
     assume you are in the directory where the HFold executable is loacted
-    ./HFold --i "/home/username/Desktop/myinputfile.txt"
-    ./HFold --i "/home/username/Desktop/myinputfile.txt" --o "outputfile.txt"
-    ./HFold --i "/home/username/Desktop/myinputfile.txt" --o "/home/username/Desktop/some_folder/outputfile.txt"
-    ./HFold --s "GCAACGAUGACAUACAUCGCUAGUCGACGC" --r "(____________________________)"
-    ./HFold --s "GCAACGAUGACAUACAUCGCUAGUCGACGC" --r "(____________________________)" --o "outputfile.txt"
-    ./HFold --s "GCAACGAUGACAUACAUCGCUAGUCGACGC" --r "(____________________________)" --o "/home/username/Desktop/some_folder/outputfile.txt"
+    ./CParty --i "/home/username/Desktop/myinputfile.txt"
+    ./CParty --i "/home/username/Desktop/myinputfile.txt" --o "outputfile.txt"
+    ./CParty --i "/home/username/Desktop/myinputfile.txt" --o "/home/username/Desktop/some_folder/outputfile.txt"
+    ./CParty --s "GCAACGAUGACAUACAUCGCUAGUCGACGC" --r "(____________________________)"
+    ./CParty --s "GCAACGAUGACAUACAUCGCUAGUCGACGC" --r "(____________________________)" --o "outputfile.txt"
+    ./CParty --s "GCAACGAUGACAUACAUCGCUAGUCGACGC" --r "(____________________________)" --o "/home/username/Desktop/some_folder/outputfile.txt"
+
+### SARS-CoV-2 Example
+    ./CParty --s "UUUGCGGUGUAAGUGCAGCCCGUCUUACACCGUGCGGCACAGGCACUAGUACUGAUGUCGUAUACAGGGCU" --r "__(((((((((((__________)))))))))))_____________________________________"
 
     
 #### Exit code:

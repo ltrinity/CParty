@@ -1005,7 +1005,7 @@ int simfold_ordered_suboptimals (char *sequence, int number, char structures[][M
         ii = 0;
 		  
 	
-        printf("in s_specific_functions.cpp, tmp_energies[positions[0]]=%d\n",tmp_energies[positions[0]]);
+        printf("in s_specific_functions.cpp, tmp_energies[positions[0]]=%f\n",tmp_energies[positions[0]]);
 		  
         if (min_energy != tmp_energies[positions[0]])
           {
@@ -1279,7 +1279,7 @@ PFTYPE simfold_partition_function_approximately (char *sequence)
             }
         }   
         
-        printf ("Substr %d: %s\ten=%.2lf \tprob=%Le\n", i, tmp_structures[i], energy, strprob);
+        printf ("Substr %d: %s\ten=%.2lf \tprob=%f\n", i, tmp_structures[i], energy, strprob);
         Z += exp (-1.0 * energy * beta);
     }
     for(i=0; i < seqlen; i++)
